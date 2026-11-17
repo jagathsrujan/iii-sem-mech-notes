@@ -1,0 +1,26 @@
+[
+ {
+  "file": "img/sm-u5-lpg-cylinders.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:LPG_Cylinders.jpg",
+  "author": "Kullatan Kin",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "caption": "LPG cylinders in a storage cage (cropped). Each cylinder is a thin cylindrical shell with domed ends that carries an internal gas pressure."
+ },
+ {
+  "file": "img/sm-u5-boiler-drum.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Boiler_water_drum.JPG",
+  "author": "R. Castelnuovo",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "caption": "The inside of a boiler water drum. The drum is a thin cylinder under steam pressure; the tube ends enter through its wall."
+ },
+ {
+  "file": "img/sm-u5-gas-spheres.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Spherical_tank_gas_holders_for_pressurized_city_gas.jpg",
+  "author": "IketaniDaisei",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "Spherical gas holders for pressurised city gas. A sphere has the same low stress pd/4t in every direction."
+ }
+]

@@ -1,0 +1,1406 @@
+<section class="unit" data-unit="sm-u3">
+  <header class="unit-head">
+    <p class="eyebrow">Strength of Materials · Unit 3</p>
+    <h1>Bending and Shear Stresses in Beams</h1>
+    <p class="lede">A beam carries load by bending. This unit finds the stresses inside the beam: the bending stress that stretches one face and compresses the other, and the shear stress that tries to slide the layers over each other. With these two results you can check a beam for safety, choose its size, and see why steel beams have an I shape.</p>
+    <ul class="syl">
+      <li>Theory of simple bending</li>
+      <li>Bending equation</li>
+      <li>Section modulus</li>
+      <li>Moment of resistance</li>
+      <li>Different types of beams</li>
+      <li>Shear stress distribution in beams</li>
+      <li>Rectangular, circular and I-sections</li>
+      <li>Numericals on bending and shear stresses</li>
+    </ul>
+  </header>
+
+  <section class="part" id="sm-u3-concepts" data-part="concepts">
+    <h2>Concepts</h2>
+    <aside class="exam"><b>Exam pattern.</b> In the old papers this topic is "Unit IV": two full questions (choose one), 20 marks each. Almost every paper asks (a) a 10-mark derivation — the bending equation M/I = σ/y = E/R, or the shear stress formula and its distribution — and (b) a 10-mark numerical on a T-, I- or rectangular section. Learn the three derivations (bending equation, τ = FAȳ/(Ib), shear distribution) and the four numerical types in this unit.</aside>
+
+    <h3 id="sm-u3-c-types">1. Beams and types of beams</h3>
+    <p>A <b>beam</b> is a structural member that carries loads at right angles (transverse) to its axis. The loads cause shear force F and bending moment M at every section (Unit 2). This unit uses F and M to find the stresses inside the beam.</p>
+    <p>Beams are classified by their supports (Fig. 3.1):</p>
+    <ul>
+      <li><b>Cantilever</b>: one end fixed, the other end free.</li>
+      <li><b>Simply supported</b>: rests on a hinge (pin) at one end and a roller at the other end.</li>
+      <li><b>Overhanging</b>: simply supported, but one or both ends extend past the supports.</li>
+      <li><b>Fixed (built-in)</b>: both ends fixed, so the ends cannot rotate.</li>
+      <li><b>Continuous</b>: more than two supports.</li>
+      <li><b>Propped cantilever</b>: a cantilever with an extra support (prop) at the free end.</li>
+    </ul>
+    <figure class="fig" id="sm-u3-f-beams">
+<svg viewBox="0 0 690 330" role="img" aria-label="Six types of beams: cantilever, simply supported, overhanging, fixed, continuous and propped cantilever">
+<defs><marker id="sm-u3-arw-beams" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="31.0" y="68.0" width="14.0" height="64.0" class="ln fill-hatch"/>
+<rect x="45.0" y="95.0" width="160.0" height="10.0" class="ln fill-soft"/>
+<line x1="200.0" y1="52.0" x2="200.0" y2="93.0" class="ln" marker-end="url(#sm-u3-arw-beams)"/>
+<text x="200.0" y="46.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="120.0" y="162.0" class="lbl" text-anchor="middle">(a) Cantilever</text>
+<rect x="270.0" y="95.0" width="170.0" height="10.0" class="ln fill-soft"/>
+<polygon points="280.0,105.0 269.0,124.0 291.0,124.0" class="ln fill-soft"/>
+<rect x="264.0" y="124.0" width="32.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="430.0,105.0 420.0,119.0 440.0,119.0" class="ln fill-soft"/>
+<circle cx="425.0" cy="123.0" r="4.0" class="ln"/>
+<circle cx="435.0" cy="123.0" r="4.0" class="ln"/>
+<line x1="414.0" y1="128.0" x2="446.0" y2="128.0" class="ln"/>
+<line x1="355.0" y1="52.0" x2="355.0" y2="93.0" class="ln" marker-end="url(#sm-u3-arw-beams)"/>
+<text x="355.0" y="46.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="355.0" y="162.0" class="lbl" text-anchor="middle">(b) Simply supported</text>
+<rect x="490.0" y="95.0" width="190.0" height="10.0" class="ln fill-soft"/>
+<polygon points="515.0,105.0 504.0,124.0 526.0,124.0" class="ln fill-soft"/>
+<rect x="499.0" y="124.0" width="32.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="625.0,105.0 615.0,119.0 635.0,119.0" class="ln fill-soft"/>
+<circle cx="620.0" cy="123.0" r="4.0" class="ln"/>
+<circle cx="630.0" cy="123.0" r="4.0" class="ln"/>
+<line x1="609.0" y1="128.0" x2="641.0" y2="128.0" class="ln"/>
+<line x1="675.0" y1="52.0" x2="675.0" y2="93.0" class="ln" marker-end="url(#sm-u3-arw-beams)"/>
+<text x="675.0" y="46.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="585.0" y="162.0" class="lbl" text-anchor="middle">(c) Overhanging</text>
+<rect x="31.0" y="218.0" width="14.0" height="64.0" class="ln fill-hatch"/>
+<rect x="205.0" y="218.0" width="14.0" height="64.0" class="ln fill-hatch"/>
+<rect x="45.0" y="245.0" width="160.0" height="10.0" class="ln fill-soft"/>
+<line x1="125.0" y1="202.0" x2="125.0" y2="243.0" class="ln" marker-end="url(#sm-u3-arw-beams)"/>
+<text x="125.0" y="196.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="125.0" y="312.0" class="lbl" text-anchor="middle">(d) Fixed (built-in)</text>
+<rect x="265.0" y="245.0" width="180.0" height="10.0" class="ln fill-soft"/>
+<polygon points="275.0,255.0 264.0,274.0 286.0,274.0" class="ln fill-soft"/>
+<rect x="259.0" y="274.0" width="32.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="355.0,255.0 345.0,269.0 365.0,269.0" class="ln fill-soft"/>
+<circle cx="350.0" cy="273.0" r="4.0" class="ln"/>
+<circle cx="360.0" cy="273.0" r="4.0" class="ln"/>
+<line x1="339.0" y1="278.0" x2="371.0" y2="278.0" class="ln"/>
+<polygon points="435.0,255.0 425.0,269.0 445.0,269.0" class="ln fill-soft"/>
+<circle cx="430.0" cy="273.0" r="4.0" class="ln"/>
+<circle cx="440.0" cy="273.0" r="4.0" class="ln"/>
+<line x1="419.0" y1="278.0" x2="451.0" y2="278.0" class="ln"/>
+<line x1="315.0" y1="202.0" x2="315.0" y2="243.0" class="ln" marker-end="url(#sm-u3-arw-beams)"/>
+<text x="315.0" y="196.0" class="lbl-sm" text-anchor="middle">W</text>
+<line x1="395.0" y1="202.0" x2="395.0" y2="243.0" class="ln" marker-end="url(#sm-u3-arw-beams)"/>
+<text x="395.0" y="196.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="355.0" y="312.0" class="lbl" text-anchor="middle">(e) Continuous</text>
+<rect x="491.0" y="218.0" width="14.0" height="64.0" class="ln fill-hatch"/>
+<rect x="505.0" y="245.0" width="165.0" height="10.0" class="ln fill-soft"/>
+<polygon points="660.0,255.0 650.0,269.0 670.0,269.0" class="ln fill-soft"/>
+<circle cx="655.0" cy="273.0" r="4.0" class="ln"/>
+<circle cx="665.0" cy="273.0" r="4.0" class="ln"/>
+<line x1="644.0" y1="278.0" x2="676.0" y2="278.0" class="ln"/>
+<line x1="585.0" y1="202.0" x2="585.0" y2="243.0" class="ln" marker-end="url(#sm-u3-arw-beams)"/>
+<text x="585.0" y="196.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="585.0" y="312.0" class="lbl" text-anchor="middle">(f) Propped cantilever</text>
+</svg>
+<figcaption>Fig. 3.1 — Types of beams by their supports. (a)–(c) are statically determinate; (d)–(f) are indeterminate.</figcaption>
+</figure>
+    <p>The first three are <b>statically determinate</b>: the equations of equilibrium alone give the reactions. Fixed, continuous and propped beams are <b>statically indeterminate</b>.</p>
+    <p>Beams are also named by their <b>cross-section</b>: rectangular (timber), circular (shafts, pipes), I-section, T-section, channel and box sections (steel and cast iron).</p>
+    <figure class="photo"><img src="img/sm-u3-timber-joists.jpg" alt="Floor of a building seen from below: many deep, narrow timber joists rest on red-painted steel beams" width="1000" height="666" loading="lazy"><figcaption>Timber floor joists (deep, narrow rectangular beams) carried by red-painted steel beams. The joists stand on edge because Z = bd²/6 grows with the square of the depth. <span class="credit">Photo: Acabashi · CC BY-SA 4.0 · Wikimedia Commons</span></figcaption></figure>
+
+    <h3 id="sm-u3-c-pure">2. Pure bending and simple bending</h3>
+    <p><b>Pure bending</b> (simple bending) is the state of a beam, or a part of it, where the bending moment is constant and the shear force is zero. Then the beam carries bending stress only, with no shear stress.</p>
+    <p>Fig. 3.2 shows the classic example. A simply supported beam carries two equal loads W at equal distances a from the supports. Between the loads (BC), F = W − W = 0 and M = W·a is constant. So part BC is in pure bending. A beam with equal and opposite couples at its ends is also in pure bending along its full length.</p>
+    <figure class="fig" id="sm-u3-f-purebend">
+<svg viewBox="0 0 680 380" role="img" aria-label="Simply supported beam with two equal loads, its shear force diagram and bending moment diagram; the middle part is in pure bending">
+<defs><marker id="sm-u3-arw-purebend" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70.0" y="74.0" width="540.0" height="12.0" class="ln fill-soft"/>
+<polygon points="80.0,86.0 69.0,105.0 91.0,105.0" class="ln fill-soft"/>
+<polygon points="600.0,86.0 589.0,105.0 611.0,105.0" class="ln fill-soft"/>
+<rect x="64.0" y="105.0" width="32.0" height="7.0" class="ln fill-hatch"/>
+<line x1="584.0" y1="110.0" x2="616.0" y2="110.0" class="ln"/>
+<line x1="240.0" y1="30.0" x2="240.0" y2="72.0" class="ln" marker-end="url(#sm-u3-arw-purebend)"/>
+<text x="240.0" y="24.0" class="lbl" text-anchor="middle">W</text>
+<line x1="440.0" y1="30.0" x2="440.0" y2="72.0" class="ln" marker-end="url(#sm-u3-arw-purebend)"/>
+<text x="440.0" y="24.0" class="lbl" text-anchor="middle">W</text>
+<text x="80.0" y="132.0" class="lbl-b" text-anchor="middle">A</text>
+<text x="240.0" y="110.0" class="lbl-b" text-anchor="middle">B</text>
+<text x="440.0" y="110.0" class="lbl-b" text-anchor="middle">C</text>
+<text x="600.0" y="132.0" class="lbl-b" text-anchor="middle">D</text>
+<line x1="80.0" y1="146.0" x2="240.0" y2="146.0" class="ln thin" marker-end="url(#sm-u3-arw-purebend)" marker-start="url(#sm-u3-arw-purebend)"/>
+<text x="160.0" y="140.0" class="lbl-sm" text-anchor="middle">a</text>
+<line x1="440.0" y1="146.0" x2="600.0" y2="146.0" class="ln thin" marker-end="url(#sm-u3-arw-purebend)" marker-start="url(#sm-u3-arw-purebend)"/>
+<text x="520.0" y="140.0" class="lbl-sm" text-anchor="middle">a</text>
+<line x1="60.0" y1="215.0" x2="640.0" y2="215.0" class="ln thin"/>
+<polygon points="80.0,215.0 80.0,185.0 240.0,185.0 240.0,215.0" class="ln fill-acc"/>
+<polygon points="440.0,215.0 440.0,245.0 600.0,245.0 600.0,215.0" class="ln fill-acc2"/>
+<text x="160.0" y="177.0" class="lbl-sm" text-anchor="middle">+W</text>
+<text x="520.0" y="263.0" class="lbl-sm" text-anchor="middle">−W</text>
+<text x="340.0" y="207.0" class="lbl-sm" text-anchor="middle">F = 0</text>
+<text x="642.0" y="220.0" class="lbl-b">SFD</text>
+<line x1="60.0" y1="345.0" x2="640.0" y2="345.0" class="ln thin"/>
+<polygon points="80.0,345.0 240.0,275.0 440.0,275.0 600.0,345.0" class="ln fill-acc"/>
+<text x="340.0" y="265.0" class="lbl-sm" text-anchor="middle">M = W·a (constant)</text>
+<text x="642.0" y="350.0" class="lbl-b">BMD</text>
+<line x1="240.0" y1="275.0" x2="240.0" y2="140.0" class="ln thin dash"/>
+<line x1="440.0" y1="275.0" x2="440.0" y2="140.0" class="ln thin dash"/>
+<text x="340.0" y="323.0" class="lbl-acc" text-anchor="middle">Pure bending zone BC</text>
+</svg>
+<figcaption>Fig. 3.2 — Four-point loading. Between the two loads (BC) the shear force is zero and the bending moment is constant: pure bending.</figcaption>
+</figure>
+    <p>When a beam bends, it takes the shape of an arc. The top layers become shorter (compression) and the bottom layers become longer (tension) for a sagging beam. Between them is one layer that does not change length. This is the <b>neutral layer</b> (neutral surface). The line where the neutral layer cuts the cross-section is the <b>neutral axis (N.A.)</b>.</p>
+    <figure class="photo"><img src="img/sm-u3-bending-test.jpg" alt="A rectangular test beam rests on two roller supports in a testing machine; a loading head presses on its middle" width="800" height="600" loading="lazy"><figcaption>A three-point bending (flexure) test: the specimen rests on two roller supports and the machine presses on its middle. This loading also causes shear force; a four-point test (Fig. 3.2) gives pure bending between the two loads. <span class="credit">Photo: Rama · CC BY-SA 2.0 FR · Wikimedia Commons</span></figcaption></figure>
+
+    <h3 id="sm-u3-c-assume">3. Assumptions of the theory of simple bending</h3>
+    <ol>
+      <li>The material of the beam is homogeneous (same composition everywhere) and isotropic (same elastic properties in all directions).</li>
+      <li>The beam is initially straight, and every layer is free to expand or contract on its own.</li>
+      <li>The stress is within the elastic limit, so Hooke's law holds.</li>
+      <li>Young's modulus E is the same in tension and in compression.</li>
+      <li>A transverse section that is plane before bending stays plane after bending (plane sections remain plane).</li>
+      <li>The radius of curvature R is very large compared with the depth of the beam.</li>
+      <li>The beam has a symmetrical section, and the loads act in the plane of symmetry, so it bends in that plane only.</li>
+      <li>The beam is in pure bending: no shear force, no axial force.</li>
+    </ol>
+
+    <h3 id="sm-u3-c-derive">4. Derivation of the bending equation M/I = σ/y = E/R</h3>
+    <p>This derivation comes in almost every paper. Learn the figure and the four steps.</p>
+    <figure class="fig" id="sm-u3-f-element">
+<svg viewBox="0 0 690 380" role="img" aria-label="Small beam element before and after bending, showing the neutral layer, a layer at distance y and the radius of curvature R">
+<defs><marker id="sm-u3-arw-element" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70.0" y="90.0" width="180.0" height="150.0" class="ln fill-soft"/>
+<line x1="50.0" y1="160.0" x2="270.0" y2="160.0" class="ln hid"/>
+<line x1="70.0" y1="205.0" x2="250.0" y2="205.0" class="ln acc"/>
+<text x="62.0" y="95.0" class="lbl-b" text-anchor="end">A</text>
+<text x="258.0" y="95.0" class="lbl-b">B</text>
+<text x="62.0" y="245.0" class="lbl-b" text-anchor="end">C</text>
+<text x="258.0" y="245.0" class="lbl-b">D</text>
+<text x="46.0" y="165.0" class="lbl-b" text-anchor="end">E</text>
+<text x="274.0" y="165.0" class="lbl-b">F</text>
+<text x="62.0" y="210.0" class="lbl-b" text-anchor="end">G</text>
+<text x="258.0" y="210.0" class="lbl-b">H</text>
+<text x="160.0" y="152.0" class="lbl-sm" text-anchor="middle">neutral layer</text>
+<line x1="220.0" y1="160.0" x2="220.0" y2="205.0" class="ln thin" marker-end="url(#sm-u3-arw-element)" marker-start="url(#sm-u3-arw-element)"/>
+<text x="210.0" y="187.5" class="lbl-sm" text-anchor="end">y</text>
+<line x1="70.0" y1="262.0" x2="250.0" y2="262.0" class="ln thin" marker-end="url(#sm-u3-arw-element)" marker-start="url(#sm-u3-arw-element)"/>
+<text x="160.0" y="280.0" class="lbl-sm" text-anchor="middle">δx</text>
+<text x="160.0" y="360.0" class="lbl" text-anchor="middle">(a) Before bending</text>
+<text x="70.0" y="78.0" class="lbl-sm" text-anchor="middle">1</text>
+<text x="250.0" y="78.0" class="lbl-sm" text-anchor="middle">2</text>
+<path d="M460.9,153.5 A120,120 0 0 0 539.1,153.5 L584.6,285.8 A260,260 0 0 1 415.4,285.8 Z" class="ln fill-soft"/>
+<path d="M438.1,219.6 A190,190 0 0 0 561.9,219.6" class="ln hid"/>
+<path d="M426.7,252.7 A225,225 0 0 0 573.3,252.7" class="ln acc"/>
+<line x1="500.0" y1="40.0" x2="460.9" y2="153.5" class="ln thin dash"/>
+<line x1="500.0" y1="40.0" x2="539.1" y2="153.5" class="ln thin dash"/>
+<circle cx="500.0" cy="40.0" r="3.0" class="solid"/>
+<text x="510.0" y="42.0" class="lbl-b">O</text>
+<path d="M485.3,82.5 A45,45 0 0 0 514.7,82.5" class="ln thin"/>
+<text x="493.0" y="106.0" class="lbl" text-anchor="end">θ</text>
+<text x="452.9" y="158.5" class="lbl-b" text-anchor="end">A′</text>
+<text x="547.1" y="158.5" class="lbl-b">B′</text>
+<text x="407.4" y="290.8" class="lbl-b" text-anchor="end">C′</text>
+<text x="592.6" y="290.8" class="lbl-b">D′</text>
+<text x="430.1" y="224.6" class="lbl-b" text-anchor="end">E′</text>
+<text x="569.9" y="224.6" class="lbl-b">F′</text>
+<text x="418.7" y="257.7" class="lbl-b" text-anchor="end">G′</text>
+<text x="581.3" y="257.7" class="lbl-b">H′</text>
+<line x1="500.0" y1="44.0" x2="500.0" y2="230.0" class="ln thin" marker-end="url(#sm-u3-arw-element)"/>
+<text x="508.0" y="190.0" class="lbl-b">R</text>
+<line x1="534.0" y1="228.1" x2="538.0" y2="260.6" class="ln thin" marker-end="url(#sm-u3-arw-element)" marker-start="url(#sm-u3-arw-element)"/>
+<text x="546.0" y="254.0" class="lbl">y</text>
+<text x="500.0" y="360.0" class="lbl" text-anchor="middle">(b) After bending</text>
+</svg>
+<figcaption>Fig. 3.3 — Element δx of a beam (a) before and (b) after bending. The neutral layer EF keeps its length; layer GH at distance y stretches.</figcaption>
+</figure>
+    <p><b>Step 1 — strain.</b> Take a small element of length δx between sections 1 and 2 (Fig. 3.3a). After bending, the sections meet at the centre of curvature O with angle θ (Fig. 3.3b). The neutral layer EF keeps its length:</p>
+    <div class="formula">\[ EF = E'F' = R\,\theta = \delta x \]</div>
+    <p>Layer GH is at distance y from the neutral layer. Its new length is \( G'H' = (R + y)\,\theta \). So its strain is</p>
+    <div class="formula">\[ \varepsilon = \frac{G'H' - GH}{GH} = \frac{(R+y)\theta - R\theta}{R\theta} = \frac{y}{R} \]<p class="where">The strain is proportional to the distance y from the neutral axis.</p></div>
+    <p><b>Step 2 — stress.</b> By Hooke's law, σ = Eε:</p>
+    <div class="formula">\[ \sigma = E\,\frac{y}{R} \quad\Rightarrow\quad \frac{\sigma}{y} = \frac{E}{R} \]<p class="where">σ = bending stress at distance y (N/mm²), E = Young's modulus (N/mm²), R = radius of curvature of the neutral layer (mm).</p></div>
+    <figure class="fig" id="sm-u3-f-strainstress">
+<svg viewBox="0 0 680 300" role="img" aria-label="Beam cross-section with neutral axis and strip dA, linear strain distribution and linear bending stress distribution">
+<defs><marker id="sm-u3-arw-strainstress" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60.0" y="50.0" width="100.0" height="180.0" class="ln fill-soft"/>
+<rect x="60.0" y="178.0" width="100.0" height="10.0" class="ln fill-acc"/>
+<line x1="40.0" y1="140.0" x2="620.0" y2="140.0" class="ln hid"/>
+<text x="34.0" y="145.0" class="lbl-b" text-anchor="end">N</text>
+<text x="632.0" y="145.0" class="lbl-b">A</text>
+<text x="168.0" y="189.0" class="lbl-sm">dA</text>
+<line x1="85.0" y1="140.0" x2="85.0" y2="183.0" class="ln thin" marker-end="url(#sm-u3-arw-strainstress)" marker-start="url(#sm-u3-arw-strainstress)"/>
+<text x="92.0" y="168.0" class="lbl-sm">y</text>
+<text x="110.0" y="270.0" class="lbl" text-anchor="middle">Section</text>
+<line x1="330.0" y1="40.0" x2="330.0" y2="240.0" class="ln thin"/>
+<polygon points="330.0,140.0 275.0,50.0 330.0,50.0" class="ln fill-acc2"/>
+<polygon points="330.0,140.0 385.0,230.0 330.0,230.0" class="ln fill-acc"/>
+<text x="269.0" y="55.0" class="lbl-sm" text-anchor="end">ε<tspan dy="4" font-size="11">c</tspan><tspan dy="-4"></tspan></text>
+<text x="391.0" y="235.0" class="lbl-sm">ε<tspan dy="4" font-size="11">t</tspan><tspan dy="-4"></tspan></text>
+<text x="280.0" y="95.0" class="lbl-sm" text-anchor="end">Compression</text>
+<text x="380.0" y="190.0" class="lbl-sm">Tension</text>
+<text x="330.0" y="270.0" class="lbl" text-anchor="middle">Strain  ε = y / R</text>
+<line x1="530.0" y1="40.0" x2="530.0" y2="240.0" class="ln thin"/>
+<polygon points="530.0,140.0 465.0,50.0 530.0,50.0" class="ln fill-acc2"/>
+<polygon points="530.0,140.0 595.0,230.0 530.0,230.0" class="ln fill-acc"/>
+<text x="459.0" y="55.0" class="lbl-sm" text-anchor="end">σ<tspan dy="4" font-size="11">c</tspan><tspan dy="-4"> (max)</tspan></text>
+<text x="601.0" y="235.0" class="lbl-sm">σ<tspan dy="4" font-size="11">t</tspan><tspan dy="-4"> (max)</tspan></text>
+<text x="530.0" y="270.0" class="lbl" text-anchor="middle">Stress  σ = E y / R</text>
+</svg>
+<figcaption>Fig. 3.4 — Strain and bending stress vary linearly with y: zero at the neutral axis, maximum at the extreme fibres.</figcaption>
+</figure>
+    <p><b>Step 3 — no net force (locates the N.A.).</b> Take a strip of area dA at distance y (Fig. 3.4). The force on it is \( dF = \sigma\,dA = \frac{E}{R}\,y\,dA \). In pure bending there is no axial force, so the total force is zero:</p>
+    <div class="formula">\[ \int \frac{E}{R}\,y\,dA = 0 \;\Rightarrow\; \int y\,dA = 0 \]<p class="where">∫y dA is the first moment of area about the N.A. It is zero only about a centroidal axis. So the neutral axis passes through the centroid of the section.</p></div>
+    <p><b>Step 4 — moment.</b> The moment of dF about the N.A. is \( dM = dF \cdot y = \frac{E}{R}\,y^2\,dA \). The sum of these moments is the <b>moment of resistance</b>. It must balance the bending moment M:</p>
+    <div class="formula">\[ M = \frac{E}{R}\int y^2\,dA = \frac{E}{R}\,I \quad\Rightarrow\quad \frac{M}{I} = \frac{E}{R} \]<p class="where">I = ∫y² dA = moment of inertia (second moment of area) of the section about the N.A. (mm⁴).</p></div>
+    <p>Combine steps 2 and 4. This is the <b>bending equation</b> (flexure formula):</p>
+    <div class="formula">\[ \frac{M}{I} = \frac{\sigma}{y} = \frac{E}{R} \]<p class="where">M = bending moment at the section (N·mm), I = moment of inertia about the N.A. (mm⁴), σ = bending stress at distance y from the N.A. (N/mm²), E = Young's modulus (N/mm²), R = radius of curvature (mm).</p></div>
+    <aside class="tip"><b>Memory trick.</b> "My Idea: Stress over y equals Elastic over Radius" — M/I = σ/y = E/R. Any two of the three ratios give an equation. Use M/I = σ/y for stresses and E/R = M/I or σ/y for curvature (wire on a drum).</aside>
+    <p>The bending stress varies linearly with y (Fig. 3.4). It is zero at the N.A. and maximum at the fibre farthest from it:</p>
+    <div class="formula">\[ \sigma = \frac{M\,y}{I}, \qquad \sigma_{max} = \frac{M\,y_{max}}{I} \]</div>
+    <aside class="warn"><b>Which face is in tension?</b> A sagging moment (simply supported beam under downward load) puts the top in compression and the bottom in tension. A hogging moment (cantilever) puts the top in tension. For a T-section or an unequal I-section, y<sub>top</sub> ≠ y<sub>bottom</sub>, so the tensile and compressive stresses are different. Always state which is which.</aside>
+
+    <h3 id="sm-u3-c-moi">5. Moment of inertia and the parallel axis theorem</h3>
+    <p>The bending equation needs I about the neutral axis, which passes through the centroid. For built-up sections (T, I, channel), use the <b>parallel axis theorem</b> (Fig. 3.5a):</p>
+    <div class="formula">\[ I_{XX} = I_G + A\,h^2 \]<p class="where">I<sub>G</sub> = moment of inertia of the area about its own centroidal axis, A = area, h = distance between the two parallel axes.</p></div>
+    <figure class="fig" id="sm-u3-f-sections">
+<svg viewBox="0 0 690 280" role="img" aria-label="Parallel axis theorem and the moment of inertia of rectangle, solid circle and hollow circle about the neutral axis">
+<defs><marker id="sm-u3-arw-sections" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M35,135 Q25,65 85,55 Q155,45 150,105 Q145,150 95,145 Q55,155 35,135 Z" class="ln fill-soft"/>
+<line x1="10.0" y1="105.0" x2="180.0" y2="105.0" class="ln hid"/>
+<text x="183.0" y="110.0" class="lbl-b">G</text>
+<line x1="10.0" y1="190.0" x2="180.0" y2="190.0" class="ln"/>
+<text x="183.0" y="195.0" class="lbl-b">X</text>
+<circle cx="95.0" cy="105.0" r="3.0" class="solid"/>
+<line x1="23.0" y1="105.0" x2="23.0" y2="190.0" class="ln thin" marker-end="url(#sm-u3-arw-sections)" marker-start="url(#sm-u3-arw-sections)"/>
+<text x="29.0" y="155.0" class="lbl-sm">h</text>
+<text x="95.0" y="240.0" class="lbl-sm" text-anchor="middle">(a) I<tspan dy="4" font-size="11">XX</tspan><tspan dy="-4"> = I</tspan><tspan dy="4" font-size="11">G</tspan><tspan dy="-4"> + A h²</tspan></text>
+<rect x="235.0" y="50.0" width="70.0" height="120.0" class="ln fill-hatch"/>
+<line x1="215.0" y1="110.0" x2="312.0" y2="110.0" class="ln hid"/>
+<line x1="235.0" y1="186.0" x2="305.0" y2="186.0" class="ln thin" marker-end="url(#sm-u3-arw-sections)" marker-start="url(#sm-u3-arw-sections)"/>
+<text x="270.0" y="204.0" class="lbl-sm" text-anchor="middle">b</text>
+<line x1="318.0" y1="50.0" x2="318.0" y2="170.0" class="ln thin" marker-end="url(#sm-u3-arw-sections)" marker-start="url(#sm-u3-arw-sections)"/>
+<text x="326.0" y="115.0" class="lbl-sm">d</text>
+<text x="270.0" y="240.0" class="lbl-sm" text-anchor="middle">(b) I = bd³/12</text>
+<circle cx="440.0" cy="110.0" r="60.0" class="ln fill-hatch"/>
+<line x1="360.0" y1="110.0" x2="520.0" y2="110.0" class="ln hid"/>
+<line x1="380.0" y1="186.0" x2="500.0" y2="186.0" class="ln thin" marker-end="url(#sm-u3-arw-sections)" marker-start="url(#sm-u3-arw-sections)"/>
+<text x="440.0" y="204.0" class="lbl-sm" text-anchor="middle">d</text>
+<text x="440.0" y="240.0" class="lbl-sm" text-anchor="middle">(c) I = πd⁴/64</text>
+<circle cx="605.0" cy="110.0" r="60.0" class="ln fill-hatch"/>
+<circle cx="605.0" cy="110.0" r="36.0" class="ln fill-soft"/>
+<line x1="529.0" y1="110.0" x2="681.0" y2="110.0" class="ln hid"/>
+<line x1="545.0" y1="186.0" x2="665.0" y2="186.0" class="ln thin" marker-end="url(#sm-u3-arw-sections)" marker-start="url(#sm-u3-arw-sections)"/>
+<text x="605.0" y="204.0" class="lbl-sm" text-anchor="middle">D</text>
+<line x1="569.0" y1="110.0" x2="641.0" y2="110.0" class="ln thin" marker-end="url(#sm-u3-arw-sections)" marker-start="url(#sm-u3-arw-sections)"/>
+<text x="605.0" y="102.0" class="lbl-sm" text-anchor="middle">d</text>
+<text x="605.0" y="240.0" class="lbl-sm" text-anchor="middle">(d) I = π(D⁴ − d⁴)/64</text>
+</svg>
+<figcaption>Fig. 3.5 — (a) Parallel axis theorem. (b)–(d) Moment of inertia of standard sections about the neutral axis.</figcaption>
+</figure>
+    <div class="tbl"><table><thead><tr><th>Section</th><th>I about the N.A.</th><th>y<sub>max</sub></th></tr></thead><tbody>
+      <tr><td>Rectangle b × d</td><td>\( bd^3/12 \)</td><td>d/2</td></tr>
+      <tr><td>Hollow rectangle (outer B × D, inner b × d)</td><td>\( (BD^3 - bd^3)/12 \)</td><td>D/2</td></tr>
+      <tr><td>Solid circle, diameter d</td><td>\( \pi d^4/64 \)</td><td>d/2</td></tr>
+      <tr><td>Hollow circle, D and d</td><td>\( \pi (D^4 - d^4)/64 \)</td><td>D/2</td></tr>
+      <tr><td>Triangle (base b, height h), about its centroid</td><td>\( bh^3/36 \)</td><td>2h/3 (apex)</td></tr>
+    </tbody></table></div>
+    <p><b>Worked: rectangle, circle, hollow circle.</b> For a rectangle b × d, take a strip of width b and thickness dy at distance y: \( I = \int_{-d/2}^{d/2} b\,y^2\,dy = \frac{bd^3}{12} \). Examples:</p>
+    <ul>
+      <li>Rectangle 100 × 200 mm: \( I = 100 \times 200^3/12 = 66.67 \times 10^6 \text{ mm}^4 \).</li>
+      <li>Solid circle, d = 120 mm: \( I = \pi \times 120^4/64 = 10.18 \times 10^6 \text{ mm}^4 \).</li>
+      <li>Hollow circle, D = 150 mm, d = 90 mm: \( I = \pi(150^4 - 90^4)/64 = 21.63 \times 10^6 \text{ mm}^4 \) — twice the solid circle, with the same area (N9).</li>
+    </ul>
+    <p><b>Method for a T- or I-section.</b></p>
+    <ol>
+      <li>Divide the section into rectangles (flange, web).</li>
+      <li>Find the centroid from a reference line (usually the bottom): \( \bar{y} = \sum a_i y_i / \sum a_i \).</li>
+      <li>For each rectangle, find \( I_G = b h^3/12 \) and its distance h from the centroid.</li>
+      <li>Add: \( I = \sum (I_G + a h^2) \).</li>
+    </ol>
+    <figure class="fig" id="sm-u3-f-tsec">
+<svg viewBox="0 0 690 345" role="img" aria-label="T-section and symmetrical I-section with dimensions, centroid and neutral axis">
+<defs><marker id="sm-u3-arw-tsec" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="184.0,270.0 184.0,102.0 254.0,102.0 254.0,74.0 86.0,74.0 86.0,102.0 156.0,102.0 156.0,270.0" class="ln fill-hatch"/>
+<line x1="26.0" y1="137.0" x2="314.0" y2="137.0" class="ln hid"/>
+<circle cx="170.0" cy="137.0" r="3.5" class="solid"/>
+<text x="192.0" y="130.0" class="lbl-b">G</text>
+<text x="24.0" y="142.0" class="lbl-b" text-anchor="end">N</text>
+<text x="318.0" y="142.0" class="lbl-b">A</text>
+<line x1="86.0" y1="58.0" x2="254.0" y2="58.0" class="ln thin" marker-end="url(#sm-u3-arw-tsec)" marker-start="url(#sm-u3-arw-tsec)"/>
+<text x="170.0" y="52.0" class="lbl-sm" text-anchor="middle">120</text>
+<line x1="270.0" y1="74.0" x2="270.0" y2="102.0" class="ln thin" marker-end="url(#sm-u3-arw-tsec)" marker-start="url(#sm-u3-arw-tsec)"/>
+<text x="276.0" y="93.0" class="lbl-sm">20</text>
+<line x1="156.0" y1="286.0" x2="184.0" y2="286.0" class="ln thin" marker-end="url(#sm-u3-arw-tsec)" marker-start="url(#sm-u3-arw-tsec)"/>
+<text x="170.0" y="306.0" class="lbl-sm" text-anchor="middle">20</text>
+<line x1="120.0" y1="102.0" x2="120.0" y2="270.0" class="ln thin" marker-end="url(#sm-u3-arw-tsec)" marker-start="url(#sm-u3-arw-tsec)"/>
+<text x="114.0" y="210.0" class="lbl-sm" text-anchor="end">120</text>
+<line x1="220.0" y1="137.0" x2="220.0" y2="270.0" class="ln thin" marker-end="url(#sm-u3-arw-tsec)" marker-start="url(#sm-u3-arw-tsec)"/>
+<text x="226.0" y="210.0" class="lbl-acc">ȳ = 95</text>
+<line x1="220.0" y1="74.0" x2="220.0" y2="137.0" class="ln thin" marker-end="url(#sm-u3-arw-tsec)" marker-start="url(#sm-u3-arw-tsec)"/>
+<text x="226.0" y="120.0" class="lbl-sm">45</text>
+<text x="170.0" y="336.0" class="lbl-sm" text-anchor="middle">(a) T-section: ȳ = 95 mm from bottom</text>
+<polygon points="583.8,268.0 583.8,251.0 524.2,251.0 524.2,81.0 583.8,81.0 583.8,64.0 456.2,64.0 456.2,81.0 515.8,81.0 515.8,251.0 456.2,251.0 456.2,268.0" class="ln fill-hatch"/>
+<line x1="416.2" y1="166.0" x2="623.8" y2="166.0" class="ln hid"/>
+<circle cx="520.0" cy="166.0" r="3.5" class="solid"/>
+<text x="534.0" y="159.0" class="lbl-b">G</text>
+<line x1="456.0" y1="50.0" x2="584.0" y2="50.0" class="ln thin" marker-end="url(#sm-u3-arw-tsec)" marker-start="url(#sm-u3-arw-tsec)"/>
+<text x="520.0" y="44.0" class="lbl-sm" text-anchor="middle">150</text>
+<line x1="600.0" y1="64.0" x2="600.0" y2="81.0" class="ln thin" marker-end="url(#sm-u3-arw-tsec)" marker-start="url(#sm-u3-arw-tsec)"/>
+<text x="606.0" y="78.0" class="lbl-sm">20</text>
+<line x1="600.0" y1="251.0" x2="600.0" y2="268.0" class="ln thin" marker-end="url(#sm-u3-arw-tsec)" marker-start="url(#sm-u3-arw-tsec)"/>
+<text x="606.0" y="266.0" class="lbl-sm">20</text>
+<line x1="440.0" y1="64.0" x2="440.0" y2="268.0" class="ln thin" marker-end="url(#sm-u3-arw-tsec)" marker-start="url(#sm-u3-arw-tsec)"/>
+<text x="434.0" y="136.0" class="lbl-sm" text-anchor="end">240</text>
+<text x="532.0" y="202.0" class="lbl-sm">web 10</text>
+<text x="520.0" y="336.0" class="lbl-sm" text-anchor="middle">(b) I-section: N.A. at mid-depth</text>
+</svg>
+<figcaption>Fig. 3.6 — (a) T-section 120 × 140 mm: the neutral axis is 95 mm above the bottom. (b) Symmetrical I-section: the neutral axis is at mid-depth.</figcaption>
+</figure>
+    <p><b>Worked: T-section</b> (Fig. 3.6a), flange 120 × 20, web 20 × 120 (mm). Flange: a₁ = 2400 mm², centroid 130 mm above the bottom. Web: a₂ = 2400 mm², at 60 mm. So \( \bar{y} = (2400 \times 130 + 2400 \times 60)/4800 = 95 \) mm from the bottom (45 mm from the top). Then</p>
+    <div class="formula">\[ I = \left[\tfrac{120 \times 20^3}{12} + 2400 \times 35^2\right] + \left[\tfrac{20 \times 120^3}{12} + 2400 \times 35^2\right] = 8.84 \times 10^6 \text{ mm}^4 \]</div>
+    <p><b>Worked: symmetrical I-section</b> (Fig. 3.6b), flanges 150 × 20, web 200 × 10, overall depth 240 mm. The N.A. is at mid-depth, by symmetry. Treat it as the outer rectangle minus the two empty spaces beside the web:</p>
+    <div class="formula">\[ I = \frac{150 \times 240^3}{12} - \frac{140 \times 200^3}{12} = 172.8 \times 10^6 - 93.33 \times 10^6 = 79.47 \times 10^6 \text{ mm}^4 \]</div>
+    <aside class="tip"><b>Check by a second method.</b> For a symmetrical I-section, the subtraction method and the parallel axis method must give the same I. Here: 2 × (100 000 + 3000 × 110²) + 10 × 200³/12 = 79.47 × 10⁶ mm⁴.</aside>
+
+    <h3 id="sm-u3-c-z">6. Section modulus and moment of resistance</h3>
+    <p>The <b>section modulus</b> Z is the ratio of the moment of inertia about the N.A. to the distance of the extreme fibre from the N.A.:</p>
+    <div class="formula">\[ Z = \frac{I}{y_{max}} \qquad\Rightarrow\qquad M = \sigma_{max}\,Z \]<p class="where">Z in mm³. It depends only on the shape and size of the section. A larger Z gives a stronger beam.</p></div>
+    <p>The <b>moment of resistance</b> is the moment of the internal bending stresses about the N.A. At the safe limit it equals the largest bending moment the section can carry: \( M_R = \sigma_{perm}\,Z \).</p>
+    <div class="tbl"><table><thead><tr><th>Section</th><th>Section modulus Z</th></tr></thead><tbody>
+      <tr><td>Rectangle b × d</td><td>\( \dfrac{bd^2}{6} \)</td></tr>
+      <tr><td>Square of side a</td><td>\( \dfrac{a^3}{6} \)</td></tr>
+      <tr><td>Hollow rectangle</td><td>\( \dfrac{BD^3 - bd^3}{6D} \)</td></tr>
+      <tr><td>Solid circle</td><td>\( \dfrac{\pi d^3}{32} \)</td></tr>
+      <tr><td>Hollow circle</td><td>\( \dfrac{\pi (D^4 - d^4)}{32\,D} \)</td></tr>
+      <tr><td>Symmetrical I-section</td><td>\( \dfrac{I}{D/2} \)</td></tr>
+      <tr><td>T-section / unequal I</td><td>\( Z_{top} = \dfrac{I}{y_{top}}, \; Z_{bottom} = \dfrac{I}{y_{bottom}} \) — use the smaller for design</td></tr>
+    </tbody></table></div>
+    <p><b>Quick example.</b> A rectangular beam 100 mm wide and 200 mm deep has Z = 100 × 200²/6 = 6.67 × 10⁵ mm³. With σ = 150 N/mm², M<sub>R</sub> = 150 × 6.67 × 10⁵ = 100 × 10⁶ N·mm = 100 kN·m. Put the same beam flat (200 wide, 100 deep): Z = 3.33 × 10⁵ mm³, so it is only half as strong.</p>
+    <p>For the T-section of Fig. 3.6a: Z<sub>top</sub> = 8.84 × 10⁶/45 = 1.96 × 10⁵ mm³ and Z<sub>bottom</sub> = 8.84 × 10⁶/95 = 0.93 × 10⁵ mm³.</p>
+
+    <h3 id="sm-u3-c-strength">7. Strength of sections: why I-sections are economical</h3>
+    <p>For a given material, the strength of a beam in bending depends on Z. The weight and cost depend on the area A. So a good (economical) section has a large Z for a small A.</p>
+    <p>The bending stress is small near the N.A. and large at the extreme fibres (Fig. 3.4). Material near the N.A. does little work. An I-section moves most of the material into the flanges, far from the N.A., where the stress is high. The thin web holds the flanges apart and carries the shear force.</p>
+    <figure class="fig" id="sm-u3-f-efficiency">
+<svg viewBox="0 0 680 320" role="img" aria-label="Square section and I-section of equal area with their bending stress diagrams: the I-section puts its material where the stress is high">
+<defs><marker id="sm-u3-arw-efficiency" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="64.2" y="114.2" width="71.5" height="71.5" class="ln fill-hatch"/>
+<line x1="40.0" y1="150.0" x2="260.0" y2="150.0" class="ln hid"/>
+<line x1="230.0" y1="104.2" x2="230.0" y2="195.8" class="ln thin"/>
+<polygon points="230.0,150.0 185.0,114.2 230.0,114.2" class="ln fill-acc2"/>
+<polygon points="230.0,150.0 275.0,185.8 230.0,185.8" class="ln fill-acc"/>
+<text x="180.0" y="119.2" class="lbl-sm" text-anchor="end">σ</text>
+<text x="280.0" y="190.8" class="lbl-sm">σ</text>
+<text x="160.0" y="285.0" class="lbl-sm" text-anchor="middle">(a) Square, A = 8000 mm²</text>
+<text x="160.0" y="305.0" class="lbl-sm" text-anchor="middle">Z = 0.12 × 10⁶ mm³</text>
+<polygon points="500.0,246.0 500.0,230.0 444.0,230.0 444.0,70.0 500.0,70.0 500.0,54.0 380.0,54.0 380.0,70.0 436.0,70.0 436.0,230.0 380.0,230.0 380.0,246.0" class="ln fill-hatch"/>
+<line x1="360.0" y1="150.0" x2="520.0" y2="150.0" class="ln hid"/>
+<line x1="590.0" y1="44.0" x2="590.0" y2="256.0" class="ln thin"/>
+<polygon points="590.0,150.0 545.0,54.0 590.0,54.0" class="ln fill-acc2"/>
+<polygon points="590.0,150.0 635.0,246.0 590.0,246.0" class="ln fill-acc"/>
+<text x="598.0" y="64.0" class="lbl-sm">high σ: flange</text>
+<text x="598.0" y="144.0" class="lbl-sm">low σ: web</text>
+<text x="500.0" y="285.0" class="lbl-sm" text-anchor="middle">(b) I-section, A = 8000 mm²</text>
+<text x="500.0" y="305.0" class="lbl-sm" text-anchor="middle">Z = 0.66 × 10⁶ mm³</text>
+</svg>
+<figcaption>Fig. 3.7 — Same area, same material: the I-section keeps its material far from the N.A., so its Z (and moment of resistance) is about 5.5 times larger.</figcaption>
+</figure>
+    <p>Fig. 3.7 compares two sections of the same area, 8000 mm². The square (89.4 mm side) has Z = 0.12 × 10⁶ mm³. The I-section 150 × 240 has Z = 0.66 × 10⁶ mm³, about 5.5 times more (Numerical N7). For the same reason a hollow circular shaft is stronger than a solid shaft of the same weight (N9).</p>
+    <ul>
+      <li><b>Good for bending:</b> I-section, box section, hollow circle, deep rectangle on edge.</li>
+      <li><b>Poor for bending:</b> solid circle, square, flat rectangle.</li>
+      <li><b>Cast iron</b> is strong in compression but weak in tension. So cast iron beams use an unequal I or T shape. Put the larger flange on the tension side. This moves the N.A. towards the tension face and keeps the tensile stress low (N8).</li>
+    </ul>
+    <figure class="photo"><img src="img/sm-u3-i-beam.jpg" alt="Underside of a painted red steel I-beam with its wide bottom flange and web, carrying a timber floor" width="800" height="418" loading="lazy"><figcaption>A rolled steel I-beam (RSJ) that carries a timber floor. The wide flanges take the bending stress; the thin vertical web takes the shear. <span class="credit">Photo: Todd Murray · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+    <aside class="note"><b>Beam of uniform strength.</b> In most beams only the section at maximum M reaches the permissible stress. A beam of uniform strength has its section changed along the length (depth or width varies with M) so that the maximum bending stress is the same at every section. Examples: leaf springs, tapered cantilever brackets. It saves material.</aside>
+
+    <h3 id="sm-u3-c-shear">8. Shear stress in beams: why it exists</h3>
+    <p>In most beams the shear force F is not zero. F produces shear stress on the cross-section. By the principle of complementary shear (Unit 1), an equal shear stress acts on horizontal planes. So the layers of a beam try to slide over each other.</p>
+    <figure class="fig" id="sm-u3-f-planks">
+<svg viewBox="0 0 680 230" role="img" aria-label="Two loose planks slide over each other when bent; a glued beam bends as one piece and the joint carries horizontal shear">
+<defs><marker id="sm-u3-arw-planks" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M40,70 Q170.0,106 300,70 L300,92 Q170.0,128 40,92 Z" class="ln fill-soft"/>
+<path d="M32,92 Q170.0,128 308,92 L308,114 Q170.0,150 32,114 Z" class="ln fill-acc"/>
+<line x1="170.0" y1="20.0" x2="170.0" y2="58.0" class="ln" marker-end="url(#sm-u3-arw-planks)"/>
+<text x="184.0" y="32.0" class="lbl">W</text>
+<text x="28.0" y="100.0" class="lbl-sm" text-anchor="end">slip</text>
+<text x="170.0" y="195.0" class="lbl-sm" text-anchor="middle">(a) Two loose planks: the ends slip</text>
+<path d="M380,70 Q510.0,106 640,70 L640,114 Q510.0,150 380,114 Z" class="ln fill-soft"/>
+<path d="M380,92 Q510,128 640,92" class="ln acc thick"/>
+<line x1="510.0" y1="20.0" x2="510.0" y2="58.0" class="ln" marker-end="url(#sm-u3-arw-planks)"/>
+<text x="524.0" y="32.0" class="lbl">W</text>
+<text x="510.0" y="195.0" class="lbl-sm" text-anchor="middle">(b) Glued: joint carries shear τ, no slip</text>
+</svg>
+<figcaption>Fig. 3.8 — Why beams have horizontal shear stress: loose planks slide; a solid (glued) beam must resist this sliding.</figcaption>
+</figure>
+    <p>Fig. 3.8 shows this. Two loose planks under a load slide at the interface: their ends no longer match. If you glue them together, the joint must resist this sliding. The glue carries horizontal shear stress. In a solid beam, the material itself carries it.</p>
+    <aside class="warn"><b>Common mistake.</b> The average value F/A is not the shear stress at every point. The shear stress is zero at the top and bottom faces and maximum at (or near) the N.A. Find it with the formula below.</aside>
+
+    <h3 id="sm-u3-c-tau">9. Shear stress formula τ = FAȳ/(Ib)</h3>
+    <p>Consider two sections 1 and 2 at distance dx apart (Fig. 3.9). The bending moment is M at section 1 and M + dM at section 2. Take the part of the element above a level at distance y from the N.A.</p>
+    <figure class="fig" id="sm-u3-f-shearderiv">
+<svg viewBox="0 0 690 330" role="img" aria-label="Beam element of length dx between two sections with moments M and M plus dM, and the shaded area above a level y used to derive the shear stress formula">
+<defs><marker id="sm-u3-arw-shearderiv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="110.0" y="60.0" width="190.0" height="180.0" class="ln fill-soft"/>
+<rect x="110.0" y="60.0" width="190.0" height="45.0" class="ln fill-acc"/>
+<line x1="95.0" y1="150.0" x2="315.0" y2="150.0" class="ln hid"/>
+<text x="320.0" y="155.0" class="lbl-sm">N.A.</text>
+<line x1="110.0" y1="105.0" x2="300.0" y2="105.0" class="ln acc thick"/>
+<line x1="65.0" y1="82.0" x2="107.0" y2="82.0" class="ln" marker-end="url(#sm-u3-arw-shearderiv)"/>
+<text x="60.0" y="87.0" class="lbl" text-anchor="end">F₁</text>
+<line x1="345.0" y1="82.0" x2="303.0" y2="82.0" class="ln" marker-end="url(#sm-u3-arw-shearderiv)"/>
+<text x="350.0" y="87.0" class="lbl">F₂</text>
+<line x1="170.0" y1="97.0" x2="240.0" y2="97.0" class="ln acc" marker-end="url(#sm-u3-arw-shearderiv)"/>
+<text x="205.0" y="85.0" class="lbl-acc" text-anchor="middle">τ b dx</text>
+<line x1="128.0" y1="150.0" x2="128.0" y2="105.0" class="ln thin" marker-end="url(#sm-u3-arw-shearderiv)" marker-start="url(#sm-u3-arw-shearderiv)"/>
+<text x="134.0" y="133.0" class="lbl">y</text>
+<text x="102.0" y="50.0" class="lbl-sm" text-anchor="middle">1</text>
+<text x="308.0" y="50.0" class="lbl-sm" text-anchor="middle">2</text>
+<text x="102.0" y="262.0" class="lbl-sm" text-anchor="end">M, F</text>
+<text x="308.0" y="262.0" class="lbl-sm">M + dM, F + dF</text>
+<line x1="110.0" y1="280.0" x2="300.0" y2="280.0" class="ln thin" marker-end="url(#sm-u3-arw-shearderiv)" marker-start="url(#sm-u3-arw-shearderiv)"/>
+<text x="205.0" y="298.0" class="lbl-sm" text-anchor="middle">dx</text>
+<text x="205.0" y="320.0" class="lbl-sm" text-anchor="middle">(a) Element between sections 1 and 2</text>
+<rect x="470.0" y="60.0" width="120.0" height="180.0" class="ln fill-hatch"/>
+<rect x="470.0" y="60.0" width="120.0" height="45.0" class="ln fill-acc"/>
+<line x1="450.0" y1="150.0" x2="610.0" y2="150.0" class="ln hid"/>
+<text x="614.0" y="155.0" class="lbl-sm">N.A.</text>
+<line x1="470.0" y1="105.0" x2="590.0" y2="105.0" class="ln acc thick"/>
+<circle cx="530.0" cy="82.5" r="3.5" class="solid"/>
+<text x="538.0" y="87.5" class="lbl-sm">area A</text>
+<line x1="456.0" y1="150.0" x2="456.0" y2="105.0" class="ln thin" marker-end="url(#sm-u3-arw-shearderiv)" marker-start="url(#sm-u3-arw-shearderiv)"/>
+<text x="450.0" y="133.0" class="lbl" text-anchor="end">y</text>
+<line x1="604.0" y1="150.0" x2="604.0" y2="82.5" class="ln thin" marker-end="url(#sm-u3-arw-shearderiv)" marker-start="url(#sm-u3-arw-shearderiv)"/>
+<text x="610.0" y="118.0" class="lbl">ȳ</text>
+<line x1="470.0" y1="121.0" x2="590.0" y2="121.0" class="ln thin" marker-end="url(#sm-u3-arw-shearderiv)" marker-start="url(#sm-u3-arw-shearderiv)"/>
+<text x="530.0" y="139.0" class="lbl-sm" text-anchor="middle">b</text>
+<text x="530.0" y="320.0" class="lbl-sm" text-anchor="middle">(b) Cross-section</text>
+</svg>
+<figcaption>Fig. 3.9 — Derivation of τ = FAȳ/(Ib): the shaded part above level y is in equilibrium under F₁, F₂ and the shear force τ b dx on its lower face.</figcaption>
+</figure>
+    <ol>
+      <li>Force on the left face of the shaded part: \( F_1 = \int \sigma\,dA = \frac{M}{I}\int y\,dA = \frac{M}{I} A\bar{y} \).</li>
+      <li>Force on the right face: \( F_2 = \frac{M + dM}{I} A\bar{y} \).</li>
+      <li>Net horizontal force: \( F_2 - F_1 = \frac{dM}{I} A\bar{y} \). Only the shear stress τ on the lower face (area b·dx) can balance it: \( \tau\,b\,dx = \frac{dM}{I} A\bar{y} \).</li>
+      <li>Since dM/dx = F (shear force), we get the shear stress formula.</li>
+    </ol>
+    <div class="formula">\[ \tau = \frac{F\,A\,\bar{y}}{I\,b} \]<p class="where">τ = shear stress at the level (N/mm²), F = shear force at the section (N), A = area of the section above (or below) the level (mm²), ȳ = distance of the centroid of A from the N.A. (mm), so Aȳ = first moment of that area (mm³), I = moment of inertia of the whole section about the N.A. (mm⁴), b = actual width of the section at the level (mm).</p></div>
+    <aside class="tip"><b>Two rules for the distribution.</b> (1) Aȳ is largest at the N.A., so τ is usually largest there. (2) b is in the denominator, so τ jumps where the width changes suddenly (flange to web).</aside>
+
+    <h3 id="sm-u3-c-rect">10. Shear stress distribution: rectangular section</h3>
+    <p>For a level at distance y from the N.A. in a rectangle b × d: A = b(d/2 − y), ȳ = (d/2 + y)/2, width = b. Put these in the formula:</p>
+    <div class="formula">\[ \tau = \frac{F}{2I}\left(\frac{d^2}{4} - y^2\right) \]<p class="where">A parabola: τ = 0 at y = ± d/2 (top and bottom), maximum at y = 0 (N.A.).</p></div>
+    <p>At the N.A., with I = bd³/12:</p>
+    <div class="formula">\[ \tau_{max} = \frac{F d^2}{8I} = \frac{3}{2}\,\frac{F}{bd} = 1.5\,\tau_{avg} \]</div>
+    <figure class="fig" id="sm-u3-f-taurect">
+<svg viewBox="0 0 660 290" role="img" aria-label="Shear stress distribution across a rectangular section: parabola with maximum 1.5 times the average at the neutral axis">
+<defs><marker id="sm-u3-arw-taurect" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="80.0" y="50.0" width="120.0" height="180.0" class="ln fill-hatch"/>
+<line x1="60.0" y1="140.0" x2="326.0" y2="140.0" class="ln hid"/>
+<text x="54.0" y="145.0" class="lbl-sm" text-anchor="end">N.A.</text>
+<line x1="80.0" y1="248.0" x2="200.0" y2="248.0" class="ln thin" marker-end="url(#sm-u3-arw-taurect)" marker-start="url(#sm-u3-arw-taurect)"/>
+<text x="140.0" y="266.0" class="lbl-sm" text-anchor="middle">b</text>
+<line x1="62.0" y1="50.0" x2="62.0" y2="128.0" class="ln thin" marker-end="url(#sm-u3-arw-taurect)" marker-start="url(#sm-u3-arw-taurect)"/>
+<text x="54.0" y="90.0" class="lbl-sm" text-anchor="end">d/2</text>
+<polygon points="330.0,230.0 330.0,230.0 344.6,225.5 358.5,221.0 371.6,216.5 384.0,212.0 395.6,207.5 406.5,203.0 416.6,198.5 426.0,194.0 434.6,189.5 442.5,185.0 449.6,180.5 456.0,176.0 461.6,171.5 466.5,167.0 470.6,162.5 474.0,158.0 476.6,153.5 478.5,149.0 479.6,144.5 480.0,140.0 479.6,135.5 478.5,131.0 476.6,126.5 474.0,122.0 470.6,117.5 466.5,113.0 461.6,108.5 456.0,104.0 449.6,99.5 442.5,95.0 434.6,90.5 426.0,86.0 416.6,81.5 406.5,77.0 395.6,72.5 384.0,68.0 371.6,63.5 358.5,59.0 344.6,54.5 330.0,50.0 330.0,50.0" class="ln fill-acc"/>
+<line x1="330.0" y1="36.0" x2="330.0" y2="244.0" class="ln thin"/>
+<line x1="208.0" y1="50.0" x2="326.0" y2="50.0" class="ln thin dash"/>
+<line x1="208.0" y1="230.0" x2="326.0" y2="230.0" class="ln thin dash"/>
+<line x1="430.0" y1="50.0" x2="430.0" y2="230.0" class="ln thin dash"/>
+<text x="426.0" y="248.0" class="lbl-sm" text-anchor="middle">τ<tspan dy="4" font-size="11">avg</tspan><tspan dy="-4"></tspan></text>
+<text x="488.0" y="132.0" class="lbl-acc">τ<tspan dy="4" font-size="11">max</tspan><tspan dy="-4"> = 1.5 τ</tspan><tspan dy="4" font-size="11">avg</tspan><tspan dy="-4"></tspan></text>
+<text x="338.0" y="46.0" class="lbl-sm">τ = 0</text>
+<text x="338.0" y="246.0" class="lbl-sm">τ = 0</text>
+</svg>
+<figcaption>Fig. 3.10 — Rectangular section: parabolic shear stress, zero at top and bottom, τ<sub>max</sub> = 1.5 τ<sub>avg</sub> at the N.A.</figcaption>
+</figure>
+
+    <h3 id="sm-u3-c-circ">11. Shear stress distribution: circular section</h3>
+    <p>For a circle of radius R, the width at level y is \( b = 2\sqrt{R^2 - y^2} \). The first moment of the segment above y is \( A\bar{y} = \frac{2}{3}(R^2 - y^2)^{3/2} \). So</p>
+    <div class="formula">\[ \tau = \frac{F}{3I}\,(R^2 - y^2), \qquad \tau_{max} = \frac{F R^2}{3I} = \frac{4}{3}\,\frac{F}{\pi R^2} = \frac{4}{3}\,\tau_{avg} \]<p class="where">I = πR⁴/4. The distribution is again a parabola, zero at the top and bottom.</p></div>
+    <figure class="fig" id="sm-u3-f-taucirc">
+<svg viewBox="0 0 690 290" role="img" aria-label="Shear stress distribution across a circular section: parabola with maximum four-thirds of the average at the neutral axis">
+<defs><marker id="sm-u3-arw-taucirc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<circle cx="140.0" cy="140.0" r="90.0" class="ln fill-hatch"/>
+<line x1="30.0" y1="140.0" x2="386.0" y2="140.0" class="ln hid"/>
+<text x="26.0" y="145.0" class="lbl-sm" text-anchor="end">N.A.</text>
+<rect x="65.2" y="86.0" width="149.7" height="8.0" class="ln fill-acc"/>
+<line x1="110.0" y1="140.0" x2="110.0" y2="94.0" class="ln thin" marker-end="url(#sm-u3-arw-taucirc)" marker-start="url(#sm-u3-arw-taucirc)"/>
+<text x="104.0" y="120.0" class="lbl" text-anchor="end">y</text>
+<text x="236.0" y="84.0" class="lbl-sm">b = 2√(R² − y²)</text>
+<line x1="50.0" y1="248.0" x2="230.0" y2="248.0" class="ln thin" marker-end="url(#sm-u3-arw-taucirc)" marker-start="url(#sm-u3-arw-taucirc)"/>
+<text x="140.0" y="266.0" class="lbl-sm" text-anchor="middle">d = 2R</text>
+<polygon points="390.0,230.0 390.0,230.0 402.2,225.5 413.8,221.0 424.7,216.5 435.0,212.0 444.7,207.5 453.8,203.0 462.2,198.5 470.0,194.0 477.2,189.5 483.8,185.0 489.7,180.5 495.0,176.0 499.7,171.5 503.8,167.0 507.2,162.5 510.0,158.0 512.2,153.5 513.8,149.0 514.7,144.5 515.0,140.0 514.7,135.5 513.8,131.0 512.2,126.5 510.0,122.0 507.2,117.5 503.8,113.0 499.7,108.5 495.0,104.0 489.7,99.5 483.8,95.0 477.2,90.5 470.0,86.0 462.2,81.5 453.8,77.0 444.7,72.5 435.0,68.0 424.7,63.5 413.8,59.0 402.2,54.5 390.0,50.0 390.0,50.0" class="ln fill-acc"/>
+<line x1="390.0" y1="36.0" x2="390.0" y2="244.0" class="ln thin"/>
+<line x1="148.0" y1="50.0" x2="386.0" y2="50.0" class="ln thin dash"/>
+<line x1="148.0" y1="230.0" x2="386.0" y2="230.0" class="ln thin dash"/>
+<line x1="483.8" y1="50.0" x2="483.8" y2="230.0" class="ln thin dash"/>
+<text x="479.8" y="248.0" class="lbl-sm" text-anchor="middle">τ<tspan dy="4" font-size="11">avg</tspan><tspan dy="-4"></tspan></text>
+<text x="523.0" y="145.0" class="lbl-acc">τ<tspan dy="4" font-size="11">max</tspan><tspan dy="-4"> = (4/3) τ</tspan><tspan dy="4" font-size="11">avg</tspan><tspan dy="-4"></tspan></text>
+<text x="398.0" y="46.0" class="lbl-sm">τ = 0</text>
+</svg>
+<figcaption>Fig. 3.11 — Circular section: parabolic shear stress, τ<sub>max</sub> = (4/3) τ<sub>avg</sub> at the N.A.</figcaption>
+</figure>
+
+    <h3 id="sm-u3-c-isec">12. Shear stress distribution: I-section</h3>
+    <p>Let B = flange width, D = overall depth, b = web thickness, d = depth of the web (D minus two flange thicknesses).</p>
+    <ul>
+      <li><b>In the flange</b> (d/2 ≤ y ≤ D/2): \( \tau = \frac{F}{2I}\left(\frac{D^2}{4} - y^2\right) \). At the bottom of the flange, \( \tau_f = \frac{F}{8I}(D^2 - d^2) \). This value is small, because the width B is large.</li>
+      <li><b>At the junction</b>, Aȳ is the same but the width suddenly falls from B to b. So τ jumps: \( \tau_w = \frac{B}{b}\,\tau_f = \frac{FB}{8Ib}(D^2 - d^2) \).</li>
+      <li><b>In the web</b>: \( \tau = \frac{F}{Ib}\left[\frac{B}{8}(D^2 - d^2) + \frac{b}{2}\left(\frac{d^2}{4} - y^2\right)\right] \), a parabola with its maximum at the N.A.:</li>
+    </ul>
+    <div class="formula">\[ \tau_{max} = \frac{F}{8Ib}\left[B(D^2 - d^2) + b\,d^2\right] \]</div>
+    <figure class="fig" id="sm-u3-f-taui">
+<svg viewBox="0 0 680 300" role="img" aria-label="Shear stress distribution across an I-section: small parabola in the flanges, sudden jump at the flange-web junction, maximum at the neutral axis">
+<defs><marker id="sm-u3-arw-taui" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="211.2,268.0 211.2,249.0 145.7,249.0 145.7,59.0 211.2,59.0 211.2,40.0 68.8,40.0 68.8,59.0 134.3,59.0 134.3,249.0 68.8,249.0 68.8,268.0" class="ln fill-hatch"/>
+<line x1="48.8" y1="154.0" x2="360.0" y2="154.0" class="ln hid"/>
+<polygon points="330.0,268.0 330.0,268.0 330.3,267.5 330.6,267.1 330.9,266.6 331.2,266.1 331.6,265.6 331.9,265.1 332.2,264.7 332.5,264.2 332.8,263.7 333.1,263.2 333.4,262.8 333.7,262.3 334.0,261.8 334.3,261.4 334.6,260.9 334.9,260.4 335.1,259.9 335.4,259.4 335.7,259.0 336.0,258.5 336.3,258.0 336.6,257.6 336.9,257.1 337.2,256.6 337.4,256.1 337.7,255.7 338.0,255.2 338.3,254.7 338.6,254.2 338.8,253.8 339.1,253.3 339.4,252.8 339.6,252.3 339.9,251.8 340.2,251.4 340.5,250.9 340.7,250.4 341.0,249.9 341.2,249.5 341.5,249.0 473.8,249.0 476.4,244.2 478.8,239.5 481.1,234.8 483.3,230.0 485.3,225.2 487.2,220.5 489.0,215.8 490.6,211.0 492.1,206.2 493.5,201.5 494.7,196.8 495.8,192.0 496.8,187.2 497.6,182.5 498.4,177.8 499.0,173.0 499.4,168.2 499.7,163.5 499.9,158.8 500.0,154.0 499.9,149.2 499.7,144.5 499.4,139.8 499.0,135.0 498.4,130.2 497.6,125.5 496.8,120.8 495.8,116.0 494.7,111.2 493.5,106.5 492.1,101.8 490.6,97.0 489.0,92.2 487.2,87.5 485.3,82.8 483.3,78.0 481.1,73.2 478.8,68.5 476.4,63.8 473.8,59.0 341.5,59.0 341.2,58.5 341.0,58.1 340.7,57.6 340.5,57.1 340.2,56.6 339.9,56.2 339.6,55.7 339.4,55.2 339.1,54.7 338.8,54.2 338.6,53.8 338.3,53.3 338.0,52.8 337.7,52.4 337.4,51.9 337.2,51.4 336.9,50.9 336.6,50.5 336.3,50.0 336.0,49.5 335.7,49.0 335.4,48.6 335.1,48.1 334.9,47.6 334.6,47.1 334.3,46.7 334.0,46.2 333.7,45.7 333.4,45.2 333.1,44.8 332.8,44.3 332.5,43.8 332.2,43.3 331.9,42.9 331.6,42.4 331.2,41.9 330.9,41.4 330.6,41.0 330.3,40.5 330.0,40.0 330.0,40.0" class="ln fill-acc"/>
+<line x1="330.0" y1="26.0" x2="330.0" y2="282.0" class="ln thin"/>
+<line x1="219.2" y1="268.0" x2="326.0" y2="268.0" class="ln thin dash"/>
+<line x1="219.2" y1="249.0" x2="326.0" y2="249.0" class="ln thin dash"/>
+<line x1="219.2" y1="249.0" x2="326.0" y2="249.0" class="ln thin dash"/>
+<line x1="219.2" y1="59.0" x2="326.0" y2="59.0" class="ln thin dash"/>
+<line x1="219.2" y1="59.0" x2="326.0" y2="59.0" class="ln thin dash"/>
+<line x1="219.2" y1="40.0" x2="326.0" y2="40.0" class="ln thin dash"/>
+<text x="338.0" y="34.0" class="lbl-sm">τ<tspan dy="4" font-size="11">f</tspan><tspan dy="-4"> in flange (small)</tspan></text>
+<text x="465.8" y="81.0" class="lbl-sm" text-anchor="end">τ<tspan dy="4" font-size="11">w</tspan><tspan dy="-4"> = (B/b) τ</tspan><tspan dy="4" font-size="11">f</tspan><tspan dy="-4"></tspan></text>
+<text x="508.0" y="159.0" class="lbl-acc">τ<tspan dy="4" font-size="11">max</tspan><tspan dy="-4"> at N.A.</tspan></text>
+<text x="407.7" y="53.0" class="lbl-sm" text-anchor="middle">jump</text>
+<line x1="69.0" y1="28.0" x2="211.0" y2="28.0" class="ln thin" marker-end="url(#sm-u3-arw-taui)" marker-start="url(#sm-u3-arw-taui)"/>
+<text x="140.0" y="22.0" class="lbl-sm" text-anchor="middle">B</text>
+<text x="154.0" y="188.0" class="lbl-sm">b</text>
+<text x="48.0" y="159.0" class="lbl-sm" text-anchor="end">N.A.</text>
+</svg>
+<figcaption>Fig. 3.12 — I-section: the flanges carry little shear; at the junction τ jumps by the ratio B/b; the web carries almost all the shear force.</figcaption>
+</figure>
+    <p>The web carries about 95 % of the shear force, and the shear stress in the web is almost uniform. So a quick check is \( \tau \approx F/(D\,b) \). The flanges carry the bending moment; the web carries the shear force.</p>
+
+    <h3 id="sm-u3-c-tsec">13. Shear stress distribution: T-section</h3>
+    <p>Find the centroid and I first (Section 5). Then find τ at four levels: top of the flange (0), bottom of the flange (in the flange width B), top of the web (same Aȳ, width b, so it jumps by B/b), and the N.A. (maximum). Below the N.A., τ falls to zero at the bottom of the web along a parabola.</p>
+    <figure class="fig" id="sm-u3-f-taut">
+<svg viewBox="0 0 680 310" role="img" aria-label="Shear stress distribution across a T-section: jump at the flange-web junction and maximum at the neutral axis, which is inside the web">
+<defs><marker id="sm-u3-arw-taut" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="143.5,270.0 143.5,108.0 211.0,108.0 211.0,81.0 49.0,81.0 49.0,108.0 116.5,108.0 116.5,270.0" class="ln fill-hatch"/>
+<line x1="29.0" y1="141.8" x2="350.0" y2="141.8" class="ln hid"/>
+<polygon points="320.0,270.0 320.0,270.0 329.9,265.9 339.6,261.9 348.9,257.9 357.9,253.8 366.5,249.8 374.9,245.7 382.9,241.7 390.6,237.6 398.0,233.6 405.1,229.5 411.9,225.4 418.3,221.4 424.4,217.3 430.2,213.3 435.7,209.2 440.8,205.2 445.7,201.1 450.2,197.1 454.4,193.1 458.3,189.0 461.8,184.9 465.1,180.9 468.0,176.8 470.6,172.8 472.9,168.8 474.9,164.7 476.5,160.6 477.9,156.6 478.9,152.6 479.6,148.5 479.9,144.4 480.0,140.4 479.7,136.3 479.1,132.3 478.2,128.2 477.0,124.2 475.5,120.1 473.6,116.1 471.4,112.0 468.9,108.0 344.8,108.0 344.4,107.3 343.9,106.6 343.5,106.0 343.0,105.3 342.5,104.6 342.0,103.9 341.5,103.3 341.0,102.6 340.5,101.9 339.9,101.2 339.4,100.6 338.9,99.9 338.3,99.2 337.7,98.5 337.2,97.9 336.6,97.2 336.0,96.5 335.4,95.8 334.8,95.2 334.2,94.5 333.6,93.8 332.9,93.1 332.3,92.5 331.6,91.8 331.0,91.1 330.3,90.4 329.6,89.8 328.9,89.1 328.2,88.4 327.5,87.8 326.8,87.1 326.1,86.4 325.4,85.7 324.6,85.0 323.9,84.4 323.1,83.7 322.4,83.0 321.6,82.3 320.8,81.7 320.0,81.0 320.0,81.0" class="ln fill-acc"/>
+<line x1="320.0" y1="67.0" x2="320.0" y2="284.0" class="ln thin"/>
+<text x="328.0" y="86.0" class="lbl-sm">0</text>
+<text x="352.8" y="102.0" class="lbl-sm">1.58 (flange)</text>
+<line x1="219.0" y1="270.0" x2="316.0" y2="270.0" class="ln thin dash"/>
+<line x1="219.0" y1="108.0" x2="316.0" y2="108.0" class="ln thin dash"/>
+<line x1="219.0" y1="108.0" x2="316.0" y2="108.0" class="ln thin dash"/>
+<line x1="219.0" y1="81.0" x2="316.0" y2="81.0" class="ln thin dash"/>
+<text x="460.9" y="130.0" class="lbl-sm" text-anchor="end">9.50 (web)</text>
+<text x="488.0" y="149.8" class="lbl-acc">10.21 max at N.A.</text>
+<text x="26.0" y="146.8" class="lbl-sm" text-anchor="end">N.A.</text>
+<line x1="160.0" y1="141.8" x2="160.0" y2="270.0" class="ln thin" marker-end="url(#sm-u3-arw-taut)" marker-start="url(#sm-u3-arw-taut)"/>
+<text x="166.0" y="211.8" class="lbl-sm">ȳ = 95</text>
+<text x="500.0" y="300.0" class="lbl-sm" text-anchor="middle">τ in N/mm² for F = 20 kN (section of Fig. 3.6a)</text>
+</svg>
+<figcaption>Fig. 3.13 — T-section: jump at the junction, maximum at the N.A. (inside the web), zero at the top and bottom.</figcaption>
+</figure>
+    <aside class="warn"><b>Where is the maximum?</b> The maximum is at the N.A., not at the junction. In a T-section the N.A. is usually inside the web, below the flange. Take Aȳ of the area above the N.A. (or below — both give the same value). For the T of Fig. 3.6a: Aȳ = 20 × 95 × 47.5 = 90 250 mm³.</aside>
+
+    <h3 id="sm-u3-c-summary">14. Summary of formulas</h3>
+    <div class="tbl"><table><thead><tr><th>Quantity</th><th>Formula</th></tr></thead><tbody>
+      <tr><td>Bending equation</td><td>\( M/I = \sigma/y = E/R \)</td></tr>
+      <tr><td>Maximum bending stress</td><td>\( \sigma_{max} = M/Z,\; Z = I/y_{max} \)</td></tr>
+      <tr><td>Moment of resistance</td><td>\( M_R = \sigma_{perm}\,Z \)</td></tr>
+      <tr><td>Maximum BM: SS beam, UDL w over L</td><td>\( wL^2/8 \) at mid-span</td></tr>
+      <tr><td>Maximum BM: SS beam, central load W</td><td>\( WL/4 \)</td></tr>
+      <tr><td>Maximum BM: cantilever, UDL / end load</td><td>\( wL^2/2 \) / \( WL \) at the fixed end</td></tr>
+      <tr><td>Shear stress at a level</td><td>\( \tau = FA\bar{y}/(Ib) \)</td></tr>
+      <tr><td>Rectangle</td><td>\( \tau_{max} = 1.5\,F/(bd) \)</td></tr>
+      <tr><td>Circle</td><td>\( \tau_{max} = (4/3)\,F/(\pi R^2) \)</td></tr>
+      <tr><td>I-section, web at N.A.</td><td>\( \tau_{max} = \frac{F}{8Ib}[B(D^2-d^2) + bd^2] \)</td></tr>
+    </tbody></table></div>
+    <dl class="cards">
+      <dt>Pure bending</dt><dd>Bending with constant moment and zero shear force; the beam carries bending stress only.</dd>
+      <dt>Neutral layer</dt><dd>The layer of a bent beam that does not change length; stress and strain are zero there.</dd>
+      <dt>Neutral axis</dt><dd>Line where the neutral layer cuts the cross-section; it passes through the centroid.</dd>
+      <dt>Moment of inertia I</dt><dd>Second moment of area about the N.A., I = ∫y² dA (mm⁴).</dd>
+      <dt>Section modulus Z</dt><dd>I / y<sub>max</sub> (mm³); M = σZ. Measures the bending strength of a section.</dd>
+      <dt>Moment of resistance</dt><dd>Moment of the internal bending stresses about the N.A.; maximum safe value σ<sub>perm</sub>·Z.</dd>
+      <dt>Flexural rigidity</dt><dd>EI, the resistance of a beam to bending: M = EI/R.</dd>
+      <dt>Parallel axis theorem</dt><dd>I<sub>XX</sub> = I<sub>G</sub> + A h².</dd>
+      <dt>Beam of uniform strength</dt><dd>Beam whose section varies so that the maximum bending stress is the same at every section.</dd>
+      <dt>Horizontal shear stress</dt><dd>Shear stress on planes parallel to the N.A., τ = FAȳ/(Ib); maximum at the N.A.</dd>
+      <dt>Economical section</dt><dd>Section with large Z for small area: material far from the N.A. (I, box, hollow).</dd>
+    </dl>
+
+    <div class="quiz" id="sm-u3-quiz">
+      <div class="mcq" data-answer="a"><p class="stem">The bending stress at the neutral axis of a beam is</p><ol class="opts"><li>zero</li><li>maximum</li><li>equal to the average stress</li><li>equal to the shear stress</li></ol><p class="why">σ = My/I and y = 0 at the N.A.</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">In simple bending, the neutral axis passes through</p><ol class="opts"><li>the top fibre</li><li>the point of maximum shear</li><li>the centroid of the section</li><li>the shear centre only for I-sections</li></ol><p class="why">Zero net axial force gives ∫y dA = 0, which is true only about the centroidal axis.</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">The section modulus of a rectangular section 100 mm wide and 200 mm deep is</p><ol class="opts"><li>3.33 × 10⁵ mm³</li><li>6.67 × 10⁵ mm³</li><li>6.67 × 10⁷ mm³</li><li>1.33 × 10⁶ mm³</li></ol><p class="why">Z = bd²/6 = 100 × 200²/6 = 6.67 × 10⁵ mm³.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">For a rectangular section, the maximum shear stress is</p><ol class="opts"><li>equal to the average shear stress</li><li>4/3 times the average</li><li>2 times the average</li><li>1.5 times the average</li></ol><p class="why">τ<sub>max</sub> = Fd²/(8I) = 1.5 F/(bd).</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">For a circular section, τ<sub>max</sub>/τ<sub>avg</sub> is</p><ol class="opts"><li>1.5</li><li>4/3</li><li>2</li><li>1</li></ol><p class="why">τ<sub>max</sub> = FR²/(3I) with I = πR⁴/4 gives (4/3)F/(πR²).</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">In an I-section beam, most of the shear force is carried by</p><ol class="opts"><li>the top flange</li><li>the bottom flange</li><li>the web</li><li>the flanges and web equally</li></ol><p class="why">The flanges are wide, so τ in them is small; the web carries about 95 % of F.</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">A T-section simply supported beam (flange at the top) carries a downward UDL. The maximum tensile stress occurs at</p><ol class="opts"><li>the bottom of the web</li><li>the top of the flange</li><li>the flange–web junction</li><li>the neutral axis</li></ol><p class="why">Sagging puts the bottom in tension, and the bottom is farther from the N.A., so σ<sub>t</sub> is the larger stress.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">A steel wire (E = 2 × 10⁵ N/mm²) of 2 mm diameter is bent to a radius of 1 m. The maximum bending stress is</p><ol class="opts"><li>100 N/mm²</li><li>400 N/mm²</li><li>2 N/mm²</li><li>200 N/mm²</li></ol><p class="why">σ = Ey/R = 2 × 10⁵ × 1/1000 = 200 N/mm².</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">For the same area, which section has the largest moment of resistance?</p><ol class="opts"><li>Solid circle</li><li>Square</li><li>I-section</li><li>Flat rectangle</li></ol><p class="why">The I-section keeps its material far from the N.A., so its Z is largest.</p></div>
+    </div>
+  </section>
+
+  <section class="part" id="sm-u3-theory" data-part="theory">
+    <h2>Theory questions</h2>
+
+    <article class="q" id="sm-u3-q1" data-marks="10">
+      <h3>Q1. With usual notations and assumptions, derive the bending equation M/I = σ/y = E/R.</h3>
+      <p class="q-src">Nov 2024 Q7(a) · Jun-Jul 2024 Q7(a) · Aug-Sep 2023 Q7(a) · Jan 2023 (CBCS) Q5(a) · Feb-Mar 2022 (CBCS) Q5(a) · Jan 2025 Q7(a) (relation between M and R)</p>
+      <p class="q-hint">The most repeated question of the unit. Assumptions (3 marks), element figure + strain (3 marks), force and moment equilibrium (4 marks).</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Simple (pure) bending.</b> A beam, or a part of it, is in simple bending when it carries a constant bending moment and no shear force. The stresses then caused are called bending (flexural) stresses.</p>
+        <p><b>Assumptions.</b></p>
+        <ol>
+          <li>The material is homogeneous and isotropic and obeys Hooke's law; stresses are within the elastic limit.</li>
+          <li>E is the same in tension and compression.</li>
+          <li>The beam is initially straight and each layer expands or contracts freely, independent of the layers above and below.</li>
+          <li>Plane transverse sections remain plane after bending.</li>
+          <li>The radius of curvature is large compared with the section dimensions.</li>
+          <li>The section is symmetrical about the plane of bending, and the beam is in pure bending.</li>
+        </ol>
+        <figure class="fig" id="sm-u3-f-element-q1">
+<svg viewBox="0 0 690 380" role="img" aria-label="Small beam element before and after bending, showing the neutral layer, a layer at distance y and the radius of curvature R">
+<defs><marker id="sm-u3-arw-element-q1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70.0" y="90.0" width="180.0" height="150.0" class="ln fill-soft"/>
+<line x1="50.0" y1="160.0" x2="270.0" y2="160.0" class="ln hid"/>
+<line x1="70.0" y1="205.0" x2="250.0" y2="205.0" class="ln acc"/>
+<text x="62.0" y="95.0" class="lbl-b" text-anchor="end">A</text>
+<text x="258.0" y="95.0" class="lbl-b">B</text>
+<text x="62.0" y="245.0" class="lbl-b" text-anchor="end">C</text>
+<text x="258.0" y="245.0" class="lbl-b">D</text>
+<text x="46.0" y="165.0" class="lbl-b" text-anchor="end">E</text>
+<text x="274.0" y="165.0" class="lbl-b">F</text>
+<text x="62.0" y="210.0" class="lbl-b" text-anchor="end">G</text>
+<text x="258.0" y="210.0" class="lbl-b">H</text>
+<text x="160.0" y="152.0" class="lbl-sm" text-anchor="middle">neutral layer</text>
+<line x1="220.0" y1="160.0" x2="220.0" y2="205.0" class="ln thin" marker-end="url(#sm-u3-arw-element-q1)" marker-start="url(#sm-u3-arw-element-q1)"/>
+<text x="210.0" y="187.5" class="lbl-sm" text-anchor="end">y</text>
+<line x1="70.0" y1="262.0" x2="250.0" y2="262.0" class="ln thin" marker-end="url(#sm-u3-arw-element-q1)" marker-start="url(#sm-u3-arw-element-q1)"/>
+<text x="160.0" y="280.0" class="lbl-sm" text-anchor="middle">δx</text>
+<text x="160.0" y="360.0" class="lbl" text-anchor="middle">(a) Before bending</text>
+<text x="70.0" y="78.0" class="lbl-sm" text-anchor="middle">1</text>
+<text x="250.0" y="78.0" class="lbl-sm" text-anchor="middle">2</text>
+<path d="M460.9,153.5 A120,120 0 0 0 539.1,153.5 L584.6,285.8 A260,260 0 0 1 415.4,285.8 Z" class="ln fill-soft"/>
+<path d="M438.1,219.6 A190,190 0 0 0 561.9,219.6" class="ln hid"/>
+<path d="M426.7,252.7 A225,225 0 0 0 573.3,252.7" class="ln acc"/>
+<line x1="500.0" y1="40.0" x2="460.9" y2="153.5" class="ln thin dash"/>
+<line x1="500.0" y1="40.0" x2="539.1" y2="153.5" class="ln thin dash"/>
+<circle cx="500.0" cy="40.0" r="3.0" class="solid"/>
+<text x="510.0" y="42.0" class="lbl-b">O</text>
+<path d="M485.3,82.5 A45,45 0 0 0 514.7,82.5" class="ln thin"/>
+<text x="493.0" y="106.0" class="lbl" text-anchor="end">θ</text>
+<text x="452.9" y="158.5" class="lbl-b" text-anchor="end">A′</text>
+<text x="547.1" y="158.5" class="lbl-b">B′</text>
+<text x="407.4" y="290.8" class="lbl-b" text-anchor="end">C′</text>
+<text x="592.6" y="290.8" class="lbl-b">D′</text>
+<text x="430.1" y="224.6" class="lbl-b" text-anchor="end">E′</text>
+<text x="569.9" y="224.6" class="lbl-b">F′</text>
+<text x="418.7" y="257.7" class="lbl-b" text-anchor="end">G′</text>
+<text x="581.3" y="257.7" class="lbl-b">H′</text>
+<line x1="500.0" y1="44.0" x2="500.0" y2="230.0" class="ln thin" marker-end="url(#sm-u3-arw-element-q1)"/>
+<text x="508.0" y="190.0" class="lbl-b">R</text>
+<line x1="534.0" y1="228.1" x2="538.0" y2="260.6" class="ln thin" marker-end="url(#sm-u3-arw-element-q1)" marker-start="url(#sm-u3-arw-element-q1)"/>
+<text x="546.0" y="254.0" class="lbl">y</text>
+<text x="500.0" y="360.0" class="lbl" text-anchor="middle">(b) After bending</text>
+</svg>
+<figcaption>Fig. Q1.1 — Beam element before and after bending.</figcaption>
+</figure>
+        <p><b>Strain.</b> Let AB, CD be the top and bottom layers, EF the neutral layer and GH a layer at distance y below it, in an element of length δx. After bending, the element subtends angle θ at the centre of curvature O and the neutral layer has radius R.</p>
+        <ul>
+          <li>Length of the neutral layer: \( E'F' = EF = R\theta = \delta x \) (no change).</li>
+          <li>Final length of GH: \( G'H' = (R+y)\theta \). Original length: \( GH = R\theta \).</li>
+          <li>Strain: \( \varepsilon = \frac{(R+y)\theta - R\theta}{R\theta} = \frac{y}{R} \).</li>
+        </ul>
+        <p><b>Stress.</b> By Hooke's law, \( \sigma = E\varepsilon = E\,\frac{y}{R} \), so</p>
+        <div class="formula">\[ \frac{\sigma}{y} = \frac{E}{R} \quad \text{(i)} \]</div>
+        <p>Stress is proportional to y: zero at the neutral axis and maximum at the extreme fibres.</p>
+        <figure class="fig" id="sm-u3-f-strainstress-q1">
+<svg viewBox="0 0 680 300" role="img" aria-label="Beam cross-section with neutral axis and strip dA, linear strain distribution and linear bending stress distribution">
+<defs><marker id="sm-u3-arw-strainstress-q1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60.0" y="50.0" width="100.0" height="180.0" class="ln fill-soft"/>
+<rect x="60.0" y="178.0" width="100.0" height="10.0" class="ln fill-acc"/>
+<line x1="40.0" y1="140.0" x2="620.0" y2="140.0" class="ln hid"/>
+<text x="34.0" y="145.0" class="lbl-b" text-anchor="end">N</text>
+<text x="632.0" y="145.0" class="lbl-b">A</text>
+<text x="168.0" y="189.0" class="lbl-sm">dA</text>
+<line x1="85.0" y1="140.0" x2="85.0" y2="183.0" class="ln thin" marker-end="url(#sm-u3-arw-strainstress-q1)" marker-start="url(#sm-u3-arw-strainstress-q1)"/>
+<text x="92.0" y="168.0" class="lbl-sm">y</text>
+<text x="110.0" y="270.0" class="lbl" text-anchor="middle">Section</text>
+<line x1="330.0" y1="40.0" x2="330.0" y2="240.0" class="ln thin"/>
+<polygon points="330.0,140.0 275.0,50.0 330.0,50.0" class="ln fill-acc2"/>
+<polygon points="330.0,140.0 385.0,230.0 330.0,230.0" class="ln fill-acc"/>
+<text x="269.0" y="55.0" class="lbl-sm" text-anchor="end">ε<tspan dy="4" font-size="11">c</tspan><tspan dy="-4"></tspan></text>
+<text x="391.0" y="235.0" class="lbl-sm">ε<tspan dy="4" font-size="11">t</tspan><tspan dy="-4"></tspan></text>
+<text x="280.0" y="95.0" class="lbl-sm" text-anchor="end">Compression</text>
+<text x="380.0" y="190.0" class="lbl-sm">Tension</text>
+<text x="330.0" y="270.0" class="lbl" text-anchor="middle">Strain  ε = y / R</text>
+<line x1="530.0" y1="40.0" x2="530.0" y2="240.0" class="ln thin"/>
+<polygon points="530.0,140.0 465.0,50.0 530.0,50.0" class="ln fill-acc2"/>
+<polygon points="530.0,140.0 595.0,230.0 530.0,230.0" class="ln fill-acc"/>
+<text x="459.0" y="55.0" class="lbl-sm" text-anchor="end">σ<tspan dy="4" font-size="11">c</tspan><tspan dy="-4"> (max)</tspan></text>
+<text x="601.0" y="235.0" class="lbl-sm">σ<tspan dy="4" font-size="11">t</tspan><tspan dy="-4"> (max)</tspan></text>
+<text x="530.0" y="270.0" class="lbl" text-anchor="middle">Stress  σ = E y / R</text>
+</svg>
+<figcaption>Fig. Q1.2 — Linear strain and stress distribution across the depth.</figcaption>
+</figure>
+        <p><b>Position of the neutral axis.</b> Force on a strip dA at distance y: \( dF = \sigma\,dA = \frac{E}{R}\,y\,dA \). For pure bending the resultant axial force is zero: \( \frac{E}{R}\int y\,dA = 0 \Rightarrow \int y\,dA = A\bar{y} = 0 \). So ȳ = 0: the neutral axis passes through the centroid of the section.</p>
+        <p><b>Moment of resistance.</b> Moment of dF about the N.A.: \( dM = \frac{E}{R}\,y^2\,dA \). Total moment of resistance:</p>
+        <div class="formula">\[ M = \frac{E}{R}\int y^2\,dA = \frac{E}{R}\,I \;\Rightarrow\; \frac{M}{I} = \frac{E}{R} \quad \text{(ii)} \]</div>
+        <p>From (i) and (ii), the bending equation is</p>
+        <div class="formula">\[ \frac{M}{I} = \frac{\sigma}{y} = \frac{E}{R} \]<p class="where">M = bending moment, I = moment of inertia of the section about the N.A., σ = bending stress at distance y from the N.A., E = Young's modulus, R = radius of curvature of the neutral layer.</p></div>
+        <p><b>Conclusion.</b> σ<sub>max</sub> = M/Z, where Z = I/y<sub>max</sub> is the section modulus. EI is the flexural rigidity: for a given M, a larger EI gives a larger R (less bending).</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u3-q2" data-marks="10">
+      <h3>Q2. Explain bending stress. Show that the neutral axis passes through the centroid. Define section modulus and moment of resistance, and find the section modulus of rectangular, circular and hollow circular sections. What are the different types of beams?</h3>
+      <p class="q-src">Mar-Apr 2021 (CBCS) Q5(a) · Mar-Apr 2021 (CBCS) Q1 (section modulus; types of beams) · Jan 2023 (CBCS) Q1 (section modulus; classification of beams)</p>
+      <p class="q-hint">Definitions + the ∫y dA = 0 proof + three Z formulas + the beam sketches. Each part is a short answer in Q1 of the paper.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Bending stress.</b> When a beam bends under load, the layers on the concave side shorten and those on the convex side lengthen. The resulting normal stresses on the cross-section are called bending stresses. They vary linearly from zero at the neutral axis to a maximum at the extreme fibres: σ = My/I. For a sagging moment the top is in compression and the bottom in tension.</p>
+        <p><b>Neutral axis passes through the centroid.</b> The bending stress at distance y is σ = Ey/R. The force on a strip dA is (E/R) y dA. In pure bending there is no axial load, so Σ forces = (E/R)∫y dA = 0. Since E/R ≠ 0, ∫y dA = 0. The first moment of area is zero only about an axis through the centroid. Hence the neutral axis passes through the centroid.</p>
+        <p><b>Section modulus.</b> The ratio of the moment of inertia of a section about its neutral axis to the distance of the extreme fibre from the neutral axis: Z = I/y<sub>max</sub>. Unit mm³. Then M = σ<sub>max</sub>Z.</p>
+        <p><b>Moment of resistance.</b> The moment of all internal bending forces about the neutral axis. It balances the external bending moment. Its maximum safe value is M<sub>R</sub> = σ<sub>perm</sub> × Z.</p>
+        <ul>
+          <li><b>Rectangle b × d:</b> I = bd³/12, y<sub>max</sub> = d/2, so \( Z = \frac{bd^3/12}{d/2} = \frac{bd^2}{6} \).</li>
+          <li><b>Solid circle d:</b> I = πd⁴/64, y<sub>max</sub> = d/2, so \( Z = \frac{\pi d^3}{32} \).</li>
+          <li><b>Hollow circle D, d:</b> I = π(D⁴ − d⁴)/64, y<sub>max</sub> = D/2, so \( Z = \frac{\pi(D^4 - d^4)}{32D} \).</li>
+        </ul>
+        <p><b>Types of beams</b> (by support):</p>
+        <figure class="fig" id="sm-u3-f-beams-q2">
+<svg viewBox="0 0 690 330" role="img" aria-label="Six types of beams: cantilever, simply supported, overhanging, fixed, continuous and propped cantilever">
+<defs><marker id="sm-u3-arw-beams-q2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="31.0" y="68.0" width="14.0" height="64.0" class="ln fill-hatch"/>
+<rect x="45.0" y="95.0" width="160.0" height="10.0" class="ln fill-soft"/>
+<line x1="200.0" y1="52.0" x2="200.0" y2="93.0" class="ln" marker-end="url(#sm-u3-arw-beams-q2)"/>
+<text x="200.0" y="46.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="120.0" y="162.0" class="lbl" text-anchor="middle">(a) Cantilever</text>
+<rect x="270.0" y="95.0" width="170.0" height="10.0" class="ln fill-soft"/>
+<polygon points="280.0,105.0 269.0,124.0 291.0,124.0" class="ln fill-soft"/>
+<rect x="264.0" y="124.0" width="32.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="430.0,105.0 420.0,119.0 440.0,119.0" class="ln fill-soft"/>
+<circle cx="425.0" cy="123.0" r="4.0" class="ln"/>
+<circle cx="435.0" cy="123.0" r="4.0" class="ln"/>
+<line x1="414.0" y1="128.0" x2="446.0" y2="128.0" class="ln"/>
+<line x1="355.0" y1="52.0" x2="355.0" y2="93.0" class="ln" marker-end="url(#sm-u3-arw-beams-q2)"/>
+<text x="355.0" y="46.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="355.0" y="162.0" class="lbl" text-anchor="middle">(b) Simply supported</text>
+<rect x="490.0" y="95.0" width="190.0" height="10.0" class="ln fill-soft"/>
+<polygon points="515.0,105.0 504.0,124.0 526.0,124.0" class="ln fill-soft"/>
+<rect x="499.0" y="124.0" width="32.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="625.0,105.0 615.0,119.0 635.0,119.0" class="ln fill-soft"/>
+<circle cx="620.0" cy="123.0" r="4.0" class="ln"/>
+<circle cx="630.0" cy="123.0" r="4.0" class="ln"/>
+<line x1="609.0" y1="128.0" x2="641.0" y2="128.0" class="ln"/>
+<line x1="675.0" y1="52.0" x2="675.0" y2="93.0" class="ln" marker-end="url(#sm-u3-arw-beams-q2)"/>
+<text x="675.0" y="46.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="585.0" y="162.0" class="lbl" text-anchor="middle">(c) Overhanging</text>
+<rect x="31.0" y="218.0" width="14.0" height="64.0" class="ln fill-hatch"/>
+<rect x="205.0" y="218.0" width="14.0" height="64.0" class="ln fill-hatch"/>
+<rect x="45.0" y="245.0" width="160.0" height="10.0" class="ln fill-soft"/>
+<line x1="125.0" y1="202.0" x2="125.0" y2="243.0" class="ln" marker-end="url(#sm-u3-arw-beams-q2)"/>
+<text x="125.0" y="196.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="125.0" y="312.0" class="lbl" text-anchor="middle">(d) Fixed (built-in)</text>
+<rect x="265.0" y="245.0" width="180.0" height="10.0" class="ln fill-soft"/>
+<polygon points="275.0,255.0 264.0,274.0 286.0,274.0" class="ln fill-soft"/>
+<rect x="259.0" y="274.0" width="32.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="355.0,255.0 345.0,269.0 365.0,269.0" class="ln fill-soft"/>
+<circle cx="350.0" cy="273.0" r="4.0" class="ln"/>
+<circle cx="360.0" cy="273.0" r="4.0" class="ln"/>
+<line x1="339.0" y1="278.0" x2="371.0" y2="278.0" class="ln"/>
+<polygon points="435.0,255.0 425.0,269.0 445.0,269.0" class="ln fill-soft"/>
+<circle cx="430.0" cy="273.0" r="4.0" class="ln"/>
+<circle cx="440.0" cy="273.0" r="4.0" class="ln"/>
+<line x1="419.0" y1="278.0" x2="451.0" y2="278.0" class="ln"/>
+<line x1="315.0" y1="202.0" x2="315.0" y2="243.0" class="ln" marker-end="url(#sm-u3-arw-beams-q2)"/>
+<text x="315.0" y="196.0" class="lbl-sm" text-anchor="middle">W</text>
+<line x1="395.0" y1="202.0" x2="395.0" y2="243.0" class="ln" marker-end="url(#sm-u3-arw-beams-q2)"/>
+<text x="395.0" y="196.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="355.0" y="312.0" class="lbl" text-anchor="middle">(e) Continuous</text>
+<rect x="491.0" y="218.0" width="14.0" height="64.0" class="ln fill-hatch"/>
+<rect x="505.0" y="245.0" width="165.0" height="10.0" class="ln fill-soft"/>
+<polygon points="660.0,255.0 650.0,269.0 670.0,269.0" class="ln fill-soft"/>
+<circle cx="655.0" cy="273.0" r="4.0" class="ln"/>
+<circle cx="665.0" cy="273.0" r="4.0" class="ln"/>
+<line x1="644.0" y1="278.0" x2="676.0" y2="278.0" class="ln"/>
+<line x1="585.0" y1="202.0" x2="585.0" y2="243.0" class="ln" marker-end="url(#sm-u3-arw-beams-q2)"/>
+<text x="585.0" y="196.0" class="lbl-sm" text-anchor="middle">W</text>
+<text x="585.0" y="312.0" class="lbl" text-anchor="middle">(f) Propped cantilever</text>
+</svg>
+<figcaption>Fig. Q2.1 — Types of beams.</figcaption>
+</figure>
+        <ul>
+          <li>Cantilever: fixed at one end, free at the other.</li>
+          <li>Simply supported: hinge at one end and roller at the other.</li>
+          <li>Overhanging: one or both ends extend beyond the supports.</li>
+          <li>Fixed (built-in): both ends fixed.</li>
+          <li>Continuous: more than two supports.</li>
+          <li>Propped cantilever: cantilever with a prop at the free end.</li>
+        </ul>
+        <p>The first three are statically determinate; the last three are statically indeterminate.</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u3-q3" data-marks="10">
+      <h3>Q3. Derive an expression for the horizontal (longitudinal) shear stress in a beam with usual notations.</h3>
+      <p class="q-src">Nov-Dec 2025 Q7(a)</p>
+      <p class="q-hint">Element between two sections, forces F₁ and F₂ on the part above the level, equilibrium, then dM/dx = F. End with τ = FAȳ/(Ib) and define every symbol.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Introduction.</b> When the shear force is not zero, the bending moment changes along the beam. The bending stresses on two adjacent sections are then unequal, and the difference must be balanced by a horizontal shear stress on the layers of the beam.</p>
+        <figure class="fig" id="sm-u3-f-shearderiv-q3">
+<svg viewBox="0 0 690 330" role="img" aria-label="Beam element of length dx between two sections with moments M and M plus dM, and the shaded area above a level y used to derive the shear stress formula">
+<defs><marker id="sm-u3-arw-shearderiv-q3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="110.0" y="60.0" width="190.0" height="180.0" class="ln fill-soft"/>
+<rect x="110.0" y="60.0" width="190.0" height="45.0" class="ln fill-acc"/>
+<line x1="95.0" y1="150.0" x2="315.0" y2="150.0" class="ln hid"/>
+<text x="320.0" y="155.0" class="lbl-sm">N.A.</text>
+<line x1="110.0" y1="105.0" x2="300.0" y2="105.0" class="ln acc thick"/>
+<line x1="65.0" y1="82.0" x2="107.0" y2="82.0" class="ln" marker-end="url(#sm-u3-arw-shearderiv-q3)"/>
+<text x="60.0" y="87.0" class="lbl" text-anchor="end">F₁</text>
+<line x1="345.0" y1="82.0" x2="303.0" y2="82.0" class="ln" marker-end="url(#sm-u3-arw-shearderiv-q3)"/>
+<text x="350.0" y="87.0" class="lbl">F₂</text>
+<line x1="170.0" y1="97.0" x2="240.0" y2="97.0" class="ln acc" marker-end="url(#sm-u3-arw-shearderiv-q3)"/>
+<text x="205.0" y="85.0" class="lbl-acc" text-anchor="middle">τ b dx</text>
+<line x1="128.0" y1="150.0" x2="128.0" y2="105.0" class="ln thin" marker-end="url(#sm-u3-arw-shearderiv-q3)" marker-start="url(#sm-u3-arw-shearderiv-q3)"/>
+<text x="134.0" y="133.0" class="lbl">y</text>
+<text x="102.0" y="50.0" class="lbl-sm" text-anchor="middle">1</text>
+<text x="308.0" y="50.0" class="lbl-sm" text-anchor="middle">2</text>
+<text x="102.0" y="262.0" class="lbl-sm" text-anchor="end">M, F</text>
+<text x="308.0" y="262.0" class="lbl-sm">M + dM, F + dF</text>
+<line x1="110.0" y1="280.0" x2="300.0" y2="280.0" class="ln thin" marker-end="url(#sm-u3-arw-shearderiv-q3)" marker-start="url(#sm-u3-arw-shearderiv-q3)"/>
+<text x="205.0" y="298.0" class="lbl-sm" text-anchor="middle">dx</text>
+<text x="205.0" y="320.0" class="lbl-sm" text-anchor="middle">(a) Element between sections 1 and 2</text>
+<rect x="470.0" y="60.0" width="120.0" height="180.0" class="ln fill-hatch"/>
+<rect x="470.0" y="60.0" width="120.0" height="45.0" class="ln fill-acc"/>
+<line x1="450.0" y1="150.0" x2="610.0" y2="150.0" class="ln hid"/>
+<text x="614.0" y="155.0" class="lbl-sm">N.A.</text>
+<line x1="470.0" y1="105.0" x2="590.0" y2="105.0" class="ln acc thick"/>
+<circle cx="530.0" cy="82.5" r="3.5" class="solid"/>
+<text x="538.0" y="87.5" class="lbl-sm">area A</text>
+<line x1="456.0" y1="150.0" x2="456.0" y2="105.0" class="ln thin" marker-end="url(#sm-u3-arw-shearderiv-q3)" marker-start="url(#sm-u3-arw-shearderiv-q3)"/>
+<text x="450.0" y="133.0" class="lbl" text-anchor="end">y</text>
+<line x1="604.0" y1="150.0" x2="604.0" y2="82.5" class="ln thin" marker-end="url(#sm-u3-arw-shearderiv-q3)" marker-start="url(#sm-u3-arw-shearderiv-q3)"/>
+<text x="610.0" y="118.0" class="lbl">ȳ</text>
+<line x1="470.0" y1="121.0" x2="590.0" y2="121.0" class="ln thin" marker-end="url(#sm-u3-arw-shearderiv-q3)" marker-start="url(#sm-u3-arw-shearderiv-q3)"/>
+<text x="530.0" y="139.0" class="lbl-sm" text-anchor="middle">b</text>
+<text x="530.0" y="320.0" class="lbl-sm" text-anchor="middle">(b) Cross-section</text>
+</svg>
+<figcaption>Fig. Q3.1 — Element and section used to derive the shear stress formula.</figcaption>
+</figure>
+        <p><b>Derivation.</b> Consider two sections 1 and 2 of a beam, at distance dx apart. The bending moment is M at section 1 and M + dM at section 2; the shear force is F. Consider the part of the element above the level EF, at distance y from the N.A. Let A = its cross-sectional area and ȳ = distance of its centroid from the N.A.</p>
+        <ol>
+          <li>Bending stress at distance y₁ on section 1: σ₁ = My₁/I. On section 2: σ₂ = (M + dM)y₁/I.</li>
+          <li>Total force on the shaded face at section 1: \( F_1 = \int \frac{M}{I}y_1\,dA = \frac{M}{I}A\bar{y} \).</li>
+          <li>Total force on the shaded face at section 2: \( F_2 = \frac{M + dM}{I}A\bar{y} \).</li>
+          <li>Unbalanced force: \( F_2 - F_1 = \frac{dM}{I}A\bar{y} \).</li>
+          <li>This is balanced by the shear stress τ on the horizontal face EF of area b·dx: \( \tau\,b\,dx = \frac{dM}{I}A\bar{y} \).</li>
+          <li>So \( \tau = \frac{dM}{dx}\,\frac{A\bar{y}}{Ib} \), and dM/dx = F (shear force).</li>
+        </ol>
+        <div class="formula">\[ \tau = \frac{F\,A\,\bar{y}}{I\,b} \]<p class="where">F = shear force at the section; A = area of the section above the level; ȳ = distance of the centroid of A from the N.A.; I = moment of inertia of the whole section about the N.A.; b = width of the section at the level.</p></div>
+        <p><b>Notes.</b> By complementary shear, the same τ acts on the cross-section at that level (vertical shear stress). τ = 0 at the top and bottom faces (A = 0). τ is usually maximum at the N.A., where Aȳ is maximum.</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u3-q4" data-marks="10">
+      <h3>Q4. With usual notations, prove that the maximum shear stress in a rectangular section is 50 % more than the average shear stress. Sketch the variation of shear stress along the depth.</h3>
+      <p class="q-src">Jan 2023 (CBCS) Q6(a)</p>
+      <p class="q-hint">Apply τ = FAȳ/(Ib) at a general level y, get the parabola, then put y = 0. Draw the parabola beside the section.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p>Consider a rectangular section of width b and depth d, with shear force F. The N.A. is at mid-depth, and I = bd³/12.</p>
+        <p><b>Shear stress at distance y from the N.A.</b></p>
+        <ul>
+          <li>Area above the level: \( A = b\left(\frac{d}{2} - y\right) \).</li>
+          <li>Distance of its centroid from the N.A.: \( \bar{y} = y + \frac{1}{2}\left(\frac{d}{2} - y\right) = \frac{1}{2}\left(\frac{d}{2} + y\right) \).</li>
+          <li>\( A\bar{y} = \frac{b}{2}\left(\frac{d^2}{4} - y^2\right) \), width at the level = b.</li>
+        </ul>
+        <div class="formula">\[ \tau = \frac{F A\bar{y}}{I b} = \frac{F}{2I}\left(\frac{d^2}{4} - y^2\right) \]</div>
+        <p>This is a parabola. At y = ± d/2 (top and bottom), τ = 0. At y = 0 (N.A.), τ is maximum:</p>
+        <div class="formula">\[ \tau_{max} = \frac{F d^2}{8I} = \frac{F d^2}{8 \times bd^3/12} = \frac{3}{2}\,\frac{F}{bd} \]</div>
+        <p>The average shear stress is \( \tau_{avg} = F/(bd) \). Therefore</p>
+        <div class="formula">\[ \tau_{max} = 1.5\,\tau_{avg} \]<p class="where">The maximum shear stress is 50 % more than the average shear stress. Hence proved.</p></div>
+        <figure class="fig" id="sm-u3-f-taurect-q4">
+<svg viewBox="0 0 660 290" role="img" aria-label="Shear stress distribution across a rectangular section: parabola with maximum 1.5 times the average at the neutral axis">
+<defs><marker id="sm-u3-arw-taurect-q4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="80.0" y="50.0" width="120.0" height="180.0" class="ln fill-hatch"/>
+<line x1="60.0" y1="140.0" x2="326.0" y2="140.0" class="ln hid"/>
+<text x="54.0" y="145.0" class="lbl-sm" text-anchor="end">N.A.</text>
+<line x1="80.0" y1="248.0" x2="200.0" y2="248.0" class="ln thin" marker-end="url(#sm-u3-arw-taurect-q4)" marker-start="url(#sm-u3-arw-taurect-q4)"/>
+<text x="140.0" y="266.0" class="lbl-sm" text-anchor="middle">b</text>
+<line x1="62.0" y1="50.0" x2="62.0" y2="128.0" class="ln thin" marker-end="url(#sm-u3-arw-taurect-q4)" marker-start="url(#sm-u3-arw-taurect-q4)"/>
+<text x="54.0" y="90.0" class="lbl-sm" text-anchor="end">d/2</text>
+<polygon points="330.0,230.0 330.0,230.0 344.6,225.5 358.5,221.0 371.6,216.5 384.0,212.0 395.6,207.5 406.5,203.0 416.6,198.5 426.0,194.0 434.6,189.5 442.5,185.0 449.6,180.5 456.0,176.0 461.6,171.5 466.5,167.0 470.6,162.5 474.0,158.0 476.6,153.5 478.5,149.0 479.6,144.5 480.0,140.0 479.6,135.5 478.5,131.0 476.6,126.5 474.0,122.0 470.6,117.5 466.5,113.0 461.6,108.5 456.0,104.0 449.6,99.5 442.5,95.0 434.6,90.5 426.0,86.0 416.6,81.5 406.5,77.0 395.6,72.5 384.0,68.0 371.6,63.5 358.5,59.0 344.6,54.5 330.0,50.0 330.0,50.0" class="ln fill-acc"/>
+<line x1="330.0" y1="36.0" x2="330.0" y2="244.0" class="ln thin"/>
+<line x1="208.0" y1="50.0" x2="326.0" y2="50.0" class="ln thin dash"/>
+<line x1="208.0" y1="230.0" x2="326.0" y2="230.0" class="ln thin dash"/>
+<line x1="430.0" y1="50.0" x2="430.0" y2="230.0" class="ln thin dash"/>
+<text x="426.0" y="248.0" class="lbl-sm" text-anchor="middle">τ<tspan dy="4" font-size="11">avg</tspan><tspan dy="-4"></tspan></text>
+<text x="488.0" y="132.0" class="lbl-acc">τ<tspan dy="4" font-size="11">max</tspan><tspan dy="-4"> = 1.5 τ</tspan><tspan dy="4" font-size="11">avg</tspan><tspan dy="-4"></tspan></text>
+<text x="338.0" y="46.0" class="lbl-sm">τ = 0</text>
+<text x="338.0" y="246.0" class="lbl-sm">τ = 0</text>
+</svg>
+<figcaption>Fig. Q4.1 — Shear stress distribution in a rectangular section.</figcaption>
+</figure>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u3-q5" data-marks="10">
+      <h3>Q5. Derive the relations for the shear stress distribution across the flange and web of an I-section beam, and sketch the distribution.</h3>
+      <p class="q-src">Mar-Apr 2021 (CBCS) Q6 · Feb-Mar 2022 (CBCS) Q6 · Nov-Dec 2025 Q7(b) (sketch)</p>
+      <p class="q-hint">Three results: τ in the flange, the jump at the junction (B/b), τ in the web and τ<sub>max</sub> at the N.A. The sketch must show the jump.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p>Let B = flange width, D = overall depth, b = web thickness, d = depth of web, F = shear force, I = moment of inertia about the N.A. (at mid-depth for a symmetrical I).</p>
+        <p><b>(a) Flange</b> (level at y, where d/2 ≤ y ≤ D/2). The area above is \( B(D/2 - y) \) with centroid at \( (D/2 + y)/2 \). Width = B. So</p>
+        <div class="formula">\[ \tau = \frac{F}{IB}\cdot B\left(\frac{D}{2}-y\right)\cdot\frac{1}{2}\left(\frac{D}{2}+y\right) = \frac{F}{2I}\left(\frac{D^2}{4} - y^2\right) \]</div>
+        <p>Parabolic, zero at the top (y = D/2). At the bottom of the flange (y = d/2): \( \tau_f = \frac{F}{8I}(D^2 - d^2) \).</p>
+        <p><b>(b) Junction.</b> Just inside the web, Aȳ is the same but the width is b instead of B:</p>
+        <div class="formula">\[ \tau_w = \frac{F B}{8 I b}(D^2 - d^2) = \frac{B}{b}\,\tau_f \]<p class="where">The shear stress jumps suddenly by the ratio B/b.</p></div>
+        <p><b>(c) Web</b> (level at y, y &lt; d/2). Aȳ = (flange) + (part of the web above the level):</p>
+        <div class="formula">\[ A\bar{y} = \frac{B}{8}(D^2 - d^2) + \frac{b}{2}\left(\frac{d^2}{4} - y^2\right) \]</div>
+        <div class="formula">\[ \tau = \frac{F}{Ib}\left[\frac{B}{8}(D^2 - d^2) + \frac{b}{2}\left(\frac{d^2}{4} - y^2\right)\right] \]</div>
+        <p>Parabolic in the web, maximum at the N.A. (y = 0):</p>
+        <div class="formula">\[ \tau_{max} = \frac{F}{8Ib}\left[B(D^2 - d^2) + b\,d^2\right] \]</div>
+        <figure class="fig" id="sm-u3-f-taui-q5">
+<svg viewBox="0 0 680 300" role="img" aria-label="Shear stress distribution across an I-section: small parabola in the flanges, sudden jump at the flange-web junction, maximum at the neutral axis">
+<defs><marker id="sm-u3-arw-taui-q5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="211.2,268.0 211.2,249.0 145.7,249.0 145.7,59.0 211.2,59.0 211.2,40.0 68.8,40.0 68.8,59.0 134.3,59.0 134.3,249.0 68.8,249.0 68.8,268.0" class="ln fill-hatch"/>
+<line x1="48.8" y1="154.0" x2="360.0" y2="154.0" class="ln hid"/>
+<polygon points="330.0,268.0 330.0,268.0 330.3,267.5 330.6,267.1 330.9,266.6 331.2,266.1 331.6,265.6 331.9,265.1 332.2,264.7 332.5,264.2 332.8,263.7 333.1,263.2 333.4,262.8 333.7,262.3 334.0,261.8 334.3,261.4 334.6,260.9 334.9,260.4 335.1,259.9 335.4,259.4 335.7,259.0 336.0,258.5 336.3,258.0 336.6,257.6 336.9,257.1 337.2,256.6 337.4,256.1 337.7,255.7 338.0,255.2 338.3,254.7 338.6,254.2 338.8,253.8 339.1,253.3 339.4,252.8 339.6,252.3 339.9,251.8 340.2,251.4 340.5,250.9 340.7,250.4 341.0,249.9 341.2,249.5 341.5,249.0 473.8,249.0 476.4,244.2 478.8,239.5 481.1,234.8 483.3,230.0 485.3,225.2 487.2,220.5 489.0,215.8 490.6,211.0 492.1,206.2 493.5,201.5 494.7,196.8 495.8,192.0 496.8,187.2 497.6,182.5 498.4,177.8 499.0,173.0 499.4,168.2 499.7,163.5 499.9,158.8 500.0,154.0 499.9,149.2 499.7,144.5 499.4,139.8 499.0,135.0 498.4,130.2 497.6,125.5 496.8,120.8 495.8,116.0 494.7,111.2 493.5,106.5 492.1,101.8 490.6,97.0 489.0,92.2 487.2,87.5 485.3,82.8 483.3,78.0 481.1,73.2 478.8,68.5 476.4,63.8 473.8,59.0 341.5,59.0 341.2,58.5 341.0,58.1 340.7,57.6 340.5,57.1 340.2,56.6 339.9,56.2 339.6,55.7 339.4,55.2 339.1,54.7 338.8,54.2 338.6,53.8 338.3,53.3 338.0,52.8 337.7,52.4 337.4,51.9 337.2,51.4 336.9,50.9 336.6,50.5 336.3,50.0 336.0,49.5 335.7,49.0 335.4,48.6 335.1,48.1 334.9,47.6 334.6,47.1 334.3,46.7 334.0,46.2 333.7,45.7 333.4,45.2 333.1,44.8 332.8,44.3 332.5,43.8 332.2,43.3 331.9,42.9 331.6,42.4 331.2,41.9 330.9,41.4 330.6,41.0 330.3,40.5 330.0,40.0 330.0,40.0" class="ln fill-acc"/>
+<line x1="330.0" y1="26.0" x2="330.0" y2="282.0" class="ln thin"/>
+<line x1="219.2" y1="268.0" x2="326.0" y2="268.0" class="ln thin dash"/>
+<line x1="219.2" y1="249.0" x2="326.0" y2="249.0" class="ln thin dash"/>
+<line x1="219.2" y1="249.0" x2="326.0" y2="249.0" class="ln thin dash"/>
+<line x1="219.2" y1="59.0" x2="326.0" y2="59.0" class="ln thin dash"/>
+<line x1="219.2" y1="59.0" x2="326.0" y2="59.0" class="ln thin dash"/>
+<line x1="219.2" y1="40.0" x2="326.0" y2="40.0" class="ln thin dash"/>
+<text x="338.0" y="34.0" class="lbl-sm">τ<tspan dy="4" font-size="11">f</tspan><tspan dy="-4"> in flange (small)</tspan></text>
+<text x="465.8" y="81.0" class="lbl-sm" text-anchor="end">τ<tspan dy="4" font-size="11">w</tspan><tspan dy="-4"> = (B/b) τ</tspan><tspan dy="4" font-size="11">f</tspan><tspan dy="-4"></tspan></text>
+<text x="508.0" y="159.0" class="lbl-acc">τ<tspan dy="4" font-size="11">max</tspan><tspan dy="-4"> at N.A.</tspan></text>
+<text x="407.7" y="53.0" class="lbl-sm" text-anchor="middle">jump</text>
+<line x1="69.0" y1="28.0" x2="211.0" y2="28.0" class="ln thin" marker-end="url(#sm-u3-arw-taui-q5)" marker-start="url(#sm-u3-arw-taui-q5)"/>
+<text x="140.0" y="22.0" class="lbl-sm" text-anchor="middle">B</text>
+<text x="154.0" y="188.0" class="lbl-sm">b</text>
+<text x="48.0" y="159.0" class="lbl-sm" text-anchor="end">N.A.</text>
+</svg>
+<figcaption>Fig. Q5.1 — Shear stress distribution in an I-section.</figcaption>
+</figure>
+        <p><b>Conclusions.</b> The flanges carry very little shear stress. The web carries nearly all the shear force, at an almost uniform stress. So in design the flanges resist the bending moment and the web resists the shear force.</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u3-q6" data-marks="10">
+      <h3>Q6. Show that the maximum shear stress in a circular section is 4/3 times the average shear stress. Also answer: (a) Where is the shear stress maximum in a beam? (b) What is pure bending? (c) What is a beam of uniform strength? (d) Why is an I-section preferred for beams?</h3>
+      <p class="q-src">Syllabus topic · Mar-Apr 2021 (CBCS) Q1 (shear stress at the N.A.) · Feb-Mar 2022 (CBCS) Q1 (pure bending; uniform beam strength)</p>
+      <p class="q-hint">The circle derivation (strip width 2√(R² − y²)) plus four 2-mark definitions.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p>Consider a circular section of radius R with shear force F. I = πR⁴/4. At a level y₁ from the N.A., the width is \( b_1 = 2\sqrt{R^2 - y_1^2} \).</p>
+        <p><b>First moment of the segment above level y.</b> Take a strip of thickness dy₁ at y₁: area = 2√(R² − y₁²) dy₁, moment = y₁ × area.</p>
+        <div class="formula">\[ A\bar{y} = \int_{y}^{R} 2\sqrt{R^2 - y_1^2}\;y_1\,dy_1 = \frac{2}{3}\left(R^2 - y^2\right)^{3/2} \]</div>
+        <p><b>Shear stress</b> with b = 2√(R² − y²):</p>
+        <div class="formula">\[ \tau = \frac{F}{I}\cdot\frac{\tfrac{2}{3}(R^2 - y^2)^{3/2}}{2\sqrt{R^2 - y^2}} = \frac{F}{3I}\left(R^2 - y^2\right) \]</div>
+        <p>A parabola: zero at y = ± R, maximum at y = 0:</p>
+        <div class="formula">\[ \tau_{max} = \frac{F R^2}{3I} = \frac{F R^2}{3\pi R^4/4} = \frac{4}{3}\,\frac{F}{\pi R^2} = \frac{4}{3}\,\tau_{avg} \]</div>
+        <figure class="fig" id="sm-u3-f-taucirc-q6">
+<svg viewBox="0 0 690 290" role="img" aria-label="Shear stress distribution across a circular section: parabola with maximum four-thirds of the average at the neutral axis">
+<defs><marker id="sm-u3-arw-taucirc-q6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<circle cx="140.0" cy="140.0" r="90.0" class="ln fill-hatch"/>
+<line x1="30.0" y1="140.0" x2="386.0" y2="140.0" class="ln hid"/>
+<text x="26.0" y="145.0" class="lbl-sm" text-anchor="end">N.A.</text>
+<rect x="65.2" y="86.0" width="149.7" height="8.0" class="ln fill-acc"/>
+<line x1="110.0" y1="140.0" x2="110.0" y2="94.0" class="ln thin" marker-end="url(#sm-u3-arw-taucirc-q6)" marker-start="url(#sm-u3-arw-taucirc-q6)"/>
+<text x="104.0" y="120.0" class="lbl" text-anchor="end">y</text>
+<text x="236.0" y="84.0" class="lbl-sm">b = 2√(R² − y²)</text>
+<line x1="50.0" y1="248.0" x2="230.0" y2="248.0" class="ln thin" marker-end="url(#sm-u3-arw-taucirc-q6)" marker-start="url(#sm-u3-arw-taucirc-q6)"/>
+<text x="140.0" y="266.0" class="lbl-sm" text-anchor="middle">d = 2R</text>
+<polygon points="390.0,230.0 390.0,230.0 402.2,225.5 413.8,221.0 424.7,216.5 435.0,212.0 444.7,207.5 453.8,203.0 462.2,198.5 470.0,194.0 477.2,189.5 483.8,185.0 489.7,180.5 495.0,176.0 499.7,171.5 503.8,167.0 507.2,162.5 510.0,158.0 512.2,153.5 513.8,149.0 514.7,144.5 515.0,140.0 514.7,135.5 513.8,131.0 512.2,126.5 510.0,122.0 507.2,117.5 503.8,113.0 499.7,108.5 495.0,104.0 489.7,99.5 483.8,95.0 477.2,90.5 470.0,86.0 462.2,81.5 453.8,77.0 444.7,72.5 435.0,68.0 424.7,63.5 413.8,59.0 402.2,54.5 390.0,50.0 390.0,50.0" class="ln fill-acc"/>
+<line x1="390.0" y1="36.0" x2="390.0" y2="244.0" class="ln thin"/>
+<line x1="148.0" y1="50.0" x2="386.0" y2="50.0" class="ln thin dash"/>
+<line x1="148.0" y1="230.0" x2="386.0" y2="230.0" class="ln thin dash"/>
+<line x1="483.8" y1="50.0" x2="483.8" y2="230.0" class="ln thin dash"/>
+<text x="479.8" y="248.0" class="lbl-sm" text-anchor="middle">τ<tspan dy="4" font-size="11">avg</tspan><tspan dy="-4"></tspan></text>
+<text x="523.0" y="145.0" class="lbl-acc">τ<tspan dy="4" font-size="11">max</tspan><tspan dy="-4"> = (4/3) τ</tspan><tspan dy="4" font-size="11">avg</tspan><tspan dy="-4"></tspan></text>
+<text x="398.0" y="46.0" class="lbl-sm">τ = 0</text>
+</svg>
+<figcaption>Fig. Q6.1 — Shear stress distribution in a circular section.</figcaption>
+</figure>
+        <p><b>(a)</b> The shear stress is maximum at the neutral axis (for rectangular, circular and I-sections) and zero at the extreme fibres. (For some shapes, such as a triangle, the maximum is a little away from the N.A.)</p>
+        <p><b>(b) Pure bending</b>: the state of a beam where the bending moment is constant and the shear force is zero, e.g. the middle part of a beam with two equal symmetrical loads. Only bending stresses act.</p>
+        <p><b>(c) Beam of uniform strength</b>: a beam whose cross-section varies along its length so that the maximum bending stress is the same at every section (e.g. leaf spring, tapered bracket).</p>
+        <p><b>(d) I-section</b>: bending stress is high far from the N.A. and low near it. The I-section puts most of its material in the flanges, far from the N.A., so it has a large Z (moment of resistance) for a small weight. The web carries the shear. It is the most economical section for bending.</p>
+      </details>
+    </article>
+  </section>
+
+  <section class="part" id="sm-u3-numericals" data-part="numericals">
+    <h2>Numericals</h2>
+    <p class="method"><b>Method — bending.</b> (1) Find the maximum bending moment M (wL²/8, WL/4, wL²/2, WL, or from the BMD) and convert to N·mm. (2) Find the centroid (N.A.) of the section. (3) Find I about the N.A. (parallel axis theorem). (4) Find y<sub>top</sub> and y<sub>bottom</sub>. (5) σ = My/I at each extreme fibre; say which is tension and which is compression. <b>Method — shear.</b> (1) Find F. (2) At each key level (top, flange bottom, web top, N.A.) find Aȳ of the area above. (3) τ = FAȳ/(Ib) with the width b at that level. (4) Sketch the distribution with the values.</p>
+
+    <article class="num" id="sm-u3-n1">
+      <h3>N1. A simply supported beam AB of span 4.2 m carries a uniformly distributed load of 6 kN/m over the whole span. The beam has a rectangular cross-section 145 mm wide and 245 mm deep. Find the maximum bending stress.</h3>
+      <p class="q-src">Based on Feb-Mar 2022 (CBCS) Q5(b)</p>
+      <ol class="steps">
+        <li>Maximum bending moment (at mid-span): \( M = \frac{wL^2}{8} = \frac{6 \times 4.2^2}{8} = 13.23 \text{ kN·m} = 13.23 \times 10^6 \text{ N·mm} \).</li>
+        <li>Moment of inertia: \( I = \frac{bd^3}{12} = \frac{145 \times 245^3}{12} = 177.70 \times 10^6 \text{ mm}^4 \); \( y_{max} = 245/2 = 122.5 \text{ mm} \).</li>
+        <li>Section modulus: \( Z = \frac{bd^2}{6} = \frac{145 \times 245^2}{6} = 1.4506 \times 10^6 \text{ mm}^3 \).</li>
+        <li>Maximum bending stress: \( \sigma_{max} = \frac{M}{Z} = \frac{13.23 \times 10^6}{1.4506 \times 10^6} = 9.12 \text{ N/mm}^2 \).</li>
+      </ol>
+      <p class="final">Answer: σ<sub>max</sub> = 9.12 N/mm² at mid-span — compression in the top fibre, tension in the bottom fibre</p>
+    </article>
+
+    <article class="num" id="sm-u3-n2">
+      <h3>N2. A beam of rectangular cross-section is to support a total uniformly distributed load of 20 kN over a simply supported span of 4 m. The depth of the section is twice the width, and the bending stress must not exceed 69.4 N/mm². Find the dimensions of the section. What change in the section is needed if the same load acts as a point load at the centre, with the same ratio of depth to width?</h3>
+      <p class="q-src">Based on Jan 2023 (CBCS) Q5(b)</p>
+      <aside class="note"><b>Data note.</b> The paper says "a load of 20 kN over a span of 4 m". Read as a total UDL W = 20 kN, it gives exactly b = 60 mm — so this is the intended reading. (If it were 20 kN/m, b would be 95.3 mm.)</aside>
+      <ol class="steps">
+        <li>Section modulus with d = 2b: \( Z = \frac{bd^2}{6} = \frac{b(2b)^2}{6} = \frac{2b^3}{3} \).</li>
+        <li>UDL case: \( M = \frac{WL}{8} = \frac{20\,000 \times 4000}{8} = 10 \times 10^6 \text{ N·mm} \).</li>
+        <li>\( M = \sigma Z \Rightarrow 10 \times 10^6 = 69.4 \times \frac{2b^3}{3} \Rightarrow b^3 = \frac{3 \times 10 \times 10^6}{2 \times 69.4} = 216\,138 \text{ mm}^3 \).</li>
+        <li>\( b = 60.0 \text{ mm}, \; d = 2b = 120 \text{ mm} \).</li>
+        <li>Point load at the centre: \( M = \frac{WL}{4} = \frac{20\,000 \times 4000}{4} = 20 \times 10^6 \text{ N·mm} \) (twice as large).</li>
+        <li>\( b^3 = \frac{3 \times 20 \times 10^6}{2 \times 69.4} = 432\,277 \text{ mm}^3 \Rightarrow b = 75.6 \text{ mm}, \; d = 151.2 \text{ mm} \).</li>
+      </ol>
+      <p class="final">Answer: UDL — 60 mm wide × 120 mm deep; central point load — 75.6 mm × 151.2 mm (each dimension × 2<sup>1/3</sup> = 1.26)</p>
+    </article>
+
+    <article class="num" id="sm-u3-n3">
+      <h3>N3. A T-section (flange 120 mm × 20 mm, web 20 mm thick × 120 mm deep, overall depth 140 mm) is used as a simply supported beam of span 4 m, flange at the top. It carries a uniformly distributed load of 8 kN/m over the whole span. Find the maximum tensile and compressive bending stresses.</h3>
+      <p class="q-src">Based on Nov 2024 Q7(b) · Mar-Apr 2021 (CBCS) Q5(b) (same type, 8.2 kN/m)</p>
+      <aside class="note"><b>Data note.</b> The figure is lost in the scan; the readable fragments show "120", "120" and a thickness near 20. This version uses the common textbook T: flange 120 × 20, web 20 × 120 (mm).</aside>
+      <figure class="fig" id="sm-u3-f-n3">
+<svg viewBox="0 0 690 320" role="img" aria-label="Simply supported beam of 4 m span with 8 kN/m UDL, its T-section and the bending stress diagram">
+<defs><marker id="sm-u3-arw-n3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="40.0" y="114.0" width="210.0" height="12.0" class="ln fill-soft"/>
+<polygon points="40.0,126.0 29.0,145.0 51.0,145.0" class="ln fill-soft"/>
+<rect x="24.0" y="145.0" width="32.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="250.0,126.0 240.0,141.0 260.0,141.0" class="ln fill-soft"/>
+<circle cx="245.0" cy="145.0" r="4.0" class="ln"/>
+<circle cx="255.0" cy="145.0" r="4.0" class="ln"/>
+<line x1="234.0" y1="150.0" x2="266.0" y2="150.0" class="ln"/>
+<rect x="40.0" y="94.0" width="210.0" height="16.0" class="ln fill-acc"/>
+<line x1="40.0" y1="94.0" x2="40.0" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)"/>
+<line x1="66.2" y1="94.0" x2="66.2" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)"/>
+<line x1="92.5" y1="94.0" x2="92.5" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)"/>
+<line x1="118.8" y1="94.0" x2="118.8" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)"/>
+<line x1="145.0" y1="94.0" x2="145.0" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)"/>
+<line x1="171.2" y1="94.0" x2="171.2" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)"/>
+<line x1="197.5" y1="94.0" x2="197.5" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)"/>
+<line x1="223.8" y1="94.0" x2="223.8" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)"/>
+<line x1="250.0" y1="94.0" x2="250.0" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)"/>
+<text x="145.0" y="86.0" class="lbl-sm" text-anchor="middle">8 kN/m</text>
+<line x1="40.0" y1="168.0" x2="250.0" y2="168.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)" marker-start="url(#sm-u3-arw-n3)"/>
+<text x="145.0" y="186.0" class="lbl-sm" text-anchor="middle">4 m</text>
+<polygon points="412.5,250.0 412.5,100.0 475.0,100.0 475.0,75.0 325.0,75.0 325.0,100.0 387.5,100.0 387.5,250.0" class="ln fill-hatch"/>
+<line x1="295.0" y1="131.2" x2="665.0" y2="131.2" class="ln hid"/>
+<line x1="325.0" y1="61.0" x2="475.0" y2="61.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)" marker-start="url(#sm-u3-arw-n3)"/>
+<text x="400.0" y="55.0" class="lbl-sm" text-anchor="middle">120</text>
+<line x1="310.0" y1="75.0" x2="310.0" y2="100.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)" marker-start="url(#sm-u3-arw-n3)"/>
+<text x="304.0" y="93.0" class="lbl-sm" text-anchor="end">20</text>
+<line x1="310.0" y1="100.0" x2="310.0" y2="250.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)" marker-start="url(#sm-u3-arw-n3)"/>
+<text x="304.0" y="200.0" class="lbl-sm" text-anchor="end">120</text>
+<line x1="387.5" y1="264.0" x2="412.5" y2="264.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)" marker-start="url(#sm-u3-arw-n3)"/>
+<text x="400.0" y="282.0" class="lbl-sm" text-anchor="middle">20</text>
+<line x1="430.0" y1="131.2" x2="430.0" y2="250.0" class="ln thin" marker-end="url(#sm-u3-arw-n3)" marker-start="url(#sm-u3-arw-n3)"/>
+<text x="436.0" y="220.0" class="lbl-acc">95</text>
+<line x1="600.0" y1="69.0" x2="600.0" y2="256.0" class="ln thin"/>
+<polygon points="600.0,131.2 565.8,75.0 600.0,75.0" class="ln fill-acc2"/>
+<polygon points="600.0,131.2 672.2,250.0 600.0,250.0" class="ln fill-acc"/>
+<text x="559.8" y="80.0" class="lbl-sm" text-anchor="end">81.4 C</text>
+<text x="604.0" y="270.0" class="lbl-sm">171.9 T</text>
+<text x="505.0" y="121.2" class="lbl-sm">N.A.</text>
+<text x="600.0" y="312.0" class="lbl-sm" text-anchor="middle">σ (N/mm²)</text>
+<text x="400.0" y="312.0" class="lbl-sm" text-anchor="middle">Section (mm)</text>
+</svg>
+<figcaption>Fig. N3 — T-section beam: loading, section and bending stress diagram (C = compression, T = tension).</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Areas and centroids from the bottom: flange \( a_1 = 120 \times 20 = 2400 \text{ mm}^2, \; y_1 = 120 + 10 = 130 \text{ mm} \); web \( a_2 = 20 \times 120 = 2400 \text{ mm}^2, \; y_2 = 60 \text{ mm} \).</li>
+        <li>Centroid: \( \bar{y} = \frac{2400 \times 130 + 2400 \times 60}{4800} = 95 \text{ mm} \) from the bottom; \( y_{top} = 140 - 95 = 45 \text{ mm} \).</li>
+        <li>Flange about the N.A.: \( \frac{120 \times 20^3}{12} + 2400 \times (130 - 95)^2 = 0.08 \times 10^6 + 2.94 \times 10^6 = 3.02 \times 10^6 \text{ mm}^4 \).</li>
+        <li>Web about the N.A.: \( \frac{20 \times 120^3}{12} + 2400 \times (95 - 60)^2 = 2.88 \times 10^6 + 2.94 \times 10^6 = 5.82 \times 10^6 \text{ mm}^4 \).</li>
+        <li>\( I = 3.02 \times 10^6 + 5.82 \times 10^6 = 8.84 \times 10^6 \text{ mm}^4 \).</li>
+        <li>Maximum bending moment: \( M = \frac{wL^2}{8} = \frac{8 \times 4^2}{8} = 16 \text{ kN·m} = 16 \times 10^6 \text{ N·mm} \) (sagging).</li>
+        <li>Top fibre (compression): \( \sigma_c = \frac{M\,y_{top}}{I} = \frac{16 \times 10^6 \times 45}{8.84 \times 10^6} = 81.4 \text{ N/mm}^2 \).</li>
+        <li>Bottom fibre (tension): \( \sigma_t = \frac{M\,y_{bottom}}{I} = \frac{16 \times 10^6 \times 95}{8.84 \times 10^6} = 171.9 \text{ N/mm}^2 \).</li>
+      </ol>
+      <p class="final">Answer: ȳ = 95 mm from the bottom, I = 8.84 × 10⁶ mm⁴; maximum compressive stress = 81.4 N/mm² (top), maximum tensile stress = 171.9 N/mm² (bottom), at mid-span</p>
+    </article>
+
+    <article class="num" id="sm-u3-n4">
+      <h3>N4. A simply supported beam of I-section carries a uniformly distributed load of 40 kN/m over its whole span of 10 m. The I-section has two flanges 200 mm × 20 mm and a web 360 mm deep × 10 mm thick (overall depth 400 mm). (a) Find the maximum bending stress. (b) Find the shear stress at the key levels of the section at the support, and sketch the shear stress distribution.</h3>
+      <p class="q-src">Based on Aug-Sep 2023 Q7(b) (part (b) added for practice of the I-section shear)</p>
+      <aside class="note"><b>Data note.</b> The figure is lost; the scan shows 200 mm, 20 mm, 20 mm and 360 mm. This version takes flanges 200 × 20 and a web 360 mm deep; the web thickness of 10 mm is an assumption (the "10" lines in the scan may be the marks column). The answer, 305 N/mm², is more than the yield stress of mild steel (about 250 N/mm²): with this loading the section is not safe, and a deeper section is needed.</aside>
+      <ol class="steps">
+        <li>By symmetry the N.A. is at mid-depth: \( y_{max} = 400/2 = 200 \text{ mm} \).</li>
+        <li>\( I = \frac{BD^3}{12} - \frac{(B-b)d^3}{12} = \frac{200 \times 400^3}{12} - \frac{190 \times 360^3}{12} = 1066.67 \times 10^6 - 738.72 \times 10^6 = 327.95 \times 10^6 \text{ mm}^4 \).</li>
+        <li>Maximum bending moment: \( M = \frac{wL^2}{8} = \frac{40 \times 10^2}{8} = 500 \text{ kN·m} = 500 \times 10^6 \text{ N·mm} \).</li>
+        <li>(a) \( \sigma_{max} = \frac{M\,y_{max}}{I} = \frac{500 \times 10^6 \times 200}{327.95 \times 10^6} = 304.9 \text{ N/mm}^2 \) (compression at the top, tension at the bottom).</li>
+        <li>(b) Shear force at the support: \( F = \frac{wL}{2} = \frac{40 \times 10}{2} = 200 \text{ kN} \).</li>
+        <li>Bottom of the top flange: \( A\bar{y} = 200 \times 20 \times 190 = 760\,000 \text{ mm}^3 \); in the flange (b = 200): \( \tau = \frac{200\,000 \times 760\,000}{327.95 \times 10^6 \times 200} = 2.317 \text{ N/mm}^2 \).</li>
+        <li>Top of the web (b = 10): \( \tau = 2.317 \times \frac{200}{10} = 46.3 \text{ N/mm}^2 \).</li>
+        <li>At the N.A.: \( A\bar{y} = 760\,000 + 10 \times 180 \times 90 = 922\,000 \text{ mm}^3 \); \( \tau_{max} = \frac{200\,000 \times 922\,000}{327.95 \times 10^6 \times 10} = 56.2 \text{ N/mm}^2 \).</li>
+      </ol>
+      <figure class="fig" id="sm-u3-f-n4">
+<svg viewBox="0 0 690 330" role="img" aria-label="I-section with 200 by 20 mm flanges and 360 by 10 mm web, with its shear stress distribution at the support">
+<defs><marker id="sm-u3-arw-n4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="202.0,290.0 202.0,277.6 143.1,277.6 143.1,54.4 202.0,54.4 202.0,42.0 78.0,42.0 78.0,54.4 136.9,54.4 136.9,277.6 78.0,277.6 78.0,290.0" class="ln fill-hatch"/>
+<line x1="58.0" y1="166.0" x2="390.0" y2="166.0" class="ln hid"/>
+<polygon points="360.0,290.0 360.0,290.0 360.2,289.7 360.4,289.4 360.6,289.1 360.7,288.8 360.9,288.4 361.1,288.1 361.3,287.8 361.5,287.5 361.6,287.2 361.8,286.9 362.0,286.6 362.2,286.3 362.4,286.0 362.5,285.7 362.7,285.4 362.9,285.0 363.1,284.7 363.2,284.4 363.4,284.1 363.6,283.8 363.8,283.5 363.9,283.2 364.1,282.9 364.3,282.6 364.5,282.2 364.6,281.9 364.8,281.6 365.0,281.3 365.2,281.0 365.3,280.7 365.5,280.4 365.7,280.1 365.8,279.8 366.0,279.5 366.2,279.1 366.3,278.8 366.5,278.5 366.7,278.2 366.8,277.9 367.0,277.6 500.1,277.6 503.0,272.0 505.8,266.4 508.4,260.9 510.9,255.3 513.2,249.7 515.4,244.1 517.4,238.5 519.2,233.0 521.0,227.4 522.5,221.8 524.0,216.2 525.2,210.6 526.3,205.1 527.3,199.5 528.1,193.9 528.8,188.3 529.3,182.7 529.7,177.2 529.9,171.6 530.0,166.0 529.9,160.4 529.7,154.8 529.3,149.3 528.8,143.7 528.1,138.1 527.3,132.5 526.3,126.9 525.2,121.4 524.0,115.8 522.5,110.2 521.0,104.6 519.2,99.0 517.4,93.5 515.4,87.9 513.2,82.3 510.9,76.7 508.4,71.1 505.8,65.6 503.0,60.0 500.1,54.4 367.0,54.4 366.8,54.1 366.7,53.8 366.5,53.5 366.3,53.2 366.2,52.8 366.0,52.5 365.8,52.2 365.7,51.9 365.5,51.6 365.3,51.3 365.2,51.0 365.0,50.7 364.8,50.4 364.6,50.1 364.5,49.8 364.3,49.4 364.1,49.1 363.9,48.8 363.8,48.5 363.6,48.2 363.4,47.9 363.2,47.6 363.1,47.3 362.9,47.0 362.7,46.7 362.5,46.3 362.4,46.0 362.2,45.7 362.0,45.4 361.8,45.1 361.6,44.8 361.5,44.5 361.3,44.2 361.1,43.9 360.9,43.6 360.7,43.2 360.6,42.9 360.4,42.6 360.2,42.3 360.0,42.0 360.0,42.0" class="ln fill-acc"/>
+<line x1="360.0" y1="28.0" x2="360.0" y2="304.0" class="ln thin"/>
+<text x="375.0" y="48.4" class="lbl-sm">2.32 (flange)</text>
+<line x1="210.0" y1="290.0" x2="356.0" y2="290.0" class="ln thin dash"/>
+<line x1="210.0" y1="277.6" x2="356.0" y2="277.6" class="ln thin dash"/>
+<line x1="210.0" y1="277.6" x2="356.0" y2="277.6" class="ln thin dash"/>
+<line x1="210.0" y1="54.4" x2="356.0" y2="54.4" class="ln thin dash"/>
+<line x1="210.0" y1="54.4" x2="356.0" y2="54.4" class="ln thin dash"/>
+<line x1="210.0" y1="42.0" x2="356.0" y2="42.0" class="ln thin dash"/>
+<text x="492.1" y="76.4" class="lbl-sm" text-anchor="end">46.3 (web)</text>
+<text x="538.0" y="171.0" class="lbl-acc">56.2 max</text>
+<line x1="78.0" y1="28.0" x2="202.0" y2="28.0" class="ln thin" marker-end="url(#sm-u3-arw-n4)" marker-start="url(#sm-u3-arw-n4)"/>
+<text x="140.0" y="22.0" class="lbl-sm" text-anchor="middle">200</text>
+<line x1="58.0" y1="42.0" x2="58.0" y2="290.0" class="ln thin" marker-end="url(#sm-u3-arw-n4)" marker-start="url(#sm-u3-arw-n4)"/>
+<text x="52.0" y="146.0" class="lbl-sm" text-anchor="end">400</text>
+<text x="150.0" y="206.0" class="lbl-sm">10</text>
+<text x="52.0" y="56.0" class="lbl-sm" text-anchor="end">20</text>
+<text x="500.0" y="320.0" class="lbl-sm" text-anchor="middle">τ in N/mm² for F = 200 kN</text>
+</svg>
+<figcaption>Fig. N4 — I-section (mm) and shear stress distribution at the support.</figcaption>
+</figure>
+      <p class="final">Answer: (a) σ<sub>max</sub> = 304.9 N/mm²; (b) τ = 0 (top), 2.32 N/mm² (flange at junction), 46.3 N/mm² (web at junction), 56.2 N/mm² (maximum, at N.A.)</p>
+    </article>
+
+    <article class="num" id="sm-u3-n5">
+      <h3>N5. A beam of I-section 200 mm × 300 mm has a web thickness of 10 mm and a flange thickness of 10 mm. It carries a shear force of 10 kN at a section. Sketch the shear stress distribution across the section.</h3>
+      <p class="q-src">Nov-Dec 2025 Q7(b) · Feb-Mar 2022 (CBCS) Q6 (same type)</p>
+      <aside class="note"><b>Data note.</b> "200 mm × 300 mm" is read as flange width B = 200 mm and overall depth D = 300 mm, so the web depth d = 300 − 2 × 10 = 280 mm.</aside>
+      <ol class="steps">
+        <li>\( I = \frac{200 \times 300^3}{12} - \frac{190 \times 280^3}{12} = 450 \times 10^6 - 347.57 \times 10^6 = 102.43 \times 10^6 \text{ mm}^4 \).</li>
+        <li>Top fibre: A = 0, so τ = 0.</li>
+        <li>Bottom of the flange: \( A\bar{y} = 200 \times 10 \times 145 = 290\,000 \text{ mm}^3 \); \( \tau_f = \frac{10\,000 \times 290\,000}{102.43 \times 10^6 \times 200} = 0.142 \text{ N/mm}^2 \).</li>
+        <li>Top of the web (b = 10 mm): \( \tau_w = \frac{10\,000 \times 290\,000}{102.43 \times 10^6 \times 10} = 2.83 \text{ N/mm}^2 \) (jump by B/b = 20).</li>
+        <li>At the N.A.: \( A\bar{y} = 290\,000 + 10 \times 140 \times 70 = 388\,000 \text{ mm}^3 \); \( \tau_{max} = \frac{10\,000 \times 388\,000}{102.43 \times 10^6 \times 10} = 3.79 \text{ N/mm}^2 \).</li>
+        <li>Below the N.A. the distribution is the mirror image (symmetrical section).</li>
+        <li>Check: \( F/(D\,b) = 10\,000/(300 \times 10) = 3.33 \text{ N/mm}^2 \), between τ<sub>w</sub> and τ<sub>max</sub> as expected.</li>
+      </ol>
+      <figure class="fig" id="sm-u3-f-n5">
+<svg viewBox="0 0 690 330" role="img" aria-label="I-section 200 by 300 mm with 10 mm flanges and web, and its shear stress distribution for 10 kN shear force">
+<defs><marker id="sm-u3-arw-n5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="230.0,285.0 230.0,277.0 154.0,277.0 154.0,53.0 230.0,53.0 230.0,45.0 70.0,45.0 70.0,53.0 146.0,53.0 146.0,277.0 70.0,277.0 70.0,285.0" class="ln fill-hatch"/>
+<line x1="50.0" y1="165.0" x2="400.0" y2="165.0" class="ln hid"/>
+<polygon points="370.0,285.0 370.0,285.0 370.2,284.8 370.3,284.6 370.5,284.4 370.7,284.2 370.8,284.0 371.0,283.8 371.1,283.6 371.3,283.4 371.5,283.2 371.6,283.0 371.8,282.8 372.0,282.6 372.1,282.4 372.3,282.2 372.4,282.0 372.6,281.8 372.8,281.6 372.9,281.4 373.1,281.2 373.2,281.0 373.4,280.8 373.5,280.6 373.7,280.4 373.9,280.2 374.0,280.0 374.2,279.8 374.3,279.6 374.5,279.4 374.6,279.2 374.8,279.0 375.0,278.8 375.1,278.6 375.3,278.4 375.4,278.2 375.6,278.0 375.7,277.8 375.9,277.6 376.0,277.4 376.2,277.2 376.4,277.0 497.1,277.0 501.2,271.4 505.2,265.8 509.0,260.2 512.5,254.6 515.8,249.0 519.0,243.4 521.9,237.8 524.5,232.2 527.0,226.6 529.3,221.0 531.3,215.4 533.1,209.8 534.7,204.2 536.1,198.6 537.3,193.0 538.3,187.4 539.0,181.8 539.6,176.2 539.9,170.6 540.0,165.0 539.9,159.4 539.6,153.8 539.0,148.2 538.3,142.6 537.3,137.0 536.1,131.4 534.7,125.8 533.1,120.2 531.3,114.6 529.3,109.0 527.0,103.4 524.5,97.8 521.9,92.2 519.0,86.6 515.8,81.0 512.5,75.4 509.0,69.8 505.2,64.2 501.2,58.6 497.1,53.0 376.4,53.0 376.2,52.8 376.0,52.6 375.9,52.4 375.7,52.2 375.6,52.0 375.4,51.8 375.3,51.6 375.1,51.4 375.0,51.2 374.8,51.0 374.6,50.8 374.5,50.6 374.3,50.4 374.2,50.2 374.0,50.0 373.9,49.8 373.7,49.6 373.5,49.4 373.4,49.2 373.2,49.0 373.1,48.8 372.9,48.6 372.8,48.4 372.6,48.2 372.4,48.0 372.3,47.8 372.1,47.6 372.0,47.4 371.8,47.2 371.6,47.0 371.5,46.8 371.3,46.6 371.1,46.4 371.0,46.2 370.8,46.0 370.7,45.8 370.5,45.6 370.3,45.4 370.2,45.2 370.0,45.0 370.0,45.0" class="ln fill-acc"/>
+<line x1="370.0" y1="31.0" x2="370.0" y2="299.0" class="ln thin"/>
+<text x="384.4" y="47.0" class="lbl-sm">0.142 (flange)</text>
+<line x1="238.0" y1="285.0" x2="366.0" y2="285.0" class="ln thin dash"/>
+<line x1="238.0" y1="277.0" x2="366.0" y2="277.0" class="ln thin dash"/>
+<line x1="238.0" y1="277.0" x2="366.0" y2="277.0" class="ln thin dash"/>
+<line x1="238.0" y1="53.0" x2="366.0" y2="53.0" class="ln thin dash"/>
+<line x1="238.0" y1="53.0" x2="366.0" y2="53.0" class="ln thin dash"/>
+<line x1="238.0" y1="45.0" x2="366.0" y2="45.0" class="ln thin dash"/>
+<text x="489.1" y="75.0" class="lbl-sm" text-anchor="end">2.83 (web)</text>
+<text x="548.0" y="170.0" class="lbl-acc">3.79 max</text>
+<line x1="70.0" y1="31.0" x2="230.0" y2="31.0" class="ln thin" marker-end="url(#sm-u3-arw-n5)" marker-start="url(#sm-u3-arw-n5)"/>
+<text x="150.0" y="25.0" class="lbl-sm" text-anchor="middle">200</text>
+<line x1="52.0" y1="45.0" x2="52.0" y2="285.0" class="ln thin" marker-end="url(#sm-u3-arw-n5)" marker-start="url(#sm-u3-arw-n5)"/>
+<text x="46.0" y="145.0" class="lbl-sm" text-anchor="end">300</text>
+<text x="160.0" y="205.0" class="lbl-sm">10</text>
+<text x="46.0" y="57.0" class="lbl-sm" text-anchor="end">10</text>
+<text x="510.0" y="322.0" class="lbl-sm" text-anchor="middle">τ in N/mm²</text>
+</svg>
+<figcaption>Fig. N5 — I-section 200 × 300 mm and its shear stress distribution for F = 10 kN.</figcaption>
+</figure>
+      <p class="final">Answer: τ = 0 (top), 0.142 N/mm² (flange at junction), 2.83 N/mm² (web at junction), 3.79 N/mm² (maximum, at N.A.)</p>
+    </article>
+
+    <article class="num" id="sm-u3-n6">
+      <h3>N6. A rectangular beam 200 mm wide and 300 mm deep is subjected to a shear force of 60 kN. Find (i) the average shear stress, (ii) the maximum shear stress, (iii) the shear stress at 50 mm above the neutral axis. Sketch the variation of shear stress along the depth.</h3>
+      <p class="q-src">Jan 2023 (CBCS) Q6(b)</p>
+      <ol class="steps">
+        <li>Average: \( \tau_{avg} = \frac{F}{bd} = \frac{60\,000}{200 \times 300} = 1.0 \text{ N/mm}^2 \).</li>
+        <li>Maximum (at the N.A.): \( \tau_{max} = 1.5\,\tau_{avg} = 1.5 \text{ N/mm}^2 \).</li>
+        <li>\( I = \frac{200 \times 300^3}{12} = 450 \times 10^6 \text{ mm}^4 \).</li>
+        <li>At y = 50 mm: \( \tau = \frac{F}{2I}\left(\frac{d^2}{4} - y^2\right) = \frac{60\,000}{2 \times 450 \times 10^6}(22\,500 - 2500) = 1.333 \text{ N/mm}^2 \).</li>
+        <li>Check with Aȳ: A = 200 × 100 = 20 000 mm², ȳ = 100 mm; \( \tau = \frac{60\,000 \times 2 \times 10^6}{450 \times 10^6 \times 200} = 1.333 \text{ N/mm}^2 \).</li>
+      </ol>
+      <figure class="fig" id="sm-u3-f-n6">
+<svg viewBox="0 0 660 300" role="img" aria-label="Shear stress distribution across a rectangular section: parabola with maximum 1.5 times the average at the neutral axis">
+<defs><marker id="sm-u3-arw-n6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="80.0" y="50.0" width="120.0" height="180.0" class="ln fill-hatch"/>
+<line x1="60.0" y1="140.0" x2="326.0" y2="140.0" class="ln hid"/>
+<text x="54.0" y="145.0" class="lbl-sm" text-anchor="end">N.A.</text>
+<line x1="80.0" y1="248.0" x2="200.0" y2="248.0" class="ln thin" marker-end="url(#sm-u3-arw-n6)" marker-start="url(#sm-u3-arw-n6)"/>
+<text x="140.0" y="266.0" class="lbl-sm" text-anchor="middle">b = 200</text>
+<line x1="62.0" y1="50.0" x2="62.0" y2="128.0" class="ln thin" marker-end="url(#sm-u3-arw-n6)" marker-start="url(#sm-u3-arw-n6)"/>
+<text x="54.0" y="90.0" class="lbl-sm" text-anchor="end">150</text>
+<polygon points="330.0,230.0 330.0,230.0 344.6,225.5 358.5,221.0 371.6,216.5 384.0,212.0 395.6,207.5 406.5,203.0 416.6,198.5 426.0,194.0 434.6,189.5 442.5,185.0 449.6,180.5 456.0,176.0 461.6,171.5 466.5,167.0 470.6,162.5 474.0,158.0 476.6,153.5 478.5,149.0 479.6,144.5 480.0,140.0 479.6,135.5 478.5,131.0 476.6,126.5 474.0,122.0 470.6,117.5 466.5,113.0 461.6,108.5 456.0,104.0 449.6,99.5 442.5,95.0 434.6,90.5 426.0,86.0 416.6,81.5 406.5,77.0 395.6,72.5 384.0,68.0 371.6,63.5 358.5,59.0 344.6,54.5 330.0,50.0 330.0,50.0" class="ln fill-acc"/>
+<line x1="330.0" y1="36.0" x2="330.0" y2="244.0" class="ln thin"/>
+<line x1="208.0" y1="50.0" x2="326.0" y2="50.0" class="ln thin dash"/>
+<line x1="208.0" y1="230.0" x2="326.0" y2="230.0" class="ln thin dash"/>
+<line x1="208.0" y1="110.0" x2="463.3" y2="110.0" class="ln thin dash"/>
+<text x="471.3" y="112.0" class="lbl-sm">1.333 at y = 50</text>
+<text x="488.0" y="158.0" class="lbl-acc">τ<tspan dy="4" font-size="11">max</tspan><tspan dy="-4"> = 1.5 N/mm²</tspan></text>
+<line x1="230.0" y1="140.0" x2="230.0" y2="110.0" class="ln thin" marker-end="url(#sm-u3-arw-n6)" marker-start="url(#sm-u3-arw-n6)"/>
+<text x="236.0" y="130.0" class="lbl-sm">50</text>
+<text x="338.0" y="46.0" class="lbl-sm">0</text>
+<text x="338.0" y="246.0" class="lbl-sm">0</text>
+</svg>
+<figcaption>Fig. N6 — Shear stress distribution in the 200 × 300 mm section for F = 60 kN.</figcaption>
+</figure>
+      <p class="final">Answer: τ<sub>avg</sub> = 1.0 N/mm², τ<sub>max</sub> = 1.5 N/mm², τ at 50 mm above N.A. = 1.333 N/mm²</p>
+    </article>
+
+    <article class="num" id="sm-u3-n7">
+      <h3>N7. The cross-section of a beam is a symmetrical I-section: flanges 150 mm × 20 mm, web 200 mm × 10 mm (overall depth 240 mm). If the permissible bending stress is 150 N/mm², find its moment of resistance. Compare it with that of a square section of the same area.</h3>
+      <p class="q-src">Based on Jan 2025 Q7(b)</p>
+      <aside class="note"><b>Data note.</b> The figure of the section is lost in the scan. This version uses a typical symmetrical I-section; the method is the same for any section.</aside>
+      <figure class="fig" id="sm-u3-f-n7">
+<svg viewBox="0 0 680 300" role="img" aria-label="Symmetrical I-section 150 by 240 mm and a square section of the same area, 89.4 mm side">
+<defs><marker id="sm-u3-arw-n7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="267.5,262.0 267.5,244.0 204.5,244.0 204.5,64.0 267.5,64.0 267.5,46.0 132.5,46.0 132.5,64.0 195.5,64.0 195.5,244.0 132.5,244.0 132.5,262.0" class="ln fill-hatch"/>
+<line x1="102.5" y1="154.0" x2="297.5" y2="154.0" class="ln hid"/>
+<line x1="132.5" y1="32.0" x2="267.5" y2="32.0" class="ln thin" marker-end="url(#sm-u3-arw-n7)" marker-start="url(#sm-u3-arw-n7)"/>
+<text x="200.0" y="26.0" class="lbl-sm" text-anchor="middle">150</text>
+<line x1="284.0" y1="46.0" x2="284.0" y2="64.0" class="ln thin" marker-end="url(#sm-u3-arw-n7)" marker-start="url(#sm-u3-arw-n7)"/>
+<text x="290.0" y="60.0" class="lbl-sm">20</text>
+<line x1="284.0" y1="244.0" x2="284.0" y2="262.0" class="ln thin" marker-end="url(#sm-u3-arw-n7)" marker-start="url(#sm-u3-arw-n7)"/>
+<text x="290.0" y="260.0" class="lbl-sm">20</text>
+<line x1="116.0" y1="46.0" x2="116.0" y2="262.0" class="ln thin" marker-end="url(#sm-u3-arw-n7)" marker-start="url(#sm-u3-arw-n7)"/>
+<text x="110.0" y="124.0" class="lbl-sm" text-anchor="end">240</text>
+<text x="210.0" y="194.0" class="lbl-sm">10</text>
+<text x="310.0" y="159.0" class="lbl-sm">N.A.</text>
+<text x="200.0" y="292.0" class="lbl-sm" text-anchor="middle">(a) Given I-section, A = 8000 mm²</text>
+<rect x="459.8" y="113.8" width="80.5" height="80.5" class="ln fill-hatch"/>
+<line x1="429.8" y1="154.0" x2="570.2" y2="154.0" class="ln hid"/>
+<line x1="459.8" y1="210.2" x2="540.2" y2="210.2" class="ln thin" marker-end="url(#sm-u3-arw-n7)" marker-start="url(#sm-u3-arw-n7)"/>
+<text x="500.0" y="228.2" class="lbl-sm" text-anchor="middle">89.4</text>
+<text x="500.0" y="292.0" class="lbl-sm" text-anchor="middle">(b) Square of the same area</text>
+</svg>
+<figcaption>Fig. N7 — (a) The I-section and (b) a square of the same area (dimensions in mm).</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Area: \( A = 2(150 \times 20) + 200 \times 10 = 8000 \text{ mm}^2 \).</li>
+        <li>\( I = \frac{150 \times 240^3}{12} - \frac{140 \times 200^3}{12} = 172.80 \times 10^6 - 93.33 \times 10^6 = 79.47 \times 10^6 \text{ mm}^4 \).</li>
+        <li>\( Z = \frac{I}{y_{max}} = \frac{79.47 \times 10^6}{120} = 662\,222 \text{ mm}^3 \).</li>
+        <li>Moment of resistance: \( M_R = \sigma Z = 150 \times 662\,222 = 99.33 \times 10^6 \text{ N·mm} = 99.3 \text{ kN·m} \).</li>
+        <li>Square of the same area: side \( a = \sqrt{8000} = 89.44 \text{ mm} \); \( Z = \frac{a^3}{6} = \frac{89.44^3}{6} = 119\,257 \text{ mm}^3 \).</li>
+        <li>\( M_R = 150 \times 119\,257 = 17.89 \times 10^6 \text{ N·mm} = 17.9 \text{ kN·m} \).</li>
+        <li>Ratio: \( 99.33 / 17.89 = 5.55 \).</li>
+      </ol>
+      <p class="final">Answer: M<sub>R</sub> (I-section) = 99.3 kN·m; M<sub>R</sub> (square) = 17.9 kN·m; the I-section is 5.55 times stronger for the same weight</p>
+    </article>
+
+    <article class="num" id="sm-u3-n8">
+      <h3>N8. A cast iron bracket of I-section is used as a cantilever 2 m long carrying a uniformly distributed load of 10 kN/m. The section has a top flange 200 mm × 20 mm, a web 160 mm × 20 mm and a bottom flange 100 mm × 20 mm (overall depth 200 mm). Find the position of the neutral axis, the moment of inertia about it, and the maximum tensile and compressive bending stresses.</h3>
+      <p class="q-src">Based on Jun-Jul 2024 Q7(b)</p>
+      <aside class="note"><b>Data note.</b> The figure is lost. The scan gives a 10 m span and "equal flanges"; a 10 m cantilever with 10 kN/m gives 500 kN·m, which no small cast iron bracket can carry. This version uses 2 m and unequal flanges (the usual cast iron bracket shape), so that the N.A. has to be found. With equal flanges, the N.A. is simply at mid-depth.</aside>
+      <figure class="fig" id="sm-u3-f-n8">
+<svg viewBox="0 0 690 330" role="img" aria-label="Cast iron cantilever bracket of unequal I-section with 10 kN/m UDL over 2 m, and its bending stress diagram">
+<defs><marker id="sm-u3-arw-n8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="26.0" y="86.0" width="14.0" height="68.0" class="ln fill-hatch"/>
+<rect x="40.0" y="114.0" width="210.0" height="12.0" class="ln fill-soft"/>
+<rect x="40.0" y="94.0" width="210.0" height="16.0" class="ln fill-acc"/>
+<line x1="46.0" y1="94.0" x2="46.0" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)"/>
+<line x1="74.3" y1="94.0" x2="74.3" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)"/>
+<line x1="102.6" y1="94.0" x2="102.6" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)"/>
+<line x1="130.9" y1="94.0" x2="130.9" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)"/>
+<line x1="159.1" y1="94.0" x2="159.1" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)"/>
+<line x1="187.4" y1="94.0" x2="187.4" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)"/>
+<line x1="215.7" y1="94.0" x2="215.7" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)"/>
+<line x1="244.0" y1="94.0" x2="244.0" y2="112.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)"/>
+<text x="145.0" y="86.0" class="lbl-sm" text-anchor="middle">10 kN/m</text>
+<line x1="40.0" y1="150.0" x2="250.0" y2="150.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)" marker-start="url(#sm-u3-arw-n8)"/>
+<text x="145.0" y="168.0" class="lbl-sm" text-anchor="middle">2 m</text>
+<text x="145.0" y="210.0" class="lbl-sm" text-anchor="middle">Hogging: top in tension</text>
+<polygon points="465.0,265.0 465.0,247.0 429.0,247.0 429.0,103.0 510.0,103.0 510.0,85.0 330.0,85.0 330.0,103.0 411.0,103.0 411.0,247.0 375.0,247.0 375.0,265.0" class="ln fill-hatch"/>
+<line x1="310.0" y1="157.4" x2="690.0" y2="157.4" class="ln hid"/>
+<line x1="330.0" y1="71.0" x2="510.0" y2="71.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)" marker-start="url(#sm-u3-arw-n8)"/>
+<text x="420.0" y="65.0" class="lbl-sm" text-anchor="middle">200</text>
+<line x1="375.0" y1="279.0" x2="465.0" y2="279.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)" marker-start="url(#sm-u3-arw-n8)"/>
+<text x="420.0" y="297.0" class="lbl-sm" text-anchor="middle">100</text>
+<text x="435.0" y="207.4" class="lbl-sm">web 20</text>
+<line x1="312.0" y1="85.0" x2="312.0" y2="103.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)" marker-start="url(#sm-u3-arw-n8)"/>
+<text x="300.0" y="93.0" class="lbl-sm" text-anchor="end">20</text>
+<line x1="312.0" y1="247.0" x2="312.0" y2="265.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)" marker-start="url(#sm-u3-arw-n8)"/>
+<text x="300.0" y="263.0" class="lbl-sm" text-anchor="end">20</text>
+<line x1="312.0" y1="103.0" x2="312.0" y2="247.0" class="ln thin" marker-end="url(#sm-u3-arw-n8)" marker-start="url(#sm-u3-arw-n8)"/>
+<text x="306.0" y="191.4" class="lbl-sm" text-anchor="end">160</text>
+<line x1="480.0" y1="85.0" x2="480.0" y2="157.4" class="ln thin" marker-end="url(#sm-u3-arw-n8)" marker-start="url(#sm-u3-arw-n8)"/>
+<text x="486.0" y="125.0" class="lbl-acc">80.4</text>
+<line x1="625.0" y1="79.0" x2="625.0" y2="271.0" class="ln thin"/>
+<polygon points="625.0,157.4 662.0,85.0 625.0,85.0" class="ln fill-acc"/>
+<polygon points="625.0,157.4 569.9,265.0 625.0,265.0" class="ln fill-acc2"/>
+<text x="629.0" y="77.0" class="lbl-sm">30.9 T</text>
+<text x="563.9" y="270.0" class="lbl-sm" text-anchor="end">45.9 C</text>
+<text x="420.0" y="324.0" class="lbl-sm" text-anchor="middle">Section (mm)</text>
+</svg>
+<figcaption>Fig. N8 — Cast iron bracket: loading, section and bending stress diagram.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Areas and centroids from the bottom: bottom flange \( 100 \times 20 = 2000 \text{ mm}^2 \) at 10 mm; web \( 20 \times 160 = 3200 \text{ mm}^2 \) at 100 mm; top flange \( 200 \times 20 = 4000 \text{ mm}^2 \) at 190 mm.</li>
+        <li>\( \bar{y} = \frac{2000 \times 10 + 3200 \times 100 + 4000 \times 190}{9200} = \frac{1\,100\,000}{9200} = 119.57 \text{ mm} \) from the bottom; \( y_{top} = 200 - 119.57 = 80.43 \text{ mm} \).</li>
+        <li>Top flange: \( \frac{200 \times 20^3}{12} + 4000 \times (190 - 119.57)^2 = 19.977 \times 10^6 \text{ mm}^4 \).</li>
+        <li>Web: \( \frac{20 \times 160^3}{12} + 3200 \times (119.57 - 100)^2 = 8.052 \times 10^6 \text{ mm}^4 \).</li>
+        <li>Bottom flange: \( \frac{100 \times 20^3}{12} + 2000 \times (119.57 - 10)^2 = 24.076 \times 10^6 \text{ mm}^4 \).</li>
+        <li>\( I = (19.977 + 8.052 + 24.076) \times 10^6 = 52.10 \times 10^6 \text{ mm}^4 \).</li>
+        <li>Maximum bending moment at the fixed end (hogging): \( M = \frac{wL^2}{2} = \frac{10 \times 2^2}{2} = 20 \text{ kN·m} = 20 \times 10^6 \text{ N·mm} \).</li>
+        <li>Top fibre (tension, hogging): \( \sigma_t = \frac{20 \times 10^6 \times 80.43}{52.10 \times 10^6} = 30.9 \text{ N/mm}^2 \).</li>
+        <li>Bottom fibre (compression): \( \sigma_c = \frac{20 \times 10^6 \times 119.57}{52.10 \times 10^6} = 45.9 \text{ N/mm}^2 \).</li>
+      </ol>
+      <p class="final">Answer: N.A. at 119.57 mm from the bottom (80.43 mm from the top); I = 52.10 × 10⁶ mm⁴; σ<sub>t</sub> = 30.9 N/mm² (top), σ<sub>c</sub> = 45.9 N/mm² (bottom), at the fixed end</p>
+      <aside class="tip"><b>Design point.</b> Cast iron is weak in tension. The large flange is on the tension side (top for a cantilever), so the N.A. moves towards it and the tensile stress (30.9) is lower than the compressive stress (45.9).</aside>
+    </article>
+
+    <article class="num" id="sm-u3-n9">
+      <h3>N9. A solid circular section of 120 mm diameter is used as a simply supported beam of span 4 m. The permissible bending stress is 120 N/mm². Find the safe uniformly distributed load. Compare it with a hollow circular section of the same area and 150 mm outside diameter.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <ol class="steps">
+        <li>Solid: \( Z = \frac{\pi d^3}{32} = \frac{\pi \times 120^3}{32} = 169\,646 \text{ mm}^3 \).</li>
+        <li>\( M = \sigma Z = 120 \times 169\,646 = 20.36 \times 10^6 \text{ N·mm} \).</li>
+        <li>\( M = \frac{wL^2}{8} \Rightarrow w = \frac{8M}{L^2} = \frac{8 \times 20.36 \times 10^6}{4000^2} = 10.18 \text{ N/mm} = 10.18 \text{ kN/m} \).</li>
+        <li>Hollow section, same area: \( \frac{\pi}{4}(150^2 - d_i^2) = \frac{\pi}{4} \times 120^2 \Rightarrow d_i = \sqrt{22\,500 - 14\,400} = 90 \text{ mm} \).</li>
+        <li>\( Z = \frac{\pi (D^4 - d_i^4)}{32 D} = \frac{\pi (150^4 - 90^4)}{32 \times 150} = 288\,398 \text{ mm}^3 \).</li>
+        <li>\( M = 120 \times 288\,398 = 34.61 \times 10^6 \text{ N·mm} \); \( w = \frac{8 \times 34.61 \times 10^6}{4000^2} = 17.30 \text{ kN/m} \).</li>
+        <li>Ratio: \( 288\,398 / 169\,646 = 1.70 \).</li>
+      </ol>
+      <p class="final">Answer: solid — w = 10.18 kN/m; hollow (150/90 mm) — w = 17.30 kN/m; the hollow section carries 1.70 times the load for the same weight</p>
+    </article>
+
+    <article class="num" id="sm-u3-n10">
+      <h3>N10. A timber beam of circular section, 150 mm in diameter, is simply supported over a span of 3 m and carries a point load W at the centre. The permissible bending stress is 10 N/mm² and the permissible shear stress is 1 N/mm². Find the safe value of W.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <ol class="steps">
+        <li>Bending: \( Z = \frac{\pi \times 150^3}{32} = 331\,340 \text{ mm}^3 \); \( M = \sigma Z = 10 \times 331\,340 = 3.313 \times 10^6 \text{ N·mm} \).</li>
+        <li>\( M = \frac{WL}{4} \Rightarrow W = \frac{4M}{L} = \frac{4 \times 3.313 \times 10^6}{3000} = 4418 \text{ N} = 4.42 \text{ kN} \).</li>
+        <li>Shear: maximum shear force \( F = W/2 \); area \( A = \frac{\pi}{4} \times 150^2 = 17\,671 \text{ mm}^2 \).</li>
+        <li>\( \tau_{max} = \frac{4}{3}\,\frac{F}{A} \le 1 \Rightarrow \frac{4}{3} \times \frac{W/2}{17\,671} = 1 \Rightarrow W = \frac{3 \times 2 \times 17\,671}{4} = 26\,507 \text{ N} = 26.5 \text{ kN} \).</li>
+        <li>The safe load is the smaller value: bending governs.</li>
+      </ol>
+      <p class="final">Answer: W = 4.42 kN (bending governs; shear alone would allow 26.5 kN)</p>
+    </article>
+
+    <h3 id="sm-u3-practice">Practice problems</h3>
+
+    <article class="num practice" id="sm-u3-p1">
+      <h3>P1. A cantilever 2 m long has a rectangular section 100 mm wide and 200 mm deep. It carries a point load of 10 kN at the free end. Find the maximum bending stress and state where it occurs.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="final">Answer: M = 20 kN·m, Z = 6.67 × 10⁵ mm³; σ<sub>max</sub> = 30 N/mm² at the fixed end (tension at the top, compression at the bottom)</p>
+    </article>
+
+    <article class="num practice" id="sm-u3-p2">
+      <h3>P2. A simply supported steel I-beam of span 6 m has I = 8 × 10⁷ mm⁴ and an overall depth of 300 mm. If the bending stress must not exceed 150 N/mm², find the safe uniformly distributed load.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="final">Answer: M<sub>R</sub> = 80 kN·m; w = 17.8 kN/m</p>
+    </article>
+
+    <article class="num practice" id="sm-u3-p3">
+      <h3>P3. A T-section with flange 150 mm × 20 mm and web 20 mm × 150 mm (overall depth 170 mm) is used as a simply supported beam of span 4 m, flange at the top. It carries a UDL of 8.2 kN/m. Find the maximum tensile and compressive stresses.</h3>
+      <p class="q-src">Based on Mar-Apr 2021 (CBCS) Q5(b) (figure lost; section assumed)</p>
+      <p class="final">Answer: ȳ = 117.5 mm from the bottom, I = 16.56 × 10⁶ mm⁴, M = 16.4 kN·m; σ<sub>c</sub> = 52.0 N/mm² (top), σ<sub>t</sub> = 116.3 N/mm² (bottom)</p>
+    </article>
+
+    <article class="num practice" id="sm-u3-p4">
+      <h3>P4. An I-section has flanges 120 mm × 15 mm, a web 10 mm thick and an overall depth of 250 mm. It carries a shear force of 10.1 kN. Find the shear stress at the junction (in the flange and in the web) and at the neutral axis, and sketch the distribution.</h3>
+      <p class="q-src">Based on Feb-Mar 2022 (CBCS) Q6 (figure lost; section assumed)</p>
+      <p class="final">Answer: I = 58.64 × 10⁶ mm⁴; τ = 0.304 N/mm² (flange), 3.64 N/mm² (web at junction), 4.68 N/mm² (maximum at N.A.)</p>
+    </article>
+
+    <article class="num practice" id="sm-u3-p5">
+      <h3>P5. A steel wire of 2 mm diameter is bent round a drum so that the radius of curvature of its axis is 1 m. Find the maximum bending stress in the wire and the bending moment needed. E = 2 × 10⁵ N/mm².</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="final">Answer: σ = Ey/R = 200 N/mm²; M = σZ = 157 N·mm</p>
+    </article>
+
+    <article class="num practice" id="sm-u3-p6">
+      <h3>P6. A beam of circular section, 120 mm in diameter, carries a shear force of 40 kN. Find the average shear stress, the maximum shear stress, and the shear stress at 30 mm from the neutral axis.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="final">Answer: τ<sub>avg</sub> = 3.54 N/mm²; τ<sub>max</sub> = 4.72 N/mm²; τ (30 mm) = F(R² − y²)/(3I) = 3.54 N/mm²</p>
+    </article>
+  </section>
+
+</section>

@@ -1,0 +1,26 @@
+[
+ {
+  "file": "img/sm-u3-timber-joists.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Copped_Hall_ceiling_joists_and_beams,_Epping,_Essex,_England.jpg",
+  "author": "Acabashi",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "Timber floor joists carried by steel beams."
+ },
+ {
+  "file": "img/sm-u3-bending-test.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Trois-points-p1040189.jpg",
+  "author": "Rama",
+  "license": "CC BY-SA 2.0 FR",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en",
+  "caption": "Beam specimen in a three-point bending (flexure) test."
+ },
+ {
+  "file": "img/sm-u3-i-beam.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:I-Beam_002.JPG",
+  "author": "Todd Murray",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "caption": "Rolled steel I-beam carrying a timber floor."
+ }
+]

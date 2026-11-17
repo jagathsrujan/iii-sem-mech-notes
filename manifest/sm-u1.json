@@ -1,0 +1,34 @@
+[
+ {
+  "file": "img/sm-u1-utm.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Universal_testing_machine_(20364859449).jpg",
+  "author": "Oregon Department of Transportation",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "caption": "A universal testing machine (UTM) with crossheads and grips (cropped)."
+ },
+ {
+  "file": "img/sm-u1-ductile-fracture.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:DuctileFailure.jpg",
+  "author": "BradleyGrillo at English Wikipedia",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "caption": "Ductile fracture: necking and cup-and-cone surfaces."
+ },
+ {
+  "file": "img/sm-u1-brittle-fracture.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Cast_iron_tensile_test.JPG",
+  "author": "Sigmund",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "caption": "Brittle fracture of cast iron tensile specimens: flat surfaces, no neck."
+ },
+ {
+  "file": "img/sm-u1-rcc-column.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Fractured_reinforced_concrete_column.JPG",
+  "author": "Polyparadigm",
+  "license": "Public domain",
+  "license_url": "",
+  "caption": "A failed reinforced concrete column with exposed steel bars."
+ }
+]

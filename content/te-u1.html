@@ -1,0 +1,1123 @@
+<section class="unit" data-unit="te-u1">
+  <header class="unit-head">
+    <p class="eyebrow">Thermal Engineering · Unit 1</p>
+    <h1>Fundamentals and Zeroth Law of Thermodynamics</h1>
+    <p class="lede">This unit gives the language of thermodynamics: system, property, state, process, temperature, work and heat. Every later unit (first law, second law, entropy, cycles) uses these words and the p–V diagram. Each paper gives about 20 marks to Unit I, usually one theory part and one numerical on temperature scales or displacement work.</p>
+    <ul class="syl">
+      <li>Macroscopic and microscopic approaches</li>
+      <li>Thermodynamic system, surroundings and boundary</li>
+      <li>Closed, open and isolated systems; control volume</li>
+      <li>Thermodynamic properties; intensive and extensive properties</li>
+      <li>State, path, process and cycle</li>
+      <li>Thermodynamic equilibrium; quasi-static process</li>
+      <li>Temperature and temperature scales; thermal equilibrium; Zeroth Law of Thermodynamics</li>
+      <li>Thermodynamic work; heat transfer</li>
+      <li>Specific heats; forms of energy</li>
+    </ul>
+  </header>
+
+  <section class="part" id="te-u1-concepts" data-part="concepts">
+    <h2>Concepts</h2>
+    <aside class="exam"><b>Exam pattern.</b> Unit I has two questions (choose one), 20 marks each, usually split into 3 parts. Typical parts: (a) classify properties as intensive or extensive with SI units, or compare open, closed and isolated systems; (b) zeroth law, thermodynamic equilibrium or heat versus work; (c) a numerical on a temperature scale or on pV<sup>n</sup> = C work. Learn the five derivations of displacement work and the temperature-scale method, and you can score full marks.</aside>
+
+    <h3 id="te-u1-c-approach">1. Thermodynamics, macroscopic and microscopic approaches</h3>
+    <p><b>Thermodynamics</b> is the science of energy and its transformation. It deals with heat, work and the properties of substances that connect them. Engines, boilers, turbines, compressors and refrigerators are all studied with it.</p>
+    <p>A substance can be studied in two ways. In the <b>microscopic (statistical) approach</b> we follow every molecule: its position, velocity and energy. In the <b>macroscopic (classical) approach</b> we look at the whole body and use a few measurable properties such as pressure, volume and temperature.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Macroscopic (classical)</th><th>Microscopic (statistical)</th></tr></thead>
+      <tbody>
+        <tr><td>Behaviour of the matter as a whole (bulk)</td><td>Behaviour of each individual molecule</td></tr>
+        <tr><td>Few properties: p, V, T</td><td>Many variables: position and velocity of every molecule</td></tr>
+        <tr><td>Properties can be measured directly with instruments</td><td>Properties cannot be measured directly; they are averaged by statistics</td></tr>
+      </tbody></table></div>
+    <p>This course uses the macroscopic approach and treats the substance as a continuum (a property such as density has a value at every point).</p>
+
+    <h3 id="te-u1-c-system">2. System, surroundings and boundary</h3>
+    <p>A <b>thermodynamic system</b> is a definite quantity of matter or a region of space chosen for study. Everything outside it is the <b>surroundings</b>. The real or imaginary surface that separates them is the <b>boundary</b>. System plus surroundings together make the <b>universe</b>.</p>
+    <figure class="fig" id="te-u1-f-sys">
+<svg viewBox="0 0 640 270" role="img" aria-label="A gas in a piston-cylinder: dashed boundary around the gas is the system, heat enters, work leaves">
+<defs><marker id="te-u1-arw-sys" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="200" y="122" width="180" height="108" class="fill-soft"/>
+<path d="M200,70 L200,230 L380,230 L380,70" class="ln thick"/>
+<rect x="202" y="112" width="176" height="10" class="ln fill-acc"/>
+<rect x="282" y="34" width="16" height="78" class="ln fill-soft"/>
+<rect x="188" y="104" width="204" height="136" class="ln acc dash" rx="8"/>
+<text x="290" y="180" class="lbl-b" text-anchor="middle">SYSTEM</text>
+<text x="290" y="200" class="lbl-sm" text-anchor="middle">(gas in cylinder)</text>
+<line x1="90" y1="190" x2="186" y2="190" class="ln" marker-end="url(#te-u1-arw-sys)"/>
+<text x="130" y="178" class="lbl" text-anchor="middle">Q (heat in)</text>
+<line x1="290" y1="32" x2="290" y2="8" class="ln" marker-end="url(#te-u1-arw-sys)"/>
+<text x="330" y="22" class="lbl" text-anchor="start">W (work out)</text>
+<line x1="470" y1="112" x2="394" y2="128" class="ln thin" marker-end="url(#te-u1-arw-sys)"/>
+<text x="474" y="108" class="lbl-b" text-anchor="start">Boundary</text>
+<text x="520" y="206" class="lbl-b" text-anchor="middle">SURROUNDINGS</text>
+<text x="520" y="226" class="lbl-sm" text-anchor="middle">(everything outside</text>
+<text x="520" y="242" class="lbl-sm" text-anchor="middle">the boundary)</text>
+<text x="60" y="60" class="lbl-sm" text-anchor="start">System + surroundings</text>
+<text x="60" y="76" class="lbl-sm" text-anchor="start">= universe</text>
+</svg>
+<figcaption>Fig. 1.1 — System, boundary and surroundings. Heat Q and work W cross the boundary.</figcaption>
+</figure>
+    <ul>
+      <li>The boundary can be <b>fixed</b> (a rigid tank wall) or <b>moving</b> (a piston face).</li>
+      <li>The boundary can be <b>real</b> (the metal wall of a cylinder) or <b>imaginary</b> (a dashed line round the steam that enters a turbine).</li>
+      <li>The boundary has zero thickness, so it has no mass and no volume. Heat and work are the energy that crosses it.</li>
+    </ul>
+
+    <h3 id="te-u1-c-types">3. Closed, open and isolated systems; control volume</h3>
+    <figure class="fig" id="te-u1-f-types">
+<svg viewBox="0 0 740 275" role="img" aria-label="Three panels: closed system with heat and work but no mass crossing, open system with mass flow, isolated system with nothing crossing">
+<defs><marker id="te-u1-arw-types" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="30" y="40" width="200" height="130" class="ln acc dash" rx="8"/>
+<rect x="265" y="40" width="200" height="130" class="ln acc dash" rx="8"/>
+<rect x="510" y="40" width="200" height="130" class="ln acc dash" rx="8"/>
+<rect x="90" y="100" width="80" height="62" class="fill-soft"/>
+<path d="M90,62 L90,162 L170,162 L170,62" class="ln thick"/>
+<rect x="92" y="90" width="76" height="10" class="ln fill-acc"/>
+<line x1="6" y1="115" x2="58" y2="115" class="ln" marker-end="url(#te-u1-arw-types)"/>
+<text x="20" y="104" class="lbl" text-anchor="middle">Q</text>
+<rect x="124" y="48" width="12" height="44" class="ln fill-soft"/>
+<line x1="130" y1="48" x2="130" y2="14" class="ln" marker-end="url(#te-u1-arw-types)"/>
+<text x="144" y="30" class="lbl" text-anchor="start">W</text>
+<text x="130" y="150" class="lbl-sm" text-anchor="middle">gas</text>
+<rect x="235" y="92" width="86" height="24" class="ln fill-soft"/>
+<rect x="409" y="100" width="86" height="24" class="ln fill-soft"/>
+<path d="M321,70 L409,90 L409,134 L321,154 Z" class="ln fill-soft"/>
+<text x="365" y="116" class="lbl-sm" text-anchor="middle">device</text>
+<line x1="239" y1="104" x2="269" y2="104" class="ln" marker-end="url(#te-u1-arw-types)"/>
+<text x="271" y="134" class="lbl-sm" text-anchor="start">mass in</text>
+<line x1="455" y1="112" x2="489" y2="112" class="ln" marker-end="url(#te-u1-arw-types)"/>
+<text x="435" y="152" class="lbl-sm" text-anchor="middle">mass out</text>
+<line x1="365" y1="78" x2="365" y2="10" class="ln" marker-end="url(#te-u1-arw-types)"/>
+<text x="379" y="24" class="lbl" text-anchor="start">W</text>
+<line x1="365" y1="200" x2="365" y2="176" class="ln" marker-end="url(#te-u1-arw-types)"/>
+<text x="379" y="198" class="lbl" text-anchor="start">Q</text>
+<rect x="540" y="60" width="140" height="90" class="ln thick fill-hatch"/>
+<rect x="558" y="78" width="104" height="54" class="ln fill-soft"/>
+<text x="610" y="110" class="lbl-sm" text-anchor="middle">isolated</text>
+<line x1="500" y1="95" x2="524" y2="95" class="ln thin" marker-end="url(#te-u1-arw-types)"/>
+<line x1="526" y1="87" x2="538" y2="103" class="ln thick"/>
+<line x1="538" y1="87" x2="526" y2="103" class="ln thick"/>
+<line x1="500" y1="125" x2="524" y2="125" class="ln thin" marker-end="url(#te-u1-arw-types)"/>
+<line x1="526" y1="117" x2="538" y2="133" class="ln thick"/>
+<line x1="538" y1="117" x2="526" y2="133" class="ln thick"/>
+<text x="610" y="200" class="lbl-sm" text-anchor="middle">no Q, no W, no mass</text>
+<text x="130" y="232" class="lbl-b" text-anchor="middle">(a) Closed system</text>
+<text x="365" y="232" class="lbl-b" text-anchor="middle">(b) Open system</text>
+<text x="610" y="232" class="lbl-b" text-anchor="middle">(c) Isolated system</text>
+<text x="130" y="252" class="lbl-sm" text-anchor="middle">mass fixed, energy crosses</text>
+<text x="365" y="252" class="lbl-sm" text-anchor="middle">mass and energy cross</text>
+<text x="610" y="252" class="lbl-sm" text-anchor="middle">nothing crosses</text>
+</svg>
+<figcaption>Fig. 1.2 — Types of system: (a) closed, (b) open, (c) isolated.</figcaption>
+</figure>
+    <div class="tbl"><table>
+      <thead><tr><th>System</th><th>Mass crosses boundary?</th><th>Energy (Q, W) crosses?</th><th>Engineering example</th></tr></thead>
+      <tbody>
+        <tr><td><b>Closed</b> (control mass)</td><td>No</td><td>Yes</td><td>Gas in a piston–cylinder during compression; a sealed pressure cooker before the valve lifts</td></tr>
+        <tr><td><b>Open</b> (control volume)</td><td>Yes</td><td>Yes</td><td>Turbine, compressor, nozzle, boiler, pump, car radiator, IC engine with intake and exhaust</td></tr>
+        <tr><td><b>Isolated</b></td><td>No</td><td>No</td><td>An ideal thermos flask; the universe (system plus surroundings)</td></tr>
+      </tbody></table></div>
+    <figure class="photo"><img src="img/te-u1-engine.jpg" alt="A sectioned horizontally opposed piston engine: the piston moves inside the cylinder, and the gas trapped above it is a closed system." width="667" height="560" loading="lazy"><figcaption>A cutaway piston engine. The gas above each piston is a closed system; the moving piston face is a moving boundary. <span class="credit">Photo: Hustvedt · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+    <p>In a <b>closed system</b> the same mass stays inside, so it is also called a <b>control mass</b>. The volume may change, as in the cylinder above.</p>
+    <p>An <b>open system</b> is studied with a <b>control volume</b> (CV): a fixed region of space chosen around the device. Its boundary is called the <b>control surface</b> (CS). Mass flows through the control surface. The control volume is fixed in space, but it can sometimes deform.</p>
+    <figure class="fig" id="te-u1-f-cv">
+<svg viewBox="0 0 680 290" role="img" aria-label="A turbine inside a dashed control surface with steam entering and leaving, shaft work out and heat loss">
+<defs><marker id="te-u1-arw-cv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="170" y="48" width="330" height="170" class="ln acc dash" rx="8"/>
+<rect x="70" y="115" width="180" height="36" class="ln fill-soft"/>
+<rect x="430" y="120" width="180" height="28" class="ln fill-soft"/>
+<path d="M250,92 L430,108 L430,160 L250,178 Z" class="ln fill-soft"/>
+<text x="340" y="140" class="lbl-b" text-anchor="middle">Turbine</text>
+<line x1="80" y1="133" x2="164" y2="133" class="ln" marker-end="url(#te-u1-arw-cv)"/>
+<text x="112" y="106" class="lbl" text-anchor="middle">Mass in</text>
+<line x1="520" y1="134" x2="604" y2="134" class="ln" marker-end="url(#te-u1-arw-cv)"/>
+<text x="560" y="108" class="lbl" text-anchor="middle">Mass out</text>
+<line x1="340" y1="96" x2="340" y2="16" class="ln" marker-end="url(#te-u1-arw-cv)"/>
+<text x="356" y="28" class="lbl" text-anchor="start">W (shaft work out)</text>
+<line x1="340" y1="262" x2="340" y2="224" class="ln" marker-end="url(#te-u1-arw-cv)"/>
+<text x="356" y="258" class="lbl" text-anchor="start">Q (heat loss)</text>
+<text x="180" y="40" class="lbl-b" text-anchor="start">Control surface</text>
+<text x="190" y="208" class="lbl-sm" text-anchor="start">Control volume (inside)</text>
+</svg>
+<figcaption>Fig. 1.3 — Control volume (dashed control surface) around a turbine: mass, work and heat cross the surface.</figcaption>
+</figure>
+    <figure class="photo"><img src="img/te-u1-turbine.jpg" alt="A steam turbine rotor with rows of blades being inspected by a technician" width="900" height="900" loading="lazy"><figcaption>A steam turbine rotor. Steam flows through the machine: this is an open system, analysed as a control volume. <span class="credit">Photo: Siemens Pressebild · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+    <p>A <b>homogeneous system</b> has the same composition and phase throughout (water only). A <b>heterogeneous system</b> has more than one phase (water plus steam). An <b>adiabatic</b> boundary does not allow heat to cross; a <b>diathermal</b> boundary does.</p>
+
+    <h3 id="te-u1-c-prop">4. Properties: intensive and extensive</h3>
+    <p>A <b>property</b> is any measurable characteristic that describes the state of a system, for example p, V, T, u, h. A property depends only on the state, not on how the system reached it.</p>
+    <ul>
+      <li><b>Extensive property</b>: depends on the size (mass) of the system. It is additive: if we divide the system, the property divides. Examples: volume, mass, energy, weight.</li>
+      <li><b>Intensive property</b>: independent of the size of the system. It does not change if we divide the system. Examples: pressure, temperature, density.</li>
+    </ul>
+    <p>The ratio of an extensive property to the mass is a <b>specific property</b>, for example specific volume v = V/m. A specific property is always intensive.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Property</th><th>Type</th><th>SI unit</th></tr></thead>
+      <tbody>
+        <tr><td>Volume V</td><td>Extensive</td><td>m³</td></tr>
+        <tr><td>Mass m, total energy E, enthalpy H</td><td>Extensive</td><td>kg, J, J</td></tr>
+        <tr><td>Specific volume v = V/m</td><td>Intensive</td><td>m³/kg</td></tr>
+        <tr><td>Density ρ = m/V</td><td>Intensive</td><td>kg/m³</td></tr>
+        <tr><td>Specific weight γ = ρg = W/V</td><td>Intensive</td><td>N/m³</td></tr>
+        <tr><td>Pressure p</td><td>Intensive</td><td>Pa = N/m²</td></tr>
+        <tr><td>Temperature T</td><td>Intensive</td><td>K</td></tr>
+        <tr><td>Velocity (m/s), molecular weight (kg/kmol), u = U/m (J/kg)</td><td>Intensive</td><td>as stated</td></tr>
+      </tbody></table></div>
+    <aside class="warn"><b>Common mistake.</b> Specific weight and density look like "weight" and "mass", but they are per unit volume, so they are intensive. Only the total quantity (V, m, E) is extensive.</aside>
+    <p>1 bar = 10⁵ Pa = 100 kPa. Thermodynamic calculations use <b>absolute</b> pressure (gauge + atmospheric).</p>
+
+    <h3 id="te-u1-c-state">5. State, path, process and cycle</h3>
+    <ul>
+      <li><b>State</b>: the condition of a system at an instant, given by its properties. Two independent properties fix the state of a simple compressible substance.</li>
+      <li><b>Path</b>: the series of states the system passes through.</li>
+      <li><b>Process</b>: the change from one equilibrium state to another along a path.</li>
+      <li><b>Cycle</b>: a series of processes that returns the system to its initial state; all properties return to their original values.</li>
+    </ul>
+    <figure class="fig" id="te-u1-f-psc">
+<svg viewBox="0 0 720 300" role="img" aria-label="Two p-V diagrams: two different paths between states 1 and 2, and a closed cycle with enclosed area">
+<defs><marker id="te-u1-arw-psc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="50" y1="262" x2="340" y2="262" class="ln" marker-end="url(#te-u1-arw-psc)"/>
+<line x1="50" y1="262" x2="50" y2="32" class="ln" marker-end="url(#te-u1-arw-psc)"/>
+<text x="336" y="284" class="lbl" text-anchor="end">V</text>
+<text x="40" y="40" class="lbl" text-anchor="end">p</text>
+<path d="M110,205 Q120,100 290,100" class="ln thick acc"/>
+<path d="M110,205 Q280,215 290,100" class="ln thick acc2"/>
+<circle cx="110" cy="205" r="3.5" class="solid"/>
+<circle cx="290" cy="100" r="3.5" class="solid"/>
+<text x="102" y="209" class="lbl-b" text-anchor="end">1</text>
+<text x="298" y="94" class="lbl-b" text-anchor="start">2</text>
+<line x1="400" y1="262" x2="690" y2="262" class="ln" marker-end="url(#te-u1-arw-psc)"/>
+<line x1="400" y1="262" x2="400" y2="32" class="ln" marker-end="url(#te-u1-arw-psc)"/>
+<text x="686" y="284" class="lbl" text-anchor="end">V</text>
+<text x="390" y="40" class="lbl" text-anchor="end">p</text>
+<path d="M460,205 Q470,100 640,100 Q630,215 460,205 Z" class="ln fill-soft"/>
+<path d="M460,205 Q470,100 640,100" class="ln acc" marker-end="url(#te-u1-arw-psc)"/>
+<path d="M640,100 Q630,215 460,205" class="ln acc2" marker-end="url(#te-u1-arw-psc)"/>
+<text x="550" y="164" class="lbl-b" text-anchor="middle">Cycle area</text>
+<text x="550" y="182" class="lbl-sm" text-anchor="middle">= net work</text>
+<circle cx="460" cy="205" r="3.5" class="solid"/>
+<circle cx="640" cy="100" r="3.5" class="solid"/>
+<text x="452" y="209" class="lbl-b" text-anchor="end">1</text>
+<text x="648" y="94" class="lbl-b" text-anchor="start">2</text>
+<text x="150" y="66" class="lbl" text-anchor="middle">Path A</text>
+<text x="100" y="240" class="lbl" text-anchor="start">Path B</text>
+<text x="200" y="40" class="lbl-b" text-anchor="middle">(a) Two paths from state 1 to state 2</text>
+<text x="550" y="40" class="lbl-b" text-anchor="middle">(b) Cycle 1-A-2-B-1</text>
+<text x="520" y="92" class="lbl-sm" text-anchor="middle">A</text>
+<text x="540" y="235" class="lbl-sm" text-anchor="middle">B</text>
+</svg>
+<figcaption>Fig. 1.4 — State, path, process and cycle on a p-V diagram.</figcaption>
+</figure>
+    <p>A <b>point function</b> depends only on the state (the end points), not on the path. Its differential is exact (dp, dV, dT, dU). Its change over a cycle is zero: \( \oint dU = 0 \). A <b>path function</b> depends on the path followed. Its differential is inexact (δQ, δW). Over a cycle it is generally not zero: \( \oint \delta W \neq 0 \). The cyclic integral of work is the net work of the cycle, the area enclosed.</p>
+
+    <h3 id="te-u1-c-eq">6. Thermodynamic equilibrium</h3>
+    <p>A system is in <b>thermodynamic equilibrium</b> if no change of its properties occurs when it is isolated from the surroundings. Properties are then uniform and do not change with time. It needs three kinds of equilibrium together:</p>
+    <ul>
+      <li><b>Mechanical equilibrium</b>: no unbalanced force. Pressure is uniform inside the system and equal to the outside pressure across the boundary.</li>
+      <li><b>Thermal equilibrium</b>: no temperature difference. The temperature is uniform and equal to that of the surroundings, so there is no heat flow.</li>
+      <li><b>Chemical equilibrium</b>: no chemical reaction and no transfer of matter between regions or phases. The chemical composition does not change.</li>
+    </ul>
+    <p>Properties of a system have meaning only in an equilibrium state.</p>
+
+    <h3 id="te-u1-c-qs">7. Quasi-static (quasi-equilibrium) process</h3>
+    <p>A <b>quasi-static process</b> is one that is carried out so slowly that the system passes through a series of equilibrium states, each very near the next. The system is at every instant nearly in equilibrium, so it has a definite p and T and the path can be drawn as a smooth curve on the p–V diagram.</p>
+    <figure class="fig" id="te-u1-f-qs">
+<svg viewBox="0 0 720 320" role="img" aria-label="Gas in a cylinder with small weights removed one at a time, and a p-V graph showing a smooth quasi-static path against a sudden non-quasi-static jump">
+<defs><marker id="te-u1-arw-qs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60" y="130" width="120" height="120" class="fill-soft"/>
+<path d="M60,90 L60,250 L180,250 L180,90" class="ln thick"/>
+<rect x="62" y="120" width="116" height="10" class="ln fill-acc"/>
+<rect x="70" y="100" width="22" height="20" class="ln fill-soft"/>
+<rect x="94" y="100" width="22" height="20" class="ln fill-soft"/>
+<rect x="118" y="100" width="22" height="20" class="ln fill-soft"/>
+<rect x="142" y="100" width="22" height="20" class="ln fill-soft"/>
+<rect x="206" y="100" width="22" height="20" class="ln dash"/>
+<line x1="166" y1="108" x2="204" y2="108" class="ln thin" marker-end="url(#te-u1-arw-qs)"/>
+<text x="120" y="70" class="lbl-sm" text-anchor="middle">Small weights on piston</text>
+<text x="222" y="140" class="lbl-sm" text-anchor="middle">remove one</text>
+<text x="222" y="156" class="lbl-sm" text-anchor="middle">at a time</text>
+<text x="120" y="200" class="lbl-b" text-anchor="middle">Gas</text>
+<line x1="370" y1="262" x2="690" y2="262" class="ln" marker-end="url(#te-u1-arw-qs)"/>
+<line x1="370" y1="262" x2="370" y2="32" class="ln" marker-end="url(#te-u1-arw-qs)"/>
+<text x="686" y="284" class="lbl" text-anchor="end">V</text>
+<text x="360" y="40" class="lbl" text-anchor="end">p</text>
+<path d="M420,72 L425.5,81 L431,89.3 L436.5,96.8 L442,103.7 L447.5,110 L453,115.8 L458.5,121.3 L464,126.3 L469.5,131 L475,135.3 L480.5,139.4 L486,143.2 L491.5,146.8 L497,150.2 L502.5,153.4 L508,156.4 L513.5,159.3 L519,162 L524.5,164.6 L530,167 L535.5,169.3 L541,171.5 L546.5,173.6 L552,175.6 L557.5,177.6 L563,179.4 L568.5,181.1 L574,182.8 L579.5,184.4 L585,186 L590.5,187.5 L596,188.9 L601.5,190.3 L607,191.6 L612.5,192.9 L618,194.1 L623.5,195.3 L629,196.5 L634.5,197.6 L640,198.7" class="ln thick acc"/>
+<circle cx="420" cy="72" r="3.5" class="solid"/>
+<circle cx="475" cy="135.3" r="3.5" class="solid"/>
+<circle cx="530" cy="167" r="3.5" class="solid"/>
+<circle cx="585" cy="186" r="3.5" class="solid"/>
+<circle cx="640" cy="198.7" r="3.5" class="solid"/>
+<path d="M420,72 L420,198.7 L640,198.7" class="ln acc2 dash"/>
+<text x="410" y="66" class="lbl-b" text-anchor="end">1</text>
+<text x="648" y="190.7" class="lbl-b" text-anchor="start">2</text>
+<text x="560" y="98" class="lbl-b" text-anchor="middle">Quasi-static path</text>
+<text x="560" y="116" class="lbl-sm" text-anchor="middle">(equilibrium states)</text>
+<text x="540" y="220.7" class="lbl-sm" text-anchor="middle">sudden removal: not quasi-static</text>
+</svg>
+<figcaption>Fig. 1.5 — Quasi-static process: weights are removed one at a time, so the gas passes through equilibrium states.</figcaption>
+</figure>
+    <p>Example: gas in a cylinder is held down by a pile of tiny weights. We remove them one at a time. After each removal the piston rises a little and the gas settles at a new equilibrium. If we remove all the weights at once, the gas expands violently. Its pressure is not uniform, and no path can be drawn.</p>
+    <aside class="note"><b>Characteristic feature.</b> A quasi-static process is made of a succession of equilibrium states, and it can be shown by a continuous line on a property diagram. Every reversible process is quasi-static, but a quasi-static process with friction is not reversible. The work of a quasi-static process is \( \int p\,dV \).</aside>
+
+    <h3 id="te-u1-c-temp">8. Temperature and temperature scales</h3>
+    <p><b>Temperature</b> is the property that decides the direction of heat flow: heat flows from a body at higher temperature to a body at lower temperature. It is a measure of the average molecular kinetic energy. We measure it by a <b>thermometric property</b>, a property that changes in a regular way with temperature.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Thermometer</th><th>Thermometric property</th></tr></thead>
+      <tbody>
+        <tr><td>Mercury-in-glass (or alcohol)</td><td>Length of liquid column</td></tr>
+        <tr><td>Constant-volume gas thermometer</td><td>Pressure of the gas</td></tr>
+        <tr><td>Constant-pressure gas thermometer</td><td>Volume of the gas</td></tr>
+        <tr><td>Thermocouple</td><td>Thermal emf</td></tr>
+        <tr><td>Resistance thermometer (RTD)</td><td>Electrical resistance</td></tr>
+      </tbody></table></div>
+    <figure class="photo"><img src="img/te-u1-thermocouple.jpg" alt="A type K thermocouple: twisted green and white wire pair with a plug" width="1000" height="750" loading="lazy"><figcaption>A thermocouple: two dissimilar wires joined at the tip. The emf at the plug measures the temperature of the junction. <span class="credit">Photo: Harke · Public domain · Wikimedia Commons</span></figcaption></figure>
+    <figure class="fig" id="te-u1-f-gasth">
+<svg viewBox="0 0 640 280" role="img" aria-label="Constant-volume gas thermometer: a bulb joined to a mercury U-tube manometer">
+<defs><marker id="te-u1-arw-gasth" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<circle cx="110" cy="205" r="34" class="ln fill-soft"/>
+<text x="110" y="210" class="lbl-sm" text-anchor="middle">gas</text>
+<line x1="110" y1="171" x2="110" y2="90" class="ln thick"/>
+<line x1="110" y1="90" x2="250" y2="90" class="ln thick"/>
+<path d="M251,150 L271,150 L271,200 Q271,211 285,211 Q299,211 299,200 L299,110 L319,110 L319,205 Q319,239 285,239 Q251,239 251,205 Z" class="ln fill-acc"/>
+<path d="M250,50 L250,205 Q250,240 285,240 Q320,240 320,205 L320,50" class="ln thick"/>
+<path d="M272,50 L272,200 Q272,212 285,212 Q298,212 298,200 L298,50" class="ln thick"/>
+<line x1="272" y1="150" x2="350" y2="150" class="ln thin dash"/>
+<line x1="298" y1="110" x2="350" y2="110" class="ln thin dash"/>
+<line x1="344" y1="114" x2="344" y2="146" class="ln thin" marker-end="url(#te-u1-arw-gasth)" marker-start="url(#te-u1-arw-gasth)"/>
+<text x="358" y="134" class="lbl" text-anchor="start">h</text>
+<text x="110" y="262" class="lbl-sm" text-anchor="middle">Bulb in the hot body</text>
+<text x="290" y="34" class="lbl-sm" text-anchor="start">open to atmosphere</text>
+<text x="400" y="190" class="lbl-sm" text-anchor="start">mercury</text>
+<line x1="396" y1="188" x2="322" y2="200" class="ln thin" marker-end="url(#te-u1-arw-gasth)"/>
+<text x="380" y="70" class="lbl" text-anchor="start">p = patm + ρ g h</text>
+<text x="380" y="92" class="lbl-sm" text-anchor="start">T ∝ p (volume kept fixed)</text>
+</svg>
+<figcaption>Fig. 1.6 — Constant-volume gas thermometer: the thermometric property is the gas pressure.</figcaption>
+</figure>
+    <p>A temperature scale needs fixed points. The two common ones are the <b>ice point</b> (water and ice at 1 atm) and the <b>steam point</b> (water and steam at 1 atm). If a property X varies linearly with t, then \( t = a\,X + b \). Two fixed points give a and b. If the relation is not linear, for example \( t = a \ln X + b \), the same two fixed points still fix a and b.</p>
+    <div class="formula">\[ T\,(\text{K}) = t\,(^\circ\text{C}) + 273.15 \qquad t_F = \tfrac{9}{5}\,t_C + 32 \qquad \frac{t_C}{100} = \frac{t_F - 32}{180} \]<p class="where">Celsius: ice 0, steam 100 (100 divisions). Fahrenheit: ice 32, steam 212 (180 divisions). Kelvin: ice 273.15, steam 373.15; absolute zero = 0 K = −273.15 °C. The K and °C divisions are the same size.</p></div>
+    <figure class="fig" id="te-u1-f-scales">
+<svg viewBox="0 0 640 350" role="img" aria-label="Three vertical scales showing the ice point and steam point on Celsius, Kelvin and Fahrenheit scales">
+<defs><marker id="te-u1-arw-scales" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="30" y1="70" x2="520" y2="70" class="ln thin dash"/>
+<line x1="30" y1="290" x2="520" y2="290" class="ln thin dash"/>
+<text x="530" y="75" class="lbl-sm" text-anchor="start">Steam point</text>
+<text x="530" y="295" class="lbl-sm" text-anchor="start">Ice point</text>
+<rect x="120" y="70" width="36" height="220" class="ln fill-soft"/>
+<text x="138" y="46" class="lbl-b" text-anchor="middle">Celsius (°C)</text>
+<text x="112" y="64" class="lbl" text-anchor="end">100</text>
+<text x="112" y="310" class="lbl" text-anchor="end">0</text>
+<text x="164" y="185" class="lbl-sm" text-anchor="start">100 div</text>
+<rect x="290" y="70" width="36" height="220" class="ln fill-soft"/>
+<text x="308" y="46" class="lbl-b" text-anchor="middle">Kelvin (K)</text>
+<text x="282" y="64" class="lbl" text-anchor="end">373.15</text>
+<text x="282" y="310" class="lbl" text-anchor="end">273.15</text>
+<text x="334" y="185" class="lbl-sm" text-anchor="start">100 div</text>
+<rect x="460" y="70" width="36" height="220" class="ln fill-soft"/>
+<text x="478" y="46" class="lbl-b" text-anchor="middle">Fahrenheit (°F)</text>
+<text x="452" y="64" class="lbl" text-anchor="end">212</text>
+<text x="452" y="310" class="lbl" text-anchor="end">32</text>
+<text x="504" y="185" class="lbl-sm" text-anchor="start">180 div</text>
+<text x="320" y="330" class="lbl-sm" text-anchor="middle">Absolute zero: −273.15 °C = 0 K = −459.67 °F</text>
+</svg>
+<figcaption>Fig. 1.7 — Celsius, Kelvin and Fahrenheit scales between the ice point and the steam point.</figcaption>
+</figure>
+    <p><b>General method for a new scale.</b> If two scales read x₁, x₂ at the ice and steam points, then \( \dfrac{N - N_{ice}}{N_{steam} - N_{ice}} = \dfrac{t_C}{100} \). This is the key to every "new temperature scale" question.</p>
+    <aside class="exam"><b>Alcohol and mercury thermometers.</b> Both read 0 °C and 100 °C at the fixed points, but at 60 °C they will not agree exactly. Alcohol and mercury expand differently with temperature, so equal divisions between the fixed points do not mean equal temperature steps for both liquids. The gas thermometer is the standard because gases at low pressure behave alike.</aside>
+
+    <h3 id="te-u1-c-zeroth">9. Thermal equilibrium and the Zeroth Law</h3>
+    <p>Two bodies are in <b>thermal equilibrium</b> when they have the same temperature, so no heat flows if they are brought in contact through a diathermal wall.</p>
+    <div class="formula"><b>Zeroth Law.</b> If two bodies are each in thermal equilibrium with a third body, they are in thermal equilibrium with each other.</div>
+    <figure class="fig" id="te-u1-f-zeroth">
+<svg viewBox="0 0 740 260" role="img" aria-label="Three panels: body A in equilibrium with C, body B in equilibrium with C, hence A and B in equilibrium">
+<defs><marker id="te-u1-arw-zeroth" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="30" y="70" width="80" height="80" class="ln fill-soft"/>
+<rect x="110" y="85" width="50" height="50" class="ln fill-acc"/>
+<text x="70" y="116" class="lbl-b" text-anchor="middle">A</text>
+<text x="135" y="116" class="lbl-b" text-anchor="middle">C</text>
+<rect x="280" y="70" width="80" height="80" class="ln fill-soft"/>
+<rect x="360" y="85" width="50" height="50" class="ln fill-acc"/>
+<text x="320" y="116" class="lbl-b" text-anchor="middle">B</text>
+<text x="385" y="116" class="lbl-b" text-anchor="middle">C</text>
+<rect x="530" y="70" width="80" height="80" class="ln fill-soft"/>
+<rect x="610" y="70" width="80" height="80" class="ln fill-soft"/>
+<text x="570" y="116" class="lbl-b" text-anchor="middle">A</text>
+<text x="650" y="116" class="lbl-b" text-anchor="middle">B</text>
+<text x="95" y="56" class="lbl" text-anchor="middle">TA = TC</text>
+<text x="345" y="56" class="lbl" text-anchor="middle">TB = TC</text>
+<text x="610" y="56" class="lbl-b" text-anchor="middle">so TA = TB</text>
+<text x="95" y="180" class="lbl-sm" text-anchor="middle">(i) A and C</text>
+<text x="95" y="198" class="lbl-sm" text-anchor="middle">in thermal equilibrium</text>
+<text x="345" y="180" class="lbl-sm" text-anchor="middle">(ii) B and C</text>
+<text x="345" y="198" class="lbl-sm" text-anchor="middle">in thermal equilibrium</text>
+<text x="610" y="180" class="lbl-sm" text-anchor="middle">(iii) A and B are then</text>
+<text x="610" y="198" class="lbl-sm" text-anchor="middle">in thermal equilibrium</text>
+<text x="95" y="228" class="lbl-sm" text-anchor="middle">C acts as the thermometer</text>
+<text x="610" y="228" class="lbl-sm" text-anchor="middle">(no heat flows between them)</text>
+<text x="205" y="116" class="lbl-sm" text-anchor="middle">and</text>
+<text x="455" y="116" class="lbl" text-anchor="middle">⇒</text>
+</svg>
+<figcaption>Fig. 1.8 — Zeroth law: A and B are each in equilibrium with C, so A and B are in equilibrium with each other.</figcaption>
+</figure>
+    <ul>
+      <li>The law is the basis of <b>temperature measurement</b>: the third body C is the thermometer. If it reads the same when in contact with A and with B, then T<sub>A</sub> = T<sub>B</sub>.</li>
+      <li>It defines temperature as a property: the quantity that is equal for bodies in thermal equilibrium.</li>
+      <li>It was stated after the first and second laws were already numbered, so it is called the zeroth law.</li>
+    </ul>
+
+    <h3 id="te-u1-c-work">10. Thermodynamic work</h3>
+    <p><b>Work</b> is energy transfer across the system boundary when a system interacts with the surroundings by a force through a distance. In thermodynamics, <b>work is done by a system if the sole effect on the surroundings could be the raising of a weight</b>. Work is energy in transit, a path function, written δW.</p>
+    <aside class="warn"><b>Sign convention.</b> Work done <i>by</i> the system on the surroundings is <b>positive</b> (expansion). Work done <i>on</i> the system is <b>negative</b> (compression). Unit: joule (J = N·m); power in W.</aside>
+    <aside class="note"><b>Mechanics versus thermodynamic work.</b> In mechanics, work needs a force moving through a distance. In thermodynamics, work is any energy crossing the boundary that is not heat. Example: a battery that heats a resistor does thermodynamic work on the system (electrical work), although no force moves through a distance. Another example: a gas expanding into a vacuum moves the boundary but does <b>no work</b> because there is no resisting force.</aside>
+    <p><b>Displacement work</b> (p dV work). Consider gas at pressure p in a cylinder of piston area A. The piston moves a small distance dL during a quasi-static expansion.</p>
+    <figure class="fig" id="te-u1-f-work">
+<svg viewBox="0 0 720 300" role="img" aria-label="A piston moving a small distance dL under pressure p, and a p-V graph where the strip p dV is part of the area under the curve">
+<defs><marker id="te-u1-arw-work" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60" y="150" width="110" height="90" class="fill-soft"/>
+<path d="M60,70 L60,240 L170,240 L170,70" class="ln thick"/>
+<rect x="62" y="140" width="106" height="10" class="ln fill-acc"/>
+<rect x="62" y="110" width="106" height="10" class="ln dash"/>
+<rect x="112" y="36" width="12" height="104" class="ln fill-soft"/>
+<line x1="200" y1="138" x2="200" y2="112" class="ln thin" marker-end="url(#te-u1-arw-work)" marker-start="url(#te-u1-arw-work)"/>
+<text x="212" y="130" class="lbl" text-anchor="start">dL</text>
+<text x="115" y="200" class="lbl-b" text-anchor="middle">gas, p</text>
+<text x="115" y="222" class="lbl-sm" text-anchor="middle">area A</text>
+<line x1="240" y1="150" x2="240" y2="112" class="ln" marker-end="url(#te-u1-arw-work)"/>
+<text x="250" y="146" class="lbl-sm" text-anchor="start">F = pA</text>
+<line x1="400" y1="262" x2="700" y2="262" class="ln" marker-end="url(#te-u1-arw-work)"/>
+<line x1="400" y1="262" x2="400" y2="32" class="ln" marker-end="url(#te-u1-arw-work)"/>
+<text x="696" y="284" class="lbl" text-anchor="end">V</text>
+<text x="390" y="40" class="lbl" text-anchor="end">p</text>
+<path d="M450,262 L450,92 L455,100.5 L460,108.2 L465,115.2 L470,121.6 L475,127.4 L480,132.8 L485,137.8 L490,142.4 L495,146.6 L500,150.6 L505,154.3 L510,157.8 L515,161.1 L520,164.1 L525,167 L530,169.7 L535,172.3 L540,174.7 L545,177 L550,179.2 L555,181.2 L560,183.2 L565,185.1 L570,186.9 L575,188.6 L580,190.2 L585,191.8 L590,193.3 L595,194.7 L600,196.1 L605,197.4 L610,198.7 L615,199.9 L620,201.1 L625,202.2 L630,203.3 L635,204.3 L640,205.3 L640,262 Z" class="ln fill-soft"/>
+<path d="M520,262 L520,164.1 L524,166.4 L528,168.6 L532,170.8 L536,172.8 L540,174.7 L540,262 Z" class="ln fill-acc"/>
+<line x1="450" y1="262" x2="450" y2="92" class="ln thin dash"/>
+<line x1="640" y1="262" x2="640" y2="205.3" class="ln thin dash"/>
+<circle cx="450" cy="92" r="3.5" class="solid"/>
+<circle cx="640" cy="205.3" r="3.5" class="solid"/>
+<text x="446" y="84" class="lbl-b" text-anchor="end">1</text>
+<text x="646" y="197.3" class="lbl-b" text-anchor="start">2</text>
+<text x="450" y="284" class="lbl-sm" text-anchor="middle">V1</text>
+<text x="640" y="284" class="lbl-sm" text-anchor="middle">V2</text>
+<text x="530" y="284" class="lbl-sm" text-anchor="middle">dV</text>
+<text x="595" y="236" class="lbl-b" text-anchor="middle">Area = W</text>
+</svg>
+<figcaption>Fig. 1.9 — Displacement work: dW = p dV is the thin strip of area under the p-V curve.</figcaption>
+</figure>
+    <p>Force on the piston = pA. Work for the small displacement is \( \delta W = F\,dL = pA\,dL = p\,dV \). From state 1 to state 2:</p>
+    <div class="formula">\[ W_{1-2} = \int_{1}^{2} p\,dV \]<p class="where">The integral is the area under the process curve on the p–V diagram. It is valid only for a quasi-static process, where p is known at every instant.</p></div>
+    <p>To evaluate it we need p as a function of V, that is the process law. The four standard cases:</p>
+    <figure class="fig" id="te-u1-f-proc">
+<svg viewBox="0 0 720 520" role="img" aria-label="Four p-V diagrams: constant volume, constant pressure, isothermal and polytropic processes with work areas shaded">
+<defs><marker id="te-u1-arw-proc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="50" y1="210" x2="340" y2="210" class="ln" marker-end="url(#te-u1-arw-proc)"/>
+<line x1="50" y1="210" x2="50" y2="50" class="ln" marker-end="url(#te-u1-arw-proc)"/>
+<text x="336" y="232" class="lbl" text-anchor="end">V</text>
+<text x="40" y="58" class="lbl" text-anchor="end">p</text>
+<text x="190" y="38" class="lbl-b" text-anchor="middle">(a) Constant volume</text>
+<line x1="180" y1="175" x2="180" y2="85" class="ln acc" marker-end="url(#te-u1-arw-proc)"/>
+<circle cx="180" cy="175" r="3.5" class="solid"/>
+<circle cx="180" cy="85" r="3.5" class="solid"/>
+<text x="192" y="180" class="lbl-b" text-anchor="start">1</text>
+<text x="192" y="88" class="lbl-b" text-anchor="start">2</text>
+<text x="180" y="230" class="lbl-sm" text-anchor="middle">V1 = V2</text>
+<text x="190" y="250" class="lbl-sm" text-anchor="middle">W = 0 (no area)</text>
+<line x1="410" y1="210" x2="700" y2="210" class="ln" marker-end="url(#te-u1-arw-proc)"/>
+<line x1="410" y1="210" x2="410" y2="50" class="ln" marker-end="url(#te-u1-arw-proc)"/>
+<text x="696" y="232" class="lbl" text-anchor="end">V</text>
+<text x="400" y="58" class="lbl" text-anchor="end">p</text>
+<text x="550" y="38" class="lbl-b" text-anchor="middle">(b) Constant pressure</text>
+<rect x="470" y="120" width="150" height="90" class="ln fill-soft"/>
+<line x1="470" y1="120" x2="620" y2="120" class="ln acc" marker-end="url(#te-u1-arw-proc)"/>
+<circle cx="470" cy="120" r="3.5" class="solid"/>
+<circle cx="620" cy="120" r="3.5" class="solid"/>
+<text x="462" y="114" class="lbl-b" text-anchor="end">1</text>
+<text x="628" y="114" class="lbl-b" text-anchor="start">2</text>
+<text x="470" y="230" class="lbl-sm" text-anchor="middle">V1</text>
+<text x="620" y="230" class="lbl-sm" text-anchor="middle">V2</text>
+<text x="545" y="170" class="lbl-b" text-anchor="middle">W</text>
+<text x="550" y="250" class="lbl-sm" text-anchor="middle">W = p (V2 − V1)</text>
+<line x1="50" y1="470" x2="340" y2="470" class="ln" marker-end="url(#te-u1-arw-proc)"/>
+<line x1="50" y1="470" x2="50" y2="310" class="ln" marker-end="url(#te-u1-arw-proc)"/>
+<text x="336" y="492" class="lbl" text-anchor="end">V</text>
+<text x="40" y="318" class="lbl" text-anchor="end">p</text>
+<text x="190" y="298" class="lbl-b" text-anchor="middle">(c) Isothermal, pV = C</text>
+<path d="M110,470 L110,350 L115,355.7 L120,360.9 L125,365.7 L130,370 L135,374 L140,377.7 L145,381.1 L150,384.3 L155,387.2 L160,390 L165,392.6 L170,395 L175,397.3 L180,399.4 L185,401.4 L190,403.3 L195,405.1 L200,406.8 L205,408.5 L210,410 L215,411.5 L220,412.9 L225,414.2 L230,415.5 L235,416.7 L240,417.8 L245,418.9 L250,420 L255,421 L260,422 L260,470 Z" class="ln fill-soft"/>
+<path d="M110,350 L115,355.7 L120,360.9 L125,365.7 L130,370 L135,374 L140,377.7 L145,381.1 L150,384.3 L155,387.2 L160,390 L165,392.6 L170,395 L175,397.3 L180,399.4 L185,401.4 L190,403.3 L195,405.1 L200,406.8 L205,408.5 L210,410 L215,411.5 L220,412.9 L225,414.2 L230,415.5 L235,416.7 L240,417.8 L245,418.9 L250,420 L255,421 L260,422" class="ln thick acc"/>
+<circle cx="110" cy="350" r="3.5" class="solid"/>
+<circle cx="260" cy="422" r="3.5" class="solid"/>
+<text x="102" y="342" class="lbl-b" text-anchor="end">1</text>
+<text x="268" y="414" class="lbl-b" text-anchor="start">2</text>
+<text x="110" y="490" class="lbl-sm" text-anchor="middle">V1</text>
+<text x="260" y="490" class="lbl-sm" text-anchor="middle">V2</text>
+<text x="170" y="448" class="lbl-b" text-anchor="middle">W</text>
+<text x="190" y="510" class="lbl-sm" text-anchor="middle">W = p1V1 ln(V2/V1)</text>
+<line x1="410" y1="470" x2="700" y2="470" class="ln" marker-end="url(#te-u1-arw-proc)"/>
+<line x1="410" y1="470" x2="410" y2="310" class="ln" marker-end="url(#te-u1-arw-proc)"/>
+<text x="696" y="492" class="lbl" text-anchor="end">V</text>
+<text x="400" y="318" class="lbl" text-anchor="end">p</text>
+<text x="550" y="298" class="lbl-b" text-anchor="middle">(d) Polytropic, pVⁿ = C</text>
+<path d="M470,470 L470,350 L475,357.9 L480,365 L485,371.3 L490,377 L495,382.2 L500,386.9 L505,391.2 L510,395.1 L515,398.7 L520,402 L525,405 L530,407.9 L535,410.5 L540,412.9 L545,415.2 L550,417.3 L555,419.3 L560,421.1 L565,422.9 L570,424.5 L575,426.1 L580,427.5 L585,428.9 L590,430.2 L595,431.4 L600,432.6 L605,433.7 L610,434.8 L615,435.8 L620,436.7 L620,470 Z" class="ln fill-soft"/>
+<path d="M470,350 L475,355.7 L480,360.9 L485,365.7 L490,370 L495,374 L500,377.7 L505,381.1 L510,384.3 L515,387.2 L520,390 L525,392.6 L530,395 L535,397.3 L540,399.4 L545,401.4 L550,403.3 L555,405.1 L560,406.8 L565,408.5 L570,410 L575,411.5 L580,412.9 L585,414.2 L590,415.5 L595,416.7 L600,417.8 L605,418.9 L610,420 L615,421 L620,422" class="ln thin dash"/>
+<text x="560" y="388" class="lbl-sm" text-anchor="start">isothermal</text>
+<path d="M470,350 L475,357.9 L480,365 L485,371.3 L490,377 L495,382.2 L500,386.9 L505,391.2 L510,395.1 L515,398.7 L520,402 L525,405 L530,407.9 L535,410.5 L540,412.9 L545,415.2 L550,417.3 L555,419.3 L560,421.1 L565,422.9 L570,424.5 L575,426.1 L580,427.5 L585,428.9 L590,430.2 L595,431.4 L600,432.6 L605,433.7 L610,434.8 L615,435.8 L620,436.7" class="ln thick acc"/>
+<circle cx="470" cy="350" r="3.5" class="solid"/>
+<circle cx="620" cy="436.7" r="3.5" class="solid"/>
+<text x="462" y="342" class="lbl-b" text-anchor="end">1</text>
+<text x="628" y="428.7" class="lbl-b" text-anchor="start">2</text>
+<text x="470" y="490" class="lbl-sm" text-anchor="middle">V1</text>
+<text x="620" y="490" class="lbl-sm" text-anchor="middle">V2</text>
+<text x="530" y="448" class="lbl-b" text-anchor="middle">W</text>
+<text x="550" y="510" class="lbl-sm" text-anchor="middle">W = (p1V1 − p2V2)/(n − 1)</text>
+</svg>
+<figcaption>Fig. 1.10 — Reversible processes on the p-V diagram. The shaded area under each path is the work.</figcaption>
+</figure>
+    <p><b>(a) Constant volume (isochoric).</b> dV = 0, so \( W = 0 \).</p>
+    <p><b>(b) Constant pressure (isobaric).</b> p is constant, so</p>
+    <div class="formula">\[ W = p\int_1^2 dV = p\,(V_2 - V_1) \]</div>
+    <p><b>(c) Isothermal (pV = C).</b> Put \( p = C/V = p_1V_1/V \):</p>
+    <div class="formula">\[ W = p_1V_1\int_1^2 \frac{dV}{V} = p_1V_1 \ln\frac{V_2}{V_1} = p_1V_1\ln\frac{p_1}{p_2} = mRT\ln\frac{V_2}{V_1} \]</div>
+    <p><b>(d) Polytropic (pVⁿ = C).</b> Put \( p = C/V^n \) with \( C = p_1V_1^n = p_2V_2^n \):</p>
+    <div class="formula">\[ W = C\int_1^2 V^{-n}dV = C\,\frac{V_2^{\,1-n} - V_1^{\,1-n}}{1-n} = \frac{p_2V_2 - p_1V_1}{1-n} = \frac{p_1V_1 - p_2V_2}{n-1} = \frac{mR\,(T_1 - T_2)}{n-1} \]<p class="where">For an ideal gas pV = mRT. For n = 1 use the isothermal formula (the denominator n − 1 becomes zero).</p></div>
+    <p>Useful relations for a polytropic process: \( \dfrac{p_2}{p_1} = \left(\dfrac{V_1}{V_2}\right)^{n} = \left(\dfrac{T_2}{T_1}\right)^{\frac{n}{n-1}} \) and \( \dfrac{T_2}{T_1} = \left(\dfrac{V_1}{V_2}\right)^{n-1} \). The index n = 0 gives constant pressure, n = 1 isothermal, n = γ reversible adiabatic (pV<sup>γ</sup> = C), n = ∞ constant volume.</p>
+    <p><b>Quick examples.</b> (i) Gas at 200 kPa expands from 0.1 to 0.3 m³ at constant pressure: W = 200 × (0.3 − 0.1) = 40 kJ. (ii) 1 kg of air (R = 0.287 kJ/kg·K) doubles its volume isothermally at 300 K: W = 0.287 × 300 × ln 2 = 59.7 kJ.</p>
+    <p><b>Net work of a cycle</b> = sum of the works of the processes = area enclosed on the p–V diagram. A clockwise cycle gives positive net work (heat engine).</p>
+    <h3 id="te-u1-c-otherwork">Other forms of work</h3>
+    <figure class="fig" id="te-u1-f-other">
+<svg viewBox="0 0 720 250" role="img" aria-label="Three work modes: rotating shaft with torque, paddle wheel stirring a fluid driven by a falling weight, and an electric resistor heating a fluid">
+<defs><marker id="te-u1-arw-other" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="30" y="100" width="150" height="24" class="ln fill-soft"/>
+<rect x="180" y="70" width="12" height="84" class="ln fill-acc"/>
+<path d="M215,70 A42,42 0 0 1 215,154" class="ln acc" marker-end="url(#te-u1-arw-other)"/>
+<text x="235" y="118" class="lbl-b" text-anchor="start">ω</text>
+<text x="105" y="92" class="lbl-sm" text-anchor="middle">torque T</text>
+<text x="110" y="200" class="lbl-b" text-anchor="middle">(a) Shaft work</text>
+<text x="110" y="222" class="lbl-sm" text-anchor="middle">W = T ω per second</text>
+<rect x="290" y="100" width="130" height="100" class="ln fill-soft"/>
+<line x1="355" y1="50" x2="355" y2="180" class="ln thick"/>
+<rect x="330" y="172" width="50" height="8" class="ln fill-acc"/>
+<line x1="355" y1="50" x2="440" y2="50" class="ln"/>
+<circle cx="446" cy="50" r="8" class="ln"/>
+<line x1="454" y1="50" x2="454" y2="100" class="ln"/>
+<rect x="442" y="100" width="24" height="26" class="ln fill-acc"/>
+<line x1="454" y1="130" x2="454" y2="160" class="ln" marker-end="url(#te-u1-arw-other)"/>
+<text x="454" y="180" class="lbl-sm" text-anchor="middle">weight</text>
+<text x="375" y="150" class="lbl-sm" text-anchor="start">fluid</text>
+<text x="300" y="40" class="lbl-sm" text-anchor="start">paddle shaft</text>
+<text x="370" y="225" class="lbl-b" text-anchor="middle">(b) Paddle-wheel work</text>
+<rect x="520" y="130" width="120" height="70" class="ln fill-soft"/>
+<path d="M545,185 l10,0 l5,-12 l10,24 l10,-24 l10,24 l5,-12 l10,0" class="ln thick acc"/>
+<line x1="545" y1="185" x2="545" y2="60" class="ln"/>
+<line x1="545" y1="60" x2="570" y2="60" class="ln"/>
+<line x1="610" y1="185" x2="610" y2="60" class="ln"/>
+<line x1="610" y1="60" x2="584" y2="60" class="ln"/>
+<line x1="572" y1="46" x2="572" y2="74" class="ln"/>
+<line x1="582" y1="53" x2="582" y2="67" class="ln thick"/>
+<text x="578" y="36" class="lbl-sm" text-anchor="middle">battery V</text>
+<text x="580" y="225" class="lbl-b" text-anchor="middle">(c) Electrical work</text>
+<text x="580" y="245" class="lbl-sm" text-anchor="middle">W = V I t</text>
+<text x="580" y="150" class="lbl-sm" text-anchor="middle">resistor</text>
+</svg>
+<figcaption>Fig. 1.11 — Other forms of work: (a) shaft, (b) paddle wheel, (c) electrical.</figcaption>
+</figure>
+    <ul>
+      <li><b>Shaft work</b>: a torque T turns a shaft through an angle θ; W = Tθ, and power = Tω = 2πNT/60 (N in rpm). Turbines and compressors deliver and take shaft work.</li>
+      <li><b>Paddle-wheel work</b>: a paddle stirs a fluid, driven by a falling weight (Joule's experiment). The system receives work (negative); the fluid warms.</li>
+      <li><b>Electrical work</b>: W = VIt. The system receives work (negative) when current flows into it.</li>
+      <li>Others: spring work (½kx²), stretching of a film, magnetic work.</li>
+    </ul>
+
+    <h3 id="te-u1-c-heat">11. Heat transfer</h3>
+    <p><b>Heat</b> is the energy that crosses the boundary of a system because of a <b>temperature difference</b> between the system and the surroundings. It is energy in transit, a path function (δQ), measured in joule (J) or kJ. A process with no heat transfer is <b>adiabatic</b> (Q = 0).</p>
+    <figure class="fig" id="te-u1-f-sign">
+<svg viewBox="0 0 600 280" role="img" aria-label="A system with arrows showing heat in and work out as positive, heat out and work in as negative">
+<defs><marker id="te-u1-arw-sign" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="230" y="80" width="140" height="100" class="ln fill-soft"/>
+<text x="300" y="134" class="lbl-b" text-anchor="middle">SYSTEM</text>
+<line x1="70" y1="106" x2="228" y2="106" class="ln" marker-end="url(#te-u1-arw-sign)"/>
+<text x="150" y="94" class="lbl" text-anchor="middle">Q in = +</text>
+<line x1="228" y1="158" x2="70" y2="158" class="ln" marker-end="url(#te-u1-arw-sign)"/>
+<text x="150" y="180" class="lbl" text-anchor="middle">Q out = −</text>
+<line x1="372" y1="106" x2="530" y2="106" class="ln" marker-end="url(#te-u1-arw-sign)"/>
+<text x="450" y="94" class="lbl" text-anchor="middle">W by system = +</text>
+<line x1="530" y1="158" x2="372" y2="158" class="ln" marker-end="url(#te-u1-arw-sign)"/>
+<text x="450" y="180" class="lbl" text-anchor="middle">W on system = −</text>
+<text x="300" y="40" class="lbl-sm" text-anchor="middle">Heat and work are both energy in transit</text>
+<text x="300" y="240" class="lbl-sm" text-anchor="middle">Net work (cycle) = ΣW; net heat = ΣQ</text>
+</svg>
+<figcaption>Fig. 1.12 — Sign convention: heat added to the system and work done by the system are positive.</figcaption>
+</figure>
+    <p>Heat added to the system is <b>positive</b>; heat rejected by the system is <b>negative</b>. Work done by the system is positive. Heat rejected and work done on the system are negative.</p>
+    <aside class="note"><b>Heat and temperature rise.</b> Heat does not always raise temperature: during melting or boiling it is latent heat and T stays constant. Temperature can also rise without heat, by compression or stirring (work). A body stores internal energy, not heat.</aside>
+    <div class="tbl"><table>
+      <thead><tr><th>Heat</th><th>Work</th></tr></thead>
+      <tbody>
+        <tr><td>Energy transfer due to a temperature difference</td><td>Energy transfer due to any driving force other than temperature difference (pressure, voltage, torque)</td></tr>
+        <tr><td>Low-grade energy: cannot be completely converted to work</td><td>High-grade energy: can be completely converted to heat</td></tr>
+        <tr><td>Heat added is +ve (by convention)</td><td>Work done by the system is +ve</td></tr>
+        <tr><td colspan="2"><b>Similarities:</b> both are boundary phenomena; both are transient (they exist only while crossing the boundary); both are path functions (inexact differentials, δ); both are energy in transit, not properties; the system does not possess heat or work; unit joule.</td></tr>
+      </tbody></table></div>
+
+    <h3 id="te-u1-c-cp">12. Specific heats</h3>
+    <p>The <b>specific heat</b> is the heat needed to raise the temperature of 1 kg of a substance by 1 K. The value depends on the process, so there are two for a gas:</p>
+    <ul>
+      <li><b>c<sub>v</sub></b>, specific heat at constant volume: heat added per kg per K while the volume is constant.</li>
+      <li><b>c<sub>p</sub></b>, specific heat at constant pressure: heat added per kg per K while the pressure is constant.</li>
+    </ul>
+    <div class="formula">\[ Q = m\,c\,(T_2 - T_1) \qquad\text{and for variable } c:\; Q = m\int_{T_1}^{T_2} c\,dT \]<p class="where">Unit of c: kJ/kg·K. For air: c<sub>p</sub> = 1.005, c<sub>v</sub> = 0.718 kJ/kg·K, γ = 1.4. For water c ≈ 4.18 kJ/kg·K.</p></div>
+    <p><b>Why c<sub>p</sub> &gt; c<sub>v</sub>.</b> At constant volume the heat only raises the internal energy. At constant pressure the gas also expands and does work p dV, so more heat is needed for the same ΔT.</p>
+    <p><b>Relation c<sub>p</sub> − c<sub>v</sub> = R</b> (ideal gas). For an ideal gas, internal energy and enthalpy depend only on T: du = c<sub>v</sub>dT and dh = c<sub>p</sub>dT. Since h = u + pv = u + RT, we get dh = du + R dT. Hence</p>
+    <div class="formula">\[ c_p - c_v = R \qquad \gamma = \frac{c_p}{c_v} \qquad c_v = \frac{R}{\gamma - 1},\; c_p = \frac{\gamma R}{\gamma - 1} \]<p class="where">R = specific gas constant (kJ/kg·K). Air: R = 0.287, γ = 1.4, so c<sub>v</sub> = 0.7175 and c<sub>p</sub> = 1.0045 kJ/kg·K.</p></div>
+    <p>The <b>mean specific heat</b> over a range is \( c_m = \dfrac{Q}{m\,\Delta T} \). (Enthalpy h is defined in Unit 2; here only the result is needed.)</p>
+
+    <h3 id="te-u1-c-energy">13. Forms of energy</h3>
+    <p>Energy is the capacity to do work. A system can have it in two ways:</p>
+    <figure class="fig" id="te-u1-f-energy">
+<svg viewBox="0 0 640 260" role="img" aria-label="Tree: energy splits into stored energy (kinetic, potential, internal) and energy in transit (heat and work)">
+<defs><marker id="te-u1-arw-energy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="220" y="12" width="200" height="36" class="ln fill-acc"/>
+<text x="320" y="36" class="lbl-b" text-anchor="middle">Energy of a system</text>
+<rect x="40" y="92" width="220" height="40" class="ln fill-soft"/>
+<text x="150" y="117" class="lbl-b" text-anchor="middle">Stored energy (property)</text>
+<rect x="380" y="92" width="220" height="40" class="ln fill-soft"/>
+<text x="490" y="117" class="lbl-b" text-anchor="middle">In transit (path function)</text>
+<line x1="320" y1="48" x2="320" y2="70" class="ln"/>
+<line x1="150" y1="70" x2="490" y2="70" class="ln"/>
+<line x1="150" y1="70" x2="150" y2="92" class="ln"/>
+<line x1="490" y1="70" x2="490" y2="92" class="ln"/>
+<line x1="150" y1="132" x2="60" y2="172" class="ln thin"/>
+<rect x="20" y="172" width="80" height="50" class="ln"/>
+<text x="60" y="194" class="lbl-sm" text-anchor="middle">Kinetic</text>
+<text x="60" y="212" class="lbl-sm" text-anchor="middle">½ m V²</text>
+<line x1="150" y1="132" x2="150" y2="172" class="ln thin"/>
+<rect x="110" y="172" width="80" height="50" class="ln"/>
+<text x="150" y="194" class="lbl-sm" text-anchor="middle">Potential</text>
+<text x="150" y="212" class="lbl-sm" text-anchor="middle">m g z</text>
+<line x1="150" y1="132" x2="240" y2="172" class="ln thin"/>
+<rect x="200" y="172" width="80" height="50" class="ln"/>
+<text x="240" y="194" class="lbl-sm" text-anchor="middle">Internal</text>
+<text x="240" y="212" class="lbl-sm" text-anchor="middle">U</text>
+<line x1="490" y1="132" x2="440" y2="172" class="ln thin"/>
+<rect x="400" y="172" width="80" height="50" class="ln"/>
+<text x="440" y="194" class="lbl-sm" text-anchor="middle">Heat Q</text>
+<text x="440" y="212" class="lbl-sm" text-anchor="middle">ΔT driven</text>
+<line x1="490" y1="132" x2="540" y2="172" class="ln thin"/>
+<rect x="500" y="172" width="80" height="50" class="ln"/>
+<text x="540" y="194" class="lbl-sm" text-anchor="middle">Work W</text>
+<text x="540" y="212" class="lbl-sm" text-anchor="middle">F × distance</text>
+</svg>
+<figcaption>Fig. 1.13 — Forms of energy: stored energy is a property; heat and work are energy in transit.</figcaption>
+</figure>
+    <ul>
+      <li><b>Stored energy</b> is a property of the system: kinetic energy \( \tfrac12 mV^2 \), potential energy \( mgz \), and internal energy U (molecular energy: kinetic, intermolecular potential, chemical, nuclear). Total \( E = U + \tfrac12 mV^2 + mgz \).</li>
+      <li><b>Energy in transit</b> exists only while it crosses the boundary: heat Q and work W. They are path functions.</li>
+    </ul>
+    <p>Internal energy U is the sum of all molecular energies. For an ideal gas it depends only on temperature. Unit 2 links U, Q and W.</p>
+
+    <h3 id="te-u1-cards">Key terms</h3>
+    <dl class="cards">
+      <dt>Control volume</dt><dd>A fixed region of space for an open system; mass and energy cross the control surface.</dd>
+      <dt>Intensive property</dt><dd>Independent of the mass of the system (p, T, ρ, v).</dd>
+      <dt>Extensive property</dt><dd>Depends on the mass of the system (V, m, U, H).</dd>
+      <dt>Point function</dt><dd>Depends on the state only; exact differential; zero change over a cycle.</dd>
+      <dt>Path function</dt><dd>Depends on the path; inexact differential (δQ, δW).</dd>
+      <dt>Quasi-static process</dt><dd>A process so slow that the system stays in equilibrium at every instant.</dd>
+      <dt>Zeroth law</dt><dd>If A and C are in thermal equilibrium, and B and C are, then A and B are.</dd>
+      <dt>Thermodynamic work</dt><dd>Energy crossing the boundary by a force through a distance; positive when done by the system.</dd>
+      <dt>Adiabatic process</dt><dd>A process with no heat transfer across the boundary.</dd>
+      <dt>c<sub>p</sub> − c<sub>v</sub></dt><dd>Equal to the gas constant R for an ideal gas.</dd>
+    </dl>
+
+    <div class="quiz" id="te-u1-quiz">
+      <div class="mcq" data-answer="b"><p class="stem">Which of these is an extensive property?</p><ol class="opts"><li>Pressure</li><li>Volume</li><li>Density</li><li>Specific volume</li></ol><p class="why">Volume depends on the amount of substance. The other three are intensive (per unit mass or volume, or a force per area).</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">A system that exchanges energy but not mass with the surroundings is</p><ol class="opts"><li>isolated</li><li>open</li><li>closed</li><li>a control volume</li></ol><p class="why">Closed system: fixed mass (control mass), energy can cross.</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">Work done in a constant-volume process is</p><ol class="opts"><li>zero</li><li>p(V₂ − V₁)</li><li>p₁V₁ ln(V₂/V₁)</li><li>(p₁V₁ − p₂V₂)/(n − 1)</li></ol><p class="why">dV = 0, so ∫p dV = 0.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">Which pair are both path functions?</p><ol class="opts"><li>Pressure and volume</li><li>Temperature and entropy</li><li>Internal energy and enthalpy</li><li>Heat and work</li></ol><p class="why">Heat and work depend on the path. Properties (point functions) depend on the state only.</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">The zeroth law of thermodynamics is the basis of</p><ol class="opts"><li>energy conservation</li><li>temperature measurement</li><li>entropy increase</li><li>the Carnot cycle</li></ol><p class="why">It allows a thermometer (the third body) to compare temperatures.</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">On a scale that reads 100 at the ice point and 400 at the steam point, 50 °C reads</p><ol class="opts"><li>150</li><li>200</li><li>250</li><li>300</li></ol><p class="why">N = 100 + 3 × 50 = 250.</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">For an ideal gas, c<sub>p</sub> − c<sub>v</sub> equals</p><ol class="opts"><li>R</li><li>γ</li><li>c<sub>v</sub>/c<sub>p</sub></li><li>zero</li></ol><p class="why">From h = u + RT: c<sub>p</sub> = c<sub>v</sub> + R.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">Gas expands from 0.1 to 0.3 m³ at a constant 200 kPa. The work is</p><ol class="opts"><li>10 kJ</li><li>20 kJ</li><li>30 kJ</li><li>40 kJ</li></ol><p class="why">W = p(V₂ − V₁) = 200 × 0.2 = 40 kJ.</p></div>
+    </div>
+  </section>
+
+  <section class="part" id="te-u1-theory" data-part="theory">
+    <h2>Theory questions</h2>
+
+    <article class="q" id="te-u1-q1" data-marks="10">
+      <h3>Q1. Define thermodynamics. Distinguish between open, closed and isolated systems with proper illustration.</h3>
+      <p class="q-src">Jan 2025 Q1(a) · Jan 2023 (CBCS) Unit 1 · Nov 2024 Unit 1</p>
+      <p class="q-hint">Definition, one neat three-panel sketch, a comparison table with examples, and a line on control volume.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Thermodynamics</b> is the branch of science that deals with energy, its transformation from one form to another, and the relations between the properties of matter during these changes (heat, work and properties such as p, V, T).</p>
+        <p><b>System.</b> A system is a definite quantity of matter or region of space chosen for study. Everything outside is the surroundings; the boundary separates them. The three types are shown below.</p>
+        <figure class="fig" id="te-u1-f-typesq1">
+<svg viewBox="0 0 740 275" role="img" aria-label="Three panels: closed system with heat and work but no mass crossing, open system with mass flow, isolated system with nothing crossing">
+<defs><marker id="te-u1-arw-typesq1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="30" y="40" width="200" height="130" class="ln acc dash" rx="8"/>
+<rect x="265" y="40" width="200" height="130" class="ln acc dash" rx="8"/>
+<rect x="510" y="40" width="200" height="130" class="ln acc dash" rx="8"/>
+<rect x="90" y="100" width="80" height="62" class="fill-soft"/>
+<path d="M90,62 L90,162 L170,162 L170,62" class="ln thick"/>
+<rect x="92" y="90" width="76" height="10" class="ln fill-acc"/>
+<line x1="6" y1="115" x2="58" y2="115" class="ln" marker-end="url(#te-u1-arw-typesq1)"/>
+<text x="20" y="104" class="lbl" text-anchor="middle">Q</text>
+<rect x="124" y="48" width="12" height="44" class="ln fill-soft"/>
+<line x1="130" y1="48" x2="130" y2="14" class="ln" marker-end="url(#te-u1-arw-typesq1)"/>
+<text x="144" y="30" class="lbl" text-anchor="start">W</text>
+<text x="130" y="150" class="lbl-sm" text-anchor="middle">gas</text>
+<rect x="235" y="92" width="86" height="24" class="ln fill-soft"/>
+<rect x="409" y="100" width="86" height="24" class="ln fill-soft"/>
+<path d="M321,70 L409,90 L409,134 L321,154 Z" class="ln fill-soft"/>
+<text x="365" y="116" class="lbl-sm" text-anchor="middle">device</text>
+<line x1="239" y1="104" x2="269" y2="104" class="ln" marker-end="url(#te-u1-arw-typesq1)"/>
+<text x="271" y="134" class="lbl-sm" text-anchor="start">mass in</text>
+<line x1="455" y1="112" x2="489" y2="112" class="ln" marker-end="url(#te-u1-arw-typesq1)"/>
+<text x="435" y="152" class="lbl-sm" text-anchor="middle">mass out</text>
+<line x1="365" y1="78" x2="365" y2="10" class="ln" marker-end="url(#te-u1-arw-typesq1)"/>
+<text x="379" y="24" class="lbl" text-anchor="start">W</text>
+<line x1="365" y1="200" x2="365" y2="176" class="ln" marker-end="url(#te-u1-arw-typesq1)"/>
+<text x="379" y="198" class="lbl" text-anchor="start">Q</text>
+<rect x="540" y="60" width="140" height="90" class="ln thick fill-hatch"/>
+<rect x="558" y="78" width="104" height="54" class="ln fill-soft"/>
+<text x="610" y="110" class="lbl-sm" text-anchor="middle">isolated</text>
+<line x1="500" y1="95" x2="524" y2="95" class="ln thin" marker-end="url(#te-u1-arw-typesq1)"/>
+<line x1="526" y1="87" x2="538" y2="103" class="ln thick"/>
+<line x1="538" y1="87" x2="526" y2="103" class="ln thick"/>
+<line x1="500" y1="125" x2="524" y2="125" class="ln thin" marker-end="url(#te-u1-arw-typesq1)"/>
+<line x1="526" y1="117" x2="538" y2="133" class="ln thick"/>
+<line x1="538" y1="117" x2="526" y2="133" class="ln thick"/>
+<text x="610" y="200" class="lbl-sm" text-anchor="middle">no Q, no W, no mass</text>
+<text x="130" y="232" class="lbl-b" text-anchor="middle">(a) Closed system</text>
+<text x="365" y="232" class="lbl-b" text-anchor="middle">(b) Open system</text>
+<text x="610" y="232" class="lbl-b" text-anchor="middle">(c) Isolated system</text>
+<text x="130" y="252" class="lbl-sm" text-anchor="middle">mass fixed, energy crosses</text>
+<text x="365" y="252" class="lbl-sm" text-anchor="middle">mass and energy cross</text>
+<text x="610" y="252" class="lbl-sm" text-anchor="middle">nothing crosses</text>
+</svg>
+<figcaption>Fig. 1.14 — Types of system: (a) closed, (b) open, (c) isolated.</figcaption>
+</figure>
+        <ol>
+          <li><b>Closed system</b>: no mass crosses the boundary; heat and work can cross. The mass is fixed (control mass), but the volume can change. Example: gas in a piston–cylinder, a sealed boiler drum.</li>
+          <li><b>Open system</b>: mass and energy cross the boundary. It is analysed as a control volume bounded by a control surface. Example: turbine, compressor, nozzle, boiler with feed and steam flow.</li>
+          <li><b>Isolated system</b>: neither mass nor energy crosses the boundary. Example: an ideal thermos flask; the universe.</li>
+        </ol>
+        <div class="tbl"><table><thead><tr><th>Feature</th><th>Closed</th><th>Open</th><th>Isolated</th></tr></thead><tbody>
+          <tr><td>Mass transfer</td><td>No</td><td>Yes</td><td>No</td></tr>
+          <tr><td>Heat / work transfer</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+          <tr><td>Mass inside</td><td>Constant</td><td>May change</td><td>Constant</td></tr>
+          <tr><td>Analysis by</td><td>Control mass</td><td>Control volume</td><td>—</td></tr>
+        </tbody></table></div>
+      </details>
+    </article>
+
+    <article class="q" id="te-u1-q2" data-marks="10">
+      <h3>Q2. Distinguish between (i) intensive and extensive properties and (ii) microscopic and macroscopic approaches. Classify specific weight, volume, specific volume, density, molecular weight, pressure, temperature and velocity as intensive or extensive, with SI units.</h3>
+      <p class="q-src">Nov 2024 Q1 · Nov-Dec 2025 Q1(a)</p>
+      <p class="q-hint">Two short tables plus the classification table with the correct SI units. Give one line on why each is intensive or extensive.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Property.</b> A property is a measurable characteristic of a system that depends only on its state (p, V, T, u, h). It is a point function.</p>
+        <div class="tbl"><table><thead><tr><th>Intensive property</th><th>Extensive property</th></tr></thead><tbody>
+          <tr><td>Independent of the mass of the system</td><td>Depends on the mass of the system</td></tr>
+          <tr><td>Not additive</td><td>Additive</td></tr>
+          <tr><td>Same value for any part of a uniform system</td><td>Value for the whole is the sum of the parts</td></tr>
+          <tr><td>Examples: p, T, ρ, v</td><td>Examples: V, m, U, H</td></tr>
+        </tbody></table></div>
+        <div class="tbl"><table><thead><tr><th>Microscopic approach</th><th>Macroscopic approach</th></tr></thead><tbody>
+          <tr><td>Studies each molecule (statistical thermodynamics)</td><td>Studies the bulk behaviour of matter (classical thermodynamics)</td></tr>
+          <tr><td>Needs molecular structure and many variables</td><td>No molecular model; few properties (p, V, T)</td></tr>
+          <tr><td>Properties are averages, found by statistics</td><td>Properties are measured with instruments</td></tr>
+          <tr><td>Complex mathematics</td><td>Simple mathematics</td></tr>
+        </tbody></table></div>
+        <div class="tbl"><table><thead><tr><th>Property</th><th>Type</th><th>SI unit</th><th>Reason</th></tr></thead><tbody>
+          <tr><td>(i) Specific weight</td><td>Intensive</td><td>N/m³</td><td>weight per unit volume</td></tr>
+          <tr><td>(ii) Volume</td><td>Extensive</td><td>m³</td><td>grows with mass</td></tr>
+          <tr><td>(iii) Specific volume</td><td>Intensive</td><td>m³/kg</td><td>volume per unit mass</td></tr>
+          <tr><td>(iv) Density</td><td>Intensive</td><td>kg/m³</td><td>mass per unit volume</td></tr>
+          <tr><td>(v) Molecular weight</td><td>Intensive</td><td>kg/kmol</td><td>a fixed value for the substance</td></tr>
+          <tr><td>(vi) Pressure</td><td>Intensive</td><td>Pa (N/m²)</td><td>force per unit area</td></tr>
+          <tr><td>(vii) Temperature</td><td>Intensive</td><td>K</td><td>same in all parts at equilibrium</td></tr>
+          <tr><td>(viii) Velocity</td><td>Intensive</td><td>m/s</td><td>does not depend on mass</td></tr>
+        </tbody></table></div>
+        <p>Point and path functions: a <b>point function</b> (property) depends only on the state and has an exact differential, for example dp, dU. A <b>path function</b> (Q, W) depends on the path and has an inexact differential δQ, δW.</p>
+      </details>
+    </article>
+
+    <article class="q" id="te-u1-q3" data-marks="10">
+      <h3>Q3. What do you mean by thermodynamic equilibrium? What is a quasi-static process and what is its characteristic feature?</h3>
+      <p class="q-src">Feb-Mar 2022 (CBCS) Q2(b) · Apr 2022 (CBCS) Q3(a) · Jun-Jul 2024 Unit 1</p>
+      <p class="q-hint">Three equilibria in three bullets, then a quasi-static sketch (weights removed one by one) with the p–V path.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Thermodynamic equilibrium.</b> A system is in thermodynamic equilibrium when its properties do not change with time when it is isolated from the surroundings. It needs:</p>
+        <ul>
+          <li><b>Mechanical equilibrium</b>: no unbalanced force; pressure is uniform inside and balanced at the boundary.</li>
+          <li><b>Thermal equilibrium</b>: no temperature difference, so no heat flow.</li>
+          <li><b>Chemical equilibrium</b>: no chemical reaction and no mass transfer between phases; composition is steady.</li>
+        </ul>
+        <p><b>Quasi-static process.</b> A process in which the system deviates only infinitesimally from equilibrium at every instant, so it passes through a succession of equilibrium states. It is done infinitely slowly.</p>
+        <figure class="fig" id="te-u1-f-qsq3">
+<svg viewBox="0 0 720 320" role="img" aria-label="Gas in a cylinder with small weights removed one at a time, and a p-V graph showing a smooth quasi-static path against a sudden non-quasi-static jump">
+<defs><marker id="te-u1-arw-qsq3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60" y="130" width="120" height="120" class="fill-soft"/>
+<path d="M60,90 L60,250 L180,250 L180,90" class="ln thick"/>
+<rect x="62" y="120" width="116" height="10" class="ln fill-acc"/>
+<rect x="70" y="100" width="22" height="20" class="ln fill-soft"/>
+<rect x="94" y="100" width="22" height="20" class="ln fill-soft"/>
+<rect x="118" y="100" width="22" height="20" class="ln fill-soft"/>
+<rect x="142" y="100" width="22" height="20" class="ln fill-soft"/>
+<rect x="206" y="100" width="22" height="20" class="ln dash"/>
+<line x1="166" y1="108" x2="204" y2="108" class="ln thin" marker-end="url(#te-u1-arw-qsq3)"/>
+<text x="120" y="70" class="lbl-sm" text-anchor="middle">Small weights on piston</text>
+<text x="222" y="140" class="lbl-sm" text-anchor="middle">remove one</text>
+<text x="222" y="156" class="lbl-sm" text-anchor="middle">at a time</text>
+<text x="120" y="200" class="lbl-b" text-anchor="middle">Gas</text>
+<line x1="370" y1="262" x2="690" y2="262" class="ln" marker-end="url(#te-u1-arw-qsq3)"/>
+<line x1="370" y1="262" x2="370" y2="32" class="ln" marker-end="url(#te-u1-arw-qsq3)"/>
+<text x="686" y="284" class="lbl" text-anchor="end">V</text>
+<text x="360" y="40" class="lbl" text-anchor="end">p</text>
+<path d="M420,72 L425.5,81 L431,89.3 L436.5,96.8 L442,103.7 L447.5,110 L453,115.8 L458.5,121.3 L464,126.3 L469.5,131 L475,135.3 L480.5,139.4 L486,143.2 L491.5,146.8 L497,150.2 L502.5,153.4 L508,156.4 L513.5,159.3 L519,162 L524.5,164.6 L530,167 L535.5,169.3 L541,171.5 L546.5,173.6 L552,175.6 L557.5,177.6 L563,179.4 L568.5,181.1 L574,182.8 L579.5,184.4 L585,186 L590.5,187.5 L596,188.9 L601.5,190.3 L607,191.6 L612.5,192.9 L618,194.1 L623.5,195.3 L629,196.5 L634.5,197.6 L640,198.7" class="ln thick acc"/>
+<circle cx="420" cy="72" r="3.5" class="solid"/>
+<circle cx="475" cy="135.3" r="3.5" class="solid"/>
+<circle cx="530" cy="167" r="3.5" class="solid"/>
+<circle cx="585" cy="186" r="3.5" class="solid"/>
+<circle cx="640" cy="198.7" r="3.5" class="solid"/>
+<path d="M420,72 L420,198.7 L640,198.7" class="ln acc2 dash"/>
+<text x="410" y="66" class="lbl-b" text-anchor="end">1</text>
+<text x="648" y="190.7" class="lbl-b" text-anchor="start">2</text>
+<text x="560" y="98" class="lbl-b" text-anchor="middle">Quasi-static path</text>
+<text x="560" y="116" class="lbl-sm" text-anchor="middle">(equilibrium states)</text>
+<text x="540" y="220.7" class="lbl-sm" text-anchor="middle">sudden removal: not quasi-static</text>
+</svg>
+<figcaption>Fig. 1.15 — Quasi-static process: weights are removed one at a time, so the gas passes through equilibrium states.</figcaption>
+</figure>
+        <ul>
+          <li>Small weights on a piston are removed one by one. After each removal the gas settles to a new equilibrium state.</li>
+          <li><b>Characteristic feature</b>: every state on the path has a definite p, V, T, so the process can be drawn as a continuous curve on a property diagram. A non-quasi-static process (all weights removed at once) cannot be drawn: the intermediate states are not equilibrium states.</li>
+          <li>Work of a quasi-static process: W = ∫p dV.</li>
+          <li>A quasi-static process is the limit of a reversible process (no friction); the actual process is only approximately quasi-static.</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="q" id="te-u1-q4" data-marks="10">
+      <h3>Q4. State and explain the Zeroth Law of Thermodynamics and mention its significance. Differentiate between diathermal and adiabatic walls. Do an alcohol and a mercury thermometer, both marked 0 °C at the ice point and 100 °C at the steam point, read exactly the same at 60 °C?</h3>
+      <p class="q-src">Aug-Sep 2023 Unit 1 · Apr 2022 (CBCS) Q2(b) · Jan 2023 (CBCS) Unit 1 · Jun-Jul 2024 Unit 1 · Nov-Dec 2025 Q1(b)</p>
+      <p class="q-hint">Statement, sketch with A, B, C, three points of significance, then the thermometer argument in 3 lines.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Statement.</b> If two bodies are each in thermal equilibrium with a third body, then they are in thermal equilibrium with each other.</p>
+        <figure class="fig" id="te-u1-f-zerothq4">
+<svg viewBox="0 0 740 260" role="img" aria-label="Three panels: body A in equilibrium with C, body B in equilibrium with C, hence A and B in equilibrium">
+<defs><marker id="te-u1-arw-zerothq4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="30" y="70" width="80" height="80" class="ln fill-soft"/>
+<rect x="110" y="85" width="50" height="50" class="ln fill-acc"/>
+<text x="70" y="116" class="lbl-b" text-anchor="middle">A</text>
+<text x="135" y="116" class="lbl-b" text-anchor="middle">C</text>
+<rect x="280" y="70" width="80" height="80" class="ln fill-soft"/>
+<rect x="360" y="85" width="50" height="50" class="ln fill-acc"/>
+<text x="320" y="116" class="lbl-b" text-anchor="middle">B</text>
+<text x="385" y="116" class="lbl-b" text-anchor="middle">C</text>
+<rect x="530" y="70" width="80" height="80" class="ln fill-soft"/>
+<rect x="610" y="70" width="80" height="80" class="ln fill-soft"/>
+<text x="570" y="116" class="lbl-b" text-anchor="middle">A</text>
+<text x="650" y="116" class="lbl-b" text-anchor="middle">B</text>
+<text x="95" y="56" class="lbl" text-anchor="middle">TA = TC</text>
+<text x="345" y="56" class="lbl" text-anchor="middle">TB = TC</text>
+<text x="610" y="56" class="lbl-b" text-anchor="middle">so TA = TB</text>
+<text x="95" y="180" class="lbl-sm" text-anchor="middle">(i) A and C</text>
+<text x="95" y="198" class="lbl-sm" text-anchor="middle">in thermal equilibrium</text>
+<text x="345" y="180" class="lbl-sm" text-anchor="middle">(ii) B and C</text>
+<text x="345" y="198" class="lbl-sm" text-anchor="middle">in thermal equilibrium</text>
+<text x="610" y="180" class="lbl-sm" text-anchor="middle">(iii) A and B are then</text>
+<text x="610" y="198" class="lbl-sm" text-anchor="middle">in thermal equilibrium</text>
+<text x="95" y="228" class="lbl-sm" text-anchor="middle">C acts as the thermometer</text>
+<text x="610" y="228" class="lbl-sm" text-anchor="middle">(no heat flows between them)</text>
+<text x="205" y="116" class="lbl-sm" text-anchor="middle">and</text>
+<text x="455" y="116" class="lbl" text-anchor="middle">⇒</text>
+</svg>
+<figcaption>Fig. 1.16 — Zeroth law: A and B are each in equilibrium with C, so A and B are in equilibrium with each other.</figcaption>
+</figure>
+        <p><b>Explanation.</b> Take bodies A and B and a third body C (a thermometer). Put C in contact with A until there is no change: T_A = T_C. Then put C in contact with B: T_B = T_C. The law says that A and B, if brought together, show no heat flow, so T_A = T_B.</p>
+        <p><b>Significance.</b></p>
+        <ul>
+          <li>It is the basis of temperature measurement: a thermometer (C) can compare any two bodies without bringing them together.</li>
+          <li>It proves that temperature is a property, so a temperature scale can be defined.</li>
+          <li>It defines thermal equilibrium: equal temperature means no heat flow. It must come before the first and second laws, so it is called the zeroth law.</li>
+        </ul>
+        <p><b>Diathermal and adiabatic walls.</b> A <b>diathermal wall</b> (thin copper plate) allows heat to pass, so bodies on both sides reach thermal equilibrium. An <b>adiabatic wall</b> (thick insulation) does not allow heat to pass; the temperatures on the two sides can differ.</p>
+        <p><b>Alcohol and mercury thermometers.</b> No, they will not read exactly the same at 60 °C. The two instruments agree only at the fixed points (0 and 100 °C), because both are marked there. In between, each scale is divided equally, but alcohol and mercury do not expand in the same way with temperature. So the readings differ slightly at 60 °C. The result depends on the thermometric substance; the gas thermometer is used as the standard.</p>
+      </details>
+    </article>
+
+    <article class="q" id="te-u1-q5" data-marks="10">
+      <h3>Q5. Define thermodynamic work. Derive an expression for the displacement work in a non-flow (closed system) process, and obtain it for constant-volume, constant-pressure, isothermal and polytropic processes. How does thermodynamic work differ from work in mechanics?</h3>
+      <p class="q-src">Nov-Dec 2025 Q2(b) · Jan 2023 (CBCS) Unit 2 · Aug-Sep 2023 Unit 2</p>
+      <p class="q-hint">Definition and sign convention, sketch of piston with dL, derivation of ∫p dV, and four short derivations. Show the p–V diagrams.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Definition.</b> Thermodynamic work is the energy transfer across the boundary of a system by a force through a distance, or by any driving force other than temperature difference. Work done by the system is positive; work done on the system is negative. Work is a path function (δW).</p>
+        <p><b>Derivation.</b> Gas at pressure p is in a cylinder of cross-section A. It expands quasi-statically and pushes the piston through dL.</p>
+        <figure class="fig" id="te-u1-f-workq5">
+<svg viewBox="0 0 720 300" role="img" aria-label="A piston moving a small distance dL under pressure p, and a p-V graph where the strip p dV is part of the area under the curve">
+<defs><marker id="te-u1-arw-workq5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60" y="150" width="110" height="90" class="fill-soft"/>
+<path d="M60,70 L60,240 L170,240 L170,70" class="ln thick"/>
+<rect x="62" y="140" width="106" height="10" class="ln fill-acc"/>
+<rect x="62" y="110" width="106" height="10" class="ln dash"/>
+<rect x="112" y="36" width="12" height="104" class="ln fill-soft"/>
+<line x1="200" y1="138" x2="200" y2="112" class="ln thin" marker-end="url(#te-u1-arw-workq5)" marker-start="url(#te-u1-arw-workq5)"/>
+<text x="212" y="130" class="lbl" text-anchor="start">dL</text>
+<text x="115" y="200" class="lbl-b" text-anchor="middle">gas, p</text>
+<text x="115" y="222" class="lbl-sm" text-anchor="middle">area A</text>
+<line x1="240" y1="150" x2="240" y2="112" class="ln" marker-end="url(#te-u1-arw-workq5)"/>
+<text x="250" y="146" class="lbl-sm" text-anchor="start">F = pA</text>
+<line x1="400" y1="262" x2="700" y2="262" class="ln" marker-end="url(#te-u1-arw-workq5)"/>
+<line x1="400" y1="262" x2="400" y2="32" class="ln" marker-end="url(#te-u1-arw-workq5)"/>
+<text x="696" y="284" class="lbl" text-anchor="end">V</text>
+<text x="390" y="40" class="lbl" text-anchor="end">p</text>
+<path d="M450,262 L450,92 L455,100.5 L460,108.2 L465,115.2 L470,121.6 L475,127.4 L480,132.8 L485,137.8 L490,142.4 L495,146.6 L500,150.6 L505,154.3 L510,157.8 L515,161.1 L520,164.1 L525,167 L530,169.7 L535,172.3 L540,174.7 L545,177 L550,179.2 L555,181.2 L560,183.2 L565,185.1 L570,186.9 L575,188.6 L580,190.2 L585,191.8 L590,193.3 L595,194.7 L600,196.1 L605,197.4 L610,198.7 L615,199.9 L620,201.1 L625,202.2 L630,203.3 L635,204.3 L640,205.3 L640,262 Z" class="ln fill-soft"/>
+<path d="M520,262 L520,164.1 L524,166.4 L528,168.6 L532,170.8 L536,172.8 L540,174.7 L540,262 Z" class="ln fill-acc"/>
+<line x1="450" y1="262" x2="450" y2="92" class="ln thin dash"/>
+<line x1="640" y1="262" x2="640" y2="205.3" class="ln thin dash"/>
+<circle cx="450" cy="92" r="3.5" class="solid"/>
+<circle cx="640" cy="205.3" r="3.5" class="solid"/>
+<text x="446" y="84" class="lbl-b" text-anchor="end">1</text>
+<text x="646" y="197.3" class="lbl-b" text-anchor="start">2</text>
+<text x="450" y="284" class="lbl-sm" text-anchor="middle">V1</text>
+<text x="640" y="284" class="lbl-sm" text-anchor="middle">V2</text>
+<text x="530" y="284" class="lbl-sm" text-anchor="middle">dV</text>
+<text x="595" y="236" class="lbl-b" text-anchor="middle">Area = W</text>
+</svg>
+<figcaption>Fig. 1.17 — Displacement work: dW = p dV is the thin strip of area under the p-V curve.</figcaption>
+</figure>
+        <p>Force = pA. Work for dL: δW = pA dL = p dV. Total from state 1 to 2:</p>
+        <div class="formula">\[ W_{1-2} = \int_{V_1}^{V_2} p\,dV \]</div>
+        <p>It equals the area under the process on the p–V diagram.</p>
+        <figure class="fig" id="te-u1-f-procq5">
+<svg viewBox="0 0 720 520" role="img" aria-label="Four p-V diagrams: constant volume, constant pressure, isothermal and polytropic processes with work areas shaded">
+<defs><marker id="te-u1-arw-procq5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="50" y1="210" x2="340" y2="210" class="ln" marker-end="url(#te-u1-arw-procq5)"/>
+<line x1="50" y1="210" x2="50" y2="50" class="ln" marker-end="url(#te-u1-arw-procq5)"/>
+<text x="336" y="232" class="lbl" text-anchor="end">V</text>
+<text x="40" y="58" class="lbl" text-anchor="end">p</text>
+<text x="190" y="38" class="lbl-b" text-anchor="middle">(a) Constant volume</text>
+<line x1="180" y1="175" x2="180" y2="85" class="ln acc" marker-end="url(#te-u1-arw-procq5)"/>
+<circle cx="180" cy="175" r="3.5" class="solid"/>
+<circle cx="180" cy="85" r="3.5" class="solid"/>
+<text x="192" y="180" class="lbl-b" text-anchor="start">1</text>
+<text x="192" y="88" class="lbl-b" text-anchor="start">2</text>
+<text x="180" y="230" class="lbl-sm" text-anchor="middle">V1 = V2</text>
+<text x="190" y="250" class="lbl-sm" text-anchor="middle">W = 0 (no area)</text>
+<line x1="410" y1="210" x2="700" y2="210" class="ln" marker-end="url(#te-u1-arw-procq5)"/>
+<line x1="410" y1="210" x2="410" y2="50" class="ln" marker-end="url(#te-u1-arw-procq5)"/>
+<text x="696" y="232" class="lbl" text-anchor="end">V</text>
+<text x="400" y="58" class="lbl" text-anchor="end">p</text>
+<text x="550" y="38" class="lbl-b" text-anchor="middle">(b) Constant pressure</text>
+<rect x="470" y="120" width="150" height="90" class="ln fill-soft"/>
+<line x1="470" y1="120" x2="620" y2="120" class="ln acc" marker-end="url(#te-u1-arw-procq5)"/>
+<circle cx="470" cy="120" r="3.5" class="solid"/>
+<circle cx="620" cy="120" r="3.5" class="solid"/>
+<text x="462" y="114" class="lbl-b" text-anchor="end">1</text>
+<text x="628" y="114" class="lbl-b" text-anchor="start">2</text>
+<text x="470" y="230" class="lbl-sm" text-anchor="middle">V1</text>
+<text x="620" y="230" class="lbl-sm" text-anchor="middle">V2</text>
+<text x="545" y="170" class="lbl-b" text-anchor="middle">W</text>
+<text x="550" y="250" class="lbl-sm" text-anchor="middle">W = p (V2 − V1)</text>
+<line x1="50" y1="470" x2="340" y2="470" class="ln" marker-end="url(#te-u1-arw-procq5)"/>
+<line x1="50" y1="470" x2="50" y2="310" class="ln" marker-end="url(#te-u1-arw-procq5)"/>
+<text x="336" y="492" class="lbl" text-anchor="end">V</text>
+<text x="40" y="318" class="lbl" text-anchor="end">p</text>
+<text x="190" y="298" class="lbl-b" text-anchor="middle">(c) Isothermal, pV = C</text>
+<path d="M110,470 L110,350 L115,355.7 L120,360.9 L125,365.7 L130,370 L135,374 L140,377.7 L145,381.1 L150,384.3 L155,387.2 L160,390 L165,392.6 L170,395 L175,397.3 L180,399.4 L185,401.4 L190,403.3 L195,405.1 L200,406.8 L205,408.5 L210,410 L215,411.5 L220,412.9 L225,414.2 L230,415.5 L235,416.7 L240,417.8 L245,418.9 L250,420 L255,421 L260,422 L260,470 Z" class="ln fill-soft"/>
+<path d="M110,350 L115,355.7 L120,360.9 L125,365.7 L130,370 L135,374 L140,377.7 L145,381.1 L150,384.3 L155,387.2 L160,390 L165,392.6 L170,395 L175,397.3 L180,399.4 L185,401.4 L190,403.3 L195,405.1 L200,406.8 L205,408.5 L210,410 L215,411.5 L220,412.9 L225,414.2 L230,415.5 L235,416.7 L240,417.8 L245,418.9 L250,420 L255,421 L260,422" class="ln thick acc"/>
+<circle cx="110" cy="350" r="3.5" class="solid"/>
+<circle cx="260" cy="422" r="3.5" class="solid"/>
+<text x="102" y="342" class="lbl-b" text-anchor="end">1</text>
+<text x="268" y="414" class="lbl-b" text-anchor="start">2</text>
+<text x="110" y="490" class="lbl-sm" text-anchor="middle">V1</text>
+<text x="260" y="490" class="lbl-sm" text-anchor="middle">V2</text>
+<text x="170" y="448" class="lbl-b" text-anchor="middle">W</text>
+<text x="190" y="510" class="lbl-sm" text-anchor="middle">W = p1V1 ln(V2/V1)</text>
+<line x1="410" y1="470" x2="700" y2="470" class="ln" marker-end="url(#te-u1-arw-procq5)"/>
+<line x1="410" y1="470" x2="410" y2="310" class="ln" marker-end="url(#te-u1-arw-procq5)"/>
+<text x="696" y="492" class="lbl" text-anchor="end">V</text>
+<text x="400" y="318" class="lbl" text-anchor="end">p</text>
+<text x="550" y="298" class="lbl-b" text-anchor="middle">(d) Polytropic, pVⁿ = C</text>
+<path d="M470,470 L470,350 L475,357.9 L480,365 L485,371.3 L490,377 L495,382.2 L500,386.9 L505,391.2 L510,395.1 L515,398.7 L520,402 L525,405 L530,407.9 L535,410.5 L540,412.9 L545,415.2 L550,417.3 L555,419.3 L560,421.1 L565,422.9 L570,424.5 L575,426.1 L580,427.5 L585,428.9 L590,430.2 L595,431.4 L600,432.6 L605,433.7 L610,434.8 L615,435.8 L620,436.7 L620,470 Z" class="ln fill-soft"/>
+<path d="M470,350 L475,355.7 L480,360.9 L485,365.7 L490,370 L495,374 L500,377.7 L505,381.1 L510,384.3 L515,387.2 L520,390 L525,392.6 L530,395 L535,397.3 L540,399.4 L545,401.4 L550,403.3 L555,405.1 L560,406.8 L565,408.5 L570,410 L575,411.5 L580,412.9 L585,414.2 L590,415.5 L595,416.7 L600,417.8 L605,418.9 L610,420 L615,421 L620,422" class="ln thin dash"/>
+<text x="560" y="388" class="lbl-sm" text-anchor="start">isothermal</text>
+<path d="M470,350 L475,357.9 L480,365 L485,371.3 L490,377 L495,382.2 L500,386.9 L505,391.2 L510,395.1 L515,398.7 L520,402 L525,405 L530,407.9 L535,410.5 L540,412.9 L545,415.2 L550,417.3 L555,419.3 L560,421.1 L565,422.9 L570,424.5 L575,426.1 L580,427.5 L585,428.9 L590,430.2 L595,431.4 L600,432.6 L605,433.7 L610,434.8 L615,435.8 L620,436.7" class="ln thick acc"/>
+<circle cx="470" cy="350" r="3.5" class="solid"/>
+<circle cx="620" cy="436.7" r="3.5" class="solid"/>
+<text x="462" y="342" class="lbl-b" text-anchor="end">1</text>
+<text x="628" y="428.7" class="lbl-b" text-anchor="start">2</text>
+<text x="470" y="490" class="lbl-sm" text-anchor="middle">V1</text>
+<text x="620" y="490" class="lbl-sm" text-anchor="middle">V2</text>
+<text x="530" y="448" class="lbl-b" text-anchor="middle">W</text>
+<text x="550" y="510" class="lbl-sm" text-anchor="middle">W = (p1V1 − p2V2)/(n − 1)</text>
+</svg>
+<figcaption>Fig. 1.18 — Reversible processes on the p-V diagram. The shaded area under each path is the work.</figcaption>
+</figure>
+        <ol>
+          <li><b>Constant volume:</b> dV = 0, so W = 0.</li>
+          <li><b>Constant pressure:</b> \( W = p\,(V_2 - V_1) \).</li>
+          <li><b>Isothermal (pV = C):</b> \( W = \int \frac{p_1V_1}{V}dV = p_1V_1\ln\frac{V_2}{V_1} = mRT\ln\frac{V_2}{V_1} \).</li>
+          <li><b>Polytropic (pVⁿ = C):</b> \( W = \int \frac{C}{V^n}dV = \frac{p_1V_1 - p_2V_2}{n-1} = \frac{mR(T_1 - T_2)}{n-1} \).</li>
+        </ol>
+        <p><b>Mechanics versus thermodynamic work.</b> In mechanics, work is a force through a distance on a body. In thermodynamics, any energy crossing the boundary that is not heat is work, even with no visible displacement (electrical work). A gas expanding freely into a vacuum has boundary movement but does no work because there is no resisting force. Also, the thermodynamic definition depends on the choice of system.</p>
+      </details>
+    </article>
+
+    <article class="q" id="te-u1-q6" data-marks="10">
+      <h3>Q6. Distinguish between (i) work and heat and (ii) stored energy and energy in transit. Define specific heats c<sub>p</sub> and c<sub>v</sub> and show that c<sub>p</sub> − c<sub>v</sub> = R for an ideal gas.</h3>
+      <p class="q-src">Nov 2024 Unit 1 · Apr 2022 (CBCS) Q3(b) · Jan 2023 (CBCS) Unit 2 · Feb-Mar 2022 (CBCS) Unit 2 · Aug-Sep 2023 Unit 2</p>
+      <p class="q-hint">Two comparison tables, the sign-convention sketch, then a 5-line derivation of c<sub>p</sub> − c<sub>v</sub> = R.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <figure class="fig" id="te-u1-f-signq6">
+<svg viewBox="0 0 600 280" role="img" aria-label="A system with arrows showing heat in and work out as positive, heat out and work in as negative">
+<defs><marker id="te-u1-arw-signq6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="230" y="80" width="140" height="100" class="ln fill-soft"/>
+<text x="300" y="134" class="lbl-b" text-anchor="middle">SYSTEM</text>
+<line x1="70" y1="106" x2="228" y2="106" class="ln" marker-end="url(#te-u1-arw-signq6)"/>
+<text x="150" y="94" class="lbl" text-anchor="middle">Q in = +</text>
+<line x1="228" y1="158" x2="70" y2="158" class="ln" marker-end="url(#te-u1-arw-signq6)"/>
+<text x="150" y="180" class="lbl" text-anchor="middle">Q out = −</text>
+<line x1="372" y1="106" x2="530" y2="106" class="ln" marker-end="url(#te-u1-arw-signq6)"/>
+<text x="450" y="94" class="lbl" text-anchor="middle">W by system = +</text>
+<line x1="530" y1="158" x2="372" y2="158" class="ln" marker-end="url(#te-u1-arw-signq6)"/>
+<text x="450" y="180" class="lbl" text-anchor="middle">W on system = −</text>
+<text x="300" y="40" class="lbl-sm" text-anchor="middle">Heat and work are both energy in transit</text>
+<text x="300" y="240" class="lbl-sm" text-anchor="middle">Net work (cycle) = ΣW; net heat = ΣQ</text>
+</svg>
+<figcaption>Fig. 1.19 — Sign convention: heat added to the system and work done by the system are positive.</figcaption>
+</figure>
+        <div class="tbl"><table><thead><tr><th>Heat</th><th>Work</th></tr></thead><tbody>
+          <tr><td>Energy transfer due to temperature difference</td><td>Energy transfer due to a force through a distance (or other driving force)</td></tr>
+          <tr><td>Heat added to the system is +ve</td><td>Work done by the system is +ve</td></tr>
+          <tr><td>Low-grade energy: cannot be fully converted to work</td><td>High-grade energy: can be fully converted to heat</td></tr>
+          <tr><td>Heat flows only from high to low temperature</td><td>Can be done in either direction</td></tr>
+          <tr><td colspan="2"><b>Similarities:</b> boundary phenomena, transient, path functions (δQ, δW), not properties, same unit (J).</td></tr>
+        </tbody></table></div>
+        <div class="tbl"><table><thead><tr><th>Stored energy</th><th>Energy in transit</th></tr></thead><tbody>
+          <tr><td>Possessed by the system; a property</td><td>Exists only while crossing the boundary</td></tr>
+          <tr><td>Point function (exact differential)</td><td>Path function (inexact differential)</td></tr>
+          <tr><td>Kinetic, potential, internal energy: E = U + ½mV² + mgz</td><td>Heat Q and work W</td></tr>
+        </tbody></table></div>
+        <p><b>Specific heats.</b> c<sub>v</sub> is the heat needed to raise the temperature of 1 kg by 1 K at constant volume; c<sub>p</sub> is the same at constant pressure. Unit kJ/kg·K.</p>
+        <p><b>Proof.</b> For an ideal gas, u and h depend on T only. At constant volume, no work is done, so δq = du = c<sub>v</sub> dT. At constant pressure, per kg of gas, dh = c<sub>p</sub> dT. Since h = u + pv and pv = RT:</p>
+        <div class="formula">\[ dh = du + d(pv) = du + R\,dT \;\Rightarrow\; c_p\,dT = c_v\,dT + R\,dT \;\Rightarrow\; c_p - c_v = R \]</div>
+        <p>Dividing by c<sub>v</sub> with γ = c<sub>p</sub>/c<sub>v</sub>: c<sub>v</sub> = R/(γ − 1) and c<sub>p</sub> = γR/(γ − 1). The c<sub>p</sub> is larger because at constant pressure part of the heat does expansion work.</p>
+      </details>
+    </article>
+  </section>
+
+  <section class="part" id="te-u1-numericals" data-part="numericals">
+    <h2>Numericals</h2>
+    <p class="method"><b>Method.</b> <i>Temperature scale:</i> write N = a·t + b; use the two fixed points to find a and b; then solve for the asked value (or put N = t for the equal-reading temperature). <i>Thermocouple:</i> use the ice and steam points to scale the emf to 0–100. <i>Displacement work:</i> (1) write the process law pVⁿ = C or p = f(V); (2) find n or the unknown state from the two end states; (3) use W = ∫p dV, with the standard result; (4) keep the units consistent: kPa × m³ = kJ; (5) give the sign: W &gt; 0 expansion, W &lt; 0 compression.</p>
+
+    <article class="num" id="te-u1-n1">
+      <h3>N1. A mass of gas is compressed in a quasi-static process from 100 kPa and 0.1 m³ to 0.6 MPa and 0.04 m³. Assuming that pressure and volume are related by pVⁿ = constant, find the value of n and the work done by the gas system.</h3>
+      <p class="q-src">Based on Nov-Dec 2025 Q2(a) · Jan 2023 (CBCS) Unit 2</p>
+      <aside class="note"><b>Data note.</b> The scan shows "0.6 mPa"; this is read as 0.6 MPa = 600 kPa, the value that makes n a normal polytropic index.</aside>
+      <figure class="fig" id="te-u1-f-n1">
+<svg viewBox="0 0 640 290" role="img" aria-label="p-V graph of a polytropic compression from state 1 (0.1 m3, 100 kPa) to state 2 (0.04 m3, 600 kPa) with the work area shaded">
+<defs><marker id="te-u1-arw-n1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="250" x2="600" y2="250" class="ln" marker-end="url(#te-u1-arw-n1)"/>
+<line x1="80" y1="250" x2="80" y2="15" class="ln" marker-end="url(#te-u1-arw-n1)"/>
+<text x="596" y="272" class="lbl" text-anchor="end">V (m³)</text>
+<text x="70" y="23" class="lbl" text-anchor="end">p (kPa)</text>
+<path d="M530,250 L530,216 L521,214.6 L512,213.2 L503,211.6 L494,210 L485,208.2 L476,206.3 L467,204.3 L458,202.2 L449,199.9 L440,197.4 L431,194.7 L422,191.9 L413,188.7 L404,185.4 L395,181.7 L386,177.7 L377,173.4 L368,168.6 L359,163.4 L350,157.7 L341,151.4 L332,144.3 L323,136.6 L314,127.9 L305,118.1 L296,107.2 L287,94.8 L278,80.7 L269,64.6 L260,46 L260,250 Z" class="ln fill-soft"/>
+<path d="M530,216 L521,214.6 L512,213.2 L503,211.6 L494,210 L485,208.2 L476,206.3 L467,204.3 L458,202.2 L449,199.9 L440,197.4 L431,194.7 L422,191.9 L413,188.7 L404,185.4 L395,181.7 L386,177.7 L377,173.4 L368,168.6 L359,163.4 L350,157.7 L341,151.4 L332,144.3 L323,136.6 L314,127.9 L305,118.1 L296,107.2 L287,94.8 L278,80.7 L269,64.6 L260,46" class="ln acc" marker-end="url(#te-u1-arw-n1)"/>
+<line x1="530" y1="250" x2="530" y2="216" class="ln thin dash"/>
+<line x1="260" y1="250" x2="260" y2="46" class="ln thin dash"/>
+<line x1="80" y1="46" x2="260" y2="46" class="ln thin dash"/>
+<line x1="80" y1="216" x2="530" y2="216" class="ln thin dash"/>
+<circle cx="530" cy="216" r="3.5" class="solid"/>
+<circle cx="260" cy="46" r="3.5" class="solid"/>
+<text x="540" y="208" class="lbl-b" text-anchor="start">1</text>
+<text x="270" y="50" class="lbl-b" text-anchor="start">2</text>
+<text x="530" y="274" class="lbl-sm" text-anchor="middle">0.1</text>
+<text x="260" y="274" class="lbl-sm" text-anchor="middle">0.04</text>
+<text x="70" y="50" class="lbl-sm" text-anchor="end">600</text>
+<text x="70" y="220" class="lbl-sm" text-anchor="end">100</text>
+<text x="480" y="110" class="lbl-b" text-anchor="middle">Area = work on gas</text>
+<text x="480" y="130" class="lbl-sm" text-anchor="middle">(compression, W negative)</text>
+</svg>
+<figcaption>Fig. 1.20 — Polytropic compression 1 to 2 for N1. The shaded area is the work done on the gas.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Data: p₁ = 100 kPa, V₁ = 0.1 m³, p₂ = 600 kPa, V₂ = 0.04 m³.</li>
+        <li>From p₁V₁ⁿ = p₂V₂ⁿ: \( n = \dfrac{\ln(p_2/p_1)}{\ln(V_1/V_2)} = \dfrac{\ln 6}{\ln 2.5} = \dfrac{1.7918}{0.9163} = 1.955 \).</li>
+        <li>Work of a polytropic process: \( W = \dfrac{p_1V_1 - p_2V_2}{n-1} \).</li>
+        <li>p₁V₁ = 100 × 0.1 = 10 kJ and p₂V₂ = 600 × 0.04 = 24 kJ.</li>
+        <li>\( W = \dfrac{10 - 24}{1.955 - 1} = \dfrac{-14}{0.9554} = -14.65 \) kJ.</li>
+      </ol>
+      <p class="final">Answer: n = 1.955; W = −14.65 kJ (14.65 kJ of work is done on the gas)</p>
+    </article>
+
+    <article class="num" id="te-u1-n2">
+      <h3>N2. On a new temperature scale N, the boiling point and the freezing point of water at one atmosphere are 100 °N and 300 °N. Correlate this scale with the Celsius scale and find the reading on the Celsius scale when the new scale reads 0 °N.</h3>
+      <p class="q-src">Based on Nov-Dec 2025 Q1(c)</p>
+      <ol class="steps">
+        <li>Assume a linear relation: N = a·t + b, where t is in °C.</li>
+        <li>At the freezing point t = 0 and N = 300, so b = 300.</li>
+        <li>At the boiling point t = 100 and N = 100, so 100 = 100a + 300, giving a = −2.</li>
+        <li>The relation is N = 300 − 2t. Check with the ratio form: \( \dfrac{N - 300}{100 - 300} = \dfrac{t}{100} \) gives the same result.</li>
+        <li>For N = 0: 0 = 300 − 2t, so t = 150 °C.</li>
+      </ol>
+      <p class="final">Answer: N = 300 − 2 t (°C); N = 0 °N corresponds to 150 °C</p>
+    </article>
+
+    <article class="num" id="te-u1-n3">
+      <h3>N3. A thermocouple with the test junction at t °C on the gas thermometer scale and the reference junction at the ice point gives an emf e = 0.20 t − 5 × 10⁻⁴ t² mV. The millivoltmeter is calibrated so that it reads 0 at the ice point and 100 at the steam point. What does this thermometer read when the gas thermometer reads 70 °C?</h3>
+      <p class="q-src">Based on Jan 2025 Q1(b) · Aug-Sep 2023 Unit 1</p>
+      <figure class="fig" id="te-u1-f-tc">
+<svg viewBox="0 0 640 250" role="img" aria-label="Thermocouple circuit: test junction in a hot body, reference junction in an ice bath, leads to a millivoltmeter">
+<defs><marker id="te-u1-arw-tc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="30" y="90" width="100" height="60" class="ln fill-soft"/>
+<text x="80" y="78" class="lbl-sm" text-anchor="middle">Hot body at t</text>
+<line x1="80" y1="120" x2="230" y2="80" class="ln"/>
+<line x1="80" y1="120" x2="230" y2="160" class="ln thick acc"/>
+<circle cx="80" cy="120" r="4" class="solid"/>
+<text x="60" y="176" class="lbl-sm" text-anchor="start">test junction</text>
+<text x="150" y="66" class="lbl-sm" text-anchor="start">metal A</text>
+<text x="150" y="186" class="lbl-sm" text-anchor="start">metal B</text>
+<rect x="230" y="56" width="70" height="130" class="ln fill-hatch"/>
+<text x="265" y="206" class="lbl-sm" text-anchor="middle">Ice bath, 0 °C</text>
+<text x="265" y="222" class="lbl-sm" text-anchor="middle">(reference junction)</text>
+<rect x="236" y="62" width="58" height="118" class="ln fill-soft"/>
+<line x1="300" y1="80" x2="440" y2="80" class="ln"/>
+<line x1="440" y1="80" x2="440" y2="92" class="ln"/>
+<line x1="300" y1="160" x2="440" y2="160" class="ln"/>
+<line x1="440" y1="160" x2="440" y2="148" class="ln"/>
+<circle cx="440" cy="120" r="28" class="ln fill-soft"/>
+<text x="440" y="126" class="lbl-b" text-anchor="middle">mV</text>
+<text x="500" y="126" class="lbl" text-anchor="start">emf e</text>
+</svg>
+<figcaption>Fig. 1.21 — Thermocouple: the emf between the test junction and the ice-bath reference junction measures temperature.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Ice point (t = 0): e = 0 mV. The meter reads 0.</li>
+        <li>Steam point (t = 100 °C): e = 0.20 × 100 − 5 × 10⁻⁴ × 100² = 20 − 5 = 15 mV. The meter reads 100.</li>
+        <li>At t = 70 °C: e = 0.20 × 70 − 5 × 10⁻⁴ × 70² = 14 − 2.45 = 11.55 mV.</li>
+        <li>The meter scale is linear in e: \( t_{th} = \dfrac{e}{15} \times 100 = \dfrac{11.55}{15} \times 100 = 77.0 \) °C.</li>
+      </ol>
+      <p class="final">Answer: the thermocouple thermometer reads 77.0 °C when the gas thermometer reads 70 °C</p>
+    </article>
+
+    <article class="num" id="te-u1-n4">
+      <h3>N4. A fluid at 3 bar with a specific volume of 0.18 m³/kg is in a cylinder behind a piston. It expands reversibly to 0.6 bar according to the law p = C/v², where C is a constant. Calculate the work done by the fluid on the piston per kg.</h3>
+      <p class="q-src">Based on Nov 2024 Unit 1</p>
+      <ol class="steps">
+        <li>Data: p₁ = 3 bar = 3 × 10⁵ Pa, v₁ = 0.18 m³/kg, p₂ = 0.6 bar = 0.6 × 10⁵ Pa, law p v² = C (a polytropic process with n = 2).</li>
+        <li>C = p₁v₁² = 3 × 10⁵ × 0.18² = 9720 N·m⁴/kg².</li>
+        <li>Final specific volume: \( v_2 = \sqrt{C/p_2} = \sqrt{9720 / 60\,000} = 0.4025 \) m³/kg.</li>
+        <li>Work per kg: \( w = \int p\,dv = C\int_{v_1}^{v_2} \dfrac{dv}{v^2} = C\left(\dfrac{1}{v_1} - \dfrac{1}{v_2}\right) = 9720\,(5.556 - 2.484) \).</li>
+        <li>w = 29 850 J/kg = 29.85 kJ/kg. Check with the polytropic formula (n = 2): \( \dfrac{p_1v_1 - p_2v_2}{n-1} = 54\,000 - 24\,150 = 29\,850 \) J/kg.</li>
+      </ol>
+      <p class="final">Answer: w = 29.85 kJ/kg (work done by the fluid, positive for expansion)</p>
+    </article>
+
+    <h3 id="te-u1-practice">Practice problems</h3>
+    <article class="num practice" id="te-u1-p1"><h3>P1. A new scale N has 100 °N at the freezing point of ice and 400 °N at the boiling point of water. Find the reading when the temperature is 150 °C, and the temperature at which the Celsius and the new scale read the same.</h3><p class="q-src">Based on Feb-Mar 2022 (CBCS) Q2(c)</p><p class="final">Answer: 550 °N; both scales read the same at −50 °C</p></article>
+    <article class="num practice" id="te-u1-p2"><h3>P2. A temperature t on a thermometric scale is defined by t = a ln K + b, where a and b are constants. The values of K are 1.83 at the ice point and 6.78 at the steam point, assigned 0 and 100. Find the temperature for K = 2.42.</h3><p class="q-src">Based on Jan 2023 (CBCS) Unit 1 · Jun-Jul 2024 Unit 1</p><p class="final">Answer: t = 21.3 °C (a = 76.4, b = −46.1)</p></article>
+    <article class="num practice" id="te-u1-p3"><h3>P3. The specific heat of a gas in a process is c = (0.4 + 0.004 T) kJ/kg·°C, with T in °C. For 6 kg of gas heated from 25 °C to 125 °C find (i) the heat transferred, (ii) the mean specific heat.</h3><p class="q-src">Based on Aug-Sep 2023 Unit 1</p><p class="final">Answer: Q = 420 kJ; mean c = 0.70 kJ/kg·°C</p></article>
+  </section>
+</section>

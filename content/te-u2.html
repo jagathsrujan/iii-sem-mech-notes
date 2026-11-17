@@ -1,0 +1,904 @@
+<section class="unit" data-unit="te-u2">
+  <header class="unit-head">
+    <p class="eyebrow">Thermal Engineering · Unit 2</p>
+    <h1>First Law of Thermodynamics</h1>
+    <p class="lede">The first law is the law of conservation of energy. This unit shows how to write an energy balance for a closed system (a piston and cylinder) and for an open system (a turbine, nozzle, compressor or boiler). Every thermal numerical in the exam starts with one of these two balances.</p>
+    <ul class="syl">
+      <li>First Law of Thermodynamics for closed systems</li>
+      <li>Energy as a property; internal energy; enthalpy</li>
+      <li>First Law for cyclic and non-cyclic processes</li>
+      <li>Steady Flow Energy Equation (SFEE)</li>
+      <li>Applications of SFEE to nozzles, diffusers, turbines, compressors, throttling devices and heat exchangers</li>
+      <li>Perpetual Motion Machine of the First Kind (PMM-I)</li>
+      <li>Limitations of the First Law</li>
+    </ul>
+  </header>
+
+  <section class="part" id="te-u2-concepts" data-part="concepts">
+    <h2>Concepts</h2>
+    <aside class="exam"><b>Exam pattern.</b> Unit II of the paper has two 20-mark questions (choose one). Each has a 10-mark theory part and a 10-mark numerical. The theory part is almost always one of these: (1) state the first law, explain PMM-I and the limitations; (2) prove that energy is a property, with Joule's experiment; (3) derive the SFEE and apply it to a nozzle, turbine, compressor or throttle. The numerical is a closed-system process (Q, W, ΔU) or an SFEE problem with given enthalpies.</aside>
+
+    <h3 id="te-u2-c-sign">1. Energy, heat, work and the sign convention</h3>
+    <p>The total stored energy of a system is E = U + KE + PE. U is the internal energy (molecular energy), KE = mV²/2 and PE = mgz. For a stationary system KE and PE do not change, so ΔE = ΔU.</p>
+    <p>Heat and work are energy in transit. They cross the boundary; the system does not store them. They depend on the path, so they are <b>path functions</b> and we write δQ and δW. Energy E is a <b>point function</b> (a property) and we write dE.</p>
+    <ul>
+      <li><b>Heat Q</b> added to the system is positive.</li>
+      <li><b>Work W</b> done by the system is positive.</li>
+      <li>Heat rejected and work done on the system are negative.</li>
+    </ul>
+    <aside class="warn"><b>Sign convention.</b> Some books use W as work done <i>on</i> the system. This unit uses the engineering convention: Q − W = ΔE. State the convention at the top of every answer.</aside>
+
+    <h3 id="te-u2-c-cycle">2. First law for a cycle; Joule's experiment</h3>
+    <p>Joule placed a known mass of water in an insulated vessel. A falling weight turned a paddle wheel in the water (Fig. 2.1). The work done on the water was W = mgh. The water temperature rose. Joule then cooled the water back to its first state: it rejected heat Q. Over the full cycle he found that W and Q were always in a constant ratio, whatever the method.</p>
+<figure class="fig" id="te-u2-f-joule">
+<svg viewBox="0 0 640 345" role="img" aria-label="Joule paddle wheel experiment: a falling weight turns a paddle wheel in an insulated water vessel">
+<defs><marker id="te-u2-arw-joule" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="180" y="140" width="210" height="170" class="ln dash"/>
+<rect x="190" y="190" width="190" height="110" class="ln fill-soft"/>
+<rect x="190" y="150" width="190" height="150" class="ln"/>
+<line x1="285" y1="70" x2="285" y2="270" class="ln thick"/>
+<circle cx="285" cy="70" r="16" class="ln fill-soft"/>
+<rect x="250" y="262" width="70" height="10" class="ln fill-acc"/>
+<line x1="301" y1="70" x2="470" y2="70" class="ln"/>
+<circle cx="470" cy="84" r="14" class="ln fill-soft"/>
+<line x1="484" y1="84" x2="484" y2="200" class="ln"/>
+<rect x="464" y="200" width="40" height="40" class="ln fill-acc"/>
+<text x="484" y="226" class="lbl-b" text-anchor="middle">m</text>
+<line x1="540" y1="84" x2="540" y2="200" class="ln thin" marker-end="url(#te-u2-arw-joule)" marker-start="url(#te-u2-arw-joule)"/>
+<text x="552" y="148" class="lbl" text-anchor="start">h</text>
+<rect x="345" y="115" width="12" height="170" class="ln"/>
+<text x="351" y="100" class="lbl-sm" text-anchor="middle">Thermometer</text>
+<text x="165" y="170" class="lbl" text-anchor="end">Insulated vessel</text>
+<line x1="170" y1="165" x2="190" y2="165" class="ln thin"/>
+<text x="225" y="215" class="lbl" text-anchor="middle">Water</text>
+<text x="165" y="267" class="lbl" text-anchor="end">Paddle wheel</text>
+<line x1="170" y1="267" x2="250" y2="267" class="ln thin"/>
+<text x="285" y="50" class="lbl-sm" text-anchor="middle">Shaft</text>
+<text x="484" y="262" class="lbl-sm" text-anchor="middle">Falling weight</text>
+<text x="320" y="332" class="lbl-sm" text-anchor="middle">Work done on water: W = m g h.   Heat transfer Q = 0.   Water temperature rises.</text>
+</svg>
+<figcaption>Fig. 2.1 — Joule's paddle-wheel experiment: work done by the falling weight raises the water temperature.</figcaption>
+</figure>
+    <p><b>First law for a cycle:</b> when a closed system completes a cycle, the net heat transfer equals the net work transfer.</p>
+    <div class="formula">\[ \oint \delta Q = \oint \delta W \qquad (W = J\,Q,\; J = 1 \text{ in SI units}) \]<p class="where">The circle on the integral means one complete cycle. In older units J = 4.186 kJ/kcal (mechanical equivalent of heat).</p></div>
+    <aside class="note"><b>Same temperature rise by any adiabatic work.</b> Joule got the same temperature rise with paddle work, with electrical work and with friction. So the adiabatic work depends only on the end states. This leads to the idea that energy is a property.</aside>
+
+    <h3 id="te-u2-c-state">3. First law for a change of state; energy is a property</h3>
+    <p>Take a system that goes from state 1 to state 2 by path A. Return it by path B. Then return it again by path C (Fig. 2.2). Apply ∮δQ = ∮δW to the two cycles and subtract. You get Q − W the same on B and C. So Q − W depends only on the end states, not on the path. It is the change of a property. We call that property <b>energy E</b>. Q1 gives the full proof.</p>
+<figure class="fig" id="te-u2-f-pvcycle">
+<svg viewBox="0 0 600 320" role="img" aria-label="p-V diagram: states 1 and 2 joined by paths A, B and C">
+<defs><marker id="te-u2-arw-pvcycle" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="290" x2="540" y2="290" class="ln" marker-end="url(#te-u2-arw-pvcycle)"/><line x1="80" y1="290" x2="80" y2="30" class="ln" marker-end="url(#te-u2-arw-pvcycle)"/><text x="534" y="314" class="lbl" text-anchor="end">V</text><text x="66" y="44" class="lbl" text-anchor="end">p</text>
+<path d="M160,220 C200,110 320,80 400,110" class="ln thick acc"/>
+<path d="M400,110 C430,230 300,270 160,220" class="ln thick acc2"/>
+<path d="M400,110 C380,160 270,190 160,220" class="ln dash"/>
+<circle cx="160" cy="220" r="4" class="solid"/>
+<circle cx="400" cy="110" r="4" class="solid"/>
+<text x="146" y="242" class="lbl-b" text-anchor="middle">1</text>
+<text x="414" y="100" class="lbl-b" text-anchor="middle">2</text>
+<text x="275" y="85" class="lbl-b" text-anchor="middle">A</text>
+<text x="380" y="215" class="lbl-b" text-anchor="middle">B</text>
+<text x="275" y="170" class="lbl-b" text-anchor="middle">C</text>
+<text x="470" y="200" class="lbl-sm" text-anchor="middle">Path A: 1 → 2</text>
+<text x="470" y="222" class="lbl-sm" text-anchor="middle">Path B: 2 → 1</text>
+<text x="470" y="244" class="lbl-sm" text-anchor="middle">Path C: 2 → 1 (dashed)</text>
+</svg>
+<figcaption>Fig. 2.2 — Two states 1 and 2 joined by three paths. Cycles 1-A-2-B-1 and 1-A-2-C-1 are used in the proof.</figcaption>
+</figure>
+    <div class="formula">\[ Q - W = \Delta E = E_2 - E_1 = \Delta U + \Delta KE + \Delta PE \]<p class="where">Differential form: δQ − δW = dE. For a cycle ΔE = 0, which gives ∮δQ = ∮δW. For an isolated system Q = W = 0, so ΔE = 0: the energy of an isolated system is constant.</p></div>
+<figure class="fig" id="te-u2-f-closed">
+<svg viewBox="0 0 640 305" role="img" aria-label="Closed system with heat added and work done">
+<defs><marker id="te-u2-arw-closed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="200" y="120" width="160" height="120" class="ln"/>
+<rect x="200" y="120" width="128" height="120" class="ln fill-soft"/>
+<rect x="328" y="120" width="14" height="120" class="ln fill-acc"/>
+<line x1="342" y1="180" x2="430" y2="180" class="ln thick"/>
+<rect x="188" y="108" width="162" height="144" class="ln dash"/>
+<text x="264" y="185" class="lbl" text-anchor="middle">Gas (system)</text>
+<line x1="100" y1="200" x2="188" y2="200" class="ln" marker-end="url(#te-u2-arw-closed)"/>
+<text x="130" y="190" class="lbl-b" text-anchor="middle">Q</text>
+<text x="120" y="222" class="lbl-sm" text-anchor="middle">heat in = +</text>
+<line x1="430" y1="180" x2="520" y2="180" class="ln" marker-end="url(#te-u2-arw-closed)"/>
+<text x="480" y="170" class="lbl-b" text-anchor="middle">W</text>
+<text x="480" y="200" class="lbl-sm" text-anchor="middle">work out = +</text>
+<text x="240" y="100" class="lbl-sm" text-anchor="middle">System boundary</text>
+<text x="320" y="285" class="lbl" text-anchor="middle">First law:  Q − W = ΔE = E₂ − E₁   (E = U + KE + PE)</text>
+</svg>
+<figcaption>Fig. 2.3 — Closed system: Q enters the system, W leaves it, and the stored energy changes by ΔE.</figcaption>
+</figure>
+    <aside class="tip"><b>Memory trick.</b> "Heat in minus work out equals the energy gained": Q − W = ΔE. If a gas expands it does positive work and loses energy unless heat comes in.</aside>
+
+    <h3 id="te-u2-c-uh">4. Internal energy, enthalpy and specific heats</h3>
+    <p><b>Internal energy U</b> is the energy of the molecules: their kinetic energy (translation, rotation, vibration) and their potential energy (forces between molecules). It is a property. For an ideal gas U depends on temperature only (Joule's law).</p>
+    <p><b>Enthalpy</b> is defined as H = U + pV, or h = u + pv per kg. It is a property because U, p and V are properties. Its use: for a constant-pressure closed process, Q = ΔU + pΔV = ΔH. In an open system, h is the energy that one kg of fluid carries, including its flow work pv.</p>
+    <div class="formula">\[ h = u + pv, \qquad \Delta u = c_v\,\Delta T, \qquad \Delta h = c_p\,\Delta T, \qquad c_p - c_v = R, \qquad \gamma = \frac{c_p}{c_v} \]<p class="where">Valid for an ideal gas, for any process. cp = specific heat at constant pressure, cv = at constant volume (kJ/kg·K). For air R = 0.287 kJ/kg·K, cp = 1.005, cv = 0.718, γ = 1.4.</p></div>
+
+    <h3 id="te-u2-c-proc">5. First law for closed-system processes</h3>
+    <p>Work for a quasi-static process is W = ∫p dV. Fig. 2.4 shows the five standard processes from state 1 on a p–V diagram. Table 2.1 gives W, ΔU and Q for an ideal gas of mass m.</p>
+<figure class="fig" id="te-u2-f-procs">
+<svg viewBox="0 0 680 330" role="img" aria-label="p-V diagram of expansion from state 1 by five processes">
+<defs><marker id="te-u2-arw-procs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="300" x2="600" y2="300" class="ln" marker-end="url(#te-u2-arw-procs)"/><line x1="80" y1="300" x2="80" y2="30" class="ln" marker-end="url(#te-u2-arw-procs)"/><text x="594" y="324" class="lbl" text-anchor="end">V</text><text x="66" y="44" class="lbl" text-anchor="end">p</text>
+<circle cx="200" cy="150" r="4" class="solid"/>
+<text x="190" y="138" class="lbl-b" text-anchor="end">1</text>
+<line x1="200" y1="150" x2="480" y2="150" class="ln thick acc"/>
+<line x1="200" y1="150" x2="200" y2="270" class="ln thick acc2"/>
+<path d="M200.0,150.0 L204.7,155.6 L209.3,160.8 L214.0,165.7 L218.7,170.2 L223.3,174.4 L228.0,178.4 L232.7,182.1 L237.3,185.6 L242.0,188.9 L246.7,192.0 L251.3,194.9 L256.0,197.7 L260.7,200.4 L265.3,202.9 L270.0,205.3 L274.7,207.5 L279.3,209.7 L284.0,211.8 L288.7,213.7 L293.3,215.6 L298.0,217.4 L302.7,219.2 L307.3,220.8 L312.0,222.4 L316.7,223.9 L321.3,225.4 L326.0,226.8 L330.7,228.2 L335.3,229.5 L340.0,230.8 L344.7,232.0 L349.3,233.2 L354.0,234.3 L358.7,235.4 L363.3,236.5 L368.0,237.5 L372.7,238.5 L377.3,239.5 L382.0,240.4 L386.7,241.3 L391.3,242.2 L396.0,243.0 L400.7,243.9 L405.3,244.7 L410.0,245.5 L414.7,246.2 L419.3,247.0 L424.0,247.7 L428.7,248.4 L433.3,249.1 L438.0,249.7 L442.7,250.4 L447.3,251.0 L452.0,251.6 L456.7,252.2 L461.3,252.8 L466.0,253.4 L470.7,253.9 L475.3,254.5 L480.0,255.0" class="ln thick"/>
+<path d="M200.0,150.0 L204.7,157.0 L209.3,163.4 L214.0,169.3 L218.7,174.8 L223.3,179.9 L228.0,184.6 L232.7,189.0 L237.3,193.1 L242.0,196.9 L246.7,200.5 L251.3,203.9 L256.0,207.1 L260.7,210.1 L265.3,212.9 L270.0,215.5 L274.7,218.1 L279.3,220.5 L284.0,222.7 L288.7,224.9 L293.3,226.9 L298.0,228.9 L302.7,230.7 L307.3,232.5 L312.0,234.2 L316.7,235.8 L321.3,237.4 L326.0,238.8 L330.7,240.3 L335.3,241.6 L340.0,242.9 L344.7,244.2 L349.3,245.4 L354.0,246.6 L358.7,247.7 L363.3,248.7 L368.0,249.8 L372.7,250.8 L377.3,251.7 L382.0,252.7 L386.7,253.6 L391.3,254.4 L396.0,255.3 L400.7,256.1 L405.3,256.9 L410.0,257.6 L414.7,258.4 L419.3,259.1 L424.0,259.8 L428.7,260.5 L433.3,261.1 L438.0,261.7 L442.7,262.4 L447.3,263.0 L452.0,263.5 L456.7,264.1 L461.3,264.6 L466.0,265.2 L470.7,265.7 L475.3,266.2 L480.0,266.7" class="ln thick acc"/>
+<path d="M200.0,150.0 L204.7,157.8 L209.3,164.9 L214.0,171.5 L218.7,177.5 L223.3,183.0 L228.0,188.2 L232.7,192.9 L237.3,197.3 L242.0,201.5 L246.7,205.3 L251.3,208.9 L256.0,212.3 L260.7,215.4 L265.3,218.4 L270.0,221.2 L274.7,223.8 L279.3,226.3 L284.0,228.6 L288.7,230.9 L293.3,233.0 L298.0,235.0 L302.7,236.9 L307.3,238.7 L312.0,240.4 L316.7,242.0 L321.3,243.6 L326.0,245.1 L330.7,246.5 L335.3,247.9 L340.0,249.2 L344.7,250.4 L349.3,251.6 L354.0,252.8 L358.7,253.9 L363.3,254.9 L368.0,256.0 L372.7,256.9 L377.3,257.9 L382.0,258.8 L386.7,259.7 L391.3,260.5 L396.0,261.3 L400.7,262.1 L405.3,262.9 L410.0,263.6 L414.7,264.3 L419.3,265.0 L424.0,265.7 L428.7,266.3 L433.3,266.9 L438.0,267.5 L442.7,268.1 L447.3,268.7 L452.0,269.2 L456.7,269.8 L461.3,270.3 L466.0,270.8 L470.7,271.3 L475.3,271.7 L480.0,272.2" class="ln thick acc2"/>
+<line x1="482.0" y1="255.0" x2="505" y2="211" class="ln thin"/>
+<text x="508" y="215" class="lbl-sm" text-anchor="start">isothermal, n = 1</text>
+<line x1="482.0" y1="266.69627379784714" x2="505" y2="241" class="ln thin"/>
+<text x="508" y="245" class="lbl-sm" text-anchor="start">polytropic, 1 &lt; n &lt; γ</text>
+<line x1="482.0" y1="272.19896172446647" x2="505" y2="271" class="ln thin"/>
+<text x="508" y="275" class="lbl-sm" text-anchor="start">adiabatic, n = γ</text>
+<text x="488" y="146" class="lbl-sm" text-anchor="start">constant p (n = 0)</text>
+<text x="212" y="285" class="lbl-sm" text-anchor="start">constant V (n = ∞)</text>
+</svg>
+<figcaption>Fig. 2.4 — Expansion from state 1 by constant-p, constant-V, isothermal, polytropic and adiabatic processes (pVⁿ = constant).</figcaption>
+</figure>
+    <div class="tbl"><table>
+      <thead><tr><th>Process</th><th>Law</th><th>Work W</th><th>ΔU</th><th>Heat Q</th></tr></thead>
+      <tbody>
+      <tr><td>Constant volume</td><td>V = C</td><td>\( 0 \)</td><td>\( m c_v (T_2 - T_1) \)</td><td>\( = \Delta U \)</td></tr>
+      <tr><td>Constant pressure</td><td>p = C</td><td>\( p(V_2 - V_1) = mR(T_2 - T_1) \)</td><td>\( m c_v (T_2 - T_1) \)</td><td>\( = \Delta H = m c_p (T_2 - T_1) \)</td></tr>
+      <tr><td>Isothermal</td><td>pV = C</td><td>\( p_1 V_1 \ln \dfrac{V_2}{V_1} \)</td><td>\( 0 \)</td><td>\( = W \)</td></tr>
+      <tr><td>Adiabatic</td><td>pV<sup>γ</sup> = C</td><td>\( \dfrac{p_1 V_1 - p_2 V_2}{\gamma - 1} \)</td><td>\( -W \)</td><td>\( 0 \)</td></tr>
+      <tr><td>Polytropic</td><td>pV<sup>n</sup> = C</td><td>\( \dfrac{p_1 V_1 - p_2 V_2}{n - 1} \)</td><td>\( m c_v (T_2 - T_1) \)</td><td>\( \Delta U + W = W\,\dfrac{\gamma - n}{\gamma - 1} \)</td></tr>
+      </tbody></table></div>
+    <p class="caption-note">Table 2.1 — Closed-system processes of an ideal gas.</p>
+    <aside class="warn"><b>Common mistake.</b> ΔU = m cv ΔT holds for <i>every</i> process of an ideal gas, not only constant volume. Also W = ∫p dV only for a quasi-static process. Paddle-wheel or free-expansion work is not ∫p dV.</aside>
+
+    <h3 id="te-u2-c-pmm">6. PMM-I and limitations of the first law</h3>
+    <p>A <b>perpetual motion machine of the first kind (PMM-I)</b> is a machine that delivers work continuously without any energy input, or delivers more energy than it receives. It creates energy. This breaks the first law, so it cannot exist.</p>
+<figure class="fig" id="te-u2-f-pmm">
+<svg viewBox="0 0 600 270" role="img" aria-label="Perpetual motion machine of the first kind: work output with no energy input">
+<defs><marker id="te-u2-arw-pmm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="230" y="80" width="170" height="100" class="ln fill-soft"/>
+<text x="315" y="125" class="lbl-b" text-anchor="middle">PMM-I</text>
+<text x="315" y="148" class="lbl-sm" text-anchor="middle">creates energy</text>
+<line x1="60" y1="130" x2="215" y2="130" class="ln dash"/>
+<text x="130" y="112" class="lbl-sm" text-anchor="middle">No energy input</text>
+<line x1="215" y1="122" x2="215" y2="138" class="ln thick"/>
+<line x1="400" y1="130" x2="540" y2="130" class="ln" marker-end="url(#te-u2-arw-pmm)"/>
+<text x="470" y="112" class="lbl-sm" text-anchor="middle">Work output W</text>
+<text x="470" y="152" class="lbl-sm" text-anchor="middle">for ever</text>
+<text x="315" y="225" class="lbl-acc" text-anchor="middle">Energy out &gt; energy in: IMPOSSIBLE</text>
+<text x="315" y="250" class="lbl-sm" text-anchor="middle">It violates the first law (conservation of energy).</text>
+</svg>
+<figcaption>Fig. 2.5 — PMM-I: a machine that gives work output continuously without any energy input. No such machine exists.</figcaption>
+</figure>
+    <p>The first law is a balance sheet. It checks that energy is conserved, but it does not tell whether a process can really happen. The limitations are:</p>
+    <ul>
+      <li>It gives <b>no direction</b> to a process. A hot body in contact with a cold body could gain heat from it and the first law would still hold. In practice heat flows only from hot to cold.</li>
+      <li>It gives <b>no limit</b> on the conversion of heat to work. It allows 100 % conversion, but a heat engine must reject some heat.</li>
+      <li>It does not say how much a process is <b>reversible</b>, or how good (useful) the energy is. Work is high-grade energy; heat is low-grade energy.</li>
+      <li>It cannot say whether a process is possible. Two equal-energy states can be impossible to join.</li>
+    </ul>
+<figure class="fig" id="te-u2-f-limits">
+<svg viewBox="0 0 680 240" role="img" aria-label="Limitations of the first law: heat flow direction and heat to work conversion">
+<defs><marker id="te-u2-arw-limits" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="30" y="80" width="100" height="80" class="ln fill-soft"/>
+<text x="80" y="115" class="lbl-b" text-anchor="middle">Hot</text>
+<text x="80" y="140" class="lbl-sm" text-anchor="middle">100 °C</text>
+<rect x="220" y="80" width="100" height="80" class="ln fill-soft"/>
+<text x="270" y="115" class="lbl-b" text-anchor="middle">Cold</text>
+<text x="270" y="140" class="lbl-sm" text-anchor="middle">20 °C</text>
+<line x1="130" y1="100" x2="220" y2="100" class="ln" marker-end="url(#te-u2-arw-limits)"/>
+<text x="175" y="92" class="lbl-b" text-anchor="middle">Q</text>
+<line x1="220" y1="140" x2="130" y2="140" class="ln dash" marker-end="url(#te-u2-arw-limits)"/>
+<text x="175" y="185" class="lbl-sm" text-anchor="middle">Heat never flows this way by itself</text>
+<text x="175" y="203" class="lbl-sm" text-anchor="middle">(first law allows it)</text>
+<text x="175" y="50" class="lbl-b" text-anchor="middle">(a) Direction of heat flow</text>
+<rect x="400" y="75" width="70" height="40" class="ln fill-soft"/>
+<text x="435" y="100" class="lbl-b" text-anchor="middle">Work</text>
+<line x1="470" y1="95" x2="560" y2="95" class="ln" marker-end="url(#te-u2-arw-limits)"/>
+<rect x="560" y="75" width="70" height="40" class="ln fill-soft"/>
+<text x="595" y="100" class="lbl-b" text-anchor="middle">Heat</text>
+<text x="515" y="135" class="lbl-sm" text-anchor="middle">100 % possible</text>
+<rect x="400" y="155" width="70" height="40" class="ln fill-soft"/>
+<text x="435" y="180" class="lbl-b" text-anchor="middle">Heat</text>
+<line x1="470" y1="175" x2="560" y2="175" class="ln dash" marker-end="url(#te-u2-arw-limits)"/>
+<rect x="560" y="155" width="70" height="40" class="ln fill-soft"/>
+<text x="595" y="180" class="lbl-b" text-anchor="middle">Work</text>
+<text x="515" y="215" class="lbl-sm" text-anchor="middle">100 % not possible (needs a heat sink)</text>
+<text x="515" y="50" class="lbl-b" text-anchor="middle">(b) Work and heat are not equivalent</text>
+</svg>
+<figcaption>Fig. 2.6 — The first law does not give the direction of a process, nor the limit of heat-to-work conversion.</figcaption>
+</figure>
+    <aside class="note"><b>Where the limit comes from.</b> The second law (Unit 3) fills these gaps: it gives direction, and it limits the efficiency of a heat engine (Kelvin–Planck, Clausius).</aside>
+
+    <h3 id="te-u2-c-sfee">7. Steady flow and the SFEE</h3>
+    <p>An open system (control volume) has mass crossing its boundary. A turbine and a nozzle are open systems. The flow is <b>steady</b> when:</p>
+    <ul>
+      <li>mass flow rate in = mass flow rate out, ṁ = constant (continuity: ṁ = AV/v);</li>
+      <li>the properties at the inlet, at the outlet and inside do not change with time;</li>
+      <li>heat and work rates are constant;</li>
+      <li>the inlet and outlet have uniform properties (one-dimensional flow).</li>
+    </ul>
+    <p>To push 1 kg of fluid into the control volume, the fluid behind it does <b>flow work</b> p₁v₁. At the exit, the fluid does p₂v₂ on the fluid ahead. Flow work + internal energy = enthalpy. This is why enthalpy appears in the SFEE.</p>
+<figure class="fig" id="te-u2-f-cv">
+<svg viewBox="0 0 680 355" role="img" aria-label="Control volume for steady flow with inlet 1, outlet 2, heat and shaft work">
+<defs><marker id="te-u2-arw-cv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="200" y="70" width="280" height="180" class="ln dash"/>
+<rect x="215" y="95" width="250" height="110" class="ln fill-soft"/>
+<text x="340" y="160" class="lbl-b" text-anchor="middle">Device</text>
+<text x="340" y="182" class="lbl-sm" text-anchor="middle">(turbine, nozzle, boiler …)</text>
+<text x="250" y="60" class="lbl-sm" text-anchor="middle">Control volume</text>
+<line x1="60" y1="230" x2="200" y2="230" class="ln thick" marker-end="url(#te-u2-arw-cv)"/>
+<line x1="480" y1="105" x2="620" y2="105" class="ln thick" marker-end="url(#te-u2-arw-cv)"/>
+<text x="130" y="196" class="lbl-sm" text-anchor="middle">1:  ṁ, p₁, v₁, V₁</text>
+<text x="130" y="214" class="lbl-sm" text-anchor="middle">u₁, h₁, z₁</text>
+<text x="550" y="66" class="lbl-sm" text-anchor="middle">2:  ṁ, p₂, v₂, V₂</text>
+<text x="550" y="84" class="lbl-sm" text-anchor="middle">u₂, h₂, z₂</text>
+<line x1="340" y1="20" x2="340" y2="68" class="ln" marker-end="url(#te-u2-arw-cv)"/>
+<text x="430" y="40" class="lbl" text-anchor="middle">Q̇  (heat in)</text>
+<line x1="340" y1="250" x2="340" y2="300" class="ln" marker-end="url(#te-u2-arw-cv)"/>
+<text x="430" y="290" class="lbl" text-anchor="middle">Ẇ  (shaft work out)</text>
+<line x1="30" y1="330" x2="650" y2="330" class="ln dash"/>
+<text x="640" y="346" class="lbl-sm" text-anchor="end">datum</text>
+<line x1="40" y1="330" x2="40" y2="230" class="ln thin" marker-end="url(#te-u2-arw-cv)" marker-start="url(#te-u2-arw-cv)"/>
+<text x="30" y="285" class="lbl" text-anchor="end">z₁</text>
+<line x1="650" y1="330" x2="650" y2="105" class="ln thin" marker-end="url(#te-u2-arw-cv)" marker-start="url(#te-u2-arw-cv)"/>
+<text x="640" y="225" class="lbl" text-anchor="end">z₂</text>
+</svg>
+<figcaption>Fig. 2.7 — Control volume for steady flow: one inlet (1), one outlet (2), heat Q̇ in and shaft work Ẇ out.</figcaption>
+</figure>
+    <div class="formula">\[ q - w_s = (h_2 - h_1) + \frac{V_2^2 - V_1^2}{2} + g\,(z_2 - z_1) \quad \text{(per kg)} \]<p class="where">q = heat added per kg, w<sub>s</sub> = shaft work done per kg (kJ/kg); h in kJ/kg, V in m/s, z in m. For the rate form multiply by ṁ: Q̇ − Ẇ = ṁ[Δh + ΔV²/2 + gΔz].</p></div>
+    <aside class="warn"><b>Units.</b> V²/2 is in J/kg and gz is in J/kg. Divide by 1000 to get kJ/kg before you add to h. This is the commonest numerical mistake in this unit.</aside>
+    <aside class="note"><b>Unsteady flow.</b> Filling or emptying a tank is unsteady flow. The mass and energy in the control volume change with time. Then the balance is \( Q - W + \sum m_i h_i - \sum m_e h_e = (m_2 u_2 - m_1 u_1)_{cv} \). Q3 gives a short note.</aside>
+
+    <h3 id="te-u2-c-app">8. Applications of the SFEE</h3>
+    <p>Each device is a control volume. Strike out the terms that are zero, and the SFEE reduces to a short equation. Table 2.2 gives all of them.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Device</th><th>Terms that are zero or small</th><th>Reduced equation</th></tr></thead>
+      <tbody>
+      <tr><td>Nozzle</td><td>w = 0, q ≈ 0, Δz = 0</td><td>\( h_1 + \frac{V_1^2}{2} = h_2 + \frac{V_2^2}{2} \)</td></tr>
+      <tr><td>Diffuser</td><td>w = 0, q ≈ 0, Δz = 0</td><td>\( h_2 - h_1 = \frac{V_1^2 - V_2^2}{2} \)</td></tr>
+      <tr><td>Turbine</td><td>ΔKE, ΔPE small; q small</td><td>\( w = h_1 - h_2 - q_{loss} \)</td></tr>
+      <tr><td>Compressor, pump</td><td>ΔKE, ΔPE small</td><td>\( w_{in} = (h_2 - h_1) + q_{out} \)</td></tr>
+      <tr><td>Throttling valve</td><td>q = 0, w = 0, ΔKE ≈ 0, Δz = 0</td><td>\( h_1 = h_2 \)</td></tr>
+      <tr><td>Heat exchanger</td><td>w = 0, no outside heat, ΔKE ≈ 0</td><td>\( \dot m_h (h_1 - h_2) = \dot m_c (h_4 - h_3) \)</td></tr>
+      <tr><td>Boiler, condenser</td><td>w = 0, ΔKE, ΔPE small</td><td>\( q = h_2 - h_1 \)</td></tr>
+      <tr><td>Desuperheater, mixer</td><td>w = 0, q = 0, ΔKE ≈ 0</td><td>\( \sum \dot m_{in} h_{in} = \sum \dot m_{out} h_{out} \)</td></tr>
+      </tbody></table></div>
+    <p class="caption-note">Table 2.2 — SFEE reduced for common devices.</p>
+
+    <p><b>Nozzle and diffuser.</b> A nozzle is a duct of changing area that raises the velocity of a fluid and lowers its pressure. A diffuser does the opposite. The fluid has no time to exchange heat, so the flow is adiabatic. The enthalpy drop becomes kinetic energy. If V₁ is small, V₂ = √(2(h₁ − h₂)) = 44.72 √Δh (Δh in kJ/kg, V₂ in m/s).</p>
+<figure class="fig" id="te-u2-f-nozzle">
+<svg viewBox="0 0 720 285" role="img" aria-label="Nozzle with converging section and diffuser with diverging section">
+<defs><marker id="te-u2-arw-nozzle" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M30,90 L290,125 L290,175 L30,210 Z" class="ln"/>
+<line x1="0" y1="150" x2="30" y2="150" class="ln" marker-end="url(#te-u2-arw-nozzle)"/>
+<line x1="290" y1="150" x2="330" y2="150" class="ln thick" marker-end="url(#te-u2-arw-nozzle)"/>
+<text x="30" y="78" class="lbl-b" text-anchor="middle">1</text>
+<text x="290" y="113" class="lbl-b" text-anchor="middle">2</text>
+<text x="160" y="40" class="lbl-b" text-anchor="middle">(a) Nozzle</text>
+<text x="160" y="245" class="lbl-sm" text-anchor="middle">p falls, V rises, h falls</text>
+<text x="160" y="265" class="lbl-sm" text-anchor="middle">h₁ + V₁²/2 = h₂ + V₂²/2</text>
+<path d="M410,125 L670,90 L670,210 L410,175 Z" class="ln"/>
+<line x1="375" y1="150" x2="410" y2="150" class="ln thick" marker-end="url(#te-u2-arw-nozzle)"/>
+<line x1="670" y1="150" x2="715" y2="150" class="ln" marker-end="url(#te-u2-arw-nozzle)"/>
+<text x="410" y="113" class="lbl-b" text-anchor="middle">1</text>
+<text x="670" y="78" class="lbl-b" text-anchor="middle">2</text>
+<text x="540" y="40" class="lbl-b" text-anchor="middle">(b) Diffuser</text>
+<text x="540" y="245" class="lbl-sm" text-anchor="middle">p rises, V falls, h rises</text>
+<text x="540" y="265" class="lbl-sm" text-anchor="middle">h₂ − h₁ = (V₁² − V₂²)/2</text>
+</svg>
+<figcaption>Fig. 2.8 — (a) Nozzle: area decreases, velocity increases. (b) Diffuser: area increases, velocity decreases.</figcaption>
+</figure>
+    <figure class="photo"><img src="img/te-u2-nozzle.jpg" alt="Rocket engine with a bell-shaped nozzle on display" width="750" height="1000" loading="lazy"><figcaption>A rocket engine nozzle: hot gas at high pressure is accelerated to a very high exit velocity. <span class="credit">Photo: Snowrunner2 at English Wikipedia · Public domain · Wikimedia Commons</span></figcaption></figure>
+
+    <p><b>Turbine.</b> Steam or gas expands through blades and turns the shaft. The heat loss from the casing is small. The inlet and exit velocity are of the order of 50–100 m/s, so ΔKE is often small, but check if the problem gives it. The work output equals the fall in enthalpy.</p>
+<figure class="fig" id="te-u2-f-turb">
+<svg viewBox="0 0 680 305" role="img" aria-label="Steam turbine control volume with shaft work out">
+<defs><marker id="te-u2-arw-turb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M120,125 L460,70 L460,250 L120,195 Z" class="ln"/>
+<line x1="190" y1="136" x2="190" y2="184" class="ln thin"/>
+<line x1="240" y1="128" x2="240" y2="192" class="ln thin"/>
+<line x1="290" y1="120" x2="290" y2="200" class="ln thin"/>
+<line x1="340" y1="112" x2="340" y2="208" class="ln thin"/>
+<line x1="390" y1="104" x2="390" y2="216" class="ln thin"/>
+<line x1="440" y1="96" x2="440" y2="224" class="ln thin"/>
+<line x1="110" y1="160" x2="580" y2="160" class="ln thick acc"/>
+<circle cx="580" cy="160" r="6" class="ln fill-acc"/>
+<line x1="40" y1="160" x2="118" y2="160" class="ln" marker-end="url(#te-u2-arw-turb)"/>
+<text x="80" y="128" class="lbl-sm" text-anchor="middle">Steam in</text>
+<text x="80" y="146" class="lbl-sm" text-anchor="middle">h₁, V₁, z₁</text>
+<line x1="460" y1="225" x2="545" y2="225" class="ln" marker-end="url(#te-u2-arw-turb)"/>
+<text x="520" y="250" class="lbl-sm" text-anchor="middle">Exhaust</text>
+<text x="520" y="268" class="lbl-sm" text-anchor="middle">h₂, V₂, z₂</text>
+<line x1="290" y1="95" x2="290" y2="48" class="ln" marker-end="url(#te-u2-arw-turb)"/>
+<text x="290" y="36" class="lbl-sm" text-anchor="middle">Q (small heat loss)</text>
+<text x="570" y="134" class="lbl-sm" text-anchor="middle">W (shaft work out)</text>
+<text x="300" y="292" class="lbl" text-anchor="middle">w = (h₁ − h₂) + (V₁² − V₂²)/2 − q</text>
+</svg>
+<figcaption>Fig. 2.9 — Turbine: steam expands, its enthalpy falls, and shaft work leaves.</figcaption>
+</figure>
+    <figure class="photo"><img src="img/te-u2-rotor.jpg" alt="A worker fitting blades on a large steam turbine rotor" width="1000" height="1000" loading="lazy"><figcaption>A steam turbine rotor with several rows of blades. The enthalpy of the steam falls across each row. <span class="credit">Photo: Siemens Pressebild · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+
+    <p><b>Compressor and pump.</b> Work is put in to raise the pressure. The gas is often cooled in a water jacket, so q is negative. Fig. 2.10 shows a rotary and a reciprocating compressor. The reciprocating one has pulsating flow, but with a receiver tank the average flow is steady, so the same SFEE applies.</p>
+<figure class="fig" id="te-u2-f-compr">
+<svg viewBox="0 0 700 360" role="img" aria-label="Rotary compressor and reciprocating compressor">
+<defs><marker id="te-u2-arw-compr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M40,70 L300,115 L300,205 L40,250 Z" class="ln"/>
+<line x1="0" y1="160" x2="40" y2="160" class="ln" marker-end="url(#te-u2-arw-compr)"/>
+<text x="20" y="146" class="lbl-b" text-anchor="middle">1</text>
+<line x1="300" y1="160" x2="350" y2="160" class="ln thick" marker-end="url(#te-u2-arw-compr)"/>
+<text x="325" y="146" class="lbl-b" text-anchor="middle">2</text>
+<line x1="170" y1="40" x2="170" y2="90" class="ln" marker-end="url(#te-u2-arw-compr)"/>
+<text x="210" y="52" class="lbl" text-anchor="middle">W in</text>
+<line x1="170" y1="230" x2="170" y2="280" class="ln" marker-end="url(#te-u2-arw-compr)"/>
+<text x="215" y="270" class="lbl" text-anchor="middle">Q out</text>
+<text x="170" y="160" class="lbl-sm" text-anchor="middle">Rotor</text>
+<text x="170" y="318" class="lbl-b" text-anchor="middle">(a) Rotary compressor</text>
+<rect x="480" y="112" width="100" height="130" class="ln"/>
+<rect x="482" y="114" width="96" height="60" class="ln fill-soft"/>
+<rect x="482" y="174" width="96" height="14" class="ln fill-acc"/>
+<line x1="530" y1="188" x2="530" y2="262" class="ln"/>
+<circle cx="530" cy="272" r="10" class="ln fill-soft"/>
+<rect x="492" y="104" width="16" height="8" class="ln fill-acc"/>
+<rect x="552" y="104" width="16" height="8" class="ln fill-acc"/>
+<path d="M430,70 L500,70 L500,104" class="ln thick"/>
+<path d="M560,104 L560,70 L640,70" class="ln thick"/>
+<line x1="430" y1="70" x2="470" y2="70" class="ln thick" marker-end="url(#te-u2-arw-compr)"/>
+<line x1="600" y1="70" x2="640" y2="70" class="ln thick" marker-end="url(#te-u2-arw-compr)"/>
+<text x="440" y="56" class="lbl-sm" text-anchor="start">Suction</text>
+<text x="640" y="56" class="lbl-sm" text-anchor="end">Delivery</text>
+<line x1="580" y1="220" x2="640" y2="220" class="ln" marker-end="url(#te-u2-arw-compr)"/>
+<text x="642" y="224" class="lbl-sm" text-anchor="start">Q out</text>
+<text x="530" y="298" class="lbl-sm" text-anchor="middle">W in</text>
+<text x="530" y="334" class="lbl-b" text-anchor="middle">(b) Reciprocating compressor</text>
+<text x="170" y="338" class="lbl-sm" text-anchor="middle">w = (h₂ − h₁) − q   (work input, q = heat lost)</text>
+</svg>
+<figcaption>Fig. 2.10 — (a) Rotary compressor. (b) Reciprocating compressor with suction and delivery valves and a cooling jacket.</figcaption>
+</figure>
+    <p><b>Throttling.</b> A valve, an orifice or a porous plug reduces the pressure with no work and no heat transfer. The velocity may rise at the restriction, but the pipe on both sides is of the same size, so ΔKE is small. The result is <b>h₁ = h₂</b>. The process is irreversible. A throttling calorimeter uses this to find the dryness of wet steam.</p>
+<figure class="fig" id="te-u2-f-thr">
+<svg viewBox="0 0 680 250" role="img" aria-label="Throttling valve: pressure falls and enthalpy stays constant">
+<defs><marker id="te-u2-arw-thr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M60,90 L290,90 L330,125 L370,125 L410,90 L620,90" class="ln"/>
+<path d="M60,170 L290,170 L330,135 L370,135 L410,170 L620,170" class="ln"/>
+<rect x="120" y="70" width="420" height="120" class="ln dash"/>
+<line x1="20" y1="130" x2="100" y2="130" class="ln thick" marker-end="url(#te-u2-arw-thr)"/>
+<line x1="560" y1="130" x2="640" y2="130" class="ln thick" marker-end="url(#te-u2-arw-thr)"/>
+<text x="70" y="215" class="lbl-sm" text-anchor="middle">1:  p₁, h₁</text>
+<text x="590" y="215" class="lbl-sm" text-anchor="middle">2:  p₂ &lt; p₁, h₂</text>
+<text x="350" y="40" class="lbl-sm" text-anchor="middle">Valve / orifice / porous plug</text>
+<line x1="350" y1="46" x2="350" y2="120" class="ln thin"/>
+<text x="350" y="225" class="lbl-b" text-anchor="middle">Q = 0, W = 0, ΔKE ≈ 0, ΔPE = 0  →  h₁ = h₂</text>
+</svg>
+<figcaption>Fig. 2.11 — Throttling: pressure drops across the restriction while the enthalpy stays constant.</figcaption>
+</figure>
+    <p><b>Heat exchanger, boiler, condenser.</b> No shaft work. Heat passes from the hot stream to the cold stream inside the device, so with no loss to outside, heat lost by hot = heat gained by cold. A boiler adds heat to water, a condenser removes heat from steam, and in each case q = Δh.</p>
+<figure class="fig" id="te-u2-f-hx">
+<svg viewBox="0 0 720 350" role="img" aria-label="Heat exchanger with hot and cold streams, boiler and condenser">
+<defs><marker id="te-u2-arw-hx" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="30" y="90" width="220" height="120" class="ln fill-soft"/>
+<line x1="10" y1="120" x2="270" y2="120" class="ln thick acc"/>
+<line x1="10" y1="150" x2="270" y2="150" class="ln thick acc"/>
+<line x1="10" y1="180" x2="270" y2="180" class="ln thick acc"/>
+<line x1="0" y1="150" x2="30" y2="150" class="ln thick acc" marker-end="url(#te-u2-arw-hx)"/>
+<text x="5" y="228" class="lbl-sm" text-anchor="start">1  Hot in</text>
+<line x1="250" y1="150" x2="285" y2="150" class="ln thick acc" marker-end="url(#te-u2-arw-hx)"/>
+<text x="285" y="228" class="lbl-sm" text-anchor="end">2  Hot out</text>
+<line x1="80" y1="270" x2="80" y2="210" class="ln thick acc2" marker-end="url(#te-u2-arw-hx)"/>
+<text x="80" y="288" class="lbl-sm" text-anchor="middle">3  Cold in</text>
+<line x1="210" y1="90" x2="210" y2="40" class="ln thick acc2" marker-end="url(#te-u2-arw-hx)"/>
+<text x="210" y="28" class="lbl-sm" text-anchor="middle">4  Cold out</text>
+<text x="140" y="315" class="lbl-b" text-anchor="middle">(a) Heat exchanger</text>
+<text x="140" y="335" class="lbl-sm" text-anchor="middle">ṁh(h₁ − h₂) = ṁc(h₄ − h₃)</text>
+<rect x="350" y="90" width="100" height="120" class="ln fill-soft"/>
+<line x1="300" y1="190" x2="350" y2="190" class="ln thick" marker-end="url(#te-u2-arw-hx)"/>
+<text x="318" y="178" class="lbl-b" text-anchor="middle">1</text>
+<text x="322" y="212" class="lbl-sm" text-anchor="middle">Water in</text>
+<text x="400" y="28" class="lbl-sm" text-anchor="middle">Steam out</text>
+<line x1="400" y1="90" x2="400" y2="40" class="ln thick" marker-end="url(#te-u2-arw-hx)"/>
+<text x="415" y="56" class="lbl-b" text-anchor="middle">2</text>
+<line x1="400" y1="270" x2="400" y2="210" class="ln thick acc" marker-end="url(#te-u2-arw-hx)"/>
+<text x="430" y="252" class="lbl-sm" text-anchor="start">Q in</text>
+<text x="400" y="315" class="lbl-b" text-anchor="middle">(b) Boiler</text>
+<text x="400" y="335" class="lbl-sm" text-anchor="middle">q = h₂ − h₁</text>
+<rect x="570" y="90" width="100" height="120" class="ln fill-soft"/>
+<line x1="620" y1="40" x2="620" y2="90" class="ln thick" marker-end="url(#te-u2-arw-hx)"/>
+<text x="635" y="56" class="lbl-b" text-anchor="middle">1</text>
+<text x="620" y="28" class="lbl-sm" text-anchor="middle">Steam in</text>
+<line x1="620" y1="210" x2="620" y2="260" class="ln thick" marker-end="url(#te-u2-arw-hx)"/>
+<text x="635" y="248" class="lbl-b" text-anchor="middle">2</text>
+<text x="620" y="276" class="lbl-sm" text-anchor="middle">Condensate out</text>
+<line x1="670" y1="150" x2="715" y2="150" class="ln thick acc" marker-end="url(#te-u2-arw-hx)"/>
+<text x="692" y="138" class="lbl-sm" text-anchor="middle">Q out</text>
+<text x="620" y="315" class="lbl-b" text-anchor="middle">(c) Condenser</text>
+<text x="620" y="335" class="lbl-sm" text-anchor="middle">q = h₁ − h₂ (out)</text>
+</svg>
+<figcaption>Fig. 2.12 — (a) Shell-and-tube heat exchanger. (b) Boiler. (c) Condenser. No work in any of them.</figcaption>
+</figure>
+    <figure class="photo"><img src="img/te-u2-exchanger.jpg" alt="A shell-and-tube heat exchanger with a tube bundle on a wooden frame" width="1000" height="564" loading="lazy"><figcaption>A shell-and-tube heat exchanger, the type shown in Fig. 2.12(a). Hundreds of tubes carry one fluid inside the shell. <span class="credit">Photo: Harald the Bard · CC BY-SA 4.0 · Wikimedia Commons</span></figcaption></figure>
+    <aside class="real"><b>Real world.</b> A power plant uses all of these together: a boiler (q in), a turbine (w out), a condenser (q out) and a pump (w in). The same devices appear in a refrigerator (compressor, condenser, throttle valve, evaporator).</aside>
+    <aside class="tip"><b>Method for any SFEE problem.</b> (1) Draw the control volume. (2) Write the full equation. (3) Cross out the zero terms. (4) Put every energy term in kJ/kg. (5) Solve; check the sign of q and w.</aside>
+
+    <h3 id="te-u2-c-cards">Key terms</h3>
+    <dl class="cards">
+      <dt>First law</dt><dd>Energy is conserved. For a closed system Q − W = ΔE.</dd>
+      <dt>Internal energy U</dt><dd>Energy of the molecules of a system. A property. For an ideal gas it depends on T only.</dd>
+      <dt>Enthalpy h</dt><dd>h = u + pv. Energy of 1 kg of flowing fluid, including flow work.</dd>
+      <dt>Path function</dt><dd>A quantity that depends on the path: heat and work. Its change is written δ.</dd>
+      <dt>Flow work</dt><dd>Work pv needed to push 1 kg of fluid into or out of a control volume.</dd>
+      <dt>Steady flow</dt><dd>Mass flow and properties at each point do not change with time.</dd>
+      <dt>SFEE</dt><dd>q − w = Δh + ΔV²/2 + gΔz, per kg of fluid.</dd>
+      <dt>PMM-I</dt><dd>A machine that produces work without energy input. It violates the first law.</dd>
+      <dt>Throttling</dt><dd>Pressure fall through a restriction with constant enthalpy.</dd>
+      <dt>Nozzle / diffuser</dt><dd>Duct that raises velocity and lowers pressure / lowers velocity and raises pressure.</dd>
+    </dl>
+
+    <div class="quiz" id="te-u2-quiz">
+      <div class="mcq" data-answer="a"><p class="stem">The statement ∮δQ = ∮δW is the first law for</p><ol class="opts"><li>a closed system undergoing a cycle</li><li>an open system in steady flow</li><li>an isolated system only</li><li>a reversible process only</li></ol><p class="why">The integral round a cycle applies to a closed system that returns to its first state.</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">Which of these is a property of a system?</p><ol class="opts"><li>Heat</li><li>Work</li><li>Internal energy</li><li>Heat and work</li></ol><p class="why">Heat and work are path functions. Internal energy is a point function.</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">Enthalpy of a substance is defined as</p><ol class="opts"><li>u − pv</li><li>u + pv</li><li>u + T s</li><li>pv − u</li></ol><p class="why">h = u + pv.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">Across a throttling valve (no heat transfer, no work, same pipe size) the quantity that stays constant is</p><ol class="opts"><li>pressure</li><li>temperature of every fluid</li><li>entropy</li><li>enthalpy</li></ol><p class="why">The SFEE reduces to h₁ = h₂. Entropy rises.</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">Steam enters a nozzle with negligible velocity. The enthalpy drop is 200 kJ/kg. The exit velocity is nearly</p><ol class="opts"><li>200 m/s</li><li>447 m/s</li><li>632 m/s</li><li>894 m/s</li></ol><p class="why">V = √(2 × 200 × 1000) = 632 m/s.</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">For an adiabatic expansion of a gas in a closed system, the work done equals</p><ol class="opts"><li>+ΔU</li><li>−ΔU</li><li>zero</li><li>Q</li></ol><p class="why">Q = 0, so W = −ΔU.</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">A PMM-I is impossible because it violates</p><ol class="opts"><li>the first law</li><li>the second law</li><li>Boyle's law</li><li>Charles's law</li></ol><p class="why">It would create energy, which the first law forbids.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">For an isothermal expansion of an ideal gas in a closed system,</p><ol class="opts"><li>Q = 0</li><li>W = 0</li><li>ΔU = W</li><li>Q = W</li></ol><p class="why">T is constant, so ΔU = 0 and Q = W.</p></div>
+    </div>
+  </section>
+
+  <section class="part" id="te-u2-theory" data-part="theory">
+    <h2>Theory questions</h2>
+    <article class="q" id="te-u2-q1" data-marks="10">
+      <h3>Q1. Explain Joule's experiment with a neat sketch. State the first law for a closed system undergoing a cycle, and show that energy (internal energy) is a property of the system.</h3>
+      <p class="q-src">Apr 2022 (CBCS) · Feb-Mar 2022 (CBCS) · Jun-Jul 2024 · Nov-Dec 2025 · Jan 2023 (CBCS)</p>
+      <p class="q-hint">Sketch of the paddle-wheel apparatus (3 marks), statement ∮δQ = ∮δW (2), proof with two cycles on a p–V diagram (5).</p>
+      <details class="answer"><summary>Model answer</summary>
+
+        <p><b>1. Joule's experiment.</b> An insulated vessel holds a known mass of water. A paddle wheel in the water is driven by a falling weight through a pulley. The work done on the water is W = mgh. A thermometer shows the rise in temperature. After this, the water is cooled to its first state by rejecting heat Q to the surroundings. The system has then completed a cycle.</p>
+<figure class="fig" id="te-u2-f-joule-q1">
+<svg viewBox="0 0 640 345" role="img" aria-label="Joule paddle wheel experiment: a falling weight turns a paddle wheel in an insulated water vessel">
+<defs><marker id="te-u2-arw-joule-q1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="180" y="140" width="210" height="170" class="ln dash"/>
+<rect x="190" y="190" width="190" height="110" class="ln fill-soft"/>
+<rect x="190" y="150" width="190" height="150" class="ln"/>
+<line x1="285" y1="70" x2="285" y2="270" class="ln thick"/>
+<circle cx="285" cy="70" r="16" class="ln fill-soft"/>
+<rect x="250" y="262" width="70" height="10" class="ln fill-acc"/>
+<line x1="301" y1="70" x2="470" y2="70" class="ln"/>
+<circle cx="470" cy="84" r="14" class="ln fill-soft"/>
+<line x1="484" y1="84" x2="484" y2="200" class="ln"/>
+<rect x="464" y="200" width="40" height="40" class="ln fill-acc"/>
+<text x="484" y="226" class="lbl-b" text-anchor="middle">m</text>
+<line x1="540" y1="84" x2="540" y2="200" class="ln thin" marker-end="url(#te-u2-arw-joule-q1)" marker-start="url(#te-u2-arw-joule-q1)"/>
+<text x="552" y="148" class="lbl" text-anchor="start">h</text>
+<rect x="345" y="115" width="12" height="170" class="ln"/>
+<text x="351" y="100" class="lbl-sm" text-anchor="middle">Thermometer</text>
+<text x="165" y="170" class="lbl" text-anchor="end">Insulated vessel</text>
+<line x1="170" y1="165" x2="190" y2="165" class="ln thin"/>
+<text x="225" y="215" class="lbl" text-anchor="middle">Water</text>
+<text x="165" y="267" class="lbl" text-anchor="end">Paddle wheel</text>
+<line x1="170" y1="267" x2="250" y2="267" class="ln thin"/>
+<text x="285" y="50" class="lbl-sm" text-anchor="middle">Shaft</text>
+<text x="484" y="262" class="lbl-sm" text-anchor="middle">Falling weight</text>
+<text x="320" y="332" class="lbl-sm" text-anchor="middle">Work done on water: W = m g h.   Heat transfer Q = 0.   Water temperature rises.</text>
+</svg>
+<figcaption>Fig. 2.1 — Joule's paddle-wheel experiment: work done by the falling weight raises the water temperature.</figcaption>
+</figure>
+        <p>Joule found that W/Q is always the same number J (4.186 kJ/kcal), for water, oil or mercury, and for paddle, electrical or friction work. In SI units heat and work are in the same unit (J), so J = 1.</p>
+        <p><b>2. Statement (first law for a cycle).</b> When a closed system undergoes a cycle, the algebraic sum of the heat transfers equals the algebraic sum of the work transfers.</p>
+        <div class="formula">\[ \oint \delta Q = \oint \delta W \]</div>
+        <p><b>3. Proof that energy is a property.</b> Let a system go from state 1 to state 2 by path A. Let it return by path B, then (in a second cycle) by path C (figure).</p>
+<figure class="fig" id="te-u2-f-pvcycle-q1">
+<svg viewBox="0 0 600 320" role="img" aria-label="p-V diagram: states 1 and 2 joined by paths A, B and C">
+<defs><marker id="te-u2-arw-pvcycle-q1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="290" x2="540" y2="290" class="ln" marker-end="url(#te-u2-arw-pvcycle-q1)"/><line x1="80" y1="290" x2="80" y2="30" class="ln" marker-end="url(#te-u2-arw-pvcycle-q1)"/><text x="534" y="314" class="lbl" text-anchor="end">V</text><text x="66" y="44" class="lbl" text-anchor="end">p</text>
+<path d="M160,220 C200,110 320,80 400,110" class="ln thick acc"/>
+<path d="M400,110 C430,230 300,270 160,220" class="ln thick acc2"/>
+<path d="M400,110 C380,160 270,190 160,220" class="ln dash"/>
+<circle cx="160" cy="220" r="4" class="solid"/>
+<circle cx="400" cy="110" r="4" class="solid"/>
+<text x="146" y="242" class="lbl-b" text-anchor="middle">1</text>
+<text x="414" y="100" class="lbl-b" text-anchor="middle">2</text>
+<text x="275" y="85" class="lbl-b" text-anchor="middle">A</text>
+<text x="380" y="215" class="lbl-b" text-anchor="middle">B</text>
+<text x="275" y="170" class="lbl-b" text-anchor="middle">C</text>
+<text x="470" y="200" class="lbl-sm" text-anchor="middle">Path A: 1 → 2</text>
+<text x="470" y="222" class="lbl-sm" text-anchor="middle">Path B: 2 → 1</text>
+<text x="470" y="244" class="lbl-sm" text-anchor="middle">Path C: 2 → 1 (dashed)</text>
+</svg>
+<figcaption>Fig. 2.2 — Two states 1 and 2 joined by three paths. Cycles 1-A-2-B-1 and 1-A-2-C-1 are used in the proof.</figcaption>
+</figure>
+        <ol>
+          <li>Cycle 1-A-2-B-1: \( \oint \delta Q = \oint \delta W \), so \( Q_A + Q_B = W_A + W_B \). Hence \( (Q - W)_A = -(Q - W)_B \).</li>
+          <li>Cycle 1-A-2-C-1 in the same way: \( (Q - W)_A = -(Q - W)_C \).</li>
+          <li>Compare (1) and (2): \( (Q - W)_B = (Q - W)_C \).</li>
+          <li>B and C are two different paths between the same two states. So (Q − W) has the same value for every path from 2 to 1. It depends only on the end states.</li>
+          <li>A quantity that depends only on the end states is a property. Call it energy E: \( \delta Q - \delta W = dE \), with \( \oint dE = 0 \).</li>
+        </ol>
+        <p><b>Result.</b> \( Q - W = E_2 - E_1 = \Delta E \). Since E = U + KE + PE, for a stationary system \( Q - W = \Delta U \). Hence internal energy is a property. Heat and work separately depend on the path; only their difference (Q − W) does not.</p>
+
+      </details>
+    </article>
+    <article class="q" id="te-u2-q2" data-marks="10">
+      <h3>Q2. State the first law of thermodynamics. Explain the perpetual motion machine of the first kind (PMM-I). List the limitations of the first law with an example.</h3>
+      <p class="q-src">Jan 2025 · Nov 2024 · Jan 2023 (CBCS) · Feb-Mar 2022 (CBCS) · Apr 2022 (CBCS)</p>
+      <p class="q-hint">Statement and equation (3 marks), PMM-I with sketch (3), four limitations with a hot-body example (4).</p>
+      <details class="answer"><summary>Model answer</summary>
+
+        <p><b>Statement.</b> Energy can neither be created nor destroyed; it can only change from one form to another. For a closed system: the net heat supplied equals the net work done plus the increase in stored energy, \( Q - W = \Delta E \). For a cycle, \( \oint \delta Q = \oint \delta W \).</p>
+        <p><b>PMM-I.</b> A perpetual motion machine of the first kind is a machine that produces work continuously without receiving any energy, or one that delivers more energy than it receives.</p>
+<figure class="fig" id="te-u2-f-pmm-q2">
+<svg viewBox="0 0 600 270" role="img" aria-label="Perpetual motion machine of the first kind: work output with no energy input">
+<defs><marker id="te-u2-arw-pmm-q2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="230" y="80" width="170" height="100" class="ln fill-soft"/>
+<text x="315" y="125" class="lbl-b" text-anchor="middle">PMM-I</text>
+<text x="315" y="148" class="lbl-sm" text-anchor="middle">creates energy</text>
+<line x1="60" y1="130" x2="215" y2="130" class="ln dash"/>
+<text x="130" y="112" class="lbl-sm" text-anchor="middle">No energy input</text>
+<line x1="215" y1="122" x2="215" y2="138" class="ln thick"/>
+<line x1="400" y1="130" x2="540" y2="130" class="ln" marker-end="url(#te-u2-arw-pmm-q2)"/>
+<text x="470" y="112" class="lbl-sm" text-anchor="middle">Work output W</text>
+<text x="470" y="152" class="lbl-sm" text-anchor="middle">for ever</text>
+<text x="315" y="225" class="lbl-acc" text-anchor="middle">Energy out &gt; energy in: IMPOSSIBLE</text>
+<text x="315" y="250" class="lbl-sm" text-anchor="middle">It violates the first law (conservation of energy).</text>
+</svg>
+<figcaption>Fig. 2.5 — PMM-I: a machine that gives work output continuously without any energy input. No such machine exists.</figcaption>
+</figure>
+        <ul>
+          <li>For a cycle, the first law says W = Q. If Q = 0, then W = 0. So a machine with W &gt; 0 and no energy input is impossible.</li>
+          <li>The first law is a law of nature, drawn from experiment. No one has ever built a PMM-I. A PMM-I would make energy from nothing.</li>
+          <li>A heat engine therefore needs a heat input Q<sub>H</sub> and gives W = Q<sub>H</sub> − Q<sub>L</sub>.</li>
+        </ul>
+        <p><b>Limitations of the first law.</b></p>
+        <ol>
+          <li><b>No direction.</b> It does not say which way a process goes. Example: a cup of hot tea cools in the room by losing Q to the air. The reverse (the tea gets hotter by taking Q from cooler air) also conserves energy, but it never happens.</li>
+          <li><b>No limit on heat-to-work conversion.</b> It allows 100 % of the heat to become work. In fact every heat engine must reject heat to a sink (Kelvin–Planck).</li>
+          <li><b>No difference between heat and work.</b> They are equivalent in the first law (1 kJ = 1 kJ). In fact work is high-grade energy (it can all become heat) and heat is low-grade.</li>
+          <li><b>It cannot say if a process is possible.</b> Friction turns work into heat, but heat cannot turn back into the same work by the reverse path; the first law allows both.</li>
+        </ol>
+        <p>These limits are removed by the second law.</p>
+
+      </details>
+    </article>
+    <article class="q" id="te-u2-q3" data-marks="10">
+      <h3>Q3. Derive the steady flow energy equation (SFEE) for an open system and list the assumptions. Write a short note on unsteady flow.</h3>
+      <p class="q-src">Jun-Jul 2024 · Aug-Sep 2023 · Jan 2023 (CBCS)</p>
+      <p class="q-hint">Control-volume sketch (2 marks), flow-work idea, derivation to the final equation (6), assumptions (2).</p>
+      <details class="answer"><summary>Model answer</summary>
+
+        <p><b>Assumptions.</b></p>
+        <ul>
+          <li>The flow is steady: ṁ is constant and no property changes with time at any point.</li>
+          <li>The properties are uniform over the inlet and outlet sections (one-dimensional flow).</li>
+          <li>There is one inlet and one outlet. Heat and work rates are constant.</li>
+        </ul>
+<figure class="fig" id="te-u2-f-cv-q3">
+<svg viewBox="0 0 680 355" role="img" aria-label="Control volume for steady flow with inlet 1, outlet 2, heat and shaft work">
+<defs><marker id="te-u2-arw-cv-q3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="200" y="70" width="280" height="180" class="ln dash"/>
+<rect x="215" y="95" width="250" height="110" class="ln fill-soft"/>
+<text x="340" y="160" class="lbl-b" text-anchor="middle">Device</text>
+<text x="340" y="182" class="lbl-sm" text-anchor="middle">(turbine, nozzle, boiler …)</text>
+<text x="250" y="60" class="lbl-sm" text-anchor="middle">Control volume</text>
+<line x1="60" y1="230" x2="200" y2="230" class="ln thick" marker-end="url(#te-u2-arw-cv-q3)"/>
+<line x1="480" y1="105" x2="620" y2="105" class="ln thick" marker-end="url(#te-u2-arw-cv-q3)"/>
+<text x="130" y="196" class="lbl-sm" text-anchor="middle">1:  ṁ, p₁, v₁, V₁</text>
+<text x="130" y="214" class="lbl-sm" text-anchor="middle">u₁, h₁, z₁</text>
+<text x="550" y="66" class="lbl-sm" text-anchor="middle">2:  ṁ, p₂, v₂, V₂</text>
+<text x="550" y="84" class="lbl-sm" text-anchor="middle">u₂, h₂, z₂</text>
+<line x1="340" y1="20" x2="340" y2="68" class="ln" marker-end="url(#te-u2-arw-cv-q3)"/>
+<text x="430" y="40" class="lbl" text-anchor="middle">Q̇  (heat in)</text>
+<line x1="340" y1="250" x2="340" y2="300" class="ln" marker-end="url(#te-u2-arw-cv-q3)"/>
+<text x="430" y="290" class="lbl" text-anchor="middle">Ẇ  (shaft work out)</text>
+<line x1="30" y1="330" x2="650" y2="330" class="ln dash"/>
+<text x="640" y="346" class="lbl-sm" text-anchor="end">datum</text>
+<line x1="40" y1="330" x2="40" y2="230" class="ln thin" marker-end="url(#te-u2-arw-cv-q3)" marker-start="url(#te-u2-arw-cv-q3)"/>
+<text x="30" y="285" class="lbl" text-anchor="end">z₁</text>
+<line x1="650" y1="330" x2="650" y2="105" class="ln thin" marker-end="url(#te-u2-arw-cv-q3)" marker-start="url(#te-u2-arw-cv-q3)"/>
+<text x="640" y="225" class="lbl" text-anchor="end">z₂</text>
+</svg>
+<figcaption>Fig. 2.7 — Control volume for steady flow: one inlet (1), one outlet (2), heat Q̇ in and shaft work Ẇ out.</figcaption>
+</figure>
+        <p><b>Derivation.</b> Consider 1 kg of fluid that enters at section 1 and leaves at section 2. Let q be the heat added and w<sub>s</sub> the shaft work done by the fluid, both per kg.</p>
+        <ol>
+          <li>At the inlet, the fluid behind the 1 kg pushes it in. The work done on the 1 kg is p₁v₁ (flow work, input).</li>
+          <li>At the exit, the 1 kg pushes the fluid ahead. It does work p₂v₂ (output).</li>
+          <li>The total work done by the fluid is \( w = w_s + p_2 v_2 - p_1 v_1 \).</li>
+          <li>The stored energy per kg is \( e = u + V^2/2 + gz \). Apply the first law \( q - w = e_2 - e_1 \):
+            \[ q - \left( w_s + p_2 v_2 - p_1 v_1 \right) = \left( u_2 + \tfrac{V_2^2}{2} + g z_2 \right) - \left( u_1 + \tfrac{V_1^2}{2} + g z_1 \right) \]</li>
+          <li>Collect the terms and use \( h = u + pv \):
+            \[ h_1 + \frac{V_1^2}{2} + g z_1 + q = h_2 + \frac{V_2^2}{2} + g z_2 + w_s \]</li>
+          <li>Multiply by ṁ for the rate form: \( \dot Q + \dot m\left( h_1 + \tfrac{V_1^2}{2} + g z_1 \right) = \dot W + \dot m\left( h_2 + \tfrac{V_2^2}{2} + g z_2 \right) \).</li>
+        </ol>
+        <p>Energy brought in (heat + fluid energy at the inlet) equals energy taken out (work + fluid energy at the exit).</p>
+        <p><b>Note on unsteady flow.</b> In unsteady (transient) flow, for example filling a cylinder from a supply line, the mass and the energy inside the control volume change with time. The balance is \( Q - W + \sum m_i h_i - \sum m_e h_e = (m_2 u_2 - m_1 u_1)_{cv} \), where h<sub>i</sub> is the enthalpy of the fluid that enters and h<sub>e</sub> of the fluid that leaves, with KE and PE neglected. The mass balance is \( \sum m_i - \sum m_e = (m_2 - m_1)_{cv} \).</p>
+
+      </details>
+    </article>
+    <article class="q" id="te-u2-q4" data-marks="10">
+      <h3>Q4. Apply the steady flow energy equation to (i) a steam turbine, (ii) a nozzle, (iii) a compressor, (iv) a throttling device, (v) a heat exchanger and (vi) a de-superheater. Show the control volume in each case.</h3>
+      <p class="q-src">Apr 2022 (CBCS) · Feb-Mar 2022 (CBCS) · Nov 2024 · Nov-Dec 2025 · Jan 2025</p>
+      <p class="q-hint">One small sketch and the reduced equation for each device, with the reason each term is dropped.</p>
+      <details class="answer"><summary>Model answer</summary>
+
+        <p><b>General SFEE:</b> \( q - w = (h_2 - h_1) + \frac{V_2^2 - V_1^2}{2} + g(z_2 - z_1) \) (per kg, work and heat out/in per the sign rule).</p>
+        <p><b>(i) Steam turbine.</b> The flow is adiabatic if the casing is insulated, q = 0. The height change is small (Δz ≈ 0). So \( w = (h_1 - h_2) + \frac{V_1^2 - V_2^2}{2} \). If the KE change is also small, \( w = h_1 - h_2 \). The work output equals the enthalpy drop.</p>
+<figure class="fig" id="te-u2-f-turb-q4">
+<svg viewBox="0 0 680 305" role="img" aria-label="Steam turbine control volume with shaft work out">
+<defs><marker id="te-u2-arw-turb-q4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M120,125 L460,70 L460,250 L120,195 Z" class="ln"/>
+<line x1="190" y1="136" x2="190" y2="184" class="ln thin"/>
+<line x1="240" y1="128" x2="240" y2="192" class="ln thin"/>
+<line x1="290" y1="120" x2="290" y2="200" class="ln thin"/>
+<line x1="340" y1="112" x2="340" y2="208" class="ln thin"/>
+<line x1="390" y1="104" x2="390" y2="216" class="ln thin"/>
+<line x1="440" y1="96" x2="440" y2="224" class="ln thin"/>
+<line x1="110" y1="160" x2="580" y2="160" class="ln thick acc"/>
+<circle cx="580" cy="160" r="6" class="ln fill-acc"/>
+<line x1="40" y1="160" x2="118" y2="160" class="ln" marker-end="url(#te-u2-arw-turb-q4)"/>
+<text x="80" y="128" class="lbl-sm" text-anchor="middle">Steam in</text>
+<text x="80" y="146" class="lbl-sm" text-anchor="middle">h₁, V₁, z₁</text>
+<line x1="460" y1="225" x2="545" y2="225" class="ln" marker-end="url(#te-u2-arw-turb-q4)"/>
+<text x="520" y="250" class="lbl-sm" text-anchor="middle">Exhaust</text>
+<text x="520" y="268" class="lbl-sm" text-anchor="middle">h₂, V₂, z₂</text>
+<line x1="290" y1="95" x2="290" y2="48" class="ln" marker-end="url(#te-u2-arw-turb-q4)"/>
+<text x="290" y="36" class="lbl-sm" text-anchor="middle">Q (small heat loss)</text>
+<text x="570" y="134" class="lbl-sm" text-anchor="middle">W (shaft work out)</text>
+<text x="300" y="292" class="lbl" text-anchor="middle">w = (h₁ − h₂) + (V₁² − V₂²)/2 − q</text>
+</svg>
+<figcaption>Fig. 2.9 — Turbine: steam expands, its enthalpy falls, and shaft work leaves.</figcaption>
+</figure>
+        <p><b>(ii) Nozzle.</b> A nozzle does no work (w = 0). The gas passes so fast that there is no time for heat transfer (q = 0). Δz = 0. So \( h_1 + \frac{V_1^2}{2} = h_2 + \frac{V_2^2}{2} \), and \( V_2 = \sqrt{V_1^2 + 2(h_1 - h_2)} \). If the heat transfer is not zero, keep q: \( q + h_1 + \frac{V_1^2}{2} = h_2 + \frac{V_2^2}{2} \).</p>
+<figure class="fig" id="te-u2-f-nozzle-q4">
+<svg viewBox="0 0 720 285" role="img" aria-label="Nozzle with converging section and diffuser with diverging section">
+<defs><marker id="te-u2-arw-nozzle-q4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M30,90 L290,125 L290,175 L30,210 Z" class="ln"/>
+<line x1="0" y1="150" x2="30" y2="150" class="ln" marker-end="url(#te-u2-arw-nozzle-q4)"/>
+<line x1="290" y1="150" x2="330" y2="150" class="ln thick" marker-end="url(#te-u2-arw-nozzle-q4)"/>
+<text x="30" y="78" class="lbl-b" text-anchor="middle">1</text>
+<text x="290" y="113" class="lbl-b" text-anchor="middle">2</text>
+<text x="160" y="40" class="lbl-b" text-anchor="middle">(a) Nozzle</text>
+<text x="160" y="245" class="lbl-sm" text-anchor="middle">p falls, V rises, h falls</text>
+<text x="160" y="265" class="lbl-sm" text-anchor="middle">h₁ + V₁²/2 = h₂ + V₂²/2</text>
+<path d="M410,125 L670,90 L670,210 L410,175 Z" class="ln"/>
+<line x1="375" y1="150" x2="410" y2="150" class="ln thick" marker-end="url(#te-u2-arw-nozzle-q4)"/>
+<line x1="670" y1="150" x2="715" y2="150" class="ln" marker-end="url(#te-u2-arw-nozzle-q4)"/>
+<text x="410" y="113" class="lbl-b" text-anchor="middle">1</text>
+<text x="670" y="78" class="lbl-b" text-anchor="middle">2</text>
+<text x="540" y="40" class="lbl-b" text-anchor="middle">(b) Diffuser</text>
+<text x="540" y="245" class="lbl-sm" text-anchor="middle">p rises, V falls, h rises</text>
+<text x="540" y="265" class="lbl-sm" text-anchor="middle">h₂ − h₁ = (V₁² − V₂²)/2</text>
+</svg>
+<figcaption>Fig. 2.8 — (a) Nozzle: area decreases, velocity increases. (b) Diffuser: area increases, velocity decreases.</figcaption>
+</figure>
+        <p><b>(iii) Compressor.</b> The compressor takes in work (w negative). Cooling gives q negative. The KE and PE changes are small. So \( w = q - (h_2 - h_1) \), that is the work input \( = (h_2 - h_1) + q_{out} \). For an adiabatic compressor \( w_{in} = h_2 - h_1 \).</p>
+<figure class="fig" id="te-u2-f-compr-q4">
+<svg viewBox="0 0 700 360" role="img" aria-label="Rotary compressor and reciprocating compressor">
+<defs><marker id="te-u2-arw-compr-q4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M40,70 L300,115 L300,205 L40,250 Z" class="ln"/>
+<line x1="0" y1="160" x2="40" y2="160" class="ln" marker-end="url(#te-u2-arw-compr-q4)"/>
+<text x="20" y="146" class="lbl-b" text-anchor="middle">1</text>
+<line x1="300" y1="160" x2="350" y2="160" class="ln thick" marker-end="url(#te-u2-arw-compr-q4)"/>
+<text x="325" y="146" class="lbl-b" text-anchor="middle">2</text>
+<line x1="170" y1="40" x2="170" y2="90" class="ln" marker-end="url(#te-u2-arw-compr-q4)"/>
+<text x="210" y="52" class="lbl" text-anchor="middle">W in</text>
+<line x1="170" y1="230" x2="170" y2="280" class="ln" marker-end="url(#te-u2-arw-compr-q4)"/>
+<text x="215" y="270" class="lbl" text-anchor="middle">Q out</text>
+<text x="170" y="160" class="lbl-sm" text-anchor="middle">Rotor</text>
+<text x="170" y="318" class="lbl-b" text-anchor="middle">(a) Rotary compressor</text>
+<rect x="480" y="112" width="100" height="130" class="ln"/>
+<rect x="482" y="114" width="96" height="60" class="ln fill-soft"/>
+<rect x="482" y="174" width="96" height="14" class="ln fill-acc"/>
+<line x1="530" y1="188" x2="530" y2="262" class="ln"/>
+<circle cx="530" cy="272" r="10" class="ln fill-soft"/>
+<rect x="492" y="104" width="16" height="8" class="ln fill-acc"/>
+<rect x="552" y="104" width="16" height="8" class="ln fill-acc"/>
+<path d="M430,70 L500,70 L500,104" class="ln thick"/>
+<path d="M560,104 L560,70 L640,70" class="ln thick"/>
+<line x1="430" y1="70" x2="470" y2="70" class="ln thick" marker-end="url(#te-u2-arw-compr-q4)"/>
+<line x1="600" y1="70" x2="640" y2="70" class="ln thick" marker-end="url(#te-u2-arw-compr-q4)"/>
+<text x="440" y="56" class="lbl-sm" text-anchor="start">Suction</text>
+<text x="640" y="56" class="lbl-sm" text-anchor="end">Delivery</text>
+<line x1="580" y1="220" x2="640" y2="220" class="ln" marker-end="url(#te-u2-arw-compr-q4)"/>
+<text x="642" y="224" class="lbl-sm" text-anchor="start">Q out</text>
+<text x="530" y="298" class="lbl-sm" text-anchor="middle">W in</text>
+<text x="530" y="334" class="lbl-b" text-anchor="middle">(b) Reciprocating compressor</text>
+<text x="170" y="338" class="lbl-sm" text-anchor="middle">w = (h₂ − h₁) − q   (work input, q = heat lost)</text>
+</svg>
+<figcaption>Fig. 2.10 — (a) Rotary compressor. (b) Reciprocating compressor with suction and delivery valves and a cooling jacket.</figcaption>
+</figure>
+        <p><b>(iv) Throttling device.</b> w = 0 and q = 0 (no time, insulated). Δz = 0 and the KE change is small. So \( h_1 = h_2 \).</p>
+<figure class="fig" id="te-u2-f-thr-q4">
+<svg viewBox="0 0 680 250" role="img" aria-label="Throttling valve: pressure falls and enthalpy stays constant">
+<defs><marker id="te-u2-arw-thr-q4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M60,90 L290,90 L330,125 L370,125 L410,90 L620,90" class="ln"/>
+<path d="M60,170 L290,170 L330,135 L370,135 L410,170 L620,170" class="ln"/>
+<rect x="120" y="70" width="420" height="120" class="ln dash"/>
+<line x1="20" y1="130" x2="100" y2="130" class="ln thick" marker-end="url(#te-u2-arw-thr-q4)"/>
+<line x1="560" y1="130" x2="640" y2="130" class="ln thick" marker-end="url(#te-u2-arw-thr-q4)"/>
+<text x="70" y="215" class="lbl-sm" text-anchor="middle">1:  p₁, h₁</text>
+<text x="590" y="215" class="lbl-sm" text-anchor="middle">2:  p₂ &lt; p₁, h₂</text>
+<text x="350" y="40" class="lbl-sm" text-anchor="middle">Valve / orifice / porous plug</text>
+<line x1="350" y1="46" x2="350" y2="120" class="ln thin"/>
+<text x="350" y="225" class="lbl-b" text-anchor="middle">Q = 0, W = 0, ΔKE ≈ 0, ΔPE = 0  →  h₁ = h₂</text>
+</svg>
+<figcaption>Fig. 2.11 — Throttling: pressure drops across the restriction while the enthalpy stays constant.</figcaption>
+</figure>
+        <p><b>(v) Heat exchanger.</b> No shaft work, and no heat to outside. Hot fluid (1 → 2) gives heat to cold fluid (3 → 4). With the control volume around both streams, \( \dot m_h h_1 + \dot m_c h_3 = \dot m_h h_2 + \dot m_c h_4 \), or \( \dot m_h (h_1 - h_2) = \dot m_c (h_4 - h_3) \).</p>
+<figure class="fig" id="te-u2-f-hx-q4">
+<svg viewBox="0 0 720 350" role="img" aria-label="Heat exchanger with hot and cold streams, boiler and condenser">
+<defs><marker id="te-u2-arw-hx-q4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="30" y="90" width="220" height="120" class="ln fill-soft"/>
+<line x1="10" y1="120" x2="270" y2="120" class="ln thick acc"/>
+<line x1="10" y1="150" x2="270" y2="150" class="ln thick acc"/>
+<line x1="10" y1="180" x2="270" y2="180" class="ln thick acc"/>
+<line x1="0" y1="150" x2="30" y2="150" class="ln thick acc" marker-end="url(#te-u2-arw-hx-q4)"/>
+<text x="5" y="228" class="lbl-sm" text-anchor="start">1  Hot in</text>
+<line x1="250" y1="150" x2="285" y2="150" class="ln thick acc" marker-end="url(#te-u2-arw-hx-q4)"/>
+<text x="285" y="228" class="lbl-sm" text-anchor="end">2  Hot out</text>
+<line x1="80" y1="270" x2="80" y2="210" class="ln thick acc2" marker-end="url(#te-u2-arw-hx-q4)"/>
+<text x="80" y="288" class="lbl-sm" text-anchor="middle">3  Cold in</text>
+<line x1="210" y1="90" x2="210" y2="40" class="ln thick acc2" marker-end="url(#te-u2-arw-hx-q4)"/>
+<text x="210" y="28" class="lbl-sm" text-anchor="middle">4  Cold out</text>
+<text x="140" y="315" class="lbl-b" text-anchor="middle">(a) Heat exchanger</text>
+<text x="140" y="335" class="lbl-sm" text-anchor="middle">ṁh(h₁ − h₂) = ṁc(h₄ − h₃)</text>
+<rect x="350" y="90" width="100" height="120" class="ln fill-soft"/>
+<line x1="300" y1="190" x2="350" y2="190" class="ln thick" marker-end="url(#te-u2-arw-hx-q4)"/>
+<text x="318" y="178" class="lbl-b" text-anchor="middle">1</text>
+<text x="322" y="212" class="lbl-sm" text-anchor="middle">Water in</text>
+<text x="400" y="28" class="lbl-sm" text-anchor="middle">Steam out</text>
+<line x1="400" y1="90" x2="400" y2="40" class="ln thick" marker-end="url(#te-u2-arw-hx-q4)"/>
+<text x="415" y="56" class="lbl-b" text-anchor="middle">2</text>
+<line x1="400" y1="270" x2="400" y2="210" class="ln thick acc" marker-end="url(#te-u2-arw-hx-q4)"/>
+<text x="430" y="252" class="lbl-sm" text-anchor="start">Q in</text>
+<text x="400" y="315" class="lbl-b" text-anchor="middle">(b) Boiler</text>
+<text x="400" y="335" class="lbl-sm" text-anchor="middle">q = h₂ − h₁</text>
+<rect x="570" y="90" width="100" height="120" class="ln fill-soft"/>
+<line x1="620" y1="40" x2="620" y2="90" class="ln thick" marker-end="url(#te-u2-arw-hx-q4)"/>
+<text x="635" y="56" class="lbl-b" text-anchor="middle">1</text>
+<text x="620" y="28" class="lbl-sm" text-anchor="middle">Steam in</text>
+<line x1="620" y1="210" x2="620" y2="260" class="ln thick" marker-end="url(#te-u2-arw-hx-q4)"/>
+<text x="635" y="248" class="lbl-b" text-anchor="middle">2</text>
+<text x="620" y="276" class="lbl-sm" text-anchor="middle">Condensate out</text>
+<line x1="670" y1="150" x2="715" y2="150" class="ln thick acc" marker-end="url(#te-u2-arw-hx-q4)"/>
+<text x="692" y="138" class="lbl-sm" text-anchor="middle">Q out</text>
+<text x="620" y="315" class="lbl-b" text-anchor="middle">(c) Condenser</text>
+<text x="620" y="335" class="lbl-sm" text-anchor="middle">q = h₁ − h₂ (out)</text>
+</svg>
+<figcaption>Fig. 2.12 — (a) Shell-and-tube heat exchanger. (b) Boiler. (c) Condenser. No work in any of them.</figcaption>
+</figure>
+        <p><b>(vi) De-superheater.</b> Water is sprayed into superheated steam. No work, no heat loss, and the KE and PE changes are negligible. Mass: \( \dot m_s + \dot m_w = \dot m_3 \). Energy: \( \dot m_s h_s + \dot m_w h_w = \dot m_3 h_3 \), so \( \dot m_w = \dot m_s \dfrac{h_s - h_3}{h_3 - h_w} \).</p>
+
+      </details>
+    </article>
+    <article class="q" id="te-u2-q5" data-marks="10">
+      <h3>Q5. Define internal energy and enthalpy. Explain specific heat at constant pressure and at constant volume. Using the first law, find Q, W and ΔU for constant-volume, constant-pressure, isothermal, adiabatic and polytropic processes of an ideal gas.</h3>
+      <p class="q-src">Aug-Sep 2023 · Jun-Jul 2024 · Syllabus topic</p>
+      <p class="q-hint">Definitions (3 marks), cp − cv = R (2), a table or five short derivations (5).</p>
+      <details class="answer"><summary>Model answer</summary>
+
+        <p><b>Internal energy U</b> is the energy stored in the molecules of the system (kinetic and potential energy of the molecules). It is a property. For an ideal gas, U depends only on T.</p>
+        <p><b>Enthalpy</b> H = U + pV (h = u + pv per kg). It is a property. In a constant-pressure closed process, Q = ΔH.</p>
+        <p><b>Specific heats.</b> \( c_v = \left(\dfrac{\partial u}{\partial T}\right)_v \) is the heat needed to raise 1 kg by 1 K at constant volume. \( c_p = \left(\dfrac{\partial h}{\partial T}\right)_p \) is the same at constant pressure. cp &gt; cv, because at constant pressure the gas also does expansion work.</p>
+        <p><b>Relation.</b> For an ideal gas \( h = u + RT \). Differentiate with respect to T: \( c_p = c_v + R \). Also \( \gamma = c_p/c_v \), so \( c_v = \dfrac{R}{\gamma - 1} \) and \( c_p = \dfrac{\gamma R}{\gamma - 1} \).</p>
+        <p><b>Processes</b> (apply Q − W = ΔU, with ΔU = m cv ΔT for all):</p>
+        <ol>
+          <li><b>Constant volume.</b> dV = 0, so W = 0. Q = ΔU = m cv (T₂ − T₁).</li>
+          <li><b>Constant pressure.</b> \( W = \int p\,dV = p(V_2 - V_1) = mR(T_2 - T_1) \). \( Q = \Delta U + W = m c_p (T_2 - T_1) = \Delta H \).</li>
+          <li><b>Isothermal.</b> pV = C, so \( p = p_1 V_1 / V \). \( W = p_1 V_1 \ln\frac{V_2}{V_1} \). ΔU = 0 (T is constant). Hence Q = W.</li>
+          <li><b>Adiabatic.</b> Q = 0, so W = −ΔU = m cv (T₁ − T₂). With \( p V^{\gamma} = C \): \( W = \dfrac{p_1 V_1 - p_2 V_2}{\gamma - 1} \).</li>
+          <li><b>Polytropic.</b> \( pV^n = C \) gives \( W = \int_1^2 p\,dV = \dfrac{p_1 V_1 - p_2 V_2}{n - 1} \). ΔU = m cv (T₂ − T₁) = \( -\dfrac{p_1 V_1 - p_2 V_2}{\gamma - 1} \). Then \( Q = \Delta U + W = W\left(1 - \dfrac{n - 1}{\gamma - 1}\right) = W\,\dfrac{\gamma - n}{\gamma - 1} \).</li>
+        </ol>
+<figure class="fig" id="te-u2-f-procs-q5">
+<svg viewBox="0 0 680 330" role="img" aria-label="p-V diagram of expansion from state 1 by five processes">
+<defs><marker id="te-u2-arw-procs-q5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="300" x2="600" y2="300" class="ln" marker-end="url(#te-u2-arw-procs-q5)"/><line x1="80" y1="300" x2="80" y2="30" class="ln" marker-end="url(#te-u2-arw-procs-q5)"/><text x="594" y="324" class="lbl" text-anchor="end">V</text><text x="66" y="44" class="lbl" text-anchor="end">p</text>
+<circle cx="200" cy="150" r="4" class="solid"/>
+<text x="190" y="138" class="lbl-b" text-anchor="end">1</text>
+<line x1="200" y1="150" x2="480" y2="150" class="ln thick acc"/>
+<line x1="200" y1="150" x2="200" y2="270" class="ln thick acc2"/>
+<path d="M200.0,150.0 L204.7,155.6 L209.3,160.8 L214.0,165.7 L218.7,170.2 L223.3,174.4 L228.0,178.4 L232.7,182.1 L237.3,185.6 L242.0,188.9 L246.7,192.0 L251.3,194.9 L256.0,197.7 L260.7,200.4 L265.3,202.9 L270.0,205.3 L274.7,207.5 L279.3,209.7 L284.0,211.8 L288.7,213.7 L293.3,215.6 L298.0,217.4 L302.7,219.2 L307.3,220.8 L312.0,222.4 L316.7,223.9 L321.3,225.4 L326.0,226.8 L330.7,228.2 L335.3,229.5 L340.0,230.8 L344.7,232.0 L349.3,233.2 L354.0,234.3 L358.7,235.4 L363.3,236.5 L368.0,237.5 L372.7,238.5 L377.3,239.5 L382.0,240.4 L386.7,241.3 L391.3,242.2 L396.0,243.0 L400.7,243.9 L405.3,244.7 L410.0,245.5 L414.7,246.2 L419.3,247.0 L424.0,247.7 L428.7,248.4 L433.3,249.1 L438.0,249.7 L442.7,250.4 L447.3,251.0 L452.0,251.6 L456.7,252.2 L461.3,252.8 L466.0,253.4 L470.7,253.9 L475.3,254.5 L480.0,255.0" class="ln thick"/>
+<path d="M200.0,150.0 L204.7,157.0 L209.3,163.4 L214.0,169.3 L218.7,174.8 L223.3,179.9 L228.0,184.6 L232.7,189.0 L237.3,193.1 L242.0,196.9 L246.7,200.5 L251.3,203.9 L256.0,207.1 L260.7,210.1 L265.3,212.9 L270.0,215.5 L274.7,218.1 L279.3,220.5 L284.0,222.7 L288.7,224.9 L293.3,226.9 L298.0,228.9 L302.7,230.7 L307.3,232.5 L312.0,234.2 L316.7,235.8 L321.3,237.4 L326.0,238.8 L330.7,240.3 L335.3,241.6 L340.0,242.9 L344.7,244.2 L349.3,245.4 L354.0,246.6 L358.7,247.7 L363.3,248.7 L368.0,249.8 L372.7,250.8 L377.3,251.7 L382.0,252.7 L386.7,253.6 L391.3,254.4 L396.0,255.3 L400.7,256.1 L405.3,256.9 L410.0,257.6 L414.7,258.4 L419.3,259.1 L424.0,259.8 L428.7,260.5 L433.3,261.1 L438.0,261.7 L442.7,262.4 L447.3,263.0 L452.0,263.5 L456.7,264.1 L461.3,264.6 L466.0,265.2 L470.7,265.7 L475.3,266.2 L480.0,266.7" class="ln thick acc"/>
+<path d="M200.0,150.0 L204.7,157.8 L209.3,164.9 L214.0,171.5 L218.7,177.5 L223.3,183.0 L228.0,188.2 L232.7,192.9 L237.3,197.3 L242.0,201.5 L246.7,205.3 L251.3,208.9 L256.0,212.3 L260.7,215.4 L265.3,218.4 L270.0,221.2 L274.7,223.8 L279.3,226.3 L284.0,228.6 L288.7,230.9 L293.3,233.0 L298.0,235.0 L302.7,236.9 L307.3,238.7 L312.0,240.4 L316.7,242.0 L321.3,243.6 L326.0,245.1 L330.7,246.5 L335.3,247.9 L340.0,249.2 L344.7,250.4 L349.3,251.6 L354.0,252.8 L358.7,253.9 L363.3,254.9 L368.0,256.0 L372.7,256.9 L377.3,257.9 L382.0,258.8 L386.7,259.7 L391.3,260.5 L396.0,261.3 L400.7,262.1 L405.3,262.9 L410.0,263.6 L414.7,264.3 L419.3,265.0 L424.0,265.7 L428.7,266.3 L433.3,266.9 L438.0,267.5 L442.7,268.1 L447.3,268.7 L452.0,269.2 L456.7,269.8 L461.3,270.3 L466.0,270.8 L470.7,271.3 L475.3,271.7 L480.0,272.2" class="ln thick acc2"/>
+<line x1="482.0" y1="255.0" x2="505" y2="211" class="ln thin"/>
+<text x="508" y="215" class="lbl-sm" text-anchor="start">isothermal, n = 1</text>
+<line x1="482.0" y1="266.69627379784714" x2="505" y2="241" class="ln thin"/>
+<text x="508" y="245" class="lbl-sm" text-anchor="start">polytropic, 1 &lt; n &lt; γ</text>
+<line x1="482.0" y1="272.19896172446647" x2="505" y2="271" class="ln thin"/>
+<text x="508" y="275" class="lbl-sm" text-anchor="start">adiabatic, n = γ</text>
+<text x="488" y="146" class="lbl-sm" text-anchor="start">constant p (n = 0)</text>
+<text x="212" y="285" class="lbl-sm" text-anchor="start">constant V (n = ∞)</text>
+</svg>
+<figcaption>Fig. 2.4 — Expansion from state 1 by constant-p, constant-V, isothermal, polytropic and adiabatic processes (pVⁿ = constant).</figcaption>
+</figure>
+      </details>
+    </article>
+  </section>
+
+  <section class="part" id="te-u2-numericals" data-part="numericals">
+    <h2>Numericals</h2>
+    <p class="method"><b>Method.</b> Closed system: (1) write Q − W = ΔU; (2) find W from the area under the p–V curve (or from the formula of the process); (3) find ΔU from the given relation or from m cv ΔT; (4) find Q = ΔU + W. For a cycle, use ΣQ = ΣW and ΣΔE = 0. Open system: (1) sketch the control volume; (2) write the SFEE per kg; (3) change V²/2 to kJ/kg (÷ 1000); (4) find the unknown (V, w, q or ṁ); (5) use ṁ = AV/v for area and flow rate. Keep the sign convention: Q in +, W out +.</p>
+    <article class="num" id="te-u2-n1">
+      <h3>N1. A fluid is in a cylinder with a spring-loaded, frictionless piston, so the pressure is a linear function of volume. The internal energy of the fluid is U = 42 + 3.6 pV, where U is in kJ, p in kPa and V in m³. The fluid changes from 190 kPa, 0.035 m³ to 420 kPa, 0.07 m³. There is no work other than that done on the piston. Find the direction and size of the work transfer and the heat transfer.</h3>
+      <p class="q-src">Based on Jan 2025 · Nov 2024 · Aug-Sep 2023</p>
+<figure class="fig" id="te-u2-f-n1">
+<svg viewBox="0 0 560 300" role="img" aria-label="Straight-line p-V process from 1 (0.035 m3, 190 kPa) to 2 (0.07 m3, 420 kPa)">
+<defs><marker id="te-u2-arw-n1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="260" x2="520" y2="260" class="ln" marker-end="url(#te-u2-arw-n1)"/><line x1="80" y1="260" x2="80" y2="20" class="ln" marker-end="url(#te-u2-arw-n1)"/><text x="514" y="284" class="lbl" text-anchor="end">V (m³)</text><text x="66" y="34" class="lbl" text-anchor="end">p (kPa)</text>
+<path d="M255,167 L430,55 L430,260 L255,260 Z" class="ln fill-soft"/>
+<path d="M255,167 L430,55" class="ln thick acc"/>
+<circle cx="255" cy="167" r="4" class="solid"/>
+<circle cx="430" cy="55" r="4" class="solid"/>
+<text x="240" y="160" class="lbl-b" text-anchor="end">1</text>
+<text x="444" y="50" class="lbl-b" text-anchor="start">2</text>
+<text x="255" y="282" class="lbl-sm" text-anchor="middle">0.035</text>
+<text x="430" y="282" class="lbl-sm" text-anchor="middle">0.07</text>
+<text x="70" y="170" class="lbl-sm" text-anchor="end">190</text>
+<text x="70" y="58" class="lbl-sm" text-anchor="end">420</text>
+<text x="343" y="220" class="lbl-sm" text-anchor="middle">W = area under line</text>
+<text x="343" y="238" class="lbl-sm" text-anchor="middle">= 10.675 kJ</text>
+</svg>
+<figcaption>Fig. N1 — Linear p–V process: the work is the area under the line.</figcaption>
+</figure>
+      <ol class="steps"><li>Work from the straight line: \( W = \tfrac{1}{2}(p_1 + p_2)(V_2 - V_1) = \tfrac{1}{2}(190 + 420)(0.07 - 0.035) = 10.675 \) kJ. The sign is positive, so the fluid does work on the piston (expansion).</li><li>Initial energy: \( U_1 = 42 + 3.6 \times 190 \times 0.035 = 65.94 \) kJ.</li><li>Final energy: \( U_2 = 42 + 3.6 \times 420 \times 0.07 = 147.84 \) kJ.</li><li>Change: \( \Delta U = U_2 - U_1 = 147.84 - 65.94 = 81.90 \) kJ.</li><li>First law: \( Q = \Delta U + W = 81.90 + 10.675 = 92.575 \) kJ. The sign is positive, so heat goes into the fluid.</li></ol>
+      <p class="final">Answer: W = 10.68 kJ (done by the fluid); Q = 92.6 kJ (heat added); ΔU = 81.9 kJ.</p>
+    </article>
+    <article class="num" id="te-u2-n2">
+      <h3>N2. A piston and cylinder machine has a fluid that passes through a cycle of four processes a-b, b-c, c-d, d-a. The sum of all heat transfers in one cycle is −170 kJ. The system completes 100 cycles per minute. The table lists the known data in kJ/min. Complete the table, and find the net power.</h3>
+      <p class="q-src">Based on Nov-Dec 2025</p>
+<aside class="note"><b>Data note.</b> The scan of the table is partly unreadable. This version keeps the readable values. Only one answer fits them, and the cycle check at the end confirms it.</aside>
+<div class="tbl"><table><thead><tr><th>Process</th><th>Q (kJ/min)</th><th>W (kJ/min)</th><th>ΔE (kJ/min)</th></tr></thead><tbody>
+<tr><td>a-b</td><td>0</td><td>−2170</td><td>?</td></tr><tr><td>b-c</td><td>21 000</td><td>0</td><td>?</td></tr><tr><td>c-d</td><td>−2100</td><td>?</td><td>−36 600</td></tr><tr><td>d-a</td><td>?</td><td>?</td><td>?</td></tr></tbody></table></div>
+      <ol class="steps"><li>Net heat per minute: \( \sum Q = -170 \times 100 = -17\,000 \) kJ/min.</li><li>For d-a: \( Q_{da} = -17\,000 - (0 + 21\,000 - 2100) = -35\,900 \) kJ/min.</li><li>a-b: \( \Delta E = Q - W = 0 - (-2170) = 2170 \) kJ/min.</li><li>b-c: \( \Delta E = 21\,000 - 0 = 21\,000 \) kJ/min.</li><li>c-d: \( W = Q - \Delta E = -2100 - (-36\,600) = 34\,500 \) kJ/min.</li><li>For a cycle \( \sum \Delta E = 0 \), so \( \Delta E_{da} = -(2170 + 21\,000 - 36\,600) = 13\,430 \) kJ/min.</li><li>d-a: \( W = Q - \Delta E = -35\,900 - 13\,430 = -49\,330 \) kJ/min.</li><li>Check: \( \sum W = -2170 + 0 + 34\,500 - 49\,330 = -17\,000 = \sum Q \). Correct. Net power \( = -17\,000/60 = -283.3 \) kW.</li></ol>
+      <p class="final">Answer: Q<sub>da</sub> = −35 900, W<sub>cd</sub> = 34 500, W<sub>da</sub> = −49 330 kJ/min; ΔE<sub>ab</sub> = 2170, ΔE<sub>bc</sub> = 21 000, ΔE<sub>da</sub> = 13 430 kJ/min. Net work = −17 000 kJ/min = 283.3 kW <i>input</i>.</p>
+    </article>
+    <article class="num" id="te-u2-n3">
+      <h3>N3. At the inlet to a horizontal nozzle the enthalpy of the fluid is 3000 kJ/kg and the velocity is 60 m/s. At the exit the enthalpy is 2762 kJ/kg. The heat loss is negligible. Find (a) the exit velocity; (b) the mass flow rate, if the inlet area is 0.1 m² and the specific volume at the inlet is 0.187 m³/kg; (c) the exit area, if the specific volume at the exit is 0.498 m³/kg.</h3>
+      <p class="q-src">Based on Jan 2023 (CBCS)</p>
+
+      <ol class="steps"><li>SFEE for the nozzle (w = 0, q = 0, Δz = 0): \( h_1 + V_1^2/2 = h_2 + V_2^2/2 \).</li><li>Exit velocity: \( V_2 = \sqrt{V_1^2 + 2(h_1 - h_2) \times 1000} = \sqrt{60^2 + 2 \times 238 \times 1000} = \sqrt{479\,600} = 692.5 \) m/s.</li><li>Mass flow rate: \( \dot m = A_1 V_1 / v_1 = 0.1 \times 60 / 0.187 = 32.09 \) kg/s.</li><li>Exit area: \( A_2 = \dot m\, v_2 / V_2 = 32.09 \times 0.498 / 692.5 = 0.0231 \) m².</li></ol>
+      <p class="final">Answer: V₂ = 692.5 m/s; ṁ = 32.09 kg/s; A₂ = 0.0231 m² (231 cm²).</p>
+    </article>
+    <article class="num" id="te-u2-n4">
+      <h3>N4. In a gas turbine unit, the gas flow through the turbine is 15 kg/s and the power developed is 12 000 kW. The enthalpies of the gas at inlet and outlet are 1260 kJ/kg and 400 kJ/kg. The velocities at inlet and outlet are 50 m/s and 110 m/s. Calculate (i) the rate of heat transfer from the turbine, and (ii) the area of the inlet pipe, if the specific volume at the inlet is 0.45 m³/kg.</h3>
+      <p class="q-src">Based on Jun-Jul 2024</p>
+
+      <ol class="steps"><li>Shaft work per kg: \( w = P/\dot m = 12\,000/15 = 800 \) kJ/kg.</li><li>Kinetic energies: \( V_1^2/2 = 50^2/2000 = 1.25 \) kJ/kg; \( V_2^2/2 = 110^2/2000 = 6.05 \) kJ/kg.</li><li>SFEE (Δz = 0): \( q = (h_2 - h_1) + (V_2^2 - V_1^2)/2 + w = (400 - 1260) + (6.05 - 1.25) + 800 \).</li><li>\( q = -860 + 4.8 + 800 = -55.2 \) kJ/kg. The sign is negative: heat leaves the gas.</li><li>Heat rate: \( \dot Q = 15 \times (-55.2) = -828 \) kW, that is 828 kW lost to the surroundings.</li><li>Inlet area: \( A_1 = \dot m v_1 / V_1 = 15 \times 0.45 / 50 = 0.135 \) m².</li></ol>
+      <p class="final">Answer: heat loss = 828 kW; inlet area = 0.135 m².</p>
+    </article>
+    <article class="num" id="te-u2-n5">
+      <h3>N5. Air flows steadily at 0.5 kg/s through a compressor. It enters at 6 m/s, 1 bar, with specific volume 0.85 m³/kg. It leaves at 5 m/s, 7 bar, with specific volume 0.16 m³/kg. The internal energy of the leaving air is 90 kJ/kg greater than that of the entering air. Cooling water in the jacket takes 60 kJ/s from the air. Find (i) the power needed to drive the compressor; (ii) the inlet and outlet pipe areas.</h3>
+      <p class="q-src">Based on Nov 2024 · Jan 2025</p>
+
+      <ol class="steps"><li>Heat per kg: \( q = -60/0.5 = -120 \) kJ/kg (heat leaves the air).</li><li>Flow work terms: \( p_1 v_1 = 100 \times 0.85 = 85 \) kJ/kg; \( p_2 v_2 = 700 \times 0.16 = 112 \) kJ/kg (1 bar = 100 kPa).</li><li>Enthalpy change: \( \Delta h = \Delta u + \Delta(pv) = 90 + (112 - 85) = 117 \) kJ/kg.</li><li>Kinetic energy change: \( (5^2 - 6^2)/2000 = -0.0055 \) kJ/kg. It is negligible.</li><li>SFEE: \( w = q - \Delta h - \Delta KE = -120 - 117 + 0.0055 = -237.0 \) kJ/kg (work input).</li><li>Power: \( P = 0.5 \times 237.0 = 118.5 \) kW input.</li><li>Areas: \( A_1 = \dot m v_1 / V_1 = 0.5 \times 0.85 / 6 = 0.0708 \) m²; \( A_2 = 0.5 \times 0.16 / 5 = 0.016 \) m².</li></ol>
+      <p class="final">Answer: power input = 118.5 kW; A₁ = 0.0708 m²; A₂ = 0.016 m².</p>
+    </article>
+    <article class="num" id="te-u2-n6">
+      <h3>N6. Superheated steam at 2 kg/s and enthalpy 3100 kJ/kg flows into a de-superheater. Water at enthalpy 420 kJ/kg is sprayed into it. The steam leaves with enthalpy 2800 kJ/kg. The device is insulated and does no work. Find the mass flow rate of the water and of the mixture leaving.</h3>
+      <p class="q-src">Based on Apr 2022 (CBCS) (de-superheater) · Syllabus topic</p>
+<figure class="fig" id="te-u2-f-n6">
+<svg viewBox="0 0 600 215" role="img" aria-label="Desuperheater: superheated steam mixes with water spray">
+<defs><marker id="te-u2-arw-n6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="150" y="100" width="300" height="60" class="ln fill-soft"/>
+<line x1="60" y1="130" x2="150" y2="130" class="ln thick" marker-end="url(#te-u2-arw-n6)"/>
+<line x1="450" y1="130" x2="540" y2="130" class="ln thick" marker-end="url(#te-u2-arw-n6)"/>
+<line x1="300" y1="40" x2="300" y2="100" class="ln thick acc2" marker-end="url(#te-u2-arw-n6)"/>
+<text x="105" y="100" class="lbl-sm" text-anchor="middle">Steam</text>
+<text x="100" y="162" class="lbl-sm" text-anchor="middle">2 kg/s</text>
+<text x="100" y="180" class="lbl-sm" text-anchor="middle">3100 kJ/kg</text>
+<text x="300" y="28" class="lbl-sm" text-anchor="middle">Water: ṁw, 420 kJ/kg</text>
+<text x="495" y="100" class="lbl-sm" text-anchor="middle">Mixture</text>
+<text x="495" y="162" class="lbl-sm" text-anchor="middle">2800 kJ/kg</text>
+<text x="300" y="135" class="lbl-sm" text-anchor="middle">Desuperheater (mixing chamber)</text>
+<text x="300" y="200" class="lbl" text-anchor="middle">Σ ṁh in = Σ ṁh out</text>
+</svg>
+<figcaption>Fig. N6 — Desuperheater: water spray cools the superheated steam.</figcaption>
+</figure>
+      <ol class="steps"><li>Mass balance: \( \dot m_s + \dot m_w = \dot m_3 \).</li><li>Energy balance (q = 0, w = 0, KE and PE negligible): \( \dot m_s h_s + \dot m_w h_w = \dot m_3 h_3 \).</li><li>Put \( \dot m_3 = 2 + \dot m_w \): \( 2 \times 3100 + \dot m_w \times 420 = (2 + \dot m_w) \times 2800 \).</li><li>\( 6200 - 5600 = \dot m_w (2800 - 420) \), so \( \dot m_w = 600 / 2380 = 0.2521 \) kg/s.</li><li>Mixture: \( \dot m_3 = 2 + 0.2521 = 2.252 \) kg/s.</li></ol>
+      <p class="final">Answer: water = 0.252 kg/s; mixture = 2.252 kg/s.</p>
+    </article>
+
+    <h3 id="te-u2-practice">Practice problems</h3>
+    <article class="num practice" id="te-u2-p1"><h3>P1. A steam turbine runs in steady flow. Steam enters with enthalpy 2785 kJ/kg, velocity 34 m/s and height 3 m above the exit. It leaves with enthalpy 2512 kJ/kg, velocity 100 m/s and height 0 m. The heat lost to the surroundings is 0.29 kJ/s. The steam flow is 0.42 kg/s. Find the power output. (g = 9.81 m/s²)</h3><p class="q-src">Based on Apr 2022 (CBCS)</p><aside class="note"><b>Data note.</b> Some digits in the scan are unclear. This version assumes the entry height is 3 m and the flow 0.42 kg/s.</aside><p class="final">Answer: 112.5 kW</p></article>
+    <article class="num practice" id="te-u2-p2"><h3>P2. 2 kg of air expands in a closed, adiabatic process according to pV<sup>1.2</sup> = constant. The initial state is 1 MPa and 200 °C. The final pressure is 0.1 MPa. Find the final volume, the work done, and the change in energy. Take R = 0.287 kJ/kg·K.</h3><p class="q-src">Based on Jan 2023 (CBCS)</p><aside class="note"><b>Data note.</b> The scan refers to a fluid of an earlier problem. This version uses air.</aside><p class="final">Answer: V₁ = 0.2716 m³, V₂ = 1.850 m³; W = 432.8 kJ; ΔE = −432.8 kJ</p></article>
+    <article class="num practice" id="te-u2-p3"><h3>P3. A throttling calorimeter takes wet steam at 11 bar. The steam after the throttle is superheated, with h₂ = 2690 kJ/kg. At 11 bar, h<sub>f</sub> = 780 kJ/kg and h<sub>fg</sub> = 2000 kJ/kg (values given for this problem). Find the dryness fraction of the steam before throttling.</h3><p class="q-src">Based on Nov 2024 · Jan 2025 (throttling)</p><p class="final">Answer: x = 0.955</p></article>
+    <article class="num practice" id="te-u2-p4"><h3>P4. A condenser receives 5000 kg/h of steam of enthalpy 2400 kJ/kg. The condensate leaves with enthalpy 190 kJ/kg. The cooling water enters and leaves with a rise of 12 K. Take c<sub>p</sub> of water as 4.18 kJ/kg·K. Find the heat removed and the cooling-water flow rate.</h3><p class="q-src">Syllabus topic</p><p class="final">Answer: Q = 3069 kW; cooling water = 61.2 kg/s (220 t/h)</p></article>
+  </section>
+</section>

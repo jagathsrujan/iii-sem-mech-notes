@@ -1,0 +1,1534 @@
+<section class="unit" data-unit="sm-u1">
+  <header class="unit-head">
+    <p class="eyebrow">Strength of Materials · Unit 1</p>
+    <h1>Simple Stresses and Strains</h1>
+    <p class="lede">This unit explains how a bar resists a direct load: the stress inside it, how much it stretches, and the material constants that link the two. Every later unit (beams, shafts, cylinders) uses these ideas, and each exam paper gives one full question (20 marks) to this unit.</p>
+    <ul class="syl">
+      <li>Types of stresses and strains</li>
+      <li>Hooke's law</li>
+      <li>Elastic constants and their relationships</li>
+      <li>Bars of varying sections</li>
+      <li>Composite bars</li>
+      <li>Numericals based on axial loading and deformation</li>
+    </ul>
+  </header>
+
+
+  <section class="part" id="sm-u1-concepts" data-part="concepts">
+    <h2>Concepts</h2>
+    <aside class="exam"><b>Exam pattern.</b> Unit I has two full questions (choose one), 20 marks each. Each question usually has one 10-mark derivation or explanation (stress–strain curve, tapered bar, relation between elastic constants) and one 10-mark numerical (stepped bar, tapered bar, composite bar or elastic constants). Learn the four derivations and the four numerical types in this unit and you can answer any Unit I question.</aside>
+
+    <h3 id="sm-u1-c-stress">1. Load and stress</h3>
+    <p>A <b>load</b> is an external force on a member. A rod in a machine, a bolt, a column or a crane rope carries load. The member resists the load with internal forces.</p>
+    <p><b>Stress</b> is the internal resisting force per unit area of the cross-section. For a bar with an axial load P on area A:</p>
+    <div class="formula">\[ \sigma = \frac{P}{A} \]<p class="where">σ = normal stress (N/mm² = MPa), P = axial load (N), A = cross-sectional area (mm²). 1 N/mm² = 1 MPa = 10⁶ N/m².</p></div>
+    <p>There are three types of simple (direct) stress. Fig. 1.1 shows them.</p>
+    <ul>
+      <li><b>Tensile stress</b>: two equal forces pull the bar outward. The bar gets longer. Take it as positive (+).</li>
+      <li><b>Compressive stress</b>: two equal forces push the bar inward. The bar gets shorter. Take it as negative (−).</li>
+      <li><b>Shear stress</b> (τ): two equal forces act tangential to a plane and try to slide one part over the other. A rivet or a pin in a joint is in shear: \( \tau = P/A \), where A is the area of the shear plane.</li>
+    </ul>
+    <figure class="fig" id="sm-u1-f-loads">
+<svg viewBox="0 0 680 210" role="img" aria-label="Bar in tension, bar in compression and a riveted joint in shear">
+<defs><marker id="sm-u1-arw-loads" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="45.0" y="85.0" width="140.0" height="30.0" class="ln fill-soft"/>
+<line x1="115.0" y1="75.0" x2="115.0" y2="125.0" class="ln dash"/>
+<line x1="45.0" y1="100.0" x2="12.0" y2="100.0" class="ln" marker-end="url(#sm-u1-arw-loads)"/>
+<line x1="185.0" y1="100.0" x2="218.0" y2="100.0" class="ln" marker-end="url(#sm-u1-arw-loads)"/>
+<text x="24.0" y="88.0" class="lbl" text-anchor="middle">P</text>
+<text x="206.0" y="88.0" class="lbl" text-anchor="middle">P</text>
+<text x="115.0" y="170.0" class="lbl" text-anchor="middle">(a) Tension</text>
+<text x="115.0" y="192.0" class="lbl-sm" text-anchor="middle">bar gets longer</text>
+<rect x="272.0" y="85.0" width="136.0" height="30.0" class="ln fill-soft"/>
+<line x1="340.0" y1="75.0" x2="340.0" y2="125.0" class="ln dash"/>
+<line x1="237.0" y1="100.0" x2="270.0" y2="100.0" class="ln" marker-end="url(#sm-u1-arw-loads)"/>
+<line x1="443.0" y1="100.0" x2="410.0" y2="100.0" class="ln" marker-end="url(#sm-u1-arw-loads)"/>
+<text x="247.0" y="88.0" class="lbl" text-anchor="middle">P</text>
+<text x="433.0" y="88.0" class="lbl" text-anchor="middle">P</text>
+<text x="340.0" y="170.0" class="lbl" text-anchor="middle">(b) Compression</text>
+<text x="340.0" y="192.0" class="lbl-sm" text-anchor="middle">bar gets shorter</text>
+<rect x="478.0" y="78.0" width="112.0" height="14.0" class="ln fill-soft"/>
+<rect x="520.0" y="92.0" width="112.0" height="14.0" class="ln fill-soft"/>
+<rect x="543.0" y="70.0" width="12.0" height="44.0" class="ln fill-acc"/>
+<rect x="537.0" y="64.0" width="24.0" height="6.0" class="ln fill-acc"/>
+<rect x="537.0" y="114.0" width="24.0" height="6.0" class="ln fill-acc"/>
+<line x1="525.0" y1="92.0" x2="575.0" y2="92.0" class="acc thick"/>
+<line x1="478.0" y1="85.0" x2="448.0" y2="85.0" class="ln" marker-end="url(#sm-u1-arw-loads)"/>
+<text x="456.0" y="74.0" class="lbl" text-anchor="middle">P</text>
+<line x1="632.0" y1="99.0" x2="662.0" y2="99.0" class="ln" marker-end="url(#sm-u1-arw-loads)"/>
+<text x="652.0" y="88.0" class="lbl" text-anchor="middle">P</text>
+<text x="549.0" y="142.0" class="lbl-sm" text-anchor="middle">shear plane</text>
+<text x="555.0" y="170.0" class="lbl" text-anchor="middle">(c) Shear</text>
+<text x="555.0" y="192.0" class="lbl-sm" text-anchor="middle">rivet section slides</text>
+</svg>
+<figcaption>Fig. 1.1 — Types of direct stress: (a) tensile, (b) compressive, (c) shear on the rivet section.</figcaption>
+</figure>
+    <aside class="note"><b>Normal and tangential.</b> Tensile and compressive stresses act normal (at 90°) to the plane. They are called normal or direct stresses. Shear stress acts along (parallel to) the plane.</aside>
+    <p><b>Quick example.</b> A 20 mm rivet joins two plates that pull apart with 30 kN. The rivet has one shear plane of area π/4 × 20² = 314.2 mm². So τ = 30 000 / 314.2 = 95.5 N/mm². If the rivet had two shear planes (double shear), the area would double and τ would be 47.7 N/mm².</p>
+
+    <h3 id="sm-u1-c-strain">2. Strain</h3>
+    <p><b>Strain</b> is the deformation per unit original length. It has no unit, because it is a length divided by a length.</p>
+    <div class="formula">\[ \varepsilon = \frac{\delta L}{L} \]<p class="where">ε = linear (longitudinal) strain, δL = change in length (mm), L = original length (mm).</p></div>
+    <ul>
+      <li><b>Tensile strain</b>: increase in length / original length.</li>
+      <li><b>Compressive strain</b>: decrease in length / original length.</li>
+      <li><b>Shear strain</b> (φ): the change in a right angle, in radian (Section 7).</li>
+      <li><b>Volumetric strain</b> (\( \varepsilon_v \)): change in volume / original volume (Section 6).</li>
+    </ul>
+    <p>Some basic terms that the exam asks as short questions:</p>
+    <ul>
+      <li><b>Elasticity</b>: the property of a material to return to its original shape and size when the load is removed. A material is <i>elastic</i> if all its deformation disappears on removal of the load.</li>
+      <li><b>Plasticity</b>: the property to take a permanent deformation without fracture.</li>
+      <li><b>Stiffness</b>: the resistance to deformation. For a bar, stiffness = load per unit extension = AE/L (N/mm).</li>
+      <li><b>Engineering (normal) strain</b>: change in length divided by the <i>original</i> length. True strain uses the current length at each instant.</li>
+    </ul>
+
+    <h3 id="sm-u1-c-hooke">3. Hooke's law and modulus of elasticity</h3>
+    <p><b>Hooke's law</b> states: within the elastic limit, stress is directly proportional to strain.</p>
+    <div class="formula">\[ \sigma \propto \varepsilon \quad\Rightarrow\quad \sigma = E\,\varepsilon \]<p class="where">E = modulus of elasticity or Young's modulus (N/mm²). For steel E ≈ 2 × 10⁵ N/mm² (200 GPa), aluminium ≈ 0.7 × 10⁵, copper ≈ 1 × 10⁵, brass ≈ 0.9–1 × 10⁵ N/mm².</p></div>
+    <p>A large E means a stiff material: it stretches less under the same stress. Put σ = P/A and ε = δL/L into Hooke's law. You get the most used formula of this unit:</p>
+    <div class="formula">\[ \delta L = \frac{P\,L}{A\,E} \]<p class="where">Valid when P, A and E are constant along the length L. The product AE is the axial rigidity of the bar.</p></div>
+    <p><b>Quick example.</b> A steel rod 2 m long and 20 mm in diameter carries a pull of 50 kN. Area = 314.2 mm², so σ = 50 000/314.2 = 159.2 N/mm². Strain ε = σ/E = 159.2/(2 × 10⁵) = 7.96 × 10⁻⁴. Extension δL = εL = 7.96 × 10⁻⁴ × 2000 = 1.59 mm.</p>
+    <aside class="real"><b>Real world.</b> A cylinder-head bolt is tightened until it stretches a little; the stretch (PL/AE) sets the clamping force. A lift rope, a crane hook rod and a truss member in a bridge are all designed with this same formula.</aside>
+    <aside class="note"><b>Assumptions.</b> All results in this unit assume that the material is homogeneous and isotropic, the load acts along the axis of the bar, the stress stays within the elastic limit, and the stress is uniform over the section. Near the point where a load is applied, or at a sudden step, the real stress is higher (stress concentration); we ignore this.</aside>
+    <aside class="warn"><b>Units.</b> Keep N and mm everywhere. Then E is in N/mm² and δL comes out in mm. 1 GPa = 10³ N/mm², so 200 GPa = 2 × 10⁵ N/mm².</aside>
+
+    <h3 id="sm-u1-c-curve">4. Stress–strain curve of mild steel</h3>
+    <p>We get this curve from a tensile test on a universal testing machine (UTM). The machine pulls a standard specimen slowly until it breaks. It records the load and the extension. Then stress = load / original area, and strain = extension / gauge length.</p>
+    <figure class="photo"><img src="img/sm-u1-utm.jpg" alt="A large hydraulic universal testing machine with its crossheads and grips" width="560" height="840" loading="lazy"><figcaption>A hydraulic universal testing machine (UTM). The specimen is held in wedge grips inside the two crossheads; the machine pulls it and records load and extension. <span class="credit">Photo: Oregon Department of Transportation · CC BY 2.0 · Wikimedia Commons</span></figcaption></figure>
+    <figure class="fig" id="sm-u1-f-ss">
+<svg viewBox="0 0 660 450" role="img" aria-label="Stress-strain curve of mild steel with limit of proportionality, elastic limit, upper and lower yield points, ultimate point and breaking point">
+<defs><marker id="sm-u1-arw-ss" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80.0" y1="330.0" x2="640.0" y2="330.0" class="ln" marker-end="url(#sm-u1-arw-ss)"/>
+<line x1="80.0" y1="330.0" x2="80.0" y2="30.0" class="ln" marker-end="url(#sm-u1-arw-ss)"/>
+<text x="630.0" y="356.0" class="lbl" text-anchor="end">Strain, ε</text>
+<text x="40.0" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 40.0 180.0)">Stress, σ (N/mm²)</text>
+<path d="M80,330 L150,170 Q155,160 160,155 L172,128 L182,160 L194,156 L206,160 L218,156 L230,160 L242,156 L250,158 C300,100 360,72 430,70 C480,68 530,90 560,125" class="ln thick acc"/>
+<circle cx="150.0" cy="170.0" r="3.5" class="solid"/>
+<circle cx="160.0" cy="155.0" r="3.5" class="solid"/>
+<circle cx="172.0" cy="128.0" r="3.5" class="solid"/>
+<circle cx="182.0" cy="160.0" r="3.5" class="solid"/>
+<circle cx="430.0" cy="70.0" r="3.5" class="solid"/>
+<circle cx="560.0" cy="125.0" r="3.5" class="solid"/>
+<text x="140.0" y="184.0" class="lbl-b" text-anchor="end">A</text>
+<text x="150.0" y="150.0" class="lbl-b" text-anchor="end">B</text>
+<text x="172.0" y="116.0" class="lbl-b" text-anchor="middle">C</text>
+<text x="186.0" y="182.0" class="lbl-b" text-anchor="middle">D</text>
+<text x="430.0" y="58.0" class="lbl-b" text-anchor="middle">E</text>
+<text x="572.0" y="128.0" class="lbl-b">F</text>
+<text x="72.0" y="346.0" class="lbl-b" text-anchor="end">O</text>
+<line x1="160.0" y1="330.0" x2="160.0" y2="161.0" class="ln thin dash"/>
+<line x1="250.0" y1="330.0" x2="250.0" y2="164.0" class="ln thin dash"/>
+<line x1="430.0" y1="330.0" x2="430.0" y2="76.0" class="ln thin dash"/>
+<line x1="560.0" y1="330.0" x2="560.0" y2="131.0" class="ln thin dash"/>
+<text x="122.0" y="318.0" class="lbl-sm" text-anchor="middle">Elastic</text>
+<text x="205.0" y="318.0" class="lbl-sm" text-anchor="middle">Yielding</text>
+<text x="340.0" y="318.0" class="lbl-sm" text-anchor="middle">Strain hardening</text>
+<text x="495.0" y="318.0" class="lbl-sm" text-anchor="middle">Necking</text>
+<text x="90.0" y="388.0" class="lbl-sm">A – Limit of proportionality</text>
+<text x="380.0" y="388.0" class="lbl-sm">B – Elastic limit</text>
+<text x="90.0" y="410.0" class="lbl-sm">C – Upper yield point</text>
+<text x="380.0" y="410.0" class="lbl-sm">D – Lower yield point</text>
+<text x="90.0" y="432.0" class="lbl-sm">E – Ultimate stress point</text>
+<text x="380.0" y="432.0" class="lbl-sm">F – Breaking point</text>
+</svg>
+<figcaption>Fig. 1.2 — Stress–strain curve of mild steel in tension (strain axis not to scale: the plastic part is about 100 times longer than the elastic part).</figcaption>
+</figure>
+    <p>Learn the points in order (Fig. 1.2):</p>
+    <ul>
+      <li><b>O to A — limit of proportionality.</b> The graph is a straight line. Stress ∝ strain, so Hooke's law holds. The slope of OA is E.</li>
+      <li><b>A to B — elastic limit.</b> The graph curves a little, but the material is still elastic. If you remove the load at any point up to B, the bar returns to its original length. Beyond B, some strain stays (permanent set).</li>
+      <li><b>C — upper yield point.</b> The stress at which the material starts to yield.</li>
+      <li><b>D — lower yield point.</b> The stress falls a little, and the bar then stretches a lot at almost constant stress. This is yielding. Designers use the lower yield stress (about 250 N/mm² for mild steel).</li>
+      <li><b>D to E — strain hardening.</b> After yielding, the material gets stronger and needs more stress for more strain.</li>
+      <li><b>E — ultimate stress point.</b> The maximum load divided by the original area. This is the ultimate tensile strength (about 410–470 N/mm² for mild steel).</li>
+      <li><b>E to F — necking.</b> The area reduces fast at one place (a neck forms). The load falls, so the nominal stress falls.</li>
+      <li><b>F — breaking point.</b> The specimen breaks. The stress here is the breaking stress.</li>
+    </ul>
+    <p>Use the widget to move along the curve and see each point and its stress.</p>
+    <div class="widget" data-widget="stress-strain"></div>
+    <aside class="note"><b>Engineering stress and true stress.</b> The curve uses the original area, so it shows <i>engineering (nominal) stress</i>. <i>True stress</i> = load / actual area at that instant. True stress keeps rising up to fracture, because the neck area becomes very small.</aside>
+
+    <p><b>Ductile and brittle materials.</b> A <b>ductile</b> material (mild steel, copper, aluminium) has a large plastic strain before fracture. It shows necking and a cup-and-cone fracture. Percentage elongation is more than about 5 %. A <b>brittle</b> material (cast iron, concrete, glass) breaks with very little plastic strain. It gives no warning and has a flat fracture.</p>
+    <p>The tensile test also measures ductility by two numbers. Fit the broken halves together and measure the final gauge length L<sub>f</sub> and the smallest diameter at the neck.</p>
+    <div class="formula">\[ \text{Percentage elongation} = \frac{L_f - L_0}{L_0}\times 100 \qquad \text{Percentage reduction in area} = \frac{A_0 - A_f}{A_0}\times 100 \]<p class="where">L₀, A₀ = original gauge length and area; A<sub>f</sub> = area at the neck after fracture. Mild steel: about 25 % elongation and 50–60 % reduction in area.</p></div>
+    <figure class="fig" id="sm-u1-f-db">
+<svg viewBox="0 0 680 310" role="img" aria-label="Stress-strain curves of ductile and brittle materials, and the 0.2 percent offset method for proof stress">
+<defs><marker id="sm-u1-arw-db" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="250.0" x2="320.0" y2="250.0" class="ln" marker-end="url(#sm-u1-arw-db)"/>
+<line x1="60.0" y1="250.0" x2="60.0" y2="40.0" class="ln" marker-end="url(#sm-u1-arw-db)"/>
+<text x="312.0" y="274.0" class="lbl" text-anchor="end">ε</text>
+<text x="46.0" y="52.0" class="lbl" text-anchor="end">σ</text>
+<path d="M60,250 L88,160 L94,150 L98,160 L128,158 C170,95 215,85 250,92 C270,96 285,108 295,122" class="ln thick acc"/>
+<text x="295.0" y="127.0" class="lbl-b" text-anchor="middle">×</text>
+<text x="232.0" y="76.0" class="lbl-sm" text-anchor="middle">Ductile (mild steel)</text>
+<path d="M60,250 C110,200 150,170 175,150" class="ln thick acc2"/>
+<text x="175.0" y="155.0" class="lbl-b" text-anchor="middle">×</text>
+<text x="186.0" y="180.0" class="lbl-sm">Brittle (cast iron)</text>
+<text x="190.0" y="298.0" class="lbl-sm" text-anchor="middle">(a) Ductile vs brittle</text>
+<line x1="390.0" y1="250.0" x2="660.0" y2="250.0" class="ln" marker-end="url(#sm-u1-arw-db)"/>
+<line x1="390.0" y1="250.0" x2="390.0" y2="40.0" class="ln" marker-end="url(#sm-u1-arw-db)"/>
+<text x="652.0" y="274.0" class="lbl" text-anchor="end">ε</text>
+<text x="376.0" y="52.0" class="lbl" text-anchor="end">σ</text>
+<path d="M390,250 L440,120 C470,80 540,65 620,70" class="ln thick acc"/>
+<line x1="404.0" y1="250.0" x2="462.0" y2="99.4" class="ln dash"/>
+<circle cx="462.0" cy="99.4" r="3.5" class="solid"/>
+<line x1="390.0" y1="99.4" x2="462.0" y2="99.4" class="ln thin dash"/>
+<text x="474.0" y="123.4" class="lbl-sm">Proof stress</text>
+<line x1="390.0" y1="262.0" x2="404.0" y2="262.0" class="ln thin"/>
+<text x="414.0" y="278.0" class="lbl-sm">0.2 % strain</text>
+<text x="525.0" y="298.0" class="lbl-sm" text-anchor="middle">(b) 0.2 % offset method</text>
+</svg>
+<figcaption>Fig. 1.3 — (a) Ductile and brittle materials. (b) Proof stress by the 0.2 % offset method for a metal with no clear yield point.</figcaption>
+</figure>
+    <p>Some metals (aluminium alloys, high-carbon steel) do not show a clear yield point. For them we use the <b>proof stress</b>: draw a line parallel to the elastic line from 0.2 % strain. The stress where it cuts the curve is the 0.2 % proof stress (offset yield strength), Fig. 1.3(b).</p>
+    <figure class="photo"><img src="img/sm-u1-ductile-fracture.jpg" alt="Two halves of a ductile metal tensile specimen with a necked region and cup and cone fracture surfaces" width="1000" height="548" loading="lazy"><figcaption>Ductile fracture: the specimen necked down before it broke, and the broken ends form a cup and a cone. <span class="credit">Photo: BradleyGrillo at English Wikipedia · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+    <figure class="photo"><img src="img/sm-u1-brittle-fracture.jpg" alt="Broken cast iron tensile specimens with flat granular fracture surfaces and no necking" width="700" height="976" loading="lazy"><figcaption>Brittle fracture of cast iron specimens: flat, granular surfaces and no neck. <span class="credit">Photo: Sigmund · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+
+    <h3 id="sm-u1-c-fos">5. Working stress and factor of safety</h3>
+    <p>A designer never lets the actual stress reach the failure stress. Loads are uncertain, materials have defects and calculations make assumptions. So we keep the stress at a lower, safe value: the <b>working stress</b> (allowable stress).</p>
+    <div class="formula">\[ \text{Factor of safety (FoS)} = \frac{\text{failure stress}}{\text{working stress}} \]<p class="where">Failure stress = yield stress for ductile materials, ultimate stress for brittle materials. FoS is always more than 1 (typical 2–4 for static loads on steel).</p></div>
+    <p>Example: mild steel with yield stress 250 N/mm² and FoS 2.5 gives a working stress of 250/2.5 = 100 N/mm².</p>
+
+    <h3 id="sm-u1-c-poisson">6. Lateral strain, Poisson's ratio and volumetric strain</h3>
+    <p>When you pull a bar, it gets longer and also thinner (Fig. 1.4). When you push it, it gets shorter and fatter.</p>
+    <figure class="fig" id="sm-u1-f-poisson">
+<svg viewBox="0 0 680 230" role="img" aria-label="Bar under tension gets longer and thinner">
+<defs><marker id="sm-u1-arw-poisson" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="150.0" y="80.0" width="300.0" height="60.0" class="ln dash thin"/>
+<rect x="125.0" y="88.0" width="350.0" height="44.0" class="ln fill-soft"/>
+<line x1="100.0" y1="110.0" x2="500.0" y2="110.0" class="ln thin hid"/>
+<line x1="125.0" y1="110.0" x2="78.0" y2="110.0" class="ln" marker-end="url(#sm-u1-arw-poisson)"/>
+<line x1="475.0" y1="110.0" x2="522.0" y2="110.0" class="ln" marker-end="url(#sm-u1-arw-poisson)"/>
+<text x="92.0" y="98.0" class="lbl" text-anchor="middle">P</text>
+<text x="508.0" y="98.0" class="lbl" text-anchor="middle">P</text>
+<line x1="150.0" y1="165.0" x2="450.0" y2="165.0" class="ln thin" marker-end="url(#sm-u1-arw-poisson)" marker-start="url(#sm-u1-arw-poisson)"/>
+<text x="300.0" y="159.0" class="lbl" text-anchor="middle">L</text>
+<line x1="125.0" y1="200.0" x2="475.0" y2="200.0" class="ln thin" marker-end="url(#sm-u1-arw-poisson)" marker-start="url(#sm-u1-arw-poisson)"/>
+<text x="300.0" y="194.0" class="lbl" text-anchor="middle">L + δL</text>
+<line x1="150.0" y1="142.0" x2="150.0" y2="170.0" class="ln thin"/>
+<line x1="450.0" y1="142.0" x2="450.0" y2="170.0" class="ln thin"/>
+<line x1="125.0" y1="134.0" x2="125.0" y2="205.0" class="ln thin"/>
+<line x1="475.0" y1="134.0" x2="475.0" y2="205.0" class="ln thin"/>
+<line x1="545.0" y1="80.0" x2="545.0" y2="140.0" class="ln thin" marker-end="url(#sm-u1-arw-poisson)" marker-start="url(#sm-u1-arw-poisson)"/>
+<text x="552.0" y="115.0" class="lbl">d</text>
+<line x1="532.0" y1="80.0" x2="550.0" y2="80.0" class="ln thin"/>
+<line x1="532.0" y1="140.0" x2="550.0" y2="140.0" class="ln thin"/>
+<line x1="595.0" y1="88.0" x2="595.0" y2="132.0" class="ln thin" marker-end="url(#sm-u1-arw-poisson)" marker-start="url(#sm-u1-arw-poisson)"/>
+<text x="602.0" y="115.0" class="lbl">d − δd</text>
+<line x1="532.0" y1="88.0" x2="600.0" y2="88.0" class="ln thin"/>
+<line x1="532.0" y1="132.0" x2="600.0" y2="132.0" class="ln thin"/>
+</svg>
+<figcaption>Fig. 1.4 — Under a pull the bar gets longer (longitudinal strain) and thinner (lateral strain). Dashed: original shape.</figcaption>
+</figure>
+    <ul>
+      <li><b>Longitudinal strain</b> = δL/L (along the load).</li>
+      <li><b>Lateral strain</b> = δd/d or δb/b (at right angles to the load). It always has the opposite sign of the longitudinal strain.</li>
+    </ul>
+    <p><b>Poisson's ratio</b> (μ or 1/m) is the ratio of lateral strain to longitudinal strain, within the elastic limit:</p>
+    <div class="formula">\[ \mu = \frac{\text{lateral strain}}{\text{longitudinal strain}} \qquad \text{lateral strain} = -\mu\,\varepsilon \]<p class="where">Steel μ ≈ 0.25–0.33, aluminium ≈ 0.33, rubber ≈ 0.5, cork ≈ 0. The value of μ is between 0 and 0.5.</p></div>
+    <p><b>Quick example.</b> A bar 25 mm in diameter stretches with a longitudinal strain of 6 × 10⁻⁴. With μ = 0.3, the lateral strain is −0.3 × 6 × 10⁻⁴ = −1.8 × 10⁻⁴. The diameter decreases by 1.8 × 10⁻⁴ × 25 = 0.0045 mm.</p>
+    <p><b>Volumetric strain</b> is the change in volume per unit original volume, \( \varepsilon_v = \delta V/V \).</p>
+    <p><b>Rectangular bar under one axial stress σ:</b> the length strain is ε and both side strains are −με. Volume = L·b·t, so</p>
+    <div class="formula">\[ \varepsilon_v = \frac{\delta V}{V} = \frac{\delta L}{L} + \frac{\delta b}{b} + \frac{\delta t}{t} = \varepsilon(1 - 2\mu) \]<p class="where">For a circular bar the same result holds: \( \varepsilon_v = \delta L/L + 2\,\delta d/d = \varepsilon(1-2\mu) \).</p></div>
+    <p><b>Cube under three stresses</b> σx, σy, σz (Fig. 1.5). Each stress gives its own strain and also a Poisson effect in the other two directions. Add them (superposition):</p>
+    <figure class="fig" id="sm-u1-f-cube">
+<svg viewBox="0 0 600 320" role="img" aria-label="Cube with three mutually perpendicular normal stresses">
+<defs><marker id="sm-u1-arw-cube" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="220.0,120.0 340.0,120.0 340.0,240.0 220.0,240.0" class="ln fill-soft"/>
+<polygon points="220.0,120.0 280.0,70.0 400.0,70.0 340.0,120.0" class="ln fill-acc2"/>
+<polygon points="340.0,120.0 400.0,70.0 400.0,190.0 340.0,240.0" class="ln fill-acc"/>
+<line x1="370.0" y1="155.0" x2="445.0" y2="155.0" class="ln" marker-end="url(#sm-u1-arw-cube)"/>
+<text x="455.0" y="160.0" class="lbl">σx</text>
+<line x1="220.0" y1="185.0" x2="150.0" y2="185.0" class="ln" marker-end="url(#sm-u1-arw-cube)"/>
+<text x="140.0" y="190.0" class="lbl" text-anchor="end">σx</text>
+<line x1="310.0" y1="95.0" x2="310.0" y2="35.0" class="ln" marker-end="url(#sm-u1-arw-cube)"/>
+<text x="322.0" y="42.0" class="lbl">σy</text>
+<line x1="280.0" y1="240.0" x2="280.0" y2="300.0" class="ln" marker-end="url(#sm-u1-arw-cube)"/>
+<text x="292.0" y="300.0" class="lbl">σy</text>
+<line x1="280.0" y1="180.0" x2="212.0" y2="236.0" class="ln" marker-end="url(#sm-u1-arw-cube)"/>
+<text x="204.0" y="252.0" class="lbl" text-anchor="end">σz</text>
+</svg>
+<figcaption>Fig. 1.5 — Cube under three mutually perpendicular stresses σx, σy, σz (equal and opposite stresses act on the hidden faces).</figcaption>
+</figure>
+    <div class="formula">\[ \varepsilon_x = \frac{\sigma_x}{E} - \mu\frac{\sigma_y}{E} - \mu\frac{\sigma_z}{E} \]\[ \varepsilon_v = \varepsilon_x + \varepsilon_y + \varepsilon_z = \frac{(\sigma_x + \sigma_y + \sigma_z)(1 - 2\mu)}{E} \]<p class="where">Use + for tensile and − for compressive stresses. εy and εz follow the same pattern.</p></div>
+    <p><b>Bulk modulus</b> (K). Put a body in a fluid under pressure p. The same compressive stress p acts on all faces (hydrostatic stress). Bulk modulus is the ratio of this direct stress to the volumetric strain:</p>
+    <div class="formula">\[ K = \frac{p}{\varepsilon_v} = \frac{p}{\delta V / V} \]<p class="where">K in N/mm². For steel K ≈ 1.6–1.7 × 10⁵ N/mm².</p></div>
+
+    <h3 id="sm-u1-c-shear">7. Shear stress, shear strain and modulus of rigidity</h3>
+    <p>Fix the bottom face of a block and push the top face sideways with a force P (Fig. 1.6 b). The shear stress on the top face is τ = P/A. The block changes from a rectangle to a parallelogram. The angle φ by which the right angle changes is the <b>shear strain</b>:</p>
+    <figure class="fig" id="sm-u1-f-shear">
+<svg viewBox="0 0 640 290" role="img" aria-label="Square element with shear and complementary shear stresses, and the shear strain angle">
+<defs><marker id="sm-u1-arw-shear" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="80.0" y="70.0" width="140.0" height="140.0" class="ln fill-soft"/>
+<line x1="110.0" y1="52.0" x2="190.0" y2="52.0" class="ln" marker-end="url(#sm-u1-arw-shear)"/>
+<text x="150.0" y="42.0" class="lbl" text-anchor="middle">τ</text>
+<line x1="190.0" y1="228.0" x2="110.0" y2="228.0" class="ln" marker-end="url(#sm-u1-arw-shear)"/>
+<text x="150.0" y="250.0" class="lbl" text-anchor="middle">τ</text>
+<line x1="240.0" y1="185.0" x2="240.0" y2="95.0" class="ln" marker-end="url(#sm-u1-arw-shear)"/>
+<text x="256.0" y="145.0" class="lbl">τ′</text>
+<line x1="60.0" y1="95.0" x2="60.0" y2="185.0" class="ln" marker-end="url(#sm-u1-arw-shear)"/>
+<text x="44.0" y="145.0" class="lbl" text-anchor="end">τ′</text>
+<text x="150.0" y="145.0" class="lbl-sm" text-anchor="middle">element</text>
+<text x="150.0" y="280.0" class="lbl-sm" text-anchor="middle">(a) Complementary shear</text>
+<rect x="380.0" y="210.0" width="220.0" height="12.0" class="fill-hatch"/>
+<line x1="380.0" y1="210.0" x2="600.0" y2="210.0" class="ln"/>
+<rect x="400.0" y="70.0" width="140.0" height="140.0" class="ln dash thin"/>
+<polygon points="400.0,210.0 540.0,210.0 590.0,70.0 450.0,70.0" class="ln fill-acc"/>
+<line x1="470.0" y1="50.0" x2="570.0" y2="50.0" class="ln" marker-end="url(#sm-u1-arw-shear)"/>
+<text x="520.0" y="40.0" class="lbl" text-anchor="middle">τ</text>
+<line x1="400.0" y1="62.0" x2="450.0" y2="62.0" class="ln thin" marker-end="url(#sm-u1-arw-shear)" marker-start="url(#sm-u1-arw-shear)"/>
+<text x="425.0" y="56.0" class="lbl-sm" text-anchor="middle">δ</text>
+<line x1="380.0" y1="70.0" x2="380.0" y2="210.0" class="ln thin" marker-end="url(#sm-u1-arw-shear)" marker-start="url(#sm-u1-arw-shear)"/>
+<text x="373.0" y="145.0" class="lbl-sm" text-anchor="end">h</text>
+<path d="M400,160 A50,50 0 0,1 416.8,162.9" class="ln thin"/>
+<text x="436.0" y="176.0" class="lbl">φ</text>
+<text x="490.0" y="280.0" class="lbl-sm" text-anchor="middle">(b) Shear strain φ = δ/h</text>
+</svg>
+<figcaption>Fig. 1.6 — (a) Shear stress τ on two faces needs the complementary shear stress τ′ = τ on the other two faces. (b) Shear strain φ = δ/h (radian).</figcaption>
+</figure>
+    <div class="formula">\[ \varphi \approx \tan\varphi = \frac{\delta}{h} \qquad G = \frac{\tau}{\varphi} \]<p class="where">φ in radian; G = modulus of rigidity (shear modulus), N/mm². For steel G ≈ 0.8 × 10⁵ N/mm².</p></div>
+    <p><b>Complementary shear stress.</b> A shear stress τ on two opposite faces makes a couple. The element would rotate, so the other two faces must carry an equal and opposite couple. Take moments for a block of sides dx, dy and thickness t: τ·(dx·t)·dy = τ′·(dy·t)·dx, so <b>τ′ = τ</b>. Statement: <i>a shear stress on one plane is always accompanied by an equal shear stress on the perpendicular plane, and the pair forms an opposite couple.</i></p>
+
+    <h3 id="sm-u1-c-relations">8. Elastic constants and their relations</h3>
+    <p>The four elastic constants are E, G, K and μ. Only two of them are independent for an isotropic material. The three relations come from simple geometry. The steps are below; Theory Q4, Q5 and Q6 give the full exam write-up.</p>
+    <p><b>(a) E = 2G(1 + μ).</b> Take a square block ABCD of side a in pure shear, with face DC fixed (Fig. 1.7).</p>
+    <figure class="fig" id="sm-u1-f-diag">
+<svg viewBox="0 0 600 320" role="img" aria-label="Square block under shear; the diagonal BD stretches to BD prime">
+<defs><marker id="sm-u1-arw-diag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="120.0" y="270.0" width="320.0" height="12.0" class="fill-hatch"/>
+<line x1="120.0" y1="270.0" x2="440.0" y2="270.0" class="ln"/>
+<polygon points="150.0,90.0 330.0,90.0 330.0,270.0 150.0,270.0" class="ln fill-soft"/>
+<polygon points="210.0,90.0 390.0,90.0 330.0,270.0 150.0,270.0" class="ln dash acc"/>
+<line x1="150.0" y1="270.0" x2="330.0" y2="90.0" class="ln"/>
+<line x1="150.0" y1="270.0" x2="390.0" y2="90.0" class="ln acc"/>
+<line x1="330.0" y1="90.0" x2="351.6" y2="118.8" class="ln thin dash"/>
+<circle cx="351.6" cy="118.8" r="3.0" class="solid"/>
+<text x="142.0" y="84.0" class="lbl-b" text-anchor="end">A</text>
+<text x="330.0" y="80.0" class="lbl-b" text-anchor="middle">B</text>
+<text x="338.0" y="288.0" class="lbl-b">C</text>
+<text x="142.0" y="288.0" class="lbl-b" text-anchor="end">D</text>
+<text x="216.0" y="80.0" class="lbl-b" text-anchor="middle">A′</text>
+<text x="398.0" y="84.0" class="lbl-b">B′</text>
+<text x="361.6" y="124.8" class="lbl-b">E</text>
+<line x1="200.0" y1="58.0" x2="300.0" y2="58.0" class="ln" marker-end="url(#sm-u1-arw-diag)"/>
+<text x="250.0" y="48.0" class="lbl" text-anchor="middle">τ</text>
+<line x1="415.0" y1="240.0" x2="415.0" y2="120.0" class="ln" marker-end="url(#sm-u1-arw-diag)"/>
+<text x="427.0" y="185.0" class="lbl">τ</text>
+<line x1="130.0" y1="120.0" x2="130.0" y2="240.0" class="ln" marker-end="url(#sm-u1-arw-diag)"/>
+<text x="118.0" y="185.0" class="lbl" text-anchor="end">τ</text>
+<path d="M150,215 A55,55 0 0,1 167.4,217.8" class="ln thin"/>
+<text x="176.0" y="228.0" class="lbl">φ</text>
+<text x="455.0" y="120.0" class="lbl-sm">DB′ − DB ≈ EB′</text>
+<text x="455.0" y="142.0" class="lbl-sm">EB′ = BB′ cos 45°</text>
+</svg>
+<figcaption>Fig. 1.7 — Block ABCD under shear stress τ. The top face moves by BB′ = φ·AB; diagonal DB stretches to DB′.</figcaption>
+</figure>
+    <ol>
+      <li>The top moves by BB′ = aφ. The diagonal DB stretches by EB′ = BB′ cos 45° = aφ/√2.</li>
+      <li>Strain of DB = (aφ/√2)/(a√2) = φ/2 = τ/(2G).</li>
+      <li>Pure shear is the same as tension τ along DB and compression τ along AC. So the strain of DB = τ/E + μτ/E = (τ/E)(1 + μ).</li>
+      <li>Equate: τ/(2G) = (τ/E)(1 + μ), which gives \( E = 2G(1+\mu) \).</li>
+    </ol>
+    <p><b>(b) E = 3K(1 − 2μ).</b> Put equal stress σ on all six faces of a cube.</p>
+    <ol>
+      <li>Strain in each direction: \( \varepsilon = \frac{\sigma}{E}(1 - 2\mu) \).</li>
+      <li>Volumetric strain = sum of the three strains: \( \varepsilon_v = \frac{3\sigma}{E}(1 - 2\mu) \).</li>
+      <li>By definition, \( \varepsilon_v = \sigma/K \). Equate the two: \( E = 3K(1 - 2\mu) \).</li>
+    </ol>
+    <p><b>(c) E = 9KG/(3K + G).</b></p>
+    <ol>
+      <li>From (a): \( \mu = \frac{E - 2G}{2G} \).</li>
+      <li>Put this in (b): \( E = 3K\left(\frac{3G - E}{G}\right) \), so \( EG = 9KG - 3KE \).</li>
+      <li>Collect E: \( E(G + 3K) = 9KG \), so \( E = \frac{9KG}{3K + G} \).</li>
+    </ol>
+    <p>The table gives a summary.</p>
+    <div class="tbl"><table><thead><tr><th>Relation</th><th>Idea of the derivation</th></tr></thead><tbody>
+      <tr><td>\( E = 2G(1 + \mu) \)</td><td>Pure shear on a square makes its diagonal stretch by strain φ/2. The same diagonal carries tension τ and compression τ at 90°, so its strain is (τ/E)(1 + μ). Equate the two and use φ = τ/G.</td></tr>
+      <tr><td>\( E = 3K(1 - 2\mu) \)</td><td>A cube under equal stress σ on all faces has \( \varepsilon_v = 3\sigma(1-2\mu)/E \). Also \( \varepsilon_v = \sigma/K \). Equate.</td></tr>
+      <tr><td>\( E = \dfrac{9KG}{3K + G} \)</td><td>Eliminate μ from the first two relations.</td></tr>
+      <tr><td>\( \mu = \dfrac{3K - 2G}{6K + 2G} \)</td><td>Eliminate E from the first two relations.</td></tr>
+    </tbody></table></div>
+    <div class="tbl"><table><thead><tr><th>Material</th><th>E (× 10⁵ N/mm²)</th><th>G (× 10⁵ N/mm²)</th><th>μ</th><th>Behaviour</th></tr></thead><tbody>
+      <tr><td>Mild steel</td><td>2.0–2.1</td><td>0.8</td><td>0.25–0.30</td><td>Ductile</td></tr>
+      <tr><td>Aluminium alloy</td><td>0.7</td><td>0.26</td><td>0.33</td><td>Ductile</td></tr>
+      <tr><td>Copper</td><td>1.0–1.2</td><td>0.4</td><td>0.34</td><td>Ductile</td></tr>
+      <tr><td>Brass</td><td>0.9–1.0</td><td>0.37</td><td>0.34</td><td>Ductile</td></tr>
+      <tr><td>Cast iron</td><td>1.0–1.4</td><td>0.4–0.5</td><td>0.23–0.27</td><td>Brittle</td></tr>
+      <tr><td>Concrete</td><td>0.14–0.3</td><td>—</td><td>0.1–0.2</td><td>Brittle</td></tr>
+    </tbody></table></div>
+    <p>Use these values only to check that your answers are sensible. In the exam, always use the values that the question gives.</p>
+    <aside class="tip"><b>Memory trick.</b> "2G, 3K": E = <b>2</b>G(1 <b>+</b> μ) and E = <b>3</b>K(1 <b>−</b> 2μ). Check: for steel μ = 0.3 gives G = E/2.6 ≈ 0.77 × 10⁵ and K = E/1.2 ≈ 1.67 × 10⁵ N/mm².</aside>
+
+    <h3 id="sm-u1-c-superposition">9. Principle of superposition and bars with several loads</h3>
+    <p><b>Principle of superposition:</b> when a body carries several loads, the total deformation is the algebraic sum of the deformations from each load acting alone. It is valid only within the elastic limit (linear material, small deformation).</p>
+    <p>For a bar with loads at several sections (Fig. 1.8), use free bodies:</p>
+    <ol>
+      <li>Check equilibrium: the sum of forces to the right = the sum of forces to the left. Find the unknown force P from this.</li>
+      <li>Cut each segment. Take the part on one side of the cut. The internal force in the segment = algebraic sum of the external forces on that side.</li>
+      <li>Mark tension (+) and compression (−). Draw the axial force diagram.</li>
+      <li>Find each δ = NL/(AE) with its sign and add: \( \delta = \sum N_i L_i/(A_i E_i) \).</li>
+    </ol>
+    <figure class="fig" id="sm-u1-f-fbd">
+<svg viewBox="0 0 680 320" role="img" aria-label="Bar ABCD with four axial loads, free bodies of each segment, and axial force diagram">
+<defs><marker id="sm-u1-arw-fbd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60.0" y="70.0" width="180.0" height="30.0" class="ln fill-soft"/>
+<rect x="240.0" y="60.0" width="200.0" height="50.0" class="ln fill-soft"/>
+<rect x="440.0" y="65.0" width="160.0" height="40.0" class="ln fill-soft"/>
+<line x1="60.0" y1="85.0" x2="22.0" y2="85.0" class="ln" marker-end="url(#sm-u1-arw-fbd)"/>
+<text x="34.0" y="74.0" class="lbl" text-anchor="middle">P₁</text>
+<line x1="240.0" y1="60.0" x2="240.0" y2="38.0" class="ln thin"/>
+<line x1="240.0" y1="38.0" x2="282.0" y2="38.0" class="ln" marker-end="url(#sm-u1-arw-fbd)"/>
+<text x="262.0" y="26.0" class="lbl" text-anchor="middle">P₂</text>
+<line x1="440.0" y1="60.0" x2="440.0" y2="38.0" class="ln thin"/>
+<line x1="440.0" y1="38.0" x2="398.0" y2="38.0" class="ln" marker-end="url(#sm-u1-arw-fbd)"/>
+<text x="418.0" y="26.0" class="lbl" text-anchor="middle">P₃</text>
+<line x1="600.0" y1="85.0" x2="640.0" y2="85.0" class="ln" marker-end="url(#sm-u1-arw-fbd)"/>
+<text x="630.0" y="74.0" class="lbl" text-anchor="middle">P₄</text>
+<text x="60.0" y="128.0" class="lbl-b" text-anchor="middle">A</text>
+<text x="240.0" y="128.0" class="lbl-b" text-anchor="middle">B</text>
+<text x="440.0" y="128.0" class="lbl-b" text-anchor="middle">C</text>
+<text x="600.0" y="128.0" class="lbl-b" text-anchor="middle">D</text>
+<rect x="80.0" y="160.0" width="140.0" height="20.0" class="ln fill-acc"/>
+<line x1="80.0" y1="170.0" x2="50.0" y2="170.0" class="ln" marker-end="url(#sm-u1-arw-fbd)"/>
+<line x1="220.0" y1="170.0" x2="250.0" y2="170.0" class="ln" marker-end="url(#sm-u1-arw-fbd)"/>
+<text x="60.0" y="154.0" class="lbl-sm" text-anchor="middle">P₁</text>
+<text x="240.0" y="154.0" class="lbl-sm" text-anchor="middle">P₁</text>
+<rect x="285.0" y="160.0" width="110.0" height="20.0" class="ln fill-acc2"/>
+<line x1="262.0" y1="170.0" x2="283.0" y2="170.0" class="ln" marker-end="url(#sm-u1-arw-fbd)"/>
+<line x1="418.0" y1="170.0" x2="397.0" y2="170.0" class="ln" marker-end="url(#sm-u1-arw-fbd)"/>
+<text x="340.0" y="154.0" class="lbl-sm" text-anchor="middle">P₂ − P₁ (push)</text>
+<rect x="465.0" y="160.0" width="120.0" height="20.0" class="ln fill-acc"/>
+<line x1="465.0" y1="170.0" x2="437.0" y2="170.0" class="ln" marker-end="url(#sm-u1-arw-fbd)"/>
+<line x1="585.0" y1="170.0" x2="615.0" y2="170.0" class="ln" marker-end="url(#sm-u1-arw-fbd)"/>
+<text x="450.0" y="154.0" class="lbl-sm" text-anchor="middle">P₄</text>
+<text x="602.0" y="154.0" class="lbl-sm" text-anchor="middle">P₄</text>
+<rect x="60.0" y="229.0" width="180.0" height="26.0" class="ln fill-acc"/>
+<rect x="240.0" y="255.0" width="200.0" height="22.0" class="ln fill-acc2"/>
+<rect x="440.0" y="219.0" width="160.0" height="36.0" class="ln fill-acc"/>
+<line x1="40.0" y1="255.0" x2="625.0" y2="255.0" class="ln"/>
+<text x="150.0" y="247.0" class="lbl-sm" text-anchor="middle">+P₁</text>
+<text x="340.0" y="271.0" class="lbl-sm" text-anchor="middle">−(P₂ − P₁)</text>
+<text x="520.0" y="243.0" class="lbl-sm" text-anchor="middle">+P₄</text>
+<text x="340.0" y="305.0" class="lbl-sm" text-anchor="middle">Axial force diagram (+ tension, − compression)</text>
+</svg>
+<figcaption>Fig. 1.8 — Bar with loads at several sections. Each segment carries the algebraic sum of the forces on one side of it (P₁ + P₃ = P₂ + P₄ for equilibrium).</figcaption>
+</figure>
+    <aside class="warn"><b>Common mistake.</b> Do not use the applied load at a section as the force in a segment. Each segment carries the <i>sum</i> of the forces on one side of it. Check your segment force from the other side too: the answer must be the same.</aside>
+    <p>A simple way to find a segment force: stand inside the segment and look to the left. A force at the left end that points <i>away</i> from the segment (to the left) pulls it, so it is tension. A force that points <i>towards</i> the segment pushes it, so it is compression. Add all the forces on the left side with these signs.</p>
+
+    <h3 id="sm-u1-c-varying">10. Bars of varying section</h3>
+    <p>A stepped bar has parts of different areas (Fig. 1.9). The same load P passes through each part, but each part has its own stress and extension. The total extension is the sum:</p>
+    <figure class="fig" id="sm-u1-f-stepped">
+<svg viewBox="0 0 640 220" role="img" aria-label="Bar of three different cross sections under axial pull">
+<defs><marker id="sm-u1-arw-stepped" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60.0" y="90.0" width="160.0" height="40.0" class="ln fill-soft"/>
+<rect x="220.0" y="75.0" width="180.0" height="70.0" class="ln fill-soft"/>
+<rect x="400.0" y="95.0" width="140.0" height="30.0" class="ln fill-soft"/>
+<text x="140.0" y="115.0" class="lbl" text-anchor="middle">A₁, E</text>
+<text x="310.0" y="115.0" class="lbl" text-anchor="middle">A₂, E</text>
+<text x="470.0" y="115.0" class="lbl" text-anchor="middle">A₃, E</text>
+<line x1="60.0" y1="110.0" x2="22.0" y2="110.0" class="ln" marker-end="url(#sm-u1-arw-stepped)"/>
+<line x1="540.0" y1="110.0" x2="592.0" y2="110.0" class="ln" marker-end="url(#sm-u1-arw-stepped)"/>
+<text x="34.0" y="98.0" class="lbl" text-anchor="middle">P</text>
+<text x="580.0" y="98.0" class="lbl" text-anchor="middle">P</text>
+<line x1="60.0" y1="132.0" x2="60.0" y2="190.0" class="ln thin"/>
+<line x1="220.0" y1="147.0" x2="220.0" y2="190.0" class="ln thin"/>
+<line x1="400.0" y1="147.0" x2="400.0" y2="190.0" class="ln thin"/>
+<line x1="540.0" y1="127.0" x2="540.0" y2="190.0" class="ln thin"/>
+<line x1="60.0" y1="182.0" x2="220.0" y2="182.0" class="ln thin" marker-end="url(#sm-u1-arw-stepped)" marker-start="url(#sm-u1-arw-stepped)"/>
+<text x="140.0" y="176.0" class="lbl" text-anchor="middle">L₁</text>
+<line x1="220.0" y1="182.0" x2="400.0" y2="182.0" class="ln thin" marker-end="url(#sm-u1-arw-stepped)" marker-start="url(#sm-u1-arw-stepped)"/>
+<text x="310.0" y="176.0" class="lbl" text-anchor="middle">L₂</text>
+<line x1="400.0" y1="182.0" x2="540.0" y2="182.0" class="ln thin" marker-end="url(#sm-u1-arw-stepped)" marker-start="url(#sm-u1-arw-stepped)"/>
+<text x="470.0" y="176.0" class="lbl" text-anchor="middle">L₃</text>
+</svg>
+<figcaption>Fig. 1.9 — Bar of varying section: the same force P passes through every part, so δ = (P/E)(L₁/A₁ + L₂/A₂ + L₃/A₃).</figcaption>
+</figure>
+    <div class="formula">\[ \delta L = \frac{P}{E}\left(\frac{L_1}{A_1} + \frac{L_2}{A_2} + \frac{L_3}{A_3}\right) \]<p class="where">If the parts are of different materials, keep E inside: \( \delta L = P\sum L_i/(A_i E_i) \). The maximum stress is in the part with the smallest area.</p></div>
+
+    <h3 id="sm-u1-c-taper">11. Uniformly tapering circular bar</h3>
+    <p>When the diameter changes linearly from d₁ to d₂ over the length L, the area changes at each section. So we cannot use PL/AE directly. Take a thin strip of length dx at distance x (Fig. 1.10), find its extension and integrate.</p>
+    <figure class="fig" id="sm-u1-f-taper">
+<svg viewBox="0 0 660 300" role="img" aria-label="Uniformly tapering circular bar with an elementary strip of length dx at distance x">
+<defs><marker id="sm-u1-arw-taper" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="100.0,95.0 520.0,125.0 520.0,175.0 100.0,205.0" class="ln fill-soft"/>
+<line x1="70.0" y1="150.0" x2="570.0" y2="150.0" class="ln thin hid"/>
+<polygon points="300.0,109.3 322.0,110.9 322.0,189.1 300.0,190.7" class="ln fill-acc"/>
+<text x="311.0" y="99.3" class="lbl" text-anchor="middle">dₓ</text>
+<text x="311.0" y="210.7" class="lbl-sm" text-anchor="middle">dx</text>
+<line x1="300.0" y1="216.7" x2="300.0" y2="248.0" class="ln thin"/>
+<line x1="100.0" y1="240.0" x2="300.0" y2="240.0" class="ln thin" marker-end="url(#sm-u1-arw-taper)" marker-start="url(#sm-u1-arw-taper)"/>
+<text x="200.0" y="234.0" class="lbl" text-anchor="middle">x</text>
+<line x1="116.0" y1="97.0" x2="116.0" y2="203.0" class="ln thin" marker-end="url(#sm-u1-arw-taper)" marker-start="url(#sm-u1-arw-taper)"/>
+<text x="123.0" y="132.0" class="lbl">d₁</text>
+<line x1="505.0" y1="127.0" x2="505.0" y2="173.0" class="ln thin" marker-end="url(#sm-u1-arw-taper)" marker-start="url(#sm-u1-arw-taper)"/>
+<text x="498.0" y="142.0" class="lbl" text-anchor="end">d₂</text>
+<line x1="100.0" y1="150.0" x2="48.0" y2="150.0" class="ln" marker-end="url(#sm-u1-arw-taper)"/>
+<line x1="520.0" y1="150.0" x2="572.0" y2="150.0" class="ln" marker-end="url(#sm-u1-arw-taper)"/>
+<text x="62.0" y="140.0" class="lbl" text-anchor="middle">P</text>
+<text x="558.0" y="140.0" class="lbl" text-anchor="middle">P</text>
+<line x1="100.0" y1="207.0" x2="100.0" y2="280.0" class="ln thin"/>
+<line x1="520.0" y1="177.0" x2="520.0" y2="280.0" class="ln thin"/>
+<line x1="100.0" y1="272.0" x2="520.0" y2="272.0" class="ln thin" marker-end="url(#sm-u1-arw-taper)" marker-start="url(#sm-u1-arw-taper)"/>
+<text x="310.0" y="266.0" class="lbl" text-anchor="middle">L</text>
+</svg>
+<figcaption>Fig. 1.10 — Uniformly tapering circular bar. The strip of length dx at distance x has diameter dₓ = d₁ − (d₁ − d₂)x/L.</figcaption>
+</figure>
+    <ol>
+      <li>Diameter at x: \( d_x = d_1 - kx \), where \( k = (d_1 - d_2)/L \).</li>
+      <li>Extension of the strip: \( d(\delta) = \dfrac{P\,dx}{E\,(\pi/4)\,d_x^2} = \dfrac{4P\,dx}{\pi E (d_1 - kx)^2} \).</li>
+      <li>Integrate from 0 to L. The integral of \( (d_1 - kx)^{-2} \) is \( 1/[k(d_1 - kx)] \). Between limits it gives \( \frac{1}{k}\left(\frac{1}{d_2} - \frac{1}{d_1}\right) = \frac{L}{d_1 d_2} \).</li>
+    </ol>
+    <div class="formula">\[ \delta L = \frac{4\,P\,L}{\pi\,E\,d_1\,d_2} \]<p class="where">Check: if d₁ = d₂ = d, it becomes PL/(AE) for a uniform bar. Maximum stress \( 4P/(\pi d_2^2) \) is at the small end.</p></div>
+    <p>Change d₁, d₂, L and P in the calculator and compare the extension with a uniform bar of the mean diameter.</p>
+    <div class="widget" data-widget="taper-bar"></div>
+    <p><b>Quick example.</b> A steel bar 1 m long tapers from 40 mm to 20 mm and carries 50 kN. δL = 4 × 50 000 × 1000 / (π × 2 × 10⁵ × 40 × 20) = 0.398 mm. A uniform bar of the mean diameter 30 mm gives 0.354 mm, which is 11 % too small.</p>
+    <aside class="warn"><b>Mean diameter is wrong.</b> PL/(AE) with the mean diameter (d₁ + d₂)/2 gives a smaller extension than the true value. The formula uses the product d₁d₂, not the square of the mean.</aside>
+
+    <h3 id="sm-u1-c-taperrect">12. Uniformly tapering rectangular bar</h3>
+    <p>A flat plate of constant thickness t has a width that changes linearly from a to b over the length L (Fig. 1.11). Use the same strip method.</p>
+    <figure class="fig" id="sm-u1-f-taperrect">
+<svg viewBox="0 0 660 300" role="img" aria-label="Tapering rectangular plate of uniform thickness with an elementary strip">
+<defs><marker id="sm-u1-arw-taperrect" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="90.0,85.0 450.0,120.0 450.0,180.0 90.0,215.0" class="ln fill-soft"/>
+<line x1="60.0" y1="150.0" x2="480.0" y2="150.0" class="ln thin hid"/>
+<polygon points="280.0,103.5 300.0,105.4 300.0,194.6 280.0,196.5" class="ln fill-acc"/>
+<text x="290.0" y="93.5" class="lbl" text-anchor="middle">bₓ</text>
+<text x="290.0" y="216.5" class="lbl-sm" text-anchor="middle">dx</text>
+<line x1="280.0" y1="222.5" x2="280.0" y2="250.0" class="ln thin"/>
+<line x1="90.0" y1="242.0" x2="280.0" y2="242.0" class="ln thin" marker-end="url(#sm-u1-arw-taperrect)" marker-start="url(#sm-u1-arw-taperrect)"/>
+<text x="185.0" y="236.0" class="lbl" text-anchor="middle">x</text>
+<line x1="106.0" y1="87.0" x2="106.0" y2="213.0" class="ln thin" marker-end="url(#sm-u1-arw-taperrect)" marker-start="url(#sm-u1-arw-taperrect)"/>
+<text x="113.0" y="132.0" class="lbl">a</text>
+<line x1="435.0" y1="122.0" x2="435.0" y2="178.0" class="ln thin" marker-end="url(#sm-u1-arw-taperrect)" marker-start="url(#sm-u1-arw-taperrect)"/>
+<text x="428.0" y="142.0" class="lbl" text-anchor="end">b</text>
+<line x1="90.0" y1="150.0" x2="42.0" y2="150.0" class="ln" marker-end="url(#sm-u1-arw-taperrect)"/>
+<line x1="450.0" y1="150.0" x2="498.0" y2="150.0" class="ln" marker-end="url(#sm-u1-arw-taperrect)"/>
+<text x="54.0" y="140.0" class="lbl" text-anchor="middle">P</text>
+<text x="486.0" y="140.0" class="lbl" text-anchor="middle">P</text>
+<line x1="90.0" y1="217.0" x2="90.0" y2="282.0" class="ln thin"/>
+<line x1="450.0" y1="182.0" x2="450.0" y2="282.0" class="ln thin"/>
+<line x1="90.0" y1="274.0" x2="450.0" y2="274.0" class="ln thin" marker-end="url(#sm-u1-arw-taperrect)" marker-start="url(#sm-u1-arw-taperrect)"/>
+<text x="270.0" y="268.0" class="lbl" text-anchor="middle">L</text>
+<rect x="560.0" y="85.0" width="30.0" height="130.0" class="ln fill-hatch"/>
+<line x1="560.0" y1="80.0" x2="560.0" y2="62.0" class="ln thin"/>
+<line x1="590.0" y1="80.0" x2="590.0" y2="62.0" class="ln thin"/>
+<line x1="560.0" y1="68.0" x2="590.0" y2="68.0" class="ln thin" marker-end="url(#sm-u1-arw-taperrect)" marker-start="url(#sm-u1-arw-taperrect)"/>
+<text x="575.0" y="62.0" class="lbl" text-anchor="middle">t</text>
+<text x="575.0" y="240.0" class="lbl-sm" text-anchor="middle">Side view</text>
+<text x="270.0" y="60.0" class="lbl-sm" text-anchor="middle">Front view</text>
+</svg>
+<figcaption>Fig. 1.11 — Plate of uniform thickness t whose width changes linearly from a to b. Strip width bₓ = a − (a − b)x/L.</figcaption>
+</figure>
+    <ol>
+      <li>Width at x: \( b_x = a - kx \), where \( k = (a - b)/L \). Area of the strip = \( t\,b_x \).</li>
+      <li>Extension of the strip: \( d(\delta) = \dfrac{P\,dx}{E\,t\,(a - kx)} \).</li>
+      <li>Integrate from 0 to L: \( \int_0^L \frac{dx}{a - kx} = \frac{1}{k}\ln\frac{a}{b} \).</li>
+    </ol>
+    <div class="formula">\[ \delta L = \frac{P\,L}{E\,t\,(a - b)}\,\ln\frac{a}{b} \]<p class="where">ln = natural logarithm (log to base e). Maximum stress P/(bt) is at the narrow end.</p></div>
+
+    <h3 id="sm-u1-c-composite">13. Composite bars</h3>
+    <p>A <b>composite bar</b> has two or more bars of different materials that act together and carry one load. Examples: a steel rod inside a copper tube (Fig. 1.12), a reinforced concrete (RCC) column, and rods that share a load through a rigid plate.</p>
+    <figure class="fig" id="sm-u1-f-composite">
+<svg viewBox="0 0 640 300" role="img" aria-label="Composite bar: steel rod inside a copper tube, loaded through a rigid plate">
+<defs><marker id="sm-u1-arw-composite" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60.0" y="270.0" width="240.0" height="12.0" class="fill-hatch"/>
+<line x1="60.0" y1="270.0" x2="300.0" y2="270.0" class="ln"/>
+<rect x="90.0" y="90.0" width="20.0" height="180.0" class="ln fill-acc"/>
+<rect x="250.0" y="90.0" width="20.0" height="180.0" class="ln fill-acc"/>
+<rect x="160.0" y="90.0" width="40.0" height="180.0" class="ln fill-acc2"/>
+<rect x="80.0" y="75.0" width="200.0" height="15.0" class="ln fill-soft"/>
+<line x1="180.0" y1="22.0" x2="180.0" y2="72.0" class="ln" marker-end="url(#sm-u1-arw-composite)"/>
+<text x="194.0" y="40.0" class="lbl">P</text>
+<line x1="55.0" y1="90.0" x2="55.0" y2="270.0" class="ln thin" marker-end="url(#sm-u1-arw-composite)" marker-start="url(#sm-u1-arw-composite)"/>
+<text x="48.0" y="185.0" class="lbl" text-anchor="end">L</text>
+<line x1="280.0" y1="82.0" x2="330.0" y2="82.0" class="ln thin"/>
+<text x="336.0" y="87.0" class="lbl-sm">Rigid plate</text>
+<line x1="268.0" y1="170.0" x2="330.0" y2="150.0" class="ln thin"/>
+<text x="336.0" y="155.0" class="lbl-sm">Tube (e.g. copper)</text>
+<line x1="195.0" y1="215.0" x2="330.0" y2="235.0" class="ln thin"/>
+<text x="336.0" y="240.0" class="lbl-sm">Rod (e.g. steel)</text>
+<path d="M465,165 a80,80 0 1,0 160,0 a80,80 0 1,0 -160,0 M483,165 a62,62 0 1,0 124,0 a62,62 0 1,0 -124,0" class="ln fill-acc" fill-rule="evenodd"/>
+<circle cx="545.0" cy="165.0" r="28.0" class="ln fill-acc2"/>
+<text x="545.0" y="170.0" class="lbl" text-anchor="middle">Aₛ</text>
+<text x="545.0" y="75.0" class="lbl" text-anchor="middle">A<tspan class="lbl-sm" dy="4">c</tspan></text>
+<text x="545.0" y="272.0" class="lbl-sm" text-anchor="middle">Section</text>
+</svg>
+<figcaption>Fig. 1.12 — Composite bar. Rod and tube have the same length and are loaded together through a rigid plate, so both shorten by the same amount.</figcaption>
+</figure>
+    <p>The load sharing is <b>statically indeterminate</b>: equilibrium alone gives one equation for two unknowns. So we use two conditions:</p>
+    <ol>
+      <li><b>Equilibrium:</b> \( P = P_1 + P_2 = \sigma_1 A_1 + \sigma_2 A_2 \).</li>
+      <li><b>Compatibility:</b> the bars are joined, so they deform by the same amount: \( \delta_1 = \delta_2 \), that is \( \dfrac{\sigma_1 L_1}{E_1} = \dfrac{\sigma_2 L_2}{E_2} \).</li>
+    </ol>
+    <div class="formula">\[ \text{Equal lengths: } \sigma_1 = \frac{E_1}{E_2}\,\sigma_2 = m\,\sigma_2 \qquad \frac{P_1}{P_2} = \frac{A_1 E_1}{A_2 E_2} \]<p class="where">m = E₁/E₂ is the modular ratio. With equal lengths the load divides in the ratio of AE. With unequal lengths it divides in the ratio of AE/L.</p></div>
+    <p><b>Method for every composite problem.</b></p>
+    <ol>
+      <li>Find the area of each material. For a tube, \( A = \frac{\pi}{4}(D^2 - d^2) \).</li>
+      <li>Write the compatibility equation and express one stress in terms of the other (σ₁ = mσ₂ for equal lengths).</li>
+      <li>Put it into the equilibrium equation and solve for σ₂, then σ₁.</li>
+      <li>Find the loads P₁ = σ₁A₁ and P₂ = σ₂A₂. Check that P₁ + P₂ = P.</li>
+      <li>Find the common deformation δ = σ₁L₁/E₁ and check it with σ₂L₂/E₂.</li>
+    </ol>
+    <aside class="warn"><b>Common mistake.</b> Do not divide the load in the ratio of areas. The stiffer material always takes more stress. Equal strain, not equal stress, is the rule for bars that are joined.</aside>
+    <aside class="real"><b>Real world.</b> In an RCC column, steel bars and concrete shorten together. Steel is about 15 times stiffer, so each mm² of steel carries about 15 times the stress of the concrete. If the steel is too little, the concrete crushes, as in the photo.</aside>
+    <figure class="photo"><img src="img/sm-u1-rcc-column.jpg" alt="A cracked reinforced concrete column with spalled concrete and exposed steel bars" width="700" height="933" loading="lazy"><figcaption>A failed reinforced concrete column: the concrete has spalled and the steel bars are visible. Steel and concrete act as one composite member. <span class="credit">Photo: Polyparadigm · Public domain · Wikimedia Commons</span></figcaption></figure>
+
+    <h3 id="sm-u1-c-selfweight">14. Extension of a bar under its own weight</h3>
+    <p>A long bar that hangs from one end stretches under its own weight (Fig. 1.13). At distance y from the free end, the force is the weight of the part below: w·A·y. The force is zero at the free end and maximum (W = wAL) at the support.</p>
+    <figure class="fig" id="sm-u1-f-selfwt">
+<svg viewBox="0 0 600 310" role="img" aria-label="Bar hanging from a support and stretched by its own weight">
+<defs><marker id="sm-u1-arw-selfwt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="220.0" y="30.0" width="160.0" height="14.0" class="fill-hatch"/>
+<line x1="220.0" y1="44.0" x2="380.0" y2="44.0" class="ln"/>
+<rect x="280.0" y="44.0" width="40.0" height="236.0" class="ln fill-soft"/>
+<rect x="280.0" y="190.0" width="40.0" height="90.0" class="ln fill-acc"/>
+<line x1="260.0" y1="190.0" x2="340.0" y2="190.0" class="ln dash"/>
+<line x1="250.0" y1="44.0" x2="250.0" y2="280.0" class="ln thin" marker-end="url(#sm-u1-arw-selfwt)" marker-start="url(#sm-u1-arw-selfwt)"/>
+<text x="243.0" y="167.0" class="lbl" text-anchor="end">L</text>
+<line x1="355.0" y1="190.0" x2="355.0" y2="280.0" class="ln thin" marker-end="url(#sm-u1-arw-selfwt)" marker-start="url(#sm-u1-arw-selfwt)"/>
+<text x="362.0" y="240.0" class="lbl">y</text>
+<line x1="322.0" y1="280.0" x2="362.0" y2="280.0" class="ln thin"/>
+<line x1="300.0" y1="230.0" x2="300.0" y2="268.0" class="ln" marker-end="url(#sm-u1-arw-selfwt)"/>
+<text x="395.0" y="252.0" class="lbl">W = w·A·y</text>
+<text x="395.0" y="196.0" class="lbl-sm">section at y</text>
+<text x="300.0" y="304.0" class="lbl-sm" text-anchor="middle">w = weight per unit volume (ρg)</text>
+</svg>
+<figcaption>Fig. 1.13 — Bar hanging under its own weight. At distance y from the free end the section carries the weight of the part below it.</figcaption>
+</figure>
+    <div class="formula">\[ \delta L = \int_0^L \frac{w A y\,dy}{A E} = \frac{w L^2}{2E} = \frac{W L}{2 A E} \]<p class="where">w = weight per unit volume (ρg, N/mm³), W = total weight. The extension is half of the value for a load W at the end.</p></div>
+    <p><b>Quick example.</b> A steel wire 10 m long hangs vertically. With ρ = 7850 kg/m³ and g = 9.81 m/s², w = 7.70 × 10⁻⁵ N/mm³. Then δL = 7.70 × 10⁻⁵ × 10 000² / (2 × 2 × 10⁵) = 0.019 mm. The effect is small for short bars, but it matters for long mine-hoist ropes and tall columns.</p>
+
+    <h3 id="sm-u1-c-summary">15. Formula summary and key terms</h3>
+    <div class="tbl"><table><thead><tr><th>Case</th><th>Formula</th></tr></thead><tbody>
+      <tr><td>Uniform bar</td><td>\( \delta L = PL/(AE) \)</td></tr>
+      <tr><td>Stepped bar / several loads</td><td>\( \delta L = \sum N_i L_i/(A_i E_i) \)</td></tr>
+      <tr><td>Tapered circular bar</td><td>\( \delta L = 4PL/(\pi E d_1 d_2) \)</td></tr>
+      <tr><td>Tapered rectangular plate</td><td>\( \delta L = \dfrac{PL\ln(a/b)}{Et(a-b)} \)</td></tr>
+      <tr><td>Own weight</td><td>\( \delta L = wL^2/(2E) \)</td></tr>
+      <tr><td>Volumetric strain (bar)</td><td>\( \varepsilon_v = \varepsilon(1-2\mu) \)</td></tr>
+      <tr><td>Volumetric strain (3 stresses)</td><td>\( \varepsilon_v = (\sigma_x+\sigma_y+\sigma_z)(1-2\mu)/E \)</td></tr>
+      <tr><td>Composite bar (equal L)</td><td>\( \sigma_1/\sigma_2 = E_1/E_2,\; P = \sigma_1A_1 + \sigma_2A_2 \)</td></tr>
+      <tr><td>Elastic constants</td><td>\( E = 2G(1+\mu) = 3K(1-2\mu) = 9KG/(3K+G) \)</td></tr>
+    </tbody></table></div>
+    <dl class="cards">
+      <dt>Stress</dt><dd>Internal resisting force per unit area, σ = P/A (N/mm²).</dd>
+      <dt>Strain</dt><dd>Change in length per unit original length, ε = δL/L (no unit).</dd>
+      <dt>Hooke's law</dt><dd>Within the elastic limit, stress is proportional to strain: σ = Eε.</dd>
+      <dt>Elastic limit</dt><dd>The maximum stress up to which the material fully recovers its shape when the load is removed.</dd>
+      <dt>Yield point</dt><dd>The stress at which the material stretches a lot with no increase in load.</dd>
+      <dt>Ultimate stress</dt><dd>Maximum load in the tensile test divided by the original area.</dd>
+      <dt>Proof stress</dt><dd>Stress that gives a permanent strain of 0.2 %; used when there is no clear yield point.</dd>
+      <dt>Factor of safety</dt><dd>Failure (yield or ultimate) stress divided by working stress.</dd>
+      <dt>Poisson's ratio</dt><dd>Lateral strain / longitudinal strain within the elastic limit (0 to 0.5).</dd>
+      <dt>Bulk modulus</dt><dd>Direct stress (equal on all faces) / volumetric strain, K = p/εv.</dd>
+      <dt>Modulus of rigidity</dt><dd>Shear stress / shear strain, G = τ/φ.</dd>
+      <dt>Principle of superposition</dt><dd>Total effect of several loads = algebraic sum of the effects of each load acting alone (elastic range only).</dd>
+    </dl>
+
+    <div class="quiz" id="sm-u1-quiz">
+      <div class="mcq" data-answer="c"><p class="stem">A steel bar (E = 2 × 10⁵ N/mm²) of area 100 mm² and length 1 m carries 10 kN. Its extension is</p><ol class="opts"><li>0.05 mm</li><li>0.25 mm</li><li>0.5 mm</li><li>5 mm</li></ol><p class="why">δ = PL/(AE) = 10 000 × 1000 / (100 × 2 × 10⁵) = 0.5 mm.</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">Up to which point on the mild-steel curve is stress exactly proportional to strain?</p><ol class="opts"><li>Elastic limit</li><li>Limit of proportionality</li><li>Upper yield point</li><li>Ultimate point</li></ol><p class="why">Hooke's law (straight line) holds only up to the limit of proportionality. The elastic limit is a little higher.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">The value of Poisson's ratio for an isotropic elastic material lies between</p><ol class="opts"><li>−1 and 0</li><li>0.5 and 1</li><li>1 and 2</li><li>0 and 0.5</li></ol><p class="why">From E = 3K(1 − 2μ), K is positive only if μ &lt; 0.5. Practical materials have μ ≥ 0.</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">The volumetric strain of a bar under an axial stress σ is</p><ol class="opts"><li>ε(1 − 2μ)</li><li>ε(1 + 2μ)</li><li>3ε</li><li>ε(1 − μ)</li></ol><p class="why">Length strain ε plus two lateral strains −με each: ε − 2με.</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">If E = 2 × 10⁵ N/mm² and μ = 0.25, the modulus of rigidity G is</p><ol class="opts"><li>0.5 × 10⁵ N/mm²</li><li>1.0 × 10⁵ N/mm²</li><li>0.8 × 10⁵ N/mm²</li><li>1.33 × 10⁵ N/mm²</li></ol><p class="why">G = E/[2(1 + μ)] = 2 × 10⁵ / 2.5 = 0.8 × 10⁵ N/mm².</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">The extension of a uniformly tapering circular bar (diameters d₁, d₂) is</p><ol class="opts"><li>PL/(AE) with A at the mean diameter</li><li>4PL/(πEd₁d₂)</li><li>4PL/(πEd₁²)</li><li>PL ln(d₁/d₂)/(E(d₁ − d₂))</li></ol><p class="why">Integration of the strip extension gives the product d₁d₂ in the denominator.</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">A steel rod and a copper tube of equal length carry a load together. Es = 2Ec. Then</p><ol class="opts"><li>σs = 2σc</li><li>σs = σc</li><li>σs = σc/2</li><li>the loads are equal</li></ol><p class="why">Equal strain: σs/Es = σc/Ec, so σs = (Es/Ec)σc = 2σc.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">A bar of length L hangs under its own weight (weight per unit volume w). Its extension is</p><ol class="opts"><li>wL/E</li><li>wL²/E</li><li>2wL²/E</li><li>wL²/(2E)</li></ol><p class="why">The force grows linearly from zero at the free end, so the extension is half of WL/(AE): wL²/(2E).</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">Mild steel has a yield stress of 250 N/mm². For a factor of safety of 2.5, the working stress is</p><ol class="opts"><li>625 N/mm²</li><li>100 N/mm²</li><li>250 N/mm²</li><li>40 N/mm²</li></ol><p class="why">Working stress = yield stress / FoS = 250/2.5 = 100 N/mm².</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">A shear stress of 60 N/mm² acts on the top and bottom faces of an element. The shear stress on its vertical faces is</p><ol class="opts"><li>zero</li><li>30 N/mm²</li><li>60 N/mm², forming the opposite couple</li><li>120 N/mm²</li></ol><p class="why">Complementary shear: equal shear stress on the perpendicular planes, so that the two couples balance.</p></div>
+    </div>
+  </section>
+
+  <section class="part" id="sm-u1-theory" data-part="theory">
+    <h2>Theory questions</h2>
+
+    <article class="q" id="sm-u1-q1" data-marks="10">
+      <h3>Q1. With a neat sketch, explain the stress–strain diagram of mild steel in tension. Mark the salient points.</h3>
+      <p class="q-src">Jan 2025 Q1(a) · Mar-Apr 2021 (CBCS) Q1 (elastic limit)</p>
+      <p class="q-hint">A large labelled curve (6 points, 4 zones) plus one or two lines on each point. The sketch carries half the marks.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Introduction.</b> A standard mild-steel specimen is loaded in tension in a universal testing machine until it breaks. Load and extension are recorded. Nominal stress σ = P/A₀ is plotted against strain ε = δL/L₀. The curve is shown below.</p>
+        <figure class="fig" id="sm-u1-f-ss-q1">
+<svg viewBox="0 0 660 450" role="img" aria-label="Stress-strain curve of mild steel with limit of proportionality, elastic limit, upper and lower yield points, ultimate point and breaking point">
+<defs><marker id="sm-u1-arw-ss-q1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80.0" y1="330.0" x2="640.0" y2="330.0" class="ln" marker-end="url(#sm-u1-arw-ss-q1)"/>
+<line x1="80.0" y1="330.0" x2="80.0" y2="30.0" class="ln" marker-end="url(#sm-u1-arw-ss-q1)"/>
+<text x="630.0" y="356.0" class="lbl" text-anchor="end">Strain, ε</text>
+<text x="40.0" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 40.0 180.0)">Stress, σ (N/mm²)</text>
+<path d="M80,330 L150,170 Q155,160 160,155 L172,128 L182,160 L194,156 L206,160 L218,156 L230,160 L242,156 L250,158 C300,100 360,72 430,70 C480,68 530,90 560,125" class="ln thick acc"/>
+<circle cx="150.0" cy="170.0" r="3.5" class="solid"/>
+<circle cx="160.0" cy="155.0" r="3.5" class="solid"/>
+<circle cx="172.0" cy="128.0" r="3.5" class="solid"/>
+<circle cx="182.0" cy="160.0" r="3.5" class="solid"/>
+<circle cx="430.0" cy="70.0" r="3.5" class="solid"/>
+<circle cx="560.0" cy="125.0" r="3.5" class="solid"/>
+<text x="140.0" y="184.0" class="lbl-b" text-anchor="end">A</text>
+<text x="150.0" y="150.0" class="lbl-b" text-anchor="end">B</text>
+<text x="172.0" y="116.0" class="lbl-b" text-anchor="middle">C</text>
+<text x="186.0" y="182.0" class="lbl-b" text-anchor="middle">D</text>
+<text x="430.0" y="58.0" class="lbl-b" text-anchor="middle">E</text>
+<text x="572.0" y="128.0" class="lbl-b">F</text>
+<text x="72.0" y="346.0" class="lbl-b" text-anchor="end">O</text>
+<line x1="160.0" y1="330.0" x2="160.0" y2="161.0" class="ln thin dash"/>
+<line x1="250.0" y1="330.0" x2="250.0" y2="164.0" class="ln thin dash"/>
+<line x1="430.0" y1="330.0" x2="430.0" y2="76.0" class="ln thin dash"/>
+<line x1="560.0" y1="330.0" x2="560.0" y2="131.0" class="ln thin dash"/>
+<text x="122.0" y="318.0" class="lbl-sm" text-anchor="middle">Elastic</text>
+<text x="205.0" y="318.0" class="lbl-sm" text-anchor="middle">Yielding</text>
+<text x="340.0" y="318.0" class="lbl-sm" text-anchor="middle">Strain hardening</text>
+<text x="495.0" y="318.0" class="lbl-sm" text-anchor="middle">Necking</text>
+<text x="90.0" y="388.0" class="lbl-sm">A – Limit of proportionality</text>
+<text x="380.0" y="388.0" class="lbl-sm">B – Elastic limit</text>
+<text x="90.0" y="410.0" class="lbl-sm">C – Upper yield point</text>
+<text x="380.0" y="410.0" class="lbl-sm">D – Lower yield point</text>
+<text x="90.0" y="432.0" class="lbl-sm">E – Ultimate stress point</text>
+<text x="380.0" y="432.0" class="lbl-sm">F – Breaking point</text>
+</svg>
+<figcaption>Fig. Q1 — Stress–strain diagram for mild steel (not to scale).</figcaption>
+</figure>
+        <ol>
+          <li><b>Limit of proportionality (A).</b> From O to A the curve is a straight line. Stress is proportional to strain and Hooke's law holds. The slope of OA is Young's modulus, E = σ/ε.</li>
+          <li><b>Elastic limit (B).</b> Beyond A the curve departs slightly from the straight line, but the material is still elastic up to B. On removal of the load at any stage up to B the specimen regains its original length. Beyond B, a permanent set remains.</li>
+          <li><b>Upper yield point (C).</b> The stress at which the material begins to yield. Its value depends on the speed of loading and the shape of the specimen.</li>
+          <li><b>Lower yield point (D).</b> The stress drops to D, and the specimen elongates considerably at nearly constant stress (yielding). Strain at the end of yielding is about 10–15 times the elastic strain. The lower yield stress (≈ 250 N/mm²) is taken as the yield strength for design.</li>
+          <li><b>Strain hardening (D to E).</b> After yielding, the material offers more resistance, so stress rises with strain. Elongation is uniform along the gauge length.</li>
+          <li><b>Ultimate stress point (E).</b> Maximum load / original area = ultimate tensile strength (≈ 410–470 N/mm² for mild steel).</li>
+          <li><b>Necking (E to F).</b> The cross-section reduces rapidly at a local zone (neck). The load required falls, so the nominal stress falls.</li>
+          <li><b>Breaking point (F).</b> The specimen fractures with a cup-and-cone fracture. Stress at F = breaking stress.</li>
+        </ol>
+        <p><b>Note.</b> If the actual area at each instant is used (true stress), the curve rises continuously up to fracture. Mild steel is ductile: percentage elongation about 25 %, reduction in area about 50–60 %.</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u1-q2" data-marks="10">
+      <h3>Q2. Derive an expression for the stress and total elongation of a uniformly tapering circular bar of diameter d₁ at one end and d₂ at the other end, length L, under an axial force P.</h3>
+      <p class="q-src">Nov-Dec 2025 Q1(a) · Jun-Jul 2024 Q1(a) · Mar-Apr 2021 (CBCS) Q2(a)</p>
+      <p class="q-hint">Sketch with the strip dx, diameter at x, extension of the strip, integration, final result and the check d₁ = d₂.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <figure class="fig" id="sm-u1-f-taper-q2">
+<svg viewBox="0 0 660 300" role="img" aria-label="Uniformly tapering circular bar with an elementary strip of length dx at distance x">
+<defs><marker id="sm-u1-arw-taper-q2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="100.0,95.0 520.0,125.0 520.0,175.0 100.0,205.0" class="ln fill-soft"/>
+<line x1="70.0" y1="150.0" x2="570.0" y2="150.0" class="ln thin hid"/>
+<polygon points="300.0,109.3 322.0,110.9 322.0,189.1 300.0,190.7" class="ln fill-acc"/>
+<text x="311.0" y="99.3" class="lbl" text-anchor="middle">dₓ</text>
+<text x="311.0" y="210.7" class="lbl-sm" text-anchor="middle">dx</text>
+<line x1="300.0" y1="216.7" x2="300.0" y2="248.0" class="ln thin"/>
+<line x1="100.0" y1="240.0" x2="300.0" y2="240.0" class="ln thin" marker-end="url(#sm-u1-arw-taper-q2)" marker-start="url(#sm-u1-arw-taper-q2)"/>
+<text x="200.0" y="234.0" class="lbl" text-anchor="middle">x</text>
+<line x1="116.0" y1="97.0" x2="116.0" y2="203.0" class="ln thin" marker-end="url(#sm-u1-arw-taper-q2)" marker-start="url(#sm-u1-arw-taper-q2)"/>
+<text x="123.0" y="132.0" class="lbl">d₁</text>
+<line x1="505.0" y1="127.0" x2="505.0" y2="173.0" class="ln thin" marker-end="url(#sm-u1-arw-taper-q2)" marker-start="url(#sm-u1-arw-taper-q2)"/>
+<text x="498.0" y="142.0" class="lbl" text-anchor="end">d₂</text>
+<line x1="100.0" y1="150.0" x2="48.0" y2="150.0" class="ln" marker-end="url(#sm-u1-arw-taper-q2)"/>
+<line x1="520.0" y1="150.0" x2="572.0" y2="150.0" class="ln" marker-end="url(#sm-u1-arw-taper-q2)"/>
+<text x="62.0" y="140.0" class="lbl" text-anchor="middle">P</text>
+<text x="558.0" y="140.0" class="lbl" text-anchor="middle">P</text>
+<line x1="100.0" y1="207.0" x2="100.0" y2="280.0" class="ln thin"/>
+<line x1="520.0" y1="177.0" x2="520.0" y2="280.0" class="ln thin"/>
+<line x1="100.0" y1="272.0" x2="520.0" y2="272.0" class="ln thin" marker-end="url(#sm-u1-arw-taper-q2)" marker-start="url(#sm-u1-arw-taper-q2)"/>
+<text x="310.0" y="266.0" class="lbl" text-anchor="middle">L</text>
+</svg>
+<figcaption>Fig. Q2 — Uniformly tapering circular bar with an elementary strip of length dx.</figcaption>
+</figure>
+        <p><b>Let</b> P = axial load, L = length, d₁ = diameter at the larger end, d₂ = diameter at the smaller end, E = Young's modulus.</p>
+        <ol>
+          <li>The diameter varies linearly. At distance x from the larger end:
+            \[ d_x = d_1 - \frac{d_1 - d_2}{L}\,x = d_1 - kx, \qquad k = \frac{d_1 - d_2}{L} \]</li>
+          <li>Area of the section at x: \( A_x = \dfrac{\pi}{4}(d_1 - kx)^2 \).</li>
+          <li><b>Stress</b> at the section: \[ \sigma_x = \frac{P}{A_x} = \frac{4P}{\pi (d_1 - kx)^2} \]
+            Maximum stress \( 4P/(\pi d_2^2) \) at the smaller end; minimum \( 4P/(\pi d_1^2) \) at the larger end.</li>
+          <li>Consider a strip of length dx at x. The area is nearly constant over dx, so its extension is
+            \[ d(\delta L) = \frac{P\,dx}{A_x E} = \frac{4P\,dx}{\pi E (d_1 - kx)^2} \]</li>
+          <li>Total extension: \[ \delta L = \frac{4P}{\pi E}\int_0^L (d_1 - kx)^{-2}\,dx = \frac{4P}{\pi E}\left[\frac{1}{k(d_1 - kx)}\right]_0^L \]</li>
+          <li>Substitute limits: at x = L, d₁ − kL = d₂; at x = 0 it is d₁.
+            \[ \delta L = \frac{4P}{\pi E k}\left(\frac{1}{d_2} - \frac{1}{d_1}\right) = \frac{4P}{\pi E}\cdot\frac{L}{d_1 - d_2}\cdot\frac{d_1 - d_2}{d_1 d_2} \]</li>
+        </ol>
+        <div class="formula">\[ \delta L = \frac{4\,P\,L}{\pi\,E\,d_1\,d_2} \]</div>
+        <p><b>Check.</b> For a uniform bar d₁ = d₂ = d: δL = 4PL/(πEd²) = PL/(AE), which is the known result.</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u1-q3" data-marks="10">
+      <h3>Q3. Derive an expression for the change in length of a bar of uniform thickness t whose width varies uniformly from a to b over a length L (tapering rectangular bar).</h3>
+      <p class="q-src">Feb-Mar 2022 (CBCS) Q3(a)</p>
+      <p class="q-hint">Same strip method as Q2, but the area is t × bₓ, so the integral gives a natural logarithm.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <figure class="fig" id="sm-u1-f-taperrect-q3">
+<svg viewBox="0 0 660 300" role="img" aria-label="Tapering rectangular plate of uniform thickness with an elementary strip">
+<defs><marker id="sm-u1-arw-taperrect-q3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="90.0,85.0 450.0,120.0 450.0,180.0 90.0,215.0" class="ln fill-soft"/>
+<line x1="60.0" y1="150.0" x2="480.0" y2="150.0" class="ln thin hid"/>
+<polygon points="280.0,103.5 300.0,105.4 300.0,194.6 280.0,196.5" class="ln fill-acc"/>
+<text x="290.0" y="93.5" class="lbl" text-anchor="middle">bₓ</text>
+<text x="290.0" y="216.5" class="lbl-sm" text-anchor="middle">dx</text>
+<line x1="280.0" y1="222.5" x2="280.0" y2="250.0" class="ln thin"/>
+<line x1="90.0" y1="242.0" x2="280.0" y2="242.0" class="ln thin" marker-end="url(#sm-u1-arw-taperrect-q3)" marker-start="url(#sm-u1-arw-taperrect-q3)"/>
+<text x="185.0" y="236.0" class="lbl" text-anchor="middle">x</text>
+<line x1="106.0" y1="87.0" x2="106.0" y2="213.0" class="ln thin" marker-end="url(#sm-u1-arw-taperrect-q3)" marker-start="url(#sm-u1-arw-taperrect-q3)"/>
+<text x="113.0" y="132.0" class="lbl">a</text>
+<line x1="435.0" y1="122.0" x2="435.0" y2="178.0" class="ln thin" marker-end="url(#sm-u1-arw-taperrect-q3)" marker-start="url(#sm-u1-arw-taperrect-q3)"/>
+<text x="428.0" y="142.0" class="lbl" text-anchor="end">b</text>
+<line x1="90.0" y1="150.0" x2="42.0" y2="150.0" class="ln" marker-end="url(#sm-u1-arw-taperrect-q3)"/>
+<line x1="450.0" y1="150.0" x2="498.0" y2="150.0" class="ln" marker-end="url(#sm-u1-arw-taperrect-q3)"/>
+<text x="54.0" y="140.0" class="lbl" text-anchor="middle">P</text>
+<text x="486.0" y="140.0" class="lbl" text-anchor="middle">P</text>
+<line x1="90.0" y1="217.0" x2="90.0" y2="282.0" class="ln thin"/>
+<line x1="450.0" y1="182.0" x2="450.0" y2="282.0" class="ln thin"/>
+<line x1="90.0" y1="274.0" x2="450.0" y2="274.0" class="ln thin" marker-end="url(#sm-u1-arw-taperrect-q3)" marker-start="url(#sm-u1-arw-taperrect-q3)"/>
+<text x="270.0" y="268.0" class="lbl" text-anchor="middle">L</text>
+<rect x="560.0" y="85.0" width="30.0" height="130.0" class="ln fill-hatch"/>
+<line x1="560.0" y1="80.0" x2="560.0" y2="62.0" class="ln thin"/>
+<line x1="590.0" y1="80.0" x2="590.0" y2="62.0" class="ln thin"/>
+<line x1="560.0" y1="68.0" x2="590.0" y2="68.0" class="ln thin" marker-end="url(#sm-u1-arw-taperrect-q3)" marker-start="url(#sm-u1-arw-taperrect-q3)"/>
+<text x="575.0" y="62.0" class="lbl" text-anchor="middle">t</text>
+<text x="575.0" y="240.0" class="lbl-sm" text-anchor="middle">Side view</text>
+<text x="270.0" y="60.0" class="lbl-sm" text-anchor="middle">Front view</text>
+</svg>
+<figcaption>Fig. Q3 — Tapering rectangular bar of thickness t; width a at one end and b at the other.</figcaption>
+</figure>
+        <p><b>Let</b> P = axial load, L = length, t = thickness (constant), a = width at the larger end, b = width at the smaller end, E = Young's modulus.</p>
+        <ol>
+          <li>Width at distance x from the larger end: \( b_x = a - \dfrac{a - b}{L}x = a - kx \), with \( k = (a - b)/L \).</li>
+          <li>Area at x: \( A_x = t\,(a - kx) \). Stress at x: \( \sigma_x = P/[t(a - kx)] \).</li>
+          <li>Extension of a strip of length dx: \[ d(\delta L) = \frac{P\,dx}{E\,t\,(a - kx)} \]</li>
+          <li>Total extension: \[ \delta L = \frac{P}{Et}\int_0^L \frac{dx}{a - kx} = \frac{P}{Et}\left[-\frac{1}{k}\ln(a - kx)\right]_0^L \]</li>
+          <li>Limits: at x = L, a − kL = b. \[ \delta L = \frac{P}{Etk}\left[\ln a - \ln b\right] = \frac{P}{Et}\cdot\frac{L}{a - b}\,\ln\frac{a}{b} \]</li>
+        </ol>
+        <div class="formula">\[ \delta L = \frac{P\,L}{E\,t\,(a - b)}\,\ln\frac{a}{b} \]<p class="where">ln is log to base e (= 2.303 log₁₀).</p></div>
+        <p><b>Note.</b> Maximum stress = P/(bt) at the narrow end; minimum stress = P/(at) at the wide end.</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u1-q4" data-marks="10">
+      <h3>Q4. Derive the relation between Young's modulus E, modulus of rigidity G and Poisson's ratio μ.</h3>
+      <p class="q-src">Aug-Sep 2023 Q2(a) · Feb-Mar 2022 (CBCS) Q2(a) · Jan 2023 (CBCS) Q2(a)</p>
+      <p class="q-hint">Square block in pure shear; strain of diagonal BD found two ways (geometry and stresses); equate. Final E = 2G(1 + μ).</p>
+      <details class="answer"><summary>Model answer</summary>
+        <figure class="fig" id="sm-u1-f-diag-q4">
+<svg viewBox="0 0 600 320" role="img" aria-label="Square block under shear; the diagonal BD stretches to BD prime">
+<defs><marker id="sm-u1-arw-diag-q4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="120.0" y="270.0" width="320.0" height="12.0" class="fill-hatch"/>
+<line x1="120.0" y1="270.0" x2="440.0" y2="270.0" class="ln"/>
+<polygon points="150.0,90.0 330.0,90.0 330.0,270.0 150.0,270.0" class="ln fill-soft"/>
+<polygon points="210.0,90.0 390.0,90.0 330.0,270.0 150.0,270.0" class="ln dash acc"/>
+<line x1="150.0" y1="270.0" x2="330.0" y2="90.0" class="ln"/>
+<line x1="150.0" y1="270.0" x2="390.0" y2="90.0" class="ln acc"/>
+<line x1="330.0" y1="90.0" x2="351.6" y2="118.8" class="ln thin dash"/>
+<circle cx="351.6" cy="118.8" r="3.0" class="solid"/>
+<text x="142.0" y="84.0" class="lbl-b" text-anchor="end">A</text>
+<text x="330.0" y="80.0" class="lbl-b" text-anchor="middle">B</text>
+<text x="338.0" y="288.0" class="lbl-b">C</text>
+<text x="142.0" y="288.0" class="lbl-b" text-anchor="end">D</text>
+<text x="216.0" y="80.0" class="lbl-b" text-anchor="middle">A′</text>
+<text x="398.0" y="84.0" class="lbl-b">B′</text>
+<text x="361.6" y="124.8" class="lbl-b">E</text>
+<line x1="200.0" y1="58.0" x2="300.0" y2="58.0" class="ln" marker-end="url(#sm-u1-arw-diag-q4)"/>
+<text x="250.0" y="48.0" class="lbl" text-anchor="middle">τ</text>
+<line x1="415.0" y1="240.0" x2="415.0" y2="120.0" class="ln" marker-end="url(#sm-u1-arw-diag-q4)"/>
+<text x="427.0" y="185.0" class="lbl">τ</text>
+<line x1="130.0" y1="120.0" x2="130.0" y2="240.0" class="ln" marker-end="url(#sm-u1-arw-diag-q4)"/>
+<text x="118.0" y="185.0" class="lbl" text-anchor="end">τ</text>
+<path d="M150,215 A55,55 0 0,1 167.4,217.8" class="ln thin"/>
+<text x="176.0" y="228.0" class="lbl">φ</text>
+<text x="455.0" y="120.0" class="lbl-sm">DB′ − DB ≈ EB′</text>
+<text x="455.0" y="142.0" class="lbl-sm">EB′ = BB′ cos 45°</text>
+</svg>
+<figcaption>Fig. Q4 — Square block ABCD in pure shear. DB stretches to DB′; BE is perpendicular to DB′.</figcaption>
+</figure>
+        <p><b>Consider</b> a square block ABCD of side a and unit thickness. The face DC is fixed. A shear stress τ acts on faces AB and DC, and the complementary shear stress τ acts on faces AD and BC. The block deforms to A′B′CD; the shear strain is φ.</p>
+        <p><b>Step 1: strain of diagonal BD from geometry.</b></p>
+        <ol>
+          <li>Displacement of B: BB′ = a·φ (φ is small).</li>
+          <li>Draw BE perpendicular to DB′. Because φ is small, DE ≈ DB, so the increase in length of the diagonal is EB′.</li>
+          <li>The angle DB′A′ ≈ 45°, so EB′ = BB′ cos 45° = aφ/√2.</li>
+          <li>Original length DB = a√2. Strain of the diagonal:
+            \[ \varepsilon_{BD} = \frac{EB'}{DB} = \frac{a\varphi/\sqrt{2}}{a\sqrt{2}} = \frac{\varphi}{2} \]</li>
+          <li>Since G = τ/φ, \[ \varepsilon_{BD} = \frac{\tau}{2G} \qquad (1) \]</li>
+        </ol>
+        <p><b>Step 2: strain of diagonal BD from the stresses.</b></p>
+        <ol>
+          <li>Pure shear τ on the faces is equivalent to a direct tensile stress τ along diagonal BD and a direct compressive stress τ along diagonal AC (at 90° to BD).</li>
+          <li>Strain along BD = strain from the tension + strain from the Poisson effect of the compression on AC:
+            \[ \varepsilon_{BD} = \frac{\tau}{E} + \mu\frac{\tau}{E} = \frac{\tau}{E}(1 + \mu) \qquad (2) \]</li>
+        </ol>
+        <p><b>Step 3: equate (1) and (2).</b></p>
+        <p>\[ \frac{\tau}{2G} = \frac{\tau}{E}(1 + \mu) \]</p>
+        <div class="formula">\[ E = 2G(1 + \mu) \]</div>
+        <p><b>Note.</b> Since 0 ≤ μ ≤ 0.5, G lies between E/3 and E/2. For steel, E = 2 × 10⁵ and μ = 0.3 give G = 0.77 × 10⁵ N/mm².</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u1-q5" data-marks="10">
+      <h3>Q5. Derive the relation between modulus of elasticity E and bulk modulus K. Hence show that Poisson's ratio cannot exceed 0.5.</h3>
+      <p class="q-src">Mar-Apr 2021 (CBCS) Q3(a)</p>
+      <p class="q-hint">Cube under equal stress σ on all six faces; volumetric strain = sum of three linear strains; use K = σ/εv.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <figure class="fig" id="sm-u1-f-cube-q5">
+<svg viewBox="0 0 600 320" role="img" aria-label="Cube with three mutually perpendicular normal stresses">
+<defs><marker id="sm-u1-arw-cube-q5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="220.0,120.0 340.0,120.0 340.0,240.0 220.0,240.0" class="ln fill-soft"/>
+<polygon points="220.0,120.0 280.0,70.0 400.0,70.0 340.0,120.0" class="ln fill-acc2"/>
+<polygon points="340.0,120.0 400.0,70.0 400.0,190.0 340.0,240.0" class="ln fill-acc"/>
+<line x1="370.0" y1="155.0" x2="445.0" y2="155.0" class="ln" marker-end="url(#sm-u1-arw-cube-q5)"/>
+<text x="455.0" y="160.0" class="lbl">σx</text>
+<line x1="220.0" y1="185.0" x2="150.0" y2="185.0" class="ln" marker-end="url(#sm-u1-arw-cube-q5)"/>
+<text x="140.0" y="190.0" class="lbl" text-anchor="end">σx</text>
+<line x1="310.0" y1="95.0" x2="310.0" y2="35.0" class="ln" marker-end="url(#sm-u1-arw-cube-q5)"/>
+<text x="322.0" y="42.0" class="lbl">σy</text>
+<line x1="280.0" y1="240.0" x2="280.0" y2="300.0" class="ln" marker-end="url(#sm-u1-arw-cube-q5)"/>
+<text x="292.0" y="300.0" class="lbl">σy</text>
+<line x1="280.0" y1="180.0" x2="212.0" y2="236.0" class="ln" marker-end="url(#sm-u1-arw-cube-q5)"/>
+<text x="204.0" y="252.0" class="lbl" text-anchor="end">σz</text>
+</svg>
+<figcaption>Fig. Q5 — Cube with equal direct stresses σ (= σx = σy = σz) on all faces.</figcaption>
+</figure>
+        <p><b>Consider</b> a cube of side L under equal tensile stress σ on all six faces (σx = σy = σz = σ).</p>
+        <ol>
+          <li>Strain in the x-direction (own stress minus the Poisson effects of the other two):
+            \[ \varepsilon_x = \frac{\sigma}{E} - \mu\frac{\sigma}{E} - \mu\frac{\sigma}{E} = \frac{\sigma}{E}(1 - 2\mu) \]</li>
+          <li>By symmetry, εy = εz = εx.</li>
+          <li>Volume V = L³. So δV = 3L²·δL and the volumetric strain is
+            \[ \varepsilon_v = \frac{\delta V}{V} = 3\frac{\delta L}{L} = 3\varepsilon_x = \frac{3\sigma}{E}(1 - 2\mu) \]</li>
+          <li>By definition of bulk modulus, \( K = \sigma/\varepsilon_v \), so \( \varepsilon_v = \sigma/K \).</li>
+          <li>Equate the two expressions of εv: \[ \frac{\sigma}{K} = \frac{3\sigma}{E}(1 - 2\mu) \]</li>
+        </ol>
+        <div class="formula">\[ E = 3K(1 - 2\mu) \]</div>
+        <p><b>Limit of μ.</b> E and K are positive for every real material. So (1 − 2μ) &gt; 0, that is μ &lt; 0.5. When μ = 0.5, K is infinite: the material is incompressible (rubber is close to this).</p>
+        <p><b>General result.</b> For any three stresses, \( \varepsilon_v = (\sigma_x + \sigma_y + \sigma_z)(1 - 2\mu)/E \), and for a bar under one stress, \( \varepsilon_v = \varepsilon(1 - 2\mu) \).</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u1-q6" data-marks="10">
+      <h3>Q6. Derive the relationship between Young's modulus, modulus of rigidity and bulk modulus. Also express Poisson's ratio in terms of K and G.</h3>
+      <p class="q-src">Jun-Jul 2024 Q2(a)</p>
+      <p class="q-hint">State (and briefly prove, or quote from Q4 and Q5) the two relations, then eliminate μ. Show the algebra in steps.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Known relations</b> (derive them as in Q4 and Q5 if the question asks):</p>
+        <p>\[ E = 2G(1 + \mu) \quad (1) \qquad\qquad E = 3K(1 - 2\mu) \quad (2) \]</p>
+        <ol>
+          <li>From (1): \( \mu = \dfrac{E}{2G} - 1 = \dfrac{E - 2G}{2G} \).</li>
+          <li>Substitute into (2): \[ E = 3K\left(1 - \frac{2(E - 2G)}{2G}\right) = 3K\left(\frac{G - E + 2G}{G}\right) = \frac{3K(3G - E)}{G} \]</li>
+          <li>Multiply by G: \( EG = 9KG - 3KE \).</li>
+          <li>Collect the E terms: \( E(G + 3K) = 9KG \).</li>
+        </ol>
+        <div class="formula">\[ E = \frac{9KG}{3K + G} \qquad\text{or}\qquad \frac{9}{E} = \frac{3}{G} + \frac{1}{K} \]</div>
+        <p><b>Poisson's ratio in terms of K and G.</b> Equate (1) and (2): 2G(1 + μ) = 3K(1 − 2μ). So 2G + 2Gμ = 3K − 6Kμ, which gives</p>
+        <div class="formula">\[ \mu = \frac{3K - 2G}{6K + 2G} \]</div>
+        <p><b>Check with steel.</b> K = 1.67 × 10⁵ and G = 0.77 × 10⁵ N/mm² give E = 9(1.67)(0.77)/(5.01 + 0.77) × 10⁵ = 2.0 × 10⁵ N/mm² and μ = 0.30.</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u1-q7" data-marks="10">
+      <h3>Q7. Write short notes on: (i) Modulus of elasticity (ii) Modulus of rigidity (iii) Bulk modulus (iv) Poisson's ratio (v) Complementary shear stress (vi) Principle of superposition (vii) Volumetric strain.</h3>
+      <p class="q-src">Nov 2024 Q1(b) · Jan 2025 Q2(a)</p>
+      <p class="q-hint">Two marks each: definition, formula with symbols, unit, one typical value or sketch.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <ol>
+          <li><b>Modulus of elasticity (E).</b> Within the elastic limit, the ratio of normal (tensile or compressive) stress to the corresponding linear strain: E = σ/ε. Unit N/mm². It measures stiffness in tension or compression. Steel: 2 × 10⁵ N/mm².</li>
+          <li><b>Modulus of rigidity (G).</b> Within the elastic limit, the ratio of shear stress to shear strain: G = τ/φ, where φ is the change in the right angle in radian. Unit N/mm². Steel: 0.8 × 10⁵ N/mm².</li>
+          <li><b>Bulk modulus (K).</b> When a body is under equal direct stress p on all faces, the ratio of this stress to the volumetric strain: K = p/(δV/V). Unit N/mm². It measures resistance to change in volume. Steel: about 1.67 × 10⁵ N/mm².</li>
+          <li><b>Poisson's ratio (μ).</b> Within the elastic limit, the ratio of lateral strain to longitudinal strain: μ = (δd/d)/(δL/L). No unit. Value 0 to 0.5; steel 0.25–0.3.</li>
+          <li><b>Complementary shear stress.</b> A shear stress on a plane is always accompanied by a shear stress of equal magnitude on the perpendicular plane. The two pairs form equal and opposite couples, so the element is in equilibrium (τ′ = τ).
+            <figure class="fig" id="sm-u1-f-shear-q7">
+<svg viewBox="0 0 640 290" role="img" aria-label="Square element with shear and complementary shear stresses, and the shear strain angle">
+<defs><marker id="sm-u1-arw-shear-q7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="80.0" y="70.0" width="140.0" height="140.0" class="ln fill-soft"/>
+<line x1="110.0" y1="52.0" x2="190.0" y2="52.0" class="ln" marker-end="url(#sm-u1-arw-shear-q7)"/>
+<text x="150.0" y="42.0" class="lbl" text-anchor="middle">τ</text>
+<line x1="190.0" y1="228.0" x2="110.0" y2="228.0" class="ln" marker-end="url(#sm-u1-arw-shear-q7)"/>
+<text x="150.0" y="250.0" class="lbl" text-anchor="middle">τ</text>
+<line x1="240.0" y1="185.0" x2="240.0" y2="95.0" class="ln" marker-end="url(#sm-u1-arw-shear-q7)"/>
+<text x="256.0" y="145.0" class="lbl">τ′</text>
+<line x1="60.0" y1="95.0" x2="60.0" y2="185.0" class="ln" marker-end="url(#sm-u1-arw-shear-q7)"/>
+<text x="44.0" y="145.0" class="lbl" text-anchor="end">τ′</text>
+<text x="150.0" y="145.0" class="lbl-sm" text-anchor="middle">element</text>
+<text x="150.0" y="280.0" class="lbl-sm" text-anchor="middle">(a) Complementary shear</text>
+<rect x="380.0" y="210.0" width="220.0" height="12.0" class="fill-hatch"/>
+<line x1="380.0" y1="210.0" x2="600.0" y2="210.0" class="ln"/>
+<rect x="400.0" y="70.0" width="140.0" height="140.0" class="ln dash thin"/>
+<polygon points="400.0,210.0 540.0,210.0 590.0,70.0 450.0,70.0" class="ln fill-acc"/>
+<line x1="470.0" y1="50.0" x2="570.0" y2="50.0" class="ln" marker-end="url(#sm-u1-arw-shear-q7)"/>
+<text x="520.0" y="40.0" class="lbl" text-anchor="middle">τ</text>
+<line x1="400.0" y1="62.0" x2="450.0" y2="62.0" class="ln thin" marker-end="url(#sm-u1-arw-shear-q7)" marker-start="url(#sm-u1-arw-shear-q7)"/>
+<text x="425.0" y="56.0" class="lbl-sm" text-anchor="middle">δ</text>
+<line x1="380.0" y1="70.0" x2="380.0" y2="210.0" class="ln thin" marker-end="url(#sm-u1-arw-shear-q7)" marker-start="url(#sm-u1-arw-shear-q7)"/>
+<text x="373.0" y="145.0" class="lbl-sm" text-anchor="end">h</text>
+<path d="M400,160 A50,50 0 0,1 416.8,162.9" class="ln thin"/>
+<text x="436.0" y="176.0" class="lbl">φ</text>
+<text x="490.0" y="280.0" class="lbl-sm" text-anchor="middle">(b) Shear strain φ = δ/h</text>
+</svg>
+<figcaption>Fig. Q7 — Complementary shear stress and shear strain.</figcaption>
+</figure></li>
+          <li><b>Principle of superposition.</b> When a body is under several loads, the resultant deformation (or stress) is the algebraic sum of the deformations caused by each load acting separately. It holds only within the elastic limit, where deformation is proportional to load. Use: δ = Σ NᵢLᵢ/(AᵢEᵢ) for a bar with loads at several sections.</li>
+          <li><b>Volumetric strain.</b> The ratio of change in volume to original volume, εv = δV/V. For a bar under axial stress σ: εv = ε(1 − 2μ). For three mutually perpendicular stresses: εv = (σx + σy + σz)(1 − 2μ)/E. Under hydrostatic pressure p: εv = p/K.</li>
+        </ol>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u1-q8" data-marks="10">
+      <h3>Q8. What is a composite bar? Derive expressions for the stresses in the two materials and the load shared by each when a composite bar carries an axial load P. Define modular ratio.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="q-hint">Sketch, two conditions (equilibrium and equal deformation), final formulas, and the note that the stiffer material takes more stress.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Definition.</b> A composite bar is a bar made of two or more different materials, joined so that they deform together and share one external load. Examples: a steel rod inside a copper tube, an RCC column, a timber post with steel plates.</p>
+        <figure class="fig" id="sm-u1-f-composite-q8">
+<svg viewBox="0 0 640 300" role="img" aria-label="Composite bar: steel rod inside a copper tube, loaded through a rigid plate">
+<defs><marker id="sm-u1-arw-composite-q8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60.0" y="270.0" width="240.0" height="12.0" class="fill-hatch"/>
+<line x1="60.0" y1="270.0" x2="300.0" y2="270.0" class="ln"/>
+<rect x="90.0" y="90.0" width="20.0" height="180.0" class="ln fill-acc"/>
+<rect x="250.0" y="90.0" width="20.0" height="180.0" class="ln fill-acc"/>
+<rect x="160.0" y="90.0" width="40.0" height="180.0" class="ln fill-acc2"/>
+<rect x="80.0" y="75.0" width="200.0" height="15.0" class="ln fill-soft"/>
+<line x1="180.0" y1="22.0" x2="180.0" y2="72.0" class="ln" marker-end="url(#sm-u1-arw-composite-q8)"/>
+<text x="194.0" y="40.0" class="lbl">P</text>
+<line x1="55.0" y1="90.0" x2="55.0" y2="270.0" class="ln thin" marker-end="url(#sm-u1-arw-composite-q8)" marker-start="url(#sm-u1-arw-composite-q8)"/>
+<text x="48.0" y="185.0" class="lbl" text-anchor="end">L</text>
+<line x1="280.0" y1="82.0" x2="330.0" y2="82.0" class="ln thin"/>
+<text x="336.0" y="87.0" class="lbl-sm">Rigid plate</text>
+<line x1="268.0" y1="170.0" x2="330.0" y2="150.0" class="ln thin"/>
+<text x="336.0" y="155.0" class="lbl-sm">Tube (e.g. copper)</text>
+<line x1="195.0" y1="215.0" x2="330.0" y2="235.0" class="ln thin"/>
+<text x="336.0" y="240.0" class="lbl-sm">Rod (e.g. steel)</text>
+<path d="M465,165 a80,80 0 1,0 160,0 a80,80 0 1,0 -160,0 M483,165 a62,62 0 1,0 124,0 a62,62 0 1,0 -124,0" class="ln fill-acc" fill-rule="evenodd"/>
+<circle cx="545.0" cy="165.0" r="28.0" class="ln fill-acc2"/>
+<text x="545.0" y="170.0" class="lbl" text-anchor="middle">Aₛ</text>
+<text x="545.0" y="75.0" class="lbl" text-anchor="middle">A<tspan class="lbl-sm" dy="4">c</tspan></text>
+<text x="545.0" y="272.0" class="lbl-sm" text-anchor="middle">Section</text>
+</svg>
+<figcaption>Fig. Q8 — Composite bar: rod (material 1) inside a tube (material 2), loaded through a rigid plate.</figcaption>
+</figure>
+        <p><b>Let</b> P = total load; A₁, E₁, σ₁, P₁ for material 1 and A₂, E₂, σ₂, P₂ for material 2; both of length L.</p>
+        <ol>
+          <li><b>Equilibrium:</b> \[ P = P_1 + P_2 = \sigma_1 A_1 + \sigma_2 A_2 \quad (1) \]</li>
+          <li><b>Compatibility:</b> both bars shorten by the same amount: \[ \frac{\sigma_1 L}{E_1} = \frac{\sigma_2 L}{E_2} \;\Rightarrow\; \sigma_1 = \frac{E_1}{E_2}\sigma_2 = m\,\sigma_2 \quad (2) \]</li>
+          <li>Substitute (2) in (1): \[ P = \sigma_2\left(\frac{E_1}{E_2}A_1 + A_2\right) \]</li>
+        </ol>
+        <div class="formula">\[ \sigma_2 = \frac{P\,E_2}{A_1E_1 + A_2E_2} \qquad \sigma_1 = \frac{P\,E_1}{A_1E_1 + A_2E_2} \]\[ P_1 = \frac{A_1E_1}{A_1E_1 + A_2E_2}\,P \qquad P_2 = \frac{A_2E_2}{A_1E_1 + A_2E_2}\,P \]<p class="where">Common deformation δ = σ₁L/E₁ = PL/(A₁E₁ + A₂E₂).</p></div>
+        <p><b>Modular ratio.</b> The ratio of the Young's moduli of the two materials, m = E₁/E₂. The stresses are in the ratio m, and the loads are shared in the ratio of the axial rigidities A₁E₁ : A₂E₂.</p>
+        <p><b>Unequal lengths.</b> If the bars have lengths L₁ and L₂ (for example rods standing on blocks), compatibility becomes σ₁L₁/E₁ = σ₂L₂/E₂, and the loads divide in the ratio A₁E₁/L₁ : A₂E₂/L₂.</p>
+      </details>
+    </article>
+  </section>
+
+  <section class="part" id="sm-u1-numericals" data-part="numericals">
+    <h2>Numericals</h2>
+    <p class="method"><b>Method.</b> (1) Sketch the bar and write all data in N and mm. (2) Check equilibrium and find any unknown force. (3) Find the force in each segment from a free body (+ tension, − compression). (4) Find the area of each part. (5) Stress σ = N/A in each part. (6) Extension δ = NL/(AE) for each part (use 4PL/(πEd₁d₂) for a tapered part), with its sign; add them. (7) For composite bars, write equilibrium and compatibility first. (8) Box the answer with units.</p>
+
+    <article class="num" id="sm-u1-n1">
+      <h3>N1. A mild steel bar ABCD has three parts: AB of 22 mm diameter and 120 mm length, BC of 26 mm diameter and 240 mm length, and CD of 16 mm diameter and 170 mm length. It carries an axial pull of 40 kN. Find the stress in each part and the total elongation. Take E = 2 × 10⁵ N/mm².</h3>
+      <p class="q-src">Based on Feb-Mar 2022 (CBCS) Q2(b)</p>
+      <aside class="note"><b>Data note.</b> The load value is not readable in the scan. With 150 kN the 16 mm part would carry 746 N/mm² (more than the strength of mild steel), so this version uses 40 kN.</aside>
+      <figure class="fig" id="sm-u1-f-n1">
+<svg viewBox="0 0 640 200" role="img" aria-label="Stepped circular bar AB 22 mm, BC 26 mm, CD 16 mm diameter under 40 kN pull">
+<defs><marker id="sm-u1-arw-n1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70.0" y="78.0" width="108.0" height="44.0" class="ln fill-soft"/>
+<text x="124.0" y="105.0" class="lbl-sm" text-anchor="middle">Ø22</text>
+<rect x="178.0" y="74.0" width="216.0" height="52.0" class="ln fill-soft"/>
+<text x="286.0" y="105.0" class="lbl-sm" text-anchor="middle">Ø26</text>
+<rect x="394.0" y="84.0" width="153.0" height="32.0" class="ln fill-soft"/>
+<text x="470.5" y="105.0" class="lbl-sm" text-anchor="middle">Ø16</text>
+<line x1="70.0" y1="100.0" x2="32.0" y2="100.0" class="ln" marker-end="url(#sm-u1-arw-n1)"/>
+<text x="51.0" y="88.0" class="lbl-sm" text-anchor="middle">40 kN</text>
+<line x1="547.0" y1="100.0" x2="592.0" y2="100.0" class="ln" marker-end="url(#sm-u1-arw-n1)"/>
+<text x="569.5" y="88.0" class="lbl-sm" text-anchor="middle">40 kN</text>
+<text x="70.0" y="64.0" class="lbl-b" text-anchor="middle">A</text>
+<text x="178.0" y="64.0" class="lbl-b" text-anchor="middle">B</text>
+<text x="394.0" y="64.0" class="lbl-b" text-anchor="middle">C</text>
+<text x="547.0" y="64.0" class="lbl-b" text-anchor="middle">D</text>
+<line x1="70.0" y1="130.0" x2="70.0" y2="168.0" class="ln thin"/>
+<line x1="178.0" y1="130.0" x2="178.0" y2="168.0" class="ln thin"/>
+<line x1="394.0" y1="130.0" x2="394.0" y2="168.0" class="ln thin"/>
+<line x1="547.0" y1="130.0" x2="547.0" y2="168.0" class="ln thin"/>
+<line x1="70.0" y1="160.0" x2="178.0" y2="160.0" class="ln thin" marker-end="url(#sm-u1-arw-n1)" marker-start="url(#sm-u1-arw-n1)"/>
+<text x="124.0" y="154.0" class="lbl-sm" text-anchor="middle">120</text>
+<line x1="178.0" y1="160.0" x2="394.0" y2="160.0" class="ln thin" marker-end="url(#sm-u1-arw-n1)" marker-start="url(#sm-u1-arw-n1)"/>
+<text x="286.0" y="154.0" class="lbl-sm" text-anchor="middle">240</text>
+<line x1="394.0" y1="160.0" x2="547.0" y2="160.0" class="ln thin" marker-end="url(#sm-u1-arw-n1)" marker-start="url(#sm-u1-arw-n1)"/>
+<text x="470.5" y="154.0" class="lbl-sm" text-anchor="middle">170</text>
+</svg>
+<figcaption>Fig. N1 — Stepped bar (all dimensions in mm).</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Areas: \( A_{AB} = \frac{\pi}{4}(22)^2 = 380.13 \text{ mm}^2 \), \( A_{BC} = \frac{\pi}{4}(26)^2 = 530.93 \text{ mm}^2 \), \( A_{CD} = \frac{\pi}{4}(16)^2 = 201.06 \text{ mm}^2 \).</li>
+        <li>The same force P = 40 000 N passes through every part.</li>
+        <li>Stresses: \( \sigma_{AB} = 40000/380.13 = 105.23 \text{ N/mm}^2 \), \( \sigma_{BC} = 40000/530.93 = 75.34 \text{ N/mm}^2 \), \( \sigma_{CD} = 40000/201.06 = 198.94 \text{ N/mm}^2 \).</li>
+        <li>Elongation of AB: \( \delta_{AB} = \dfrac{PL}{AE} = \dfrac{40000 \times 120}{380.13 \times 2\times10^5} = 0.0631 \text{ mm} \).</li>
+        <li>Elongation of BC: \( \delta_{BC} = \dfrac{40000 \times 240}{530.93 \times 2\times10^5} = 0.0904 \text{ mm} \).</li>
+        <li>Elongation of CD: \( \delta_{CD} = \dfrac{40000 \times 170}{201.06 \times 2\times10^5} = 0.1691 \text{ mm} \).</li>
+        <li>Total: \( \delta = 0.0631 + 0.0904 + 0.1691 = 0.3226 \text{ mm} \).</li>
+      </ol>
+      <p class="final">Answer: σ<sub>AB</sub> = 105.2 N/mm², σ<sub>BC</sub> = 75.3 N/mm², σ<sub>CD</sub> = 198.9 N/mm² (all tensile); total elongation = 0.323 mm</p>
+    </article>
+
+    <article class="num" id="sm-u1-n2">
+      <h3>N2. A bar of 25 mm diameter is subjected to a pull of 50 kN. The measured extension on a gauge length of 250 mm is 0.12 mm and the decrease in diameter is 0.00375 mm. Find (i) linear strain, lateral strain, stress and Young's modulus, (ii) Poisson's ratio, (iii) bulk modulus, (iv) modulus of rigidity, (v) volumetric strain and change in volume (of the gauge length).</h3>
+      <p class="q-src">Based on Aug-Sep 2023 Q2(b)</p>
+      <aside class="note"><b>Data note.</b> The scan prints the diameter as "2A mm". 25 mm gives a lateral strain of exactly 0.00015 and E = 2.12 × 10⁵ N/mm², so 25 mm is the intended value.</aside>
+      <ol class="steps">
+        <li>Area: \( A = \frac{\pi}{4}(25)^2 = 490.87 \text{ mm}^2 \).</li>
+        <li>Linear strain: \( \varepsilon = \delta L/L = 0.12/250 = 4.8\times10^{-4} \).</li>
+        <li>Lateral strain: \( \delta d/d = 0.00375/25 = 1.5\times10^{-4} \) (decrease).</li>
+        <li>Stress: \( \sigma = P/A = 50000/490.87 = 101.86 \text{ N/mm}^2 \).</li>
+        <li>Young's modulus: \( E = \sigma/\varepsilon = 101.86/(4.8\times10^{-4}) = 2.122\times10^5 \text{ N/mm}^2 \).</li>
+        <li>Poisson's ratio: \( \mu = 1.5\times10^{-4}/4.8\times10^{-4} = 0.3125 \).</li>
+        <li>Bulk modulus: \( K = \dfrac{E}{3(1-2\mu)} = \dfrac{2.122\times10^5}{3(1 - 0.625)} = 1.886\times10^5 \text{ N/mm}^2 \).</li>
+        <li>Modulus of rigidity: \( G = \dfrac{E}{2(1+\mu)} = \dfrac{2.122\times10^5}{2(1.3125)} = 0.808\times10^5 \text{ N/mm}^2 \).</li>
+        <li>Volumetric strain: \( \varepsilon_v = \varepsilon(1-2\mu) = 4.8\times10^{-4}\times0.375 = 1.8\times10^{-4} \).</li>
+        <li>Volume of gauge length: \( V = 490.87\times250 = 122\,718 \text{ mm}^3 \). Change: \( \delta V = 1.8\times10^{-4}\times122\,718 = 22.09 \text{ mm}^3 \) (increase).</li>
+      </ol>
+      <p class="final">Answer: ε = 4.8 × 10⁻⁴, lateral strain = 1.5 × 10⁻⁴, σ = 101.9 N/mm², E = 2.12 × 10⁵ N/mm², μ = 0.3125, K = 1.89 × 10⁵ N/mm², G = 0.808 × 10⁵ N/mm², εv = 1.8 × 10⁻⁴, δV = 22.1 mm³</p>
+    </article>
+
+    <article class="num" id="sm-u1-n3">
+      <h3>N3. A cylindrical bar is 25 mm in diameter and 1.6 m long. In a tensile test, the longitudinal strain is four times the lateral strain. Find the modulus of rigidity and the bulk modulus. Also find the change in volume when the bar is subjected to a hydrostatic pressure of 100 N/mm². Take E = 1 × 10⁵ N/mm².</h3>
+      <p class="q-src">Jun-Jul 2024 Q2(b)</p>
+      <ol class="steps">
+        <li>Poisson's ratio: lateral strain = longitudinal strain / 4, so \( \mu = 1/4 = 0.25 \).</li>
+        <li>Modulus of rigidity: \( G = \dfrac{E}{2(1+\mu)} = \dfrac{1\times10^5}{2(1.25)} = 0.4\times10^5 \text{ N/mm}^2 \).</li>
+        <li>Bulk modulus: \( K = \dfrac{E}{3(1-2\mu)} = \dfrac{1\times10^5}{3(0.5)} = 0.667\times10^5 \text{ N/mm}^2 \).</li>
+        <li>Volume: \( V = \frac{\pi}{4}(25)^2\times1600 = 490.87\times1600 = 785\,398 \text{ mm}^3 \).</li>
+        <li>Volumetric strain under pressure p: \( \varepsilon_v = p/K = 100/(0.667\times10^5) = 1.5\times10^{-3} \).</li>
+        <li>Change in volume: \( \delta V = \varepsilon_v V = 1.5\times10^{-3}\times785\,398 = 1178.1 \text{ mm}^3 \) (decrease, because the pressure is compressive).</li>
+      </ol>
+      <p class="final">Answer: G = 0.4 × 10⁵ N/mm², K = 0.667 × 10⁵ N/mm², δV = 1178 mm³ (decrease)</p>
+    </article>
+
+    <article class="num" id="sm-u1-n4">
+      <h3>N4. A bar of rectangular section 22 mm × 54 mm and 430 mm long carries an axial pull of 86 kN. E = 1.05 × 10⁵ N/mm² and G = 0.45 × 10⁵ N/mm². Find the bulk modulus, the change in each dimension and the change in volume.</h3>
+      <p class="q-src">Feb-Mar 2022 (CBCS) Q3(b)</p>
+      <ol class="steps">
+        <li>Poisson's ratio from E = 2G(1 + μ): \( \mu = \dfrac{E}{2G} - 1 = \dfrac{1.05}{0.90} - 1 = 0.1667 \).</li>
+        <li>Bulk modulus: \( K = \dfrac{E}{3(1-2\mu)} = \dfrac{1.05\times10^5}{3(0.6667)} = 0.525\times10^5 \text{ N/mm}^2 \).</li>
+        <li>Stress: \( \sigma = \dfrac{86000}{22\times54} = \dfrac{86000}{1188} = 72.39 \text{ N/mm}^2 \).</li>
+        <li>Longitudinal strain: \( \varepsilon = \sigma/E = 72.39/(1.05\times10^5) = 6.894\times10^{-4} \).</li>
+        <li>Change in length: \( \delta L = 6.894\times10^{-4}\times430 = 0.2965 \text{ mm} \) (increase).</li>
+        <li>Lateral strain: \( \mu\varepsilon = 0.1667\times6.894\times10^{-4} = 1.149\times10^{-4} \).</li>
+        <li>Change in width: \( \delta b = 1.149\times10^{-4}\times54 = 0.00620 \text{ mm} \) (decrease); change in thickness: \( \delta t = 1.149\times10^{-4}\times22 = 0.00253 \text{ mm} \) (decrease).</li>
+        <li>Volumetric strain: \( \varepsilon_v = \varepsilon(1-2\mu) = 6.894\times10^{-4}\times0.6667 = 4.596\times10^{-4} \).</li>
+        <li>Change in volume: \( \delta V = 4.596\times10^{-4}\times(22\times54\times430) = 4.596\times10^{-4}\times510\,840 = 234.8 \text{ mm}^3 \) (increase).</li>
+      </ol>
+      <p class="final">Answer: K = 0.525 × 10⁵ N/mm²; δL = +0.2965 mm, δb = −0.0062 mm, δt = −0.00253 mm; δV = +234.8 mm³</p>
+    </article>
+
+    <article class="num" id="sm-u1-n5">
+      <h3>N5. A member ABCD carries point loads: 50 kN to the left at A, an unknown force P at B, 200 kN to the left at C and 80 kN to the right at D. AB = 900 mm (area 600 mm²), BC = 1000 mm (area 2400 mm²), CD = 1500 mm (area 1200 mm²). Find P for equilibrium and the total elongation. Take E = 2.1 × 10⁵ N/mm².</h3>
+      <p class="q-src">Based on Nov 2024 Q2(a) · Jan 2023 (CBCS) Q2(b)</p>
+      <aside class="note"><b>Data note.</b> The figure is lost in the scan. The areas, the lengths and the 50 kN and 200 kN loads are from the paper; the load directions and the 80 kN load at D are rebuilt. Jan 2023 gives E = 210 GN/m² (= 2.1 × 10⁵ N/mm²); Nov 2024 gives 2 × 10⁵ N/mm², which changes the answer to 0.625 mm.</aside>
+      <figure class="fig" id="sm-u1-f-n5">
+<svg viewBox="0 0 680 330" role="img" aria-label="Member ABCD with loads 50 kN, P, 200 kN and 80 kN and its axial force diagram">
+<defs><marker id="sm-u1-arw-n5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="50.0" y="97.0" width="153.0" height="26.0" class="ln fill-soft"/>
+<text x="126.5" y="115.0" class="lbl-sm" text-anchor="middle">600 mm²</text>
+<rect x="203.0" y="80.0" width="170.0" height="60.0" class="ln fill-soft"/>
+<text x="288.0" y="115.0" class="lbl-sm" text-anchor="middle">2400 mm²</text>
+<rect x="373.0" y="90.0" width="255.0" height="40.0" class="ln fill-soft"/>
+<text x="500.5" y="115.0" class="lbl-sm" text-anchor="middle">1200 mm²</text>
+<line x1="50.0" y1="110.0" x2="16.0" y2="110.0" class="ln" marker-end="url(#sm-u1-arw-n5)"/>
+<text x="33.0" y="91.0" class="lbl-sm" text-anchor="middle">50 kN</text>
+<line x1="203.0" y1="80.0" x2="203.0" y2="38.0" class="ln thin"/>
+<line x1="203.0" y1="38.0" x2="243.0" y2="38.0" class="ln" marker-end="url(#sm-u1-arw-n5)"/>
+<text x="223.0" y="28.0" class="lbl-sm" text-anchor="middle">P = ?</text>
+<line x1="373.0" y1="80.0" x2="373.0" y2="38.0" class="ln thin"/>
+<line x1="373.0" y1="38.0" x2="333.0" y2="38.0" class="ln" marker-end="url(#sm-u1-arw-n5)"/>
+<text x="353.0" y="28.0" class="lbl-sm" text-anchor="middle">200 kN</text>
+<line x1="628.0" y1="110.0" x2="662.0" y2="110.0" class="ln" marker-end="url(#sm-u1-arw-n5)"/>
+<text x="645.0" y="84.0" class="lbl-sm" text-anchor="middle">80 kN</text>
+<text x="50.0" y="162.0" class="lbl-b" text-anchor="middle">A</text>
+<text x="203.0" y="162.0" class="lbl-b" text-anchor="middle">B</text>
+<text x="373.0" y="162.0" class="lbl-b" text-anchor="middle">C</text>
+<text x="628.0" y="162.0" class="lbl-b" text-anchor="middle">D</text>
+<line x1="50.0" y1="168.0" x2="50.0" y2="198.0" class="ln thin"/>
+<line x1="203.0" y1="168.0" x2="203.0" y2="198.0" class="ln thin"/>
+<line x1="373.0" y1="168.0" x2="373.0" y2="198.0" class="ln thin"/>
+<line x1="628.0" y1="168.0" x2="628.0" y2="198.0" class="ln thin"/>
+<line x1="50.0" y1="192.0" x2="203.0" y2="192.0" class="ln thin" marker-end="url(#sm-u1-arw-n5)" marker-start="url(#sm-u1-arw-n5)"/>
+<text x="126.5" y="186.0" class="lbl-sm" text-anchor="middle">900</text>
+<line x1="203.0" y1="192.0" x2="373.0" y2="192.0" class="ln thin" marker-end="url(#sm-u1-arw-n5)" marker-start="url(#sm-u1-arw-n5)"/>
+<text x="288.0" y="186.0" class="lbl-sm" text-anchor="middle">1000</text>
+<line x1="373.0" y1="192.0" x2="628.0" y2="192.0" class="ln thin" marker-end="url(#sm-u1-arw-n5)" marker-start="url(#sm-u1-arw-n5)"/>
+<text x="500.5" y="186.0" class="lbl-sm" text-anchor="middle">1500</text>
+<rect x="50.0" y="242.0" width="153.0" height="20.0" class="ln fill-acc"/>
+<text x="126.5" y="257.0" class="lbl-sm" text-anchor="middle">+50 kN</text>
+<rect x="203.0" y="262.0" width="170.0" height="48.0" class="ln fill-acc2"/>
+<text x="288.0" y="291.0" class="lbl-sm" text-anchor="middle">−120 kN</text>
+<rect x="373.0" y="230.0" width="255.0" height="32.0" class="ln fill-acc"/>
+<text x="500.5" y="251.0" class="lbl-sm" text-anchor="middle">+80 kN</text>
+<line x1="35.0" y1="262.0" x2="643.0" y2="262.0" class="ln"/>
+</svg>
+<figcaption>Fig. N5 — Member ABCD (areas in mm², lengths in mm) and its axial force diagram.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Equilibrium (right = left): \( P + 80 = 50 + 200 \Rightarrow P = 170 \text{ kN} \), acting to the right.</li>
+        <li>Force in AB (left of a cut in AB: 50 kN pulls away): \( N_{AB} = +50 \text{ kN} \) (tension).</li>
+        <li>Force in BC (left side: 50 kN to the left, 170 kN to the right): \( N_{BC} = 50 - 170 = -120 \text{ kN} \) (compression).</li>
+        <li>Force in CD (right side: 80 kN pulls away): \( N_{CD} = +80 \text{ kN} \) (tension). Check from the left: 50 − 170 + 200 = 80 kN ✓.</li>
+        <li>Stresses: \( \sigma_{AB} = 50000/600 = 83.33 \), \( \sigma_{BC} = -120000/2400 = -50.0 \), \( \sigma_{CD} = 80000/1200 = 66.67 \text{ N/mm}^2 \).</li>
+        <li>Total elongation: \( \delta = \dfrac{1}{E}\left(\dfrac{50000\times900}{600} - \dfrac{120000\times1000}{2400} + \dfrac{80000\times1500}{1200}\right) \).</li>
+        <li>\( \delta = \dfrac{75000 - 50000 + 100000}{2.1\times10^5} = \dfrac{125000}{2.1\times10^5} = 0.595 \text{ mm} \).</li>
+      </ol>
+      <p class="final">Answer: P = 170 kN (to the right); σ = 83.3 N/mm² (T), 50 N/mm² (C), 66.7 N/mm² (T); total elongation = 0.595 mm</p>
+    </article>
+
+    <article class="num" id="sm-u1-n6">
+      <h3>N6. A steel bar ABCD has AB of 25 mm diameter and 400 mm length, BC of 40 mm diameter and 500 mm length, and CD of 30 mm diameter and 1000 mm length. Loads: 40 kN to the left at A, 60 kN to the right at B, P at C and 80 kN to the right at D. Find P, the stress in each part, the net deformation and the overall strain. E = 2 × 10⁵ N/mm².</h3>
+      <p class="q-src">Based on Nov-Dec 2025 Q2(a) · Aug-Sep 2023 Q1(a)</p>
+      <aside class="note"><b>Data note.</b> The scanned figures are not readable. This version keeps the type of question (unknown P at C, several loads, net deformation) with complete data.</aside>
+      <figure class="fig" id="sm-u1-f-n6">
+<svg viewBox="0 0 680 230" role="img" aria-label="Bar ABCD with diameters 25, 40 and 30 mm and loads 40 kN, 60 kN, P and 80 kN">
+<defs><marker id="sm-u1-arw-n6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60.0" y="102.0" width="120.0" height="36.0" class="ln fill-soft"/>
+<text x="120.0" y="125.0" class="lbl-sm" text-anchor="middle">Ø25</text>
+<rect x="180.0" y="91.0" width="150.0" height="58.0" class="ln fill-soft"/>
+<text x="255.0" y="125.0" class="lbl-sm" text-anchor="middle">Ø40</text>
+<rect x="330.0" y="98.5" width="300.0" height="43.0" class="ln fill-soft"/>
+<text x="480.0" y="125.0" class="lbl-sm" text-anchor="middle">Ø30</text>
+<line x1="60.0" y1="120.0" x2="24.0" y2="120.0" class="ln" marker-end="url(#sm-u1-arw-n6)"/>
+<text x="42.0" y="96.0" class="lbl-sm" text-anchor="middle">40 kN</text>
+<line x1="180.0" y1="91.0" x2="180.0" y2="38.0" class="ln thin"/>
+<line x1="180.0" y1="38.0" x2="220.0" y2="38.0" class="ln" marker-end="url(#sm-u1-arw-n6)"/>
+<text x="200.0" y="28.0" class="lbl-sm" text-anchor="middle">60 kN</text>
+<line x1="330.0" y1="91.0" x2="330.0" y2="38.0" class="ln thin"/>
+<line x1="330.0" y1="38.0" x2="290.0" y2="38.0" class="ln" marker-end="url(#sm-u1-arw-n6)"/>
+<text x="310.0" y="28.0" class="lbl-sm" text-anchor="middle">P = ?</text>
+<line x1="630.0" y1="120.0" x2="664.0" y2="120.0" class="ln" marker-end="url(#sm-u1-arw-n6)"/>
+<text x="647.0" y="92.5" class="lbl-sm" text-anchor="middle">80 kN</text>
+<text x="60.0" y="172.0" class="lbl-b" text-anchor="middle">A</text>
+<text x="180.0" y="172.0" class="lbl-b" text-anchor="middle">B</text>
+<text x="330.0" y="172.0" class="lbl-b" text-anchor="middle">C</text>
+<text x="630.0" y="172.0" class="lbl-b" text-anchor="middle">D</text>
+<line x1="60.0" y1="178.0" x2="60.0" y2="208.0" class="ln thin"/>
+<line x1="180.0" y1="178.0" x2="180.0" y2="208.0" class="ln thin"/>
+<line x1="330.0" y1="178.0" x2="330.0" y2="208.0" class="ln thin"/>
+<line x1="630.0" y1="178.0" x2="630.0" y2="208.0" class="ln thin"/>
+<line x1="60.0" y1="202.0" x2="180.0" y2="202.0" class="ln thin" marker-end="url(#sm-u1-arw-n6)" marker-start="url(#sm-u1-arw-n6)"/>
+<text x="120.0" y="196.0" class="lbl-sm" text-anchor="middle">400</text>
+<line x1="180.0" y1="202.0" x2="330.0" y2="202.0" class="ln thin" marker-end="url(#sm-u1-arw-n6)" marker-start="url(#sm-u1-arw-n6)"/>
+<text x="255.0" y="196.0" class="lbl-sm" text-anchor="middle">500</text>
+<line x1="330.0" y1="202.0" x2="630.0" y2="202.0" class="ln thin" marker-end="url(#sm-u1-arw-n6)" marker-start="url(#sm-u1-arw-n6)"/>
+<text x="480.0" y="196.0" class="lbl-sm" text-anchor="middle">1000</text>
+</svg>
+<figcaption>Fig. N6 — Steel bar ABCD (diameters and lengths in mm).</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Equilibrium: forces to the right = 60 + 80 = 140 kN; to the left = 40 + P. So \( P = 100 \text{ kN} \), acting to the left.</li>
+        <li>Segment forces: \( N_{AB} = +40 \text{ kN} \) (T); \( N_{BC} = 40 - 60 = -20 \text{ kN} \) (C); \( N_{CD} = -20 + 100 = +80 \text{ kN} \) (T), which equals the 80 kN at D ✓.</li>
+        <li>Areas: \( A_{AB} = 490.87 \), \( A_{BC} = 1256.64 \), \( A_{CD} = 706.86 \text{ mm}^2 \).</li>
+        <li>Stresses: \( \sigma_{AB} = 40000/490.87 = 81.49 \text{ (T)} \), \( \sigma_{BC} = 20000/1256.64 = 15.92 \text{ (C)} \), \( \sigma_{CD} = 80000/706.86 = 113.18 \text{ N/mm}^2 \text{ (T)} \).</li>
+        <li>Deformations: \( \delta_{AB} = \dfrac{40000\times400}{490.87\times2\times10^5} = +0.1630 \), \( \delta_{BC} = -\dfrac{20000\times500}{1256.64\times2\times10^5} = -0.0398 \), \( \delta_{CD} = \dfrac{80000\times1000}{706.86\times2\times10^5} = +0.5659 \text{ mm} \).</li>
+        <li>Net deformation: \( \delta = 0.1630 - 0.0398 + 0.5659 = 0.6891 \text{ mm} \) (extension).</li>
+        <li>Overall strain: \( \delta / L_{total} = 0.6891/1900 = 3.63\times10^{-4} \).</li>
+      </ol>
+      <p class="final">Answer: P = 100 kN (to the left); σ<sub>AB</sub> = 81.5 N/mm² (T), σ<sub>BC</sub> = 15.9 N/mm² (C), σ<sub>CD</sub> = 113.2 N/mm² (T); net elongation = 0.689 mm; strain = 3.63 × 10⁻⁴</p>
+    </article>
+
+    <article class="num" id="sm-u1-n7">
+      <h3>N7. A symmetrical steel bar of total length 400 mm has end parts of 50 mm diameter and a middle part of unknown diameter d. It carries a tensile load of 150 kN. If the stress in the middle part is limited to 160 N/mm², find d. Also find the length of the middle part if the total elongation is to be 0.25 mm. E = 2 × 10⁵ N/mm².</h3>
+      <p class="q-src">Based on Jan 2025 Q1(b) (same type: Nov-Dec 2025 Q1(b))</p>
+      <aside class="note"><b>Data note.</b> The figure is missing in the scan. The end diameter (50 mm) and the total length (400 mm) are assumed values; the load, stress limit, elongation and E are from the paper.</aside>
+      <figure class="fig" id="sm-u1-f-n7">
+<svg viewBox="0 0 640 230" role="img" aria-label="Symmetrical bar with 50 mm diameter ends and an unknown middle diameter, total length 400 mm">
+<defs><marker id="sm-u1-arw-n7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="80.0" y="65.0" width="110.0" height="60.0" class="ln fill-soft"/>
+<text x="135.0" y="100.0" class="lbl-sm" text-anchor="middle">Ø50</text>
+<rect x="190.0" y="77.0" width="260.0" height="36.0" class="ln fill-soft"/>
+<text x="320.0" y="100.0" class="lbl-sm" text-anchor="middle">d = ?</text>
+<rect x="450.0" y="65.0" width="110.0" height="60.0" class="ln fill-soft"/>
+<text x="505.0" y="100.0" class="lbl-sm" text-anchor="middle">Ø50</text>
+<line x1="80.0" y1="95.0" x2="30.0" y2="95.0" class="ln" marker-end="url(#sm-u1-arw-n7)"/>
+<text x="55.0" y="59.0" class="lbl-sm" text-anchor="middle">150 kN</text>
+<line x1="560.0" y1="95.0" x2="610.0" y2="95.0" class="ln" marker-end="url(#sm-u1-arw-n7)"/>
+<text x="585.0" y="59.0" class="lbl-sm" text-anchor="middle">150 kN</text>
+<line x1="80.0" y1="128.0" x2="80.0" y2="178.0" class="ln thin"/>
+<line x1="190.0" y1="128.0" x2="190.0" y2="178.0" class="ln thin"/>
+<line x1="450.0" y1="128.0" x2="450.0" y2="178.0" class="ln thin"/>
+<line x1="560.0" y1="128.0" x2="560.0" y2="178.0" class="ln thin"/>
+<line x1="80.0" y1="160.0" x2="190.0" y2="160.0" class="ln thin" marker-end="url(#sm-u1-arw-n7)" marker-start="url(#sm-u1-arw-n7)"/>
+<text x="135.0" y="154.0" class="lbl" text-anchor="middle">L₁</text>
+<line x1="190.0" y1="160.0" x2="450.0" y2="160.0" class="ln thin" marker-end="url(#sm-u1-arw-n7)" marker-start="url(#sm-u1-arw-n7)"/>
+<text x="320.0" y="154.0" class="lbl" text-anchor="middle">L₂ = ?</text>
+<line x1="450.0" y1="160.0" x2="560.0" y2="160.0" class="ln thin" marker-end="url(#sm-u1-arw-n7)" marker-start="url(#sm-u1-arw-n7)"/>
+<text x="505.0" y="154.0" class="lbl" text-anchor="middle">L₁</text>
+<line x1="80.0" y1="180.0" x2="80.0" y2="205.0" class="ln thin"/>
+<line x1="560.0" y1="180.0" x2="560.0" y2="205.0" class="ln thin"/>
+<line x1="80.0" y1="200.0" x2="560.0" y2="200.0" class="ln thin" marker-end="url(#sm-u1-arw-n7)" marker-start="url(#sm-u1-arw-n7)"/>
+<text x="320.0" y="194.0" class="lbl" text-anchor="middle">400 mm</text>
+</svg>
+<figcaption>Fig. N7 — Symmetrical bar: end parts Ø50 mm, middle part Ø d (unknown), total length 400 mm.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Area of the middle part: \( A_2 = P/\sigma = 150000/160 = 937.5 \text{ mm}^2 \).</li>
+        <li>Diameter: \( d = \sqrt{4A_2/\pi} = \sqrt{4\times937.5/\pi} = 34.55 \text{ mm} \).</li>
+        <li>Area of each end part: \( A_1 = \frac{\pi}{4}(50)^2 = 1963.5 \text{ mm}^2 \). Let the middle length be L₂; the two ends together are (400 − L₂).</li>
+        <li>Total elongation: \( \delta = \dfrac{P}{E}\left(\dfrac{400 - L_2}{A_1} + \dfrac{L_2}{A_2}\right) = 0.25 \).</li>
+        <li>\( \dfrac{150000}{2\times10^5} = 0.75 \), so \( \dfrac{400 - L_2}{1963.5} + \dfrac{L_2}{937.5} = \dfrac{0.25}{0.75} = 0.3333 \).</li>
+        <li>\( 0.20372 - 5.093\times10^{-4}L_2 + 1.0667\times10^{-3}L_2 = 0.3333 \Rightarrow 5.574\times10^{-4}L_2 = 0.12962 \).</li>
+        <li>\( L_2 = 232.6 \text{ mm} \); each end part = (400 − 232.6)/2 = 83.7 mm.</li>
+      </ol>
+      <p class="final">Answer: d = 34.55 mm; length of middle part = 232.6 mm (each end 83.7 mm)</p>
+    </article>
+
+    <article class="num" id="sm-u1-n8">
+      <h3>N8. A steel bar ABC has a uniform part AB of 20 mm diameter and 400 mm length, and a part BC that tapers uniformly from 20 mm to 40 mm diameter over 600 mm. Find the extension of the bar under an axial load of 20 kN. E = 2 × 10⁵ N/mm².</h3>
+      <p class="q-src">Based on Nov-Dec 2025 Q2(b)</p>
+      <aside class="note"><b>Data note.</b> Fig. 3 of the paper is missing; the load (20 kN) and E are from the paper, the dimensions are rebuilt.</aside>
+      <figure class="fig" id="sm-u1-f-n8">
+<svg viewBox="0 0 640 210" role="img" aria-label="Bar with a uniform 20 mm part and a part tapering from 20 mm to 40 mm">
+<defs><marker id="sm-u1-arw-n8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70.0" y="83.0" width="180.0" height="24.0" class="ln fill-soft"/>
+<polygon points="250.0,83.0 520.0,71.0 520.0,119.0 250.0,107.0" class="ln fill-soft"/>
+<text x="160.0" y="75.0" class="lbl-sm" text-anchor="middle">Ø20</text>
+<text x="400.0" y="65.0" class="lbl-sm" text-anchor="middle">Ø20 → Ø40</text>
+<line x1="70.0" y1="95.0" x2="28.0" y2="95.0" class="ln" marker-end="url(#sm-u1-arw-n8)"/>
+<text x="49.0" y="83.0" class="lbl-sm" text-anchor="middle">20 kN</text>
+<line x1="520.0" y1="95.0" x2="568.0" y2="95.0" class="ln" marker-end="url(#sm-u1-arw-n8)"/>
+<text x="544.0" y="83.0" class="lbl-sm" text-anchor="middle">20 kN</text>
+<text x="70.0" y="140.0" class="lbl-b" text-anchor="middle">A</text>
+<text x="250.0" y="140.0" class="lbl-b" text-anchor="middle">B</text>
+<text x="520.0" y="140.0" class="lbl-b" text-anchor="middle">C</text>
+<line x1="70.0" y1="148.0" x2="70.0" y2="185.0" class="ln thin"/>
+<line x1="250.0" y1="148.0" x2="250.0" y2="185.0" class="ln thin"/>
+<line x1="520.0" y1="148.0" x2="520.0" y2="185.0" class="ln thin"/>
+<line x1="70.0" y1="178.0" x2="250.0" y2="178.0" class="ln thin" marker-end="url(#sm-u1-arw-n8)" marker-start="url(#sm-u1-arw-n8)"/>
+<text x="160.0" y="172.0" class="lbl-sm" text-anchor="middle">400</text>
+<line x1="250.0" y1="178.0" x2="520.0" y2="178.0" class="ln thin" marker-end="url(#sm-u1-arw-n8)" marker-start="url(#sm-u1-arw-n8)"/>
+<text x="385.0" y="172.0" class="lbl-sm" text-anchor="middle">600</text>
+</svg>
+<figcaption>Fig. N8 — Bar with a uniform part (Ø20 mm, 400 mm) and a tapered part (Ø20 to Ø40 mm, 600 mm).</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Uniform part: \( A_{AB} = \frac{\pi}{4}(20)^2 = 314.16 \text{ mm}^2 \); \( \delta_{AB} = \dfrac{20000\times400}{314.16\times2\times10^5} = 0.1273 \text{ mm} \).</li>
+        <li>Tapered part: \( \delta_{BC} = \dfrac{4PL}{\pi E d_1 d_2} = \dfrac{4\times20000\times600}{\pi\times2\times10^5\times40\times20} = 0.0955 \text{ mm} \).</li>
+        <li>Total extension: \( \delta = 0.1273 + 0.0955 = 0.2228 \text{ mm} \).</li>
+        <li>Maximum stress (in the 20 mm part): \( 20000/314.16 = 63.66 \text{ N/mm}^2 \).</li>
+      </ol>
+      <p class="final">Answer: total extension = 0.223 mm (σ<sub>max</sub> = 63.7 N/mm²)</p>
+    </article>
+
+    <article class="num" id="sm-u1-n9">
+      <h3>N9. A steel plate 20 mm thick tapers uniformly in width from 100 mm to 50 mm over a length of 500 mm. Find the elongation under an axial pull of 80 kN, and the maximum and minimum stresses. E = 2 × 10⁵ N/mm².</h3>
+      <p class="q-src">Syllabus topic (type of Feb-Mar 2022 (CBCS) Q3(a))</p>
+      <figure class="fig" id="sm-u1-f-n9">
+<svg viewBox="0 0 660 300" role="img" aria-label="Steel plate 20 mm thick tapering from 100 mm to 50 mm width over 500 mm">
+<defs><marker id="sm-u1-arw-n9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="90.0,85.0 450.0,120.0 450.0,180.0 90.0,215.0" class="ln fill-soft"/>
+<line x1="60.0" y1="150.0" x2="480.0" y2="150.0" class="ln thin hid"/>
+<line x1="106.0" y1="87.0" x2="106.0" y2="213.0" class="ln thin" marker-end="url(#sm-u1-arw-n9)" marker-start="url(#sm-u1-arw-n9)"/>
+<text x="113.0" y="132.0" class="lbl">100</text>
+<line x1="435.0" y1="122.0" x2="435.0" y2="178.0" class="ln thin" marker-end="url(#sm-u1-arw-n9)" marker-start="url(#sm-u1-arw-n9)"/>
+<text x="428.0" y="142.0" class="lbl" text-anchor="end">50</text>
+<line x1="90.0" y1="150.0" x2="42.0" y2="150.0" class="ln" marker-end="url(#sm-u1-arw-n9)"/>
+<line x1="450.0" y1="150.0" x2="498.0" y2="150.0" class="ln" marker-end="url(#sm-u1-arw-n9)"/>
+<text x="54.0" y="140.0" class="lbl" text-anchor="middle">80 kN</text>
+<text x="486.0" y="140.0" class="lbl" text-anchor="middle">80 kN</text>
+<line x1="90.0" y1="217.0" x2="90.0" y2="282.0" class="ln thin"/>
+<line x1="450.0" y1="182.0" x2="450.0" y2="282.0" class="ln thin"/>
+<line x1="90.0" y1="274.0" x2="450.0" y2="274.0" class="ln thin" marker-end="url(#sm-u1-arw-n9)" marker-start="url(#sm-u1-arw-n9)"/>
+<text x="270.0" y="268.0" class="lbl" text-anchor="middle">500</text>
+<rect x="560.0" y="85.0" width="30.0" height="130.0" class="ln fill-hatch"/>
+<line x1="560.0" y1="80.0" x2="560.0" y2="62.0" class="ln thin"/>
+<line x1="590.0" y1="80.0" x2="590.0" y2="62.0" class="ln thin"/>
+<line x1="560.0" y1="68.0" x2="590.0" y2="68.0" class="ln thin" marker-end="url(#sm-u1-arw-n9)" marker-start="url(#sm-u1-arw-n9)"/>
+<text x="575.0" y="62.0" class="lbl" text-anchor="middle">20</text>
+<text x="575.0" y="240.0" class="lbl-sm" text-anchor="middle">Side view</text>
+<text x="270.0" y="60.0" class="lbl-sm" text-anchor="middle">Front view</text>
+</svg>
+<figcaption>Fig. N9 — Tapering steel plate, t = 20 mm, width 100 mm to 50 mm, length 500 mm, P = 80 kN.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Formula: \( \delta = \dfrac{PL}{Et(a-b)}\ln\dfrac{a}{b} \), with a = 100, b = 50, t = 20, L = 500.</li>
+        <li>\( \ln(100/50) = \ln 2 = 0.6931 \).</li>
+        <li>\( \delta = \dfrac{80000\times500\times0.6931}{2\times10^5\times20\times50} = \dfrac{2.7726\times10^7}{2\times10^8} = 0.1386 \text{ mm} \).</li>
+        <li>Maximum stress (narrow end): \( 80000/(50\times20) = 80 \text{ N/mm}^2 \); minimum (wide end): \( 80000/(100\times20) = 40 \text{ N/mm}^2 \).</li>
+      </ol>
+      <p class="final">Answer: elongation = 0.139 mm; σ<sub>max</sub> = 80 N/mm², σ<sub>min</sub> = 40 N/mm²</p>
+    </article>
+
+    <article class="num" id="sm-u1-n10">
+      <h3>N10. A round bar ABCD has an aluminium part AB (40 mm diameter, 600 mm long), a steel part BC that tapers from 40 mm to 12.5 mm diameter (700 mm long), and a steel part CD (12.5 mm diameter, 500 mm long). Loads: 4P to the left at A, 3P to the right at B and P to the right at D. Find the largest P if the net deformation must not exceed 1 mm. E<sub>steel</sub> = 200 GPa, E<sub>aluminium</sub> = 70 GPa.</h3>
+      <p class="q-src">Based on Jan 2025 Q2(b)</p>
+      <aside class="note"><b>Data note.</b> The diameters (40 and 12.5 mm), lengths (600, 700, 500 mm), moduli and loads 4P and 3P are from the paper; the arrangement of the parts is rebuilt because the figure is missing.</aside>
+      <figure class="fig" id="sm-u1-f-n10">
+<svg viewBox="0 0 680 240" role="img" aria-label="Bar with aluminium part AB, steel tapered part BC and steel part CD, loads 4P, 3P and P">
+<defs><marker id="sm-u1-arw-n10" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70.0" y="90.0" width="180.0" height="50.0" class="ln fill-acc2"/>
+<text x="160.0" y="120.0" class="lbl-sm" text-anchor="middle">Aluminium Ø40</text>
+<polygon points="250.0,90.0 460.0,107.0 460.0,123.0 250.0,140.0" class="ln fill-soft"/>
+<text x="345.0" y="120.0" class="lbl-sm" text-anchor="middle">Steel</text>
+<rect x="460.0" y="107.0" width="150.0" height="16.0" class="ln fill-soft"/>
+<text x="535.0" y="99.0" class="lbl-sm" text-anchor="middle">Steel Ø12.5</text>
+<line x1="70.0" y1="115.0" x2="30.0" y2="115.0" class="ln" marker-end="url(#sm-u1-arw-n10)"/>
+<text x="50.0" y="103.0" class="lbl-sm" text-anchor="middle">4P</text>
+<line x1="250.0" y1="90.0" x2="250.0" y2="38.0" class="ln thin"/>
+<line x1="250.0" y1="38.0" x2="290.0" y2="38.0" class="ln" marker-end="url(#sm-u1-arw-n10)"/>
+<text x="270.0" y="28.0" class="lbl-sm" text-anchor="middle">3P</text>
+<line x1="610.0" y1="115.0" x2="650.0" y2="115.0" class="ln" marker-end="url(#sm-u1-arw-n10)"/>
+<text x="630.0" y="103.0" class="lbl-sm" text-anchor="middle">P</text>
+<text x="70.0" y="166.0" class="lbl-b" text-anchor="middle">A</text>
+<text x="250.0" y="166.0" class="lbl-b" text-anchor="middle">B</text>
+<text x="460.0" y="166.0" class="lbl-b" text-anchor="middle">C</text>
+<text x="610.0" y="166.0" class="lbl-b" text-anchor="middle">D</text>
+<line x1="70.0" y1="174.0" x2="70.0" y2="212.0" class="ln thin"/>
+<line x1="250.0" y1="174.0" x2="250.0" y2="212.0" class="ln thin"/>
+<line x1="460.0" y1="174.0" x2="460.0" y2="212.0" class="ln thin"/>
+<line x1="610.0" y1="174.0" x2="610.0" y2="212.0" class="ln thin"/>
+<line x1="70.0" y1="205.0" x2="250.0" y2="205.0" class="ln thin" marker-end="url(#sm-u1-arw-n10)" marker-start="url(#sm-u1-arw-n10)"/>
+<text x="160.0" y="199.0" class="lbl-sm" text-anchor="middle">600</text>
+<line x1="250.0" y1="205.0" x2="460.0" y2="205.0" class="ln thin" marker-end="url(#sm-u1-arw-n10)" marker-start="url(#sm-u1-arw-n10)"/>
+<text x="355.0" y="199.0" class="lbl-sm" text-anchor="middle">700</text>
+<line x1="460.0" y1="205.0" x2="610.0" y2="205.0" class="ln thin" marker-end="url(#sm-u1-arw-n10)" marker-start="url(#sm-u1-arw-n10)"/>
+<text x="535.0" y="199.0" class="lbl-sm" text-anchor="middle">500</text>
+</svg>
+<figcaption>Fig. N10 — AB aluminium Ø40 mm; BC steel, tapering Ø40 to Ø12.5 mm; CD steel Ø12.5 mm (lengths in mm).</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Equilibrium check: right = 3P + P = 4P = left ✓.</li>
+        <li>Segment forces: \( N_{AB} = 4P \) (T); \( N_{BC} = 4P - 3P = P \) (T); \( N_{CD} = P \) (T).</li>
+        <li>Areas: \( A_{AB} = \frac{\pi}{4}(40)^2 = 1256.64 \text{ mm}^2 \), \( A_{CD} = \frac{\pi}{4}(12.5)^2 = 122.72 \text{ mm}^2 \).</li>
+        <li>\( \delta_{AB} = \dfrac{4P\times600}{1256.64\times70000} = 2.728\times10^{-5}P \).</li>
+        <li>\( \delta_{BC} = \dfrac{4(P)(700)}{\pi\times2\times10^5\times40\times12.5} = 8.913\times10^{-6}P \).</li>
+        <li>\( \delta_{CD} = \dfrac{P\times500}{122.72\times2\times10^5} = 2.037\times10^{-5}P \).</li>
+        <li>Net: \( \delta = (2.728 + 0.891 + 2.037)\times10^{-5}P = 5.657\times10^{-5}P \le 1 \text{ mm} \).</li>
+        <li>\( P \le 1/(5.657\times10^{-5}) = 17\,678 \text{ N} = 17.68 \text{ kN} \).</li>
+        <li>Check stresses: \( \sigma_{AB} = 4(17678)/1256.64 = 56.3 \text{ N/mm}^2 \); \( \sigma_{CD} = 17678/122.72 = 144.0 \text{ N/mm}^2 \) — both safe.</li>
+      </ol>
+      <p class="final">Answer: P = 17.68 kN (loads 70.7 kN, 53.0 kN, 17.7 kN)</p>
+    </article>
+
+    <article class="num" id="sm-u1-n11">
+      <h3>N11. A rigid plate is supported by a central steel rod (area 1600 mm², length 300 mm) and two brass rods (area 1000 mm² each, length 200 mm) that stand on 100 mm rigid blocks, so that all rods touch the plate. The plate carries 50 kN. Find the stress and load in each rod and the shortening. E<sub>steel</sub> = 2 × 10⁵ N/mm², E<sub>brass</sub> = 1 × 10⁵ N/mm².</h3>
+      <p class="q-src">Based on Nov 2024 Q2(b) · Aug-Sep 2023 Q1(b)</p>
+      <aside class="note"><b>Data note.</b> Areas, load and moduli are from the papers. The scan shows the lengths "200 mm" and "100 mm"; this version reads them as brass rods of 200 mm on 100 mm blocks.</aside>
+      <figure class="fig" id="sm-u1-f-n11">
+<svg viewBox="0 0 640 320" role="img" aria-label="Rigid plate carried by a central steel rod and two shorter brass rods standing on blocks">
+<defs><marker id="sm-u1-arw-n11" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="80.0" y="280.0" width="480.0" height="12.0" class="fill-hatch"/>
+<line x1="80.0" y1="280.0" x2="560.0" y2="280.0" class="ln"/>
+<rect x="300.0" y="80.0" width="40.0" height="200.0" class="ln fill-acc2"/>
+<text x="324.0" y="180.0" class="lbl-sm" text-anchor="middle" transform="rotate(-90 324.0 180.0)">Steel</text>
+<rect x="133.0" y="213.0" width="44.0" height="67.0" class="fill-hatch"/>
+<rect x="133.0" y="213.0" width="44.0" height="67.0" class="ln"/>
+<rect x="140.0" y="80.0" width="30.0" height="133.0" class="ln fill-acc"/>
+<text x="159.0" y="147.0" class="lbl-sm" text-anchor="middle" transform="rotate(-90 159.0 147.0)">Brass</text>
+<rect x="433.0" y="213.0" width="44.0" height="67.0" class="fill-hatch"/>
+<rect x="433.0" y="213.0" width="44.0" height="67.0" class="ln"/>
+<rect x="440.0" y="80.0" width="30.0" height="133.0" class="ln fill-acc"/>
+<text x="459.0" y="147.0" class="lbl-sm" text-anchor="middle" transform="rotate(-90 459.0 147.0)">Brass</text>
+<rect x="120.0" y="65.0" width="400.0" height="15.0" class="ln fill-soft"/>
+<text x="110.0" y="77.0" class="lbl-sm" text-anchor="end">Rigid plate</text>
+<line x1="320.0" y1="18.0" x2="320.0" y2="62.0" class="ln" marker-end="url(#sm-u1-arw-n11)"/>
+<text x="334.0" y="34.0" class="lbl-sm">50 kN</text>
+<line x1="372.0" y1="80.0" x2="372.0" y2="280.0" class="ln thin" marker-end="url(#sm-u1-arw-n11)" marker-start="url(#sm-u1-arw-n11)"/>
+<text x="379.0" y="185.0" class="lbl-sm">300</text>
+<line x1="500.0" y1="80.0" x2="500.0" y2="213.0" class="ln thin" marker-end="url(#sm-u1-arw-n11)" marker-start="url(#sm-u1-arw-n11)"/>
+<text x="507.0" y="151.5" class="lbl-sm">200</text>
+<line x1="500.0" y1="213.0" x2="500.0" y2="280.0" class="ln thin" marker-end="url(#sm-u1-arw-n11)" marker-start="url(#sm-u1-arw-n11)"/>
+<text x="507.0" y="251.5" class="lbl-sm">100</text>
+<line x1="472.0" y1="213.0" x2="505.0" y2="213.0" class="ln thin"/>
+</svg>
+<figcaption>Fig. N11 — Steel rod (1600 mm², 300 mm) and two brass rods (1000 mm² each, 200 mm, on 100 mm rigid blocks) carry 50 kN through a rigid plate.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Compatibility (the rigid plate moves down by one amount δ): \( \dfrac{\sigma_s L_s}{E_s} = \dfrac{\sigma_b L_b}{E_b} \).</li>
+        <li>\( \sigma_s = \sigma_b\dfrac{L_b}{L_s}\cdot\dfrac{E_s}{E_b} = \sigma_b\times\dfrac{200}{300}\times2 = 1.333\,\sigma_b \).</li>
+        <li>Equilibrium: \( \sigma_s A_s + 2\sigma_b A_b = 50000 \Rightarrow 1.333\sigma_b(1600) + 2\sigma_b(1000) = 50000 \).</li>
+        <li>\( 4133.3\,\sigma_b = 50000 \Rightarrow \sigma_b = 12.10 \text{ N/mm}^2 \); \( \sigma_s = 1.333\times12.10 = 16.13 \text{ N/mm}^2 \) (both compressive).</li>
+        <li>Loads: \( P_s = 16.13\times1600 = 25.81 \text{ kN} \); \( P_b = 12.10\times1000 = 12.10 \text{ kN} \) each. Check: 25.81 + 2(12.10) = 50.0 kN ✓.</li>
+        <li>Shortening: \( \delta = \dfrac{16.13\times300}{2\times10^5} = 0.0242 \text{ mm} \) (same for brass: 12.10 × 200/10⁵ = 0.0242 mm ✓).</li>
+      </ol>
+      <p class="final">Answer: σ<sub>steel</sub> = 16.13 N/mm², σ<sub>brass</sub> = 12.10 N/mm²; P<sub>steel</sub> = 25.81 kN, P<sub>brass</sub> = 12.10 kN each; shortening = 0.0242 mm</p>
+    </article>
+
+    <article class="num" id="sm-u1-n12">
+      <h3>N12. A composite column has a steel tube (internal diameter 100 mm, external 120 mm) placed concentrically inside a brass tube (internal 140 mm, external 160 mm). Both tubes are 1500 mm long and carry a compressive load of 500 kN through rigid end plates. Find the load carried by each tube, the stresses and the change in length. E<sub>s</sub> = 200 GPa, E<sub>b</sub> = 100 GPa.</h3>
+      <p class="q-src">Aug-Sep 2023 Q4(a)</p>
+      <figure class="fig" id="sm-u1-f-n12">
+<svg viewBox="0 0 640 300" role="img" aria-label="Cross-section of a steel tube inside a brass tube and elevation with a 500 kN load">
+<defs><marker id="sm-u1-arw-n12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M40,150 a120,120 0 1,0 240,0 a120,120 0 1,0 -240,0 M55,150 a105,105 0 1,0 210,0 a105,105 0 1,0 -210,0" class="ln fill-acc" fill-rule="evenodd"/>
+<path d="M70,150 a90,90 0 1,0 180,0 a90,90 0 1,0 -180,0 M85,150 a75,75 0 1,0 150,0 a75,75 0 1,0 -150,0" class="ln fill-acc2" fill-rule="evenodd"/>
+<text x="160.0" y="144.0" class="lbl-sm" text-anchor="middle">Steel</text>
+<text x="160.0" y="162.0" class="lbl-sm" text-anchor="middle">Ø100 / Ø120</text>
+<line x1="245.0" y1="65.0" x2="330.0" y2="40.0" class="ln thin"/>
+<text x="336.0" y="44.0" class="lbl-sm">Brass Ø140 / Ø160</text>
+<rect x="410.0" y="260.0" width="200.0" height="12.0" class="fill-hatch"/>
+<line x1="410.0" y1="260.0" x2="610.0" y2="260.0" class="ln"/>
+<rect x="430.0" y="90.0" width="10.0" height="170.0" class="ln fill-acc"/>
+<rect x="580.0" y="90.0" width="10.0" height="170.0" class="ln fill-acc"/>
+<rect x="450.0" y="90.0" width="8.0" height="170.0" class="ln fill-acc2"/>
+<rect x="562.0" y="90.0" width="8.0" height="170.0" class="ln fill-acc2"/>
+<rect x="420.0" y="76.0" width="190.0" height="14.0" class="ln fill-soft"/>
+<line x1="515.0" y1="30.0" x2="515.0" y2="73.0" class="ln" marker-end="url(#sm-u1-arw-n12)"/>
+<text x="528.0" y="48.0" class="lbl-sm">500 kN</text>
+<line x1="410.0" y1="90.0" x2="410.0" y2="260.0" class="ln thin" marker-end="url(#sm-u1-arw-n12)" marker-start="url(#sm-u1-arw-n12)"/>
+<text x="403.0" y="180.0" class="lbl-sm" text-anchor="end">1500</text>
+</svg>
+<figcaption>Fig. N12 — Steel tube (Ø100/Ø120 mm) inside a brass tube (Ø140/Ø160 mm), both 1500 mm long, loaded by 500 kN through rigid plates.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Areas: \( A_s = \frac{\pi}{4}(120^2 - 100^2) = 3455.75 \text{ mm}^2 \); \( A_b = \frac{\pi}{4}(160^2 - 140^2) = 4712.39 \text{ mm}^2 \).</li>
+        <li>Compatibility (equal lengths, equal strain): \( \sigma_s = \dfrac{E_s}{E_b}\sigma_b = 2\sigma_b \).</li>
+        <li>Equilibrium: \( 2\sigma_b(3455.75) + \sigma_b(4712.39) = 500000 \Rightarrow 11\,623.9\,\sigma_b = 500000 \).</li>
+        <li>\( \sigma_b = 43.02 \text{ N/mm}^2 \); \( \sigma_s = 86.03 \text{ N/mm}^2 \) (compressive).</li>
+        <li>Loads: \( P_s = 86.03\times3455.75 = 297.3 \text{ kN} \); \( P_b = 43.02\times4712.39 = 202.7 \text{ kN} \). Sum = 500 kN ✓.</li>
+        <li>Change in length: \( \delta = \sigma_b L/E_b = 43.02\times1500/(1\times10^5) = 0.645 \text{ mm} \) (shortening).</li>
+      </ol>
+      <p class="final">Answer: P<sub>steel</sub> = 297.3 kN, P<sub>brass</sub> = 202.7 kN; σ<sub>steel</sub> = 86.0 N/mm², σ<sub>brass</sub> = 43.0 N/mm²; shortening = 0.645 mm</p>
+    </article>
+
+    <h3 id="sm-u1-practice">Practice problems</h3>
+
+    <article class="num practice" id="sm-u1-p1">
+      <h3>P1. A mild steel bar of 16 mm diameter is tested in tension. It yields at a load of 92 kN, reaches a maximum load of 182 kN and fails at 69 kN. Find the yield stress, the ultimate stress and the (nominal) breaking stress. What is the working stress for a factor of safety of 2 on yield?</h3>
+      <p class="q-src">Mar-Apr 2021 (CBCS) Q2(b)</p>
+      <aside class="note"><b>Data note.</b> The loads are as printed in the paper. They give stresses higher than typical mild steel (yield about 250 N/mm²); solve with the given values.</aside>
+      <p class="final">Answer: yield stress = 457.6 N/mm², ultimate stress = 905.2 N/mm², breaking stress = 343.2 N/mm²; working stress = 228.8 N/mm²</p>
+    </article>
+
+    <article class="num practice" id="sm-u1-p2">
+      <h3>P2. A symmetrical steel bar (total length 400 mm, end parts 50 mm diameter) carries a tensile load of 150 kN. Find the diameter of the middle part if its stress is 200 N/mm², and the length of the middle part if the total extension is 0.2 mm. E = 2.06 × 10⁵ N/mm².</h3>
+      <p class="q-src">Based on Nov-Dec 2025 Q1(b)</p>
+      <p class="final">Answer: d = 30.90 mm; length of middle part = 86.1 mm (each end 157.0 mm)</p>
+    </article>
+
+    <article class="num practice" id="sm-u1-p3">
+      <h3>P3. A steel bar ABCD carries a tensile load of 500 kN. AB is 80 mm in diameter and 300 mm long, BC is 60 mm in diameter and 500 mm long, and CD tapers uniformly from 60 mm to 100 mm diameter over 400 mm. Find the total elongation and the maximum stress. E = 2 × 10⁵ N/mm².</h3>
+      <p class="q-src">Based on Nov 2024 Q1(a)</p>
+      <p class="final">Answer: total δ = 0.804 mm (δ<sub>AB</sub> = 0.149, δ<sub>BC</sub> = 0.442, δ<sub>CD</sub> = 0.212 mm); maximum stress = 176.8 N/mm² (in BC)</p>
+    </article>
+
+    <article class="num practice" id="sm-u1-p4">
+      <h3>P4. A 100 mm steel cube carries σx = 60 N/mm² (tension), σy = 40 N/mm² (compression) and σz = 30 N/mm² (tension). Find the strain in each direction, the volumetric strain and the change in volume. E = 2 × 10⁵ N/mm², μ = 0.3.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="final">Answer: εx = 3.15 × 10⁻⁴, εy = −3.35 × 10⁻⁴, εz = 1.20 × 10⁻⁴; εv = 1.0 × 10⁻⁴; δV = +100 mm³</p>
+    </article>
+
+    <article class="num practice" id="sm-u1-p5">
+      <h3>P5. A flat steel plate 12 mm thick tapers uniformly from 120 mm to 40 mm in width over a length of 600 mm. Find the elongation under an axial load of 60 kN and the maximum stress. E = 2 × 10⁵ N/mm².</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="final">Answer: δ = 0.206 mm; maximum stress = 125 N/mm² (narrow end)</p>
+    </article>
+
+    <article class="num practice" id="sm-u1-p6">
+      <h3>P6. A steel rod of 20 mm diameter passes centrally through a copper tube of 50 mm external and 40 mm internal diameter. Both are 500 mm long and closed by rigid end plates. Find the stresses and the loads in the rod and the tube, and the shortening, under an axial compressive load of 60 kN. E<sub>s</sub> = 200 GPa, E<sub>c</sub> = 100 GPa.</h3>
+      <p class="q-src">Based on Jan 2025 Q4(a) (mechanical load only)</p>
+      <p class="final">Answer: σ<sub>steel</sub> = 89.88 N/mm², σ<sub>copper</sub> = 44.94 N/mm²; P<sub>steel</sub> = 28.24 kN, P<sub>copper</sub> = 31.76 kN; shortening = 0.225 mm</p>
+    </article>
+
+    <article class="num practice" id="sm-u1-p7">
+      <h3>P7. A short RCC column 300 mm × 300 mm has 4 steel bars of 25 mm diameter. It carries an axial load of 800 kN. Find the stresses in the concrete and the steel if E<sub>steel</sub>/E<sub>concrete</sub> = 15. Also find the load taken by each material.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="final">Answer: σ<sub>concrete</sub> = 6.81 N/mm², σ<sub>steel</sub> = 102.1 N/mm²; P<sub>steel</sub> = 200.5 kN, P<sub>concrete</sub> = 599.5 kN</p>
+    </article>
+
+    <article class="num practice" id="sm-u1-p8">
+      <h3>P8. For a material, E = 2 × 10⁵ N/mm² and K = 1.5 × 10⁵ N/mm². Find Poisson's ratio and the modulus of rigidity.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="final">Answer: μ = 0.278; G = 0.783 × 10⁵ N/mm²</p>
+    </article>
+  </section>
+
+</section>

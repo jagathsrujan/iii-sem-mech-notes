@@ -1,0 +1,1605 @@
+<section class="unit" data-unit="sm-u4">
+  <header class="unit-head">
+    <p class="eyebrow">Strength of Materials · Unit 4</p>
+    <h1>Torsion, Deflection of Beams and Columns</h1>
+    <p class="lede">This unit covers three ways a member can be loaded or fail besides direct stress and bending stress. A shaft twists under torque, a beam deflects under its load, and a slender column buckles sideways under compression. You learn one main equation for each (T/J = τ/R = Gθ/L, EI·d²y/dx² = M and Euler's load) and use it to size shafts, check beam stiffness and find safe column loads.</p>
+    <ul class="syl">
+      <li>Torsion</li>
+      <li>Torsion equation</li>
+      <li>Power transmission through shafts</li>
+      <li>Solid and hollow shafts</li>
+      <li>Composite shafts</li>
+      <li>Deflection of Beams</li>
+      <li>Double integration method</li>
+      <li>Macaulay's method</li>
+      <li>Slope and deflection calculations</li>
+      <li>Numericals on shafts, beam deflections and columns</li>
+    </ul>
+  </header>
+
+  <section class="part" id="sm-u4-concepts" data-part="concepts">
+    <h2>Concepts</h2>
+    <aside class="exam"><b>Exam pattern.</b> In the old papers this content takes two units. One unit has a torsion question: derive the torsion equation (10–12 marks) and a shaft design numerical (8–10 marks). The other unit has deflection and columns: derive EI·d²y/dx² = M or a standard case (cantilever, simply supported beam), a slope/deflection numerical, Euler's assumptions and an Euler derivation (both ends hinged, or one end fixed and the other free), and a Euler/Rankine load numerical. The 2026 syllabus puts all three topics in Unit 4, so learn all of them.</aside>
+
+    <h3 id="sm-u4-c-torsion">1. Torsion and pure torsion</h3>
+    <p>A <b>shaft</b> is a rotating member, usually of circular section, that transmits power from one machine part to another: an engine to a gearbox, a motor to a pump, a gearbox to a wheel. The power is carried as a <b>torque</b> (twisting moment) T.</p>
+    <p>When a torque acts on a shaft, each cross-section turns a little relative to the next one. The shaft is in <b>torsion</b>. Shear stresses act on every cross-section.</p>
+    <ul>
+      <li><b>Torque (twisting moment)</b> T: the moment of a force about the axis of the shaft. T = force × perpendicular distance from the axis (N·mm or N·m).</li>
+      <li><b>Pure torsion</b>: a member is in pure torsion when only a torque acts on it, with no bending moment, axial force or shear force. Every section then carries the same torque and only shear stress.</li>
+      <li><b>Angle of twist</b> θ: the angle (in radian) through which one end section of the shaft turns relative to the other end.</li>
+      <li><b>Shear strain</b> φ: the angle through which a straight line on the surface, parallel to the axis, turns after the twist (Fig. 4.1).</li>
+    </ul>
+    <figure class="fig" id="sm-u4-f-twist">
+<svg viewBox="0 0 680 300" role="img" aria-label="Shaft fixed at one end and twisted by torque T: generator AB moves to AB-dash through shear angle phi; end section turns through angle theta">
+<defs><marker id="sm-u4-arw-twist" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="44.0" y="65.0" width="16.0" height="170.0" class="ln fill-hatch"/>
+<text x="52.0" y="52.0" class="lbl-sm" text-anchor="middle">fixed end</text>
+<rect x="60.0" y="100.0" width="380.0" height="100.0" class="ln fill-soft"/>
+<ellipse cx="440.0" cy="150.0" rx="16.0" ry="50.0" class="ln fill-soft"/>
+<line x1="40.0" y1="150.0" x2="475.0" y2="150.0" class="ln hid"/>
+<line x1="60.0" y1="125.0" x2="453.9" y2="125.0" class="ln thick"/>
+<line x1="60.0" y1="125.0" x2="454.9" y2="168.0" class="ln acc thick"/>
+<circle cx="60.0" cy="125.0" r="3.5" class="solid"/>
+<circle cx="453.9" cy="125.0" r="3.5" class="solid"/>
+<circle cx="454.9" cy="168.0" r="3.5" class="solid"/>
+<text x="74.0" y="118.0" class="lbl-b">A</text>
+<text x="459.9" y="120.0" class="lbl-b">B</text>
+<text x="460.9" y="182.0" class="lbl-b">B′</text>
+<path d="M155.0,125.0 A95,95 0 0 1 154.4,135.3" class="ln thin"/>
+<text x="160.0" y="119.0" class="lbl-acc">φ</text>
+<path d="M470.0,88.0 A14,62.0 0 0 1 470.0,212.0" class="ln acc2" marker-end="url(#sm-u4-arw-twist)"/>
+<text x="498.0" y="98.0" class="lbl" text-anchor="middle">T</text>
+<line x1="60.0" y1="232.0" x2="440.0" y2="232.0" class="ln thin" marker-end="url(#sm-u4-arw-twist)" marker-start="url(#sm-u4-arw-twist)"/>
+<text x="250.0" y="250.0" class="lbl-sm" text-anchor="middle">L</text>
+<text x="250.0" y="288.0" class="lbl" text-anchor="middle">(a) Shaft: line AB twists to AB′</text>
+<circle cx="600.0" cy="150.0" r="52.0" class="ln fill-soft"/>
+<circle cx="600.0" cy="150.0" r="3.5" class="solid"/>
+<line x1="600.0" y1="150.0" x2="570.2" y2="107.4" class="ln"/>
+<line x1="600.0" y1="150.0" x2="613.5" y2="99.8" class="ln acc"/>
+<path d="M570.2,107.4 A52,52 0 0 1 613.5,99.8" class="ln acc thick"/>
+<circle cx="570.2" cy="107.4" r="3.5" class="solid"/>
+<circle cx="613.5" cy="99.8" r="3.5" class="solid"/>
+<path d="M587.4,132.0 A22,22 0 0 1 605.7,128.7" class="ln thin"/>
+<text x="602.0" y="120.0" class="lbl-acc" text-anchor="middle">θ</text>
+<text x="562.2" y="101.4" class="lbl-b" text-anchor="end">B</text>
+<text x="619.5" y="93.8" class="lbl-b">B′</text>
+<text x="606.0" y="170.0" class="lbl-b">O</text>
+<line x1="600.0" y1="150.0" x2="648.9" y2="167.8" class="ln thin"/>
+<text x="630.0" y="184.0" class="lbl">R</text>
+<text x="600.0" y="288.0" class="lbl" text-anchor="middle">(b) End section</text>
+</svg>
+<figcaption>Fig. 4.1 — Pure torsion of a shaft: the surface line AB turns to AB′ (shear strain φ); the end section turns through the angle of twist θ.</figcaption>
+</figure>
+    <figure class="photo"><img src="img/sm-u4-cardan-shaft.jpg" alt="A cardan shaft with two universal joints connecting a gearbox to a machine" width="960" height="798" loading="lazy"><figcaption>A cardan (propeller) shaft. It has a universal joint at each end and carries torque from a gearbox to a machine. A car's propeller shaft has the same layout. <span class="credit">Photo: IP83 · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+
+    <h3 id="sm-u4-c-assume">2. Assumptions of the torsion theory</h3>
+    <p>The torsion equation is exact only when these assumptions hold. Learn them; the examiner gives 2–3 marks for them in every derivation.</p>
+    <ol>
+      <li>The material of the shaft is homogeneous, isotropic and obeys Hooke's law (stress stays within the elastic limit).</li>
+      <li>The shaft is straight and of uniform circular section (solid or hollow).</li>
+      <li>The shaft is in pure torsion: the torque acts in a plane perpendicular to the axis.</li>
+      <li>Plane cross-sections stay plane after twisting (no warping), and every radius stays a straight line.</li>
+      <li>Each cross-section rotates as a rigid disc; the angle of twist is small.</li>
+      <li>The twist is uniform along the length: every section turns by the same angle per unit length.</li>
+    </ol>
+
+    <h3 id="sm-u4-c-eqn">3. The torsion equation</h3>
+    <p>Look at Fig. 4.1. A shaft of length L and radius R is fixed at one end. A torque T at the other end turns the end section through θ. A line AB on the surface moves to AB′. The arc BB′ is the same whether you measure it from the side (angle φ at A) or from the end (angle θ at O):</p>
+    <div class="formula">\[ \text{arc } BB' = L\,\varphi = R\,\theta \quad\Rightarrow\quad \varphi = \frac{R\,\theta}{L} \]<p class="where">φ is small, so tan φ ≈ φ (radian).</p></div>
+    <p>Shear strain φ = τ/G (Hooke's law in shear). So the shear stress at the surface is τ = GRθ/L. A layer at radius r has strain rθ/L, so</p>
+    <div class="formula">\[ \frac{\tau}{R} = \frac{q}{r} = \frac{G\,\theta}{L} \]<p class="where">q = shear stress at radius r. Shear stress is proportional to the radius: zero at the centre, maximum at the outer surface (Fig. 4.2).</p></div>
+    <p>Now find the torque. Take a thin ring of radius r and width dr (Fig. 4.2a). Its area is dA = 2πr·dr. The shear force on it is q·dA, and its moment about the axis is q·dA·r. Add the moments of all rings:</p>
+    <div class="formula">\[ T = \int_0^R q\,(2\pi r\,dr)\,r = \frac{\tau}{R}\int_0^R 2\pi r^3\,dr = \frac{\tau}{R}\,J \]<p class="where">J = ∫ r² dA = polar moment of inertia of the section (mm⁴).</p></div>
+    <p>Put the two results together. This is the <b>torsion equation</b>:</p>
+    <div class="formula">\[ \frac{T}{J} = \frac{\tau}{R} = \frac{G\,\theta}{L} \]<p class="where">T = torque (N·mm), J = polar moment of inertia (mm⁴), τ = maximum shear stress at radius R (N/mm²), R = outer radius (mm), G = modulus of rigidity (N/mm²), θ = angle of twist (radian), L = length (mm).</p></div>
+    <figure class="fig" id="sm-u4-f-tauvar">
+<svg viewBox="0 0 680 300" role="img" aria-label="Elemental ring in a shaft section; linear shear stress distribution in a solid and a hollow shaft">
+<defs><marker id="sm-u4-arw-tauvar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<circle cx="115.0" cy="140.0" r="82.0" class="ln fill-soft"/>
+<circle cx="115.0" cy="140.0" r="52.0" class="ln acc"/>
+<circle cx="115.0" cy="140.0" r="62.0" class="ln acc"/>
+<circle cx="115.0" cy="140.0" r="3.5" class="solid"/>
+<text x="109.0" y="158.0" class="lbl-b" text-anchor="end">O</text>
+<line x1="115.0" y1="140.0" x2="157.6" y2="110.2" class="ln thin" marker-end="url(#sm-u4-arw-tauvar)"/>
+<text x="137.0" y="138.0" class="lbl">r</text>
+<line x1="115.0" y1="140.0" x2="37.9" y2="112.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar)"/>
+<text x="69.0" y="144.0" class="lbl" text-anchor="middle">R</text>
+<text x="173.0" y="212.0" class="lbl-acc">dr</text>
+<line x1="165.0" y1="200.0" x2="157.0" y2="180.0" class="ln thin"/>
+<text x="115.0" y="252.0" class="lbl" text-anchor="middle">(a) Ring: radius r, width dr</text>
+<text x="115.0" y="272.0" class="lbl-sm" text-anchor="middle">dA = 2πr·dr</text>
+<line x1="330.0" y1="50.0" x2="330.0" y2="230.0" class="ln"/>
+<line x1="240.0" y1="140.0" x2="420.0" y2="140.0" class="ln hid"/>
+<polygon points="330.0,58.0 402.0,58.0 330.0,140.0" class="ln fill-acc"/>
+<polygon points="330.0,222.0 258.0,222.0 330.0,140.0" class="ln fill-acc"/>
+<line x1="330.0" y1="78.0" x2="384.4" y2="78.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar)"/>
+<line x1="330.0" y1="202.0" x2="275.6" y2="202.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar)"/>
+<line x1="330.0" y1="103.0" x2="362.5" y2="103.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar)"/>
+<line x1="330.0" y1="177.0" x2="297.5" y2="177.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar)"/>
+<text x="408.0" y="63.0" class="lbl">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="252.0" y="227.0" class="lbl" text-anchor="end">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="340.0" y="158.0" class="lbl-sm">τ = 0 at centre</text>
+<text x="330.0" y="252.0" class="lbl" text-anchor="middle">(b) Solid shaft: τ varies as r</text>
+<line x1="560.0" y1="50.0" x2="560.0" y2="230.0" class="ln"/>
+<line x1="470.0" y1="140.0" x2="650.0" y2="140.0" class="ln hid"/>
+<polygon points="560.0,58.0 632.0,58.0 595.1,100.0 560.0,100.0" class="ln fill-acc"/>
+<polygon points="560.0,222.0 488.0,222.0 524.9,180.0 560.0,180.0" class="ln fill-acc"/>
+<line x1="595.1" y1="100.0" x2="560.0" y2="140.0" class="ln dash thin"/>
+<line x1="524.9" y1="180.0" x2="560.0" y2="140.0" class="ln dash thin"/>
+<text x="638.0" y="63.0" class="lbl">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="609.1" y="114.0" class="lbl">τ<tspan dy="4" font-size="0.75em">i</tspan><tspan dy="-4"></tspan></text>
+<text x="482.0" y="227.0" class="lbl" text-anchor="end">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="546.0" y="132.0" class="lbl-sm" text-anchor="end">bore</text>
+<text x="560.0" y="252.0" class="lbl" text-anchor="middle">(c) Hollow shaft</text>
+<text x="560.0" y="272.0" class="lbl-sm" text-anchor="middle">τ<tspan dy="4" font-size="0.75em">i</tspan><tspan dy="-4"> = τ</tspan><tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4">·R</tspan><tspan dy="4" font-size="0.75em">i</tspan><tspan dy="-4">/R</tspan><tspan dy="4" font-size="0.75em">o</tspan><tspan dy="-4"></tspan></text>
+</svg>
+<figcaption>Fig. 4.2 — (a) Elemental ring used to find the torque. (b), (c) Shear stress varies linearly with radius: zero at the centre, maximum at the outer surface.</figcaption>
+</figure>
+    <aside class="tip"><b>Memory trick.</b> Read it as "T-J, tau-R, G-theta-L". The equation looks like the bending equation M/I = σ/y = E/R with M → T, I → J, σ → τ, y → R and E → G.</aside>
+    <aside class="warn"><b>Common mistake.</b> θ must be in radian in Gθ/L. If the question gives the angle in degrees, multiply by π/180 (1° = 0.01745 rad). Keep T in N·mm when R is in mm.</aside>
+
+    <h3 id="sm-u4-c-polar">4. Polar moment of inertia, polar modulus and rigidity</h3>
+    <p>The <b>polar moment of inertia</b> J is the second moment of area of the section about the axis of the shaft (perpendicular to the section). By the perpendicular axis theorem, J = I<sub>xx</sub> + I<sub>yy</sub>.</p>
+    <div class="formula">\[ J_{\text{solid}} = \frac{\pi}{32}\,D^4 \qquad J_{\text{hollow}} = \frac{\pi}{32}\left(D_o^4 - D_i^4\right) \]<p class="where">D = diameter of a solid shaft, D<sub>o</sub> and D<sub>i</sub> = outer and inner diameters of a hollow shaft (mm).</p></div>
+    <p>The <b>polar modulus</b> (torsional section modulus) Z<sub>p</sub> = J/R. From T/J = τ/R we get T = τ·Z<sub>p</sub>. So Z<sub>p</sub> measures the <b>torsional strength</b> of the section: the torque it carries for a given allowable stress.</p>
+    <div class="formula">\[ T = \frac{\pi}{16}\,\tau\,D^3 \;\;\text{(solid)} \qquad T = \frac{\pi}{16}\,\tau\,\frac{D_o^4 - D_i^4}{D_o} \;\;\text{(hollow)} \]<p class="where">These two "strength" formulas are used in every design numerical.</p></div>
+    <ul>
+      <li><b>Torsional rigidity (stiffness)</b> = GJ (N·mm²). From T = GJθ/L, it is the torque needed to produce a unit angle of twist in a unit length. A large GJ means a stiff shaft.</li>
+      <li><b>Torsional stiffness</b> of a shaft of length L: k = T/θ = GJ/L (N·mm/rad).</li>
+      <li><b>Torsional flexibility</b> = L/(GJ): the angle of twist produced by a unit torque. It is the reciprocal of torsional stiffness.</li>
+      <li><b>Torsional strength</b>: the maximum torque the shaft can carry without the shear stress exceeding the allowable value: T = τ·J/R.</li>
+    </ul>
+
+    <h3 id="sm-u4-c-power">5. Power transmitted by a shaft</h3>
+    <p>A torque T that turns at N revolutions per minute does work 2πT in each revolution. The work per second is the power:</p>
+    <div class="formula">\[ P = \frac{2\pi N T}{60} \]<p class="where">P = power (W), N = speed (rpm), T = mean torque (N·m). With P in kW, T = 60 000 P / (2πN) gives T in N·m. Multiply by 1000 to get N·mm.</p></div>
+    <p>The torque of an engine or a motor is not constant. Questions often say "the maximum torque is 20 % more than the mean torque". Then T<sub>max</sub> = 1.2 T<sub>mean</sub>. Design the shaft for T<sub>max</sub>.</p>
+    <p><b>Design for two conditions.</b> A shaft must be both strong and stiff:</p>
+    <ul>
+      <li><b>Strength</b>: τ ≤ allowable shear stress → \( D = \left(\frac{16\,T}{\pi\,\tau}\right)^{1/3} \).</li>
+      <li><b>Stiffness</b>: θ ≤ allowable twist (e.g. 1° in 1 m) → \( J = \frac{T\,L}{G\,\theta} \), then \( D = \left(\frac{32\,J}{\pi}\right)^{1/4} \).</li>
+      <li>Take the <b>larger</b> of the two diameters; it satisfies both conditions. Round up to the next standard size.</li>
+    </ul>
+    <p><b>Quick example.</b> A shaft transmits 50 kW at 1000 rpm. T<sub>mean</sub> = 60 000 × 50/(2π × 1000) = 477.5 N·m. With τ = 50 N/mm², D = (16 × 477 500/(π × 50))<sup>1/3</sup> = 36.5 mm.</p>
+    <p>Try the torsion calculator below. Change T, D and the inner diameter, and see how τ and θ change; make the shaft hollow and compare.</p>
+    <div class="widget" data-widget="torsion"></div>
+
+    <h3 id="sm-u4-c-hollow">6. Solid and hollow shafts</h3>
+    <p>In a solid shaft the material near the centre carries very low stress (Fig. 4.2b). It adds weight but carries little torque. A hollow shaft removes this lightly stressed core. All its material works at a stress near τ<sub>max</sub>.</p>
+    <div class="tbl"><table><thead><tr><th>Comparison (same material and length)</th><th>Result for D<sub>i</sub> = 0.7 D<sub>o</sub></th></tr></thead><tbody>
+      <tr><td>Same torque and same maximum stress → compare weights</td><td>Hollow shaft weighs 61 % of the solid shaft (saving 39 %)</td></tr>
+      <tr><td>Same weight (same area) → compare strengths</td><td>Hollow shaft carries 2.09 times the torque of the solid shaft</td></tr>
+      <tr><td>Same weight → compare torsional stiffness</td><td>Hollow shaft is about 2.9 times stiffer (larger J)</td></tr>
+    </tbody></table></div>
+    <p>Advantages of a hollow shaft:</p>
+    <ul>
+      <li>Higher strength-to-weight ratio and higher torsional stiffness for the same weight.</li>
+      <li>Less material and less rotating mass; this is important in aircraft, automobile propeller shafts and ship shafts.</li>
+      <li>The bore can carry oil, cooling water or wiring.</li>
+    </ul>
+    <p>Disadvantages: a hollow shaft has a larger outside diameter for the same torque, and it costs more to make. Small shafts are therefore usually solid.</p>
+    <aside class="real"><b>Real world.</b> A car's propeller shaft, a helicopter rotor shaft and the main shaft of a large turbine are hollow tubes. A bicycle frame tube and a scaffold pipe use the same idea: material far from the centre gives stiffness at low weight.</aside>
+
+    <h3 id="sm-u4-c-composite">7. Composite shafts</h3>
+    <p>A <b>composite shaft</b> has two or more shafts of different diameters or materials joined together. There are two arrangements (Fig. 4.3).</p>
+    <figure class="fig" id="sm-u4-f-composite">
+<svg viewBox="0 0 680 300" role="img" aria-label="Composite shafts: (a) two shafts in series, (b) a tube and a core in parallel">
+<defs><marker id="sm-u4-arw-composite" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="40.0" y="92.0" width="180.0" height="66.0" class="ln fill-soft"/>
+<rect x="226.0" y="104.0" width="130.0" height="42.0" class="ln fill-acc"/>
+<rect x="214.0" y="82.0" width="12.0" height="86.0" class="ln fill-hatch"/>
+<line x1="28.0" y1="125.0" x2="368.0" y2="125.0" class="ln hid"/>
+<path d="M30.0,79.0 A14,46.0 0 0 0 30.0,171.0" class="ln acc2" marker-end="url(#sm-u4-arw-composite)"/>
+<text x="18.0" y="70.0" class="lbl" text-anchor="middle">T</text>
+<path d="M362.0,91.0 A14,34.0 0 0 1 362.0,159.0" class="ln acc2" marker-end="url(#sm-u4-arw-composite)"/>
+<text x="380.0" y="84.0" class="lbl" text-anchor="middle">T</text>
+<text x="130.0" y="76.0" class="lbl-sm" text-anchor="middle">Shaft 1: d₁, L₁, G₁</text>
+<text x="292.0" y="94.0" class="lbl-sm" text-anchor="middle">Shaft 2: d₂, L₂, G₂</text>
+<text x="200.0" y="200.0" class="lbl-sm" text-anchor="middle">Same torque: T₁ = T₂ = T</text>
+<text x="200.0" y="222.0" class="lbl-sm" text-anchor="middle">Angles add: θ = θ₁ + θ₂</text>
+<text x="200.0" y="270.0" class="lbl" text-anchor="middle">(a) Shafts in series</text>
+<rect x="440.0" y="88.0" width="180.0" height="74.0" class="ln fill-soft"/>
+<rect x="440.0" y="106.0" width="180.0" height="38.0" class="ln fill-acc"/>
+<rect x="430.0" y="78.0" width="10.0" height="94.0" class="ln fill-hatch"/>
+<rect x="620.0" y="78.0" width="10.0" height="94.0" class="ln fill-hatch"/>
+<line x1="422.0" y1="125.0" x2="638.0" y2="125.0" class="ln hid"/>
+<path d="M642.0,77.0 A14,48.0 0 0 1 642.0,173.0" class="ln acc2" marker-end="url(#sm-u4-arw-composite)"/>
+<text x="662.0" y="72.0" class="lbl" text-anchor="middle">T</text>
+<text x="530.0" y="76.0" class="lbl-sm" text-anchor="middle">tube (2)</text>
+<text x="530.0" y="130.0" class="lbl-sm" text-anchor="middle">core (1)</text>
+<text x="530.0" y="200.0" class="lbl-sm" text-anchor="middle">Torque shared: T = T₁ + T₂</text>
+<text x="530.0" y="222.0" class="lbl-sm" text-anchor="middle">Same twist: θ₁ = θ₂</text>
+<text x="530.0" y="270.0" class="lbl" text-anchor="middle">(b) Shafts in parallel</text>
+</svg>
+<figcaption>Fig. 4.3 — Composite shafts. In series the torque is the same and the twists add; in parallel the twist is the same and the torques add.</figcaption>
+</figure>
+    <div class="tbl"><table><thead><tr><th></th><th>Shafts in series</th><th>Shafts in parallel</th></tr></thead><tbody>
+      <tr><td>Arrangement</td><td>Joined end to end (stepped shaft, two materials coupled)</td><td>One inside the other (core in a tube), fixed together at the ends</td></tr>
+      <tr><td>Torque</td><td>Same in each: T₁ = T₂ = T</td><td>Shared: T = T₁ + T₂</td></tr>
+      <tr><td>Angle of twist</td><td>Adds: θ = θ₁ + θ₂ = T L₁/(G₁J₁) + T L₂/(G₂J₂)</td><td>Same: θ₁ = θ₂, so T₁L₁/(G₁J₁) = T₂L₂/(G₂J₂)</td></tr>
+      <tr><td>Method</td><td>Check τ in each part; add the twists</td><td>Solve the two equations for T₁ and T₂, then find τ in each</td></tr>
+    </tbody></table></div>
+    <aside class="tip"><b>Memory trick.</b> Series is like springs in series: same force, deflections add. Parallel is like springs side by side: same deflection, forces add. For equal lengths in parallel, T₁/T₂ = G₁J₁/(G₂J₂).</aside>
+
+    <h3 id="sm-u4-c-deflection">8. Deflection of beams: the elastic curve</h3>
+    <p>A beam bends under load. The neutral axis, which was straight, becomes a curve. This curve is the <b>elastic curve</b> (deflection curve) of the beam (Fig. 4.4).</p>
+    <ul>
+      <li><b>Deflection</b> y: the vertical displacement of a point on the neutral axis from its original position (mm).</li>
+      <li><b>Slope</b> θ: the angle of the tangent to the elastic curve with the original axis. For small deflections θ ≈ tan θ = dy/dx (radian).</li>
+      <li><b>Radius of curvature</b> R: the radius of the circle that fits the elastic curve at the point.</li>
+    </ul>
+    <p>Why calculate deflection? A beam can be strong enough and still be useless if it sags too much. Floors crack plaster, machine shafts misalign gears and bearings, and lathe beds lose accuracy. Design codes therefore limit the deflection to a small fraction of the span.</p>
+    <figure class="fig" id="sm-u4-f-elastic">
+<svg viewBox="0 0 680 262" role="img" aria-label="Elastic curve of a simply supported beam with deflection y, slope theta and radius of curvature R">
+<defs><marker id="sm-u4-arw-elastic" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="120.0" x2="620.0" y2="120.0" class="ln dash thin"/>
+<text x="470.0" y="110.0" class="lbl-sm" text-anchor="middle">beam axis before loading</text>
+<path d="M60.0,120.0 L65.0,122.0 L70.0,123.9 L75.0,125.9 L80.0,127.8 L85.0,129.8 L90.0,131.7 L95.0,133.7 L100.0,135.6 L105.0,137.5 L110.0,139.4 L115.0,141.3 L120.0,143.1 L125.0,145.0 L130.0,146.8 L135.0,148.6 L140.0,150.4 L145.0,152.1 L150.0,153.9 L155.0,155.6 L160.0,157.2 L165.0,158.9 L170.0,160.5 L175.0,162.1 L180.0,163.6 L185.0,165.2 L190.0,166.6 L195.0,168.1 L200.0,169.5 L205.0,170.9 L210.0,172.2 L215.0,173.5 L220.0,174.7 L225.0,175.9 L230.0,177.1 L235.0,178.2 L240.0,179.3 L245.0,180.3 L250.0,181.3 L255.0,182.2 L260.0,183.1 L265.0,183.9 L270.0,184.7 L275.0,185.4 L280.0,186.1 L285.0,186.7 L290.0,187.3 L295.0,187.8 L300.0,188.2 L305.0,188.7 L310.0,189.0 L315.0,189.3 L320.0,189.6 L325.0,189.8 L330.0,189.9 L335.0,190.0 L340.0,190.0 L345.0,190.0 L350.0,189.9 L355.0,189.8 L360.0,189.6 L365.0,189.3 L370.0,189.0 L375.0,188.7 L380.0,188.2 L385.0,187.8 L390.0,187.3 L395.0,186.7 L400.0,186.1 L405.0,185.4 L410.0,184.7 L415.0,183.9 L420.0,183.1 L425.0,182.2 L430.0,181.3 L435.0,180.3 L440.0,179.3 L445.0,178.2 L450.0,177.1 L455.0,175.9 L460.0,174.7 L465.0,173.5 L470.0,172.2 L475.0,170.9 L480.0,169.5 L485.0,168.1 L490.0,166.6 L495.0,165.2 L500.0,163.6 L505.0,162.1 L510.0,160.5 L515.0,158.9 L520.0,157.2 L525.0,155.6 L530.0,153.9 L535.0,152.1 L540.0,150.4 L545.0,148.6 L550.0,146.8 L555.0,145.0 L560.0,143.1 L565.0,141.3 L570.0,139.4 L575.0,137.5 L580.0,135.6 L585.0,133.7 L590.0,131.7 L595.0,129.8 L600.0,127.8 L605.0,125.9 L610.0,123.9 L615.0,122.0 L620.0,120.0" class="ln acc thick"/>
+<polygon points="60.0,120.0 49.0,139.0 71.0,139.0" class="ln fill-soft"/>
+<rect x="43.0" y="139.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="620.0,120.0 610.0,134.0 630.0,134.0" class="ln fill-soft"/>
+<circle cx="615.0" cy="138.0" r="4.0" class="ln"/>
+<circle cx="625.0" cy="138.0" r="4.0" class="ln"/>
+<line x1="604.0" y1="143.0" x2="636.0" y2="143.0" class="ln"/>
+<text x="52.0" y="112.0" class="lbl-b" text-anchor="end">A</text>
+<text x="628.0" y="112.0" class="lbl-b">B</text>
+<circle cx="230.0" cy="177.1" r="3.5" class="solid"/>
+<text x="222.0" y="197.1" class="lbl-b" text-anchor="end">P</text>
+<line x1="140.0" y1="156.6" x2="340.0" y2="202.1" class="ln thin"/>
+<line x1="230.0" y1="177.1" x2="340.0" y2="177.1" class="ln dash thin"/>
+<path d="M302.0,177.1 A72,72 0 0 1 300.2,193.0" class="ln thin"/>
+<text x="348.0" y="208.1" class="lbl-sm">tangent: θ = dy/dx</text>
+<line x1="230.0" y1="120.0" x2="230.0" y2="177.1" class="ln thin" marker-end="url(#sm-u4-arw-elastic)" marker-start="url(#sm-u4-arw-elastic)"/>
+<text x="222.0" y="154.5" class="lbl" text-anchor="end">y</text>
+<line x1="60.0" y1="52.0" x2="230.0" y2="52.0" class="ln thin" marker-end="url(#sm-u4-arw-elastic)" marker-start="url(#sm-u4-arw-elastic)"/>
+<text x="145.0" y="44.0" class="lbl-sm" text-anchor="middle">x</text>
+<line x1="261.0" y1="40.6" x2="230.0" y2="177.1" class="ln thin"/>
+<line x1="261.0" y1="40.6" x2="282.0" y2="186.3" class="ln thin"/>
+<circle cx="261.0" cy="40.6" r="3.5" class="solid"/>
+<text x="269.0" y="44.6" class="lbl-sm">O (centre of curvature)</text>
+<text x="243.0" y="106.6" class="lbl" text-anchor="end">R</text>
+<text x="271.0" y="86.6" class="lbl-sm">dθ</text>
+<circle cx="282.0" cy="186.3" r="3.5" class="solid"/>
+<text x="290.0" y="204.3" class="lbl-b">Q</text>
+<text x="260.0" y="211.7" class="lbl-sm" text-anchor="middle">ds</text>
+<text x="540.0" y="222.0" class="lbl-acc" text-anchor="middle">elastic curve</text>
+<text x="340.0" y="250.0" class="lbl-sm" text-anchor="middle">x measured from A along the beam;  y = deflection (upward +)</text>
+</svg>
+<figcaption>Fig. 4.4 — Elastic curve. At P the deflection is y and the slope is θ = dy/dx; a short length ds bends about the centre of curvature O with radius R.</figcaption>
+</figure>
+
+    <h3 id="sm-u4-c-ebeq">9. The differential equation EI·d²y/dx² = M</h3>
+    <p>From the bending equation (Unit 3), M/I = E/R, so the curvature is</p>
+    <div class="formula">\[ \frac{1}{R} = \frac{M}{E\,I} \]</div>
+    <p>For the short length ds in Fig. 4.4, ds = R·dθ. The deflection is small, so ds ≈ dx and θ ≈ dy/dx. Then</p>
+    <div class="formula">\[ \frac{1}{R} = \frac{d\theta}{ds} \approx \frac{d\theta}{dx} = \frac{d^2y}{dx^2} \]</div>
+    <p>Equate the two expressions for 1/R. This is the <b>Euler–Bernoulli equation</b> of the elastic curve:</p>
+    <div class="formula">\[ E\,I\,\frac{d^2y}{dx^2} = M \]<p class="where">E = Young's modulus (N/mm²), I = moment of inertia about the neutral axis (mm⁴), M = bending moment at the section x (N·mm). EI is the <b>flexural rigidity</b> of the beam.</p></div>
+    <p>Integrate once and twice:</p>
+    <div class="formula">\[ E\,I\,\frac{dy}{dx} = \int M\,dx + C_1 \qquad E\,I\,y = \iint M\,dx\,dx + C_1x + C_2 \]<p class="where">The first gives the slope, the second the deflection. C₁ and C₂ come from the boundary conditions.</p></div>
+    <p>The <b>relation between slope, deflection and radius of curvature</b> (asked as a short question):</p>
+    <ul>
+      <li>Deflection = y; slope = dy/dx; curvature 1/R = d²y/dx² = M/EI.</li>
+      <li>Further, shear force F = dM/dx = EI·d³y/dx³ and load intensity w = dF/dx = EI·d⁴y/dx⁴.</li>
+    </ul>
+    <aside class="note"><b>Assumptions.</b> The material obeys Hooke's law; E is constant; the beam is initially straight with a uniform section; deflection is small (so 1/R ≈ d²y/dx²); deflection due to shear force is neglected; plane sections remain plane.</aside>
+
+    <h3 id="sm-u4-c-sign">10. Sign convention</h3>
+    <figure class="fig" id="sm-u4-f-sign">
+<svg viewBox="0 0 680 230" role="img" aria-label="Sign convention: x to the right, y upward; sagging moment positive, hogging negative">
+<defs><marker id="sm-u4-arw-sign" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="130.0" x2="200.0" y2="130.0" class="ln" marker-end="url(#sm-u4-arw-sign)"/>
+<line x1="60.0" y1="130.0" x2="60.0" y2="40.0" class="ln" marker-end="url(#sm-u4-arw-sign)"/>
+<text x="206.0" y="135.0" class="lbl">x</text>
+<text x="60.0" y="32.0" class="lbl" text-anchor="middle">y (+ up)</text>
+<circle cx="60.0" cy="130.0" r="3.5" class="solid"/>
+<text x="54.0" y="148.0" class="lbl-b" text-anchor="end">A</text>
+<path d="M60,130 Q130,180 200,130" class="ln acc thick"/>
+<text x="130.0" y="176.0" class="lbl-sm" text-anchor="middle">downward y is −</text>
+<text x="130.0" y="212.0" class="lbl" text-anchor="middle">(a) Axes</text>
+<path d="M270,110 Q360,160 450,110" class="ln thick"/>
+<path d="M252,110 A18,18 0 0 1 288,110" class="ln acc2" marker-end="url(#sm-u4-arw-sign)"/>
+<text x="270.0" y="86.0" class="lbl" text-anchor="middle">M</text>
+<path d="M468,110 A18,18 0 0 0 432,110" class="ln acc2" marker-end="url(#sm-u4-arw-sign)"/>
+<text x="450.0" y="86.0" class="lbl" text-anchor="middle">M</text>
+<text x="360.0" y="166.0" class="lbl-sm" text-anchor="middle">concave up (smile)</text>
+<text x="360.0" y="188.0" class="lbl-sm" text-anchor="middle">+M, d²y/dx² &gt; 0</text>
+<text x="360.0" y="212.0" class="lbl" text-anchor="middle">(b) Sagging: M positive</text>
+<path d="M485,140 Q565,90 645,140" class="ln thick"/>
+<path d="M503,140 A18,18 0 0 0 467,140" class="ln acc2" marker-end="url(#sm-u4-arw-sign)"/>
+<text x="485.0" y="116.0" class="lbl" text-anchor="middle">M</text>
+<path d="M627,140 A18,18 0 0 1 663,140" class="ln acc2" marker-end="url(#sm-u4-arw-sign)"/>
+<text x="645.0" y="116.0" class="lbl" text-anchor="middle">M</text>
+<text x="565.0" y="166.0" class="lbl-sm" text-anchor="middle">convex up (frown)</text>
+<text x="565.0" y="188.0" class="lbl-sm" text-anchor="middle">−M, d²y/dx² &lt; 0</text>
+<text x="565.0" y="212.0" class="lbl" text-anchor="middle">(c) Hogging: M negative</text>
+</svg>
+<figcaption>Fig. 4.5 — Sign convention used in this unit: x to the right from the left end, y upward positive, sagging moment positive.</figcaption>
+</figure>
+    <ul>
+      <li>x is measured from the left end (or from the fixed end of a cantilever), positive to the right.</li>
+      <li>y is positive upward. A downward deflection comes out <b>negative</b>; quote its size in the answer, "deflection = 3.08 mm (downward)".</li>
+      <li>Sagging bending moment is positive; it makes the beam concave up, so d²y/dx² &gt; 0. Hogging moment is negative.</li>
+      <li>Slope is positive when the curve rises to the right (anticlockwise rotation).</li>
+    </ul>
+    <aside class="warn"><b>Common mistake.</b> A cantilever has a hogging moment, so M is negative: for a load W at the free end, M = −W(L − x) with x from the fixed end. If you drop the minus sign, every slope and deflection gets the wrong sign.</aside>
+
+    <h3 id="sm-u4-c-double">11. Double integration method: standard cases</h3>
+    <p><b>Steps.</b> (1) Write M at a section x. (2) Put it in EI·d²y/dx² = M. (3) Integrate twice. (4) Use boundary conditions to find C₁ and C₂. (5) Put in x to get slope and deflection where needed.</p>
+    <p><b>Boundary conditions to remember:</b></p>
+    <ul>
+      <li>Fixed end: y = 0 and dy/dx = 0.</li>
+      <li>Simple support (pin or roller): y = 0.</li>
+      <li>Symmetrical loading on a simply supported beam: dy/dx = 0 at mid-span; the maximum deflection is at mid-span.</li>
+      <li>Maximum deflection is where dy/dx = 0 (or at the free end of a cantilever).</li>
+    </ul>
+    <figure class="fig" id="sm-u4-f-cantpt">
+<svg viewBox="0 0 680 270" role="img" aria-label="Cantilever with point load W at the free end: deflected shape, slope and deflection at B">
+<defs><marker id="sm-u4-arw-cantpt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="64.0" y="45.0" width="16.0" height="120.0" class="ln fill-hatch"/>
+<rect x="80.0" y="98.0" width="480.0" height="14.0" class="ln fill-soft"/>
+<line x1="560.0" y1="51.0" x2="560.0" y2="97.0" class="ln" marker-end="url(#sm-u4-arw-cantpt)"/>
+<text x="560.0" y="45.0" class="lbl" text-anchor="middle">W</text>
+<path d="M80.0,105.0 L88.0,105.0 L96.0,105.1 L104.0,105.2 L112.0,105.4 L120.0,105.6 L128.0,105.9 L136.0,106.2 L144.0,106.6 L152.0,107.0 L160.0,107.4 L168.0,107.9 L176.0,108.5 L184.0,109.1 L192.0,109.7 L200.0,110.3 L208.0,111.0 L216.0,111.8 L224.0,112.5 L232.0,113.3 L240.0,114.2 L248.0,115.1 L256.0,116.0 L264.0,116.9 L272.0,117.9 L280.0,118.9 L288.0,119.9 L296.0,121.0 L304.0,122.1 L312.0,123.2 L320.0,124.4 L328.0,125.6 L336.0,126.8 L344.0,128.0 L352.0,129.2 L360.0,130.5 L368.0,131.8 L376.0,133.1 L384.0,134.4 L392.0,135.8 L400.0,137.1 L408.0,138.5 L416.0,139.9 L424.0,141.4 L432.0,142.8 L440.0,144.2 L448.0,145.7 L456.0,147.2 L464.0,148.6 L472.0,150.1 L480.0,151.6 L488.0,153.2 L496.0,154.7 L504.0,156.2 L512.0,157.7 L520.0,159.3 L528.0,160.8 L536.0,162.4 L544.0,163.9 L552.0,165.5 L560.0,167.0" class="ln acc thick dash"/>
+<text x="82.0" y="89.0" class="lbl-b">A</text>
+<text x="570.0" y="93.0" class="lbl-b">B</text>
+<circle cx="560.0" cy="167.0" r="3.5" class="solid"/>
+<text x="552.0" y="187.0" class="lbl-b" text-anchor="end">B′</text>
+<line x1="600.0" y1="105.0" x2="600.0" y2="167.0" class="ln thin" marker-end="url(#sm-u4-arw-cantpt)" marker-start="url(#sm-u4-arw-cantpt)"/>
+<text x="608.0" y="141.0" class="lbl">y<tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"></tspan></text>
+<line x1="420.0" y1="139.9" x2="580.0" y2="170.9" class="ln thin"/>
+<line x1="420.0" y1="167.0" x2="560.0" y2="167.0" class="ln dash thin"/>
+<text x="410.0" y="161.0" class="lbl" text-anchor="end">θ<tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"></tspan></text>
+<line x1="270.0" y1="71.0" x2="270.0" y2="135.0" class="ln dash"/>
+<text x="270.0" y="65.0" class="lbl-sm" text-anchor="middle">X</text>
+<text x="270.0" y="151.0" class="lbl-sm" text-anchor="middle">X</text>
+<line x1="80.0" y1="196.0" x2="270.0" y2="196.0" class="ln thin" marker-end="url(#sm-u4-arw-cantpt)" marker-start="url(#sm-u4-arw-cantpt)"/>
+<text x="175.0" y="190.0" class="lbl-sm" text-anchor="middle">x</text>
+<line x1="80.0" y1="236.0" x2="560.0" y2="236.0" class="ln thin" marker-end="url(#sm-u4-arw-cantpt)" marker-start="url(#sm-u4-arw-cantpt)"/>
+<text x="320.0" y="230.0" class="lbl-sm" text-anchor="middle">L</text>
+<text x="280.0" y="172.0" class="lbl-sm">M<tspan dy="4" font-size="0.75em">x</tspan><tspan dy="-4"> = −W(L − x)</tspan></text>
+</svg>
+<figcaption>Fig. 4.6 — Cantilever AB fixed at A with a point load W at the free end B. Section X–X is at distance x from the fixed end.</figcaption>
+</figure>
+    <p><b>Case 1: Cantilever, point load W at the free end</b> (Fig. 4.6). With x from the fixed end A, M = −W(L − x).</p>
+    <div class="formula">\[ EI\frac{dy}{dx} = -W\left(Lx - \frac{x^2}{2}\right) + C_1, \qquad EI\,y = -W\left(\frac{Lx^2}{2} - \frac{x^3}{6}\right) + C_1x + C_2 \]<p class="where">At x = 0: dy/dx = 0 → C₁ = 0, and y = 0 → C₂ = 0. At the free end x = L:</p></div>
+    <div class="formula">\[ \theta_B = -\frac{W L^2}{2EI} \qquad y_B = -\frac{W L^3}{3EI} \]<p class="where">Negative: the free end slopes down and moves down.</p></div>
+    <p><b>Case 2: Cantilever, UDL w over the whole length.</b> M = −w(L − x)²/2. Integrating with the same boundary conditions gives θ<sub>B</sub> = −wL³/(6EI) and y<sub>B</sub> = −wL⁴/(8EI).</p>
+    <p><b>Case 3: Simply supported, central point load W.</b> R<sub>A</sub> = R<sub>B</sub> = W/2. For 0 ≤ x ≤ L/2, M = Wx/2. With y = 0 at x = 0 and dy/dx = 0 at x = L/2: C₁ = −WL²/16, C₂ = 0. So θ<sub>A</sub> = −WL²/(16EI) and y<sub>C</sub> = −WL³/(48EI).</p>
+    <p><b>Case 4: Simply supported, UDL w over the whole span.</b> R<sub>A</sub> = wL/2 and M = wLx/2 − wx²/2. With y = 0 at x = 0 and x = L: C₁ = −wL³/24, C₂ = 0. So θ<sub>A</sub> = −wL³/(24EI) and y<sub>C</sub> = −5wL⁴/(384EI).</p>
+    <figure class="fig" id="sm-u4-f-cases">
+<svg viewBox="0 0 700 420" role="img" aria-label="Four standard cases: cantilever with end load, cantilever with UDL, simply supported with central load, simply supported with UDL">
+<defs><marker id="sm-u4-arw-cases" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="34.0" y="55.0" width="16.0" height="70.0" class="ln fill-hatch"/>
+<rect x="50.0" y="85.0" width="240.0" height="10.0" class="ln fill-soft"/>
+<line x1="290.0" y1="48.0" x2="290.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<text x="290.0" y="42.0" class="lbl-sm" text-anchor="middle">W</text>
+<path d="M50.0,90.0 L56.0,90.0 L62.0,90.1 L68.0,90.3 L74.0,90.5 L80.0,90.8 L86.0,91.1 L92.0,91.5 L98.0,91.9 L104.0,92.4 L110.0,92.9 L116.0,93.5 L122.0,94.1 L128.0,94.8 L134.0,95.5 L140.0,96.3 L146.0,97.1 L152.0,97.9 L158.0,98.8 L164.0,99.7 L170.0,100.6 L176.0,101.6 L182.0,102.6 L188.0,103.6 L194.0,104.7 L200.0,105.8 L206.0,106.9 L212.0,108.0 L218.0,109.2 L224.0,110.3 L230.0,111.5 L236.0,112.7 L242.0,113.9 L248.0,115.2 L254.0,116.4 L260.0,117.7 L266.0,118.9 L272.0,120.2 L278.0,121.5 L284.0,122.7 L290.0,124.0" class="ln acc thick dash"/>
+<text x="54.0" y="116.0" class="lbl-b">A</text>
+<text x="298.0" y="94.0" class="lbl-b">B</text>
+<text x="170.0" y="140.0" class="lbl-sm" text-anchor="middle">θ<tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"> = WL²/2EI, y</tspan><tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"> = WL³/3EI</tspan></text>
+<text x="170.0" y="170.0" class="lbl" text-anchor="middle">(a) Cantilever, load W at free end</text>
+<rect x="384.0" y="55.0" width="16.0" height="70.0" class="ln fill-hatch"/>
+<rect x="400.0" y="85.0" width="240.0" height="10.0" class="ln fill-soft"/>
+<rect x="400.0" y="68.0" width="240.0" height="16.0" class="ln thin fill-acc"/>
+<line x1="400.0" y1="68.0" x2="400.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="430.0" y1="68.0" x2="430.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="460.0" y1="68.0" x2="460.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="490.0" y1="68.0" x2="490.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="520.0" y1="68.0" x2="520.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="550.0" y1="68.0" x2="550.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="580.0" y1="68.0" x2="580.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="610.0" y1="68.0" x2="610.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="640.0" y1="68.0" x2="640.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<text x="520.0" y="62.0" class="lbl-sm" text-anchor="middle">w per unit length</text>
+<path d="M400.0,90.0 L406.0,90.0 L412.0,90.2 L418.0,90.4 L424.0,90.6 L430.0,91.0 L436.0,91.4 L442.0,91.9 L448.0,92.4 L454.0,93.0 L460.0,93.6 L466.0,94.3 L472.0,95.0 L478.0,95.8 L484.0,96.6 L490.0,97.4 L496.0,98.3 L502.0,99.2 L508.0,100.1 L514.0,101.1 L520.0,102.0 L526.0,103.0 L532.0,104.1 L538.0,105.1 L544.0,106.2 L550.0,107.2 L556.0,108.3 L562.0,109.4 L568.0,110.5 L574.0,111.6 L580.0,112.7 L586.0,113.8 L592.0,115.0 L598.0,116.1 L604.0,117.2 L610.0,118.3 L616.0,119.5 L622.0,120.6 L628.0,121.7 L634.0,122.9 L640.0,124.0" class="ln acc thick dash"/>
+<text x="404.0" y="116.0" class="lbl-b">A</text>
+<text x="648.0" y="94.0" class="lbl-b">B</text>
+<text x="520.0" y="140.0" class="lbl-sm" text-anchor="middle">θ<tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"> = wL³/6EI, y</tspan><tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"> = wL⁴/8EI</tspan></text>
+<text x="520.0" y="170.0" class="lbl" text-anchor="middle">(b) Cantilever, UDL w on whole span</text>
+<rect x="50.0" y="295.0" width="240.0" height="10.0" class="ln fill-soft"/>
+<polygon points="50.0,305.0 39.0,324.0 61.0,324.0" class="ln fill-soft"/>
+<rect x="33.0" y="324.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="290.0,305.0 280.0,319.0 300.0,319.0" class="ln fill-soft"/>
+<circle cx="285.0" cy="323.0" r="4.0" class="ln"/>
+<circle cx="295.0" cy="323.0" r="4.0" class="ln"/>
+<line x1="274.0" y1="328.0" x2="306.0" y2="328.0" class="ln"/>
+<line x1="170.0" y1="258.0" x2="170.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<text x="170.0" y="252.0" class="lbl-sm" text-anchor="middle">W</text>
+<path d="M50.0,300.0 L56.0,302.0 L62.0,304.1 L68.0,306.1 L74.0,308.0 L80.0,309.9 L86.0,311.8 L92.0,313.6 L98.0,315.3 L104.0,316.9 L110.0,318.4 L116.0,319.8 L122.0,321.0 L128.0,322.2 L134.0,323.2 L140.0,324.0 L146.0,324.7 L152.0,325.3 L158.0,325.7 L164.0,325.9 L170.0,326.0 L176.0,325.9 L182.0,325.7 L188.0,325.3 L194.0,324.7 L200.0,324.0 L206.0,323.2 L212.0,322.2 L218.0,321.0 L224.0,319.8 L230.0,318.4 L236.0,316.9 L242.0,315.3 L248.0,313.6 L254.0,311.8 L260.0,309.9 L266.0,308.0 L272.0,306.1 L278.0,304.1 L284.0,302.0 L290.0,300.0" class="ln acc thick dash"/>
+<text x="40.0" y="294.0" class="lbl-b" text-anchor="end">A</text>
+<text x="300.0" y="294.0" class="lbl-b">B</text>
+<text x="178.0" y="342.0" class="lbl-b">C</text>
+<text x="170.0" y="360.0" class="lbl-sm" text-anchor="middle">θ<tspan dy="4" font-size="0.75em">A</tspan><tspan dy="-4"> = WL²/16EI, y</tspan><tspan dy="4" font-size="0.75em">C</tspan><tspan dy="-4"> = WL³/48EI</tspan></text>
+<text x="170.0" y="390.0" class="lbl" text-anchor="middle">(c) Simply supported, W at centre</text>
+<rect x="400.0" y="295.0" width="240.0" height="10.0" class="ln fill-soft"/>
+<polygon points="400.0,305.0 389.0,324.0 411.0,324.0" class="ln fill-soft"/>
+<rect x="383.0" y="324.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="640.0,305.0 630.0,319.0 650.0,319.0" class="ln fill-soft"/>
+<circle cx="635.0" cy="323.0" r="4.0" class="ln"/>
+<circle cx="645.0" cy="323.0" r="4.0" class="ln"/>
+<line x1="624.0" y1="328.0" x2="656.0" y2="328.0" class="ln"/>
+<rect x="400.0" y="278.0" width="240.0" height="16.0" class="ln thin fill-acc"/>
+<line x1="400.0" y1="278.0" x2="400.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="430.0" y1="278.0" x2="430.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="460.0" y1="278.0" x2="460.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="490.0" y1="278.0" x2="490.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="520.0" y1="278.0" x2="520.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="550.0" y1="278.0" x2="550.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="580.0" y1="278.0" x2="580.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="610.0" y1="278.0" x2="610.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<line x1="640.0" y1="278.0" x2="640.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases)"/>
+<text x="520.0" y="272.0" class="lbl-sm" text-anchor="middle">w per unit length</text>
+<path d="M400.0,300.0 L406.0,302.0 L412.0,304.1 L418.0,306.1 L424.0,308.0 L430.0,309.9 L436.0,311.8 L442.0,313.6 L448.0,315.3 L454.0,316.9 L460.0,318.4 L466.0,319.8 L472.0,321.0 L478.0,322.2 L484.0,323.2 L490.0,324.0 L496.0,324.7 L502.0,325.3 L508.0,325.7 L514.0,325.9 L520.0,326.0 L526.0,325.9 L532.0,325.7 L538.0,325.3 L544.0,324.7 L550.0,324.0 L556.0,323.2 L562.0,322.2 L568.0,321.0 L574.0,319.8 L580.0,318.4 L586.0,316.9 L592.0,315.3 L598.0,313.6 L604.0,311.8 L610.0,309.9 L616.0,308.0 L622.0,306.1 L628.0,304.1 L634.0,302.0 L640.0,300.0" class="ln acc thick dash"/>
+<text x="390.0" y="294.0" class="lbl-b" text-anchor="end">A</text>
+<text x="650.0" y="294.0" class="lbl-b">B</text>
+<text x="528.0" y="342.0" class="lbl-b">C</text>
+<text x="520.0" y="360.0" class="lbl-sm" text-anchor="middle">θ<tspan dy="4" font-size="0.75em">A</tspan><tspan dy="-4"> = wL³/24EI, y</tspan><tspan dy="4" font-size="0.75em">C</tspan><tspan dy="-4"> = 5wL⁴/384EI</tspan></text>
+<text x="520.0" y="390.0" class="lbl" text-anchor="middle">(d) Simply supported, UDL w</text>
+</svg>
+<figcaption>Fig. 4.7 — The four standard cases and their maximum slope and deflection (learn these four).</figcaption>
+</figure>
+    <div class="tbl"><table><thead><tr><th>Beam and load</th><th>Max slope</th><th>Max deflection</th><th>Where</th></tr></thead><tbody>
+      <tr><td>Cantilever, W at free end</td><td>WL²/2EI</td><td>WL³/3EI</td><td>free end</td></tr>
+      <tr><td>Cantilever, W at distance a from fixed end</td><td>Wa²/2EI</td><td>Wa³/3EI + (Wa²/2EI)(L − a)</td><td>free end</td></tr>
+      <tr><td>Cantilever, UDL w on whole length</td><td>wL³/6EI</td><td>wL⁴/8EI</td><td>free end</td></tr>
+      <tr><td>Cantilever, moment M at free end</td><td>ML/EI</td><td>ML²/2EI</td><td>free end</td></tr>
+      <tr><td>Simply supported, W at centre</td><td>WL²/16EI</td><td>WL³/48EI</td><td>slope at supports, deflection at centre</td></tr>
+      <tr><td>Simply supported, W at a from A (a &gt; b)</td><td>—</td><td>Wb(L² − b²)<sup>3/2</sup>/(9√3·L·EI)</td><td>at x = √((L² − b²)/3) from A</td></tr>
+      <tr><td>Simply supported, UDL w on whole span</td><td>wL³/24EI</td><td>5wL⁴/384EI</td><td>slope at supports, deflection at centre</td></tr>
+      <tr><td>Simply supported, equal end couples M</td><td>ML/2EI</td><td>ML²/8EI</td><td>slope at supports, deflection at centre</td></tr>
+    </tbody></table></div>
+    <aside class="tip"><b>Memory trick.</b> Cantilever end load: "2-3" (WL²/2, WL³/3). Cantilever UDL: "6-8". Simply supported central load: "16-48". Simply supported UDL: "24 and 5/384". A simply supported beam is much stiffer: 48 against 3 in the denominator.</aside>
+    <figure class="photo"><img src="img/sm-u4-cantilever-model.jpg" alt="Three men in a living model of a cantilever bridge: two sit on chairs with their arms and timber struts forming cantilevers, the man in the middle hangs between them" width="800" height="612" loading="lazy"><figcaption>Benjamin Baker's "living model" of the Forth Bridge (1887). Each outer man and his chair form a double cantilever; the arms are in tension and the sticks in compression. The central span hangs from the cantilever tips, where the deflection is largest. <span class="credit">Photo: Unknown photographer for Benjamin Baker · Public domain · Wikimedia Commons</span></figcaption></figure>
+
+    <h3 id="sm-u4-c-macaulay">12. Macaulay's method</h3>
+    <p>With several point loads, the bending moment has a different expression in each segment. Plain double integration then needs one equation per segment and two constants per segment: four or six constants. <b>Macaulay's method</b> writes one equation for the whole beam and keeps only two constants.</p>
+    <figure class="fig" id="sm-u4-f-macaulay">
+<svg viewBox="0 0 680 260" role="img" aria-label="Simply supported beam with two point loads and a section X-X in the last segment for Macaulay's method">
+<defs><marker id="sm-u4-arw-macaulay" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60.0" y="94.0" width="560.0" height="12.0" class="ln fill-soft"/>
+<polygon points="60.0,106.0 49.0,125.0 71.0,125.0" class="ln fill-soft"/>
+<rect x="43.0" y="125.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="620.0,106.0 610.0,120.0 630.0,120.0" class="ln fill-soft"/>
+<circle cx="615.0" cy="124.0" r="4.0" class="ln"/>
+<circle cx="625.0" cy="124.0" r="4.0" class="ln"/>
+<line x1="604.0" y1="129.0" x2="636.0" y2="129.0" class="ln"/>
+<line x1="200.0" y1="49.0" x2="200.0" y2="93.0" class="ln" marker-end="url(#sm-u4-arw-macaulay)"/>
+<text x="200.0" y="43.0" class="lbl" text-anchor="middle">W₁</text>
+<line x1="400.0" y1="49.0" x2="400.0" y2="93.0" class="ln" marker-end="url(#sm-u4-arw-macaulay)"/>
+<text x="400.0" y="43.0" class="lbl" text-anchor="middle">W₂</text>
+<line x1="60.0" y1="166.0" x2="60.0" y2="136.0" class="ln" marker-end="url(#sm-u4-arw-macaulay)"/>
+<text x="68.0" y="164.0" class="lbl">R<tspan dy="4" font-size="0.75em">A</tspan><tspan dy="-4"></tspan></text>
+<line x1="620.0" y1="166.0" x2="620.0" y2="136.0" class="ln" marker-end="url(#sm-u4-arw-macaulay)"/>
+<text x="612.0" y="164.0" class="lbl" text-anchor="end">R<tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"></tspan></text>
+<text x="54.0" y="90.0" class="lbl-b" text-anchor="end">A</text>
+<text x="626.0" y="90.0" class="lbl-b">B</text>
+<text x="208.0" y="126.0" class="lbl-b">C</text>
+<text x="408.0" y="126.0" class="lbl-b">D</text>
+<line x1="510.0" y1="60.0" x2="510.0" y2="136.0" class="ln dash"/>
+<text x="510.0" y="54.0" class="lbl-sm" text-anchor="middle">X</text>
+<text x="520.0" y="140.0" class="lbl-sm">X</text>
+<line x1="60.0" y1="186.0" x2="200.0" y2="186.0" class="ln thin" marker-end="url(#sm-u4-arw-macaulay)" marker-start="url(#sm-u4-arw-macaulay)"/>
+<text x="130.0" y="180.0" class="lbl-sm" text-anchor="middle">a</text>
+<line x1="60.0" y1="212.0" x2="400.0" y2="212.0" class="ln thin" marker-end="url(#sm-u4-arw-macaulay)" marker-start="url(#sm-u4-arw-macaulay)"/>
+<text x="230.0" y="206.0" class="lbl-sm" text-anchor="middle">b</text>
+<line x1="60.0" y1="238.0" x2="510.0" y2="238.0" class="ln thin" marker-end="url(#sm-u4-arw-macaulay)" marker-start="url(#sm-u4-arw-macaulay)"/>
+<text x="285.0" y="232.0" class="lbl-sm" text-anchor="middle">x</text>
+</svg>
+<figcaption>Fig. 4.8 — Macaulay's method: take the section X–X in the last segment and write one moment equation with brackets [x − a], [x − b].</figcaption>
+</figure>
+    <p>Take the section X–X in the <b>last</b> segment (Fig. 4.8). Write M with the distances to the loads in square brackets:</p>
+    <div class="formula">\[ EI\frac{d^2y}{dx^2} = R_A\,x \;-\; W_1[x-a] \;-\; W_2[x-b] \]</div>
+    <div class="formula">\[ EI\frac{dy}{dx} = \frac{R_A x^2}{2} - \frac{W_1[x-a]^2}{2} - \frac{W_2[x-b]^2}{2} + C_1 \]</div>
+    <div class="formula">\[ EI\,y = \frac{R_A x^3}{6} - \frac{W_1[x-a]^3}{6} - \frac{W_2[x-b]^3}{6} + C_1x + C_2 \]</div>
+    <p><b>Rules of Macaulay's method:</b></p>
+    <ul>
+      <li>Always measure x from the same left end, and take the section in the last segment.</li>
+      <li>Integrate a bracket as a whole: ∫[x − a] dx = [x − a]²/2. Do not expand the bracket.</li>
+      <li>When you put in a value of x, ignore every bracket that becomes negative (zero or negative brackets are dropped). This makes one equation valid for every segment.</li>
+      <li>Write C₁ and C₂ only after the first term (in the first segment), so that they apply to the whole beam.</li>
+      <li>For a UDL that stops before the end, extend it to the end and add an equal upward UDL to cancel the extra part.</li>
+      <li>For maximum deflection, guess the segment, set dy/dx = 0, solve for x and check that x lies in that segment.</li>
+    </ul>
+    <p>Worked examples: N7 (one eccentric load) and N8 (two loads, with the maximum deflection between the loads).</p>
+    <aside class="exam"><b>How marks are given.</b> Reactions (1–2 marks), the Macaulay equation (2), integration with constants (2), boundary conditions and constants (2), the required slope/deflection with units (2–3). Always state "y negative means downward".</aside>
+
+    <h3 id="sm-u4-c-columns">13. Columns and struts: short and long columns</h3>
+    <p>A <b>column</b> is a vertical member that carries an axial compressive load. A <b>strut</b> is a compression member in any other direction (for example in a truss or a link). A short, thick column fails by crushing. A long, slender column fails by <b>buckling</b>: it bends sideways and collapses at a load far below the crushing load.</p>
+    <ul>
+      <li><b>Radius of gyration</b> k = √(I/A). Use the <b>least</b> I (and least k): the column buckles about the axis of least resistance.</li>
+      <li><b>Slenderness ratio</b> λ = L<sub>e</sub>/k, where L<sub>e</sub> is the effective length.</li>
+      <li><b>Crippling (buckling, critical) load</b> P<sub>cr</sub>: the load at which the column just starts to buckle.</li>
+      <li><b>Crushing load</b> P<sub>c</sub> = σ<sub>c</sub>·A, where σ<sub>c</sub> = crushing stress of the material.</li>
+    </ul>
+    <div class="tbl"><table><thead><tr><th>Type (mild steel)</th><th>Slenderness ratio</th><th>Failure</th></tr></thead><tbody>
+      <tr><td>Short column</td><td>λ &lt; 32 (or L<sub>e</sub> &lt; 8 × least lateral dimension)</td><td>Crushing (direct compression)</td></tr>
+      <tr><td>Medium column</td><td>32 to 120</td><td>Combined crushing and buckling</td></tr>
+      <tr><td>Long column</td><td>λ &gt; 120 (L<sub>e</sub> &gt; 30 × least lateral dimension)</td><td>Buckling (bending)</td></tr>
+    </tbody></table></div>
+    <p><b>Two differences between a short and a long column</b> (a common short question): a short column fails by crushing and a long one by buckling; the strength of a short column depends on σ<sub>c</sub> and A only, while the strength of a long column depends on E, I and its length and end conditions.</p>
+
+    <h3 id="sm-u4-c-euler">14. Euler's theory</h3>
+    <p><b>Assumptions of Euler's theory:</b></p>
+    <ol>
+      <li>The column is initially perfectly straight, and the load is exactly axial.</li>
+      <li>The material is homogeneous, isotropic and obeys Hooke's law (stress below the proportional limit).</li>
+      <li>The cross-section is uniform along the length.</li>
+      <li>The column is long and slender; it fails by buckling only (crushing is neglected).</li>
+      <li>The self-weight of the column is neglected.</li>
+      <li>The lateral deflection is small, so EI·d²y/dx² = M applies.</li>
+      <li>The ends are frictionless hinges, or ideally fixed, as stated.</li>
+    </ol>
+    <figure class="fig" id="sm-u4-f-buckle">
+<svg viewBox="0 0 680 430" role="img" aria-label="Euler column derivation: (a) both ends hinged, (b) one end fixed and the other free">
+<defs><marker id="sm-u4-arw-buckle" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="170.0" y1="70.0" x2="170.0" y2="340.0" class="ln dash thin"/>
+<path d="M170.0,340.0 L173.2,334.0 L176.4,328.0 L179.6,322.0 L182.7,316.0 L185.7,310.0 L188.7,304.0 L191.6,298.0 L194.4,292.0 L197.0,286.0 L199.6,280.0 L202.0,274.0 L204.2,268.0 L206.2,262.0 L208.1,256.0 L209.8,250.0 L211.3,244.0 L212.7,238.0 L213.7,232.0 L214.6,226.0 L215.3,220.0 L215.7,214.0 L216.0,208.0 L216.0,202.0 L215.7,196.0 L215.3,190.0 L214.6,184.0 L213.7,178.0 L212.7,172.0 L211.3,166.0 L209.8,160.0 L208.1,154.0 L206.2,148.0 L204.2,142.0 L202.0,136.0 L199.6,130.0 L197.0,124.0 L194.4,118.0 L191.6,112.0 L188.7,106.0 L185.7,100.0 L182.7,94.0 L179.6,88.0 L176.4,82.0 L173.2,76.0 L170.0,70.0" class="ln thick"/>
+<polygon points="170.0,340.0 159.0,359.0 181.0,359.0" class="ln fill-soft"/>
+<rect x="153.0" y="359.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="170.0,70.0 159.0,51.0 181.0,51.0" class="ln fill-soft"/>
+<line x1="170.0" y1="8.0" x2="170.0" y2="48.0" class="ln" marker-end="url(#sm-u4-arw-buckle)"/>
+<text x="180.0" y="24.0" class="lbl">P</text>
+<line x1="170.0" y1="406.0" x2="170.0" y2="372.0" class="ln" marker-end="url(#sm-u4-arw-buckle)"/>
+<text x="180.0" y="396.0" class="lbl">P</text>
+<text x="148.0" y="352.0" class="lbl-b" text-anchor="end">A</text>
+<text x="148.0" y="66.0" class="lbl-b" text-anchor="end">B</text>
+<line x1="170.0" y1="245.0" x2="211.1" y2="245.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle)" marker-start="url(#sm-u4-arw-buckle)"/>
+<text x="194.6" y="237.0" class="lbl" text-anchor="middle">y</text>
+<line x1="120.0" y1="340.0" x2="120.0" y2="245.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle)" marker-start="url(#sm-u4-arw-buckle)"/>
+<text x="112.0" y="297.5" class="lbl" text-anchor="end">x</text>
+<line x1="250.0" y1="340.0" x2="250.0" y2="70.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle)" marker-start="url(#sm-u4-arw-buckle)"/>
+<text x="258.0" y="210.0" class="lbl">L</text>
+<text x="224.0" y="210.0" class="lbl" text-anchor="middle"></text>
+<text x="170.0" y="418.0" class="lbl" text-anchor="middle">(a) Both ends hinged</text>
+<line x1="470.0" y1="70.0" x2="470.0" y2="340.0" class="ln dash thin"/>
+<path d="M470.0,340.0 L470.0,334.0 L470.1,328.0 L470.3,322.0 L470.5,316.0 L470.8,310.0 L471.1,304.0 L471.5,298.0 L471.9,292.0 L472.4,286.0 L473.0,280.0 L473.6,274.0 L474.3,268.0 L475.1,262.0 L475.9,256.0 L476.7,250.0 L477.6,244.0 L478.5,238.0 L479.5,232.0 L480.6,226.0 L481.7,220.0 L482.8,214.0 L484.0,208.0 L485.3,202.0 L486.5,196.0 L487.9,190.0 L489.2,184.0 L490.6,178.0 L492.0,172.0 L493.5,166.0 L495.0,160.0 L496.5,154.0 L498.1,148.0 L499.7,142.0 L501.3,136.0 L502.9,130.0 L504.5,124.0 L506.2,118.0 L507.9,112.0 L509.6,106.0 L511.3,100.0 L513.0,94.0 L514.8,88.0 L516.5,82.0 L518.3,76.0 L520.0,70.0" class="ln thick"/>
+<rect x="430.0" y="340.0" width="80.0" height="16.0" class="ln fill-hatch"/>
+<line x1="520.0" y1="18.0" x2="520.0" y2="66.0" class="ln" marker-end="url(#sm-u4-arw-buckle)"/>
+<text x="530.0" y="36.0" class="lbl">P</text>
+<line x1="470.0" y1="76.0" x2="520.0" y2="76.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle)" marker-start="url(#sm-u4-arw-buckle)"/>
+<text x="495.0" y="96.0" class="lbl" text-anchor="middle">a</text>
+<text x="460.0" y="332.0" class="lbl-b" text-anchor="end">A</text>
+<text x="460.0" y="74.0" class="lbl-b" text-anchor="end">B</text>
+<text x="532.0" y="74.0" class="lbl-sm">B′ (free end)</text>
+<line x1="470.0" y1="130.0" x2="502.9" y2="130.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle)" marker-start="url(#sm-u4-arw-buckle)"/>
+<text x="486.4" y="122.0" class="lbl" text-anchor="middle">y</text>
+<line x1="410.0" y1="340.0" x2="410.0" y2="130.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle)" marker-start="url(#sm-u4-arw-buckle)"/>
+<text x="402.0" y="240.0" class="lbl" text-anchor="end">x</text>
+<line x1="630.0" y1="340.0" x2="630.0" y2="70.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle)" marker-start="url(#sm-u4-arw-buckle)"/>
+<text x="638.0" y="210.0" class="lbl">L</text>
+<text x="470.0" y="380.0" class="lbl-sm" text-anchor="middle">fixed end</text>
+<text x="470.0" y="418.0" class="lbl" text-anchor="middle">(b) One end fixed, other end free</text>
+</svg>
+<figcaption>Fig. 4.9 — Buckled shape used to derive Euler's load: (a) both ends hinged, (b) one end fixed and the other end free.</figcaption>
+</figure>
+    <p><b>Both ends hinged</b> (Fig. 4.9a). At a section x from A, the deflection is y. The load P has a moment −P·y about the section (it bends the column back toward the axis):</p>
+    <div class="formula">\[ EI\frac{d^2y}{dx^2} = -P\,y \quad\Rightarrow\quad \frac{d^2y}{dx^2} + \alpha^2 y = 0, \quad \alpha^2 = \frac{P}{EI} \]</div>
+    <p>The solution is y = C₁ cos αx + C₂ sin αx. At x = 0, y = 0 → C₁ = 0. At x = L, y = 0 → C₂ sin αL = 0. C₂ ≠ 0 (the column has bent), so sin αL = 0 and αL = π (the least non-zero value). So</p>
+    <div class="formula">\[ P_E = \frac{\pi^2 E I}{L^2} \]<p class="where">P<sub>E</sub> = Euler's crippling load (N), I = least moment of inertia (mm⁴), L = length (mm).</p></div>
+    <p><b>One end fixed, other end free</b> (Fig. 4.9b). The free end deflects by a. At section x from the fixed end, M = P(a − y). The equation d²y/dx² + α²y = α²a gives y = a(1 − cos αx). At x = L, y = a, so cos αL = 0 and αL = π/2. So P<sub>E</sub> = π²EI/(4L²). The full steps are in Q7.</p>
+
+    <h3 id="sm-u4-c-ends">15. Effective length and end conditions</h3>
+    <p>All four end conditions give one formula if you use the <b>effective (equivalent) length</b> L<sub>e</sub>: the length of a both-ends-hinged column that has the same crippling load. It is the distance between two points of zero bending moment (points of inflection) on the buckled shape.</p>
+    <div class="formula">\[ P_E = \frac{\pi^2 E I}{L_e^2} \qquad \sigma_E = \frac{P_E}{A} = \frac{\pi^2 E}{(L_e/k)^2} \]</div>
+    <figure class="fig" id="sm-u4-f-ends">
+<svg viewBox="0 0 700 400" role="img" aria-label="Buckled shapes and effective lengths for the four end conditions of a column">
+<defs><marker id="sm-u4-arw-ends" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="90.0" y1="80.0" x2="90.0" y2="320.0" class="ln dash thin"/>
+<path d="M90.0,320.0 L91.8,316.0 L93.6,312.0 L95.3,308.0 L97.1,304.0 L98.8,300.0 L100.5,296.0 L102.2,292.0 L103.8,288.0 L105.4,284.0 L107.0,280.0 L108.5,276.0 L110.0,272.0 L111.4,268.0 L112.8,264.0 L114.0,260.0 L115.3,256.0 L116.4,252.0 L117.5,248.0 L118.5,244.0 L119.4,240.0 L120.3,236.0 L121.1,232.0 L121.7,228.0 L122.3,224.0 L122.8,220.0 L123.3,216.0 L123.6,212.0 L123.8,208.0 L124.0,204.0 L124.0,200.0 L124.0,196.0 L123.8,192.0 L123.6,188.0 L123.3,184.0 L122.8,180.0 L122.3,176.0 L121.7,172.0 L121.1,168.0 L120.3,164.0 L119.4,160.0 L118.5,156.0 L117.5,152.0 L116.4,148.0 L115.3,144.0 L114.0,140.0 L112.8,136.0 L111.4,132.0 L110.0,128.0 L108.5,124.0 L107.0,120.0 L105.4,116.0 L103.8,112.0 L102.2,108.0 L100.5,104.0 L98.8,100.0 L97.1,96.0 L95.3,92.0 L93.6,88.0 L91.8,84.0 L90.0,80.0" class="ln thick"/>
+<polygon points="90.0,320.0 79.0,339.0 101.0,339.0" class="ln fill-soft"/>
+<rect x="73.0" y="339.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="90.0,80.0 80.0,64.0 100.0,64.0" class="ln fill-soft"/>
+<line x1="90.0" y1="22.0" x2="90.0" y2="60.0" class="ln" marker-end="url(#sm-u4-arw-ends)"/>
+<text x="98.0" y="36.0" class="lbl-sm">P</text>
+<text x="90.0" y="358.0" class="lbl-sm" text-anchor="middle">Both ends hinged</text>
+<text x="90.0" y="394.0" class="lbl-b" text-anchor="middle">L<tspan dy="4" font-size="0.75em">e</tspan><tspan dy="-4"> = L</tspan></text>
+<line x1="262.0" y1="80.0" x2="262.0" y2="320.0" class="ln dash thin"/>
+<path d="M262.0,320.0 L262.0,316.0 L262.0,312.0 L262.1,308.0 L262.2,304.0 L262.3,300.0 L262.4,296.0 L262.6,292.0 L262.7,288.0 L262.9,284.0 L263.2,280.0 L263.4,276.0 L263.7,272.0 L264.0,268.0 L264.3,264.0 L264.6,260.0 L264.9,256.0 L265.3,252.0 L265.7,248.0 L266.1,244.0 L266.6,240.0 L267.0,236.0 L267.5,232.0 L268.0,228.0 L268.5,224.0 L269.0,220.0 L269.6,216.0 L270.1,212.0 L270.7,208.0 L271.3,204.0 L272.0,200.0 L272.6,196.0 L273.2,192.0 L273.9,188.0 L274.6,184.0 L275.3,180.0 L276.0,176.0 L276.7,172.0 L277.5,168.0 L278.2,164.0 L279.0,160.0 L279.8,156.0 L280.6,152.0 L281.4,148.0 L282.2,144.0 L283.0,140.0 L283.8,136.0 L284.7,132.0 L285.5,128.0 L286.3,124.0 L287.2,120.0 L288.1,116.0 L288.9,112.0 L289.8,108.0 L290.7,104.0 L291.6,100.0 L292.4,96.0 L293.3,92.0 L294.2,88.0 L295.1,84.0 L296.0,80.0" class="ln thick"/>
+<rect x="232.0" y="320.0" width="60.0" height="14.0" class="ln fill-hatch"/>
+<line x1="296.0" y1="22.0" x2="296.0" y2="76.0" class="ln" marker-end="url(#sm-u4-arw-ends)"/>
+<text x="304.0" y="36.0" class="lbl-sm">P</text>
+<text x="262.0" y="358.0" class="lbl-sm" text-anchor="middle">One end fixed,</text>
+<text x="262.0" y="374.0" class="lbl-sm" text-anchor="middle">other free</text>
+<text x="262.0" y="394.0" class="lbl-b" text-anchor="middle">L<tspan dy="4" font-size="0.75em">e</tspan><tspan dy="-4"> = 2L</tspan></text>
+<line x1="434.0" y1="80.0" x2="434.0" y2="320.0" class="ln dash thin"/>
+<path d="M434.0,320.0 L434.1,316.0 L434.4,312.0 L434.8,308.0 L435.5,304.0 L436.3,300.0 L437.2,296.0 L438.4,292.0 L439.6,288.0 L441.0,284.0 L442.5,280.0 L444.1,276.0 L445.7,272.0 L447.5,268.0 L449.2,264.0 L451.0,260.0 L452.8,256.0 L454.5,252.0 L456.3,248.0 L457.9,244.0 L459.5,240.0 L461.0,236.0 L462.4,232.0 L463.6,228.0 L464.8,224.0 L465.7,220.0 L466.5,216.0 L467.2,212.0 L467.6,208.0 L467.9,204.0 L468.0,200.0 L467.9,196.0 L467.6,192.0 L467.2,188.0 L466.5,184.0 L465.7,180.0 L464.8,176.0 L463.6,172.0 L462.4,168.0 L461.0,164.0 L459.5,160.0 L457.9,156.0 L456.3,152.0 L454.5,148.0 L452.8,144.0 L451.0,140.0 L449.2,136.0 L447.5,132.0 L445.7,128.0 L444.1,124.0 L442.5,120.0 L441.0,116.0 L439.6,112.0 L438.4,108.0 L437.2,104.0 L436.3,100.0 L435.5,96.0 L434.8,92.0 L434.4,88.0 L434.1,84.0 L434.0,80.0" class="ln thick"/>
+<rect x="404.0" y="320.0" width="60.0" height="14.0" class="ln fill-hatch"/>
+<rect x="404.0" y="66.0" width="60.0" height="14.0" class="ln fill-hatch"/>
+<line x1="434.0" y1="22.0" x2="434.0" y2="60.0" class="ln" marker-end="url(#sm-u4-arw-ends)"/>
+<text x="442.0" y="36.0" class="lbl-sm">P</text>
+<circle cx="451.0" cy="260.0" r="3.0" class="solid"/>
+<circle cx="451.0" cy="140.0" r="3.0" class="solid"/>
+<line x1="486.0" y1="260.0" x2="486.0" y2="140.0" class="ln thin" marker-end="url(#sm-u4-arw-ends)" marker-start="url(#sm-u4-arw-ends)"/>
+<text x="492.0" y="204.0" class="lbl-sm">L/2</text>
+<text x="434.0" y="358.0" class="lbl-sm" text-anchor="middle">Both ends fixed</text>
+<text x="434.0" y="394.0" class="lbl-b" text-anchor="middle">L<tspan dy="4" font-size="0.75em">e</tspan><tspan dy="-4"> = L/2</tspan></text>
+<line x1="606.0" y1="80.0" x2="606.0" y2="320.0" class="ln dash thin"/>
+<path d="M606.0,320.0 L606.1,316.0 L606.3,312.0 L606.6,308.0 L607.1,304.0 L607.6,300.0 L608.3,296.0 L609.1,292.0 L610.0,288.0 L611.0,284.0 L612.1,280.0 L613.3,276.0 L614.5,272.0 L615.8,268.0 L617.2,264.0 L618.6,260.0 L620.0,256.0 L621.5,252.0 L622.9,248.0 L624.4,244.0 L625.8,240.0 L627.3,236.0 L628.7,232.0 L630.0,228.0 L631.3,224.0 L632.6,220.0 L633.7,216.0 L634.8,212.0 L635.9,208.0 L636.8,204.0 L637.6,200.0 L638.3,196.0 L638.9,192.0 L639.4,188.0 L639.7,184.0 L639.9,180.0 L640.0,176.0 L639.9,172.0 L639.8,168.0 L639.4,164.0 L638.9,160.0 L638.3,156.0 L637.6,152.0 L636.7,148.0 L635.7,144.0 L634.5,140.0 L633.3,136.0 L631.9,132.0 L630.4,128.0 L628.7,124.0 L627.0,120.0 L625.2,116.0 L623.3,112.0 L621.3,108.0 L619.3,104.0 L617.1,100.0 L615.0,96.0 L612.8,92.0 L610.5,88.0 L608.3,84.0 L606.0,80.0" class="ln thick"/>
+<rect x="576.0" y="320.0" width="60.0" height="14.0" class="ln fill-hatch"/>
+<polygon points="606.0,80.0 596.0,64.0 616.0,64.0" class="ln fill-soft"/>
+<line x1="606.0" y1="22.0" x2="606.0" y2="60.0" class="ln" marker-end="url(#sm-u4-arw-ends)"/>
+<text x="614.0" y="36.0" class="lbl-sm">P</text>
+<circle cx="623.0" cy="247.8" r="3.0" class="solid"/>
+<line x1="658.0" y1="247.8" x2="658.0" y2="80.0" class="ln thin" marker-end="url(#sm-u4-arw-ends)" marker-start="url(#sm-u4-arw-ends)"/>
+<text x="664.0" y="167.9" class="lbl-sm">0.7L</text>
+<text x="606.0" y="358.0" class="lbl-sm" text-anchor="middle">One end fixed,</text>
+<text x="606.0" y="374.0" class="lbl-sm" text-anchor="middle">other hinged</text>
+<text x="606.0" y="394.0" class="lbl-b" text-anchor="middle">L<tspan dy="4" font-size="0.75em">e</tspan><tspan dy="-4"> = L/√2</tspan></text>
+<line x1="30.0" y1="320.0" x2="30.0" y2="80.0" class="ln thin" marker-end="url(#sm-u4-arw-ends)" marker-start="url(#sm-u4-arw-ends)"/>
+<text x="24.0" y="200.0" class="lbl" text-anchor="end">L</text>
+</svg>
+<figcaption>Fig. 4.10 — End conditions and effective length L<sub>e</sub> (the length of one half-sine wave between points of zero moment).</figcaption>
+</figure>
+    <div class="tbl"><table><thead><tr><th>End condition</th><th>Effective length L<sub>e</sub></th><th>Euler's load</th><th>Relative to hinged</th></tr></thead><tbody>
+      <tr><td>Both ends hinged</td><td>L</td><td>π²EI/L²</td><td>1</td></tr>
+      <tr><td>One end fixed, other end free</td><td>2L</td><td>π²EI/(4L²)</td><td>1/4</td></tr>
+      <tr><td>Both ends fixed</td><td>L/2</td><td>4π²EI/L²</td><td>4</td></tr>
+      <tr><td>One end fixed, other end hinged</td><td>L/√2 ≈ 0.7L</td><td>2π²EI/L²</td><td>2</td></tr>
+    </tbody></table></div>
+    <aside class="tip"><b>Memory trick.</b> "Free 2, hinged 1, fixed-hinged 0.7, fixed-fixed 0.5". More fixing means a shorter effective length and a larger load. The loads go 1/4 : 1 : 2 : 4.</aside>
+
+    <h3 id="sm-u4-c-rankine">16. Limitations of Euler's formula and Rankine's formula</h3>
+    <p><b>Limitations of Euler's theory:</b></p>
+    <ul>
+      <li>It is valid only for long columns. As L<sub>e</sub>/k → 0 the Euler load → ∞, which is impossible: a short column crushes first.</li>
+      <li>Euler's stress must not exceed the crushing (or proportional-limit) stress. Set π²E/λ² = σ<sub>c</sub>: for mild steel (E = 200 GPa, σ<sub>c</sub> = 330 N/mm²) the limit is λ ≈ 77–80. Below this value Euler's formula gives a wrong (too high) load.</li>
+      <li>It ignores initial crookedness, eccentricity of the load and residual stresses, which all exist in a real column. Real loads are lower.</li>
+      <li>It ignores direct compressive stress.</li>
+    </ul>
+    <p><b>Rankine's (Rankine–Gordon) formula</b> is an empirical formula. It is valid for short, medium and long columns. It combines the crushing load and the Euler load:</p>
+    <div class="formula">\[ \frac{1}{P_R} = \frac{1}{P_c} + \frac{1}{P_E} \quad\Rightarrow\quad P_R = \frac{\sigma_c\,A}{1 + \alpha\left(\dfrac{L_e}{k}\right)^2} \]<p class="where">σ<sub>c</sub> = crushing stress, A = area, α = Rankine's constant = σ<sub>c</sub>/(π²E). For a short column P<sub>E</sub> is very large, so P<sub>R</sub> ≈ P<sub>c</sub>. For a long column P<sub>c</sub> is large compared with P<sub>E</sub>, so P<sub>R</sub> ≈ P<sub>E</sub>.</p></div>
+    <div class="tbl"><table><thead><tr><th>Material</th><th>σ<sub>c</sub> (N/mm²)</th><th>Rankine's constant α</th></tr></thead><tbody>
+      <tr><td>Mild steel</td><td>320 (330)</td><td>1/7500</td></tr>
+      <tr><td>Wrought iron</td><td>250</td><td>1/9000</td></tr>
+      <tr><td>Cast iron</td><td>550</td><td>1/1600</td></tr>
+      <tr><td>Timber</td><td>50</td><td>1/750</td></tr>
+    </tbody></table></div>
+    <figure class="fig" id="sm-u4-f-curve">
+<svg viewBox="0 0 680 350" role="img" aria-label="Critical stress against slenderness ratio: crushing limit, Euler curve and Rankine curve">
+<defs><marker id="sm-u4-arw-curve" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80.0" y1="290.0" x2="650.0" y2="290.0" class="ln" marker-end="url(#sm-u4-arw-curve)"/>
+<line x1="80.0" y1="290.0" x2="80.0" y2="30.0" class="ln" marker-end="url(#sm-u4-arw-curve)"/>
+<line x1="80.0" y1="290.0" x2="80.0" y2="295.0" class="ln thin"/>
+<text x="80.0" y="310.0" class="lbl-sm" text-anchor="middle">0</text>
+<line x1="190.0" y1="290.0" x2="190.0" y2="295.0" class="ln thin"/>
+<text x="190.0" y="310.0" class="lbl-sm" text-anchor="middle">50</text>
+<line x1="300.0" y1="290.0" x2="300.0" y2="295.0" class="ln thin"/>
+<text x="300.0" y="310.0" class="lbl-sm" text-anchor="middle">100</text>
+<line x1="410.0" y1="290.0" x2="410.0" y2="295.0" class="ln thin"/>
+<text x="410.0" y="310.0" class="lbl-sm" text-anchor="middle">150</text>
+<line x1="520.0" y1="290.0" x2="520.0" y2="295.0" class="ln thin"/>
+<text x="520.0" y="310.0" class="lbl-sm" text-anchor="middle">200</text>
+<line x1="630.0" y1="290.0" x2="630.0" y2="295.0" class="ln thin"/>
+<text x="630.0" y="310.0" class="lbl-sm" text-anchor="middle">250</text>
+<line x1="75.0" y1="290.0" x2="80.0" y2="290.0" class="ln thin"/>
+<text x="71.0" y="294.0" class="lbl-sm" text-anchor="end">0</text>
+<line x1="75.0" y1="232.0" x2="80.0" y2="232.0" class="ln thin"/>
+<text x="71.0" y="236.0" class="lbl-sm" text-anchor="end">100</text>
+<line x1="75.0" y1="174.0" x2="80.0" y2="174.0" class="ln thin"/>
+<text x="71.0" y="178.0" class="lbl-sm" text-anchor="end">200</text>
+<line x1="75.0" y1="116.0" x2="80.0" y2="116.0" class="ln thin"/>
+<text x="71.0" y="120.0" class="lbl-sm" text-anchor="end">300</text>
+<line x1="75.0" y1="58.0" x2="80.0" y2="58.0" class="ln thin"/>
+<text x="71.0" y="62.0" class="lbl-sm" text-anchor="end">400</text>
+<text x="365.0" y="336.0" class="lbl" text-anchor="middle">Slenderness ratio λ = L<tspan dy="4" font-size="0.75em">e</tspan><tspan dy="-4">/k</tspan></text>
+<text x="26.0" y="170.0" class="lbl" text-anchor="middle" transform="rotate(-90 26.0 170.0)">Critical stress σ (N/mm²)</text>
+<line x1="80.0" y1="98.6" x2="630.0" y2="98.6" class="ln dash"/>
+<text x="630.0" y="90.6" class="lbl-sm" text-anchor="end">crushing σ<tspan dy="4" font-size="0.75em">c</tspan><tspan dy="-4"> = 330</tspan></text>
+<polyline points="234.0,56.4 235.1,59.7 236.2,62.9 237.3,66.1 238.4,69.2 239.5,72.2 240.6,75.2 241.7,78.1 242.8,80.9 243.9,83.7 245.0,86.5 246.1,89.2 247.2,91.8 248.3,94.4 249.4,96.9" class="ln acc2 dash"/>
+<polyline points="250.5,99.4 251.6,101.8 252.7,104.2 253.8,106.6 254.9,108.9 256.0,111.1 257.1,113.3 258.2,115.5 259.3,117.6 260.4,119.7 261.5,121.8 262.6,123.8 263.7,125.8 264.8,127.7 265.9,129.7 267.0,131.5 268.1,133.4 269.2,135.2 270.3,137.0 271.4,138.7 272.5,140.5 273.6,142.2 274.7,143.8 275.8,145.5 276.9,147.1 278.0,148.7 279.1,150.2 280.2,151.7 281.3,153.3 282.4,154.7 283.5,156.2 284.6,157.6 285.7,159.0 286.8,160.4 287.9,161.8 289.0,163.1 290.1,164.5 291.2,165.8 292.3,167.1 293.4,168.3 294.5,169.6 295.6,170.8 296.7,172.0 297.8,173.2 298.9,174.4 300.0,175.5 301.1,176.6 302.2,177.8 303.3,178.9 304.4,180.0 305.5,181.0 306.6,182.1 307.7,183.1 308.8,184.1 309.9,185.2 311.0,186.2 312.1,187.1 313.2,188.1 314.3,189.1 315.4,190.0 316.5,190.9 317.6,191.8 318.7,192.7 319.8,193.6 320.9,194.5 322.0,195.4 323.1,196.2 324.2,197.1 325.3,197.9 326.4,198.7 327.5,199.5 328.6,200.3 329.7,201.1 330.8,201.9 331.9,202.7 333.0,203.4 334.1,204.2 335.2,204.9 336.3,205.6 337.4,206.4 338.5,207.1 339.6,207.8 340.7,208.5 341.8,209.2 342.9,209.8 344.0,210.5 345.1,211.2 346.2,211.8 347.3,212.4 348.4,213.1 349.5,213.7 350.6,214.3 351.7,214.9 352.8,215.5 353.9,216.1 355.0,216.7 356.1,217.3 357.2,217.9 358.3,218.5 359.4,219.0 360.5,219.6 361.6,220.1 362.7,220.7 363.8,221.2 364.9,221.7 366.0,222.3 367.1,222.8 368.2,223.3 369.3,223.8 370.4,224.3 371.5,224.8 372.6,225.3 373.7,225.8 374.8,226.2 375.9,226.7 377.0,227.2 378.1,227.6 379.2,228.1 380.3,228.6 381.4,229.0 382.5,229.4 383.6,229.9 384.7,230.3 385.8,230.7 386.9,231.2 388.0,231.6 389.1,232.0 390.2,232.4 391.3,232.8 392.4,233.2 393.5,233.6 394.6,234.0 395.7,234.4 396.8,234.8 397.9,235.2 399.0,235.5 400.1,235.9 401.2,236.3 402.3,236.7 403.4,237.0 404.5,237.4 405.6,237.7 406.7,238.1 407.8,238.4 408.9,238.8 410.0,239.1 411.1,239.5 412.2,239.8 413.3,240.1 414.4,240.4 415.5,240.8 416.6,241.1 417.7,241.4 418.8,241.7 419.9,242.0 421.0,242.3 422.1,242.7 423.2,243.0 424.3,243.3 425.4,243.6 426.5,243.8 427.6,244.1 428.7,244.4 429.8,244.7 430.9,245.0 432.0,245.3 433.1,245.6 434.2,245.8 435.3,246.1 436.4,246.4 437.5,246.6 438.6,246.9 439.7,247.2 440.8,247.4 441.9,247.7 443.0,247.9 444.1,248.2 445.2,248.5 446.3,248.7 447.4,248.9 448.5,249.2 449.6,249.4 450.7,249.7 451.8,249.9 452.9,250.2 454.0,250.4 455.1,250.6 456.2,250.8 457.3,251.1 458.4,251.3 459.5,251.5 460.6,251.7 461.7,252.0 462.8,252.2 463.9,252.4 465.0,252.6 466.1,252.8 467.2,253.0 468.3,253.2 469.4,253.5 470.5,253.7 471.6,253.9 472.7,254.1 473.8,254.3 474.9,254.5 476.0,254.7 477.1,254.9 478.2,255.1 479.3,255.2 480.4,255.4 481.5,255.6 482.6,255.8 483.7,256.0 484.8,256.2 485.9,256.4 487.0,256.5 488.1,256.7 489.2,256.9 490.3,257.1 491.4,257.3 492.5,257.4 493.6,257.6 494.7,257.8 495.8,257.9 496.9,258.1 498.0,258.3 499.1,258.5 500.2,258.6 501.3,258.8 502.4,258.9 503.5,259.1 504.6,259.3 505.7,259.4 506.8,259.6 507.9,259.7 509.0,259.9 510.1,260.0 511.2,260.2 512.3,260.3 513.4,260.5 514.5,260.6 515.6,260.8 516.7,260.9 517.8,261.1 518.9,261.2 520.0,261.4 521.1,261.5 522.2,261.7 523.3,261.8 524.4,261.9 525.5,262.1 526.6,262.2 527.7,262.4 528.8,262.5 529.9,262.6 531.0,262.8 532.1,262.9 533.2,263.0 534.3,263.2 535.4,263.3 536.5,263.4 537.6,263.5 538.7,263.7 539.8,263.8 540.9,263.9 542.0,264.0 543.1,264.2 544.2,264.3 545.3,264.4 546.4,264.5 547.5,264.6 548.6,264.8 549.7,264.9 550.8,265.0 551.9,265.1 553.0,265.2 554.1,265.3 555.2,265.5 556.3,265.6 557.4,265.7 558.5,265.8 559.6,265.9 560.7,266.0 561.8,266.1 562.9,266.2 564.0,266.3 565.1,266.5 566.2,266.6 567.3,266.7 568.4,266.8 569.5,266.9 570.6,267.0 571.7,267.1 572.8,267.2 573.9,267.3 575.0,267.4 576.1,267.5 577.2,267.6 578.3,267.7 579.4,267.8 580.5,267.9 581.6,268.0 582.7,268.1 583.8,268.2 584.9,268.3 586.0,268.4 587.1,268.5 588.2,268.5 589.3,268.6 590.4,268.7 591.5,268.8 592.6,268.9 593.7,269.0 594.8,269.1 595.9,269.2 597.0,269.3 598.1,269.4 599.2,269.4 600.3,269.5 601.4,269.6 602.5,269.7 603.6,269.8 604.7,269.9 605.8,270.0 606.9,270.0 608.0,270.1 609.1,270.2 610.2,270.3 611.3,270.4 612.4,270.5 613.5,270.5 614.6,270.6 615.7,270.7 616.8,270.8 617.9,270.8 619.0,270.9 620.1,271.0 621.2,271.1 622.3,271.2 623.4,271.2 624.5,271.3 625.6,271.4 626.7,271.5 627.8,271.5 628.9,271.6 630.0,271.7" class="ln acc2 thick"/>
+<polyline points="80.0,98.6 84.4,98.7 88.8,99.0 93.2,99.5 97.6,100.2 102.0,101.1 106.4,102.2 110.8,103.5 115.2,104.9 119.6,106.5 124.0,108.3 128.4,110.2 132.8,112.3 137.2,114.4 141.6,116.7 146.0,119.1 150.4,121.6 154.8,124.2 159.2,126.8 163.6,129.5 168.0,132.3 172.4,135.0 176.8,137.9 181.2,140.7 185.6,143.6 190.0,146.5 194.4,149.3 198.8,152.2 203.2,155.0 207.6,157.9 212.0,160.7 216.4,163.5 220.8,166.2 225.2,168.9 229.6,171.6 234.0,174.2 238.4,176.8 242.8,179.4 247.2,181.9 251.6,184.3 256.0,186.7 260.4,189.1 264.8,191.4 269.2,193.6 273.6,195.8 278.0,198.0 282.4,200.1 286.8,202.1 291.2,204.1 295.6,206.1 300.0,208.0 304.4,209.8 308.8,211.6 313.2,213.4 317.6,215.1 322.0,216.8 326.4,218.4 330.8,220.0 335.2,221.5 339.6,223.0 344.0,224.5 348.4,225.9 352.8,227.2 357.2,228.6 361.6,229.9 366.0,231.2 370.4,232.4 374.8,233.6 379.2,234.8 383.6,235.9 388.0,237.0 392.4,238.1 396.8,239.2 401.2,240.2 405.6,241.2 410.0,242.2 414.4,243.1 418.8,244.0 423.2,244.9 427.6,245.8 432.0,246.6 436.4,247.5 440.8,248.3 445.2,249.1 449.6,249.8 454.0,250.6 458.4,251.3 462.8,252.0 467.2,252.7 471.6,253.4 476.0,254.0 480.4,254.7 484.8,255.3 489.2,255.9 493.6,256.5 498.0,257.1 502.4,257.6 506.8,258.2 511.2,258.7 515.6,259.3 520.0,259.8 524.4,260.3 528.8,260.8 533.2,261.3 537.6,261.7 542.0,262.2 546.4,262.6 550.8,263.1 555.2,263.5 559.6,263.9 564.0,264.3 568.4,264.7 572.8,265.1 577.2,265.5 581.6,265.9 586.0,266.2 590.4,266.6 594.8,266.9 599.2,267.3 603.6,267.6 608.0,267.9 612.4,268.3 616.8,268.6 621.2,268.9 625.6,269.2 630.0,269.5" class="ln acc thick"/>
+<circle cx="250.1" cy="98.6" r="3.5" class="solid"/>
+<line x1="250.1" y1="98.6" x2="250.1" y2="290.0" class="ln thin dash"/>
+<text x="256.1" y="282.0" class="lbl-sm">λ ≈ 77</text>
+<text x="438.0" y="231.3" class="lbl-sm">Euler: π²E/λ²</text>
+<text x="294.0" y="230.0" class="lbl-acc" text-anchor="end">Rankine</text>
+<line x1="150.4" y1="46.0" x2="150.4" y2="290.0" class="ln thin hid"/>
+<line x1="344.0" y1="46.0" x2="344.0" y2="290.0" class="ln thin hid"/>
+<text x="115.2" y="58.0" class="lbl-sm" text-anchor="middle">short</text>
+<text x="247.2" y="58.0" class="lbl-sm" text-anchor="middle">medium</text>
+<text x="487.0" y="58.0" class="lbl-sm" text-anchor="middle">long</text>
+</svg>
+<figcaption>Fig. 4.11 — Critical stress against slenderness ratio for mild steel (σ<sub>c</sub> = 330 N/mm², E = 200 GPa, α = 1/7500). Euler is valid only to the right of λ ≈ 77; Rankine covers the full range.</figcaption>
+</figure>
+    <aside class="real"><b>Real world.</b> The connecting rod of an engine, the piston rod of a hydraulic cylinder, a scaffold pipe, the jib of a crane and the legs of a water tank are all designed as columns. A car jack screw is checked for buckling when it is fully extended.</aside>
+
+    <h3 id="sm-u4-c-cards">17. Key terms</h3>
+    <dl class="cards">
+      <dt>Pure torsion</dt><dd>A member loaded only by a torque (no bending moment, axial or shear force); every section carries the same torque.</dd>
+      <dt>Polar moment of inertia J</dt><dd>Second moment of area about the shaft axis: πD⁴/32 (solid), π(D<sub>o</sub>⁴ − D<sub>i</sub>⁴)/32 (hollow).</dd>
+      <dt>Polar modulus Z<sub>p</sub></dt><dd>J/R; torsional strength T = τ·Z<sub>p</sub>. For a solid shaft Z<sub>p</sub> = πD³/16.</dd>
+      <dt>Torsional rigidity</dt><dd>GJ: the torque that gives unit twist per unit length. Torsional flexibility is L/(GJ).</dd>
+      <dt>Power</dt><dd>P = 2πNT/60 W, with N in rpm and T in N·m.</dd>
+      <dt>Flexural rigidity</dt><dd>EI (N·mm²): the resistance of a beam to bending deflection.</dd>
+      <dt>Elastic curve</dt><dd>The curved shape of the neutral axis of a loaded beam; EI·d²y/dx² = M.</dd>
+      <dt>Macaulay's method</dt><dd>One moment equation with brackets [x − a] for the whole beam; brackets that become negative are dropped.</dd>
+      <dt>Slenderness ratio</dt><dd>λ = L<sub>e</sub>/k, effective length divided by the least radius of gyration.</dd>
+      <dt>Effective length</dt><dd>Length between points of zero moment on the buckled column: L, 2L, L/2, L/√2.</dd>
+      <dt>Euler's load</dt><dd>P<sub>E</sub> = π²EI/L<sub>e</sub>², valid for long columns only.</dd>
+      <dt>Rankine's formula</dt><dd>P = σ<sub>c</sub>A/(1 + α(L<sub>e</sub>/k)²), valid for all columns.</dd>
+    </dl>
+
+    <div class="quiz" id="sm-u4-quiz">
+      <div class="mcq" data-answer="c"><p class="stem">In a solid circular shaft under torsion, the shear stress is</p><ol class="opts"><li>uniform over the section</li><li>maximum at the centre</li><li>zero at the centre and maximum at the outer surface</li><li>maximum at R/2</li></ol><p class="why">τ/R = q/r: stress is proportional to the radius, so it is zero on the axis and maximum at the surface.</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">Torsional flexibility of a shaft is</p><ol class="opts"><li>GJ/L</li><li>L/(GJ)</li><li>GJ</li><li>TL/J</li></ol><p class="why">Flexibility is the twist per unit torque, θ/T = L/(GJ), the reciprocal of torsional stiffness GJ/L.</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">If the diameter of a solid shaft is doubled, the torque it can carry at the same stress becomes</p><ol class="opts"><li>8 times</li><li>4 times</li><li>2 times</li><li>16 times</li></ol><p class="why">T = (π/16)τD³, so T is proportional to D³: 2³ = 8. (The stiffness GJ goes up 2⁴ = 16 times.)</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">The maximum deflection of a cantilever of length L with a point load W at the free end is</p><ol class="opts"><li>WL³/48EI</li><li>WL²/2EI</li><li>WL³/8EI</li><li>WL³/3EI</li></ol><p class="why">Double integration with y = dy/dx = 0 at the fixed end gives y<sub>B</sub> = WL³/3EI. WL²/2EI is the slope.</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">The product EI is called</p><ol class="opts"><li>torsional rigidity</li><li>flexural rigidity</li><li>section modulus</li><li>modulus of resilience</li></ol><p class="why">EI is the flexural rigidity of a beam; GJ is the torsional rigidity of a shaft.</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">In Macaulay's method, when x is less than a, the term [x − a] is</p><ol class="opts"><li>taken as negative</li><li>taken as (a − x)</li><li>taken as zero (dropped)</li><li>taken as x</li></ol><p class="why">Macaulay brackets that become negative are ignored; this keeps one equation valid for every segment.</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">The effective length of a column with one end fixed and the other end free is</p><ol class="opts"><li>2L</li><li>L</li><li>L/2</li><li>L/√2</li></ol><p class="why">The buckled shape is a quarter of a sine wave; the equivalent hinged column is 2L long. So L<sub>e</sub> is greater than L.</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">Slenderness ratio of a column is the effective length divided by</p><ol class="opts"><li>the least lateral dimension</li><li>the least radius of gyration</li><li>the maximum radius of gyration</li><li>the area</li></ol><p class="why">λ = L<sub>e</sub>/k<sub>min</sub>; the column buckles about the axis with the least radius of gyration.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">Euler's formula gives unsafe results for</p><ol class="opts"><li>long columns</li><li>columns with both ends fixed</li><li>hollow columns</li><li>short columns</li></ol><p class="why">For small L<sub>e</sub>/k the Euler load exceeds the crushing load; a short column crushes first. Use Rankine's formula there.</p></div>
+    </div>
+  </section>
+
+  <section class="part" id="sm-u4-theory" data-part="theory">
+    <h2>Theory questions</h2>
+
+    <article class="q" id="sm-u4-q1" data-marks="12">
+      <h3>Q1. With usual notations and assumptions, derive the torsion equation T/J = τ/R = Gθ/L.</h3>
+      <p class="q-src">Nov 2024 Q8(a) · Jun-Jul 2024 Q8(a) · Aug-Sep 2023 Q8(a) · Mar-Apr 2021 (CBCS) Q7(a) · Feb-Mar 2022 (CBCS) Q7(a) (hollow shaft)</p>
+      <p class="q-hint">Assumptions (6), figure of the twisted shaft and the end section, shear strain → τ/R = Gθ/L, ring → T = τJ/R, final equation.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Pure torsion.</b> A shaft is in pure torsion when only a torque acts on it, so every section carries the same torque and only shear stress.</p>
+        <p><b>Assumptions.</b></p>
+        <ol>
+          <li>The material is homogeneous, isotropic and elastic; it obeys Hooke's law.</li>
+          <li>The shaft is straight with a uniform circular section (solid or hollow).</li>
+          <li>The torque acts in a plane perpendicular to the axis (pure torsion).</li>
+          <li>Plane cross-sections remain plane and radii remain straight after twisting.</li>
+          <li>The angle of twist is small and uniform along the length.</li>
+          <li>Stresses do not exceed the limit of proportionality.</li>
+        </ol>
+        <figure class="fig" id="sm-u4-f-twist-q1">
+<svg viewBox="0 0 680 300" role="img" aria-label="Shaft fixed at one end and twisted by torque T: generator AB moves to AB-dash through shear angle phi; end section turns through angle theta">
+<defs><marker id="sm-u4-arw-twist-q1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="44.0" y="65.0" width="16.0" height="170.0" class="ln fill-hatch"/>
+<text x="52.0" y="52.0" class="lbl-sm" text-anchor="middle">fixed end</text>
+<rect x="60.0" y="100.0" width="380.0" height="100.0" class="ln fill-soft"/>
+<ellipse cx="440.0" cy="150.0" rx="16.0" ry="50.0" class="ln fill-soft"/>
+<line x1="40.0" y1="150.0" x2="475.0" y2="150.0" class="ln hid"/>
+<line x1="60.0" y1="125.0" x2="453.9" y2="125.0" class="ln thick"/>
+<line x1="60.0" y1="125.0" x2="454.9" y2="168.0" class="ln acc thick"/>
+<circle cx="60.0" cy="125.0" r="3.5" class="solid"/>
+<circle cx="453.9" cy="125.0" r="3.5" class="solid"/>
+<circle cx="454.9" cy="168.0" r="3.5" class="solid"/>
+<text x="74.0" y="118.0" class="lbl-b">A</text>
+<text x="459.9" y="120.0" class="lbl-b">B</text>
+<text x="460.9" y="182.0" class="lbl-b">B′</text>
+<path d="M155.0,125.0 A95,95 0 0 1 154.4,135.3" class="ln thin"/>
+<text x="160.0" y="119.0" class="lbl-acc">φ</text>
+<path d="M470.0,88.0 A14,62.0 0 0 1 470.0,212.0" class="ln acc2" marker-end="url(#sm-u4-arw-twist-q1)"/>
+<text x="498.0" y="98.0" class="lbl" text-anchor="middle">T</text>
+<line x1="60.0" y1="232.0" x2="440.0" y2="232.0" class="ln thin" marker-end="url(#sm-u4-arw-twist-q1)" marker-start="url(#sm-u4-arw-twist-q1)"/>
+<text x="250.0" y="250.0" class="lbl-sm" text-anchor="middle">L</text>
+<text x="250.0" y="288.0" class="lbl" text-anchor="middle">(a) Shaft: line AB twists to AB′</text>
+<circle cx="600.0" cy="150.0" r="52.0" class="ln fill-soft"/>
+<circle cx="600.0" cy="150.0" r="3.5" class="solid"/>
+<line x1="600.0" y1="150.0" x2="570.2" y2="107.4" class="ln"/>
+<line x1="600.0" y1="150.0" x2="613.5" y2="99.8" class="ln acc"/>
+<path d="M570.2,107.4 A52,52 0 0 1 613.5,99.8" class="ln acc thick"/>
+<circle cx="570.2" cy="107.4" r="3.5" class="solid"/>
+<circle cx="613.5" cy="99.8" r="3.5" class="solid"/>
+<path d="M587.4,132.0 A22,22 0 0 1 605.7,128.7" class="ln thin"/>
+<text x="602.0" y="120.0" class="lbl-acc" text-anchor="middle">θ</text>
+<text x="562.2" y="101.4" class="lbl-b" text-anchor="end">B</text>
+<text x="619.5" y="93.8" class="lbl-b">B′</text>
+<text x="606.0" y="170.0" class="lbl-b">O</text>
+<line x1="600.0" y1="150.0" x2="648.9" y2="167.8" class="ln thin"/>
+<text x="630.0" y="184.0" class="lbl">R</text>
+<text x="600.0" y="288.0" class="lbl" text-anchor="middle">(b) End section</text>
+</svg>
+<figcaption>Fig. Q1.1 — Shaft under pure torsion and its end section.</figcaption>
+</figure>
+        <p><b>Step 1 – shear strain.</b> Let a shaft of length L and radius R be fixed at one end and twisted by T at the other. A surface line AB moves to AB′; the end radius OB turns to OB′ through θ. The arc BB′ seen from both views:</p>
+        <div class="formula">\[ BB' = R\,\theta = L\,\varphi \quad\Rightarrow\quad \varphi = \frac{R\,\theta}{L} \]</div>
+        <p><b>Step 2 – shear stress.</b> By Hooke's law in shear, φ = τ/G, where τ is the shear stress at the surface:</p>
+        <div class="formula">\[ \frac{\tau}{G} = \frac{R\,\theta}{L} \quad\Rightarrow\quad \frac{\tau}{R} = \frac{G\,\theta}{L} \quad (1) \]</div>
+        <p>For a layer at radius r, the strain is rθ/L, so the stress there is q = Grθ/L. Hence q/r = τ/R = Gθ/L: the stress varies linearly with radius.</p>
+        <figure class="fig" id="sm-u4-f-tauvar-q1">
+<svg viewBox="0 0 680 300" role="img" aria-label="Elemental ring in a shaft section; linear shear stress distribution in a solid and a hollow shaft">
+<defs><marker id="sm-u4-arw-tauvar-q1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<circle cx="115.0" cy="140.0" r="82.0" class="ln fill-soft"/>
+<circle cx="115.0" cy="140.0" r="52.0" class="ln acc"/>
+<circle cx="115.0" cy="140.0" r="62.0" class="ln acc"/>
+<circle cx="115.0" cy="140.0" r="3.5" class="solid"/>
+<text x="109.0" y="158.0" class="lbl-b" text-anchor="end">O</text>
+<line x1="115.0" y1="140.0" x2="157.6" y2="110.2" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q1)"/>
+<text x="137.0" y="138.0" class="lbl">r</text>
+<line x1="115.0" y1="140.0" x2="37.9" y2="112.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q1)"/>
+<text x="69.0" y="144.0" class="lbl" text-anchor="middle">R</text>
+<text x="173.0" y="212.0" class="lbl-acc">dr</text>
+<line x1="165.0" y1="200.0" x2="157.0" y2="180.0" class="ln thin"/>
+<text x="115.0" y="252.0" class="lbl" text-anchor="middle">(a) Ring: radius r, width dr</text>
+<text x="115.0" y="272.0" class="lbl-sm" text-anchor="middle">dA = 2πr·dr</text>
+<line x1="330.0" y1="50.0" x2="330.0" y2="230.0" class="ln"/>
+<line x1="240.0" y1="140.0" x2="420.0" y2="140.0" class="ln hid"/>
+<polygon points="330.0,58.0 402.0,58.0 330.0,140.0" class="ln fill-acc"/>
+<polygon points="330.0,222.0 258.0,222.0 330.0,140.0" class="ln fill-acc"/>
+<line x1="330.0" y1="78.0" x2="384.4" y2="78.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q1)"/>
+<line x1="330.0" y1="202.0" x2="275.6" y2="202.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q1)"/>
+<line x1="330.0" y1="103.0" x2="362.5" y2="103.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q1)"/>
+<line x1="330.0" y1="177.0" x2="297.5" y2="177.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q1)"/>
+<text x="408.0" y="63.0" class="lbl">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="252.0" y="227.0" class="lbl" text-anchor="end">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="340.0" y="158.0" class="lbl-sm">τ = 0 at centre</text>
+<text x="330.0" y="252.0" class="lbl" text-anchor="middle">(b) Solid shaft: τ varies as r</text>
+<line x1="560.0" y1="50.0" x2="560.0" y2="230.0" class="ln"/>
+<line x1="470.0" y1="140.0" x2="650.0" y2="140.0" class="ln hid"/>
+<polygon points="560.0,58.0 632.0,58.0 595.1,100.0 560.0,100.0" class="ln fill-acc"/>
+<polygon points="560.0,222.0 488.0,222.0 524.9,180.0 560.0,180.0" class="ln fill-acc"/>
+<line x1="595.1" y1="100.0" x2="560.0" y2="140.0" class="ln dash thin"/>
+<line x1="524.9" y1="180.0" x2="560.0" y2="140.0" class="ln dash thin"/>
+<text x="638.0" y="63.0" class="lbl">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="609.1" y="114.0" class="lbl">τ<tspan dy="4" font-size="0.75em">i</tspan><tspan dy="-4"></tspan></text>
+<text x="482.0" y="227.0" class="lbl" text-anchor="end">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="546.0" y="132.0" class="lbl-sm" text-anchor="end">bore</text>
+<text x="560.0" y="252.0" class="lbl" text-anchor="middle">(c) Hollow shaft</text>
+<text x="560.0" y="272.0" class="lbl-sm" text-anchor="middle">τ<tspan dy="4" font-size="0.75em">i</tspan><tspan dy="-4"> = τ</tspan><tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4">·R</tspan><tspan dy="4" font-size="0.75em">i</tspan><tspan dy="-4">/R</tspan><tspan dy="4" font-size="0.75em">o</tspan><tspan dy="-4"></tspan></text>
+</svg>
+<figcaption>Fig. Q1.2 — Elemental ring and shear stress distribution.</figcaption>
+</figure>
+        <p><b>Step 3 – torque.</b> Take an elemental ring of radius r and thickness dr. Area dA = 2πr dr. Shear stress on it q = (τ/R) r.</p>
+        <div class="formula">\[ dF = q\,dA = \frac{\tau}{R}\,r\,(2\pi r\,dr), \qquad dT = dF\cdot r = \frac{\tau}{R}\,2\pi r^3\,dr \]</div>
+        <div class="formula">\[ T = \frac{\tau}{R}\int_0^R 2\pi r^3\,dr = \frac{\tau}{R}\,J, \qquad J = \int_0^R 2\pi r^3\,dr = \frac{\pi R^4}{2} = \frac{\pi D^4}{32} \]</div>
+        <p>So T/J = τ/R (2). Combine (1) and (2):</p>
+        <div class="formula">\[ \frac{T}{J} = \frac{\tau}{R} = \frac{G\,\theta}{L} \]<p class="where">T = torque, J = polar moment of inertia, τ = max shear stress at outer radius R, G = modulus of rigidity, θ = angle of twist (rad), L = length.</p></div>
+        <p><b>Hollow shaft (Feb-Mar 2022).</b> For a hollow shaft of inner radius R<sub>i</sub> and outer radius R<sub>o</sub>, integrate from R<sub>i</sub> to R<sub>o</sub>:</p>
+        <div class="formula">\[ T = \frac{\tau_{\max}}{R_o}\int_{R_i}^{R_o} 2\pi r^3\,dr = \frac{\tau_{\max}}{R_o}\cdot\frac{\pi}{2}\left(R_o^4 - R_i^4\right) \;\Rightarrow\; \tau_{\max} = \frac{2\,T\,R_o}{\pi\left(R_o^4 - R_i^4\right)} = \frac{16\,T\,D_o}{\pi\left(D_o^4 - D_i^4\right)} \]<p class="where">The maximum stress is at the outer surface; at the inner surface τ<sub>i</sub> = τ<sub>max</sub>·R<sub>i</sub>/R<sub>o</sub>.</p></div>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u4-q2" data-marks="10">
+      <h3>Q2. Explain: (i) polar moment of inertia, (ii) torsional rigidity, (iii) torsional strength, (iv) torsional flexibility, (v) pure torsion. Why is a hollow shaft preferred to a solid shaft?</h3>
+      <p class="q-src">Jan 2025 Q8(a) · Jan 2023 (CBCS) Q1 (torsional moment; polar section modulus) · Mar-Apr 2021 (CBCS) Q1 (torsional stiffness) · Feb-Mar 2022 (CBCS) Q1 (pure torsion; angle of twist; torsional flexibility)</p>
+      <p class="q-hint">One definition with formula and unit for each term, then the hollow-shaft comparison with numbers.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <ol>
+          <li><b>Polar moment of inertia J</b>: the second moment of area of a plane section about an axis perpendicular to its plane (the shaft axis). J = ∫r² dA = I<sub>xx</sub> + I<sub>yy</sub>. Solid: J = πD⁴/32; hollow: J = π(D<sub>o</sub>⁴ − D<sub>i</sub>⁴)/32. Unit mm⁴. It measures the resistance of the section to twisting.</li>
+          <li><b>Torsional rigidity</b>: the product GJ (N·mm²). From T = GJθ/L, it is the torque required to produce a twist of one radian in a unit length. The torque per radian of twist for the whole shaft, GJ/L, is the torsional stiffness.</li>
+          <li><b>Torsional strength</b>: the maximum torque a shaft can transmit without exceeding the allowable shear stress. T = τ·J/R = τ·Z<sub>p</sub>, where Z<sub>p</sub> = J/R is the polar modulus (polar section modulus). For a solid shaft T = (π/16)τD³.</li>
+          <li><b>Torsional flexibility</b>: the angle of twist produced by a unit torque, θ/T = L/(GJ) (rad per N·mm). It is the reciprocal of torsional stiffness.</li>
+          <li><b>Pure torsion</b>: the state of a member subjected only to equal and opposite torques at its ends, without bending moment, axial force or transverse shear force. Every section has the same torque and only shear stresses. <b>Torsional moment</b> is the twisting moment T = F × r about the axis.</li>
+        </ol>
+        <figure class="fig" id="sm-u4-f-tauvar-q2">
+<svg viewBox="0 0 680 300" role="img" aria-label="Elemental ring in a shaft section; linear shear stress distribution in a solid and a hollow shaft">
+<defs><marker id="sm-u4-arw-tauvar-q2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<circle cx="115.0" cy="140.0" r="82.0" class="ln fill-soft"/>
+<circle cx="115.0" cy="140.0" r="52.0" class="ln acc"/>
+<circle cx="115.0" cy="140.0" r="62.0" class="ln acc"/>
+<circle cx="115.0" cy="140.0" r="3.5" class="solid"/>
+<text x="109.0" y="158.0" class="lbl-b" text-anchor="end">O</text>
+<line x1="115.0" y1="140.0" x2="157.6" y2="110.2" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q2)"/>
+<text x="137.0" y="138.0" class="lbl">r</text>
+<line x1="115.0" y1="140.0" x2="37.9" y2="112.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q2)"/>
+<text x="69.0" y="144.0" class="lbl" text-anchor="middle">R</text>
+<text x="173.0" y="212.0" class="lbl-acc">dr</text>
+<line x1="165.0" y1="200.0" x2="157.0" y2="180.0" class="ln thin"/>
+<text x="115.0" y="252.0" class="lbl" text-anchor="middle">(a) Ring: radius r, width dr</text>
+<text x="115.0" y="272.0" class="lbl-sm" text-anchor="middle">dA = 2πr·dr</text>
+<line x1="330.0" y1="50.0" x2="330.0" y2="230.0" class="ln"/>
+<line x1="240.0" y1="140.0" x2="420.0" y2="140.0" class="ln hid"/>
+<polygon points="330.0,58.0 402.0,58.0 330.0,140.0" class="ln fill-acc"/>
+<polygon points="330.0,222.0 258.0,222.0 330.0,140.0" class="ln fill-acc"/>
+<line x1="330.0" y1="78.0" x2="384.4" y2="78.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q2)"/>
+<line x1="330.0" y1="202.0" x2="275.6" y2="202.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q2)"/>
+<line x1="330.0" y1="103.0" x2="362.5" y2="103.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q2)"/>
+<line x1="330.0" y1="177.0" x2="297.5" y2="177.0" class="ln thin" marker-end="url(#sm-u4-arw-tauvar-q2)"/>
+<text x="408.0" y="63.0" class="lbl">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="252.0" y="227.0" class="lbl" text-anchor="end">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="340.0" y="158.0" class="lbl-sm">τ = 0 at centre</text>
+<text x="330.0" y="252.0" class="lbl" text-anchor="middle">(b) Solid shaft: τ varies as r</text>
+<line x1="560.0" y1="50.0" x2="560.0" y2="230.0" class="ln"/>
+<line x1="470.0" y1="140.0" x2="650.0" y2="140.0" class="ln hid"/>
+<polygon points="560.0,58.0 632.0,58.0 595.1,100.0 560.0,100.0" class="ln fill-acc"/>
+<polygon points="560.0,222.0 488.0,222.0 524.9,180.0 560.0,180.0" class="ln fill-acc"/>
+<line x1="595.1" y1="100.0" x2="560.0" y2="140.0" class="ln dash thin"/>
+<line x1="524.9" y1="180.0" x2="560.0" y2="140.0" class="ln dash thin"/>
+<text x="638.0" y="63.0" class="lbl">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="609.1" y="114.0" class="lbl">τ<tspan dy="4" font-size="0.75em">i</tspan><tspan dy="-4"></tspan></text>
+<text x="482.0" y="227.0" class="lbl" text-anchor="end">τ<tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4"></tspan></text>
+<text x="546.0" y="132.0" class="lbl-sm" text-anchor="end">bore</text>
+<text x="560.0" y="252.0" class="lbl" text-anchor="middle">(c) Hollow shaft</text>
+<text x="560.0" y="272.0" class="lbl-sm" text-anchor="middle">τ<tspan dy="4" font-size="0.75em">i</tspan><tspan dy="-4"> = τ</tspan><tspan dy="4" font-size="0.75em">max</tspan><tspan dy="-4">·R</tspan><tspan dy="4" font-size="0.75em">i</tspan><tspan dy="-4">/R</tspan><tspan dy="4" font-size="0.75em">o</tspan><tspan dy="-4"></tspan></text>
+</svg>
+<figcaption>Fig. Q2.1 — (a) Elemental ring; (b) solid shaft: core lightly stressed; (c) hollow shaft.</figcaption>
+</figure>
+        <p><b>Why a hollow shaft is preferred.</b></p>
+        <ul>
+          <li>In a solid shaft the stress at the centre is zero and the core material is lightly stressed (Fig. Q2.1b). A hollow shaft removes this core, so all its material is near τ<sub>max</sub>.</li>
+          <li>For the same torque and the same maximum stress, a hollow shaft with D<sub>i</sub> = 0.7D<sub>o</sub> weighs only 61 % of the solid shaft (a saving of 39 %).</li>
+          <li>For the same weight, the hollow shaft (D<sub>i</sub> = 0.7D<sub>o</sub>) is 2.09 times as strong and 2.9 times as stiff.</li>
+          <li>Less rotating mass means lower inertia; the bore can carry oil or cables.</li>
+          <li>Limitations: larger outside diameter and higher cost of manufacture.</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u4-q3" data-marks="10">
+      <h3>Q3. Derive the Euler–Bernoulli differential equation for the deflection of a beam, EI·d²y/dx² = M. Write the relation between slope, deflection and radius of curvature.</h3>
+      <p class="q-src">Nov 2024 Q9(b) · Jan 2023 (CBCS) Q8(a) · Nov-Dec 2025 Q9(a) · Aug-Sep 2023 Q9(a) · Jan 2025 Q9(a) · Jan 2023 (CBCS) Q1 (flexural rigidity; methods to find deflection)</p>
+      <p class="q-hint">Figure of the elastic curve, M/I = E/R, ds = R dθ, small slope → 1/R = d²y/dx², assumptions, sign convention.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Definitions.</b> When a beam bends, its neutral axis takes the shape of a curve called the <b>elastic curve</b>. The <b>deflection</b> y is the vertical displacement of a point on the neutral axis; the <b>slope</b> θ = dy/dx is the angle of the tangent to the elastic curve.</p>
+        <figure class="fig" id="sm-u4-f-elastic-q3">
+<svg viewBox="0 0 680 262" role="img" aria-label="Elastic curve of a simply supported beam with deflection y, slope theta and radius of curvature R">
+<defs><marker id="sm-u4-arw-elastic-q3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="120.0" x2="620.0" y2="120.0" class="ln dash thin"/>
+<text x="470.0" y="110.0" class="lbl-sm" text-anchor="middle">beam axis before loading</text>
+<path d="M60.0,120.0 L65.0,122.0 L70.0,123.9 L75.0,125.9 L80.0,127.8 L85.0,129.8 L90.0,131.7 L95.0,133.7 L100.0,135.6 L105.0,137.5 L110.0,139.4 L115.0,141.3 L120.0,143.1 L125.0,145.0 L130.0,146.8 L135.0,148.6 L140.0,150.4 L145.0,152.1 L150.0,153.9 L155.0,155.6 L160.0,157.2 L165.0,158.9 L170.0,160.5 L175.0,162.1 L180.0,163.6 L185.0,165.2 L190.0,166.6 L195.0,168.1 L200.0,169.5 L205.0,170.9 L210.0,172.2 L215.0,173.5 L220.0,174.7 L225.0,175.9 L230.0,177.1 L235.0,178.2 L240.0,179.3 L245.0,180.3 L250.0,181.3 L255.0,182.2 L260.0,183.1 L265.0,183.9 L270.0,184.7 L275.0,185.4 L280.0,186.1 L285.0,186.7 L290.0,187.3 L295.0,187.8 L300.0,188.2 L305.0,188.7 L310.0,189.0 L315.0,189.3 L320.0,189.6 L325.0,189.8 L330.0,189.9 L335.0,190.0 L340.0,190.0 L345.0,190.0 L350.0,189.9 L355.0,189.8 L360.0,189.6 L365.0,189.3 L370.0,189.0 L375.0,188.7 L380.0,188.2 L385.0,187.8 L390.0,187.3 L395.0,186.7 L400.0,186.1 L405.0,185.4 L410.0,184.7 L415.0,183.9 L420.0,183.1 L425.0,182.2 L430.0,181.3 L435.0,180.3 L440.0,179.3 L445.0,178.2 L450.0,177.1 L455.0,175.9 L460.0,174.7 L465.0,173.5 L470.0,172.2 L475.0,170.9 L480.0,169.5 L485.0,168.1 L490.0,166.6 L495.0,165.2 L500.0,163.6 L505.0,162.1 L510.0,160.5 L515.0,158.9 L520.0,157.2 L525.0,155.6 L530.0,153.9 L535.0,152.1 L540.0,150.4 L545.0,148.6 L550.0,146.8 L555.0,145.0 L560.0,143.1 L565.0,141.3 L570.0,139.4 L575.0,137.5 L580.0,135.6 L585.0,133.7 L590.0,131.7 L595.0,129.8 L600.0,127.8 L605.0,125.9 L610.0,123.9 L615.0,122.0 L620.0,120.0" class="ln acc thick"/>
+<polygon points="60.0,120.0 49.0,139.0 71.0,139.0" class="ln fill-soft"/>
+<rect x="43.0" y="139.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="620.0,120.0 610.0,134.0 630.0,134.0" class="ln fill-soft"/>
+<circle cx="615.0" cy="138.0" r="4.0" class="ln"/>
+<circle cx="625.0" cy="138.0" r="4.0" class="ln"/>
+<line x1="604.0" y1="143.0" x2="636.0" y2="143.0" class="ln"/>
+<text x="52.0" y="112.0" class="lbl-b" text-anchor="end">A</text>
+<text x="628.0" y="112.0" class="lbl-b">B</text>
+<circle cx="230.0" cy="177.1" r="3.5" class="solid"/>
+<text x="222.0" y="197.1" class="lbl-b" text-anchor="end">P</text>
+<line x1="140.0" y1="156.6" x2="340.0" y2="202.1" class="ln thin"/>
+<line x1="230.0" y1="177.1" x2="340.0" y2="177.1" class="ln dash thin"/>
+<path d="M302.0,177.1 A72,72 0 0 1 300.2,193.0" class="ln thin"/>
+<text x="348.0" y="208.1" class="lbl-sm">tangent: θ = dy/dx</text>
+<line x1="230.0" y1="120.0" x2="230.0" y2="177.1" class="ln thin" marker-end="url(#sm-u4-arw-elastic-q3)" marker-start="url(#sm-u4-arw-elastic-q3)"/>
+<text x="222.0" y="154.5" class="lbl" text-anchor="end">y</text>
+<line x1="60.0" y1="52.0" x2="230.0" y2="52.0" class="ln thin" marker-end="url(#sm-u4-arw-elastic-q3)" marker-start="url(#sm-u4-arw-elastic-q3)"/>
+<text x="145.0" y="44.0" class="lbl-sm" text-anchor="middle">x</text>
+<line x1="261.0" y1="40.6" x2="230.0" y2="177.1" class="ln thin"/>
+<line x1="261.0" y1="40.6" x2="282.0" y2="186.3" class="ln thin"/>
+<circle cx="261.0" cy="40.6" r="3.5" class="solid"/>
+<text x="269.0" y="44.6" class="lbl-sm">O (centre of curvature)</text>
+<text x="243.0" y="106.6" class="lbl" text-anchor="end">R</text>
+<text x="271.0" y="86.6" class="lbl-sm">dθ</text>
+<circle cx="282.0" cy="186.3" r="3.5" class="solid"/>
+<text x="290.0" y="204.3" class="lbl-b">Q</text>
+<text x="260.0" y="211.7" class="lbl-sm" text-anchor="middle">ds</text>
+<text x="540.0" y="222.0" class="lbl-acc" text-anchor="middle">elastic curve</text>
+<text x="340.0" y="250.0" class="lbl-sm" text-anchor="middle">x measured from A along the beam;  y = deflection (upward +)</text>
+</svg>
+<figcaption>Fig. Q3.1 — Elastic curve, slope, deflection and radius of curvature.</figcaption>
+</figure>
+        <p><b>Derivation.</b> Let P and Q be two points on the elastic curve a small distance ds apart. The normals at P and Q meet at the centre of curvature O; the angle between them is dθ and the radius is R.</p>
+        <div class="formula">\[ ds = R\,d\theta \quad\Rightarrow\quad \frac{1}{R} = \frac{d\theta}{ds} \]</div>
+        <p>The deflection is small, so ds ≈ dx and tan θ ≈ θ = dy/dx. Hence</p>
+        <div class="formula">\[ \frac{1}{R} = \frac{d\theta}{dx} = \frac{d}{dx}\!\left(\frac{dy}{dx}\right) = \frac{d^2y}{dx^2} \]</div>
+        <p>(The exact curvature is \( \frac{1}{R} = \frac{d^2y/dx^2}{\left[1 + (dy/dx)^2\right]^{3/2}} \); for small slopes (dy/dx)² ≈ 0.)</p>
+        <p>From the bending equation M/I = E/R:</p>
+        <div class="formula">\[ \frac{1}{R} = \frac{M}{E\,I} \quad\Rightarrow\quad \frac{d^2y}{dx^2} = \frac{M}{EI} \quad\Rightarrow\quad E\,I\,\frac{d^2y}{dx^2} = M \]<p class="where">EI = flexural rigidity, M = bending moment at the section.</p></div>
+        <p><b>Assumptions.</b> Hooke's law holds; E and I are constant; the beam is initially straight; deflections are small; deflection due to shear is neglected; plane sections remain plane.</p>
+        <p><b>Sign convention.</b> x positive to the right, y positive upward; sagging moment positive (concave up, d²y/dx² &gt; 0).</p>
+        <p><b>Relations.</b></p>
+        <div class="formula">\[ \text{deflection} = y, \quad \text{slope} = \frac{dy}{dx}, \quad \frac{1}{R} = \frac{d^2y}{dx^2} = \frac{M}{EI}, \quad F = EI\frac{d^3y}{dx^3}, \quad w = EI\frac{d^4y}{dx^4} \]</div>
+        <p><b>Methods to find deflection:</b> double integration method, Macaulay's method, moment-area method, conjugate beam method, strain energy (Castigliano) method.</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u4-q4" data-marks="10">
+      <h3>Q4. By the double integration method, derive the slope and deflection at the free end of a cantilever of length L with a point load W at the free end. Also find the maximum slope and deflection of a simply supported beam with a UDL w over the whole span.</h3>
+      <p class="q-src">Jun-Jul 2024 Q9(a) and Q9(b) · Nov 2024 Q9(a) · Feb-Mar 2022 (CBCS) Q8 · Mar-Apr 2021 (CBCS) Q8(a) (uniform bending moment)</p>
+      <p class="q-hint">Figure, M at section x, integrate twice, boundary conditions, final formulas with negative sign meaning downward.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>(a) Cantilever with W at the free end.</b> Let the cantilever AB be fixed at A and free at B. Take x from A.</p>
+        <figure class="fig" id="sm-u4-f-cantpt-q4">
+<svg viewBox="0 0 680 270" role="img" aria-label="Cantilever with point load W at the free end: deflected shape, slope and deflection at B">
+<defs><marker id="sm-u4-arw-cantpt-q4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="64.0" y="45.0" width="16.0" height="120.0" class="ln fill-hatch"/>
+<rect x="80.0" y="98.0" width="480.0" height="14.0" class="ln fill-soft"/>
+<line x1="560.0" y1="51.0" x2="560.0" y2="97.0" class="ln" marker-end="url(#sm-u4-arw-cantpt-q4)"/>
+<text x="560.0" y="45.0" class="lbl" text-anchor="middle">W</text>
+<path d="M80.0,105.0 L88.0,105.0 L96.0,105.1 L104.0,105.2 L112.0,105.4 L120.0,105.6 L128.0,105.9 L136.0,106.2 L144.0,106.6 L152.0,107.0 L160.0,107.4 L168.0,107.9 L176.0,108.5 L184.0,109.1 L192.0,109.7 L200.0,110.3 L208.0,111.0 L216.0,111.8 L224.0,112.5 L232.0,113.3 L240.0,114.2 L248.0,115.1 L256.0,116.0 L264.0,116.9 L272.0,117.9 L280.0,118.9 L288.0,119.9 L296.0,121.0 L304.0,122.1 L312.0,123.2 L320.0,124.4 L328.0,125.6 L336.0,126.8 L344.0,128.0 L352.0,129.2 L360.0,130.5 L368.0,131.8 L376.0,133.1 L384.0,134.4 L392.0,135.8 L400.0,137.1 L408.0,138.5 L416.0,139.9 L424.0,141.4 L432.0,142.8 L440.0,144.2 L448.0,145.7 L456.0,147.2 L464.0,148.6 L472.0,150.1 L480.0,151.6 L488.0,153.2 L496.0,154.7 L504.0,156.2 L512.0,157.7 L520.0,159.3 L528.0,160.8 L536.0,162.4 L544.0,163.9 L552.0,165.5 L560.0,167.0" class="ln acc thick dash"/>
+<text x="82.0" y="89.0" class="lbl-b">A</text>
+<text x="570.0" y="93.0" class="lbl-b">B</text>
+<circle cx="560.0" cy="167.0" r="3.5" class="solid"/>
+<text x="552.0" y="187.0" class="lbl-b" text-anchor="end">B′</text>
+<line x1="600.0" y1="105.0" x2="600.0" y2="167.0" class="ln thin" marker-end="url(#sm-u4-arw-cantpt-q4)" marker-start="url(#sm-u4-arw-cantpt-q4)"/>
+<text x="608.0" y="141.0" class="lbl">y<tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"></tspan></text>
+<line x1="420.0" y1="139.9" x2="580.0" y2="170.9" class="ln thin"/>
+<line x1="420.0" y1="167.0" x2="560.0" y2="167.0" class="ln dash thin"/>
+<text x="410.0" y="161.0" class="lbl" text-anchor="end">θ<tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"></tspan></text>
+<line x1="270.0" y1="71.0" x2="270.0" y2="135.0" class="ln dash"/>
+<text x="270.0" y="65.0" class="lbl-sm" text-anchor="middle">X</text>
+<text x="270.0" y="151.0" class="lbl-sm" text-anchor="middle">X</text>
+<line x1="80.0" y1="196.0" x2="270.0" y2="196.0" class="ln thin" marker-end="url(#sm-u4-arw-cantpt-q4)" marker-start="url(#sm-u4-arw-cantpt-q4)"/>
+<text x="175.0" y="190.0" class="lbl-sm" text-anchor="middle">x</text>
+<line x1="80.0" y1="236.0" x2="560.0" y2="236.0" class="ln thin" marker-end="url(#sm-u4-arw-cantpt-q4)" marker-start="url(#sm-u4-arw-cantpt-q4)"/>
+<text x="320.0" y="230.0" class="lbl-sm" text-anchor="middle">L</text>
+<text x="280.0" y="172.0" class="lbl-sm">M<tspan dy="4" font-size="0.75em">x</tspan><tspan dy="-4"> = −W(L − x)</tspan></text>
+</svg>
+<figcaption>Fig. Q4.1 — Cantilever with a point load at the free end.</figcaption>
+</figure>
+        <p>Bending moment at section X–X (hogging): M = −W(L − x).</p>
+        <div class="formula">\[ EI\frac{d^2y}{dx^2} = -W(L - x) \]</div>
+        <div class="formula">\[ EI\frac{dy}{dx} = -W\left(Lx - \frac{x^2}{2}\right) + C_1 \qquad EI\,y = -W\left(\frac{Lx^2}{2} - \frac{x^3}{6}\right) + C_1x + C_2 \]</div>
+        <p>Boundary conditions at the fixed end x = 0: dy/dx = 0 → C₁ = 0; y = 0 → C₂ = 0.</p>
+        <p>Slope and deflection equations:</p>
+        <div class="formula">\[ EI\frac{dy}{dx} = -W\left(Lx - \frac{x^2}{2}\right), \qquad EI\,y = -\frac{W}{6}\left(3Lx^2 - x^3\right) \]</div>
+        <p>At the free end (x = L):</p>
+        <div class="formula">\[ \theta_B = -\frac{WL^2}{2EI} \qquad y_B = -\frac{WL^3}{3EI} \]<p class="where">Negative signs: the free end slopes downward and deflects downward. These are the maximum values.</p></div>
+        <p><b>(b) Simply supported beam with UDL w over span L.</b> R<sub>A</sub> = R<sub>B</sub> = wL/2. At distance x from A:</p>
+        <div class="formula">\[ EI\frac{d^2y}{dx^2} = \frac{wL}{2}x - \frac{w x^2}{2} \]</div>
+        <div class="formula">\[ EI\frac{dy}{dx} = \frac{wLx^2}{4} - \frac{wx^3}{6} + C_1 \qquad EI\,y = \frac{wLx^3}{12} - \frac{wx^4}{24} + C_1x + C_2 \]</div>
+        <p>At x = 0, y = 0 → C₂ = 0. By symmetry dy/dx = 0 at x = L/2:</p>
+        <div class="formula">\[ 0 = \frac{wL^3}{16} - \frac{wL^3}{48} + C_1 \quad\Rightarrow\quad C_1 = -\frac{wL^3}{24} \]</div>
+        <p>Maximum slope at the supports (x = 0) and maximum deflection at the centre (x = L/2):</p>
+        <div class="formula">\[ \theta_A = -\frac{wL^3}{24EI} \qquad y_C = \frac{1}{EI}\left[\frac{wL^4}{96} - \frac{wL^4}{384} - \frac{wL^4}{48}\right] = -\frac{5\,wL^4}{384\,EI} \]</div>
+        <figure class="fig" id="sm-u4-f-cases-q4">
+<svg viewBox="0 0 700 420" role="img" aria-label="Four standard cases: cantilever with end load, cantilever with UDL, simply supported with central load, simply supported with UDL">
+<defs><marker id="sm-u4-arw-cases-q4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="34.0" y="55.0" width="16.0" height="70.0" class="ln fill-hatch"/>
+<rect x="50.0" y="85.0" width="240.0" height="10.0" class="ln fill-soft"/>
+<line x1="290.0" y1="48.0" x2="290.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<text x="290.0" y="42.0" class="lbl-sm" text-anchor="middle">W</text>
+<path d="M50.0,90.0 L56.0,90.0 L62.0,90.1 L68.0,90.3 L74.0,90.5 L80.0,90.8 L86.0,91.1 L92.0,91.5 L98.0,91.9 L104.0,92.4 L110.0,92.9 L116.0,93.5 L122.0,94.1 L128.0,94.8 L134.0,95.5 L140.0,96.3 L146.0,97.1 L152.0,97.9 L158.0,98.8 L164.0,99.7 L170.0,100.6 L176.0,101.6 L182.0,102.6 L188.0,103.6 L194.0,104.7 L200.0,105.8 L206.0,106.9 L212.0,108.0 L218.0,109.2 L224.0,110.3 L230.0,111.5 L236.0,112.7 L242.0,113.9 L248.0,115.2 L254.0,116.4 L260.0,117.7 L266.0,118.9 L272.0,120.2 L278.0,121.5 L284.0,122.7 L290.0,124.0" class="ln acc thick dash"/>
+<text x="54.0" y="116.0" class="lbl-b">A</text>
+<text x="298.0" y="94.0" class="lbl-b">B</text>
+<text x="170.0" y="140.0" class="lbl-sm" text-anchor="middle">θ<tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"> = WL²/2EI, y</tspan><tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"> = WL³/3EI</tspan></text>
+<text x="170.0" y="170.0" class="lbl" text-anchor="middle">(a) Cantilever, load W at free end</text>
+<rect x="384.0" y="55.0" width="16.0" height="70.0" class="ln fill-hatch"/>
+<rect x="400.0" y="85.0" width="240.0" height="10.0" class="ln fill-soft"/>
+<rect x="400.0" y="68.0" width="240.0" height="16.0" class="ln thin fill-acc"/>
+<line x1="400.0" y1="68.0" x2="400.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="430.0" y1="68.0" x2="430.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="460.0" y1="68.0" x2="460.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="490.0" y1="68.0" x2="490.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="520.0" y1="68.0" x2="520.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="550.0" y1="68.0" x2="550.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="580.0" y1="68.0" x2="580.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="610.0" y1="68.0" x2="610.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="640.0" y1="68.0" x2="640.0" y2="84.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<text x="520.0" y="62.0" class="lbl-sm" text-anchor="middle">w per unit length</text>
+<path d="M400.0,90.0 L406.0,90.0 L412.0,90.2 L418.0,90.4 L424.0,90.6 L430.0,91.0 L436.0,91.4 L442.0,91.9 L448.0,92.4 L454.0,93.0 L460.0,93.6 L466.0,94.3 L472.0,95.0 L478.0,95.8 L484.0,96.6 L490.0,97.4 L496.0,98.3 L502.0,99.2 L508.0,100.1 L514.0,101.1 L520.0,102.0 L526.0,103.0 L532.0,104.1 L538.0,105.1 L544.0,106.2 L550.0,107.2 L556.0,108.3 L562.0,109.4 L568.0,110.5 L574.0,111.6 L580.0,112.7 L586.0,113.8 L592.0,115.0 L598.0,116.1 L604.0,117.2 L610.0,118.3 L616.0,119.5 L622.0,120.6 L628.0,121.7 L634.0,122.9 L640.0,124.0" class="ln acc thick dash"/>
+<text x="404.0" y="116.0" class="lbl-b">A</text>
+<text x="648.0" y="94.0" class="lbl-b">B</text>
+<text x="520.0" y="140.0" class="lbl-sm" text-anchor="middle">θ<tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"> = wL³/6EI, y</tspan><tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"> = wL⁴/8EI</tspan></text>
+<text x="520.0" y="170.0" class="lbl" text-anchor="middle">(b) Cantilever, UDL w on whole span</text>
+<rect x="50.0" y="295.0" width="240.0" height="10.0" class="ln fill-soft"/>
+<polygon points="50.0,305.0 39.0,324.0 61.0,324.0" class="ln fill-soft"/>
+<rect x="33.0" y="324.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="290.0,305.0 280.0,319.0 300.0,319.0" class="ln fill-soft"/>
+<circle cx="285.0" cy="323.0" r="4.0" class="ln"/>
+<circle cx="295.0" cy="323.0" r="4.0" class="ln"/>
+<line x1="274.0" y1="328.0" x2="306.0" y2="328.0" class="ln"/>
+<line x1="170.0" y1="258.0" x2="170.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<text x="170.0" y="252.0" class="lbl-sm" text-anchor="middle">W</text>
+<path d="M50.0,300.0 L56.0,302.0 L62.0,304.1 L68.0,306.1 L74.0,308.0 L80.0,309.9 L86.0,311.8 L92.0,313.6 L98.0,315.3 L104.0,316.9 L110.0,318.4 L116.0,319.8 L122.0,321.0 L128.0,322.2 L134.0,323.2 L140.0,324.0 L146.0,324.7 L152.0,325.3 L158.0,325.7 L164.0,325.9 L170.0,326.0 L176.0,325.9 L182.0,325.7 L188.0,325.3 L194.0,324.7 L200.0,324.0 L206.0,323.2 L212.0,322.2 L218.0,321.0 L224.0,319.8 L230.0,318.4 L236.0,316.9 L242.0,315.3 L248.0,313.6 L254.0,311.8 L260.0,309.9 L266.0,308.0 L272.0,306.1 L278.0,304.1 L284.0,302.0 L290.0,300.0" class="ln acc thick dash"/>
+<text x="40.0" y="294.0" class="lbl-b" text-anchor="end">A</text>
+<text x="300.0" y="294.0" class="lbl-b">B</text>
+<text x="178.0" y="342.0" class="lbl-b">C</text>
+<text x="170.0" y="360.0" class="lbl-sm" text-anchor="middle">θ<tspan dy="4" font-size="0.75em">A</tspan><tspan dy="-4"> = WL²/16EI, y</tspan><tspan dy="4" font-size="0.75em">C</tspan><tspan dy="-4"> = WL³/48EI</tspan></text>
+<text x="170.0" y="390.0" class="lbl" text-anchor="middle">(c) Simply supported, W at centre</text>
+<rect x="400.0" y="295.0" width="240.0" height="10.0" class="ln fill-soft"/>
+<polygon points="400.0,305.0 389.0,324.0 411.0,324.0" class="ln fill-soft"/>
+<rect x="383.0" y="324.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="640.0,305.0 630.0,319.0 650.0,319.0" class="ln fill-soft"/>
+<circle cx="635.0" cy="323.0" r="4.0" class="ln"/>
+<circle cx="645.0" cy="323.0" r="4.0" class="ln"/>
+<line x1="624.0" y1="328.0" x2="656.0" y2="328.0" class="ln"/>
+<rect x="400.0" y="278.0" width="240.0" height="16.0" class="ln thin fill-acc"/>
+<line x1="400.0" y1="278.0" x2="400.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="430.0" y1="278.0" x2="430.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="460.0" y1="278.0" x2="460.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="490.0" y1="278.0" x2="490.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="520.0" y1="278.0" x2="520.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="550.0" y1="278.0" x2="550.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="580.0" y1="278.0" x2="580.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="610.0" y1="278.0" x2="610.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<line x1="640.0" y1="278.0" x2="640.0" y2="294.0" class="ln" marker-end="url(#sm-u4-arw-cases-q4)"/>
+<text x="520.0" y="272.0" class="lbl-sm" text-anchor="middle">w per unit length</text>
+<path d="M400.0,300.0 L406.0,302.0 L412.0,304.1 L418.0,306.1 L424.0,308.0 L430.0,309.9 L436.0,311.8 L442.0,313.6 L448.0,315.3 L454.0,316.9 L460.0,318.4 L466.0,319.8 L472.0,321.0 L478.0,322.2 L484.0,323.2 L490.0,324.0 L496.0,324.7 L502.0,325.3 L508.0,325.7 L514.0,325.9 L520.0,326.0 L526.0,325.9 L532.0,325.7 L538.0,325.3 L544.0,324.7 L550.0,324.0 L556.0,323.2 L562.0,322.2 L568.0,321.0 L574.0,319.8 L580.0,318.4 L586.0,316.9 L592.0,315.3 L598.0,313.6 L604.0,311.8 L610.0,309.9 L616.0,308.0 L622.0,306.1 L628.0,304.1 L634.0,302.0 L640.0,300.0" class="ln acc thick dash"/>
+<text x="390.0" y="294.0" class="lbl-b" text-anchor="end">A</text>
+<text x="650.0" y="294.0" class="lbl-b">B</text>
+<text x="528.0" y="342.0" class="lbl-b">C</text>
+<text x="520.0" y="360.0" class="lbl-sm" text-anchor="middle">θ<tspan dy="4" font-size="0.75em">A</tspan><tspan dy="-4"> = wL³/24EI, y</tspan><tspan dy="4" font-size="0.75em">C</tspan><tspan dy="-4"> = 5wL⁴/384EI</tspan></text>
+<text x="520.0" y="390.0" class="lbl" text-anchor="middle">(d) Simply supported, UDL w</text>
+</svg>
+<figcaption>Fig. Q4.2 — Standard cases.</figcaption>
+</figure>
+        <p><b>(c) Beam under a uniform bending moment M (Mar-Apr 2021).</b> If equal couples M act at the ends of a simply supported beam, M is constant, so EI·d²y/dx² = M. Integrating, EI·dy/dx = Mx + C₁ and EI·y = Mx²/2 + C₁x + C₂. With y = 0 at x = 0 and x = L: C₂ = 0, C₁ = −ML/2. So the slope at the ends is ML/(2EI), and the central deflection is ML²/(8EI). The beam bends into a circular arc of radius R = EI/M.</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u4-q5" data-marks="10">
+      <h3>Q5. Explain Macaulay's method for finding the deflection of beams. Derive the general slope and deflection equations for a simply supported beam with two point loads.</h3>
+      <p class="q-src">Aug-Sep 2023 Q10(a) · Jan 2023 (CBCS) Q1 (methods to find deflection)</p>
+      <p class="q-hint">Why plain integration is lengthy, the bracket rules, one worked general equation, constants from the supports.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Need.</b> When a beam carries several point loads, the bending-moment expression changes at each load. Ordinary double integration needs a separate equation for each segment and two constants per segment, which must be matched at every load point. Macaulay's method uses <b>one</b> equation for the whole beam with only <b>two</b> constants.</p>
+        <figure class="fig" id="sm-u4-f-macaulay-q5">
+<svg viewBox="0 0 680 260" role="img" aria-label="Simply supported beam with two point loads and a section X-X in the last segment for Macaulay's method">
+<defs><marker id="sm-u4-arw-macaulay-q5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60.0" y="94.0" width="560.0" height="12.0" class="ln fill-soft"/>
+<polygon points="60.0,106.0 49.0,125.0 71.0,125.0" class="ln fill-soft"/>
+<rect x="43.0" y="125.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="620.0,106.0 610.0,120.0 630.0,120.0" class="ln fill-soft"/>
+<circle cx="615.0" cy="124.0" r="4.0" class="ln"/>
+<circle cx="625.0" cy="124.0" r="4.0" class="ln"/>
+<line x1="604.0" y1="129.0" x2="636.0" y2="129.0" class="ln"/>
+<line x1="200.0" y1="49.0" x2="200.0" y2="93.0" class="ln" marker-end="url(#sm-u4-arw-macaulay-q5)"/>
+<text x="200.0" y="43.0" class="lbl" text-anchor="middle">W₁</text>
+<line x1="400.0" y1="49.0" x2="400.0" y2="93.0" class="ln" marker-end="url(#sm-u4-arw-macaulay-q5)"/>
+<text x="400.0" y="43.0" class="lbl" text-anchor="middle">W₂</text>
+<line x1="60.0" y1="166.0" x2="60.0" y2="136.0" class="ln" marker-end="url(#sm-u4-arw-macaulay-q5)"/>
+<text x="68.0" y="164.0" class="lbl">R<tspan dy="4" font-size="0.75em">A</tspan><tspan dy="-4"></tspan></text>
+<line x1="620.0" y1="166.0" x2="620.0" y2="136.0" class="ln" marker-end="url(#sm-u4-arw-macaulay-q5)"/>
+<text x="612.0" y="164.0" class="lbl" text-anchor="end">R<tspan dy="4" font-size="0.75em">B</tspan><tspan dy="-4"></tspan></text>
+<text x="54.0" y="90.0" class="lbl-b" text-anchor="end">A</text>
+<text x="626.0" y="90.0" class="lbl-b">B</text>
+<text x="208.0" y="126.0" class="lbl-b">C</text>
+<text x="408.0" y="126.0" class="lbl-b">D</text>
+<line x1="510.0" y1="60.0" x2="510.0" y2="136.0" class="ln dash"/>
+<text x="510.0" y="54.0" class="lbl-sm" text-anchor="middle">X</text>
+<text x="520.0" y="140.0" class="lbl-sm">X</text>
+<line x1="60.0" y1="186.0" x2="200.0" y2="186.0" class="ln thin" marker-end="url(#sm-u4-arw-macaulay-q5)" marker-start="url(#sm-u4-arw-macaulay-q5)"/>
+<text x="130.0" y="180.0" class="lbl-sm" text-anchor="middle">a</text>
+<line x1="60.0" y1="212.0" x2="400.0" y2="212.0" class="ln thin" marker-end="url(#sm-u4-arw-macaulay-q5)" marker-start="url(#sm-u4-arw-macaulay-q5)"/>
+<text x="230.0" y="206.0" class="lbl-sm" text-anchor="middle">b</text>
+<line x1="60.0" y1="238.0" x2="510.0" y2="238.0" class="ln thin" marker-end="url(#sm-u4-arw-macaulay-q5)" marker-start="url(#sm-u4-arw-macaulay-q5)"/>
+<text x="285.0" y="232.0" class="lbl-sm" text-anchor="middle">x</text>
+</svg>
+<figcaption>Fig. Q5.1 — Beam with several point loads.</figcaption>
+</figure>
+        <p><b>Method.</b> Consider beam AB of span L with loads W₁ at C (distance a from A) and W₂ at D (distance b). Reactions R<sub>A</sub> = [W₁(L − a) + W₂(L − b)]/L, R<sub>B</sub> = W₁ + W₂ − R<sub>A</sub>. Take section X–X in the last segment DB at distance x from A:</p>
+        <div class="formula">\[ EI\frac{d^2y}{dx^2} = R_A\,x \;\Big|\; -\,W_1[x-a] \;\Big|\; -\,W_2[x-b] \]</div>
+        <div class="formula">\[ EI\frac{dy}{dx} = \frac{R_Ax^2}{2} + C_1 \;\Big|\; -\,\frac{W_1[x-a]^2}{2} \;\Big|\; -\,\frac{W_2[x-b]^2}{2} \]</div>
+        <div class="formula">\[ EI\,y = \frac{R_Ax^3}{6} + C_1x + C_2 \;\Big|\; -\,\frac{W_1[x-a]^3}{6} \;\Big|\; -\,\frac{W_2[x-b]^3}{6} \]</div>
+        <p>The vertical lines separate the segments: for a point in AC use only the terms before the first line; in CD the terms before the second line; in DB all terms.</p>
+        <p><b>Rules.</b></p>
+        <ol>
+          <li>x is measured from the left end for all segments.</li>
+          <li>Brackets are integrated as a whole: ∫[x − a]ⁿ dx = [x − a]ⁿ⁺¹/(n + 1).</li>
+          <li>When a bracket is negative (x &lt; a), it is taken as zero.</li>
+          <li>Constants C₁ and C₂ are written with the first segment, so they are the same for all segments.</li>
+          <li>A UDL that does not reach the end is extended to the end, and an equal and opposite UDL is added on the extended part.</li>
+          <li>A couple M₀ at distance c is written as M₀[x − c]⁰.</li>
+        </ol>
+        <p><b>Constants.</b> At x = 0, y = 0: C₂ = 0 (all brackets are negative). At x = L, y = 0:</p>
+        <div class="formula">\[ 0 = \frac{R_AL^3}{6} - \frac{W_1(L-a)^3}{6} - \frac{W_2(L-b)^3}{6} + C_1L \]</div>
+        <p>This gives C₁. The deflection anywhere follows from the y equation, and the maximum deflection is where dy/dx = 0 (solve in the segment where the slope changes sign). Worked example: N8.</p>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u4-q6" data-marks="10">
+      <h3>Q6. Write a note on the classification of columns. State the assumptions made in Euler's theory and its limitations. Explain effective length.</h3>
+      <p class="q-src">Nov 2024 Q10(a) · Jun-Jul 2024 Q10(a) · Jan 2025 Q10(a) · Nov-Dec 2025 Q10(a) · Jan 2023 (CBCS) Q1 (short and long columns; slenderness ratio; equivalent length) · Mar-Apr 2021 (CBCS) Q1 (slenderness ratio)</p>
+      <p class="q-hint">Short/medium/long by slenderness ratio with failure mode, 6–7 assumptions, 4 limitations, end-condition table and figure.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Column and strut.</b> A column is a vertical member carrying an axial compressive load; a strut is a compression member that may be inclined (truss members, links).</p>
+        <p><b>Classification</b> (by slenderness ratio λ = L<sub>e</sub>/k, k = least radius of gyration = √(I<sub>min</sub>/A)):</p>
+        <ol>
+          <li><b>Short columns</b>: λ &lt; 32 (L<sub>e</sub> &lt; 8 times the least lateral dimension). They fail by crushing; P<sub>c</sub> = σ<sub>c</sub>A.</li>
+          <li><b>Medium columns</b>: 32 &lt; λ &lt; 120. They fail by a combination of crushing and buckling; Rankine's formula is used.</li>
+          <li><b>Long columns</b>: λ &gt; 120 (L<sub>e</sub> &gt; 30 times the least lateral dimension). They fail by buckling (lateral bending) at a load much lower than the crushing load; Euler's formula is used.</li>
+        </ol>
+        <p><b>Assumptions in Euler's theory.</b></p>
+        <ol>
+          <li>The column is initially perfectly straight and the load is exactly axial.</li>
+          <li>The material is homogeneous, isotropic and perfectly elastic; it obeys Hooke's law.</li>
+          <li>The cross-section is uniform throughout the length.</li>
+          <li>The length is very large compared with the lateral dimensions; the column fails by buckling alone.</li>
+          <li>The direct compressive stress is negligible compared with the bending stress.</li>
+          <li>The self-weight of the column is neglected.</li>
+          <li>The ends are frictionless (hinged ends) or perfectly fixed.</li>
+        </ol>
+        <p><b>Limitations of Euler's theory.</b></p>
+        <ul>
+          <li>It ignores the direct stress, so it is valid only for long columns. For short columns P<sub>E</sub> → ∞ as L<sub>e</sub>/k → 0, which is absurd.</li>
+          <li>The Euler stress π²E/λ² must be less than the crushing stress: for mild steel λ must exceed about 80 (77 for σ<sub>c</sub> = 330 N/mm², E = 200 GPa).</li>
+          <li>Real columns have initial curvature, eccentric loads and imperfect end fixity, so the actual load is less than P<sub>E</sub>.</li>
+          <li>It gives no factor of safety against crushing; Rankine's empirical formula is used for practical design.</li>
+        </ul>
+        <p><b>Effective length.</b> The effective (equivalent) length L<sub>e</sub> of a column is the length of a column with both ends hinged that has the same crippling load. It is the distance between adjacent points of inflection (zero moment) of the buckled shape. P<sub>E</sub> = π²EI/L<sub>e</sub>².</p>
+        <figure class="fig" id="sm-u4-f-ends-q6">
+<svg viewBox="0 0 700 400" role="img" aria-label="Buckled shapes and effective lengths for the four end conditions of a column">
+<defs><marker id="sm-u4-arw-ends-q6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="90.0" y1="80.0" x2="90.0" y2="320.0" class="ln dash thin"/>
+<path d="M90.0,320.0 L91.8,316.0 L93.6,312.0 L95.3,308.0 L97.1,304.0 L98.8,300.0 L100.5,296.0 L102.2,292.0 L103.8,288.0 L105.4,284.0 L107.0,280.0 L108.5,276.0 L110.0,272.0 L111.4,268.0 L112.8,264.0 L114.0,260.0 L115.3,256.0 L116.4,252.0 L117.5,248.0 L118.5,244.0 L119.4,240.0 L120.3,236.0 L121.1,232.0 L121.7,228.0 L122.3,224.0 L122.8,220.0 L123.3,216.0 L123.6,212.0 L123.8,208.0 L124.0,204.0 L124.0,200.0 L124.0,196.0 L123.8,192.0 L123.6,188.0 L123.3,184.0 L122.8,180.0 L122.3,176.0 L121.7,172.0 L121.1,168.0 L120.3,164.0 L119.4,160.0 L118.5,156.0 L117.5,152.0 L116.4,148.0 L115.3,144.0 L114.0,140.0 L112.8,136.0 L111.4,132.0 L110.0,128.0 L108.5,124.0 L107.0,120.0 L105.4,116.0 L103.8,112.0 L102.2,108.0 L100.5,104.0 L98.8,100.0 L97.1,96.0 L95.3,92.0 L93.6,88.0 L91.8,84.0 L90.0,80.0" class="ln thick"/>
+<polygon points="90.0,320.0 79.0,339.0 101.0,339.0" class="ln fill-soft"/>
+<rect x="73.0" y="339.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="90.0,80.0 80.0,64.0 100.0,64.0" class="ln fill-soft"/>
+<line x1="90.0" y1="22.0" x2="90.0" y2="60.0" class="ln" marker-end="url(#sm-u4-arw-ends-q6)"/>
+<text x="98.0" y="36.0" class="lbl-sm">P</text>
+<text x="90.0" y="358.0" class="lbl-sm" text-anchor="middle">Both ends hinged</text>
+<text x="90.0" y="394.0" class="lbl-b" text-anchor="middle">L<tspan dy="4" font-size="0.75em">e</tspan><tspan dy="-4"> = L</tspan></text>
+<line x1="262.0" y1="80.0" x2="262.0" y2="320.0" class="ln dash thin"/>
+<path d="M262.0,320.0 L262.0,316.0 L262.0,312.0 L262.1,308.0 L262.2,304.0 L262.3,300.0 L262.4,296.0 L262.6,292.0 L262.7,288.0 L262.9,284.0 L263.2,280.0 L263.4,276.0 L263.7,272.0 L264.0,268.0 L264.3,264.0 L264.6,260.0 L264.9,256.0 L265.3,252.0 L265.7,248.0 L266.1,244.0 L266.6,240.0 L267.0,236.0 L267.5,232.0 L268.0,228.0 L268.5,224.0 L269.0,220.0 L269.6,216.0 L270.1,212.0 L270.7,208.0 L271.3,204.0 L272.0,200.0 L272.6,196.0 L273.2,192.0 L273.9,188.0 L274.6,184.0 L275.3,180.0 L276.0,176.0 L276.7,172.0 L277.5,168.0 L278.2,164.0 L279.0,160.0 L279.8,156.0 L280.6,152.0 L281.4,148.0 L282.2,144.0 L283.0,140.0 L283.8,136.0 L284.7,132.0 L285.5,128.0 L286.3,124.0 L287.2,120.0 L288.1,116.0 L288.9,112.0 L289.8,108.0 L290.7,104.0 L291.6,100.0 L292.4,96.0 L293.3,92.0 L294.2,88.0 L295.1,84.0 L296.0,80.0" class="ln thick"/>
+<rect x="232.0" y="320.0" width="60.0" height="14.0" class="ln fill-hatch"/>
+<line x1="296.0" y1="22.0" x2="296.0" y2="76.0" class="ln" marker-end="url(#sm-u4-arw-ends-q6)"/>
+<text x="304.0" y="36.0" class="lbl-sm">P</text>
+<text x="262.0" y="358.0" class="lbl-sm" text-anchor="middle">One end fixed,</text>
+<text x="262.0" y="374.0" class="lbl-sm" text-anchor="middle">other free</text>
+<text x="262.0" y="394.0" class="lbl-b" text-anchor="middle">L<tspan dy="4" font-size="0.75em">e</tspan><tspan dy="-4"> = 2L</tspan></text>
+<line x1="434.0" y1="80.0" x2="434.0" y2="320.0" class="ln dash thin"/>
+<path d="M434.0,320.0 L434.1,316.0 L434.4,312.0 L434.8,308.0 L435.5,304.0 L436.3,300.0 L437.2,296.0 L438.4,292.0 L439.6,288.0 L441.0,284.0 L442.5,280.0 L444.1,276.0 L445.7,272.0 L447.5,268.0 L449.2,264.0 L451.0,260.0 L452.8,256.0 L454.5,252.0 L456.3,248.0 L457.9,244.0 L459.5,240.0 L461.0,236.0 L462.4,232.0 L463.6,228.0 L464.8,224.0 L465.7,220.0 L466.5,216.0 L467.2,212.0 L467.6,208.0 L467.9,204.0 L468.0,200.0 L467.9,196.0 L467.6,192.0 L467.2,188.0 L466.5,184.0 L465.7,180.0 L464.8,176.0 L463.6,172.0 L462.4,168.0 L461.0,164.0 L459.5,160.0 L457.9,156.0 L456.3,152.0 L454.5,148.0 L452.8,144.0 L451.0,140.0 L449.2,136.0 L447.5,132.0 L445.7,128.0 L444.1,124.0 L442.5,120.0 L441.0,116.0 L439.6,112.0 L438.4,108.0 L437.2,104.0 L436.3,100.0 L435.5,96.0 L434.8,92.0 L434.4,88.0 L434.1,84.0 L434.0,80.0" class="ln thick"/>
+<rect x="404.0" y="320.0" width="60.0" height="14.0" class="ln fill-hatch"/>
+<rect x="404.0" y="66.0" width="60.0" height="14.0" class="ln fill-hatch"/>
+<line x1="434.0" y1="22.0" x2="434.0" y2="60.0" class="ln" marker-end="url(#sm-u4-arw-ends-q6)"/>
+<text x="442.0" y="36.0" class="lbl-sm">P</text>
+<circle cx="451.0" cy="260.0" r="3.0" class="solid"/>
+<circle cx="451.0" cy="140.0" r="3.0" class="solid"/>
+<line x1="486.0" y1="260.0" x2="486.0" y2="140.0" class="ln thin" marker-end="url(#sm-u4-arw-ends-q6)" marker-start="url(#sm-u4-arw-ends-q6)"/>
+<text x="492.0" y="204.0" class="lbl-sm">L/2</text>
+<text x="434.0" y="358.0" class="lbl-sm" text-anchor="middle">Both ends fixed</text>
+<text x="434.0" y="394.0" class="lbl-b" text-anchor="middle">L<tspan dy="4" font-size="0.75em">e</tspan><tspan dy="-4"> = L/2</tspan></text>
+<line x1="606.0" y1="80.0" x2="606.0" y2="320.0" class="ln dash thin"/>
+<path d="M606.0,320.0 L606.1,316.0 L606.3,312.0 L606.6,308.0 L607.1,304.0 L607.6,300.0 L608.3,296.0 L609.1,292.0 L610.0,288.0 L611.0,284.0 L612.1,280.0 L613.3,276.0 L614.5,272.0 L615.8,268.0 L617.2,264.0 L618.6,260.0 L620.0,256.0 L621.5,252.0 L622.9,248.0 L624.4,244.0 L625.8,240.0 L627.3,236.0 L628.7,232.0 L630.0,228.0 L631.3,224.0 L632.6,220.0 L633.7,216.0 L634.8,212.0 L635.9,208.0 L636.8,204.0 L637.6,200.0 L638.3,196.0 L638.9,192.0 L639.4,188.0 L639.7,184.0 L639.9,180.0 L640.0,176.0 L639.9,172.0 L639.8,168.0 L639.4,164.0 L638.9,160.0 L638.3,156.0 L637.6,152.0 L636.7,148.0 L635.7,144.0 L634.5,140.0 L633.3,136.0 L631.9,132.0 L630.4,128.0 L628.7,124.0 L627.0,120.0 L625.2,116.0 L623.3,112.0 L621.3,108.0 L619.3,104.0 L617.1,100.0 L615.0,96.0 L612.8,92.0 L610.5,88.0 L608.3,84.0 L606.0,80.0" class="ln thick"/>
+<rect x="576.0" y="320.0" width="60.0" height="14.0" class="ln fill-hatch"/>
+<polygon points="606.0,80.0 596.0,64.0 616.0,64.0" class="ln fill-soft"/>
+<line x1="606.0" y1="22.0" x2="606.0" y2="60.0" class="ln" marker-end="url(#sm-u4-arw-ends-q6)"/>
+<text x="614.0" y="36.0" class="lbl-sm">P</text>
+<circle cx="623.0" cy="247.8" r="3.0" class="solid"/>
+<line x1="658.0" y1="247.8" x2="658.0" y2="80.0" class="ln thin" marker-end="url(#sm-u4-arw-ends-q6)" marker-start="url(#sm-u4-arw-ends-q6)"/>
+<text x="664.0" y="167.9" class="lbl-sm">0.7L</text>
+<text x="606.0" y="358.0" class="lbl-sm" text-anchor="middle">One end fixed,</text>
+<text x="606.0" y="374.0" class="lbl-sm" text-anchor="middle">other hinged</text>
+<text x="606.0" y="394.0" class="lbl-b" text-anchor="middle">L<tspan dy="4" font-size="0.75em">e</tspan><tspan dy="-4"> = L/√2</tspan></text>
+<line x1="30.0" y1="320.0" x2="30.0" y2="80.0" class="ln thin" marker-end="url(#sm-u4-arw-ends-q6)" marker-start="url(#sm-u4-arw-ends-q6)"/>
+<text x="24.0" y="200.0" class="lbl" text-anchor="end">L</text>
+</svg>
+<figcaption>Fig. Q6.1 — End conditions and effective lengths.</figcaption>
+</figure>
+        <div class="tbl"><table><thead><tr><th>End condition</th><th>L<sub>e</sub></th><th>P<sub>E</sub></th></tr></thead><tbody>
+          <tr><td>Both ends hinged</td><td>L</td><td>π²EI/L²</td></tr>
+          <tr><td>One end fixed, other free</td><td>2L</td><td>π²EI/4L²</td></tr>
+          <tr><td>Both ends fixed</td><td>L/2</td><td>4π²EI/L²</td></tr>
+          <tr><td>One end fixed, other hinged</td><td>L/√2</td><td>2π²EI/L²</td></tr>
+        </tbody></table></div>
+      </details>
+    </article>
+
+    <article class="q" id="sm-u4-q7" data-marks="12">
+      <h3>Q7. Derive Euler's crippling load for a column (a) when both ends are hinged and (b) when one end is fixed and the other end is free.</h3>
+      <p class="q-src">Nov 2024 Q10(b) · Jun-Jul 2024 Q10(b) · Jan 2023 (CBCS) Q9(a) · Feb-Mar 2022 (CBCS) Q9(a) · Nov-Dec 2025 Q10(b) · Jan 2025 Q10(b) · Mar-Apr 2021 (CBCS) Q9(a)</p>
+      <p class="q-hint">Figure, moment at section x, differential equation, general solution, two end conditions, least non-zero root.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <figure class="fig" id="sm-u4-f-buckle-q7">
+<svg viewBox="0 0 680 430" role="img" aria-label="Euler column derivation: (a) both ends hinged, (b) one end fixed and the other free">
+<defs><marker id="sm-u4-arw-buckle-q7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="170.0" y1="70.0" x2="170.0" y2="340.0" class="ln dash thin"/>
+<path d="M170.0,340.0 L173.2,334.0 L176.4,328.0 L179.6,322.0 L182.7,316.0 L185.7,310.0 L188.7,304.0 L191.6,298.0 L194.4,292.0 L197.0,286.0 L199.6,280.0 L202.0,274.0 L204.2,268.0 L206.2,262.0 L208.1,256.0 L209.8,250.0 L211.3,244.0 L212.7,238.0 L213.7,232.0 L214.6,226.0 L215.3,220.0 L215.7,214.0 L216.0,208.0 L216.0,202.0 L215.7,196.0 L215.3,190.0 L214.6,184.0 L213.7,178.0 L212.7,172.0 L211.3,166.0 L209.8,160.0 L208.1,154.0 L206.2,148.0 L204.2,142.0 L202.0,136.0 L199.6,130.0 L197.0,124.0 L194.4,118.0 L191.6,112.0 L188.7,106.0 L185.7,100.0 L182.7,94.0 L179.6,88.0 L176.4,82.0 L173.2,76.0 L170.0,70.0" class="ln thick"/>
+<polygon points="170.0,340.0 159.0,359.0 181.0,359.0" class="ln fill-soft"/>
+<rect x="153.0" y="359.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="170.0,70.0 159.0,51.0 181.0,51.0" class="ln fill-soft"/>
+<line x1="170.0" y1="8.0" x2="170.0" y2="48.0" class="ln" marker-end="url(#sm-u4-arw-buckle-q7)"/>
+<text x="180.0" y="24.0" class="lbl">P</text>
+<line x1="170.0" y1="406.0" x2="170.0" y2="372.0" class="ln" marker-end="url(#sm-u4-arw-buckle-q7)"/>
+<text x="180.0" y="396.0" class="lbl">P</text>
+<text x="148.0" y="352.0" class="lbl-b" text-anchor="end">A</text>
+<text x="148.0" y="66.0" class="lbl-b" text-anchor="end">B</text>
+<line x1="170.0" y1="245.0" x2="211.1" y2="245.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle-q7)" marker-start="url(#sm-u4-arw-buckle-q7)"/>
+<text x="194.6" y="237.0" class="lbl" text-anchor="middle">y</text>
+<line x1="120.0" y1="340.0" x2="120.0" y2="245.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle-q7)" marker-start="url(#sm-u4-arw-buckle-q7)"/>
+<text x="112.0" y="297.5" class="lbl" text-anchor="end">x</text>
+<line x1="250.0" y1="340.0" x2="250.0" y2="70.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle-q7)" marker-start="url(#sm-u4-arw-buckle-q7)"/>
+<text x="258.0" y="210.0" class="lbl">L</text>
+<text x="224.0" y="210.0" class="lbl" text-anchor="middle"></text>
+<text x="170.0" y="418.0" class="lbl" text-anchor="middle">(a) Both ends hinged</text>
+<line x1="470.0" y1="70.0" x2="470.0" y2="340.0" class="ln dash thin"/>
+<path d="M470.0,340.0 L470.0,334.0 L470.1,328.0 L470.3,322.0 L470.5,316.0 L470.8,310.0 L471.1,304.0 L471.5,298.0 L471.9,292.0 L472.4,286.0 L473.0,280.0 L473.6,274.0 L474.3,268.0 L475.1,262.0 L475.9,256.0 L476.7,250.0 L477.6,244.0 L478.5,238.0 L479.5,232.0 L480.6,226.0 L481.7,220.0 L482.8,214.0 L484.0,208.0 L485.3,202.0 L486.5,196.0 L487.9,190.0 L489.2,184.0 L490.6,178.0 L492.0,172.0 L493.5,166.0 L495.0,160.0 L496.5,154.0 L498.1,148.0 L499.7,142.0 L501.3,136.0 L502.9,130.0 L504.5,124.0 L506.2,118.0 L507.9,112.0 L509.6,106.0 L511.3,100.0 L513.0,94.0 L514.8,88.0 L516.5,82.0 L518.3,76.0 L520.0,70.0" class="ln thick"/>
+<rect x="430.0" y="340.0" width="80.0" height="16.0" class="ln fill-hatch"/>
+<line x1="520.0" y1="18.0" x2="520.0" y2="66.0" class="ln" marker-end="url(#sm-u4-arw-buckle-q7)"/>
+<text x="530.0" y="36.0" class="lbl">P</text>
+<line x1="470.0" y1="76.0" x2="520.0" y2="76.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle-q7)" marker-start="url(#sm-u4-arw-buckle-q7)"/>
+<text x="495.0" y="96.0" class="lbl" text-anchor="middle">a</text>
+<text x="460.0" y="332.0" class="lbl-b" text-anchor="end">A</text>
+<text x="460.0" y="74.0" class="lbl-b" text-anchor="end">B</text>
+<text x="532.0" y="74.0" class="lbl-sm">B′ (free end)</text>
+<line x1="470.0" y1="130.0" x2="502.9" y2="130.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle-q7)" marker-start="url(#sm-u4-arw-buckle-q7)"/>
+<text x="486.4" y="122.0" class="lbl" text-anchor="middle">y</text>
+<line x1="410.0" y1="340.0" x2="410.0" y2="130.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle-q7)" marker-start="url(#sm-u4-arw-buckle-q7)"/>
+<text x="402.0" y="240.0" class="lbl" text-anchor="end">x</text>
+<line x1="630.0" y1="340.0" x2="630.0" y2="70.0" class="ln thin" marker-end="url(#sm-u4-arw-buckle-q7)" marker-start="url(#sm-u4-arw-buckle-q7)"/>
+<text x="638.0" y="210.0" class="lbl">L</text>
+<text x="470.0" y="380.0" class="lbl-sm" text-anchor="middle">fixed end</text>
+<text x="470.0" y="418.0" class="lbl" text-anchor="middle">(b) One end fixed, other end free</text>
+</svg>
+<figcaption>Fig. Q7.1 — Buckled columns: (a) both ends hinged, (b) one end fixed, other free.</figcaption>
+</figure>
+        <p><b>(a) Both ends hinged.</b> Column AB of length L carries the crippling load P. At a section x from A, the lateral deflection is y. The moment at the section is M = −P·y (it tends to reduce the deflection).</p>
+        <div class="formula">\[ EI\frac{d^2y}{dx^2} = -P\,y \quad\Rightarrow\quad \frac{d^2y}{dx^2} + \frac{P}{EI}\,y = 0 \]</div>
+        <p>Let α² = P/EI. The solution of d²y/dx² + α²y = 0 is</p>
+        <div class="formula">\[ y = C_1\cos(\alpha x) + C_2\sin(\alpha x) \]</div>
+        <p>End conditions: at x = 0, y = 0 → C₁ = 0. At x = L, y = 0 → C₂ sin(αL) = 0. C₂ cannot be zero (then there is no buckling), so sin(αL) = 0:</p>
+        <div class="formula">\[ \alpha L = 0,\ \pi,\ 2\pi, \ldots \quad\text{least non-zero: } \alpha L = \pi \quad\Rightarrow\quad \sqrt{\frac{P}{EI}}\,L = \pi \]</div>
+        <div class="formula">\[ P_E = \frac{\pi^2 E I}{L^2} \]<p class="where">I = least moment of inertia. The buckled shape is y = C₂ sin(πx/L), a half sine wave.</p></div>
+        <p><b>(b) One end fixed, other end free.</b> End A is fixed, end B is free. Under the load P, B moves sideways by a. At section x from A (deflection y), the moment of P about the section is</p>
+        <div class="formula">\[ M = P\,(a - y) \quad\Rightarrow\quad EI\frac{d^2y}{dx^2} = P\,(a - y) \quad\Rightarrow\quad \frac{d^2y}{dx^2} + \alpha^2 y = \alpha^2 a \]</div>
+        <p>General solution (complementary function + particular integral):</p>
+        <div class="formula">\[ y = C_1\cos(\alpha x) + C_2\sin(\alpha x) + a \]</div>
+        <p>At x = 0, y = 0 → C₁ = −a. At x = 0, dy/dx = 0 → αC₂ = 0, so C₂ = 0. Hence y = a(1 − cos αx).</p>
+        <p>At the free end x = L, y = a:</p>
+        <div class="formula">\[ a = a\left(1 - \cos\alpha L\right) \quad\Rightarrow\quad \cos\alpha L = 0 \quad\Rightarrow\quad \alpha L = \frac{\pi}{2} \]</div>
+        <div class="formula">\[ \sqrt{\frac{P}{EI}}\,L = \frac{\pi}{2} \quad\Rightarrow\quad P_E = \frac{\pi^2 E I}{4L^2} = \frac{\pi^2 E I}{(2L)^2} \]<p class="where">The effective length is 2L; the load is one quarter of that for a hinged column of the same length.</p></div>
+      </details>
+    </article>
+  </section>
+
+  <section class="part" id="sm-u4-numericals" data-part="numericals">
+    <h2>Numericals</h2>
+    <p class="method"><b>Shafts:</b> T = 60 000P/(2πN) N·m → T<sub>max</sub> → D from strength (T = πτD³/16) and from stiffness (J = TL/Gθ, θ in rad) → take the larger. <b>Beams:</b> reactions → M at section x (Macaulay brackets) → EI·y″ = M → integrate twice → constants from supports → slope/deflection (y negative = downward). <b>Columns:</b> I<sub>min</sub>, A, k = √(I/A) → L<sub>e</sub> from end condition → P<sub>E</sub> = π²EI/L<sub>e</sub>², P<sub>R</sub> = σ<sub>c</sub>A/(1 + α(L<sub>e</sub>/k)²).</p>
+
+    <article class="num" id="sm-u4-n1">
+      <h3>N1. A solid shaft rotating at 1000 rpm transmits 50 kW. The maximum torque is 20 % more than the mean torque. The allowable shear stress is 50 MPa and the modulus of rigidity is 80 GPa. The angle of twist must not exceed 1° in 1 m length. Determine the diameter of the shaft.</h3>
+      <p class="q-src">Aug-Sep 2023 Q8(b) · same type: Jan 2023 (CBCS) Q7(b), Mar-Apr 2021 (CBCS) Q7(b)</p>
+      <ol class="steps">
+        <li>Mean torque: \( T_{mean} = \dfrac{60P}{2\pi N} = \dfrac{60 \times 50\,000}{2\pi \times 1000} = 477.46\ \text{N·m} \)</li>
+        <li>Maximum torque: \( T_{max} = 1.2 \times 477.46 = 572.96\ \text{N·m} = 572.96 \times 10^3\ \text{N·mm} \)</li>
+        <li>Strength condition: \( T = \dfrac{\pi}{16}\tau D^3 \Rightarrow D^3 = \dfrac{16 \times 572\,958}{\pi \times 50} = 58\,361 \Rightarrow D = 38.79\ \text{mm} \)</li>
+        <li>Stiffness condition, θ = 1° = π/180 = 0.017453 rad, L = 1000 mm: \( J = \dfrac{TL}{G\theta} = \dfrac{572\,958 \times 1000}{80\,000 \times 0.017453} = 410\,351\ \text{mm}^4 \)</li>
+        <li>\( \dfrac{\pi}{32}D^4 = 410\,351 \Rightarrow D^4 = 4.180 \times 10^6 \Rightarrow D = 45.22\ \text{mm} \)</li>
+        <li>Take the larger value: D = 45.22 mm; adopt 46 mm. Check at 46 mm: τ = 29.98 N/mm² &lt; 50 and θ = 0.934° &lt; 1°.</li>
+      </ol>
+      <p class="final">Answer: D = 45.2 mm (stiffness governs); use a 46 mm shaft.</p>
+    </article>
+
+    <article class="num" id="sm-u4-n2">
+      <h3>N2. A hollow circular steel shaft has to transmit 60 kW at 210 rpm such that the maximum shear stress does not exceed 60 N/mm². If the ratio of internal to external diameter is 3/4 and the modulus of rigidity is 84 GPa, find the dimensions of the shaft and the angle of twist in a length of 3 m.</h3>
+      <p class="q-src">Jan 2025 Q8(b) · Nov-Dec 2025 Q8(b)</p>
+      <aside class="note"><b>Data note.</b> The diameter ratio is garbled in both scans ("%" and "7c"). This is the standard textbook problem with D<sub>i</sub>/D<sub>o</sub> = 3/4, which we use here.</aside>
+      <ol class="steps">
+        <li>Torque: \( T = \dfrac{60 \times 60\,000}{2\pi \times 210} = 2728.37\ \text{N·m} = 2.728 \times 10^6\ \text{N·mm} \)</li>
+        <li>With D<sub>i</sub> = kD<sub>o</sub>, k = 0.75: \( T = \dfrac{\pi}{16}\tau D_o^3\left(1 - k^4\right),\quad 1 - 0.75^4 = 0.6836 \)</li>
+        <li>\( D_o^3 = \dfrac{16 \times 2\,728\,370}{\pi \times 60 \times 0.6836} = 338\,785 \Rightarrow D_o = 69.71\ \text{mm} \)</li>
+        <li>\( D_i = 0.75 \times 69.71 = 52.28\ \text{mm} \)</li>
+        <li>\( J = \dfrac{\pi}{32}\left(69.71^4 - 52.28^4\right) = 1.585 \times 10^6\ \text{mm}^4 \)</li>
+        <li>Angle of twist: \( \theta = \dfrac{TL}{GJ} = \dfrac{2\,728\,370 \times 3000}{84\,000 \times 1.585 \times 10^6} = 0.06148\ \text{rad} = 3.52^\circ \)</li>
+        <li>Check by τ/R = Gθ/L: θ = τL/(GR) = 60 × 3000/(84 000 × 34.86) = 0.0615 rad ✓</li>
+      </ol>
+      <p class="final">Answer: D<sub>o</sub> = 69.7 mm (say 70 mm), D<sub>i</sub> = 52.3 mm; θ = 0.0615 rad = 3.52° in 3 m.</p>
+    </article>
+
+    <article class="num" id="sm-u4-n3">
+      <h3>N3. Two shafts of the same length and material are subjected to the same torque. The first shaft is solid and the second is hollow with D<sub>i</sub> = 0.7D<sub>o</sub>. If the maximum shear stress developed in each shaft is the same, compare the weights of the two shafts.</h3>
+      <p class="q-src">Jan 2023 (CBCS) Q7(a)</p>
+      <ol class="steps">
+        <li>Solid shaft of diameter D: \( T = \dfrac{\pi}{16}\tau D^3 \)</li>
+        <li>Hollow shaft: \( T = \dfrac{\pi}{16}\tau \dfrac{D_o^4 - D_i^4}{D_o} = \dfrac{\pi}{16}\tau D_o^3\left(1 - 0.7^4\right) = \dfrac{\pi}{16}\tau D_o^3 \times 0.7599 \)</li>
+        <li>Same T and τ: \( D^3 = 0.7599\,D_o^3 \Rightarrow D = 0.9125\,D_o \)</li>
+        <li>Same length and material, so weight ∝ area: \( \dfrac{W_h}{W_s} = \dfrac{\frac{\pi}{4}\left(D_o^2 - D_i^2\right)}{\frac{\pi}{4}D^2} = \dfrac{D_o^2\left(1 - 0.49\right)}{0.8327\,D_o^2} = \dfrac{0.51}{0.8327} \)</li>
+        <li>\( \dfrac{W_h}{W_s} = 0.6124 \): the hollow shaft weighs 61.2 % of the solid shaft.</li>
+      </ol>
+      <p class="final">Answer: W<sub>hollow</sub> : W<sub>solid</sub> = 0.612 : 1 — the hollow shaft saves 38.8 % of the weight.</p>
+    </article>
+
+    <article class="num" id="sm-u4-n4">
+      <h3>N4. A composite shaft consists of a steel shaft 60 mm diameter and 1.2 m long (G = 80 GPa) rigidly coupled in series to a brass shaft 45 mm diameter and 0.8 m long (G = 40 GPa). Find the maximum torque the shaft can carry if the shear stress must not exceed 80 N/mm² in steel and 50 N/mm² in brass, and the total angle of twist must not exceed 2°. Find the stresses and the twist of each part at this torque.</h3>
+      <p class="q-src">Syllabus topic (composite shafts in series)</p>
+      <figure class="fig" id="sm-u4-f-n4">
+<svg viewBox="0 0 680 210" role="img" aria-label="Stepped composite shaft: steel 60 mm diameter 1.2 m long joined to brass 45 mm diameter 0.8 m long">
+<defs><marker id="sm-u4-arw-n4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70.0" y="70.0" width="300.0" height="64.0" class="ln fill-soft"/>
+<rect x="376.0" y="80.0" width="200.0" height="44.0" class="ln fill-acc"/>
+<rect x="364.0" y="60.0" width="12.0" height="84.0" class="ln fill-hatch"/>
+<line x1="52.0" y1="102.0" x2="596.0" y2="102.0" class="ln hid"/>
+<path d="M60.0,58.0 A14,44.0 0 0 0 60.0,146.0" class="ln acc2" marker-end="url(#sm-u4-arw-n4)"/>
+<text x="40.0" y="48.0" class="lbl" text-anchor="middle">T</text>
+<path d="M586.0,68.0 A14,34.0 0 0 1 586.0,136.0" class="ln acc2" marker-end="url(#sm-u4-arw-n4)"/>
+<text x="604.0" y="60.0" class="lbl" text-anchor="middle">T</text>
+<text x="220.0" y="56.0" class="lbl-sm" text-anchor="middle">Steel: d = 60 mm, G = 80 GPa</text>
+<text x="476.0" y="72.0" class="lbl-sm" text-anchor="middle">Brass: d = 45 mm, G = 40 GPa</text>
+<line x1="70.0" y1="168.0" x2="370.0" y2="168.0" class="ln thin" marker-end="url(#sm-u4-arw-n4)" marker-start="url(#sm-u4-arw-n4)"/>
+<text x="220.0" y="162.0" class="lbl-sm" text-anchor="middle">1.2 m</text>
+<line x1="370.0" y1="168.0" x2="576.0" y2="168.0" class="ln thin" marker-end="url(#sm-u4-arw-n4)" marker-start="url(#sm-u4-arw-n4)"/>
+<text x="473.0" y="162.0" class="lbl-sm" text-anchor="middle">0.8 m</text>
+<text x="340.0" y="198.0" class="lbl-sm" text-anchor="middle">τ<tspan dy="4" font-size="0.75em">steel</tspan><tspan dy="-4"> ≤ 80 N/mm²,  τ</tspan><tspan dy="4" font-size="0.75em">brass</tspan><tspan dy="-4"> ≤ 50 N/mm²,  total twist ≤ 2°</tspan></text>
+</svg>
+<figcaption>Fig. N4 — Composite shaft in series (steel and brass joined by a coupling).</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Polar moments: \( J_s = \dfrac{\pi}{32}(60)^4 = 1.2723 \times 10^6\ \text{mm}^4,\quad J_b = \dfrac{\pi}{32}(45)^4 = 4.0258 \times 10^5\ \text{mm}^4 \)</li>
+        <li>Steel stress limit: \( T = \dfrac{\pi}{16} \times 80 \times 60^3 = 3.393 \times 10^6\ \text{N·mm} = 3.393\ \text{kN·m} \)</li>
+        <li>Brass stress limit: \( T = \dfrac{\pi}{16} \times 50 \times 45^3 = 0.895 \times 10^6\ \text{N·mm} = 0.895\ \text{kN·m} \)</li>
+        <li>Series: same T, twists add: \( \theta = T\left(\dfrac{L_s}{G_sJ_s} + \dfrac{L_b}{G_bJ_b}\right) = T\left(1.1789 + 4.9680\right) \times 10^{-8} \)</li>
+        <li>Twist limit 2° = 0.034907 rad: \( T = \dfrac{0.034907}{6.1469 \times 10^{-8}} = 0.568 \times 10^6\ \text{N·mm} = 0.568\ \text{kN·m} \)</li>
+        <li>The least value governs: T = 0.568 kN·m.</li>
+        <li>Stresses: \( \tau_s = \dfrac{16 \times 567\,880}{\pi \times 60^3} = 13.39\ \text{N/mm}^2,\quad \tau_b = \dfrac{16 \times 567\,880}{\pi \times 45^3} = 31.74\ \text{N/mm}^2 \)</li>
+        <li>Twists: θ<sub>s</sub> = 567 880 × 1.1789 × 10⁻⁸ = 0.00670 rad = 0.384°; θ<sub>b</sub> = 567 880 × 4.968 × 10⁻⁸ = 0.0282 rad = 1.616°; total 2.00°.</li>
+      </ol>
+      <p class="final">Answer: T<sub>max</sub> = 0.568 kN·m (twist governs); τ<sub>steel</sub> = 13.4 N/mm², τ<sub>brass</sub> = 31.7 N/mm²; θ<sub>steel</sub> = 0.38°, θ<sub>brass</sub> = 1.62°.</p>
+    </article>
+
+    <article class="num" id="sm-u4-n5">
+      <h3>N5. A composite shaft 1.5 m long is made of a solid steel core 50 mm diameter firmly fixed inside a brass tube of 70 mm outside diameter and 50 mm inside diameter. A torque of 3 kN·m acts on the composite shaft. Find the torque carried by each, the maximum shear stress in each and the angle of twist. G<sub>steel</sub> = 80 GPa, G<sub>brass</sub> = 40 GPa.</h3>
+      <p class="q-src">Syllabus topic (composite shafts in parallel)</p>
+      <figure class="fig" id="sm-u4-f-n5">
+<svg viewBox="0 0 680 230" role="img" aria-label="Composite shaft in parallel: steel core 50 mm inside a brass tube 70 mm outside diameter, 1.5 m long">
+<defs><marker id="sm-u4-arw-n5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70.0" y="56.0" width="360.0" height="92.0" class="ln fill-soft"/>
+<rect x="70.0" y="70.0" width="360.0" height="64.0" class="ln fill-acc"/>
+<rect x="60.0" y="46.0" width="10.0" height="112.0" class="ln fill-hatch"/>
+<rect x="430.0" y="46.0" width="10.0" height="112.0" class="ln fill-hatch"/>
+<line x1="50.0" y1="102.0" x2="450.0" y2="102.0" class="ln hid"/>
+<path d="M452.0,52.0 A14,50.0 0 0 1 452.0,152.0" class="ln acc2" marker-end="url(#sm-u4-arw-n5)"/>
+<text x="474.0" y="48.0" class="lbl" text-anchor="middle">T</text>
+<text x="250.0" y="44.0" class="lbl-sm" text-anchor="middle">brass tube</text>
+<text x="250.0" y="107.0" class="lbl-sm" text-anchor="middle">steel core</text>
+<line x1="70.0" y1="186.0" x2="430.0" y2="186.0" class="ln thin" marker-end="url(#sm-u4-arw-n5)" marker-start="url(#sm-u4-arw-n5)"/>
+<text x="250.0" y="180.0" class="lbl-sm" text-anchor="middle">1.5 m</text>
+<circle cx="580.0" cy="102.0" r="46.0" class="ln fill-soft"/>
+<circle cx="580.0" cy="102.0" r="33.0" class="ln fill-acc"/>
+<circle cx="580.0" cy="102.0" r="2.5" class="solid"/>
+<line x1="534.0" y1="172.0" x2="626.0" y2="172.0" class="ln thin" marker-end="url(#sm-u4-arw-n5)" marker-start="url(#sm-u4-arw-n5)"/>
+<text x="580.0" y="166.0" class="lbl-sm" text-anchor="middle">70</text>
+<line x1="547.0" y1="102.0" x2="613.0" y2="102.0" class="ln thin" marker-end="url(#sm-u4-arw-n5)" marker-start="url(#sm-u4-arw-n5)"/>
+<text x="580.0" y="94.0" class="lbl-sm" text-anchor="middle">50</text>
+<text x="580.0" y="214.0" class="lbl-sm" text-anchor="middle">End view (mm)</text>
+</svg>
+<figcaption>Fig. N5 — Composite shaft in parallel: steel core rigidly fixed inside a brass tube at both ends.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>\( J_s = \dfrac{\pi}{32}(50)^4 = 6.1359 \times 10^5\ \text{mm}^4,\quad J_b = \dfrac{\pi}{32}\left(70^4 - 50^4\right) = 1.7436 \times 10^6\ \text{mm}^4 \)</li>
+        <li>Same twist and length: \( \dfrac{T_s}{G_sJ_s} = \dfrac{T_b}{G_bJ_b} \Rightarrow \dfrac{T_s}{T_b} = \dfrac{80\,000 \times 6.1359 \times 10^5}{40\,000 \times 1.7436 \times 10^6} = 0.7038 \)</li>
+        <li>Total torque: \( T_s + T_b = 3\ \text{kN·m} \Rightarrow T_b = \dfrac{3}{1.7038} = 1.761\ \text{kN·m},\ T_s = 1.239\ \text{kN·m} \)</li>
+        <li>Steel: \( \tau_s = \dfrac{T_s R_s}{J_s} = \dfrac{1.2393 \times 10^6 \times 25}{6.1359 \times 10^5} = 50.49\ \text{N/mm}^2 \)</li>
+        <li>Brass (outer surface): \( \tau_b = \dfrac{1.7607 \times 10^6 \times 35}{1.7436 \times 10^6} = 35.34\ \text{N/mm}^2 \)</li>
+        <li>Twist: \( \theta = \dfrac{T_sL}{G_sJ_s} = \dfrac{1.2393 \times 10^6 \times 1500}{80\,000 \times 6.1359 \times 10^5} = 0.03787\ \text{rad} = 2.17^\circ \) (the brass gives the same value ✓)</li>
+      </ol>
+      <p class="final">Answer: T<sub>steel</sub> = 1.24 kN·m, T<sub>brass</sub> = 1.76 kN·m; τ<sub>steel</sub> = 50.5 N/mm², τ<sub>brass</sub> = 35.3 N/mm²; θ = 0.0379 rad = 2.17°.</p>
+    </article>
+
+    <article class="num" id="sm-u4-n6">
+      <h3>N6. A cantilever beam 2.2 m long carries a load of 18 kN at its free end and 28 kN at a distance of 1 m from the free end. Find the slope and deflection at the free end. Take I = 15.5 × 10⁷ mm⁴ and E = 2.1 × 10⁵ N/mm².</h3>
+      <p class="q-src">Mar-Apr 2021 (CBCS) Q8(b)</p>
+      <figure class="fig" id="sm-u4-f-n6">
+<svg viewBox="0 0 680 200" role="img" aria-label="Cantilever 2.2 m long with 28 kN at 1.2 m from the fixed end and 18 kN at the free end">
+<defs><marker id="sm-u4-arw-n6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="64.0" y="50.0" width="16.0" height="100.0" class="ln fill-hatch"/>
+<rect x="80.0" y="93.0" width="520.0" height="14.0" class="ln fill-soft"/>
+<line x1="363.6" y1="48.0" x2="363.6" y2="92.0" class="ln" marker-end="url(#sm-u4-arw-n6)"/>
+<text x="363.6" y="42.0" class="lbl" text-anchor="middle">28 kN</text>
+<line x1="600.0" y1="48.0" x2="600.0" y2="92.0" class="ln" marker-end="url(#sm-u4-arw-n6)"/>
+<text x="600.0" y="42.0" class="lbl" text-anchor="middle">18 kN</text>
+<text x="84.0" y="130.0" class="lbl-b">A</text>
+<text x="369.6" y="130.0" class="lbl-b">C</text>
+<text x="608.0" y="105.0" class="lbl-b">B</text>
+<line x1="80.0" y1="160.0" x2="363.6" y2="160.0" class="ln thin" marker-end="url(#sm-u4-arw-n6)" marker-start="url(#sm-u4-arw-n6)"/>
+<text x="221.8" y="154.0" class="lbl-sm" text-anchor="middle">1.2 m</text>
+<line x1="363.6" y1="160.0" x2="600.0" y2="160.0" class="ln thin" marker-end="url(#sm-u4-arw-n6)" marker-start="url(#sm-u4-arw-n6)"/>
+<text x="481.8" y="154.0" class="lbl-sm" text-anchor="middle">1.0 m</text>
+<text x="340.0" y="190.0" class="lbl-sm" text-anchor="middle">E = 2.1 × 10⁵ N/mm²,  I = 15.5 × 10⁷ mm⁴</text>
+</svg>
+<figcaption>Fig. N6 — Cantilever with two point loads (rebuilt from the paper's Figure 8b).</figcaption>
+</figure>
+      <ol class="steps">
+        <li>EI = 2.1 × 10⁵ × 15.5 × 10⁷ = 3.255 × 10¹³ N·mm². L = 2200 mm; the 28 kN load is a = 1200 mm from the fixed end.</li>
+        <li>Slope at B due to 18 kN at the end: \( \dfrac{W_1L^2}{2EI} = \dfrac{18\,000 \times 2200^2}{2 \times 3.255 \times 10^{13}} = 0.001338\ \text{rad} \)</li>
+        <li>Slope at B due to 28 kN at C (beyond C the beam stays straight): \( \dfrac{W_2a^2}{2EI} = \dfrac{28\,000 \times 1200^2}{2 \times 3.255 \times 10^{13}} = 0.000619\ \text{rad} \)</li>
+        <li>Total slope: θ<sub>B</sub> = 0.001338 + 0.000619 = 0.001958 rad = 0.112°</li>
+        <li>Deflection due to 18 kN: \( \dfrac{W_1L^3}{3EI} = \dfrac{18\,000 \times 2200^3}{3 \times 3.255 \times 10^{13}} = 1.963\ \text{mm} \)</li>
+        <li>Deflection due to 28 kN: \( \dfrac{W_2a^3}{3EI} + \dfrac{W_2a^2}{2EI}(L - a) = 0.495 + 0.619 \times 10^{-3} \times 1000 = 1.115\ \text{mm} \)</li>
+        <li>Total: y<sub>B</sub> = 1.963 + 1.115 = 3.078 mm (downward). (Macaulay with x from the fixed end gives the same result.)</li>
+      </ol>
+      <p class="final">Answer: θ<sub>B</sub> = 0.00196 rad (0.112°), y<sub>B</sub> = 3.08 mm downward.</p>
+    </article>
+
+    <article class="num" id="sm-u4-n7">
+      <h3>N7. A simply supported beam of 6 m span carries a concentrated load of 18 kN at 4 m from the left support. Calculate (i) the position and value of the maximum deflection, (ii) the slope at mid-span, (iii) the deflection at the load point. Take EI = 2 × 10⁴ kN·m².</h3>
+      <p class="q-src">Aug-Sep 2023 Q9(b)</p>
+      <aside class="note"><b>Data note.</b> The paper gives no E or I. We give every answer in terms of EI and also as numbers with EI = 2 × 10⁴ kN·m² (E = 200 GPa, I = 1 × 10⁸ mm⁴).</aside>
+      <figure class="fig" id="sm-u4-f-n7">
+<svg viewBox="0 0 680 200" role="img" aria-label="Simply supported beam 6 m span with 18 kN at 4 m from A">
+<defs><marker id="sm-u4-arw-n7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70.0" y="94.0" width="540.0" height="12.0" class="ln fill-soft"/>
+<polygon points="70.0,106.0 59.0,125.0 81.0,125.0" class="ln fill-soft"/>
+<rect x="53.0" y="125.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="610.0,106.0 600.0,120.0 620.0,120.0" class="ln fill-soft"/>
+<circle cx="605.0" cy="124.0" r="4.0" class="ln"/>
+<circle cx="615.0" cy="124.0" r="4.0" class="ln"/>
+<line x1="594.0" y1="129.0" x2="626.0" y2="129.0" class="ln"/>
+<text x="62.0" y="92.0" class="lbl-b" text-anchor="end">A</text>
+<text x="618.0" y="92.0" class="lbl-b">B</text>
+<line x1="430.0" y1="49.0" x2="430.0" y2="93.0" class="ln" marker-end="url(#sm-u4-arw-n7)"/>
+<text x="430.0" y="43.0" class="lbl" text-anchor="middle">18 kN</text>
+<text x="436.0" y="124.0" class="lbl-b">C</text>
+<line x1="70.0" y1="160.0" x2="430.0" y2="160.0" class="ln thin" marker-end="url(#sm-u4-arw-n7)" marker-start="url(#sm-u4-arw-n7)"/>
+<text x="250.0" y="154.0" class="lbl-sm" text-anchor="middle">4 m</text>
+<line x1="430.0" y1="160.0" x2="610.0" y2="160.0" class="ln thin" marker-end="url(#sm-u4-arw-n7)" marker-start="url(#sm-u4-arw-n7)"/>
+<text x="520.0" y="154.0" class="lbl-sm" text-anchor="middle">2 m</text>
+</svg>
+<figcaption>Fig. N7 — Simply supported beam with an eccentric point load.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Reactions: R<sub>A</sub> = 18 × 2/6 = 6 kN, R<sub>B</sub> = 18 × 4/6 = 12 kN.</li>
+        <li>Macaulay (kN, m): \( EI\dfrac{d^2y}{dx^2} = 6x - 18[x - 4] \)</li>
+        <li>\( EI\dfrac{dy}{dx} = 3x^2 + C_1 - 9[x - 4]^2,\qquad EI\,y = x^3 + C_1x + C_2 - 3[x - 4]^3 \)</li>
+        <li>x = 0, y = 0 → C₂ = 0. x = 6, y = 0: 216 + 6C₁ − 3(2)³ = 0 → C₁ = −32.</li>
+        <li>Maximum deflection is in AC (the longer part), where dy/dx = 0: 3x² − 32 = 0 → x = 3.266 m (&lt; 4 m ✓).</li>
+        <li>\( EI\,y_{max} = 3.266^3 - 32 \times 3.266 = -69.67\ \text{kN·m}^3 \)</li>
+        <li>\( y_{max} = \dfrac{69.67}{2 \times 10^4} = 3.48 \times 10^{-3}\ \text{m} = 3.48\ \text{mm} \) (downward)</li>
+        <li>Slope at mid-span (x = 3 m, bracket negative): EI·θ = 3(3)² − 32 = −5 kN·m² → θ = −5/(2 × 10⁴) = −2.5 × 10⁻⁴ rad.</li>
+        <li>Deflection at the load (x = 4 m): EI·y = 64 − 128 = −64 kN·m³ → y = 3.20 mm. Check: Wa²b²/(3LEI) = 18 × 16 × 4/(3 × 6 × EI) = 64/EI ✓</li>
+      </ol>
+      <p class="final">Answer: y<sub>max</sub> = 69.67/EI = 3.48 mm at 3.27 m from A; slope at mid-span = 5/EI = 2.5 × 10⁻⁴ rad; deflection under load = 64/EI = 3.20 mm.</p>
+    </article>
+
+    <article class="num" id="sm-u4-n8">
+      <h3>N8. A beam of length 6 m is simply supported at its ends and carries two point loads of 48 kN and 40 kN at 1 m and 3 m respectively from the left support. Find (i) the deflection under each load, (ii) the maximum deflection, (iii) the point at which the maximum deflection occurs. Take E = 2 × 10⁵ N/mm² and I = 85 × 10⁶ mm⁴.</h3>
+      <p class="q-src">Jan 2023 (CBCS) Q8(b)</p>
+      <figure class="fig" id="sm-u4-f-n8">
+<svg viewBox="0 0 680 200" role="img" aria-label="Simply supported beam 6 m span with 48 kN at 1 m and 40 kN at 3 m">
+<defs><marker id="sm-u4-arw-n8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70.0" y="94.0" width="540.0" height="12.0" class="ln fill-soft"/>
+<polygon points="70.0,106.0 59.0,125.0 81.0,125.0" class="ln fill-soft"/>
+<rect x="53.0" y="125.0" width="34.0" height="7.0" class="ln fill-hatch"/>
+<polygon points="610.0,106.0 600.0,120.0 620.0,120.0" class="ln fill-soft"/>
+<circle cx="605.0" cy="124.0" r="4.0" class="ln"/>
+<circle cx="615.0" cy="124.0" r="4.0" class="ln"/>
+<line x1="594.0" y1="129.0" x2="626.0" y2="129.0" class="ln"/>
+<text x="62.0" y="92.0" class="lbl-b" text-anchor="end">A</text>
+<text x="618.0" y="92.0" class="lbl-b">B</text>
+<line x1="160.0" y1="49.0" x2="160.0" y2="93.0" class="ln" marker-end="url(#sm-u4-arw-n8)"/>
+<text x="160.0" y="43.0" class="lbl" text-anchor="middle">48 kN</text>
+<text x="166.0" y="124.0" class="lbl-b">C</text>
+<line x1="340.0" y1="49.0" x2="340.0" y2="93.0" class="ln" marker-end="url(#sm-u4-arw-n8)"/>
+<text x="340.0" y="43.0" class="lbl" text-anchor="middle">40 kN</text>
+<text x="346.0" y="124.0" class="lbl-b">D</text>
+<line x1="70.0" y1="160.0" x2="160.0" y2="160.0" class="ln thin" marker-end="url(#sm-u4-arw-n8)" marker-start="url(#sm-u4-arw-n8)"/>
+<text x="115.0" y="154.0" class="lbl-sm" text-anchor="middle">1 m</text>
+<line x1="160.0" y1="160.0" x2="340.0" y2="160.0" class="ln thin" marker-end="url(#sm-u4-arw-n8)" marker-start="url(#sm-u4-arw-n8)"/>
+<text x="250.0" y="154.0" class="lbl-sm" text-anchor="middle">2 m</text>
+<line x1="340.0" y1="160.0" x2="610.0" y2="160.0" class="ln thin" marker-end="url(#sm-u4-arw-n8)" marker-start="url(#sm-u4-arw-n8)"/>
+<text x="475.0" y="154.0" class="lbl-sm" text-anchor="middle">3 m</text>
+</svg>
+<figcaption>Fig. N8 — Simply supported beam with two point loads (span 6 m).</figcaption>
+</figure>
+      <ol class="steps">
+        <li>EI = 2 × 10⁵ × 85 × 10⁶ = 1.7 × 10¹³ N·mm² = 17 000 kN·m².</li>
+        <li>Reactions: R<sub>A</sub> × 6 = 48 × 5 + 40 × 3 → R<sub>A</sub> = 60 kN; R<sub>B</sub> = 88 − 60 = 28 kN.</li>
+        <li>Macaulay: \( EI\dfrac{d^2y}{dx^2} = 60x - 48[x - 1] - 40[x - 3] \)</li>
+        <li>\( EI\dfrac{dy}{dx} = 30x^2 + C_1 - 24[x - 1]^2 - 20[x - 3]^2 \)</li>
+        <li>\( EI\,y = 10x^3 + C_1x + C_2 - 8[x - 1]^3 - \tfrac{20}{3}[x - 3]^3 \)</li>
+        <li>x = 0, y = 0 → C₂ = 0. x = 6, y = 0: 2160 + 6C₁ − 8(125) − (20/3)(27) = 0 → C₁ = −163.33.</li>
+        <li>Under 48 kN (x = 1): EI·y = 10 − 163.33 = −153.33 → y = 153.33/17 000 = 9.02 × 10⁻³ m = 9.02 mm.</li>
+        <li>Under 40 kN (x = 3): EI·y = 270 − 490 − 8(8) = −284.0 → y = 16.71 mm.</li>
+        <li>Find where slope = 0. At x = 1: EI·y′ = 30 − 163.33 &lt; 0; at x = 3: 270 − 163.33 − 96 = +10.67 &gt; 0. So the zero is between 1 m and 3 m.</li>
+        <li>In 1 &lt; x &lt; 3: 30x² − 163.33 − 24(x − 1)² = 0 → 6x² + 48x − 187.33 = 0 → x = 2.872 m.</li>
+        <li>EI·y<sub>max</sub> = 10(2.872)³ − 163.33(2.872) − 8(1.872)³ = −284.68 → y<sub>max</sub> = 284.68/17 000 = 16.75 mm.</li>
+      </ol>
+      <p class="final">Answer: deflection under 48 kN = 9.02 mm, under 40 kN = 16.71 mm; y<sub>max</sub> = 16.75 mm at 2.87 m from the left support.</p>
+    </article>
+
+    <article class="num" id="sm-u4-n9">
+      <h3>N9. Find Euler's crippling load for a hollow column of 38 mm outer diameter and 2.5 mm thick. The length of the column is 2.5 m and it is hinged at both ends. Take E = 2.05 × 10⁵ N/mm². Also find the crippling load by Rankine's formula using α = 1/7500 and σ<sub>c</sub> = 335 N/mm².</h3>
+      <p class="q-src">Jan 2023 (CBCS) Q9(b)</p>
+      <aside class="note"><b>Data note.</b> The scan prints "E = 2.05 MPa", which is an obvious error; the value is E = 2.05 × 10⁵ N/mm² (205 GPa).</aside>
+      <ol class="steps">
+        <li>Inner diameter d = 38 − 2 × 2.5 = 33 mm.</li>
+        <li>\( I = \dfrac{\pi}{64}\left(38^4 - 33^4\right) = 44\,140\ \text{mm}^4,\qquad A = \dfrac{\pi}{4}\left(38^2 - 33^2\right) = 278.82\ \text{mm}^2 \)</li>
+        <li>\( k = \sqrt{I/A} = \sqrt{44\,140/278.82} = 12.58\ \text{mm} \) (check: k = √(D² + d²)/4 ✓); both ends hinged → L<sub>e</sub> = L = 2500 mm.</li>
+        <li>Euler: \( P_E = \dfrac{\pi^2 EI}{L_e^2} = \dfrac{\pi^2 \times 2.05 \times 10^5 \times 44\,140}{2500^2} = 14\,289\ \text{N} = 14.29\ \text{kN} \)</li>
+        <li>Slenderness ratio λ = 2500/12.58 = 198.7; λ²/7500 = 5.264.</li>
+        <li>Rankine: \( P_R = \dfrac{\sigma_c A}{1 + \alpha\lambda^2} = \dfrac{335 \times 278.82}{1 + 5.264} = \dfrac{93\,403}{6.264} = 14\,912\ \text{N} = 14.91\ \text{kN} \)</li>
+        <li>Rankine is about 4 % higher than Euler here: α = 1/7500 corresponds to E = σ<sub>c</sub>/(π²α) ≈ 255 GPa, a little above the given E. For a long column the two formulas nearly agree.</li>
+      </ol>
+      <p class="final">Answer: P<sub>Euler</sub> = 14.29 kN; P<sub>Rankine</sub> = 14.91 kN.</p>
+    </article>
+
+    <article class="num" id="sm-u4-n10">
+      <h3>N10. A cylindrical steel column of 48 mm external and 40 mm internal diameter is 2.8 m long and is hinged at both ends. Find Euler's crippling load. The crushing stress is 330 N/mm² and Rankine's constant is 1/7500; estimate Rankine's crippling load. Also find both loads if the same column is (a) fixed at one end and free at the other, (b) fixed at both ends, (c) fixed at one end and hinged at the other. Take E = 2 × 10⁵ N/mm².</h3>
+      <p class="q-src">Feb-Mar 2022 (CBCS) Q9(b) (end conditions added)</p>
+      <aside class="note"><b>Data note.</b> The paper gives no E; we use E = 2 × 10⁵ N/mm² for steel. Rankine's constant is printed as "1/ruoo"; the standard value for mild steel is 1/7500.</aside>
+      <ol class="steps">
+        <li>\( I = \dfrac{\pi}{64}\left(48^4 - 40^4\right) = 134\,913\ \text{mm}^4,\qquad A = \dfrac{\pi}{4}\left(48^2 - 40^2\right) = 552.92\ \text{mm}^2 \)</li>
+        <li>\( k = \sqrt{134\,913/552.92} = 15.62\ \text{mm} \)</li>
+        <li>Hinged ends, L<sub>e</sub> = 2800 mm: \( P_E = \dfrac{\pi^2 \times 2 \times 10^5 \times 134\,913}{2800^2} = 33\,968\ \text{N} = 33.97\ \text{kN} \)</li>
+        <li>λ = 2800/15.62 = 179.3 (&gt; 77, so Euler is valid); αλ² = 4.284.</li>
+        <li>Rankine: \( P_R = \dfrac{330 \times 552.92}{1 + 4.284} = \dfrac{182\,464}{5.284} = 34\,530\ \text{N} = 34.53\ \text{kN} \)</li>
+        <li>(a) Fixed–free, L<sub>e</sub> = 2L = 5600 mm: P<sub>E</sub> = 33.97/4 = 8.49 kN; λ = 358.5, P<sub>R</sub> = 182.46/(1 + 17.14) = 10.06 kN.</li>
+        <li>(b) Fixed–fixed, L<sub>e</sub> = L/2 = 1400 mm: P<sub>E</sub> = 4 × 33.97 = 135.87 kN; λ = 89.6, P<sub>R</sub> = 182.46/(1 + 1.071) = 88.10 kN.</li>
+        <li>(c) Fixed–hinged, L<sub>e</sub> = L/√2 = 1979.9 mm: P<sub>E</sub> = 2 × 33.97 = 67.94 kN; λ = 126.8, P<sub>R</sub> = 182.46/(1 + 2.142) = 58.07 kN.</li>
+        <li>Note: in case (b) the Euler load is far above the Rankine load because λ (89.6) is near the Euler limit of about 77. Euler overestimates the strength there; use the Rankine value for design.</li>
+      </ol>
+      <p class="final">Answer: hinged: P<sub>E</sub> = 33.97 kN, P<sub>R</sub> = 34.53 kN. Fixed–free: 8.49 / 10.06 kN. Fixed–fixed: 135.87 / 88.10 kN. Fixed–hinged: 67.94 / 58.07 kN.</p>
+    </article>
+
+    <h3 id="sm-u4-practice">Practice problems</h3>
+    <article class="num practice" id="sm-u4-p1"><h3>P1. A solid circular shaft has a diameter of 20 mm. Find the maximum shear stress and the angle of twist in a length of 900 mm when the shaft is subjected to a torque of 100 N·m. G = 80 GPa.</h3><p class="q-src">Nov 2024 Q8(b)</p><p class="final">Answer: τ = 63.66 N/mm²; θ = 0.0716 rad = 4.10°.</p></article>
+    <article class="num practice" id="sm-u4-p2"><h3>P2. Determine the diameter of a solid shaft which transmits 440 kW at 280 rpm, if the maximum torsional shear stress is limited to 40 N/mm². G = 84 kN/mm².</h3><p class="q-src">Nov-Dec 2025 Q8(a)</p><p class="final">Answer: T = 15.01 kN·m; D = 124.1 mm (say 125 mm).</p></article>
+    <article class="num practice" id="sm-u4-p3"><h3>P3. Find the maximum torque that can be applied to a shaft of 300 mm diameter. The permissible angle of twist is 1.5° in a length of 5 m and the shear stress must not exceed 42 N/mm². G = 84 GPa.</h3><p class="q-src">Jun-Jul 2024 Q8(b)</p><p class="final">Answer: by stress T = 222.7 kN·m; by twist T = 349.7 kN·m; maximum torque = 222.7 kN·m (stress governs).</p></article>
+    <article class="num practice" id="sm-u4-p4"><h3>P4. A solid shaft is subjected to a maximum torque of 26 kN·m. Find a suitable diameter if the allowable shear stress is 82 N/mm² and the twist is limited to 1.05° in a length of 20 times the diameter. Take G = 80 GPa (not given in the paper).</h3><p class="q-src">Feb-Mar 2022 (CBCS) Q7(b)</p><p class="final">Answer: by stress D = 117.3 mm; by twist D = 153.4 mm; use D = 153.4 mm (say 155 mm).</p></article>
+    <article class="num practice" id="sm-u4-p5"><h3>P5. (a) A cantilever 2.2 m long carries 35 kN at its free end. Find the slope and deflection at the free end (take E = 2.1 × 10⁵ N/mm², I = 15.5 × 10⁷ mm⁴, as in the 2021 paper). (b) A cantilever 2 m long carries a UDL of 2 kN/m over its whole length and a point load of 3 kN at the free end; EI = 10¹⁰ kN·mm² (= 10⁴ kN·m²). Find the slope and deflection at the free end.</h3><p class="q-src">Nov-Dec 2025 Q9(b) · Jan 2025 Q9(b), figure lost: loading rebuilt</p><p class="final">Answer: (a) θ = 0.00260 rad (0.149°), y = 3.82 mm. (b) θ = 8.67 × 10⁻⁴ rad, y = 1.20 mm.</p></article>
+    <article class="num practice" id="sm-u4-p6"><h3>P6. Find Euler's crippling load for a hollow cylindrical steel column of 44 mm external diameter and 4 mm thick. The length of the column is 2.6 m and it is hinged at both ends. Take E = 2 × 10⁵ N/mm² (not given in the paper).</h3><p class="q-src">Mar-Apr 2021 (CBCS) Q9(b)</p><p class="final">Answer: I = 101 536 mm⁴; P<sub>E</sub> = 29.65 kN (λ = 183, so Euler applies).</p></article>
+  </section>
+</section>

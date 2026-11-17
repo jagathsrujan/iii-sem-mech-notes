@@ -1,0 +1,9 @@
+# private sources and working files — never publish
+_src/
+_work/
+_parts/
+_test/
+dist/
+tools/node_modules/
+*.pyc
+.DS_Store

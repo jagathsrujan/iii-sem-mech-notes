@@ -1,0 +1,26 @@
+[
+ {
+  "file": "img/te-u2-rotor.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Dampfturbine_Laeufer01.jpg",
+  "author": "Siemens Pressebild, http://www.siemens.com",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "caption": "Steam turbine rotor with several rows of blades."
+ },
+ {
+  "file": "img/te-u2-nozzle.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:RL10_rocket_engine_-_Science_Museum_Feb_2007.jpg",
+  "author": "Snowrunner2 at English Wikipedia",
+  "license": "Public domain",
+  "license_url": "https://commons.wikimedia.org/wiki/Commons:Copyright_tags#Public_domain",
+  "caption": "Rocket engine nozzle on display."
+ },
+ {
+  "file": "img/te-u2-exchanger.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Tube_bundle_of_a_shell_&_tube_heat_exchanger_(before_assembly).jpg",
+  "author": "Harald the Bard",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "Shell-and-tube heat exchanger tube bundle."
+ }
+]

@@ -1,0 +1,26 @@
+[
+ {
+  "file": "img/te-u1-engine.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Boxer_engine_cutaway.jpg",
+  "author": "Hustvedt",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "caption": "A cutaway piston engine. The gas above each piston is a closed system; the moving piston face is a moving boundary."
+ },
+ {
+  "file": "img/te-u1-thermocouple.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Thermocouple_K_(2).jpg",
+  "author": "Harke",
+  "license": "Public domain",
+  "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "caption": "A thermocouple: two dissimilar wires joined at the tip. The emf at the plug measures the temperature of the junction."
+ },
+ {
+  "file": "img/te-u1-turbine.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Dampfturbine_Laeufer01.jpg",
+  "author": "Siemens Pressebild, http://www.siemens.com",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "caption": "A steam turbine rotor. Steam flows through the machine: this is an open system, analysed as a control volume."
+ }
+]
