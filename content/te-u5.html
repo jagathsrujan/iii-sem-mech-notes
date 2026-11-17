@@ -1,0 +1,1373 @@
+<section class="unit" data-unit="te-u5">
+  <header class="unit-head">
+    <p class="eyebrow">Thermal Engineering · Unit 5</p>
+    <h1>Refrigeration Cycle</h1>
+    <p class="lede">A refrigerator moves heat from a cold space to a warm surrounding, and it needs work to do this. This unit covers the vapour compression cycle that runs almost every fridge and air conditioner, the refrigerants it uses, the absorption alternative, and the uses of refrigeration. The numericals use enthalpies from P-h data, so the method is the same for every refrigerant.</p>
+    <ul class="syl">
+      <li>Principles of refrigeration; Refrigeration effect; Ton of refrigeration</li>
+      <li>Coefficient of Performance (COP)</li>
+      <li>Vapour Compression Refrigeration (VCR) cycle; Actual VCR cycle</li>
+      <li>Pressure-enthalpy (P-h) diagram</li>
+      <li>Refrigerants and desirable properties; Eco-friendly refrigerants</li>
+      <li>Introduction to Vapour Absorption Refrigeration (VAR) system</li>
+      <li>Domestic and industrial applications of refrigeration</li>
+    </ul>
+  </header>
+  <section class="part" id="te-u5-concepts" data-part="concepts">
+    <h2>Concepts</h2>
+    <aside class="exam"><b>Exam pattern.</b> This unit is new in the 2026 syllabus, so no old paper exists. Expect one question on the VCR cycle (sketch, T-s, P-h, COP) with a numerical on enthalpies, and one on refrigerants or the VAR system. Learn the P-h diagram of the cycle first: it gives you the RE, the work and the COP in one look.</aside>
+
+    <h3 id="te-u5-c-principle">1. Principles of refrigeration</h3>
+    <p><b>Refrigeration</b> is the process of removing heat from a space or a body so that its temperature stays lower than that of the surroundings. The Clausius statement of the second law says that heat cannot flow from a cold body to a hot body by itself. So we must supply work. A machine that does this is a <b>refrigerator</b> (or a <b>heat pump</b>).</p>
+    <p>A refrigerator and a heat pump are the same machine. They differ in the purpose:</p>
+    <ul>
+      <li><b>Refrigerator</b>: the useful effect is the heat \( Q_L \) taken from the cold space (food, room, cold store).</li>
+      <li><b>Heat pump</b>: the useful effect is the heat \( Q_H \) given to the warm space (a room in winter, hot water).</li>
+    </ul>
+
+<figure class="fig" id="te-u5-f-principle">
+<svg viewBox="0 0 680 320" role="img" aria-label="Refrigerator extracts heat from a cold space and a heat pump delivers heat to a warm space">
+<defs><marker id="te-u5-arw-prin" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60" y="20" width="220" height="50" class="ln fill-soft"/>
+<text x="170" y="50" class="lbl" text-anchor="middle">Hot sink, T<tspan dy="4" font-size="80%">H</tspan></text>
+<rect x="60" y="230" width="220" height="50" class="ln fill-soft"/>
+<text x="170" y="260" class="lbl" text-anchor="middle">Cold space, T<tspan dy="4" font-size="80%">L</tspan></text>
+<circle cx="170" cy="150" r="38" class="ln fill-acc"/>
+<text x="170" y="155" class="lbl-b" text-anchor="middle">R</text>
+<line x1="170" y1="112" x2="170" y2="72" class="ln" marker-end="url(#te-u5-arw-prin)"/>
+<text x="216" y="98" class="lbl-sm" text-anchor="middle">Q<tspan dy="4" font-size="80%">H</tspan><tspan dy="-4"> out</tspan></text>
+<line x1="170" y1="228" x2="170" y2="190" class="ln" marker-end="url(#te-u5-arw-prin)"/>
+<text x="216" y="212" class="lbl-sm" text-anchor="middle">Q<tspan dy="4" font-size="80%">L</tspan><tspan dy="-4"> in</tspan></text>
+<line x1="40" y1="150" x2="130" y2="150" class="ln" marker-end="url(#te-u5-arw-prin)"/>
+<text x="78" y="138" class="lbl-sm" text-anchor="middle">W in</text>
+<rect x="410" y="20" width="220" height="50" class="ln fill-soft"/>
+<text x="520" y="50" class="lbl" text-anchor="middle">Room to heat, T<tspan dy="4" font-size="80%">H</tspan></text>
+<rect x="410" y="230" width="220" height="50" class="ln fill-soft"/>
+<text x="520" y="260" class="lbl" text-anchor="middle">Cold outside, T<tspan dy="4" font-size="80%">L</tspan></text>
+<circle cx="520" cy="150" r="38" class="ln fill-acc"/>
+<text x="520" y="155" class="lbl-b" text-anchor="middle">HP</text>
+<line x1="520" y1="112" x2="520" y2="72" class="ln" marker-end="url(#te-u5-arw-prin)"/>
+<text x="566" y="98" class="lbl-sm" text-anchor="middle">Q<tspan dy="4" font-size="80%">H</tspan><tspan dy="-4"> out</tspan></text>
+<line x1="520" y1="228" x2="520" y2="190" class="ln" marker-end="url(#te-u5-arw-prin)"/>
+<text x="566" y="212" class="lbl-sm" text-anchor="middle">Q<tspan dy="4" font-size="80%">L</tspan><tspan dy="-4"> in</tspan></text>
+<line x1="390" y1="150" x2="480" y2="150" class="ln" marker-end="url(#te-u5-arw-prin)"/>
+<text x="428" y="138" class="lbl-sm" text-anchor="middle">W in</text>
+<text x="170" y="306" class="lbl-sm" text-anchor="middle">(a) Refrigerator: useful effect = Q<tspan dy="4" font-size="80%">L</tspan></text>
+<text x="520" y="306" class="lbl-sm" text-anchor="middle">(b) Heat pump: useful effect = Q<tspan dy="4" font-size="80%">H</tspan></text>
+</svg>
+<figcaption>Fig. 5.1 — Refrigerator and heat pump. Both take work W and move heat from T<sub>L</sub> to T<sub>H</sub>.</figcaption>
+</figure>
+    <p>By the first law, for one cycle: \( Q_H = Q_L + W \). The heat rejected is always more than the heat absorbed.</p>
+    <p>A <b>refrigerant</b> is the working fluid. It evaporates at a low temperature and low pressure, and so absorbs its latent heat from the cold space. It condenses at a higher pressure and rejects the heat to the air or water. The common methods of refrigeration are:</p>
+    <ul>
+      <li>vapour compression (fridge, air conditioner, cold store),</li>
+      <li>vapour absorption (uses heat instead of electric work),</li>
+      <li>air cycle (aircraft cabins), thermoelectric (Peltier) and ice or dry-ice cooling.</li>
+    </ul>
+
+    <h3 id="te-u5-c-re">2. Refrigeration effect and ton of refrigeration</h3>
+    <p>The <b>refrigeration effect (RE)</b> is the heat absorbed by 1 kg of refrigerant in the evaporator. Its unit is kJ/kg. The <b>refrigeration capacity</b> is the heat removed per unit time. It equals the mass flow rate times the RE.</p>
+    <div class="formula">\[ Q_L = \dot m \times RE \qquad (\text{kW}) \]<p class="where">\( \dot m \) = refrigerant mass flow rate (kg/s), RE = refrigeration effect (kJ/kg).</p></div>
+    <p>The capacity is given in <b>tons of refrigeration (TR)</b>. One TR is the heat that must be removed in 24 hours to freeze 1 ton (2000 lb = 907 kg) of water at 0 °C into ice at 0 °C. The latent heat of ice is about 335 kJ/kg, so 907 × 335 / 24 = 12 660 kJ/h = 211 kJ/min.</p>
+    <div class="tbl"><table><thead><tr><th>Unit</th><th>Value of 1 TR</th></tr></thead><tbody>
+      <tr><td>kJ/min</td><td>211 (some books use 210)</td></tr>
+      <tr><td>kW</td><td>3.5167 (some books use 3.5)</td></tr>
+      <tr><td>kJ/h</td><td>12 660</td></tr>
+      <tr><td>Btu/h</td><td>12 000</td></tr>
+    </tbody></table></div>
+    <aside class="warn"><b>Which value?</b> This unit uses 1 TR = 3.5167 kW. If your teacher uses 3.5 kW or 210 kJ/min, the answer changes by about 0.5 %. Write the value you use at the start of the solution.</aside>
+    <aside class="tip"><b>Size feel.</b> A 1.5 TR room air conditioner removes 1.5 × 3.5167 = 5.3 kW of heat. A domestic fridge is only about 0.1 TR.</aside>
+
+    <h3 id="te-u5-c-cop">3. Coefficient of Performance (COP)</h3>
+    <p>COP is the ratio of the useful effect to the work supplied. It is not an efficiency, because it can be more than 1.</p>
+    <div class="formula">\[ COP_R = \frac{Q_L}{W} = \frac{RE}{W_{comp}} \qquad COP_{HP} = \frac{Q_H}{W} = \frac{Q_L + W}{W} = COP_R + 1 \]<p class="where">W = net work supplied to the cycle (kJ/kg or kW). \( COP_{HP} \) is always more than \( COP_R \) by exactly 1.</p></div>
+    <p>For the ideal (Carnot) machine working between \( T_L \) and \( T_H \) (absolute temperature, K):</p>
+    <div class="formula">\[ COP_{R,Carnot} = \frac{T_L}{T_H - T_L} \qquad COP_{HP,Carnot} = \frac{T_H}{T_H - T_L} \]</div>
+    <p>No real machine can have a COP higher than the Carnot value between the same two temperatures. A low \( T_H - T_L \) gives a high COP. So a refrigerator works best with a low condensing temperature and a high evaporating temperature.</p>
+    <aside class="warn"><b>Common mistake.</b> Always use kelvin in the Carnot formula (K = °C + 273.15). A COP of 5.8 is normal for a refrigerator; do not call it 580 %.</aside>
+
+    <h3 id="te-u5-c-carnot">4. Reversed Carnot cycle</h3>
+    <p>The reversed Carnot cycle is the ideal refrigeration cycle. It is the Carnot heat engine run backwards. It has four reversible processes:</p>
+    <ul>
+      <li><b>1-2</b>: isentropic compression, the temperature rises from \( T_L \) to \( T_H \). Work is supplied.</li>
+      <li><b>2-3</b>: isothermal heat rejection at \( T_H \) (condenser).</li>
+      <li><b>3-4</b>: isentropic expansion in an expander (turbine), the temperature falls to \( T_L \). Work is produced.</li>
+      <li><b>4-1</b>: isothermal heat absorption at \( T_L \) (evaporator). This is the refrigeration effect.</li>
+    </ul>
+
+<figure class="fig" id="te-u5-f-carnot">
+<svg viewBox="0 0 700 340" role="img" aria-label="Reversed Carnot refrigerator schematic and its T-s diagram">
+<defs><marker id="te-u5-arw-carn" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="40" y="36" width="130" height="46" class="ln fill-soft"/>
+<text x="105" y="64" class="lbl" text-anchor="middle">Condenser</text>
+<rect x="40" y="250" width="130" height="46" class="ln fill-soft"/>
+<text x="105" y="278" class="lbl" text-anchor="middle">Evaporator</text>
+<circle cx="250" cy="142" r="32" class="ln fill-acc"/>
+<text x="250" y="147" class="lbl-sm" text-anchor="middle">Comp.</text>
+<path d="M78,122 L132,122 L78,166 L132,166 Z" class="ln fill-soft" fill="none"/>
+<text x="66" y="148" class="lbl-sm" text-anchor="end">Expander</text>
+<text x="66" y="162" class="lbl-sm" text-anchor="end">(turbine)</text>
+<polyline points="170,59 250,59 250,110" class="ln" fill="none" marker-end="url(#te-u5-arw-carn)"/>
+<text x="272" y="90" class="lbl-b" text-anchor="start">2</text>
+<polyline points="170,273 250,273 250,174" class="ln" fill="none" marker-end="url(#te-u5-arw-carn)"/>
+<text x="272" y="230" class="lbl-b" text-anchor="start">1</text>
+<line x1="105" y1="82" x2="105" y2="122" class="ln" marker-end="url(#te-u5-arw-carn)"/>
+<line x1="105" y1="166" x2="105" y2="250" class="ln" marker-end="url(#te-u5-arw-carn)"/>
+<text x="125" y="104" class="lbl-b" text-anchor="start">3</text>
+<text x="125" y="232" class="lbl-b" text-anchor="start">4</text>
+<line x1="105" y1="30" x2="105" y2="10" class="ln" marker-end="url(#te-u5-arw-carn)"/>
+<text x="120" y="22" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">H</tspan><tspan dy="-4"> out</tspan></text>
+<line x1="105" y1="328" x2="105" y2="300" class="ln" marker-end="url(#te-u5-arw-carn)"/>
+<text x="120" y="322" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">L</tspan><tspan dy="-4"> in</tspan></text>
+<line x1="320" y1="142" x2="284" y2="142" class="ln" marker-end="url(#te-u5-arw-carn)"/>
+<text x="302" y="130" class="lbl-sm" text-anchor="middle">W in</text>
+<line x1="390" y1="290" x2="675" y2="290" class="ln" marker-end="url(#te-u5-arw-carn)"/>
+<line x1="390" y1="290" x2="390" y2="30" class="ln" marker-end="url(#te-u5-arw-carn)"/>
+<text x="670" y="282" class="lbl" text-anchor="end">Entropy, s</text>
+<text x="356" y="160.0" class="lbl" text-anchor="middle" transform="rotate(-90 356 160.0)">Temperature, T</text>
+<line x1="610" y1="220" x2="610" y2="103" class="ln acc thick" marker-end="url(#te-u5-arw-carn)"/>
+<line x1="610" y1="100" x2="463" y2="100" class="ln acc thick" marker-end="url(#te-u5-arw-carn)"/>
+<line x1="460" y1="100" x2="460" y2="217" class="ln acc thick" marker-end="url(#te-u5-arw-carn)"/>
+<line x1="460" y1="220" x2="607" y2="220" class="ln acc thick" marker-end="url(#te-u5-arw-carn)"/>
+<line x1="460" y1="100" x2="460" y2="290" class="ln thin dash"/>
+<line x1="610" y1="100" x2="610" y2="290" class="ln thin dash"/>
+<line x1="390" y1="100" x2="460" y2="100" class="ln thin dash"/>
+<line x1="390" y1="220" x2="460" y2="220" class="ln thin dash"/>
+<circle cx="610.0" cy="220.0" r="4" class="solid"/>
+<circle cx="610.0" cy="100.0" r="4" class="solid"/>
+<circle cx="460.0" cy="100.0" r="4" class="solid"/>
+<circle cx="460.0" cy="220.0" r="4" class="solid"/>
+<text x="622" y="238" class="lbl-b" text-anchor="start">1</text>
+<text x="622" y="92" class="lbl-b" text-anchor="start">2</text>
+<text x="448" y="92" class="lbl-b" text-anchor="end">3</text>
+<text x="448" y="238" class="lbl-b" text-anchor="end">4</text>
+<text x="535.0" y="90" class="lbl-sm" text-anchor="middle">2-3 heat rejected at T<tspan dy="4" font-size="80%">H</tspan></text>
+<text x="535.0" y="254" class="lbl-sm" text-anchor="middle">4-1 heat absorbed at T<tspan dy="4" font-size="80%">L</tspan></text>
+<text x="618" y="165" class="lbl-sm" text-anchor="start">1-2</text>
+<text x="452" y="165" class="lbl-sm" text-anchor="end">3-4</text>
+<text x="460" y="308" class="lbl-sm" text-anchor="middle">s<tspan dy="4" font-size="80%">3</tspan><tspan dy="-4"> = s<tspan dy="4" font-size="80%">4</tspan></tspan></text>
+<text x="610" y="308" class="lbl-sm" text-anchor="middle">s<tspan dy="4" font-size="80%">1</tspan><tspan dy="-4"> = s<tspan dy="4" font-size="80%">2</tspan></tspan></text>
+<text x="384" y="104" class="lbl-sm" text-anchor="end">T<tspan dy="4" font-size="80%">H</tspan></text>
+<text x="384" y="224" class="lbl-sm" text-anchor="end">T<tspan dy="4" font-size="80%">L</tspan></text>
+</svg>
+<figcaption>Fig. 5.2 — Reversed Carnot refrigerator: schematic and T-s diagram (a counter-clockwise rectangle).</figcaption>
+</figure>
+    <p>From the T-s diagram, with \( \Delta s = s_1 - s_4 \): \( Q_L = T_L\,\Delta s \), \( Q_H = T_H\,\Delta s \) and \( W = Q_H - Q_L = (T_H - T_L)\,\Delta s \). So \( COP = T_L/(T_H - T_L) \).</p>
+    <p><b>Why it is not practical.</b></p>
+    <ul>
+      <li>Point 1 lies in the wet region. The compressor would have to compress a liquid-vapour mixture ("wet compression"). Liquid droplets damage the valves and cylinder (liquid hammer) and cut the volume of vapour drawn in.</li>
+      <li>The expander must handle a liquid-vapour mixture. It is hard to build, and the work it gives is small.</li>
+      <li>Isothermal heat transfer needs a zero temperature difference, so an infinite surface area or an infinite time. Real heat exchangers need a temperature difference of 5 to 15 K.</li>
+      <li>The cycle is very sensitive to the position of point 1: the dryness fraction must be controlled with great accuracy.</li>
+    </ul>
+    <p>The practical VCR cycle fixes these two problems. It compresses <i>dry</i> vapour and it replaces the expander by a throttle valve. The COP is lower than the Carnot value, but the machine is simple and reliable.</p>
+
+    <h3 id="te-u5-c-vcr">5. Simple vapour compression refrigeration (VCR) cycle</h3>
+    <p>The simple VCR cycle has four components. Fig. 5.3 shows them. Refrigerant flows round the loop in the order 1, 2, 3, 4.</p>
+    <ol>
+      <li><b>Compressor (1-2)</b>: takes in saturated (dry) vapour at the low pressure \( p_e \) and compresses it isentropically to the high pressure \( p_c \). The vapour leaves hot and superheated. This process needs work.</li>
+      <li><b>Condenser (2-3)</b>: the hot vapour rejects heat to air or water at constant pressure. It cools to the saturation temperature, condenses fully and leaves as saturated liquid (state 3).</li>
+      <li><b>Expansion valve (3-4)</b>: the liquid is throttled to \( p_e \). The enthalpy is constant, \( h_4 = h_3 \). The temperature drops and some liquid flashes to vapour. State 4 is a wet mixture of low dryness.</li>
+      <li><b>Evaporator (4-1)</b>: the wet mixture absorbs heat from the cold space at constant pressure and constant temperature, and fully evaporates to saturated vapour (state 1).</li>
+    </ol>
+
+<figure class="fig" id="te-u5-f-vcr-schematic">
+<svg viewBox="0 0 720 390" role="img" aria-label="Vapour compression refrigeration schematic with compressor, condenser, expansion valve and evaporator">
+<defs><marker id="te-u5-arw-vcrs" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="220" y="70" width="240" height="64" class="ln fill-soft"/>
+<polyline points="228,102 242.0,114 256.0,90 270.0,114 284.0,90 298.0,114 312.0,90 326.0,114 340.0,90 354.0,114 368.0,90 382.0,114 396.0,90 410.0,114 424.0,90 438.0,114 452,102" class="acc" fill="none"/>
+<text x="300" y="58" class="lbl-b" text-anchor="middle">CONDENSER</text>
+<rect x="220" y="280" width="240" height="64" class="ln fill-soft"/>
+<polyline points="228,312 242.0,324 256.0,300 270.0,324 284.0,300 298.0,324 312.0,300 326.0,324 340.0,300 354.0,324 368.0,300 382.0,324 396.0,300 410.0,324 424.0,300 438.0,324 452,312" class="acc" fill="none"/>
+<text x="300" y="372" class="lbl-b" text-anchor="middle">EVAPORATOR</text>
+<circle cx="580" cy="202" r="34" class="ln fill-acc"/>
+<text x="580" y="207" class="lbl-sm" text-anchor="middle">Comp.</text>
+<text x="618" y="262" class="lbl-b" text-anchor="start">Compressor</text>
+<path d="M100,182 L140,182 L100,222 L140,222 Z" class="ln fill-soft" fill="none"/>
+<text x="92" y="198" class="lbl-b" text-anchor="end">EXPANSION</text>
+<text x="92" y="214" class="lbl-b" text-anchor="end">VALVE</text>
+<polyline points="460,312 580,312 580,236" class="ln" fill="none" marker-end="url(#te-u5-arw-vcrs)"/>
+<text x="594" y="280" class="lbl-b" text-anchor="start">1</text>
+<polyline points="580,168 580,102 460,102" class="ln" fill="none" marker-end="url(#te-u5-arw-vcrs)"/>
+<text x="594" y="138" class="lbl-b" text-anchor="start">2</text>
+<polyline points="220,102 120,102 120,182" class="ln" fill="none" marker-end="url(#te-u5-arw-vcrs)"/>
+<text x="134" y="140" class="lbl-b" text-anchor="start">3</text>
+<polyline points="120,222 120,312 220,312" class="ln" fill="none" marker-end="url(#te-u5-arw-vcrs)"/>
+<text x="134" y="300" class="lbl-b" text-anchor="start">4</text>
+<line x1="420" y1="70" x2="420" y2="40" class="ln" marker-end="url(#te-u5-arw-vcrs)"/>
+<text x="432" y="50" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">H</tspan><tspan dy="-4"> out (heat rejected)</tspan></text>
+<line x1="420" y1="376" x2="420" y2="348" class="ln" marker-end="url(#te-u5-arw-vcrs)"/>
+<text x="432" y="376" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">L</tspan><tspan dy="-4"> in (from cold space)</tspan></text>
+<line x1="715" y1="202" x2="618" y2="202" class="ln" marker-end="url(#te-u5-arw-vcrs)"/>
+<text x="666" y="190" class="lbl-sm" text-anchor="middle">W in</text>
+</svg>
+<figcaption>Fig. 5.3 — Simple VCR cycle: the four components and states 1 to 4.</figcaption>
+</figure>
+    <figure class="photo"><img src="img/te-u5-condensing-unit.jpg" alt="A small refrigeration condensing unit: hermetic compressor, copper pipes, filter-drier and condenser fan" width="932" height="981" loading="lazy"><figcaption>A small refrigeration unit: the black hermetic compressor, copper pipes, a filter-drier (grey cylinder) and the condenser with its fan behind. <span class="credit">Photo: AnyNameWillExpire · CC BY-SA 4.0 · Wikimedia Commons</span></figcaption></figure>
+    <p>Two diagrams describe the cycle. Study both.</p>
+
+<figure class="fig" id="te-u5-f-ts-vcr">
+<svg viewBox="0 0 680 380" role="img" aria-label="T-s diagram of the simple vapour compression cycle">
+<defs><marker id="te-u5-arw-ts" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-ts)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-ts)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Entropy, s</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Temperature, T</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="70" y1="140" x2="194.058844361389" y2="140" class="ln thin dash"/>
+<line x1="70" y1="262" x2="119.31445456785684" y2="262" class="ln thin dash"/>
+<text x="62" y="144" class="lbl-sm" text-anchor="end">T<tspan dy="4" font-size="80%">c</tspan></text>
+<text x="62" y="266" class="lbl-sm" text-anchor="end">T<tspan dy="4" font-size="80%">e</tspan></text>
+<line x1="487.3308241819851" y1="262" x2="487.3308241819851" y2="106" class="ln acc thick" marker-end="url(#te-u5-arw-ts)"/>
+<path d="M487.3,106 Q456.1,140 396.1,140" class="ln acc thick" fill="none"/>
+<line x1="396.09021761681873" y1="140" x2="194.058844361389" y2="140" class="ln acc thick"/>
+<line x1="194.058844361389" y1="140" x2="229.7193654520953" y2="262" class="ln acc thick dash" marker-end="url(#te-u5-arw-ts)"/>
+<line x1="229.7193654520953" y1="262" x2="487.3308241819851" y2="262" class="ln acc thick" marker-end="url(#te-u5-arw-ts)"/>
+<circle cx="487.3" cy="262.0" r="4" class="solid"/>
+<circle cx="487.3" cy="106.0" r="4" class="solid"/>
+<circle cx="194.1" cy="140.0" r="4" class="solid"/>
+<circle cx="229.7" cy="262.0" r="4" class="solid"/>
+<text x="499.3308241819851" y="280" class="lbl-b" text-anchor="start">1</text>
+<text x="499.3308241819851" y="104" class="lbl-b" text-anchor="start">2</text>
+<text x="182.058844361389" y="132" class="lbl-b" text-anchor="end">3</text>
+<text x="229.7193654520953" y="282" class="lbl-b" text-anchor="middle">4</text>
+<text x="499.3308241819851" y="190" class="lbl-sm" text-anchor="start">1-2</text>
+<text x="499.3308241819851" y="204" class="lbl-sm" text-anchor="start">isentropic</text>
+<text x="295.0745309891039" y="128" class="lbl-sm" text-anchor="middle">2'-3 condensation</text>
+<text x="358.5250948170402" y="298" class="lbl-sm" text-anchor="middle">4-1 evaporation</text>
+<text x="234.058844361389" y="200" class="lbl-sm" text-anchor="start">3-4 throttling</text>
+<text x="234.058844361389" y="214" class="lbl-sm" text-anchor="start">(h constant)</text>
+<text x="402.09021761681873" y="160" class="lbl-b" text-anchor="start">2'</text>
+</svg>
+<figcaption>Fig. 5.4 — T-s diagram of the simple VCR cycle. Compression is a vertical line. Throttling is shown dashed because it is irreversible.</figcaption>
+</figure>
+<figure class="fig" id="te-u5-f-ph-vcr">
+<svg viewBox="0 0 680 395" role="img" aria-label="P-h diagram of the simple vapour compression cycle">
+<defs><marker id="te-u5-arw-ph" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-ph)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-ph)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Enthalpy, h</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Pressure, p (log)</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="70" y1="125" x2="208.68639848450184" y2="125" class="ln thin dash"/>
+<line x1="70" y1="255" x2="121.77700621953707" y2="255" class="ln thin dash"/>
+<text x="62" y="129" class="lbl-sm" text-anchor="end">p<tspan dy="4" font-size="80%">c</tspan></text>
+<text x="62" y="259" class="lbl-sm" text-anchor="end">p<tspan dy="4" font-size="80%">e</tspan></text>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-ph)"/>
+<line x1="553.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-ph)"/>
+<line x1="208.68639848450184" y1="125" x2="208.68639848450184" y2="255" class="ln acc thick dash" marker-end="url(#te-u5-arw-ph)"/>
+<line x1="208.68639848450184" y1="255" x2="483.55166675382384" y2="255" class="ln acc thick" marker-end="url(#te-u5-arw-ph)"/>
+<circle cx="483.6" cy="255.0" r="4" class="solid"/>
+<circle cx="553.6" cy="125.0" r="4" class="solid"/>
+<circle cx="208.7" cy="125.0" r="4" class="solid"/>
+<circle cx="208.7" cy="255.0" r="4" class="solid"/>
+<text x="495.55166675382384" y="273" class="lbl-b" text-anchor="start">1</text>
+<text x="563.5516667538238" y="117" class="lbl-b" text-anchor="start">2</text>
+<text x="198.68639848450184" y="117" class="lbl-b" text-anchor="end">3</text>
+<text x="196.68639848450184" y="275" class="lbl-b" text-anchor="end">4</text>
+<text x="401.11903261916285" y="111" class="lbl-sm" text-anchor="middle">2-3 condenser</text>
+<text x="346.11903261916285" y="285" class="lbl-sm" text-anchor="middle">4-1 evaporator</text>
+<text x="200.68639848450184" y="195" class="lbl-sm" text-anchor="end">3-4 valve</text>
+<text x="517.5516667538238" y="205" class="lbl-sm" text-anchor="start">1-2</text>
+<text x="517.5516667538238" y="219" class="lbl-sm" text-anchor="start">compressor</text>
+<line x1="208.68639848450184" y1="261" x2="208.68639848450184" y2="354" class="ln thin dash"/>
+<line x1="483.55166675382384" y1="261" x2="483.55166675382384" y2="354" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="348" x2="483.55166675382384" y2="348" class="ln thin" marker-end="url(#te-u5-arw-ph)" marker-start="url(#te-u5-arw-ph)"/>
+<text x="346.11903261916285" y="366" class="lbl-sm" text-anchor="middle">RE = h1 - h4</text>
+<line x1="553.5516667538238" y1="125" x2="553.5516667538238" y2="370" class="ln thin dash"/>
+<line x1="483.55166675382384" y1="348" x2="553.5516667538238" y2="348" class="ln thin" marker-end="url(#te-u5-arw-ph)" marker-start="url(#te-u5-arw-ph)"/>
+<text x="548.5516667538238" y="366" class="lbl-sm" text-anchor="middle">W = h2 - h1</text>
+</svg>
+<figcaption>Fig. 5.5 — P-h diagram of the simple VCR cycle. Heat and work are read as horizontal lengths.</figcaption>
+</figure>
+    <p>The <b>P-h diagram</b> is used for all refrigeration work. Pressure is on the vertical axis (log scale) and enthalpy on the horizontal axis. The reason is simple: every energy quantity of the cycle is a horizontal length. Evaporation and condensation are horizontal lines, throttling is a vertical line, and compression is a line that slopes up to the right.</p>
+    <div class="formula">\[ RE = h_1 - h_4 = h_1 - h_3 \qquad W = h_2 - h_1 \qquad Q_{cond} = h_2 - h_3 \]\[ COP = \frac{h_1 - h_4}{h_2 - h_1} \qquad Q_{cond} = RE + W \]<p class="where">All h in kJ/kg. \( h_3 = h_4 \) because throttling is an isenthalpic process.</p></div>
+    <p>For a plant of capacity \( Q_L \) kW:</p>
+    <div class="formula">\[ \dot m = \frac{Q_L}{h_1 - h_4} \qquad P = \dot m\,(h_2 - h_1) \qquad \dot V_1 = \dot m\, v_1 \]<p class="where">P = compressor power (kW), \( \dot V_1 \) = volume of vapour drawn in per second (m³/s), \( v_1 \) = specific volume at the suction.</p></div>
+    <aside class="note"><b>Why a throttle and not an expander?</b> The expansion work of a liquid is very small. An expander for a wet mixture is costly and hard to build. A valve (or a capillary tube) is cheap, has no moving part, and lets us control the flow. The loss is a lower RE.</aside>
+    <p>Try the calculator below. Enter h<sub>1</sub> to h<sub>4</sub> (with h<sub>3</sub> = h<sub>4</sub>) and see RE, work, COP and TR.</p>
+    <div class="widget" data-widget="vcr"></div>
+    <aside class="tip"><b>Memory trick.</b> "Compressor adds, condenser drops, valve flat, evaporator rises." On the P-h chart: the compressor line goes up-right, the condenser line goes left, the valve line goes down, the evaporator line goes right.</aside>
+
+    <h3 id="te-u5-c-sub">6. Effect of subcooling and superheating</h3>
+    <p><b>Subcooling</b> means cooling the liquid below its saturation temperature at the condenser pressure (state 3'). The liquid enthalpy falls from \( h_3 \) to \( h_{3'} \), so the RE rises by \( h_3 - h_{3'} \). The compressor work does not change, because the compression line 1-2 is the same. So the COP increases. Subcooling also avoids flash gas in the liquid line.</p>
+
+<figure class="fig" id="te-u5-f-ph-subcool">
+<svg viewBox="0 0 680 395" role="img" aria-label="P-h diagram showing the effect of subcooling the liquid">
+<defs><marker id="te-u5-arw-phsub" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-phsub)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-phsub)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Enthalpy, h</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Pressure, p (log)</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln thin dash"/>
+<line x1="553.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="125" x2="208.68639848450184" y2="255" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="255" x2="483.55166675382384" y2="255" class="ln thin dash"/>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsub)"/>
+<line x1="553.5516667538238" y1="125" x2="158.68639848450184" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsub)"/>
+<line x1="158.68639848450184" y1="125" x2="158.68639848450184" y2="255" class="ln acc thick dash" marker-end="url(#te-u5-arw-phsub)"/>
+<line x1="158.68639848450184" y1="255" x2="483.55166675382384" y2="255" class="ln acc thick" marker-end="url(#te-u5-arw-phsub)"/>
+<circle cx="483.6" cy="255.0" r="3.5" class="solid"/>
+<circle cx="553.6" cy="125.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="125.0" r="3.5" class="solid"/>
+<circle cx="158.7" cy="125.0" r="3.5" class="solid"/>
+<circle cx="158.7" cy="255.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="255.0" r="3.5" class="solid"/>
+<text x="495.55166675382384" y="273" class="lbl-b" text-anchor="start">1</text>
+<text x="563.5516667538238" y="117" class="lbl-b" text-anchor="start">2</text>
+<text x="212.68639848450184" y="117" class="lbl-b" text-anchor="start">3</text>
+<text x="150.68639848450184" y="117" class="lbl-b" text-anchor="end">3'</text>
+<text x="214.68639848450184" y="273" class="lbl-b" text-anchor="start">4</text>
+<text x="150.68639848450184" y="275" class="lbl-b" text-anchor="end">4'</text>
+<text x="183.68639848450184" y="97" class="lbl-sm" text-anchor="middle">subcooling</text>
+<line x1="158.68639848450184" y1="261" x2="158.68639848450184" y2="354" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="261" x2="208.68639848450184" y2="354" class="ln thin dash"/>
+<line x1="158.68639848450184" y1="348" x2="208.68639848450184" y2="348" class="ln thin" marker-end="url(#te-u5-arw-phsub)" marker-start="url(#te-u5-arw-phsub)"/>
+<text x="183.68639848450184" y="366" class="lbl-sm" text-anchor="middle">gain in RE</text>
+<text x="501.55166675382384" y="200" class="lbl-sm" text-anchor="start">1-2: same work</text>
+</svg>
+<figcaption>Fig. 5.6 — Subcooling: the liquid leaves the condenser at 3'. The refrigeration effect grows, the work stays the same.</figcaption>
+</figure>
+    <p><b>Superheating</b> means heating the vapour above its saturation temperature at the evaporator pressure (state 1'). It protects the compressor from liquid drops (dry compression). Two cases:</p>
+    <ul>
+      <li><b>Useful superheating</b>: the vapour is superheated inside the evaporator while it takes heat from the cold space. The RE increases.</li>
+      <li><b>Useless superheating</b>: the vapour gains heat in the suction pipe after it has left the cold space. There is no extra RE, but the specific volume rises, so the compressor must handle more volume.</li>
+    </ul>
+
+<figure class="fig" id="te-u5-f-ph-superheat">
+<svg viewBox="0 0 680 395" role="img" aria-label="P-h diagram showing the effect of superheating the vapour">
+<defs><marker id="te-u5-arw-phsup" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-phsup)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-phsup)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Enthalpy, h</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Pressure, p (log)</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln thin dash"/>
+<line x1="553.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln thin dash"/>
+<line x1="528.5516667538238" y1="255" x2="608.5516667538238" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsup)"/>
+<line x1="608.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsup)"/>
+<line x1="208.68639848450184" y1="125" x2="208.68639848450184" y2="255" class="ln acc thick dash" marker-end="url(#te-u5-arw-phsup)"/>
+<line x1="208.68639848450184" y1="255" x2="528.5516667538238" y2="255" class="ln acc thick" marker-end="url(#te-u5-arw-phsup)"/>
+<circle cx="483.6" cy="255.0" r="3.5" class="solid"/>
+<circle cx="528.6" cy="255.0" r="3.5" class="solid"/>
+<circle cx="553.6" cy="125.0" r="3.5" class="solid"/>
+<circle cx="608.6" cy="125.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="125.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="255.0" r="3.5" class="solid"/>
+<text x="479.55166675382384" y="273" class="lbl-b" text-anchor="end">1</text>
+<text x="538.5516667538238" y="273" class="lbl-b" text-anchor="start">1'</text>
+<text x="549.5516667538238" y="117" class="lbl-b" text-anchor="end">2</text>
+<text x="618.5516667538238" y="117" class="lbl-b" text-anchor="start">2'</text>
+<text x="198.68639848450184" y="117" class="lbl-b" text-anchor="end">3</text>
+<text x="196.68639848450184" y="275" class="lbl-b" text-anchor="end">4</text>
+<text x="368.61903261916285" y="289" class="lbl-sm" text-anchor="middle">4-1' (evaporator + superheat)</text>
+<text x="578.5516667538238" y="200" class="lbl-sm" text-anchor="start">1'-2'</text>
+<text x="578.5516667538238" y="214" class="lbl-sm" text-anchor="start">more work</text>
+</svg>
+<figcaption>Fig. 5.7 — Superheating: the cycle moves to 1'-2'. The work rises, and so does the RE.</figcaption>
+</figure>
+    <p>With superheating both RE and work increase. The COP may rise or fall; it depends on the refrigerant. Numerical N6 shows a case where it falls. In practice a <b>liquid-suction heat exchanger</b> is used: the cold suction vapour takes heat from the warm liquid. This gives subcooling of the liquid and superheating of the vapour with no outside heat.</p>
+
+    <h3 id="te-u5-c-actual">7. Actual VCR cycle</h3>
+    <p>The actual cycle differs from the theoretical cycle of Fig. 5.5. Fig. 5.8 shows the main changes.</p>
+    <ul>
+      <li><b>Pressure drops</b> in the evaporator, condenser, pipes and valves. The compressor must work between a lower suction pressure and a higher discharge pressure.</li>
+      <li><b>Superheat at the evaporator exit</b> (a few kelvin) so that no liquid enters the compressor.</li>
+      <li><b>Subcooling at the condenser exit</b> so that only liquid reaches the valve.</li>
+      <li><b>Non-isentropic compression</b>: friction and heat transfer raise the entropy. The discharge enthalpy is higher than \( h_2 \). The isentropic efficiency is \( \eta_s = (h_{2s} - h_1)/(h_2 - h_1) \), typically 0.7 to 0.85.</li>
+      <li><b>Finite temperature difference</b>: the evaporator temperature is 5 to 10 K below the cold-space temperature. The condenser temperature is 10 to 15 K above the air or water temperature. This lowers the COP.</li>
+      <li>Heat gain in the suction line, valve leakage and the volumetric efficiency of the compressor (clearance volume).</li>
+    </ul>
+
+<figure class="fig" id="te-u5-f-ph-actual">
+<svg viewBox="0 0 680 395" role="img" aria-label="P-h diagram of actual cycle compared with the theoretical cycle">
+<defs><marker id="te-u5-arw-phact" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-phact)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-phact)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Enthalpy, h</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Pressure, p (log)</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln thin dash"/>
+<line x1="553.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="125" x2="208.68639848450184" y2="255" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="255" x2="483.55166675382384" y2="255" class="ln thin dash"/>
+<polyline points="176.68639848450184,262 513.5516667538238,270" class="ln acc thick" fill="none" marker-end="url(#te-u5-arw-phact)"/>
+<path d="M513.5516667538238,270 C543.5516667538238,230 631.5516667538238,160 625.5516667538238,112" class="ln acc thick" fill="none" marker-end="url(#te-u5-arw-phact)"/>
+<polyline points="625.5516667538238,112 615.5516667538238,126 176.68639848450184,136" class="ln acc thick" fill="none" marker-end="url(#te-u5-arw-phact)"/>
+<line x1="176.68639848450184" y1="136" x2="176.68639848450184" y2="262" class="ln acc thick dash" marker-end="url(#te-u5-arw-phact)"/>
+<circle cx="513.6" cy="270.0" r="3.5" class="solid"/>
+<circle cx="625.6" cy="112.0" r="3.5" class="solid"/>
+<circle cx="176.7" cy="136.0" r="3.5" class="solid"/>
+<circle cx="176.7" cy="262.0" r="3.5" class="solid"/>
+<text x="523.5516667538238" y="288" class="lbl-b" text-anchor="start">1a</text>
+<text x="639.5516667538238" y="108" class="lbl-b" text-anchor="start">2a</text>
+<text x="168.68639848450184" y="132" class="lbl-b" text-anchor="end">3a</text>
+<text x="168.68639848450184" y="276" class="lbl-b" text-anchor="end">4a</text>
+<text x="345.11903261916285" y="298" class="lbl-sm" text-anchor="middle">evaporator: pressure drop + superheat</text>
+<text x="186.68639848450184" y="190" class="lbl-sm" text-anchor="start">liquid</text>
+<text x="186.68639848450184" y="204" class="lbl-sm" text-anchor="start">subcooled</text>
+<text x="591.5516667538238" y="215" class="lbl-sm" text-anchor="start">compression with</text>
+<text x="591.5516667538238" y="229" class="lbl-sm" text-anchor="start">friction (s rises)</text>
+<text x="192.68639848450184" y="152" class="lbl-sm" text-anchor="start">condenser:</text>
+<text x="192.68639848450184" y="166" class="lbl-sm" text-anchor="start">pressure drop</text>
+</svg>
+<figcaption>Fig. 5.8 — Actual cycle (solid line) compared with the theoretical cycle (thin dashed line).</figcaption>
+</figure>
+    <aside class="real"><b>Real world.</b> A home air conditioner often shows its evaporator at 5 to 8 °C for a room at 24 °C, and its condenser at 45 to 55 °C on a hot day. The big temperature lift is the reason why a split AC has a COP of about 3, much less than the Carnot COP of about 7.</aside>
+
+    <h3 id="te-u5-c-refrigerants">8. Refrigerants and their designation</h3>
+    <p>A <b>refrigerant</b> is the fluid that carries heat in a refrigeration cycle. Refrigerants are named by the letter <b>R</b> and a number. This is the ASHRAE designation.</p>
+    <p><b>Rule for R-xyz</b> (methane, ethane and propane series):</p>
+    <ul>
+      <li>z = number of fluorine atoms.</li>
+      <li>y = number of hydrogen atoms + 1.</li>
+      <li>x = number of carbon atoms − 1 (omit x if it is zero).</li>
+      <li>Chlorine atoms fill the remaining bonds. A letter (a, b) shows an isomer.</li>
+    </ul>
+    <p>Examples: R-12 = CCl<sub>2</sub>F<sub>2</sub> (C − 1 = 0, H + 1 = 1, F = 2). R-22 = CHClF<sub>2</sub> (H + 1 = 2, F = 2). R-134a = C<sub>2</sub>H<sub>2</sub>F<sub>4</sub> (C − 1 = 1, H + 1 = 3, F = 4). Inorganic refrigerants are 700 plus the molar mass: ammonia (17) is R-717, carbon dioxide (44) is R-744, water (18) is R-718. Hydrocarbons use 290 for propane and 600a for isobutane. The 1000 series (R-1234yf) are unsaturated HFOs.</p>
+    <div class="tbl"><table><thead><tr><th>Refrigerant</th><th>Name / formula</th><th>Normal boiling point (°C)</th><th>ODP</th><th>GWP (100 y, about)</th><th>Note</th></tr></thead><tbody>
+      <tr><td>R-12</td><td>CFC, CCl<sub>2</sub>F<sub>2</sub></td><td>−29.8</td><td>1.0</td><td>10 900</td><td>Banned (Montreal)</td></tr>
+      <tr><td>R-22</td><td>HCFC, CHClF<sub>2</sub></td><td>−40.8</td><td>0.055</td><td>1 810</td><td>Being phased out</td></tr>
+      <tr><td>R-134a</td><td>HFC, C<sub>2</sub>H<sub>2</sub>F<sub>4</sub></td><td>−26.3</td><td>0</td><td>1 430</td><td>Fridge, car AC; phase-down</td></tr>
+      <tr><td>R-717</td><td>Ammonia, NH<sub>3</sub></td><td>−33.3</td><td>0</td><td>0</td><td>Industrial; toxic</td></tr>
+      <tr><td>R-744</td><td>Carbon dioxide, CO<sub>2</sub></td><td>−78.5 (sublimes)</td><td>0</td><td>1</td><td>Very high pressure</td></tr>
+      <tr><td>R-290</td><td>Propane, C<sub>3</sub>H<sub>8</sub></td><td>−42.1</td><td>0</td><td>about 3</td><td>Flammable</td></tr>
+      <tr><td>R-600a</td><td>Isobutane, C<sub>4</sub>H<sub>10</sub></td><td>−11.7</td><td>0</td><td>about 3</td><td>Flammable; domestic fridges</td></tr>
+      <tr><td>R-1234yf</td><td>HFO, C<sub>3</sub>H<sub>2</sub>F<sub>4</sub></td><td>−29.5</td><td>0</td><td>under 5</td><td>Mildly flammable; car AC</td></tr>
+    </tbody></table></div>
+    <aside class="warn"><b>Check.</b> The boiling points, ODP and GWP above are typical textbook values. GWP depends on the assessment report used, so books differ slightly. Use your textbook value in the exam.</aside>
+
+    <h3 id="te-u5-c-props">9. Desirable properties of a refrigerant</h3>
+    <p><b>Thermodynamic properties</b></p>
+    <ul>
+      <li>Low boiling point at atmospheric pressure, so the evaporator pressure is not below the atmosphere (no air leaks in).</li>
+      <li>Moderate condenser pressure (not too high), so the machine is light and safe.</li>
+      <li>High latent heat of vaporisation: a small mass flow gives the required capacity.</li>
+      <li>High critical temperature: heat rejection is by condensation, not at supercritical state.</li>
+      <li>Low freezing point, and low specific volume of vapour (a small compressor).</li>
+      <li>High COP, and a low compression ratio and low discharge temperature.</li>
+    </ul>
+    <p><b>Chemical properties</b></p>
+    <ul>
+      <li>Non-toxic, non-flammable and non-explosive.</li>
+      <li>Chemically stable, and no reaction with the lubricating oil or the metals of the plant.</li>
+      <li>Non-corrosive and compatible with seals and hoses.</li>
+    </ul>
+    <p><b>Physical and other properties</b></p>
+    <ul>
+      <li>Good heat transfer (high thermal conductivity) and low viscosity.</li>
+      <li>Easy leak detection, and no effect on food or people (no smell or colour).</li>
+      <li>Low cost and easy availability.</li>
+      <li><b>Environmental</b>: zero ODP, low GWP and a short atmospheric life.</li>
+    </ul>
+    <aside class="note"><b>No ideal refrigerant.</b> Ammonia has excellent thermodynamic properties but is toxic. Hydrocarbons are efficient and green but flammable. So each use has its own best choice.</aside>
+
+    <h3 id="te-u5-c-eco">10. Eco-friendly refrigerants</h3>
+    <p>Two environmental indices rate a refrigerant:</p>
+    <ul>
+      <li><b>Ozone Depletion Potential (ODP)</b>: the damage to the ozone layer compared with R-11 (ODP = 1). Chlorine in CFCs and HCFCs breaks ozone in the stratosphere.</li>
+      <li><b>Global Warming Potential (GWP)</b>: the warming caused by 1 kg of the gas over 100 years compared with 1 kg of CO<sub>2</sub> (GWP = 1).</li>
+    </ul>
+    <p>The <b>Montreal Protocol (1987)</b> ordered the phase-out of CFCs (such as R-12) and then HCFCs (such as R-22), because of their ODP. HFCs such as R-134a have zero ODP, but a high GWP. The <b>Kigali Amendment (2016)</b> to the Montreal Protocol orders a gradual phase-down of HFCs. India is a party, and its HFC phase-down starts in the early 2030s.</p>
+    <p>The eco-friendly choices are the <b>natural refrigerants</b> (ammonia R-717, carbon dioxide R-744, hydrocarbons R-290 and R-600a, water) and the new low-GWP <b>HFOs</b> such as R-1234yf. Each has a drawback: ammonia is toxic, CO<sub>2</sub> works at very high pressure (above 100 bar in the gas cooler), hydrocarbons burn and HFOs are costly and mildly flammable.</p>
+    <div class="tbl"><table><thead><tr><th>Family</th><th>Examples</th><th>ODP</th><th>GWP</th><th>Status</th></tr></thead><tbody>
+      <tr><td>CFC</td><td>R-11, R-12</td><td>high</td><td>very high</td><td>Phased out</td></tr>
+      <tr><td>HCFC</td><td>R-22</td><td>low</td><td>high</td><td>Phasing out</td></tr>
+      <tr><td>HFC</td><td>R-134a</td><td>0</td><td>high</td><td>Phase-down (Kigali)</td></tr>
+      <tr><td>HFO</td><td>R-1234yf</td><td>0</td><td>very low</td><td>Growing use</td></tr>
+      <tr><td>Natural</td><td>R-717, R-744, R-290, R-600a</td><td>0</td><td>0 to 3</td><td>Growing use</td></tr>
+    </tbody></table></div>
+
+    <h3 id="te-u5-c-var">11. Vapour absorption refrigeration (VAR) system</h3>
+    <p>The VAR system uses <b>heat</b> as the main energy input and not electric work. The commonly used pair is <b>ammonia (refrigerant) and water (absorbent)</b>. Ammonia is very soluble in water. In Fig. 5.9 the compressor of the VCR system is replaced by an absorber, a pump and a generator. The condenser, the expansion valve and the evaporator stay the same.</p>
+
+<figure class="fig" id="te-u5-f-var">
+<svg viewBox="0 0 720 430" role="img" aria-label="Vapour absorption refrigeration system with generator, condenser, expansion valve, evaporator, absorber and pump">
+<defs><marker id="te-u5-arw-var" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60" y="60" width="170" height="70" class="ln fill-soft"/>
+<text x="145" y="100" class="lbl-b" text-anchor="middle">CONDENSER</text>
+<rect x="430" y="60" width="200" height="90" class="ln fill-soft"/>
+<text x="530" y="98" class="lbl-b" text-anchor="middle">GENERATOR</text>
+<text x="530" y="118" class="lbl-sm" text-anchor="middle">NH3 boils off</text>
+<rect x="60" y="300" width="170" height="70" class="ln fill-soft"/>
+<text x="145" y="340" class="lbl-b" text-anchor="middle">EVAPORATOR</text>
+<rect x="430" y="300" width="200" height="90" class="ln fill-soft"/>
+<text x="530" y="338" class="lbl-b" text-anchor="middle">ABSORBER</text>
+<text x="530" y="358" class="lbl-sm" text-anchor="middle">water absorbs NH3</text>
+<polyline points="430,95 230,95" class="ln" fill="none" marker-end="url(#te-u5-arw-var)"/>
+<text x="330" y="86" class="lbl-sm" text-anchor="middle">NH3 vapour (high p)</text>
+<polyline points="145,130 145,195" class="ln" fill="none" marker-end="url(#te-u5-arw-var)"/>
+<path d="M125,195 L165,195 L125,235 L165,235 Z" class="ln fill-soft" fill="none"/>
+<text x="112" y="210" class="lbl-sm" text-anchor="end">Expansion</text>
+<text x="112" y="226" class="lbl-sm" text-anchor="end">valve</text>
+<polyline points="145,235 145,300" class="ln" fill="none" marker-end="url(#te-u5-arw-var)"/>
+<polyline points="230,335 430,335" class="ln" fill="none" marker-end="url(#te-u5-arw-var)"/>
+<text x="330" y="326" class="lbl-sm" text-anchor="middle">NH3 vapour (low p)</text>
+<polyline points="480,300 480,282" class="ln" fill="none"/>
+<circle cx="480" cy="264" r="18" class="ln fill-acc"/>
+<text x="480" y="269" class="lbl-b" text-anchor="middle">P</text>
+<polyline points="480,246 480,150" class="ln" fill="none" marker-end="url(#te-u5-arw-var)"/>
+<text x="468" y="200" class="lbl-sm" text-anchor="end">Strong solution</text>
+<text x="468" y="216" class="lbl-sm" text-anchor="end">(rich in NH3)</text>
+<polyline points="590,150 590,200" class="ln" fill="none" marker-end="url(#te-u5-arw-var)"/>
+<path d="M570,200 L610,200 L570,240 L610,240 Z" class="ln fill-soft" fill="none"/>
+<polyline points="590,240 590,300" class="ln" fill="none" marker-end="url(#te-u5-arw-var)"/>
+<text x="622" y="206" class="lbl-sm" text-anchor="start">Pressure-</text>
+<text x="622" y="222" class="lbl-sm" text-anchor="start">reducing</text>
+<text x="622" y="238" class="lbl-sm" text-anchor="start">valve</text>
+<text x="604" y="274" class="lbl-sm" text-anchor="start">Weak</text>
+<text x="604" y="290" class="lbl-sm" text-anchor="start">solution</text>
+<line x1="145" y1="50" x2="145" y2="24" class="ln" marker-end="url(#te-u5-arw-var)"/>
+<text x="160" y="34" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">C</tspan><tspan dy="-4"> out</tspan></text>
+<line x1="530" y1="24" x2="530" y2="58" class="ln" marker-end="url(#te-u5-arw-var)"/>
+<text x="545" y="34" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">G</tspan><tspan dy="-4"> in (heat source)</tspan></text>
+<line x1="145" y1="408" x2="145" y2="372" class="ln" marker-end="url(#te-u5-arw-var)"/>
+<text x="160" y="414" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">E</tspan><tspan dy="-4"> in (cold space)</tspan></text>
+<line x1="530" y1="392" x2="530" y2="418" class="ln" marker-end="url(#te-u5-arw-var)"/>
+<text x="545" y="418" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">A</tspan><tspan dy="-4"> out</tspan></text>
+</svg>
+<figcaption>Fig. 5.9 — Simple ammonia-water vapour absorption system.</figcaption>
+</figure>
+    <p><b>Working</b></p>
+    <ol>
+      <li><b>Evaporator</b>: liquid ammonia at low pressure takes heat Q<sub>E</sub> from the cold space and evaporates.</li>
+      <li><b>Absorber</b>: the ammonia vapour is absorbed by the weak (ammonia-poor) water solution. Absorption gives out heat Q<sub>A</sub>, so the absorber is cooled by water. A cold solution absorbs more ammonia.</li>
+      <li><b>Pump</b>: the strong (ammonia-rich) solution is pumped to the condenser pressure. The pump work is very small because it handles liquid, not vapour.</li>
+      <li><b>Generator</b>: heat Q<sub>G</sub> (steam, hot gas, solar or waste heat) boils the ammonia out of the solution. Some water vapour also leaves. A <b>rectifier</b> (analyser) removes the water so that nearly pure ammonia goes to the condenser.</li>
+      <li><b>Condenser</b>: the ammonia vapour condenses at high pressure and rejects heat Q<sub>C</sub>.</li>
+      <li><b>Expansion valve</b>: the liquid ammonia is throttled to the evaporator pressure.</li>
+      <li>The hot weak solution returns from the generator through a pressure-reducing valve to the absorber. A <b>heat exchanger</b> between the strong and weak solutions saves heat.</li>
+    </ol>
+    <div class="formula">\[ COP_{VAR} = \frac{Q_E}{Q_G + W_p} \approx \frac{Q_E}{Q_G} \]<p class="where">\( W_p \) = pump work, which is very small. A simple ammonia-water system has a COP of about 0.5 to 0.8.</p></div>
+    <div class="tbl"><table><thead><tr><th>Point</th><th>VCR</th><th>VAR</th></tr></thead><tbody>
+      <tr><td>Main energy input</td><td>Electric work to compressor</td><td>Heat to generator (steam, gas, waste heat, solar)</td></tr>
+      <tr><td>Compressor</td><td>Yes (vapour compression)</td><td>No; liquid pump with very small work</td></tr>
+      <tr><td>Moving parts</td><td>Many; noise and vibration</td><td>Few; quiet</td></tr>
+      <tr><td>COP</td><td>High (3 to 5)</td><td>Low (0.5 to 0.8)</td></tr>
+      <tr><td>Electric power use</td><td>High</td><td>Very low</td></tr>
+      <tr><td>Size and cost</td><td>Compact; low first cost</td><td>Bulky; higher first cost</td></tr>
+      <tr><td>Part-load running</td><td>Efficiency drops</td><td>Efficiency is good</td></tr>
+      <tr><td>Best use</td><td>Homes, cars, small and medium plants</td><td>Where waste heat or cheap heat is available; large plants</td></tr>
+    </tbody></table></div>
+    <aside class="real"><b>Real world.</b> A sugar mill or a power plant has waste steam. A VAR plant uses this steam for chilling and saves a lot of electricity. Also, gas-fired absorption chillers run in places where electric supply is poor.</aside>
+
+    <h3 id="te-u5-c-dom">12. Domestic refrigerator</h3>
+    <p>A domestic refrigerator is a small VCR system. Fig. 5.10 shows its parts.</p>
+    <ul>
+      <li><b>Compressor</b>: a sealed (hermetic) unit at the bottom back. The motor and the compressor are in one steel shell.</li>
+      <li><b>Condenser</b>: a coil of tube on the back (or in the side walls). It is cooled by natural air flow.</li>
+      <li><b>Filter-drier</b>: removes dirt and moisture from the liquid.</li>
+      <li><b>Capillary tube</b>: a long, thin copper tube. It is the throttling device. The pressure falls because of friction in the thin tube.</li>
+      <li><b>Evaporator</b>: the coil in the freezer box (about −18 °C). Cold air falls from it and cools the fresh-food space (3 to 5 °C).</li>
+      <li><b>Thermostat</b>: switches the compressor on and off to keep the set temperature. Insulation (polyurethane foam) and a door gasket reduce heat gain.</li>
+    </ul>
+
+<figure class="fig" id="te-u5-f-domestic">
+<svg viewBox="0 0 680 400" role="img" aria-label="Domestic refrigerator with freezer evaporator, condenser coil at the back, compressor and capillary tube">
+<defs><marker id="te-u5-arw-dom" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="160" y="40" width="200" height="320" class="ln fill-soft"/>
+<rect x="148" y="40" width="12" height="320" class="ln fill-acc"/>
+<text x="140" y="200" class="lbl-sm" text-anchor="end">Door</text>
+<rect x="172" y="52" width="176" height="68" class="ln"/>
+<polyline points="190,84 202.5,94 215.0,74 227.5,94 240.0,74 252.5,94 265.0,74 277.5,94 290.0,74 302.5,94 315.0,74 327.5,94 340,84" class="acc" fill="none"/>
+<text x="260" y="112" class="lbl-sm" text-anchor="middle">Freezer (about -18 deg C)</text>
+<line x1="172" y1="135" x2="348" y2="135" class="ln thin"/>
+<text x="260" y="185" class="lbl" text-anchor="middle">Fresh-food compartment</text>
+<text x="260" y="205" class="lbl-sm" text-anchor="middle">(about 3 to 5 deg C)</text>
+<rect x="190" y="260" width="140" height="60" class="ln"/>
+<text x="260" y="295" class="lbl-sm" text-anchor="middle">Vegetable tray</text>
+<polyline points="440,52 426,68 454,84 426,100 454,116 426,132 454,148 426,164 454,180 426,196 454,212 426,228 454,244 440,260" class="acc" fill="none"/>
+<text x="480" y="150" class="lbl-sm" text-anchor="start">Condenser</text>
+<text x="480" y="166" class="lbl-sm" text-anchor="start">(coil on back)</text>
+<text x="480" y="182" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">H</tspan><tspan dy="-4"> to room air</tspan></text>
+<rect x="400" y="290" width="110" height="50" class="ln fill-acc"/>
+<text x="455" y="320" class="lbl-sm" text-anchor="middle">Compressor</text>
+<polyline points="440,290 440,262" class="ln" fill="none" marker-end="url(#te-u5-arw-dom)"/>
+<text x="452" y="280" class="lbl-sm" text-anchor="start">hot vapour</text>
+<polyline points="440,52 440,32 190,32 190,80" class="ln" fill="none" marker-end="url(#te-u5-arw-dom)"/>
+<text x="315" y="22" class="lbl-sm" text-anchor="middle">Capillary tube and filter-drier</text>
+<polyline points="340,84 380,84 380,315 400,315" class="ln" fill="none" marker-end="url(#te-u5-arw-dom)"/>
+<text x="394" y="200" class="lbl-sm" text-anchor="middle" transform="rotate(-90 394 200)">Suction line (cold vapour)</text>
+<text x="256" y="384" class="lbl-sm" text-anchor="middle">(side view, schematic)</text>
+</svg>
+<figcaption>Fig. 5.10 — Parts of a domestic refrigerator (schematic side view).</figcaption>
+</figure>
+    <p>The refrigerant is R-134a in older units and R-600a (isobutane) in new units. Frost-free models add a fan that blows air over the evaporator and an electric heater that melts the frost. The compressor runs in short cycles (on-off control) and takes about 100 to 200 W.</p>
+
+    <h3 id="te-u5-c-ind">13. Industrial applications of refrigeration</h3>
+    <ul>
+      <li><b>Cold storage</b>: fruits and vegetables at 0 to 4 °C; frozen food, meat and fish at −18 to −25 °C. Milk chilling in dairies.</li>
+      <li><b>Ice plant</b>: ammonia evaporator coils cool brine (salt water) to about −10 °C. Water cans in the brine freeze into ice blocks.</li>
+      <li><b>Air conditioning</b>: comfort cooling of homes, offices, cars and trains; process cooling in textile, printing and electronic factories.</li>
+      <li><b>Chemical and process industries</b>: gas liquefaction, separation of gases, cooling of reactors, dehydration.</li>
+      <li><b>Medical</b>: storage of vaccines, blood and medicines in cold chain.</li>
+      <li><b>Others</b>: food freezing, refrigerated trucks and ships, ice skating rinks, cooling of concrete in dams, mining of deep mines.</li>
+    </ul>
+    <aside class="note"><b>Large plants.</b> Large cold stores and ice plants use ammonia (R-717) because of its high COP and low cost; the plant is kept away from people because ammonia is toxic. Small units use R-134a, R-600a or R-290.</aside>
+    <figure class="photo"><img src="img/te-u5-cold-room-units.jpg" alt="Condensing units and cold-room evaporators stacked in a factory with insulated panels" width="1000" height="1006" loading="lazy"><figcaption>Condensing units, cold-room evaporators and insulated panels. A cold room is built from these parts. <span class="credit">Photo: Mesadbal · CC BY 4.0 · Wikimedia Commons</span></figcaption></figure>
+    <figure class="photo"><img src="img/te-u5-coldstore-plant.jpg" alt="Large old reciprocating refrigeration compressor with flywheel in a cold store plant room" width="640" height="422" loading="lazy"><figcaption>Plant room of an old cold store: a large compressor with its flywheel. Big plants use large compressors like this one. <span class="credit">Photo: Chris Allen · CC BY-SA 2.0 · Wikimedia Commons</span></figcaption></figure>
+
+    <dl class="cards">
+      <dt>Refrigeration effect (RE)</dt><dd>Heat absorbed by 1 kg of refrigerant in the evaporator, RE = h<sub>1</sub> − h<sub>4</sub> (kJ/kg).</dd>
+      <dt>Ton of refrigeration (TR)</dt><dd>Heat to freeze 1 ton of water at 0 °C to ice at 0 °C in 24 h. 1 TR = 3.5167 kW = 211 kJ/min.</dd>
+      <dt>COP of refrigerator</dt><dd>Heat absorbed from the cold space divided by the work input, Q<sub>L</sub>/W. COP of heat pump = COP<sub>R</sub> + 1.</dd>
+      <dt>Carnot COP</dt><dd>T<sub>L</sub>/(T<sub>H</sub> − T<sub>L</sub>) for a refrigerator; the upper limit for any machine between the same temperatures.</dd>
+      <dt>Dry compression</dt><dd>Compression of saturated or superheated vapour only. It protects the compressor from liquid.</dd>
+      <dt>Throttling</dt><dd>Expansion through a valve at constant enthalpy, h<sub>3</sub> = h<sub>4</sub>. It is irreversible.</dd>
+      <dt>Subcooling</dt><dd>Cooling the liquid below its saturation temperature at condenser pressure. It raises RE and COP.</dd>
+      <dt>Superheating</dt><dd>Heating the vapour above its saturation temperature at the evaporator pressure.</dd>
+      <dt>ODP</dt><dd>Ozone Depletion Potential relative to R-11. Zero for HFCs, HFOs and natural refrigerants.</dd>
+      <dt>GWP</dt><dd>Global Warming Potential over 100 years relative to CO<sub>2</sub>.</dd>
+      <dt>Absorber / Generator</dt><dd>In VAR, the absorber dissolves NH<sub>3</sub> vapour in water. The generator boils NH<sub>3</sub> out of the strong solution using heat.</dd>
+      <dt>Capillary tube</dt><dd>Long thin tube that throttles the refrigerant in domestic fridges.</dd>
+    </dl>
+
+    <div class="quiz" id="te-u5-quiz">
+      <div class="mcq" data-answer="b"><p class="stem">One ton of refrigeration is equal to</p><ol class="opts"><li>3.5167 W</li><li>3.5167 kW</li><li>35.167 kW</li><li>211 kJ/s</li></ol><p class="why">1 TR = 211 kJ/min = 3.5167 kJ/s = 3.5167 kW.</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">In the simple VCR cycle, the expansion valve process is</p><ol class="opts"><li>isentropic</li><li>isothermal</li><li>isenthalpic</li><li>isobaric</li></ol><p class="why">Throttling keeps the enthalpy constant, h<sub>3</sub> = h<sub>4</sub>.</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">A refrigerator has COP = 4. If the same cycle is used as a heat pump, its COP is</p><ol class="opts"><li>5</li><li>4</li><li>3</li><li>0.25</li></ol><p class="why">COP<sub>HP</sub> = COP<sub>R</sub> + 1 = 5.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">Subcooling of the liquid in the condenser</p><ol class="opts"><li>increases the compressor work</li><li>decreases the refrigeration effect</li><li>has no effect on COP</li><li>increases the refrigeration effect without extra work</li></ol><p class="why">h<sub>3'</sub> is lower than h<sub>3</sub>, so RE = h<sub>1</sub> − h<sub>3'</sub> is larger. The compression line is unchanged.</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">Which refrigerant has the designation R-717?</p><ol class="opts"><li>Carbon dioxide</li><li>Ammonia</li><li>Propane</li><li>Isobutane</li></ol><p class="why">700 + 17 (molar mass of NH<sub>3</sub>) = 717. CO<sub>2</sub> is R-744, propane is R-290.</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">The Kigali Amendment of the Montreal Protocol is about the phase-down of</p><ol class="opts"><li>CFCs</li><li>HCFCs</li><li>HFCs</li><li>ammonia</li></ol><p class="why">HFCs have zero ODP but high GWP. Kigali (2016) phases them down. CFCs and HCFCs come under the Montreal Protocol itself.</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">The main energy input of a vapour absorption system is</p><ol class="opts"><li>heat at the generator</li><li>work at the compressor</li><li>work at the condenser fan</li><li>heat at the evaporator</li></ol><p class="why">The generator boils the refrigerant out of the solution using heat. Pump work is very small.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">Why is the reversed Carnot cycle not used in practice?</p><ol class="opts"><li>Its COP is very low</li><li>It needs no work</li><li>It has only one component</li><li>It needs wet compression and an expander for a two-phase mixture</li></ol><p class="why">Wet compression damages the compressor, and an expander for a liquid-vapour mixture is hard to make.</p></div>
+    </div>
+  </section>
+
+  <section class="part" id="te-u5-theory" data-part="theory">
+    <h2>Theory questions</h2>
+    <p class="note">This unit is new in 2026, so these questions are written from the syllabus topics.</p>
+
+    <article class="q" id="te-u5-q1" data-marks="10">
+      <h3>Q1. Explain the reversed Carnot refrigeration cycle with a schematic and a T-s diagram. Derive its COP and say why it is not used in practice.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="q-hint">Schematic + rectangle T-s (counter-clockwise), COP = T<sub>L</sub>/(T<sub>H</sub> − T<sub>L</sub>), then 3 or 4 reasons for the practical limits.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Definition.</b> The reversed Carnot cycle is the Carnot heat-engine cycle run in the opposite direction. It takes heat Q<sub>L</sub> from a low-temperature body at T<sub>L</sub> and rejects heat Q<sub>H</sub> to a high-temperature body at T<sub>H</sub>, with work W supplied. It is the ideal cycle of a refrigerator.</p>
+
+<figure class="fig" id="te-u5-f-carnot-q1">
+<svg viewBox="0 0 700 340" role="img" aria-label="Reversed Carnot refrigerator schematic and its T-s diagram">
+<defs><marker id="te-u5-arw-carn-q1" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="40" y="36" width="130" height="46" class="ln fill-soft"/>
+<text x="105" y="64" class="lbl" text-anchor="middle">Condenser</text>
+<rect x="40" y="250" width="130" height="46" class="ln fill-soft"/>
+<text x="105" y="278" class="lbl" text-anchor="middle">Evaporator</text>
+<circle cx="250" cy="142" r="32" class="ln fill-acc"/>
+<text x="250" y="147" class="lbl-sm" text-anchor="middle">Comp.</text>
+<path d="M78,122 L132,122 L78,166 L132,166 Z" class="ln fill-soft" fill="none"/>
+<text x="66" y="148" class="lbl-sm" text-anchor="end">Expander</text>
+<text x="66" y="162" class="lbl-sm" text-anchor="end">(turbine)</text>
+<polyline points="170,59 250,59 250,110" class="ln" fill="none" marker-end="url(#te-u5-arw-carn-q1)"/>
+<text x="272" y="90" class="lbl-b" text-anchor="start">2</text>
+<polyline points="170,273 250,273 250,174" class="ln" fill="none" marker-end="url(#te-u5-arw-carn-q1)"/>
+<text x="272" y="230" class="lbl-b" text-anchor="start">1</text>
+<line x1="105" y1="82" x2="105" y2="122" class="ln" marker-end="url(#te-u5-arw-carn-q1)"/>
+<line x1="105" y1="166" x2="105" y2="250" class="ln" marker-end="url(#te-u5-arw-carn-q1)"/>
+<text x="125" y="104" class="lbl-b" text-anchor="start">3</text>
+<text x="125" y="232" class="lbl-b" text-anchor="start">4</text>
+<line x1="105" y1="30" x2="105" y2="10" class="ln" marker-end="url(#te-u5-arw-carn-q1)"/>
+<text x="120" y="22" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">H</tspan><tspan dy="-4"> out</tspan></text>
+<line x1="105" y1="328" x2="105" y2="300" class="ln" marker-end="url(#te-u5-arw-carn-q1)"/>
+<text x="120" y="322" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">L</tspan><tspan dy="-4"> in</tspan></text>
+<line x1="320" y1="142" x2="284" y2="142" class="ln" marker-end="url(#te-u5-arw-carn-q1)"/>
+<text x="302" y="130" class="lbl-sm" text-anchor="middle">W in</text>
+<line x1="390" y1="290" x2="675" y2="290" class="ln" marker-end="url(#te-u5-arw-carn-q1)"/>
+<line x1="390" y1="290" x2="390" y2="30" class="ln" marker-end="url(#te-u5-arw-carn-q1)"/>
+<text x="670" y="282" class="lbl" text-anchor="end">Entropy, s</text>
+<text x="356" y="160.0" class="lbl" text-anchor="middle" transform="rotate(-90 356 160.0)">Temperature, T</text>
+<line x1="610" y1="220" x2="610" y2="103" class="ln acc thick" marker-end="url(#te-u5-arw-carn-q1)"/>
+<line x1="610" y1="100" x2="463" y2="100" class="ln acc thick" marker-end="url(#te-u5-arw-carn-q1)"/>
+<line x1="460" y1="100" x2="460" y2="217" class="ln acc thick" marker-end="url(#te-u5-arw-carn-q1)"/>
+<line x1="460" y1="220" x2="607" y2="220" class="ln acc thick" marker-end="url(#te-u5-arw-carn-q1)"/>
+<line x1="460" y1="100" x2="460" y2="290" class="ln thin dash"/>
+<line x1="610" y1="100" x2="610" y2="290" class="ln thin dash"/>
+<line x1="390" y1="100" x2="460" y2="100" class="ln thin dash"/>
+<line x1="390" y1="220" x2="460" y2="220" class="ln thin dash"/>
+<circle cx="610.0" cy="220.0" r="4" class="solid"/>
+<circle cx="610.0" cy="100.0" r="4" class="solid"/>
+<circle cx="460.0" cy="100.0" r="4" class="solid"/>
+<circle cx="460.0" cy="220.0" r="4" class="solid"/>
+<text x="622" y="238" class="lbl-b" text-anchor="start">1</text>
+<text x="622" y="92" class="lbl-b" text-anchor="start">2</text>
+<text x="448" y="92" class="lbl-b" text-anchor="end">3</text>
+<text x="448" y="238" class="lbl-b" text-anchor="end">4</text>
+<text x="535.0" y="90" class="lbl-sm" text-anchor="middle">2-3 heat rejected at T<tspan dy="4" font-size="80%">H</tspan></text>
+<text x="535.0" y="254" class="lbl-sm" text-anchor="middle">4-1 heat absorbed at T<tspan dy="4" font-size="80%">L</tspan></text>
+<text x="618" y="165" class="lbl-sm" text-anchor="start">1-2</text>
+<text x="452" y="165" class="lbl-sm" text-anchor="end">3-4</text>
+<text x="460" y="308" class="lbl-sm" text-anchor="middle">s<tspan dy="4" font-size="80%">3</tspan><tspan dy="-4"> = s<tspan dy="4" font-size="80%">4</tspan></tspan></text>
+<text x="610" y="308" class="lbl-sm" text-anchor="middle">s<tspan dy="4" font-size="80%">1</tspan><tspan dy="-4"> = s<tspan dy="4" font-size="80%">2</tspan></tspan></text>
+<text x="384" y="104" class="lbl-sm" text-anchor="end">T<tspan dy="4" font-size="80%">H</tspan></text>
+<text x="384" y="224" class="lbl-sm" text-anchor="end">T<tspan dy="4" font-size="80%">L</tspan></text>
+</svg>
+<figcaption>Fig. Q1 — Reversed Carnot cycle.</figcaption>
+</figure>
+        <p><b>Processes.</b></p>
+        <ul>
+          <li>1-2: isentropic compression (work in); T rises from T<sub>L</sub> to T<sub>H</sub>.</li>
+          <li>2-3: isothermal heat rejection at T<sub>H</sub> in the condenser.</li>
+          <li>3-4: isentropic expansion in the expander (work out); T falls to T<sub>L</sub>.</li>
+          <li>4-1: isothermal heat absorption at T<sub>L</sub> in the evaporator.</li>
+        </ul>
+        <p><b>COP.</b> From the T-s diagram: \( Q_L = T_L (s_1 - s_4) \), \( Q_H = T_H (s_1 - s_4) \). Net work \( W = Q_H - Q_L = (T_H - T_L)(s_1 - s_4) \).</p>
+        <div class="formula">\[ COP_{R} = \frac{Q_L}{W} = \frac{T_L}{T_H - T_L} \]</div>
+        <p>This is the maximum COP possible between the two temperatures. It rises when T<sub>L</sub> is high and T<sub>H</sub> is low.</p>
+        <p><b>Why it is not practical.</b></p>
+        <ul>
+          <li>Compression starts in the wet region (state 1). Wet compression damages the compressor and gives low volumetric efficiency.</li>
+          <li>The expander must work on a liquid-vapour mixture. It is hard to make, and its small work does not repay the cost.</li>
+          <li>Isothermal heat transfer needs zero temperature difference, which means an infinite area. Real exchangers need 5 to 15 K.</li>
+          <li>The cycle is very sensitive to the dryness fraction at state 1.</li>
+        </ul>
+        <p><b>Conclusion.</b> It is used only as a standard of comparison. The practical cycle is the simple VCR cycle with dry compression and a throttle valve.</p>
+      </details>
+    </article>
+
+    <article class="q" id="te-u5-q2" data-marks="10">
+      <h3>Q2. With a neat sketch, explain the simple vapour compression refrigeration cycle. Show it on T-s and P-h diagrams and derive the expression for COP. State how the actual cycle differs from it.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="q-hint">Schematic with four components, then P-h with RE and W marked, COP formula, a short list of deviations. The P-h diagram is the key figure.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Introduction.</b> The vapour compression cycle uses a refrigerant that changes phase in the evaporator and the condenser. The cycle has four components and four processes.</p>
+
+<figure class="fig" id="te-u5-f-vcr-schematic-q2">
+<svg viewBox="0 0 720 390" role="img" aria-label="Vapour compression refrigeration schematic with compressor, condenser, expansion valve and evaporator">
+<defs><marker id="te-u5-arw-vcrs-q2" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="220" y="70" width="240" height="64" class="ln fill-soft"/>
+<polyline points="228,102 242.0,114 256.0,90 270.0,114 284.0,90 298.0,114 312.0,90 326.0,114 340.0,90 354.0,114 368.0,90 382.0,114 396.0,90 410.0,114 424.0,90 438.0,114 452,102" class="acc" fill="none"/>
+<text x="300" y="58" class="lbl-b" text-anchor="middle">CONDENSER</text>
+<rect x="220" y="280" width="240" height="64" class="ln fill-soft"/>
+<polyline points="228,312 242.0,324 256.0,300 270.0,324 284.0,300 298.0,324 312.0,300 326.0,324 340.0,300 354.0,324 368.0,300 382.0,324 396.0,300 410.0,324 424.0,300 438.0,324 452,312" class="acc" fill="none"/>
+<text x="300" y="372" class="lbl-b" text-anchor="middle">EVAPORATOR</text>
+<circle cx="580" cy="202" r="34" class="ln fill-acc"/>
+<text x="580" y="207" class="lbl-sm" text-anchor="middle">Comp.</text>
+<text x="618" y="262" class="lbl-b" text-anchor="start">Compressor</text>
+<path d="M100,182 L140,182 L100,222 L140,222 Z" class="ln fill-soft" fill="none"/>
+<text x="92" y="198" class="lbl-b" text-anchor="end">EXPANSION</text>
+<text x="92" y="214" class="lbl-b" text-anchor="end">VALVE</text>
+<polyline points="460,312 580,312 580,236" class="ln" fill="none" marker-end="url(#te-u5-arw-vcrs-q2)"/>
+<text x="594" y="280" class="lbl-b" text-anchor="start">1</text>
+<polyline points="580,168 580,102 460,102" class="ln" fill="none" marker-end="url(#te-u5-arw-vcrs-q2)"/>
+<text x="594" y="138" class="lbl-b" text-anchor="start">2</text>
+<polyline points="220,102 120,102 120,182" class="ln" fill="none" marker-end="url(#te-u5-arw-vcrs-q2)"/>
+<text x="134" y="140" class="lbl-b" text-anchor="start">3</text>
+<polyline points="120,222 120,312 220,312" class="ln" fill="none" marker-end="url(#te-u5-arw-vcrs-q2)"/>
+<text x="134" y="300" class="lbl-b" text-anchor="start">4</text>
+<line x1="420" y1="70" x2="420" y2="40" class="ln" marker-end="url(#te-u5-arw-vcrs-q2)"/>
+<text x="432" y="50" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">H</tspan><tspan dy="-4"> out (heat rejected)</tspan></text>
+<line x1="420" y1="376" x2="420" y2="348" class="ln" marker-end="url(#te-u5-arw-vcrs-q2)"/>
+<text x="432" y="376" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">L</tspan><tspan dy="-4"> in (from cold space)</tspan></text>
+<line x1="715" y1="202" x2="618" y2="202" class="ln" marker-end="url(#te-u5-arw-vcrs-q2)"/>
+<text x="666" y="190" class="lbl-sm" text-anchor="middle">W in</text>
+</svg>
+<figcaption>Fig. Q2.1 — Simple VCR system.</figcaption>
+</figure>
+        <p><b>Processes.</b></p>
+        <ul>
+          <li><b>1-2 compression</b> in the compressor: isentropic. Saturated vapour at p<sub>e</sub> becomes superheated vapour at p<sub>c</sub>. Work W is added.</li>
+          <li><b>2-3 condensation</b> in the condenser: constant pressure. The vapour cools to saturation and condenses to saturated liquid. Heat is rejected.</li>
+          <li><b>3-4 throttling</b> in the expansion valve: h<sub>3</sub> = h<sub>4</sub>. Pressure and temperature fall. A little liquid flashes to vapour.</li>
+          <li><b>4-1 evaporation</b> in the evaporator: constant pressure and temperature. The refrigerant takes heat from the cold space.</li>
+        </ul>
+
+<figure class="fig" id="te-u5-f-ts-vcr-q2">
+<svg viewBox="0 0 680 380" role="img" aria-label="T-s diagram of the simple vapour compression cycle">
+<defs><marker id="te-u5-arw-ts-q2" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-ts-q2)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-ts-q2)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Entropy, s</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Temperature, T</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="70" y1="140" x2="194.058844361389" y2="140" class="ln thin dash"/>
+<line x1="70" y1="262" x2="119.31445456785684" y2="262" class="ln thin dash"/>
+<text x="62" y="144" class="lbl-sm" text-anchor="end">T<tspan dy="4" font-size="80%">c</tspan></text>
+<text x="62" y="266" class="lbl-sm" text-anchor="end">T<tspan dy="4" font-size="80%">e</tspan></text>
+<line x1="487.3308241819851" y1="262" x2="487.3308241819851" y2="106" class="ln acc thick" marker-end="url(#te-u5-arw-ts-q2)"/>
+<path d="M487.3,106 Q456.1,140 396.1,140" class="ln acc thick" fill="none"/>
+<line x1="396.09021761681873" y1="140" x2="194.058844361389" y2="140" class="ln acc thick"/>
+<line x1="194.058844361389" y1="140" x2="229.7193654520953" y2="262" class="ln acc thick dash" marker-end="url(#te-u5-arw-ts-q2)"/>
+<line x1="229.7193654520953" y1="262" x2="487.3308241819851" y2="262" class="ln acc thick" marker-end="url(#te-u5-arw-ts-q2)"/>
+<circle cx="487.3" cy="262.0" r="4" class="solid"/>
+<circle cx="487.3" cy="106.0" r="4" class="solid"/>
+<circle cx="194.1" cy="140.0" r="4" class="solid"/>
+<circle cx="229.7" cy="262.0" r="4" class="solid"/>
+<text x="499.3308241819851" y="280" class="lbl-b" text-anchor="start">1</text>
+<text x="499.3308241819851" y="104" class="lbl-b" text-anchor="start">2</text>
+<text x="182.058844361389" y="132" class="lbl-b" text-anchor="end">3</text>
+<text x="229.7193654520953" y="282" class="lbl-b" text-anchor="middle">4</text>
+<text x="499.3308241819851" y="190" class="lbl-sm" text-anchor="start">1-2</text>
+<text x="499.3308241819851" y="204" class="lbl-sm" text-anchor="start">isentropic</text>
+<text x="295.0745309891039" y="128" class="lbl-sm" text-anchor="middle">2'-3 condensation</text>
+<text x="358.5250948170402" y="298" class="lbl-sm" text-anchor="middle">4-1 evaporation</text>
+<text x="234.058844361389" y="200" class="lbl-sm" text-anchor="start">3-4 throttling</text>
+<text x="234.058844361389" y="214" class="lbl-sm" text-anchor="start">(h constant)</text>
+<text x="402.09021761681873" y="160" class="lbl-b" text-anchor="start">2'</text>
+</svg>
+<figcaption>Fig. Q2.2 — T-s diagram.</figcaption>
+</figure>
+<figure class="fig" id="te-u5-f-ph-vcr-q2">
+<svg viewBox="0 0 680 395" role="img" aria-label="P-h diagram of the simple vapour compression cycle">
+<defs><marker id="te-u5-arw-ph-q2" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-ph-q2)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-ph-q2)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Enthalpy, h</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Pressure, p (log)</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="70" y1="125" x2="208.68639848450184" y2="125" class="ln thin dash"/>
+<line x1="70" y1="255" x2="121.77700621953707" y2="255" class="ln thin dash"/>
+<text x="62" y="129" class="lbl-sm" text-anchor="end">p<tspan dy="4" font-size="80%">c</tspan></text>
+<text x="62" y="259" class="lbl-sm" text-anchor="end">p<tspan dy="4" font-size="80%">e</tspan></text>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-ph-q2)"/>
+<line x1="553.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-ph-q2)"/>
+<line x1="208.68639848450184" y1="125" x2="208.68639848450184" y2="255" class="ln acc thick dash" marker-end="url(#te-u5-arw-ph-q2)"/>
+<line x1="208.68639848450184" y1="255" x2="483.55166675382384" y2="255" class="ln acc thick" marker-end="url(#te-u5-arw-ph-q2)"/>
+<circle cx="483.6" cy="255.0" r="4" class="solid"/>
+<circle cx="553.6" cy="125.0" r="4" class="solid"/>
+<circle cx="208.7" cy="125.0" r="4" class="solid"/>
+<circle cx="208.7" cy="255.0" r="4" class="solid"/>
+<text x="495.55166675382384" y="273" class="lbl-b" text-anchor="start">1</text>
+<text x="563.5516667538238" y="117" class="lbl-b" text-anchor="start">2</text>
+<text x="198.68639848450184" y="117" class="lbl-b" text-anchor="end">3</text>
+<text x="196.68639848450184" y="275" class="lbl-b" text-anchor="end">4</text>
+<text x="401.11903261916285" y="111" class="lbl-sm" text-anchor="middle">2-3 condenser</text>
+<text x="346.11903261916285" y="285" class="lbl-sm" text-anchor="middle">4-1 evaporator</text>
+<text x="200.68639848450184" y="195" class="lbl-sm" text-anchor="end">3-4 valve</text>
+<text x="517.5516667538238" y="205" class="lbl-sm" text-anchor="start">1-2</text>
+<text x="517.5516667538238" y="219" class="lbl-sm" text-anchor="start">compressor</text>
+<line x1="208.68639848450184" y1="261" x2="208.68639848450184" y2="354" class="ln thin dash"/>
+<line x1="483.55166675382384" y1="261" x2="483.55166675382384" y2="354" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="348" x2="483.55166675382384" y2="348" class="ln thin" marker-end="url(#te-u5-arw-ph-q2)" marker-start="url(#te-u5-arw-ph-q2)"/>
+<text x="346.11903261916285" y="366" class="lbl-sm" text-anchor="middle">RE = h1 - h4</text>
+<line x1="553.5516667538238" y1="125" x2="553.5516667538238" y2="370" class="ln thin dash"/>
+<line x1="483.55166675382384" y1="348" x2="553.5516667538238" y2="348" class="ln thin" marker-end="url(#te-u5-arw-ph-q2)" marker-start="url(#te-u5-arw-ph-q2)"/>
+<text x="548.5516667538238" y="366" class="lbl-sm" text-anchor="middle">W = h2 - h1</text>
+</svg>
+<figcaption>Fig. Q2.3 — P-h diagram.</figcaption>
+</figure>
+        <p><b>Performance.</b> Apply the steady-flow energy equation to each component (per kg):</p>
+        <ul>
+          <li>Refrigeration effect: \( RE = h_1 - h_4 \)</li>
+          <li>Compressor work: \( W = h_2 - h_1 \)</li>
+          <li>Heat rejected: \( Q_c = h_2 - h_3 = RE + W \)</li>
+        </ul>
+        <div class="formula">\[ COP = \frac{h_1 - h_4}{h_2 - h_1} \]</div>
+        <p>For capacity Q<sub>L</sub>, the mass flow is \( \dot m = Q_L/(h_1 - h_4) \) and the power is \( P = \dot m (h_2 - h_1) \).</p>
+        <p><b>Actual cycle.</b> The actual cycle differs from the above because of:</p>
+        <ul>
+          <li>pressure drops in the evaporator, condenser and pipes;</li>
+          <li>superheat at the evaporator exit and subcooling at the condenser exit;</li>
+          <li>non-isentropic compression (friction, heat transfer), with \( \eta_s \) = 0.7 to 0.85;</li>
+          <li>finite temperature differences in the heat exchangers: T<sub>e</sub> is lower and T<sub>c</sub> is higher than the ideal values, so the COP is lower.</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="q" id="te-u5-q3" data-marks="10">
+      <h3>Q3. Explain, with P-h diagrams, the effect of (a) subcooling of the liquid and (b) superheating of the vapour on the performance of a VCR cycle.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="q-hint">Two P-h figures with 3' and 1' marked. Say what changes: RE, work, COP. Subcooling always helps; superheating depends.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>(a) Subcooling.</b> The liquid leaves the condenser below its saturation temperature (state 3'). The condenser pressure is the same. The liquid enthalpy falls to h<sub>3'</sub> and the valve line moves to the left.</p>
+
+<figure class="fig" id="te-u5-f-ph-subcool-q3">
+<svg viewBox="0 0 680 395" role="img" aria-label="P-h diagram showing the effect of subcooling the liquid">
+<defs><marker id="te-u5-arw-phsub-q3" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-phsub-q3)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-phsub-q3)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Enthalpy, h</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Pressure, p (log)</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln thin dash"/>
+<line x1="553.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="125" x2="208.68639848450184" y2="255" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="255" x2="483.55166675382384" y2="255" class="ln thin dash"/>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsub-q3)"/>
+<line x1="553.5516667538238" y1="125" x2="158.68639848450184" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsub-q3)"/>
+<line x1="158.68639848450184" y1="125" x2="158.68639848450184" y2="255" class="ln acc thick dash" marker-end="url(#te-u5-arw-phsub-q3)"/>
+<line x1="158.68639848450184" y1="255" x2="483.55166675382384" y2="255" class="ln acc thick" marker-end="url(#te-u5-arw-phsub-q3)"/>
+<circle cx="483.6" cy="255.0" r="3.5" class="solid"/>
+<circle cx="553.6" cy="125.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="125.0" r="3.5" class="solid"/>
+<circle cx="158.7" cy="125.0" r="3.5" class="solid"/>
+<circle cx="158.7" cy="255.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="255.0" r="3.5" class="solid"/>
+<text x="495.55166675382384" y="273" class="lbl-b" text-anchor="start">1</text>
+<text x="563.5516667538238" y="117" class="lbl-b" text-anchor="start">2</text>
+<text x="212.68639848450184" y="117" class="lbl-b" text-anchor="start">3</text>
+<text x="150.68639848450184" y="117" class="lbl-b" text-anchor="end">3'</text>
+<text x="214.68639848450184" y="273" class="lbl-b" text-anchor="start">4</text>
+<text x="150.68639848450184" y="275" class="lbl-b" text-anchor="end">4'</text>
+<text x="183.68639848450184" y="97" class="lbl-sm" text-anchor="middle">subcooling</text>
+<line x1="158.68639848450184" y1="261" x2="158.68639848450184" y2="354" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="261" x2="208.68639848450184" y2="354" class="ln thin dash"/>
+<line x1="158.68639848450184" y1="348" x2="208.68639848450184" y2="348" class="ln thin" marker-end="url(#te-u5-arw-phsub-q3)" marker-start="url(#te-u5-arw-phsub-q3)"/>
+<text x="183.68639848450184" y="366" class="lbl-sm" text-anchor="middle">gain in RE</text>
+<text x="501.55166675382384" y="200" class="lbl-sm" text-anchor="start">1-2: same work</text>
+</svg>
+<figcaption>Fig. Q3.1 — Effect of subcooling.</figcaption>
+</figure>
+        <ul>
+          <li>RE increases from \( h_1 - h_3 \) to \( h_1 - h_{3'} \). The gain is \( h_3 - h_{3'} \).</li>
+          <li>The compression line 1-2 does not change, so the work does not change.</li>
+          <li>The COP increases. The mass flow for a given capacity falls, so the compressor can be smaller.</li>
+          <li>Subcooling stops flash gas in the liquid line. It is done with extra condenser tubes, cold water or a liquid-suction heat exchanger.</li>
+        </ul>
+        <p><b>(b) Superheating.</b> The vapour is heated above saturation at the evaporator pressure (state 1'). The compression line moves to the right (1'-2').</p>
+
+<figure class="fig" id="te-u5-f-ph-superheat-q3">
+<svg viewBox="0 0 680 395" role="img" aria-label="P-h diagram showing the effect of superheating the vapour">
+<defs><marker id="te-u5-arw-phsup-q3" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-phsup-q3)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-phsup-q3)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Enthalpy, h</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Pressure, p (log)</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln thin dash"/>
+<line x1="553.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln thin dash"/>
+<line x1="528.5516667538238" y1="255" x2="608.5516667538238" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsup-q3)"/>
+<line x1="608.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsup-q3)"/>
+<line x1="208.68639848450184" y1="125" x2="208.68639848450184" y2="255" class="ln acc thick dash" marker-end="url(#te-u5-arw-phsup-q3)"/>
+<line x1="208.68639848450184" y1="255" x2="528.5516667538238" y2="255" class="ln acc thick" marker-end="url(#te-u5-arw-phsup-q3)"/>
+<circle cx="483.6" cy="255.0" r="3.5" class="solid"/>
+<circle cx="528.6" cy="255.0" r="3.5" class="solid"/>
+<circle cx="553.6" cy="125.0" r="3.5" class="solid"/>
+<circle cx="608.6" cy="125.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="125.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="255.0" r="3.5" class="solid"/>
+<text x="479.55166675382384" y="273" class="lbl-b" text-anchor="end">1</text>
+<text x="538.5516667538238" y="273" class="lbl-b" text-anchor="start">1'</text>
+<text x="549.5516667538238" y="117" class="lbl-b" text-anchor="end">2</text>
+<text x="618.5516667538238" y="117" class="lbl-b" text-anchor="start">2'</text>
+<text x="198.68639848450184" y="117" class="lbl-b" text-anchor="end">3</text>
+<text x="196.68639848450184" y="275" class="lbl-b" text-anchor="end">4</text>
+<text x="368.61903261916285" y="289" class="lbl-sm" text-anchor="middle">4-1' (evaporator + superheat)</text>
+<text x="578.5516667538238" y="200" class="lbl-sm" text-anchor="start">1'-2'</text>
+<text x="578.5516667538238" y="214" class="lbl-sm" text-anchor="start">more work</text>
+</svg>
+<figcaption>Fig. Q3.2 — Effect of superheating.</figcaption>
+</figure>
+        <ul>
+          <li>The vapour is dry when it enters the compressor, so liquid hammer is avoided.</li>
+          <li>If the superheating is <i>useful</i> (inside the evaporator, taking heat from the cold space), RE rises from \( h_1 - h_4 \) to \( h_{1'} - h_4 \).</li>
+          <li>The work rises from \( h_2 - h_1 \) to \( h_{2'} - h_{1'} \), because the specific volume is larger.</li>
+          <li>The COP may rise or fall; it depends on the refrigerant. For the data of numerical N6 it falls.</li>
+          <li>If the superheating is <i>useless</i> (heat gain in the suction pipe), there is no gain in RE, and the COP falls.</li>
+        </ul>
+        <p><b>Conclusion.</b> Subcool the liquid; superheat only a little, to protect the compressor. A liquid-suction heat exchanger does both.</p>
+      </details>
+    </article>
+
+    <article class="q" id="te-u5-q4" data-marks="10">
+      <h3>Q4. What is a refrigerant? Explain the designation of refrigerants. List the desirable properties of a refrigerant. Discuss eco-friendly refrigerants with reference to ODP, GWP and the Montreal and Kigali protocols.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="q-hint">Definition; the R-xyz rule with 3 examples; properties in three groups; ODP and GWP definitions; Montreal 1987, Kigali 2016; natural refrigerants.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Definition.</b> A refrigerant is the working fluid of a refrigeration system. It absorbs heat at a low temperature by evaporation and rejects it at a higher temperature by condensation.</p>
+        <p><b>Designation (ASHRAE).</b> R-xyz: z = number of F atoms; y = number of H atoms + 1; x = number of C atoms − 1 (omitted if 0); the rest of the bonds are Cl. Examples: R-12 = CCl<sub>2</sub>F<sub>2</sub>, R-22 = CHClF<sub>2</sub>, R-134a = C<sub>2</sub>H<sub>2</sub>F<sub>4</sub>. Inorganic fluids: 700 + molar mass (R-717 ammonia, R-744 CO<sub>2</sub>). Hydrocarbons: R-290 propane, R-600a isobutane. R-1234yf is an HFO.</p>
+        <p><b>Desirable properties.</b></p>
+        <ul>
+          <li><b>Thermodynamic</b>: low boiling point, high latent heat, moderate pressures (above atmosphere in the evaporator), high critical temperature, low freezing point, low vapour specific volume, high COP.</li>
+          <li><b>Chemical</b>: non-toxic, non-flammable, stable, no reaction with oil or metals, non-corrosive.</li>
+          <li><b>Physical</b>: good heat transfer, low viscosity, easy leak detection, low cost.</li>
+          <li><b>Environmental</b>: zero ODP, low GWP, short atmospheric life.</li>
+        </ul>
+        <p><b>Eco-friendly refrigerants.</b> ODP is the ozone damage relative to R-11. GWP is the 100-year warming relative to CO<sub>2</sub>.</p>
+        <div class="tbl"><table><thead><tr><th>Refrigerant</th><th>ODP</th><th>GWP (about)</th></tr></thead><tbody>
+          <tr><td>R-12 (CFC)</td><td>1.0</td><td>10 900</td></tr>
+          <tr><td>R-22 (HCFC)</td><td>0.055</td><td>1 810</td></tr>
+          <tr><td>R-134a (HFC)</td><td>0</td><td>1 430</td></tr>
+          <tr><td>R-717, R-744, R-290, R-600a</td><td>0</td><td>0 to 3</td></tr>
+          <tr><td>R-1234yf (HFO)</td><td>0</td><td>under 5</td></tr>
+        </tbody></table></div>
+        <ul>
+          <li><b>Montreal Protocol (1987)</b>: phase-out of CFCs and HCFCs to protect the ozone layer.</li>
+          <li><b>Kigali Amendment (2016)</b>: phase-down of HFCs because of their high GWP.</li>
+          <li>The eco-friendly choices are natural refrigerants (NH<sub>3</sub>, CO<sub>2</sub>, hydrocarbons) and HFOs. Their limits: ammonia is toxic, CO<sub>2</sub> needs very high pressure, hydrocarbons burn.</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="q" id="te-u5-q5" data-marks="10">
+      <h3>Q5. With a neat sketch, explain the working of a vapour absorption refrigeration system. Compare it with the vapour compression system.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="q-hint">Sketch with absorber, pump, generator, condenser, valve, evaporator; working in order; COP formula; a comparison table of 5 or 6 points.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Principle.</b> The VAR system replaces the mechanical compressor by an absorber, a pump and a generator. It uses a heat source and not work. The working pair is ammonia (refrigerant) and water (absorbent).</p>
+
+<figure class="fig" id="te-u5-f-var-q5">
+<svg viewBox="0 0 720 430" role="img" aria-label="Vapour absorption refrigeration system with generator, condenser, expansion valve, evaporator, absorber and pump">
+<defs><marker id="te-u5-arw-var-q5" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="60" y="60" width="170" height="70" class="ln fill-soft"/>
+<text x="145" y="100" class="lbl-b" text-anchor="middle">CONDENSER</text>
+<rect x="430" y="60" width="200" height="90" class="ln fill-soft"/>
+<text x="530" y="98" class="lbl-b" text-anchor="middle">GENERATOR</text>
+<text x="530" y="118" class="lbl-sm" text-anchor="middle">NH3 boils off</text>
+<rect x="60" y="300" width="170" height="70" class="ln fill-soft"/>
+<text x="145" y="340" class="lbl-b" text-anchor="middle">EVAPORATOR</text>
+<rect x="430" y="300" width="200" height="90" class="ln fill-soft"/>
+<text x="530" y="338" class="lbl-b" text-anchor="middle">ABSORBER</text>
+<text x="530" y="358" class="lbl-sm" text-anchor="middle">water absorbs NH3</text>
+<polyline points="430,95 230,95" class="ln" fill="none" marker-end="url(#te-u5-arw-var-q5)"/>
+<text x="330" y="86" class="lbl-sm" text-anchor="middle">NH3 vapour (high p)</text>
+<polyline points="145,130 145,195" class="ln" fill="none" marker-end="url(#te-u5-arw-var-q5)"/>
+<path d="M125,195 L165,195 L125,235 L165,235 Z" class="ln fill-soft" fill="none"/>
+<text x="112" y="210" class="lbl-sm" text-anchor="end">Expansion</text>
+<text x="112" y="226" class="lbl-sm" text-anchor="end">valve</text>
+<polyline points="145,235 145,300" class="ln" fill="none" marker-end="url(#te-u5-arw-var-q5)"/>
+<polyline points="230,335 430,335" class="ln" fill="none" marker-end="url(#te-u5-arw-var-q5)"/>
+<text x="330" y="326" class="lbl-sm" text-anchor="middle">NH3 vapour (low p)</text>
+<polyline points="480,300 480,282" class="ln" fill="none"/>
+<circle cx="480" cy="264" r="18" class="ln fill-acc"/>
+<text x="480" y="269" class="lbl-b" text-anchor="middle">P</text>
+<polyline points="480,246 480,150" class="ln" fill="none" marker-end="url(#te-u5-arw-var-q5)"/>
+<text x="468" y="200" class="lbl-sm" text-anchor="end">Strong solution</text>
+<text x="468" y="216" class="lbl-sm" text-anchor="end">(rich in NH3)</text>
+<polyline points="590,150 590,200" class="ln" fill="none" marker-end="url(#te-u5-arw-var-q5)"/>
+<path d="M570,200 L610,200 L570,240 L610,240 Z" class="ln fill-soft" fill="none"/>
+<polyline points="590,240 590,300" class="ln" fill="none" marker-end="url(#te-u5-arw-var-q5)"/>
+<text x="622" y="206" class="lbl-sm" text-anchor="start">Pressure-</text>
+<text x="622" y="222" class="lbl-sm" text-anchor="start">reducing</text>
+<text x="622" y="238" class="lbl-sm" text-anchor="start">valve</text>
+<text x="604" y="274" class="lbl-sm" text-anchor="start">Weak</text>
+<text x="604" y="290" class="lbl-sm" text-anchor="start">solution</text>
+<line x1="145" y1="50" x2="145" y2="24" class="ln" marker-end="url(#te-u5-arw-var-q5)"/>
+<text x="160" y="34" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">C</tspan><tspan dy="-4"> out</tspan></text>
+<line x1="530" y1="24" x2="530" y2="58" class="ln" marker-end="url(#te-u5-arw-var-q5)"/>
+<text x="545" y="34" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">G</tspan><tspan dy="-4"> in (heat source)</tspan></text>
+<line x1="145" y1="408" x2="145" y2="372" class="ln" marker-end="url(#te-u5-arw-var-q5)"/>
+<text x="160" y="414" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">E</tspan><tspan dy="-4"> in (cold space)</tspan></text>
+<line x1="530" y1="392" x2="530" y2="418" class="ln" marker-end="url(#te-u5-arw-var-q5)"/>
+<text x="545" y="418" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">A</tspan><tspan dy="-4"> out</tspan></text>
+</svg>
+<figcaption>Fig. Q5 — Ammonia-water absorption refrigeration system.</figcaption>
+</figure>
+        <p><b>Working.</b></p>
+        <ul>
+          <li>Evaporator: liquid NH<sub>3</sub> at low pressure absorbs Q<sub>E</sub> from the cold space and evaporates.</li>
+          <li>Absorber: the NH<sub>3</sub> vapour dissolves in the weak solution; heat Q<sub>A</sub> is removed by cooling water.</li>
+          <li>Pump: raises the pressure of the strong solution to the condenser pressure (small work).</li>
+          <li>Generator: heat Q<sub>G</sub> boils NH<sub>3</sub> out of the solution. A rectifier removes water vapour.</li>
+          <li>Condenser: NH<sub>3</sub> vapour condenses at high pressure, rejecting Q<sub>C</sub>.</li>
+          <li>Expansion valve: the liquid NH<sub>3</sub> is throttled to the evaporator pressure.</li>
+          <li>The weak solution returns to the absorber through a pressure-reducing valve.</li>
+        </ul>
+        <div class="formula">\[ COP = \frac{Q_E}{Q_G + W_p} \]</div>
+        <p><b>Comparison with VCR.</b></p>
+        <div class="tbl"><table><thead><tr><th>Point</th><th>VCR</th><th>VAR</th></tr></thead><tbody>
+          <tr><td>Energy input</td><td>Electric work</td><td>Heat</td></tr>
+          <tr><td>Compressor</td><td>Present</td><td>Absent (pump only)</td></tr>
+          <tr><td>Noise, wear</td><td>More</td><td>Less</td></tr>
+          <tr><td>COP</td><td>High</td><td>Low (0.5 to 0.8)</td></tr>
+          <tr><td>Size, cost</td><td>Compact, cheap</td><td>Bulky, costly</td></tr>
+          <tr><td>Best use</td><td>Homes, small plants</td><td>Where waste heat is available</td></tr>
+        </tbody></table></div>
+      </details>
+    </article>
+
+    <article class="q" id="te-u5-q6" data-marks="10">
+      <h3>Q6. Describe a domestic refrigerator with a neat sketch. List the industrial applications of refrigeration.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <p class="q-hint">Sketch with freezer evaporator, back condenser, compressor, capillary tube; the role of each; 6 industrial uses with temperatures.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Domestic refrigerator.</b> It is a small vapour compression system. A hermetic compressor draws vapour from the evaporator in the freezer and delivers it to the air-cooled condenser at the back. The liquid passes through a filter-drier and a capillary tube. The capillary tube throttles it to the evaporator pressure. The cold refrigerant in the freezer coil cools the cabinet. A thermostat switches the compressor on and off.</p>
+
+<figure class="fig" id="te-u5-f-domestic-q6">
+<svg viewBox="0 0 680 400" role="img" aria-label="Domestic refrigerator with freezer evaporator, condenser coil at the back, compressor and capillary tube">
+<defs><marker id="te-u5-arw-dom-q6" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="160" y="40" width="200" height="320" class="ln fill-soft"/>
+<rect x="148" y="40" width="12" height="320" class="ln fill-acc"/>
+<text x="140" y="200" class="lbl-sm" text-anchor="end">Door</text>
+<rect x="172" y="52" width="176" height="68" class="ln"/>
+<polyline points="190,84 202.5,94 215.0,74 227.5,94 240.0,74 252.5,94 265.0,74 277.5,94 290.0,74 302.5,94 315.0,74 327.5,94 340,84" class="acc" fill="none"/>
+<text x="260" y="112" class="lbl-sm" text-anchor="middle">Freezer (about -18 deg C)</text>
+<line x1="172" y1="135" x2="348" y2="135" class="ln thin"/>
+<text x="260" y="185" class="lbl" text-anchor="middle">Fresh-food compartment</text>
+<text x="260" y="205" class="lbl-sm" text-anchor="middle">(about 3 to 5 deg C)</text>
+<rect x="190" y="260" width="140" height="60" class="ln"/>
+<text x="260" y="295" class="lbl-sm" text-anchor="middle">Vegetable tray</text>
+<polyline points="440,52 426,68 454,84 426,100 454,116 426,132 454,148 426,164 454,180 426,196 454,212 426,228 454,244 440,260" class="acc" fill="none"/>
+<text x="480" y="150" class="lbl-sm" text-anchor="start">Condenser</text>
+<text x="480" y="166" class="lbl-sm" text-anchor="start">(coil on back)</text>
+<text x="480" y="182" class="lbl-sm" text-anchor="start">Q<tspan dy="4" font-size="80%">H</tspan><tspan dy="-4"> to room air</tspan></text>
+<rect x="400" y="290" width="110" height="50" class="ln fill-acc"/>
+<text x="455" y="320" class="lbl-sm" text-anchor="middle">Compressor</text>
+<polyline points="440,290 440,262" class="ln" fill="none" marker-end="url(#te-u5-arw-dom-q6)"/>
+<text x="452" y="280" class="lbl-sm" text-anchor="start">hot vapour</text>
+<polyline points="440,52 440,32 190,32 190,80" class="ln" fill="none" marker-end="url(#te-u5-arw-dom-q6)"/>
+<text x="315" y="22" class="lbl-sm" text-anchor="middle">Capillary tube and filter-drier</text>
+<polyline points="340,84 380,84 380,315 400,315" class="ln" fill="none" marker-end="url(#te-u5-arw-dom-q6)"/>
+<text x="394" y="200" class="lbl-sm" text-anchor="middle" transform="rotate(-90 394 200)">Suction line (cold vapour)</text>
+<text x="256" y="384" class="lbl-sm" text-anchor="middle">(side view, schematic)</text>
+</svg>
+<figcaption>Fig. Q6 — Domestic refrigerator.</figcaption>
+</figure>
+        <ul>
+          <li>Compressor: sealed motor-compressor; raises the pressure of the vapour.</li>
+          <li>Condenser: tube coil on the back; heat goes to room air.</li>
+          <li>Filter-drier: removes dirt and moisture.</li>
+          <li>Capillary tube: long, thin tube; throttling device.</li>
+          <li>Evaporator: freezer coil at about −18 °C; the fresh-food space is at 3 to 5 °C.</li>
+          <li>Refrigerant: R-134a or R-600a. Polyurethane foam insulation and a door gasket reduce heat gain.</li>
+        </ul>
+        <p><b>Industrial applications.</b></p>
+        <ul>
+          <li>Cold storage of fruit and vegetables (0 to 4 °C) and frozen food (−18 to −25 °C); milk chilling.</li>
+          <li>Ice plant: brine at about −10 °C freezes water in cans.</li>
+          <li>Air conditioning for comfort and for process control.</li>
+          <li>Chemical industry: gas liquefaction and separation, cooling of reactors.</li>
+          <li>Medical cold chain: vaccines, blood and medicines.</li>
+          <li>Refrigerated transport, ice rinks and cooling of concrete in dams.</li>
+        </ul>
+      </details>
+    </article>
+  </section>
+
+  <section class="part" id="te-u5-numericals" data-part="numericals">
+    <h2>Numericals</h2>
+    <p class="method"><b>Method.</b> (1) Read the state points: h<sub>1</sub> (leaving evaporator), h<sub>2</sub> (leaving compressor), h<sub>3</sub> (leaving condenser). Set h<sub>4</sub> = h<sub>3</sub>. (2) RE = h<sub>1</sub> − h<sub>4</sub>. (3) W = h<sub>2</sub> − h<sub>1</sub>. (4) COP = RE / W. (5) Mass flow = Q<sub>L</sub> / RE, with 1 TR = 3.5167 kW. (6) Power = m × W. Heat rejected = m (h<sub>2</sub> − h<sub>3</sub>). (7) Check: heat rejected = Q<sub>L</sub> + power. All enthalpies are given in the problems, so no table is needed. For Carnot problems use kelvin.</p>
+    <aside class="note"><b>Data note.</b> The enthalpy values in these problems are given in the statement, like the values you read from the refrigerant P-h chart in the exam. They are typical in size but they are not table values of one real refrigerant.</aside>
+    <article class="num" id="te-u5-n1">
+      <h3>N1. A simple VCR plant of 5 TR capacity works between an evaporator and a condenser. The enthalpy of the refrigerant is 395 kJ/kg at the compressor inlet (saturated vapour), 432 kJ/kg at the compressor outlet (after isentropic compression) and 243 kJ/kg at the condenser outlet (saturated liquid). Find the refrigeration effect, the compressor work, the COP, the mass flow rate, the compressor power and the heat rejected in the condenser. Take 1 TR = 3.5167 kW.</h3>
+      <p class="q-src">Syllabus topic</p>
+<figure class="fig" id="te-u5-f-ph-vcr-n1">
+<svg viewBox="0 0 680 395" role="img" aria-label="P-h diagram of the simple vapour compression cycle">
+<defs><marker id="te-u5-arw-ph-n1" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-ph-n1)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-ph-n1)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Enthalpy, h</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Pressure, p (log)</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="70" y1="125" x2="208.68639848450184" y2="125" class="ln thin dash"/>
+<line x1="70" y1="255" x2="121.77700621953707" y2="255" class="ln thin dash"/>
+<text x="62" y="129" class="lbl-sm" text-anchor="end">p<tspan dy="4" font-size="80%">c</tspan></text>
+<text x="62" y="259" class="lbl-sm" text-anchor="end">p<tspan dy="4" font-size="80%">e</tspan></text>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-ph-n1)"/>
+<line x1="553.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-ph-n1)"/>
+<line x1="208.68639848450184" y1="125" x2="208.68639848450184" y2="255" class="ln acc thick dash" marker-end="url(#te-u5-arw-ph-n1)"/>
+<line x1="208.68639848450184" y1="255" x2="483.55166675382384" y2="255" class="ln acc thick" marker-end="url(#te-u5-arw-ph-n1)"/>
+<circle cx="483.6" cy="255.0" r="4" class="solid"/>
+<circle cx="553.6" cy="125.0" r="4" class="solid"/>
+<circle cx="208.7" cy="125.0" r="4" class="solid"/>
+<circle cx="208.7" cy="255.0" r="4" class="solid"/>
+<text x="495.55166675382384" y="273" class="lbl-b" text-anchor="start">1</text>
+<text x="563.5516667538238" y="117" class="lbl-b" text-anchor="start">2</text>
+<text x="198.68639848450184" y="117" class="lbl-b" text-anchor="end">3</text>
+<text x="196.68639848450184" y="275" class="lbl-b" text-anchor="end">4</text>
+<text x="401.11903261916285" y="111" class="lbl-sm" text-anchor="middle">2-3 condenser</text>
+<text x="346.11903261916285" y="285" class="lbl-sm" text-anchor="middle">4-1 evaporator</text>
+<text x="200.68639848450184" y="195" class="lbl-sm" text-anchor="end">3-4 valve</text>
+<text x="517.5516667538238" y="205" class="lbl-sm" text-anchor="start">1-2</text>
+<text x="517.5516667538238" y="219" class="lbl-sm" text-anchor="start">compressor</text>
+<line x1="208.68639848450184" y1="261" x2="208.68639848450184" y2="354" class="ln thin dash"/>
+<line x1="483.55166675382384" y1="261" x2="483.55166675382384" y2="354" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="348" x2="483.55166675382384" y2="348" class="ln thin" marker-end="url(#te-u5-arw-ph-n1)" marker-start="url(#te-u5-arw-ph-n1)"/>
+<text x="346.11903261916285" y="366" class="lbl-sm" text-anchor="middle">RE = h1 - h4</text>
+<line x1="553.5516667538238" y1="125" x2="553.5516667538238" y2="370" class="ln thin dash"/>
+<line x1="483.55166675382384" y1="348" x2="553.5516667538238" y2="348" class="ln thin" marker-end="url(#te-u5-arw-ph-n1)" marker-start="url(#te-u5-arw-ph-n1)"/>
+<text x="548.5516667538238" y="366" class="lbl-sm" text-anchor="middle">W = h2 - h1</text>
+</svg>
+<figcaption>Fig. N1 — P-h diagram of the cycle in N1 (h<sub>1</sub> = 395, h<sub>2</sub> = 432, h<sub>3</sub> = h<sub>4</sub> = 243 kJ/kg).</figcaption>
+</figure>      <ol class="steps">
+        <li>Throttling is isenthalpic: \( h_4 = h_3 = 243 \) kJ/kg.</li>
+        <li>Refrigeration effect: \( RE = h_1 - h_4 = 395 - 243 = 152 \) kJ/kg.</li>
+        <li>Compressor work: \( W = h_2 - h_1 = 432 - 395 = 37 \) kJ/kg.</li>
+        <li>\( COP = RE/W = 152/37 = 4.11 \).</li>
+        <li>Capacity: \( Q_L = 5 \times 3.5167 = 17.58 \) kW.</li>
+        <li>Mass flow: \( \dot m = Q_L/RE = 17.58/152 = 0.1157 \) kg/s.</li>
+        <li>Power: \( P = \dot m W = 0.1157 \times 37 = 4.28 \) kW.</li>
+        <li>Heat rejected: \( Q_c = \dot m (h_2 - h_3) = 0.1157 \times 189 = 21.86 \) kW. Check: \( Q_L + P = 17.58 + 4.28 = 21.86 \) kW.</li>
+      </ol>
+      <p class="final">Answer: RE = 152 kJ/kg, W = 37 kJ/kg, COP = 4.11, m = 0.116 kg/s, P = 4.28 kW, Q<sub>c</sub> = 21.9 kW</p>
+    </article>
+
+    <article class="num" id="te-u5-n2">
+      <h3>N2. An ammonia refrigeration plant has a refrigerating capacity of 40 kW. The enthalpies are: leaving the evaporator 1430 kJ/kg, leaving the compressor 1710 kJ/kg, leaving the condenser (saturated liquid) 370 kJ/kg. Find the mass flow rate of ammonia, the compressor power, the COP and the capacity in TR.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <ol class="steps">
+        <li>\( h_4 = h_3 = 370 \) kJ/kg. \( RE = 1430 - 370 = 1060 \) kJ/kg.</li>
+        <li>\( W = 1710 - 1430 = 280 \) kJ/kg.</li>
+        <li>\( COP = 1060/280 = 3.79 \).</li>
+        <li>\( \dot m = 40/1060 = 0.0377 \) kg/s.</li>
+        <li>\( P = 0.03774 \times 280 = 10.57 \) kW. Heat rejected \( = 0.03774 \times (1710 - 370) = 50.57 \) kW.</li>
+        <li>Capacity in TR: \( 40/3.5167 = 11.37 \) TR (with 3.5 kW per TR the answer is 11.43 TR).</li>
+      </ol>
+      <p class="final">Answer: m = 0.0377 kg/s, P = 10.57 kW, COP = 3.79, capacity = 11.37 TR</p>
+    </article>
+
+    <article class="num" id="te-u5-n3">
+      <h3>N3. A reversed Carnot refrigerator works between a cold space at −10 °C and surroundings at 35 °C. Find its COP. Find the power needed for a capacity of 3 TR and the heat rejected. What would be the COP of a Carnot heat pump between the same temperatures? Take 1 TR = 3.5167 kW.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <ol class="steps">
+        <li>\( T_L = -10 + 273.15 = 263.15 \) K, \( T_H = 35 + 273.15 = 308.15 \) K.</li>
+        <li>\( COP_R = T_L/(T_H - T_L) = 263.15/45 = 5.85 \).</li>
+        <li>\( Q_L = 3 \times 3.5167 = 10.55 \) kW.</li>
+        <li>Power: \( W = Q_L/COP_R = 10.55/5.848 = 1.80 \) kW.</li>
+        <li>Heat rejected: \( Q_H = Q_L + W = 10.55 + 1.80 = 12.35 \) kW.</li>
+        <li>Heat pump: \( COP_{HP} = T_H/(T_H - T_L) = 308.15/45 = 6.85 \), which equals \( COP_R + 1 \).</li>
+      </ol>
+      <p class="final">Answer: COP<sub>R</sub> = 5.85, W = 1.80 kW, Q<sub>H</sub> = 12.35 kW, COP<sub>HP</sub> = 6.85</p>
+    </article>
+
+    <article class="num" id="te-u5-n4">
+      <h3>N4. A heat pump uses the VCR cycle to give hot water at 45 °C from outside air at 2 °C. The enthalpies are 400 kJ/kg (compressor inlet), 438 kJ/kg (compressor outlet) and 250 kJ/kg (condenser outlet). The heat supply needed is 12 kW. Find the COP of the heat pump, the compressor power and the refrigerant flow rate. Compare the COP with the Carnot value between 2 °C and 45 °C.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <ol class="steps">
+        <li>Useful effect (heat to the water): \( q_H = h_2 - h_3 = 438 - 250 = 188 \) kJ/kg.</li>
+        <li>Work: \( W = h_2 - h_1 = 438 - 400 = 38 \) kJ/kg.</li>
+        <li>\( COP_{HP} = 188/38 = 4.95 \). (Check: \( RE = 150 \), \( COP_R = 3.947 \), plus 1 gives 4.947.)</li>
+        <li>Power: \( P = Q_H/COP_{HP} = 12/4.947 = 2.43 \) kW.</li>
+        <li>Flow rate: \( \dot m = 12/188 = 0.0638 \) kg/s.</li>
+        <li>Carnot: \( COP_{HP,Carnot} = 318.15/(318.15 - 275.15) = 318.15/43 = 7.40 \). The ratio is \( 4.947/7.399 = 0.669 \), about 67 %.</li>
+      </ol>
+      <p class="final">Answer: COP<sub>HP</sub> = 4.95, P = 2.43 kW, m = 0.0638 kg/s; the Carnot COP is 7.40, so the cycle reaches 67 % of it</p>
+    </article>
+
+    <article class="num" id="te-u5-n5">
+      <h3>N5. A VCR plant has the enthalpies h<sub>1</sub> = 398 kJ/kg and h<sub>2</sub> = 436 kJ/kg. The liquid leaves the condenser as saturated liquid with h<sub>3</sub> = 244 kJ/kg. If the liquid is subcooled so that its enthalpy is 228 kJ/kg, find the COP before and after subcooling, and the percentage gain. For a capacity of 10 kW, find the compressor power in both cases.</h3>
+      <p class="q-src">Syllabus topic</p>
+
+<figure class="fig" id="te-u5-f-ph-subcool-n5">
+<svg viewBox="0 0 680 395" role="img" aria-label="P-h diagram showing the effect of subcooling the liquid">
+<defs><marker id="te-u5-arw-phsub-n5" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-phsub-n5)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-phsub-n5)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Enthalpy, h</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Pressure, p (log)</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln thin dash"/>
+<line x1="553.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="125" x2="208.68639848450184" y2="255" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="255" x2="483.55166675382384" y2="255" class="ln thin dash"/>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsub-n5)"/>
+<line x1="553.5516667538238" y1="125" x2="158.68639848450184" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsub-n5)"/>
+<line x1="158.68639848450184" y1="125" x2="158.68639848450184" y2="255" class="ln acc thick dash" marker-end="url(#te-u5-arw-phsub-n5)"/>
+<line x1="158.68639848450184" y1="255" x2="483.55166675382384" y2="255" class="ln acc thick" marker-end="url(#te-u5-arw-phsub-n5)"/>
+<circle cx="483.6" cy="255.0" r="3.5" class="solid"/>
+<circle cx="553.6" cy="125.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="125.0" r="3.5" class="solid"/>
+<circle cx="158.7" cy="125.0" r="3.5" class="solid"/>
+<circle cx="158.7" cy="255.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="255.0" r="3.5" class="solid"/>
+<text x="495.55166675382384" y="273" class="lbl-b" text-anchor="start">1</text>
+<text x="563.5516667538238" y="117" class="lbl-b" text-anchor="start">2</text>
+<text x="212.68639848450184" y="117" class="lbl-b" text-anchor="start">3</text>
+<text x="150.68639848450184" y="117" class="lbl-b" text-anchor="end">3'</text>
+<text x="214.68639848450184" y="273" class="lbl-b" text-anchor="start">4</text>
+<text x="150.68639848450184" y="275" class="lbl-b" text-anchor="end">4'</text>
+<text x="183.68639848450184" y="97" class="lbl-sm" text-anchor="middle">subcooling</text>
+<line x1="158.68639848450184" y1="261" x2="158.68639848450184" y2="354" class="ln thin dash"/>
+<line x1="208.68639848450184" y1="261" x2="208.68639848450184" y2="354" class="ln thin dash"/>
+<line x1="158.68639848450184" y1="348" x2="208.68639848450184" y2="348" class="ln thin" marker-end="url(#te-u5-arw-phsub-n5)" marker-start="url(#te-u5-arw-phsub-n5)"/>
+<text x="183.68639848450184" y="366" class="lbl-sm" text-anchor="middle">gain in RE</text>
+<text x="501.55166675382384" y="200" class="lbl-sm" text-anchor="start">1-2: same work</text>
+</svg>
+<figcaption>Fig. N5 — Subcooling from 3 (h = 244 kJ/kg) to 3' (h = 228 kJ/kg).</figcaption>
+</figure>      <ol class="steps">
+        <li>Work (same in both cases): \( W = 436 - 398 = 38 \) kJ/kg.</li>
+        <li>Without subcooling: \( RE = 398 - 244 = 154 \) kJ/kg, so \( COP = 154/38 = 4.05 \).</li>
+        <li>With subcooling: \( h_{4'} = h_{3'} = 228 \) kJ/kg, \( RE = 398 - 228 = 170 \) kJ/kg, so \( COP = 170/38 = 4.47 \).</li>
+        <li>Gain: \( (4.474 - 4.053)/4.053 = 10.4 \) %.</li>
+        <li>Mass flow for 10 kW: \( 10/154 = 0.0649 \) kg/s without subcooling and \( 10/170 = 0.0588 \) kg/s with it.</li>
+        <li>Power \( = Q_L/COP \): \( 10/4.053 = 2.47 \) kW before and \( 10/4.474 = 2.24 \) kW after.</li>
+      </ol>
+      <p class="final">Answer: COP = 4.05 before and 4.47 after (+10.4 %); power = 2.47 kW and 2.24 kW</p>
+    </article>
+
+    <article class="num" id="te-u5-n6">
+      <h3>N6. A VCR cycle has h<sub>1</sub> = 398 kJ/kg (saturated vapour), h<sub>2</sub> = 436 kJ/kg and h<sub>3</sub> = h<sub>4</sub> = 244 kJ/kg. If the vapour is superheated by 5 K in the evaporator, the enthalpies change to h<sub>1'</sub> = 403 kJ/kg and h<sub>2'</sub> = 444 kJ/kg. Find the COP in both cases and the change due to superheating.</h3>
+      <p class="q-src">Syllabus topic</p>
+
+<figure class="fig" id="te-u5-f-ph-superheat-n6">
+<svg viewBox="0 0 680 395" role="img" aria-label="P-h diagram showing the effect of superheating the vapour">
+<defs><marker id="te-u5-arw-phsup-n6" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="330" x2="660" y2="330" class="ln" marker-end="url(#te-u5-arw-phsup-n6)"/>
+<line x1="70" y1="330" x2="70" y2="30" class="ln" marker-end="url(#te-u5-arw-phsup-n6)"/>
+<text x="655" y="322" class="lbl" text-anchor="end">Enthalpy, h</text>
+<text x="36" y="180.0" class="lbl" text-anchor="middle" transform="rotate(-90 36 180.0)">Pressure, p (log)</text>
+<path d="M110,300 C125,200 220,95 290,70 C370,95 465,200 505,300" class="ln thick" fill="none"/>
+<circle cx="290.0" cy="70.0" r="3" class="solid"/>
+<text x="290" y="56" class="lbl-sm" text-anchor="middle">Critical point</text>
+<line x1="483.55166675382384" y1="255" x2="553.5516667538238" y2="125" class="ln thin dash"/>
+<line x1="553.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln thin dash"/>
+<line x1="528.5516667538238" y1="255" x2="608.5516667538238" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsup-n6)"/>
+<line x1="608.5516667538238" y1="125" x2="208.68639848450184" y2="125" class="ln acc thick" marker-end="url(#te-u5-arw-phsup-n6)"/>
+<line x1="208.68639848450184" y1="125" x2="208.68639848450184" y2="255" class="ln acc thick dash" marker-end="url(#te-u5-arw-phsup-n6)"/>
+<line x1="208.68639848450184" y1="255" x2="528.5516667538238" y2="255" class="ln acc thick" marker-end="url(#te-u5-arw-phsup-n6)"/>
+<circle cx="483.6" cy="255.0" r="3.5" class="solid"/>
+<circle cx="528.6" cy="255.0" r="3.5" class="solid"/>
+<circle cx="553.6" cy="125.0" r="3.5" class="solid"/>
+<circle cx="608.6" cy="125.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="125.0" r="3.5" class="solid"/>
+<circle cx="208.7" cy="255.0" r="3.5" class="solid"/>
+<text x="479.55166675382384" y="273" class="lbl-b" text-anchor="end">1</text>
+<text x="538.5516667538238" y="273" class="lbl-b" text-anchor="start">1'</text>
+<text x="549.5516667538238" y="117" class="lbl-b" text-anchor="end">2</text>
+<text x="618.5516667538238" y="117" class="lbl-b" text-anchor="start">2'</text>
+<text x="198.68639848450184" y="117" class="lbl-b" text-anchor="end">3</text>
+<text x="196.68639848450184" y="275" class="lbl-b" text-anchor="end">4</text>
+<text x="368.61903261916285" y="289" class="lbl-sm" text-anchor="middle">4-1' (evaporator + superheat)</text>
+<text x="578.5516667538238" y="200" class="lbl-sm" text-anchor="start">1'-2'</text>
+<text x="578.5516667538238" y="214" class="lbl-sm" text-anchor="start">more work</text>
+</svg>
+<figcaption>Fig. N6 — Superheating: 1-2 (saturated) and 1'-2' (superheated).</figcaption>
+</figure>      <ol class="steps">
+        <li>Saturated cycle: \( RE = 398 - 244 = 154 \), \( W = 436 - 398 = 38 \), \( COP = 4.05 \).</li>
+        <li>Superheated cycle: \( RE = h_{1'} - h_4 = 403 - 244 = 159 \) kJ/kg (useful superheat).</li>
+        <li>\( W = h_{2'} - h_{1'} = 444 - 403 = 41 \) kJ/kg.</li>
+        <li>\( COP = 159/41 = 3.88 \).</li>
+        <li>Change: \( (3.878 - 4.053)/4.053 = -4.3 \) %. RE rises by 3.2 %, but the work rises by 7.9 %.</li>
+      </ol>
+      <p class="final">Answer: COP = 4.05 without superheat and 3.88 with superheat (about -4.3 %)</p>
+    </article>
+
+    <article class="num" id="te-u5-n7">
+      <h3>N7. A refrigeration plant of 8 TR capacity has h<sub>1</sub> = 397 kJ/kg and a specific volume at the compressor inlet of 0.0653 m³/kg. The enthalpy after isentropic compression is 431 kJ/kg. The isentropic efficiency of the compressor is 0.80. The liquid leaves the condenser with h<sub>3</sub> = 242 kJ/kg. Find the actual discharge enthalpy, the actual and ideal COP, the mass flow rate, the compressor power, the volume of vapour drawn per hour and the heat rejected in the condenser. Take 1 TR = 3.5167 kW.</h3>
+      <p class="q-src">Syllabus topic</p>
+      <ol class="steps">
+        <li>Isentropic work: \( W_s = 431 - 397 = 34 \) kJ/kg. Actual work: \( W = W_s/\eta_s = 34/0.80 = 42.5 \) kJ/kg.</li>
+        <li>Actual discharge enthalpy: \( h_2 = 397 + 42.5 = 439.5 \) kJ/kg.</li>
+        <li>\( RE = 397 - 242 = 155 \) kJ/kg. Ideal \( COP = 155/34 = 4.56 \). Actual \( COP = 155/42.5 = 3.65 \).</li>
+        <li>Capacity: \( Q_L = 8 \times 3.5167 = 28.13 \) kW. Mass flow: \( \dot m = 28.13/155 = 0.1815 \) kg/s.</li>
+        <li>Power: \( P = \dot m W = 0.1815 \times 42.5 = 7.71 \) kW.</li>
+        <li>Volume at suction: \( \dot V_1 = \dot m v_1 = 0.1815 \times 0.0653 = 0.01185 \) m³/s \( = 42.7 \) m³/h.</li>
+        <li>Heat rejected: \( Q_c = \dot m (h_2 - h_3) = 0.1815 \times (439.5 - 242) = 35.85 \) kW. Check: \( 28.13 + 7.71 = 35.84 \) kW.</li>
+      </ol>
+      <p class="final">Answer: h<sub>2</sub> = 439.5 kJ/kg, COP = 3.65 (ideal 4.56), m = 0.182 kg/s, P = 7.71 kW, V = 42.7 m³/h, Q<sub>c</sub> = 35.8 kW</p>
+    </article>
+
+    <h3 id="te-u5-practice">Practice problems</h3>
+    <article class="num practice" id="te-u5-p1"><h3>P1. A simple VCR cycle has h<sub>1</sub> = 385 kJ/kg, h<sub>2</sub> = 420 kJ/kg and h<sub>3</sub> = 225 kJ/kg (saturated liquid). Find the RE, the work, the COP, and the mass flow and the power for a capacity of 3 TR (1 TR = 3.5167 kW).</h3>
+      <p class="final">Answer: RE = 160 kJ/kg; W = 35 kJ/kg; COP = 4.57; m = 0.0659 kg/s; P = 2.31 kW</p></article>
+    <article class="num practice" id="te-u5-p2"><h3>P2. A reversed Carnot refrigerator works between −5 °C and 40 °C and takes 2 kW of power. Find its COP, its capacity in TR and the heat rejected.</h3>
+      <p class="final">Answer: COP = 5.96; Q<sub>L</sub> = 11.92 kW = 3.39 TR; Q<sub>H</sub> = 13.92 kW</p></article>
+    <article class="num practice" id="te-u5-p3"><h3>P3. A VCR cycle has h<sub>1</sub> = 390 kJ/kg, h<sub>2</sub> = 430 kJ/kg and a saturated liquid enthalpy of 236 kJ/kg at the condenser outlet. The liquid is subcooled to 220 kJ/kg. Find the COP with and without subcooling.</h3>
+      <p class="final">Answer: COP = 3.85 without subcooling; 4.25 with subcooling</p></article>
+    <article class="num practice" id="te-u5-p4"><h3>P4. A heat pump using the VCR cycle has h<sub>1</sub> = 406 kJ/kg, h<sub>2</sub> = 446 kJ/kg and h<sub>3</sub> = 252 kJ/kg. The compressor takes 6 kW. Find the COP of the heat pump, the heat delivered, the heat taken from the surroundings and the mass flow rate.</h3>
+      <p class="final">Answer: COP<sub>HP</sub> = 4.85; Q<sub>H</sub> = 29.1 kW; Q<sub>L</sub> = 23.1 kW; m = 0.15 kg/s</p></article>
+    <article class="num practice" id="te-u5-p5"><h3>P5. An ammonia-water absorption system takes 45 kW of heat in the generator and 0.5 kW of pump work. It absorbs 30 kW in the evaporator. Find its COP, and the total heat rejected in the condenser and the absorber together.</h3>
+      <p class="final">Answer: COP = 0.66; Q<sub>C</sub> + Q<sub>A</sub> = 75.5 kW</p></article>
+  </section>
+</section>

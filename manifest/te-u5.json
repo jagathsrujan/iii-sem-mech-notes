@@ -1,0 +1,26 @@
+[
+ {
+  "file": "img/te-u5-cold-room-units.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Cold_Room_Products_-_Mix_-_Door_-_Refrigeration_-_Evaporator_-_Panel.jpg",
+  "author": "Mesadbal",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "caption": "Condensing units, cold-room evaporators and insulated panels."
+ },
+ {
+  "file": "img/te-u5-condensing-unit.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Condensing_Unit.jpg",
+  "author": "AnyNameWillExpire",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "A small refrigeration condensing unit with hermetic compressor."
+ },
+ {
+  "file": "img/te-u5-coldstore-plant.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Refrigerating_plant,_Canada_Coldstore,_Brunswick_Place_-_geograph.org.uk_-_684943.jpg",
+  "author": "Chris Allen",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "caption": "Plant room of an old cold store with a large compressor."
+ }
+]

@@ -1,0 +1,26 @@
+[
+ {
+  "file": "img/te-u4-turbine-rotor.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Dampfturbine_Laeufer01.jpg",
+  "author": "Siemens Pressebild, http://www.siemens.com",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "caption": "Steam turbine rotor with several blade rows being assembled."
+ },
+ {
+  "file": "img/te-u4-ljungstrom.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:STAL_Ljungstr%C3%B6m_steam_turbine_rotor_50MW.jpg",
+  "author": "Unknown author",
+  "license": "Public domain",
+  "license_url": "",
+  "caption": "Rotor of a 50 MW Ljungstr\u00f6m radial steam turbine."
+ },
+ {
+  "file": "img/te-u4-power-station.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Scottish_and_Southern_Slough_Power_Station_-_geograph.org.uk_-_1002054.jpg",
+  "author": "Chris Allen",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "caption": "A thermal power station with cooling tower."
+ }
+]
