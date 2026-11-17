@@ -46,3 +46,6 @@ All photos come from Wikimedia Commons under the licences below. They keep their
 | `img/mse-u4-furnace.jpg` | Steel castings leaving a heat treatment furnace. | Goodwin Steel Castings | CC BY-SA 2.0 | [source](https://commons.wikimedia.org/wiki/File:Castings_fresh_from_the_heat_treatment_furnace.jpg) |
 | `img/mse-u4-pearlite.jpg` | Pearlite micrograph. | Edward Pleshakov | Public domain | [source](https://commons.wikimedia.org/wiki/File:Pearlite1.jpg) |
 | `img/mse-u4-martensite.jpg` | Martensite micrograph. | Cristiano José Scheuer, Rodrigo Perito Cardoso, Silvio Francisco Brunatto | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Microstructure_of_martensitic_stainless_steel_AISI_420.jpg) |
+| `img/mse-u5-pearlite.jpg` | Pearlite (SEM) | Michelshock | Public domain | [source](https://commons.wikimedia.org/wiki/File:Pearlite.jpg) |
+| `img/mse-u5-ferrite-pearlite.jpg` | Ferrite and pearlite in hypo-eutectoid steel | A. J. Duncan, K. H. Subramanian, R. L. Sindelar, K. Miller, A. P. Reynolds, and Y. J. Chao | Public domain | [source](https://commons.wikimedia.org/wiki/File:Ferrite-perlite-steel-A285.jpeg) |
+| `img/mse-u5-ledeburite.jpg` | White cast iron: ledeburite | Eisenbeisser | CC BY-SA 3.0 | [source](https://commons.wikimedia.org/wiki/File:Ledeburit2.jpg) |

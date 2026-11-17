@@ -1,0 +1,1715 @@
+<section class="unit" data-unit="mse-u5">
+  <header class="unit-head">
+    <p class="eyebrow">Material Science and Engineering · Unit 5</p>
+    <h1>Solid Solutions and Phase Diagrams</h1>
+    <p class="lede">A phase diagram is the map of an alloy: it shows which phases exist at each temperature and composition. This unit goes from solid solutions to the iron–carbon diagram, then to the TTT and CCT diagrams that link structure to heat treatment. The Fe–C diagram is the most important sketch in the course.</p>
+    <ul class="syl"><li>Solid solutions: types, rules governing the formation of solid solutions</li><li>Phase diagrams: basic terms, phase rule, cooling curves, construction of phase diagrams, interpretation of equilibrium diagrams, types of phase diagrams, lever rule</li><li>Iron–carbon equilibrium diagram: phases in the Fe–C system, invariant reactions, critical temperatures, microstructure of slowly cooled steels, effect of alloying elements on the Fe–C diagram, ferrite and austenite stabilisers</li><li>TTT diagram for hypo- and hyper-eutectoid steels, effect of alloying elements, CCT diagram</li></ul>
+  </header>
+
+  <section class="part" id="mse-u5-concepts" data-part="concepts">
+    <h2>Concepts</h2>
+<aside class="exam"><b>Exam pattern.</b> One 20-mark question, two 10-mark parts. Typical parts: Fe–C diagram, TTT diagram, types of solid solution, phase rule, lever rule, cooling curve. Practise drawing the Fe–C diagram.</aside>
+
+<h3 id="mse-u5-c-ss">1. Solid solutions</h3>
+<p>A <b>solid solution</b> is a solid in which the solute atoms dissolve in the crystal lattice of the solvent. It is one phase with one crystal structure, like sugar in water. The element in larger amount is the <b>solvent</b>; the other is the <b>solute</b>.</p>
+<figure class="fig" id="mse-u5-f-ss">
+<svg viewBox="0 0 700 262" role="img" aria-label="Three lattice sketches: pure solvent, substitutional solid solution, interstitial solid solution">
+<defs><marker id="mse-u5-arw-ss" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="13.0" y="23.0" width="180.0" height="180.0" class="ln thin"/>
+<circle cx="35.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="69.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="103.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="137.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="171.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="35.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="69.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="103.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="137.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="171.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="35.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="69.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="103.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="137.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="171.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="35.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="69.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="103.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="137.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="171.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="35.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="69.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="103.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="137.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="171.0" cy="181.0" r="13" class="ln fill-soft"/>
+<text x="103.0" y="224.0" class="lbl-b" text-anchor="middle">(a) Pure solvent</text>
+<rect x="233.0" y="23.0" width="180.0" height="180.0" class="ln thin"/>
+<circle cx="255.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="289.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="323.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="357.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="391.0" cy="45.0" r="11" class="ln fill-acc"/>
+<circle cx="255.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="289.0" cy="79.0" r="11" class="ln fill-acc"/>
+<circle cx="323.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="357.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="391.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="255.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="289.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="323.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="357.0" cy="113.0" r="11" class="ln fill-acc"/>
+<circle cx="391.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="255.0" cy="147.0" r="11" class="ln fill-acc"/>
+<circle cx="289.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="323.0" cy="147.0" r="11" class="ln fill-acc"/>
+<circle cx="357.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="391.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="255.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="289.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="323.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="357.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="391.0" cy="181.0" r="13" class="ln fill-soft"/>
+<text x="323.0" y="224.0" class="lbl-b" text-anchor="middle">(b) Substitutional</text>
+<rect x="453.0" y="23.0" width="180.0" height="180.0" class="ln thin"/>
+<circle cx="475.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="509.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="543.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="577.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="611.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="475.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="509.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="543.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="577.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="611.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="475.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="509.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="543.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="577.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="611.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="475.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="509.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="543.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="577.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="611.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="475.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="509.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="543.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="577.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="611.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="492.0" cy="62.0" r="5.5" class="ln fill-acc2"/>
+<circle cx="560.0" cy="96.0" r="5.5" class="ln fill-acc2"/>
+<circle cx="526.0" cy="130.0" r="5.5" class="ln fill-acc2"/>
+<circle cx="594.0" cy="164.0" r="5.5" class="ln fill-acc2"/>
+<circle cx="560.0" cy="164.0" r="5.5" class="ln fill-acc2"/>
+<text x="543.0" y="224.0" class="lbl-b" text-anchor="middle">(c) Interstitial</text>
+<circle cx="60.0" cy="250.0" r="6" class="ln fill-soft"/>
+<text x="72.0" y="254.0" class="lbl-sm" text-anchor="start">solvent atom</text>
+<circle cx="200.0" cy="250.0" r="6" class="ln fill-acc"/>
+<text x="212.0" y="254.0" class="lbl-sm" text-anchor="start">solute (substitutional)</text>
+<circle cx="420.0" cy="250.0" r="5" class="ln fill-acc2"/>
+<text x="431.0" y="254.0" class="lbl-sm" text-anchor="start">solute (interstitial, small)</text>
+</svg>
+<figcaption>Fig. 5.1 — (a) Pure solvent lattice. (b) Substitutional: solute atoms take the places of solvent atoms. (c) Interstitial: small solute atoms sit in the gaps.</figcaption>
+</figure>
+<ul>
+<li><b>Substitutional:</b> solute atoms replace solvent atoms on lattice sites. The atoms are of similar size. Examples: Cu–Ni, Cu–Zn.</li>
+<li><b>Interstitial:</b> small solute atoms (H, C, N, B) sit in the gaps between large solvent atoms. Example: carbon in iron (ferrite and austenite).</li>
+<li><b>Disordered or ordered</b> (Fig. 5.2): in a disordered solution solute atoms sit at random sites. In an ordered solution (superlattice) they take fixed sites, for example Cu₃Au below about 390 °C.</li>
+</ul>
+<figure class="fig" id="mse-u5-f-ord">
+<svg viewBox="0 0 600 245" role="img" aria-label="Disordered random substitutional solid solution and ordered solid solution with solute on regular sites">
+<defs><marker id="mse-u5-arw-ord" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="48.0" y="13.0" width="180.0" height="180.0" class="ln thin"/>
+<circle cx="70.0" cy="35.0" r="13" class="ln fill-soft"/>
+<circle cx="104.0" cy="35.0" r="13" class="ln fill-acc"/>
+<circle cx="138.0" cy="35.0" r="13" class="ln fill-acc"/>
+<circle cx="172.0" cy="35.0" r="13" class="ln fill-acc"/>
+<circle cx="206.0" cy="35.0" r="13" class="ln fill-soft"/>
+<circle cx="70.0" cy="69.0" r="13" class="ln fill-acc"/>
+<circle cx="104.0" cy="69.0" r="13" class="ln fill-soft"/>
+<circle cx="138.0" cy="69.0" r="13" class="ln fill-soft"/>
+<circle cx="172.0" cy="69.0" r="13" class="ln fill-soft"/>
+<circle cx="206.0" cy="69.0" r="13" class="ln fill-acc"/>
+<circle cx="70.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="104.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="138.0" cy="103.0" r="13" class="ln fill-acc"/>
+<circle cx="172.0" cy="103.0" r="13" class="ln fill-acc"/>
+<circle cx="206.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="70.0" cy="137.0" r="13" class="ln fill-soft"/>
+<circle cx="104.0" cy="137.0" r="13" class="ln fill-acc"/>
+<circle cx="138.0" cy="137.0" r="13" class="ln fill-soft"/>
+<circle cx="172.0" cy="137.0" r="13" class="ln fill-soft"/>
+<circle cx="206.0" cy="137.0" r="13" class="ln fill-acc"/>
+<circle cx="70.0" cy="171.0" r="13" class="ln fill-acc"/>
+<circle cx="104.0" cy="171.0" r="13" class="ln fill-soft"/>
+<circle cx="138.0" cy="171.0" r="13" class="ln fill-acc"/>
+<circle cx="172.0" cy="171.0" r="13" class="ln fill-acc"/>
+<circle cx="206.0" cy="171.0" r="13" class="ln fill-soft"/>
+<text x="138.0" y="218.0" class="lbl-b" text-anchor="middle">(a) Disordered (random)</text>
+<rect x="348.0" y="13.0" width="180.0" height="180.0" class="ln thin"/>
+<circle cx="370.0" cy="35.0" r="13" class="ln fill-soft"/>
+<circle cx="404.0" cy="35.0" r="13" class="ln fill-acc"/>
+<circle cx="438.0" cy="35.0" r="13" class="ln fill-soft"/>
+<circle cx="472.0" cy="35.0" r="13" class="ln fill-acc"/>
+<circle cx="506.0" cy="35.0" r="13" class="ln fill-soft"/>
+<circle cx="370.0" cy="69.0" r="13" class="ln fill-acc"/>
+<circle cx="404.0" cy="69.0" r="13" class="ln fill-soft"/>
+<circle cx="438.0" cy="69.0" r="13" class="ln fill-acc"/>
+<circle cx="472.0" cy="69.0" r="13" class="ln fill-soft"/>
+<circle cx="506.0" cy="69.0" r="13" class="ln fill-acc"/>
+<circle cx="370.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="404.0" cy="103.0" r="13" class="ln fill-acc"/>
+<circle cx="438.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="472.0" cy="103.0" r="13" class="ln fill-acc"/>
+<circle cx="506.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="370.0" cy="137.0" r="13" class="ln fill-acc"/>
+<circle cx="404.0" cy="137.0" r="13" class="ln fill-soft"/>
+<circle cx="438.0" cy="137.0" r="13" class="ln fill-acc"/>
+<circle cx="472.0" cy="137.0" r="13" class="ln fill-soft"/>
+<circle cx="506.0" cy="137.0" r="13" class="ln fill-acc"/>
+<circle cx="370.0" cy="171.0" r="13" class="ln fill-soft"/>
+<circle cx="404.0" cy="171.0" r="13" class="ln fill-acc"/>
+<circle cx="438.0" cy="171.0" r="13" class="ln fill-soft"/>
+<circle cx="472.0" cy="171.0" r="13" class="ln fill-acc"/>
+<circle cx="506.0" cy="171.0" r="13" class="ln fill-soft"/>
+<text x="438.0" y="218.0" class="lbl-b" text-anchor="middle">(b) Ordered (superlattice)</text>
+</svg>
+<figcaption>Fig. 5.2 — A disordered solution has solute atoms at random sites. In an ordered solution (for example Cu₃Au below about 390 °C) they sit on regular sites.</figcaption>
+</figure>
+<p>Solute atoms distort the lattice and block dislocations, so a solid solution is stronger than the pure metal (<b>solid-solution strengthening</b>).</p>
+
+<h3 id="mse-u5-c-hr">2. Hume-Rothery rules (QB Q35)</h3>
+<p>These rules decide if two metals form a substitutional solution with wide solubility.</p>
+<ol>
+<li><b>Size factor:</b> atomic radii differ by less than about 15 %.</li>
+<li><b>Crystal structure:</b> solute and solvent have the same crystal structure.</li>
+<li><b>Electronegativity:</b> similar for both metals. A large difference gives a compound instead.</li>
+<li><b>Relative valency:</b> a metal of lower valency dissolves more easily in one of higher valency.</li>
+</ol>
+<div class="formula">\[ \text{size difference} = \frac{\lvert r_{solute} - r_{solvent}\rvert}{r_{solvent}} \times 100 \;&lt;\; 15\,\% \]</div>
+<p>Cu and Ni meet all four rules (both FCC, radii 0.128 and 0.125 nm), so they mix in all proportions. An <b>interstitial</b> solute must be much smaller than the solvent atom (radius ratio about 0.6 or less).</p>
+
+<h3 id="mse-u5-c-terms">3. Basic terms (QB Q33)</h3>
+<ul>
+<li><b>System:</b> the part of the universe chosen for study, such as an Fe–C alloy.</li>
+<li><b>Component:</b> an element or stable compound that makes the system (Fe and Fe₃C in the Fe–C diagram).</li>
+<li><b>Phase:</b> a homogeneous, physically distinct part with its own structure and composition, separated by a boundary.</li>
+<li><b>Equilibrium:</b> the state of minimum free energy, which does not change with time.</li>
+<li><b>Melting point:</b> the temperature at which a solid becomes liquid on heating. <b>Freezing point:</b> the temperature at which a liquid becomes solid on cooling. They are equal for a pure metal; an alloy melts and freezes over a range.</li>
+</ul>
+
+<h3 id="mse-u5-c-phase">4. Gibbs phase rule</h3>
+<p>F is the number of variables we may change without changing the number of phases. At constant pressure (usual for metals):</p>
+<div class="formula">\[ F = C - P + 1 \]<p class="where">F = degrees of freedom, C = number of components, P = number of phases present. (With pressure also variable: F = C − P + 2.)</p></div>
+<div class="tbl"><table><thead><tr><th>State</th><th>C</th><th>P</th><th>F</th></tr></thead><tbody><tr><td>Pure metal, all liquid</td><td>1</td><td>1</td><td>1</td></tr><tr><td>Pure metal, freezing (L + S)</td><td>1</td><td>2</td><td>0 (fixed temperature)</td></tr><tr><td>Binary alloy, one phase</td><td>2</td><td>1</td><td>2</td></tr><tr><td>Binary alloy, two phases</td><td>2</td><td>2</td><td>1</td></tr><tr><td>Eutectic, eutectoid, peritectic</td><td>2</td><td>3</td><td>0</td></tr></tbody></table></div>
+<aside class="note"><b>Result.</b> F cannot be negative, so a binary alloy has at most 3 phases in equilibrium, and only on a horizontal line.</aside>
+
+<h3 id="mse-u5-c-cool">5. Cooling curves (QB Q17)</h3>
+<p>A cooling curve plots temperature against time as a molten metal cools slowly. A change of slope or a flat arrest shows a phase change, because latent heat is released.</p>
+<figure class="fig" id="mse-u5-f-cool">
+<svg viewBox="0 0 700 270" role="img" aria-label="Three cooling curves: pure metal with one flat arrest, alloy with two changes of slope, eutectic alloy with a flat arrest">
+<defs><marker id="mse-u5-arw-cool" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="50.0" y1="225.0" x2="220.0" y2="225.0" class="ln" marker-end="url(#mse-u5-arw-cool)"/>
+<line x1="50.0" y1="225.0" x2="50.0" y2="50.0" class="ln" marker-end="url(#mse-u5-arw-cool)"/>
+<text x="135.0" y="250.0" class="lbl-sm" text-anchor="middle">Time →</text>
+<text x="22.0" y="137.5" class="lbl-sm" text-anchor="middle" transform="rotate(-90 22.0 137.5)">Temperature →</text>
+<line x1="270.0" y1="225.0" x2="440.0" y2="225.0" class="ln" marker-end="url(#mse-u5-arw-cool)"/>
+<line x1="270.0" y1="225.0" x2="270.0" y2="50.0" class="ln" marker-end="url(#mse-u5-arw-cool)"/>
+<text x="355.0" y="250.0" class="lbl-sm" text-anchor="middle">Time →</text>
+<text x="242.0" y="137.5" class="lbl-sm" text-anchor="middle" transform="rotate(-90 242.0 137.5)">Temperature →</text>
+<line x1="490.0" y1="225.0" x2="660.0" y2="225.0" class="ln" marker-end="url(#mse-u5-arw-cool)"/>
+<line x1="490.0" y1="225.0" x2="490.0" y2="50.0" class="ln" marker-end="url(#mse-u5-arw-cool)"/>
+<text x="575.0" y="250.0" class="lbl-sm" text-anchor="middle">Time →</text>
+<text x="462.0" y="137.5" class="lbl-sm" text-anchor="middle" transform="rotate(-90 462.0 137.5)">Temperature →</text>
+<path d="M50.0,70.0 C54.7,73.3 68.8,83.0 78.0,90.0 C87.2,97.0 100.5,108.3 105.0,112.0" class="ln thick" fill="none"/>
+<line x1="105.0" y1="112.0" x2="155.0" y2="112.0" class="ln thick"/>
+<path d="M155.0,112.0 C158.3,118.3 165.8,137.0 175.0,150.0 C184.2,163.0 204.2,183.3 210.0,190.0" class="ln thick" fill="none"/>
+<line x1="50.0" y1="112.0" x2="105.0" y2="112.0" class="ln thin dash"/>
+<text x="46.0" y="109.0" class="lbl-sm" text-anchor="end">Tₘ</text>
+<text x="128.0" y="84.0" class="lbl-sm" text-anchor="middle">Liquid cools</text>
+<text x="130.0" y="130.0" class="lbl-sm" text-anchor="middle">L + S</text>
+<text x="188.0" y="210.0" class="lbl-sm" text-anchor="middle">Solid</text>
+<text x="132.0" y="28.0" class="lbl-b" text-anchor="middle">(a) Pure metal</text>
+<text x="132.0" y="44.0" class="lbl-sm" text-anchor="middle">F = 0 on the arrest</text>
+<path d="M270.0,70.0 C273.7,73.0 284.5,82.3 292.0,88.0 C299.5,93.7 311.2,101.3 315.0,104.0" class="ln thick" fill="none"/>
+<path d="M315.0,104.0 C320.0,107.5 335.8,117.7 345.0,125.0 C354.2,132.3 365.8,144.2 370.0,148.0" class="ln thick" fill="none"/>
+<path d="M370.0,148.0 C374.2,152.5 385.0,165.5 395.0,175.0 C405.0,184.5 424.2,200.0 430.0,205.0" class="ln thick" fill="none"/>
+<line x1="270.0" y1="104.0" x2="315.0" y2="104.0" class="ln thin dash"/>
+<text x="266.0" y="107.0" class="lbl-sm" text-anchor="end">Tₗ</text>
+<line x1="270.0" y1="148.0" x2="370.0" y2="148.0" class="ln thin dash"/>
+<text x="266.0" y="151.0" class="lbl-sm" text-anchor="end">Tₛ</text>
+<circle cx="315.0" cy="104.0" r="3" class="solid"/>
+<circle cx="370.0" cy="148.0" r="3" class="solid"/>
+<text x="370.0" y="93.0" class="lbl-sm" text-anchor="middle">start of freezing</text>
+<text x="407.0" y="160.0" class="lbl-sm" text-anchor="middle">end</text>
+<text x="352.0" y="28.0" class="lbl-b" text-anchor="middle">(b) Solid-solution alloy</text>
+<text x="352.0" y="44.0" class="lbl-sm" text-anchor="middle">F = 1 between Tₗ and Tₛ</text>
+<path d="M490.0,70.0 C494.7,73.7 508.8,82.3 518.0,92.0 C527.2,101.7 540.5,122.0 545.0,128.0" class="ln thick" fill="none"/>
+<line x1="545.0" y1="128.0" x2="595.0" y2="128.0" class="ln thick"/>
+<path d="M595.0,128.0 C598.3,133.3 605.8,148.8 615.0,160.0 C624.2,171.2 644.2,189.2 650.0,195.0" class="ln thick" fill="none"/>
+<line x1="490.0" y1="128.0" x2="545.0" y2="128.0" class="ln thin dash"/>
+<text x="486.0" y="125.0" class="lbl-sm" text-anchor="end">Tₑ</text>
+<text x="570.0" y="117.0" class="lbl-sm" text-anchor="middle">L → α + β</text>
+<text x="572.0" y="28.0" class="lbl-b" text-anchor="middle">(c) Eutectic alloy</text>
+<text x="572.0" y="44.0" class="lbl-sm" text-anchor="middle">F = 0 on the arrest</text>
+</svg>
+<figcaption>Fig. 5.3 — Cooling curves. (a) A pure metal freezes at one fixed temperature (flat arrest). (b) An alloy freezes over a range: the slope changes at the liquidus Tₗ and at the solidus Tₛ. (c) A eutectic alloy freezes at one fixed temperature.</figcaption>
+</figure>
+<ul>
+<li><b>Pure metal:</b> the temperature stays flat at the freezing point T<sub>m</sub> while the metal freezes (heat lost equals latent heat released, F = 0).</li>
+<li><b>Solid-solution alloy:</b> no flat arrest. The slope changes at the liquidus T<sub>l</sub> (freezing starts) and at the solidus T<sub>s</sub> (freezing ends). F = 1 between them.</li>
+<li><b>Eutectic alloy:</b> one flat arrest, like a pure metal.</li>
+</ul>
+
+<h3 id="mse-u5-c-construct">6. Construction of a phase diagram</h3>
+<ol>
+<li>Prepare alloys of known composition (Cu–Ni: 0, 25, 50, 75, 100 % Ni).</li>
+<li>Melt each and cool it very slowly. Record temperature against time.</li>
+<li>Mark the break points and arrests on each cooling curve.</li>
+<li>Plot each point at its temperature (y) and alloy composition (x).</li>
+<li>Join the upper points (<b>liquidus</b>) and the lower points (<b>solidus</b>).</li>
+</ol>
+<figure class="fig" id="mse-u5-f-constr">
+<svg viewBox="0 0 720 360" role="img" aria-label="Five cooling curves of Cu-Ni alloys on the left and the resulting liquidus and solidus on the right">
+<defs><marker id="mse-u5-arw-constr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="55.0" y1="300.0" x2="330.0" y2="300.0" class="ln" marker-end="url(#mse-u5-arw-constr)"/>
+<line x1="55.0" y1="300.0" x2="55.0" y2="20.0" class="ln" marker-end="url(#mse-u5-arw-constr)"/>
+<line x1="51.0" y1="300.0" x2="55.0" y2="300.0" class="ln thin"/>
+<text x="48.0" y="304.0" class="lbl-sm" text-anchor="end">1000</text>
+<line x1="51.0" y1="246.0" x2="55.0" y2="246.0" class="ln thin"/>
+<text x="48.0" y="250.0" class="lbl-sm" text-anchor="end">1100</text>
+<line x1="51.0" y1="192.0" x2="55.0" y2="192.0" class="ln thin"/>
+<text x="48.0" y="196.0" class="lbl-sm" text-anchor="end">1200</text>
+<line x1="51.0" y1="138.0" x2="55.0" y2="138.0" class="ln thin"/>
+<text x="48.0" y="142.0" class="lbl-sm" text-anchor="end">1300</text>
+<line x1="51.0" y1="84.0" x2="55.0" y2="84.0" class="ln thin"/>
+<text x="48.0" y="88.0" class="lbl-sm" text-anchor="end">1400</text>
+<line x1="51.0" y1="30.0" x2="55.0" y2="30.0" class="ln thin"/>
+<text x="48.0" y="34.0" class="lbl-sm" text-anchor="end">1500</text>
+<text x="14.0" y="165.0" class="lbl-sm" text-anchor="middle" transform="rotate(-90 14.0 165.0)">Temperature (°C)</text>
+<text x="190.0" y="340.0" class="lbl-sm" text-anchor="middle">Time → (one curve for each alloy)</text>
+<line x1="400.0" y1="300.0" x2="695.0" y2="300.0" class="ln" marker-end="url(#mse-u5-arw-constr)"/>
+<line x1="400.0" y1="300.0" x2="400.0" y2="20.0" class="ln" marker-end="url(#mse-u5-arw-constr)"/>
+<path d="M400.0,254.1 C409.3,244.2 441.1,209.5 456.0,194.7 C470.9,179.8 475.6,175.8 489.6,165.0 C503.6,154.2 522.3,142.1 540.0,129.9 C557.7,117.8 572.7,104.7 596.0,92.1 C619.3,79.5 666.0,60.6 680.0,54.3" class="ln thick" fill="none"/>
+<path d="M400.0,254.1 C409.3,247.3 436.4,228.4 456.0,213.6 C475.6,198.8 498.9,179.4 517.6,165.0 C536.3,150.6 550.3,139.8 568.0,127.2 C585.7,114.6 605.3,101.6 624.0,89.4 C642.7,77.2 670.7,60.1 680.0,54.3" class="ln thick" fill="none"/>
+<text x="484.0" y="121.8" class="lbl-b" text-anchor="middle">Liquid</text>
+<text x="596.0" y="202.8" class="lbl-b" text-anchor="middle">Solid α</text>
+<text x="548.4" y="162.3" class="lbl-sm" text-anchor="middle">L + α</text>
+<text x="540.0" y="340.0" class="lbl-sm" text-anchor="middle">Weight % Ni →</text>
+<text x="410.0" y="318.0" class="lbl-b" text-anchor="middle">Cu</text>
+<text x="674.0" y="318.0" class="lbl-b" text-anchor="middle">Ni</text>
+<polyline points="75.0,227.1 87.0,254.1 105.0,254.1 117.0,283.8" class="ln thick" fill="none"/>
+<circle cx="87.0" cy="254.1" r="3" class="solid"/>
+<line x1="87.0" y1="254.1" x2="400.0" y2="254.1" class="ln thin dash"/>
+<circle cx="400.0" cy="254.1" r="3" class="solid"/>
+<text x="95.0" y="318.0" class="lbl-sm" text-anchor="middle">Cu</text>
+<text x="400.0" y="300.0" class="lbl-sm" text-anchor="middle"></text>
+<polyline points="125.0,155.3 139.0,182.3 153.0,202.6 167.0,232.3" class="ln thick" fill="none"/>
+<circle cx="139.0" cy="182.3" r="3" class="solid"/>
+<circle cx="153.0" cy="202.6" r="3" class="solid"/>
+<line x1="139.0" y1="182.3" x2="470.0" y2="182.3" class="ln thin dash"/>
+<line x1="153.0" y1="202.6" x2="470.0" y2="202.6" class="ln thin dash"/>
+<circle cx="470.0" cy="182.3" r="3" class="solid"/>
+<circle cx="470.0" cy="202.6" r="3" class="solid"/>
+<text x="145.0" y="318.0" class="lbl-sm" text-anchor="middle">25% Ni</text>
+<text x="470.0" y="300.0" class="lbl-sm" text-anchor="middle"></text>
+<polyline points="175.0,102.9 189.0,129.9 203.0,148.2 217.0,177.9" class="ln thick" fill="none"/>
+<circle cx="189.0" cy="129.9" r="3" class="solid"/>
+<circle cx="203.0" cy="148.2" r="3" class="solid"/>
+<line x1="189.0" y1="129.9" x2="540.0" y2="129.9" class="ln thin dash"/>
+<line x1="203.0" y1="148.2" x2="540.0" y2="148.2" class="ln thin dash"/>
+<circle cx="540.0" cy="129.9" r="3" class="solid"/>
+<circle cx="540.0" cy="148.2" r="3" class="solid"/>
+<text x="195.0" y="318.0" class="lbl-sm" text-anchor="middle">50% Ni</text>
+<text x="540.0" y="300.0" class="lbl-sm" text-anchor="middle"></text>
+<polyline points="225.0,58.8 239.0,85.8 253.0,98.8 267.0,128.6" class="ln thick" fill="none"/>
+<circle cx="239.0" cy="85.8" r="3" class="solid"/>
+<circle cx="253.0" cy="98.8" r="3" class="solid"/>
+<line x1="239.0" y1="85.8" x2="610.0" y2="85.8" class="ln thin dash"/>
+<line x1="253.0" y1="98.8" x2="610.0" y2="98.8" class="ln thin dash"/>
+<circle cx="610.0" cy="85.8" r="3" class="solid"/>
+<circle cx="610.0" cy="98.8" r="3" class="solid"/>
+<text x="245.0" y="318.0" class="lbl-sm" text-anchor="middle">75% Ni</text>
+<text x="610.0" y="300.0" class="lbl-sm" text-anchor="middle"></text>
+<polyline points="275.0,27.3 287.0,54.3 305.0,54.3 317.0,84.0" class="ln thick" fill="none"/>
+<circle cx="287.0" cy="54.3" r="3" class="solid"/>
+<line x1="287.0" y1="54.3" x2="680.0" y2="54.3" class="ln thin dash"/>
+<circle cx="680.0" cy="54.3" r="3" class="solid"/>
+<text x="295.0" y="318.0" class="lbl-sm" text-anchor="middle">Ni</text>
+<text x="680.0" y="300.0" class="lbl-sm" text-anchor="middle"></text>
+</svg>
+<figcaption>Fig. 5.4 — Constructing the Cu–Ni diagram. The two arrest points of each cooling curve are projected across (dashed lines) to the same temperature on the diagram at the composition of that alloy. Joining the upper points gives the liquidus; joining the lower points gives the solidus.</figcaption>
+</figure>
+
+<h3 id="mse-u5-c-lever">7. Interpreting a diagram: tie line and lever rule</h3>
+<p>Mark the alloy composition C<sub>0</sub> and temperature. In a two-phase field draw a horizontal <b>tie line</b> through the point. Its ends on the phase boundaries give the <b>compositions</b> of the two phases. The lever rule gives their <b>amounts</b>.</p>
+<figure class="fig" id="mse-u5-f-tie">
+<svg viewBox="0 0 700 340" role="img" aria-label="Cu-Ni phase diagram with tie line at 1250 degrees C: liquid 32 percent Ni, alloy 35 percent Ni, alpha 42 percent Ni">
+<defs><marker id="mse-u5-arw-tie" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="90.0" y1="275.0" x2="605.0" y2="275.0" class="ln" marker-end="url(#mse-u5-arw-tie)"/>
+<line x1="90.0" y1="275.0" x2="90.0" y2="15.0" class="ln" marker-end="url(#mse-u5-arw-tie)"/>
+<line x1="86.0" y1="247.2" x2="90.0" y2="247.2" class="ln thin"/>
+<text x="83.0" y="251.2" class="lbl-sm" text-anchor="end">1100</text>
+<line x1="86.0" y1="191.7" x2="90.0" y2="191.7" class="ln thin"/>
+<text x="83.0" y="195.7" class="lbl-sm" text-anchor="end">1200</text>
+<line x1="86.0" y1="136.1" x2="90.0" y2="136.1" class="ln thin"/>
+<text x="83.0" y="140.1" class="lbl-sm" text-anchor="end">1300</text>
+<line x1="86.0" y1="80.6" x2="90.0" y2="80.6" class="ln thin"/>
+<text x="83.0" y="84.6" class="lbl-sm" text-anchor="end">1400</text>
+<line x1="86.0" y1="25.0" x2="90.0" y2="25.0" class="ln thin"/>
+<text x="83.0" y="29.0" class="lbl-sm" text-anchor="end">1500</text>
+<text x="28.0" y="150.0" class="lbl-sm" text-anchor="middle" transform="rotate(-90 28.0 150.0)">Temperature (°C)</text>
+<path d="M90.0,255.6 C106.7,245.4 163.3,209.7 190.0,194.4 C216.7,179.2 225.0,175.0 250.0,163.9 C275.0,152.8 308.3,140.3 340.0,127.8 C371.7,115.3 398.3,101.9 440.0,88.9 C481.7,75.9 565.0,56.5 590.0,50.0" class="ln thick" fill="none"/>
+<path d="M90.0,255.6 C106.7,248.6 155.0,229.2 190.0,213.9 C225.0,198.6 266.7,178.7 300.0,163.9 C333.3,149.1 358.3,138.0 390.0,125.0 C421.7,112.0 456.7,98.6 490.0,86.1 C523.3,73.6 573.3,56.0 590.0,50.0" class="ln thick" fill="none"/>
+<text x="160.0" y="80.6" class="lbl-b" text-anchor="middle">Liquid (L)</text>
+<text x="470.0" y="194.4" class="lbl-b" text-anchor="middle">Solid solution α</text>
+<text x="410.0" y="141.7" class="lbl-sm" text-anchor="middle">L + α</text>
+<line x1="250.0" y1="163.9" x2="300.0" y2="163.9" class="ln acc thick"/>
+<line x1="265.0" y1="193.9" x2="265.0" y2="275.0" class="ln thin dash"/>
+<circle cx="250.0" cy="163.9" r="3" class="solid"/>
+<circle cx="265.0" cy="163.9" r="3" class="solid"/>
+<circle cx="300.0" cy="163.9" r="3" class="solid"/>
+<line x1="90.0" y1="163.9" x2="250.0" y2="163.9" class="ln thin dash"/>
+<text x="83.0" y="167.9" class="lbl-sm" text-anchor="middle"></text>
+<text x="242.0" y="154.9" class="lbl-acc" text-anchor="end">C<tspan dy="4" class="lbl-sm">L</tspan></text>
+<text x="264.0" y="185.9" class="lbl-acc" text-anchor="middle">C<tspan dy="4" class="lbl-sm">0</tspan></text>
+<text x="310.0" y="185.9" class="lbl-acc" text-anchor="start">C<tspan dy="4" class="lbl-sm">α</tspan></text>
+<text x="265.0" y="293.0" class="lbl-sm" text-anchor="middle">35</text>
+<text x="236.0" y="309.0" class="lbl-sm" text-anchor="end">32</text>
+<text x="314.0" y="309.0" class="lbl-sm" text-anchor="start">42</text>
+<line x1="250.0" y1="197.9" x2="250.0" y2="275.0" class="ln thin dash"/>
+<line x1="300.0" y1="197.9" x2="300.0" y2="275.0" class="ln thin dash"/>
+<text x="340.0" y="333.0" class="lbl-sm" text-anchor="middle">Weight % Ni →</text>
+<text x="96.0" y="293.0" class="lbl-b" text-anchor="middle">Cu</text>
+<text x="586.0" y="293.0" class="lbl-b" text-anchor="middle">Ni</text>
+<text x="315.0" y="167.9" class="lbl-acc" text-anchor="start">← tie line at 1250 °C</text>
+</svg>
+<figcaption>Fig. 5.5 — Tie line (isotherm) at 1250 °C across the L + α field. C<sub>L</sub> = 32 % Ni, C<sub>α</sub> = 42 % Ni are read where the tie line meets the liquidus and solidus. The alloy C<sub>0</sub> = 35 % Ni lies between them.</figcaption>
+</figure>
+<div class="formula">\[ W_L = \frac{C_\alpha - C_0}{C_\alpha - C_L}, \qquad W_\alpha = \frac{C_0 - C_L}{C_\alpha - C_L}, \qquad W_L + W_\alpha = 1 \]<p class="where">Each phase fraction is the length of the opposite arm divided by the full tie line.</p></div>
+<aside class="tip"><b>Memory trick.</b> Use the arm on the <i>other</i> side of the alloy point.</aside>
+<p><b>Example 1 (Cu–Ni, Fig. 5.5).</b> An alloy of 35 % Ni at 1250 °C has C<sub>L</sub> = 32 % and C<sub>α</sub> = 42 %. W<sub>L</sub> = (42 − 35)/(42 − 32) = 0.70 and W<sub>α</sub> = (35 − 32)/(42 − 32) = 0.30. So 70 % liquid and 30 % solid α.</p>
+<p><b>Example 2 (0.4 % C steel just below 727 °C).</b> Ferrite 0.022 % C, pearlite 0.8 % C. W<sub>α</sub> = (0.8 − 0.4)/(0.8 − 0.022) = 0.514; pearlite = 0.486.</p>
+<p><b>Example 3 (1.2 % C steel, just below 727 °C).</b> Proeutectoid cementite = (1.2 − 0.8)/(6.67 − 0.8) = 6.8 %.</p>
+<p>Try the widget: set a carbon content and temperature and watch the tie line and phase fractions.</p>
+<div class="widget" data-widget="lever-rule"></div>
+
+<h3 id="mse-u5-c-types">8. Types of phase diagrams</h3>
+<figure class="fig" id="mse-u5-f-types">
+<svg viewBox="0 0 700 530" role="img" aria-label="Four small phase diagrams: isomorphous, eutectic, peritectic and eutectoid">
+<defs><marker id="mse-u5-arw-types" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="55.0" y1="205.0" x2="335.0" y2="205.0" class="ln" marker-end="url(#mse-u5-arw-types)"/>
+<line x1="55.0" y1="205.0" x2="55.0" y2="49.0" class="ln" marker-end="url(#mse-u5-arw-types)"/>
+<path d="M55.0,77.5 C70.8,80.8 118.0,89.5 149.5,97.0 C181.0,104.5 214.8,115.8 244.0,122.5 C273.2,129.2 311.5,135.0 325.0,137.5" class="ln thick" fill="none"/>
+<path d="M55.0,77.5 C70.8,85.0 118.0,111.2 149.5,122.5 C181.0,133.8 214.8,142.5 244.0,145.0 C273.2,147.5 311.5,138.8 325.0,137.5" class="ln thick" fill="none"/>
+<text x="122.5" y="81.5" class="lbl-b" text-anchor="middle">L</text>
+<text x="257.5" y="179.0" class="lbl-b" text-anchor="middle">α</text>
+<text x="195.4" y="126.5" class="lbl-sm" text-anchor="middle">L + α</text>
+<text x="190.0" y="223.0" class="lbl-sm" text-anchor="middle">Composition →</text>
+<text x="190.0" y="38.0" class="lbl-b" text-anchor="middle">(a) Isomorphous</text>
+<text x="190.0" y="255.0" class="lbl-acc" text-anchor="middle">Complete solubility, no invariant line</text>
+<line x1="395.0" y1="205.0" x2="675.0" y2="205.0" class="ln" marker-end="url(#mse-u5-arw-types)"/>
+<line x1="395.0" y1="205.0" x2="395.0" y2="49.0" class="ln" marker-end="url(#mse-u5-arw-types)"/>
+<polyline points="395.0,77.5 530.0,152.5 665.0,92.5" class="ln thick" fill="none"/>
+<polyline points="395.0,77.5 422.0,152.5" class="ln thick" fill="none"/>
+<polyline points="665.0,92.5 638.0,152.5" class="ln thick" fill="none"/>
+<text x="530.0" y="111.5" class="lbl-b" text-anchor="middle">L</text>
+<text x="449.0" y="126.5" class="lbl-sm" text-anchor="middle">L+α</text>
+<text x="611.0" y="131.0" class="lbl-sm" text-anchor="middle">L+β</text>
+<polyline points="422.0,152.5 638.0,152.5" class="ln thick" fill="none"/>
+<polyline points="422.0,152.5 403.1,205.0" class="ln thick" fill="none"/>
+<polyline points="638.0,152.5 654.2,205.0" class="ln thick" fill="none"/>
+<text x="405.8" y="183.5" class="lbl-b" text-anchor="middle">α</text>
+<text x="651.5" y="183.5" class="lbl-b" text-anchor="middle">β</text>
+<text x="530.0" y="183.5" class="lbl-sm" text-anchor="middle">α + β</text>
+<circle cx="530.0" cy="152.5" r="3" class="solid"/>
+<text x="536.0" y="145.5" class="lbl-acc" text-anchor="start">E</text>
+<text x="530.0" y="223.0" class="lbl-sm" text-anchor="middle">Composition →</text>
+<text x="530.0" y="38.0" class="lbl-b" text-anchor="middle">(b) Eutectic</text>
+<text x="530.0" y="255.0" class="lbl-acc" text-anchor="middle">L → α + β  (cooling)</text>
+<line x1="55.0" y1="460.0" x2="335.0" y2="460.0" class="ln" marker-end="url(#mse-u5-arw-types)"/>
+<line x1="55.0" y1="460.0" x2="55.0" y2="304.0" class="ln" marker-end="url(#mse-u5-arw-types)"/>
+<polyline points="55.0,325.0 203.5,385.0 325.0,437.5" class="ln thick" fill="none"/>
+<polyline points="55.0,325.0 87.4,385.0" class="ln thick" fill="none"/>
+<polyline points="136.0,385.0 325.0,437.5" class="ln thick" fill="none"/>
+<polyline points="87.4,385.0 203.5,385.0" class="ln thick" fill="none"/>
+<polyline points="87.4,385.0 71.2,460.0" class="ln thick" fill="none"/>
+<polyline points="136.0,385.0 136.0,460.0" class="ln thick" fill="none"/>
+<text x="203.5" y="347.0" class="lbl-b" text-anchor="middle">L</text>
+<text x="98.2" y="356.0" class="lbl-sm" text-anchor="middle">L+α</text>
+<text x="60.4" y="426.5" class="lbl-b" text-anchor="middle">α</text>
+<text x="100.9" y="434.0" class="lbl-sm" text-anchor="middle">α+β</text>
+<text x="230.5" y="434.0" class="lbl-b" text-anchor="middle">β</text>
+<text x="222.4" y="407.0" class="lbl-sm" text-anchor="middle">L+β</text>
+<circle cx="203.5" cy="385.0" r="3" class="solid"/>
+<circle cx="136.0" cy="385.0" r="3" class="solid"/>
+<circle cx="87.4" cy="385.0" r="3" class="solid"/>
+<text x="222.4" y="378.0" class="lbl-acc" text-anchor="start">L</text>
+<text x="140.0" y="378.0" class="lbl-acc" text-anchor="start">β</text>
+<text x="84.4" y="378.0" class="lbl-acc" text-anchor="end">α</text>
+<text x="190.0" y="478.0" class="lbl-sm" text-anchor="middle">Composition →</text>
+<text x="190.0" y="293.0" class="lbl-b" text-anchor="middle">(c) Peritectic</text>
+<text x="190.0" y="510.0" class="lbl-acc" text-anchor="middle">L + α → β  (cooling)</text>
+<line x1="395.0" y1="460.0" x2="675.0" y2="460.0" class="ln" marker-end="url(#mse-u5-arw-types)"/>
+<line x1="395.0" y1="460.0" x2="395.0" y2="304.0" class="ln" marker-end="url(#mse-u5-arw-types)"/>
+<polyline points="395.0,340.0 530.0,400.0 665.0,355.0" class="ln thick" fill="none"/>
+<polyline points="395.0,340.0 422.0,400.0" class="ln thick" fill="none"/>
+<polyline points="665.0,355.0 638.0,400.0" class="ln thick" fill="none"/>
+<text x="530.0" y="362.0" class="lbl-b" text-anchor="middle">γ</text>
+<text x="449.0" y="386.0" class="lbl-sm" text-anchor="middle">α+γ</text>
+<text x="611.0" y="386.0" class="lbl-sm" text-anchor="middle">β+γ</text>
+<polyline points="422.0,400.0 638.0,400.0" class="ln thick" fill="none"/>
+<polyline points="422.0,400.0 403.1,460.0" class="ln thick" fill="none"/>
+<polyline points="638.0,400.0 654.2,460.0" class="ln thick" fill="none"/>
+<text x="405.8" y="431.0" class="lbl-b" text-anchor="middle">α</text>
+<text x="651.5" y="431.0" class="lbl-b" text-anchor="middle">β</text>
+<text x="530.0" y="431.0" class="lbl-sm" text-anchor="middle">α + β</text>
+<circle cx="530.0" cy="400.0" r="3" class="solid"/>
+<text x="536.0" y="393.0" class="lbl-acc" text-anchor="start">E</text>
+<text x="530.0" y="478.0" class="lbl-sm" text-anchor="middle">Composition →</text>
+<text x="530.0" y="293.0" class="lbl-b" text-anchor="middle">(d) Eutectoid</text>
+<text x="530.0" y="510.0" class="lbl-acc" text-anchor="middle">γ → α + β  (cooling, all solid)</text>
+</svg>
+<figcaption>Fig. 5.6 — Types of binary phase diagrams. Each invariant reaction occurs at one temperature (a horizontal line) and one composition, with F = 0.</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Type</th><th>Reaction on cooling</th><th>Example</th></tr></thead><tbody><tr><td>Isomorphous</td><td>L → α (complete solubility)</td><td>Cu–Ni, Ag–Au</td></tr><tr><td>Eutectic</td><td>L → α + β (liquid gives two solids)</td><td>Pb–Sn (183 °C); Fe–C at 1148 °C</td></tr><tr><td>Peritectic</td><td>L + α → β (liquid and solid give a new solid)</td><td>Fe–C at 1495 °C</td></tr><tr><td>Eutectoid</td><td>γ → α + β (one solid gives two solids)</td><td>Fe–C at 727 °C</td></tr></tbody></table></div>
+
+<h3 id="mse-u5-c-fec">9. The iron–carbon equilibrium diagram</h3>
+<p>The Fe–C (Fe–Fe₃C) diagram covers 0 to 6.67 % C, where the compound cementite (Fe₃C) forms. Below 2.11 % C the alloys are <b>steels</b>; above it they are <b>cast irons</b>.</p>
+<figure class="fig" id="mse-u5-f-fec">
+<svg viewBox="0 0 760 620" role="img" aria-label="Iron-carbon equilibrium diagram with all phase fields, invariant points and critical lines labelled">
+<defs><marker id="mse-u5-arw-fec" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="95.0" y1="460.0" x2="695.0" y2="460.0" class="ln" marker-end="url(#mse-u5-arw-fec)"/>
+<line x1="95.0" y1="460.0" x2="95.0" y2="18.0" class="ln" marker-end="url(#mse-u5-arw-fec)"/>
+<line x1="91.0" y1="460.0" x2="95.0" y2="460.0" class="ln thin"/>
+<text x="87.0" y="464.0" class="lbl-sm" text-anchor="end">0</text>
+<line x1="91.0" y1="352.5" x2="95.0" y2="352.5" class="ln thin"/>
+<text x="87.0" y="356.5" class="lbl-sm" text-anchor="end">400</text>
+<line x1="91.0" y1="245.0" x2="95.0" y2="245.0" class="ln thin"/>
+<text x="87.0" y="249.0" class="lbl-sm" text-anchor="end">800</text>
+<line x1="91.0" y1="137.5" x2="95.0" y2="137.5" class="ln thin"/>
+<text x="87.0" y="141.5" class="lbl-sm" text-anchor="end">1200</text>
+<line x1="91.0" y1="30.0" x2="95.0" y2="30.0" class="ln thin"/>
+<text x="87.0" y="34.0" class="lbl-sm" text-anchor="end">1600</text>
+<text x="20.0" y="245.0" class="lbl-b" text-anchor="middle" transform="rotate(-90 20.0 245.0)">Temperature (°C)</text>
+
+
+<line x1="675.0" y1="46.7" x2="681.0" y2="46.7" class="ln thin"/>
+<text x="684.0" y="42.7" class="lbl-sm" text-anchor="start">1538</text>
+<line x1="675.0" y1="58.2" x2="681.0" y2="58.2" class="ln thin"/>
+<text x="684.0" y="67.2" class="lbl-sm" text-anchor="start">1495</text>
+
+<text x="100.0" y="81.0" class="lbl-sm" text-anchor="start">1394</text>
+<line x1="675.0" y1="151.5" x2="681.0" y2="151.5" class="ln thin"/>
+<text x="684.0" y="155.5" class="lbl-sm" text-anchor="start">1148</text>
+
+<text x="100.0" y="209.0" class="lbl-sm" text-anchor="start">912</text><text x="236.0" y="246.0" class="lbl-sm" text-anchor="middle">γ + Fe₃C</text>
+<line x1="675.0" y1="264.6" x2="681.0" y2="264.6" class="ln thin"/>
+<text x="684.0" y="268.6" class="lbl-sm" text-anchor="start">727</text>
+<polyline points="95.0,46.7 141.1,58.2 468.9,151.5 675.0,130.2" class="ln thick" fill="none"/>
+<polyline points="95.0,46.7 102.8,58.2" class="ln thick" fill="none"/>
+<polyline points="102.8,58.2 141.1,58.2" class="ln thick" fill="none"/>
+<polyline points="102.8,58.2 95.0,85.4" class="ln thick" fill="none"/>
+<polyline points="95.0,85.4 109.8,58.2" class="ln thick" fill="none"/>
+<polyline points="109.8,58.2 278.5,151.5" class="ln thick" fill="none"/>
+<polyline points="278.5,151.5 468.9,151.5" class="ln thick" fill="none"/>
+<polyline points="468.9,151.5 675.0,151.5" class="ln thick" fill="none"/>
+<polyline points="95.0,214.9 164.6,264.6" class="ln thick" fill="none"/>
+<polyline points="95.0,214.9 96.9,264.6" class="ln thick" fill="none"/>
+<polyline points="96.9,264.6 675.0,264.6" class="ln thick" fill="none"/>
+<polyline points="164.6,264.6 278.5,151.5" class="ln thick" fill="none"/>
+<line x1="675.0" y1="460.0" x2="675.0" y2="130.2" class="ln thick"/>
+<line x1="96.9" y1="264.6" x2="95.4" y2="460.0" class="ln thick"/>
+<circle cx="141.1" cy="58.2" r="3" class="solid"/>
+<circle cx="109.8" cy="58.2" r="3" class="solid"/>
+<circle cx="102.8" cy="58.2" r="3" class="solid"/>
+<circle cx="278.5" cy="151.5" r="3" class="solid"/>
+<circle cx="468.9" cy="151.5" r="3" class="solid"/>
+<circle cx="164.6" cy="264.6" r="3" class="solid"/>
+<circle cx="96.9" cy="264.6" r="3" class="solid"/>
+<line x1="95.0" y1="460.0" x2="95.0" y2="465.0" class="ln thin"/>
+<text x="95.0" y="478.0" class="lbl-sm" text-anchor="middle">0</text>
+<line x1="164.6" y1="460.0" x2="164.6" y2="465.0" class="ln thin"/>
+<text x="164.6" y="478.0" class="lbl-sm" text-anchor="middle">0.8</text>
+<line x1="278.5" y1="460.0" x2="278.5" y2="465.0" class="ln thin"/>
+<text x="278.5" y="478.0" class="lbl-sm" text-anchor="middle">2.11</text>
+<line x1="468.9" y1="460.0" x2="468.9" y2="465.0" class="ln thin"/>
+<text x="468.9" y="478.0" class="lbl-sm" text-anchor="middle">4.3</text>
+<line x1="675.0" y1="460.0" x2="675.0" y2="465.0" class="ln thin"/>
+<text x="675.0" y="478.0" class="lbl-sm" text-anchor="middle">6.67</text>
+<line x1="164.6" y1="460.0" x2="164.6" y2="264.6" class="ln thin dash"/>
+<line x1="278.5" y1="460.0" x2="278.5" y2="151.5" class="ln thin dash"/>
+<line x1="468.9" y1="460.0" x2="468.9" y2="151.5" class="ln thin dash"/>
+<text x="382.0" y="79.7" class="lbl-b" text-anchor="middle">L (liquid)</text>
+<text x="216.7" y="100.7" class="lbl-sm" text-anchor="middle">L + γ</text>
+<text x="182.0" y="181.8" class="lbl-b" text-anchor="middle">γ (austenite)</text>
+<text x="408.0" y="211.4" class="lbl-b" text-anchor="middle">γ + Fe₃C</text>
+<text x="408.0" y="227.5" class="lbl-sm" text-anchor="middle">(ledeburite)</text>
+<text x="573.3" y="106.6" class="lbl-sm" text-anchor="middle">L + Fe₃C</text>
+<line x1="573.3" y1="107.9" x2="608.0" y2="138.8" class="ln thin"/>
+<text x="123.7" y="257.1" class="lbl-sm" text-anchor="middle">α+γ</text>
+<text x="129.8" y="329.6" class="lbl-sm" text-anchor="middle">α + P</text>
+<text x="225.4" y="324.2" class="lbl-sm" text-anchor="middle">P + Fe₃C</text>
+<text x="408.0" y="324.2" class="lbl-b" text-anchor="middle">Ledeburite</text>
+<text x="408.0" y="339.0" class="lbl-sm" text-anchor="middle">(P + Fe₃C)</text>
+<text x="73.0" y="52.8" class="lbl-sm" text-anchor="end">L+δ</text>
+<line x1="77.0" y1="48.8" x2="108.0" y2="52.8" class="ln thin"/>
+<text x="73.0" y="70.3" class="lbl-sm" text-anchor="end">δ</text>
+<line x1="77.0" y1="66.3" x2="97.6" y2="64.9" class="ln thin"/>
+<text x="73.0" y="93.1" class="lbl-sm" text-anchor="end">δ+γ</text>
+<line x1="77.0" y1="89.1" x2="99.3" y2="75.7" class="ln thin"/>
+<text x="73.0" y="302.8" class="lbl-b" text-anchor="end">α</text>
+<line x1="77.0" y1="298.8" x2="96.0" y2="298.8" class="ln thin"/>
+<text x="153.1" y="46.2" class="lbl-acc" text-anchor="start">Peritectic 1495 °C</text>
+<text x="476.9" y="167.5" class="lbl-acc" text-anchor="start">C: eutectic</text>
+<text x="476.9" y="182.5" class="lbl-acc" text-anchor="start">4.3 % C, 1148 °C</text>
+<text x="286.5" y="167.5" class="lbl-sm" text-anchor="start">E</text>
+<text x="174.6" y="280.6" class="lbl-acc" text-anchor="start">S: eutectoid</text>
+<text x="174.6" y="295.6" class="lbl-acc" text-anchor="start">0.8 % C</text>
+<text x="174.6" y="310.6" class="lbl-acc" text-anchor="start">727 °C</text>
+<text x="669.0" y="452.0" class="lbl-sm" text-anchor="end">Fe₃C</text>
+<text x="669.0" y="122.2" class="lbl-sm" text-anchor="end">D</text>
+<line x1="95.0" y1="486.0" x2="95.0" y2="522.0" class="ln thin dash"/>
+<line x1="164.6" y1="486.0" x2="164.6" y2="522.0" class="ln thin dash"/>
+<text x="129.8" y="500.0" class="lbl-sm" text-anchor="middle">Hypo-</text>
+<text x="129.8" y="515.0" class="lbl-sm" text-anchor="middle">eutectoid</text>
+<line x1="164.6" y1="486.0" x2="164.6" y2="522.0" class="ln thin dash"/>
+<line x1="278.5" y1="486.0" x2="278.5" y2="522.0" class="ln thin dash"/>
+<text x="221.5" y="500.0" class="lbl-sm" text-anchor="middle">Hyper-</text>
+<text x="221.5" y="515.0" class="lbl-sm" text-anchor="middle">eutectoid</text>
+<line x1="278.5" y1="486.0" x2="278.5" y2="522.0" class="ln thin dash"/>
+<line x1="468.9" y1="486.0" x2="468.9" y2="522.0" class="ln thin dash"/>
+<text x="373.7" y="500.0" class="lbl-sm" text-anchor="middle">Hypo-eutectic</text>
+<text x="373.7" y="515.0" class="lbl-sm" text-anchor="middle">cast iron</text>
+<line x1="468.9" y1="486.0" x2="468.9" y2="522.0" class="ln thin dash"/>
+<line x1="675.0" y1="486.0" x2="675.0" y2="522.0" class="ln thin dash"/>
+<text x="572.0" y="500.0" class="lbl-sm" text-anchor="middle">Hyper-eutectic</text>
+<text x="572.0" y="515.0" class="lbl-sm" text-anchor="middle">cast iron</text>
+<line x1="95.0" y1="536.0" x2="278.5" y2="536.0" class="ln acc" marker-end="url(#mse-u5-arw-fec)" marker-start="url(#mse-u5-arw-fec)"/>
+<text x="186.3" y="554.0" class="lbl-acc" text-anchor="middle">STEELS</text>
+<line x1="278.5" y1="536.0" x2="675.0" y2="536.0" class="ln acc2" marker-end="url(#mse-u5-arw-fec)" marker-start="url(#mse-u5-arw-fec)"/>
+<text x="477.6" y="554.0" class="lbl-acc" text-anchor="middle">WHITE CAST IRONS</text>
+<text x="385.0" y="612.0" class="lbl-b" text-anchor="middle">Carbon content (weight %) →</text>
+</svg>
+<figcaption>Fig. 5.7 — Iron–carbon (Fe–Fe₃C) equilibrium diagram. P = pearlite (α + Fe₃C). 912 °C and 1394 °C are the α↔γ and γ↔δ change points of pure iron (left axis). Points: peritectic 1495 °C (0.09, 0.17, 0.53 % C), eutectic C (4.3 % C, 1148 °C), eutectoid S (0.8 % C, 727 °C).</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Phase</th><th>Structure and carbon</th><th>Properties</th></tr></thead><tbody><tr><td>α ferrite</td><td>BCC; max 0.022 % C at 727 °C</td><td>Soft, ductile; magnetic below 768 °C</td></tr><tr><td>γ austenite</td><td>FCC; max 2.11 % C at 1148 °C</td><td>Ductile, non-magnetic; stable above 727 °C</td></tr><tr><td>δ ferrite</td><td>BCC; max 0.09 % C at 1495 °C</td><td>High-temperature ferrite</td></tr><tr><td>Cementite Fe₃C</td><td>Compound; 6.67 % C</td><td>Very hard, brittle</td></tr><tr><td>Pearlite</td><td>α + Fe₃C lamellae; 0.8 % C</td><td>Strong; forms at 727 °C</td></tr><tr><td>Ledeburite</td><td>γ + Fe₃C eutectic; 4.3 % C</td><td>Hard, brittle; forms at 1148 °C</td></tr></tbody></table></div>
+<aside class="note"><b>Teacher values.</b> Use 0.8 % C and 1148 °C (some books: 0.76 %, 1147 °C).</aside>
+<p><b>Three invariant reactions</b> (F = 0, horizontal lines):</p>
+<div class="formula">\[ \text{Peritectic (1495 °C):}\quad L_{0.53} + \delta_{0.09} \rightarrow \gamma_{0.17} \]</div>
+<div class="formula">\[ \text{Eutectic (1148 °C):}\quad L_{4.3} \rightarrow \gamma_{2.11} + \mathrm{Fe_3C}_{6.67}\ \text{(ledeburite)} \]</div>
+<div class="formula">\[ \text{Eutectoid (727 °C):}\quad \gamma_{0.8} \rightarrow \alpha_{0.022} + \mathrm{Fe_3C}_{6.67}\ \text{(pearlite)} \]</div>
+<p><b>Critical temperatures.</b> A₁ = 727 °C, the lower critical line. A₃ is the G–S line (912 → 727 °C). A<sub>cm</sub> is the S–E line (727 → 1148 °C). Above A₃ (hypo-eutectoid) or A<sub>cm</sub> (hyper-eutectoid) the steel is fully austenite. A₂ = 768 °C is the magnetic change of iron.</p>
+<figure class="fig" id="mse-u5-f-corner">
+<svg viewBox="0 0 700 420" role="img" aria-label="Enlarged steel corner of the Fe-C diagram showing A1, A3 and Acm lines">
+<defs><marker id="mse-u5-arw-corner" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="90.0" y1="355.0" x2="655.0" y2="355.0" class="ln" marker-end="url(#mse-u5-arw-corner)"/>
+<line x1="90.0" y1="355.0" x2="90.0" y2="15.0" class="ln" marker-end="url(#mse-u5-arw-corner)"/>
+<line x1="86.0" y1="355.0" x2="90.0" y2="355.0" class="ln thin"/>
+<text x="82.0" y="359.0" class="lbl-sm" text-anchor="end">600</text>
+<line x1="86.0" y1="300.0" x2="90.0" y2="300.0" class="ln thin"/>
+<text x="82.0" y="304.0" class="lbl-sm" text-anchor="end">700</text>
+<line x1="86.0" y1="245.0" x2="90.0" y2="245.0" class="ln thin"/>
+<text x="82.0" y="249.0" class="lbl-sm" text-anchor="end">800</text>
+<line x1="86.0" y1="190.0" x2="90.0" y2="190.0" class="ln thin"/>
+<text x="82.0" y="194.0" class="lbl-sm" text-anchor="end">900</text>
+<line x1="86.0" y1="135.0" x2="90.0" y2="135.0" class="ln thin"/>
+<text x="82.0" y="139.0" class="lbl-sm" text-anchor="end">1000</text>
+<line x1="86.0" y1="80.0" x2="90.0" y2="80.0" class="ln thin"/>
+<text x="82.0" y="84.0" class="lbl-sm" text-anchor="end">1100</text>
+<line x1="86.0" y1="25.0" x2="90.0" y2="25.0" class="ln thin"/>
+<text x="82.0" y="29.0" class="lbl-sm" text-anchor="end">1200</text>
+<text x="20.0" y="190.0" class="lbl-b" text-anchor="middle" transform="rotate(-90 20.0 190.0)">Temperature (°C)</text>
+<line x1="90.0" y1="183.4" x2="277.8" y2="285.1" class="ln thick"/>
+<line x1="90.0" y1="183.4" x2="95.2" y2="285.1" class="ln thick"/>
+<line x1="277.8" y1="285.1" x2="585.4" y2="53.6" class="ln thick"/>
+<line x1="95.2" y1="285.1" x2="630.0" y2="285.1" class="ln thick"/>
+<line x1="585.4" y1="53.6" x2="630.0" y2="53.6" class="ln thick"/>
+<line x1="95.2" y1="285.1" x2="92.8" y2="355.0" class="ln thick"/>
+<circle cx="277.8" cy="285.1" r="3" class="solid"/>
+<circle cx="95.2" cy="285.1" r="3" class="solid"/>
+<line x1="277.8" y1="355.0" x2="277.8" y2="360.0" class="ln thin"/>
+<text x="277.8" y="373.0" class="lbl-sm" text-anchor="middle">0.8</text>
+<line x1="585.4" y1="355.0" x2="585.4" y2="360.0" class="ln thin"/>
+<text x="585.4" y="373.0" class="lbl-sm" text-anchor="middle">2.11</text>
+<text x="90.0" y="373.0" class="lbl-sm" text-anchor="middle">0</text>
+<line x1="277.8" y1="355.0" x2="277.8" y2="285.1" class="ln thin dash"/>
+<text x="430.4" y="139.0" class="lbl-b" text-anchor="middle">γ  (austenite)</text>
+<text x="153.4" y="258.4" class="lbl" text-anchor="middle">α + γ</text>
+<text x="465.7" y="249.0" class="lbl" text-anchor="middle">γ + Fe₃C</text>
+<text x="183.9" y="323.2" class="lbl" text-anchor="middle">α + pearlite</text>
+<text x="442.2" y="323.2" class="lbl" text-anchor="middle">pearlite + Fe₃C</text>
+<text x="106.4" y="322.0" class="lbl" text-anchor="middle"></text>
+<text x="207.4" y="181.8" class="lbl-acc" text-anchor="start">A<tspan dy="4" class="lbl-sm">3</tspan>  (γ → α starts)</text>
+<line x1="203.4" y1="177.8" x2="160.4" y2="219.6" class="ln thin acc"/>
+<text x="634.0" y="289.1" class="lbl-acc" text-anchor="start">A₁</text>
+<text x="484.3" y="163.5" class="lbl-acc" text-anchor="start">A<tspan dy="4" class="lbl-sm">cm</tspan>  (γ → Fe₃C starts)</text>
+<line x1="480.3" y1="167.5" x2="430.4" y2="196.6" class="ln thin acc"/>
+<text x="97.2" y="275.1" class="lbl-sm" text-anchor="start">P</text>
+<text x="285.8" y="299.1" class="lbl-sm" text-anchor="start">S</text>
+<text x="577.4" y="45.6" class="lbl-sm" text-anchor="end">E</text>
+<text x="68.0" y="331.5" class="lbl-b" text-anchor="end">α</text>
+<line x1="72.0" y1="327.5" x2="93.8" y2="327.5" class="ln thin"/>
+<text x="360.0" y="403.0" class="lbl-b" text-anchor="middle">Carbon content (weight %) →</text>
+</svg>
+<figcaption>Fig. 5.8 — Steel corner of the Fe–C diagram (enlarged). A₁ = 727 °C (eutectoid line), A₃ = G–S line (912 °C at 0 % C to 727 °C at 0.8 % C), A<sub>cm</sub> = S–E line (727 °C at 0.8 % C to 1148 °C at 2.11 % C).</figcaption>
+</figure>
+
+<h3 id="mse-u5-c-micro">10. Microstructure of slowly cooled steels</h3>
+<ul>
+<li><b>Hypo-eutectoid (below 0.8 % C):</b> ferrite forms on austenite grain boundaries below A₃. The rest becomes pearlite at 727 °C. Result: ferrite + pearlite.</li>
+<li><b>Eutectoid (0.8 % C):</b> all austenite becomes pearlite at 727 °C.</li>
+<li><b>Hyper-eutectoid (0.8–2.11 % C):</b> cementite forms on grain boundaries below A<sub>cm</sub>. The rest becomes pearlite. Result: pearlite + cementite network (brittle).</li>
+</ul>
+<figure class="fig" id="mse-u5-f-micro">
+<svg viewBox="0 0 700 280" role="img" aria-label="Three microstructure sketches: hypo-eutectoid steel (ferrite and pearlite), eutectoid steel (all pearlite), hyper-eutectoid steel (pearlite with cementite network)">
+<defs><marker id="mse-u5-arw-micro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker><clipPath id="mse-u5-clip-hypo"><circle cx="115" cy="110" r="80"/></clipPath><clipPath id="mse-u5-clip-eut"><circle cx="350" cy="110" r="80"/></clipPath><clipPath id="mse-u5-clip-hyp"><circle cx="585" cy="110" r="80"/></clipPath></defs>
+<g clip-path="url(#mse-u5-clip-hypo)"><polygon points="81.8,49.0 65.4,58.5 48.9,49.0 48.9,30.0 65.4,20.5 81.8,30.0" class="ln thin"/><polygon points="114.7,49.0 98.3,58.5 81.8,49.0 81.8,30.0 98.3,20.5 114.7,30.0" class="ln thin"/><polygon points="147.6,49.0 131.2,58.5 114.7,49.0 114.7,30.0 131.2,20.5 147.6,30.0" class="ln thin fill-hatch"/><polygon points="180.5,49.0 164.1,58.5 147.6,49.0 147.6,30.0 164.1,20.5 180.5,30.0" class="ln thin"/><polygon points="65.4,77.5 48.9,87.0 32.5,77.5 32.5,58.5 48.9,49.0 65.4,58.5" class="ln thin fill-hatch"/><polygon points="98.3,77.5 81.8,87.0 65.4,77.5 65.4,58.5 81.8,49.0 98.3,58.5" class="ln thin"/><polygon points="131.2,77.5 114.7,87.0 98.3,77.5 98.3,58.5 114.7,49.0 131.2,58.5" class="ln thin"/><polygon points="164.1,77.5 147.6,87.0 131.2,77.5 131.2,58.5 147.6,49.0 164.1,58.5" class="ln thin fill-hatch"/><polygon points="197.0,77.5 180.5,87.0 164.1,77.5 164.1,58.5 180.5,49.0 197.0,58.5" class="ln thin"/><polygon points="48.9,106.0 32.5,115.5 16.0,106.0 16.0,87.0 32.5,77.5 48.9,87.0" class="ln thin"/><polygon points="81.8,106.0 65.4,115.5 48.9,106.0 48.9,87.0 65.4,77.5 81.8,87.0" class="ln thin"/><polygon points="114.7,106.0 98.3,115.5 81.8,106.0 81.8,87.0 98.3,77.5 114.7,87.0" class="ln thin"/><polygon points="147.6,106.0 131.2,115.5 114.7,106.0 114.7,87.0 131.2,77.5 147.6,87.0" class="ln thin"/><polygon points="180.5,106.0 164.1,115.5 147.6,106.0 147.6,87.0 164.1,77.5 180.5,87.0" class="ln thin fill-hatch"/><polygon points="213.5,106.0 197.0,115.5 180.5,106.0 180.5,87.0 197.0,77.5 213.5,87.0" class="ln thin"/><polygon points="65.4,134.5 48.9,144.0 32.5,134.5 32.5,115.5 48.9,106.0 65.4,115.5" class="ln thin"/><polygon points="98.3,134.5 81.8,144.0 65.4,134.5 65.4,115.5 81.8,106.0 98.3,115.5" class="ln thin fill-hatch"/><polygon points="131.2,134.5 114.7,144.0 98.3,134.5 98.3,115.5 114.7,106.0 131.2,115.5" class="ln thin fill-hatch"/><polygon points="164.1,134.5 147.6,144.0 131.2,134.5 131.2,115.5 147.6,106.0 164.1,115.5" class="ln thin fill-hatch"/><polygon points="197.0,134.5 180.5,144.0 164.1,134.5 164.1,115.5 180.5,106.0 197.0,115.5" class="ln thin"/><polygon points="81.8,163.0 65.4,172.5 48.9,163.0 48.9,144.0 65.4,134.5 81.8,144.0" class="ln thin fill-hatch"/><polygon points="114.7,163.0 98.3,172.5 81.8,163.0 81.8,144.0 98.3,134.5 114.7,144.0" class="ln thin"/><polygon points="147.6,163.0 131.2,172.5 114.7,163.0 114.7,144.0 131.2,134.5 147.6,144.0" class="ln thin fill-hatch"/><polygon points="180.5,163.0 164.1,172.5 147.6,163.0 147.6,144.0 164.1,134.5 180.5,144.0" class="ln thin"/><polygon points="213.5,163.0 197.0,172.5 180.5,163.0 180.5,144.0 197.0,134.5 213.5,144.0" class="ln thin"/><polygon points="98.3,191.5 81.8,201.0 65.4,191.5 65.4,172.5 81.8,163.0 98.3,172.5" class="ln thin"/><polygon points="131.2,191.5 114.7,201.0 98.3,191.5 98.3,172.5 114.7,163.0 131.2,172.5" class="ln thin"/><polygon points="164.1,191.5 147.6,201.0 131.2,191.5 131.2,172.5 147.6,163.0 164.1,172.5" class="ln thin fill-hatch"/></g>
+<circle cx="115.0" cy="110.0" r="80" class="ln"/>
+<text x="115.0" y="218.0" class="lbl-b" text-anchor="middle">Hypo-eutectoid (0.4 % C)</text>
+<text x="115.0" y="236.0" class="lbl-sm" text-anchor="middle">plain = ferrite, hatched = pearlite</text>
+<text x="115.0" y="256.0" class="lbl-sm" text-anchor="middle">grain boundaries: α + pearlite</text>
+<g clip-path="url(#mse-u5-clip-eut)"><polygon points="316.8,49.0 300.4,58.5 283.9,49.0 283.9,30.0 300.4,20.5 316.8,30.0" class="ln thin fill-hatch"/><polygon points="349.7,49.0 333.3,58.5 316.8,49.0 316.8,30.0 333.3,20.5 349.7,30.0" class="ln thin fill-hatch"/><polygon points="382.6,49.0 366.2,58.5 349.7,49.0 349.7,30.0 366.2,20.5 382.6,30.0" class="ln thin fill-hatch"/><polygon points="415.5,49.0 399.1,58.5 382.6,49.0 382.6,30.0 399.1,20.5 415.5,30.0" class="ln thin fill-hatch"/><polygon points="300.4,77.5 283.9,87.0 267.5,77.5 267.5,58.5 283.9,49.0 300.4,58.5" class="ln thin fill-hatch"/><polygon points="333.3,77.5 316.8,87.0 300.4,77.5 300.4,58.5 316.8,49.0 333.3,58.5" class="ln thin fill-hatch"/><polygon points="366.2,77.5 349.7,87.0 333.3,77.5 333.3,58.5 349.7,49.0 366.2,58.5" class="ln thin fill-hatch"/><polygon points="399.1,77.5 382.6,87.0 366.2,77.5 366.2,58.5 382.6,49.0 399.1,58.5" class="ln thin fill-hatch"/><polygon points="432.0,77.5 415.5,87.0 399.1,77.5 399.1,58.5 415.5,49.0 432.0,58.5" class="ln thin fill-hatch"/><polygon points="283.9,106.0 267.5,115.5 251.0,106.0 251.0,87.0 267.5,77.5 283.9,87.0" class="ln thin fill-hatch"/><polygon points="316.8,106.0 300.4,115.5 283.9,106.0 283.9,87.0 300.4,77.5 316.8,87.0" class="ln thin fill-hatch"/><polygon points="349.7,106.0 333.3,115.5 316.8,106.0 316.8,87.0 333.3,77.5 349.7,87.0" class="ln thin fill-hatch"/><polygon points="382.6,106.0 366.2,115.5 349.7,106.0 349.7,87.0 366.2,77.5 382.6,87.0" class="ln thin fill-hatch"/><polygon points="415.5,106.0 399.1,115.5 382.6,106.0 382.6,87.0 399.1,77.5 415.5,87.0" class="ln thin fill-hatch"/><polygon points="448.5,106.0 432.0,115.5 415.5,106.0 415.5,87.0 432.0,77.5 448.5,87.0" class="ln thin fill-hatch"/><polygon points="300.4,134.5 283.9,144.0 267.5,134.5 267.5,115.5 283.9,106.0 300.4,115.5" class="ln thin fill-hatch"/><polygon points="333.3,134.5 316.8,144.0 300.4,134.5 300.4,115.5 316.8,106.0 333.3,115.5" class="ln thin fill-hatch"/><polygon points="366.2,134.5 349.7,144.0 333.3,134.5 333.3,115.5 349.7,106.0 366.2,115.5" class="ln thin fill-hatch"/><polygon points="399.1,134.5 382.6,144.0 366.2,134.5 366.2,115.5 382.6,106.0 399.1,115.5" class="ln thin fill-hatch"/><polygon points="432.0,134.5 415.5,144.0 399.1,134.5 399.1,115.5 415.5,106.0 432.0,115.5" class="ln thin fill-hatch"/><polygon points="316.8,163.0 300.4,172.5 283.9,163.0 283.9,144.0 300.4,134.5 316.8,144.0" class="ln thin fill-hatch"/><polygon points="349.7,163.0 333.3,172.5 316.8,163.0 316.8,144.0 333.3,134.5 349.7,144.0" class="ln thin fill-hatch"/><polygon points="382.6,163.0 366.2,172.5 349.7,163.0 349.7,144.0 366.2,134.5 382.6,144.0" class="ln thin fill-hatch"/><polygon points="415.5,163.0 399.1,172.5 382.6,163.0 382.6,144.0 399.1,134.5 415.5,144.0" class="ln thin fill-hatch"/><polygon points="448.5,163.0 432.0,172.5 415.5,163.0 415.5,144.0 432.0,134.5 448.5,144.0" class="ln thin fill-hatch"/><polygon points="333.3,191.5 316.8,201.0 300.4,191.5 300.4,172.5 316.8,163.0 333.3,172.5" class="ln thin fill-hatch"/><polygon points="366.2,191.5 349.7,201.0 333.3,191.5 333.3,172.5 349.7,163.0 366.2,172.5" class="ln thin fill-hatch"/><polygon points="399.1,191.5 382.6,201.0 366.2,191.5 366.2,172.5 382.6,163.0 399.1,172.5" class="ln thin fill-hatch"/></g>
+<circle cx="350.0" cy="110.0" r="80" class="ln"/>
+<text x="350.0" y="218.0" class="lbl-b" text-anchor="middle">Eutectoid (0.8 % C)</text>
+<text x="350.0" y="236.0" class="lbl-sm" text-anchor="middle">100 % pearlite</text>
+<text x="350.0" y="256.0" class="lbl-sm" text-anchor="middle">lamellae of α and Fe₃C</text>
+<g clip-path="url(#mse-u5-clip-hyp)"><polygon points="551.8,49.0 535.4,58.5 518.9,49.0 518.9,30.0 535.4,20.5 551.8,30.0" class="ln thick fill-hatch"/><polygon points="584.7,49.0 568.3,58.5 551.8,49.0 551.8,30.0 568.3,20.5 584.7,30.0" class="ln thick fill-hatch"/><polygon points="617.6,49.0 601.2,58.5 584.7,49.0 584.7,30.0 601.2,20.5 617.6,30.0" class="ln thick fill-hatch"/><polygon points="650.5,49.0 634.1,58.5 617.6,49.0 617.6,30.0 634.1,20.5 650.5,30.0" class="ln thick fill-hatch"/><polygon points="535.4,77.5 518.9,87.0 502.5,77.5 502.5,58.5 518.9,49.0 535.4,58.5" class="ln thick fill-hatch"/><polygon points="568.3,77.5 551.8,87.0 535.4,77.5 535.4,58.5 551.8,49.0 568.3,58.5" class="ln thick fill-hatch"/><polygon points="601.2,77.5 584.7,87.0 568.3,77.5 568.3,58.5 584.7,49.0 601.2,58.5" class="ln thick fill-hatch"/><polygon points="634.1,77.5 617.6,87.0 601.2,77.5 601.2,58.5 617.6,49.0 634.1,58.5" class="ln thick fill-hatch"/><polygon points="667.0,77.5 650.5,87.0 634.1,77.5 634.1,58.5 650.5,49.0 667.0,58.5" class="ln thick fill-hatch"/><polygon points="518.9,106.0 502.5,115.5 486.0,106.0 486.0,87.0 502.5,77.5 518.9,87.0" class="ln thick fill-hatch"/><polygon points="551.8,106.0 535.4,115.5 518.9,106.0 518.9,87.0 535.4,77.5 551.8,87.0" class="ln thick fill-hatch"/><polygon points="584.7,106.0 568.3,115.5 551.8,106.0 551.8,87.0 568.3,77.5 584.7,87.0" class="ln thick fill-hatch"/><polygon points="617.6,106.0 601.2,115.5 584.7,106.0 584.7,87.0 601.2,77.5 617.6,87.0" class="ln thick fill-hatch"/><polygon points="650.5,106.0 634.1,115.5 617.6,106.0 617.6,87.0 634.1,77.5 650.5,87.0" class="ln thick fill-hatch"/><polygon points="683.5,106.0 667.0,115.5 650.5,106.0 650.5,87.0 667.0,77.5 683.5,87.0" class="ln thick fill-hatch"/><polygon points="535.4,134.5 518.9,144.0 502.5,134.5 502.5,115.5 518.9,106.0 535.4,115.5" class="ln thick fill-hatch"/><polygon points="568.3,134.5 551.8,144.0 535.4,134.5 535.4,115.5 551.8,106.0 568.3,115.5" class="ln thick fill-hatch"/><polygon points="601.2,134.5 584.7,144.0 568.3,134.5 568.3,115.5 584.7,106.0 601.2,115.5" class="ln thick fill-hatch"/><polygon points="634.1,134.5 617.6,144.0 601.2,134.5 601.2,115.5 617.6,106.0 634.1,115.5" class="ln thick fill-hatch"/><polygon points="667.0,134.5 650.5,144.0 634.1,134.5 634.1,115.5 650.5,106.0 667.0,115.5" class="ln thick fill-hatch"/><polygon points="551.8,163.0 535.4,172.5 518.9,163.0 518.9,144.0 535.4,134.5 551.8,144.0" class="ln thick fill-hatch"/><polygon points="584.7,163.0 568.3,172.5 551.8,163.0 551.8,144.0 568.3,134.5 584.7,144.0" class="ln thick fill-hatch"/><polygon points="617.6,163.0 601.2,172.5 584.7,163.0 584.7,144.0 601.2,134.5 617.6,144.0" class="ln thick fill-hatch"/><polygon points="650.5,163.0 634.1,172.5 617.6,163.0 617.6,144.0 634.1,134.5 650.5,144.0" class="ln thick fill-hatch"/><polygon points="683.5,163.0 667.0,172.5 650.5,163.0 650.5,144.0 667.0,134.5 683.5,144.0" class="ln thick fill-hatch"/><polygon points="568.3,191.5 551.8,201.0 535.4,191.5 535.4,172.5 551.8,163.0 568.3,172.5" class="ln thick fill-hatch"/><polygon points="601.2,191.5 584.7,201.0 568.3,191.5 568.3,172.5 584.7,163.0 601.2,172.5" class="ln thick fill-hatch"/><polygon points="634.1,191.5 617.6,201.0 601.2,191.5 601.2,172.5 617.6,163.0 634.1,172.5" class="ln thick fill-hatch"/></g>
+<circle cx="585.0" cy="110.0" r="80" class="ln"/>
+<text x="585.0" y="218.0" class="lbl-b" text-anchor="middle">Hyper-eutectoid (1.2 % C)</text>
+<text x="585.0" y="236.0" class="lbl-sm" text-anchor="middle">pearlite + cementite network</text>
+<text x="585.0" y="256.0" class="lbl-sm" text-anchor="middle">Fe₃C (thick lines) on boundaries</text>
+<text x="350.0" y="18.0" class="lbl-sm" text-anchor="middle">Hatched grains = pearlite; plain grains = ferrite; thick lines = cementite</text>
+</svg>
+<figcaption>Fig. 5.9 — Microstructure of slowly cooled steels at room temperature (schematic, × 100–500). Pearlite is shown hatched.</figcaption>
+</figure>
+<figure class="photo"><img src="img/mse-u5-pearlite.jpg" alt="Scanning electron micrograph of pearlite showing alternate thin plates of ferrite and cementite in several grains" width="944" height="737" loading="lazy"><figcaption>Pearlite under the scanning electron microscope: alternate plates of ferrite (soft) and cementite (hard) in each grain. <span class="credit">Photo: Michelshock · Public domain · Wikimedia Commons</span></figcaption></figure>
+<figure class="photo"><img src="img/mse-u5-ferrite-pearlite.jpg" alt="Micrograph of low-carbon steel with grey ferrite grains and darker pearlite regions" width="1000" height="759" loading="lazy"><figcaption>Hypo-eutectoid steel (ASTM A285): ferrite grains with pearlite between them. Scale bar 10 µm. <span class="credit">Photo: A. J. Duncan et al. (NIST/US DOE) · Public domain · Wikimedia Commons</span></figcaption></figure>
+<p><b>Cast irons.</b> Hypo-eutectic: primary austenite + ledeburite. Eutectic (4.3 % C): all ledeburite. Hyper-eutectic: primary cementite + ledeburite.</p>
+<figure class="photo"><img src="img/mse-u5-ledeburite.jpg" alt="Micrograph of white cast iron showing white cementite and dark transformed ledeburite dendrites" width="1000" height="741" loading="lazy"><figcaption>White cast iron: ledeburite (eutectic of austenite, now pearlite, and cementite) with white cementite. <span class="credit">Photo: Eisenbeisser · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+
+<h3 id="mse-u5-c-alloy">11. Effect of alloying elements; ferrite and austenite stabilisers</h3>
+<p>Alloying elements dissolve in ferrite and austenite or form carbides. They change the critical temperatures and the eutectoid composition.</p>
+<figure class="fig" id="mse-u5-f-alloy">
+<svg viewBox="0 0 700 290" role="img" aria-label="Effect of alloying element on gamma field: open gamma field for austenite stabiliser and closed gamma loop for ferrite stabiliser">
+<defs><marker id="mse-u5-arw-alloy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="215.0" x2="320.0" y2="215.0" class="ln" marker-end="url(#mse-u5-arw-alloy)"/>
+<line x1="60.0" y1="215.0" x2="60.0" y2="37.0" class="ln" marker-end="url(#mse-u5-arw-alloy)"/>
+<text x="185.0" y="251.0" class="lbl-sm" text-anchor="middle">% alloying element →</text>
+<line x1="56.0" y1="162.0" x2="60.0" y2="162.0" class="ln thin"/>
+<text x="53.0" y="166.0" class="lbl-sm" text-anchor="end">912</text>
+<line x1="56.0" y1="80.0" x2="60.0" y2="80.0" class="ln thin"/>
+<text x="53.0" y="84.0" class="lbl-sm" text-anchor="end">1394</text>
+<path d="M60.0,162.0 C76.7,165.1 126.7,174.7 160.0,181.0 C193.3,187.3 243.3,196.6 260.0,199.7" class="ln thick" fill="none"/>
+<path d="M60.0,80.0 C76.7,79.0 126.7,76.1 160.0,73.9 C193.3,71.7 243.3,68.2 260.0,67.1" class="ln thick" fill="none"/>
+<text x="172.5" y="130.0" class="lbl-b" text-anchor="middle">γ</text>
+<text x="90.0" y="198.0" class="lbl-b" text-anchor="middle">α</text>
+<text x="90.0" y="58.6" class="lbl-b" text-anchor="middle">δ</text>
+<text x="185.0" y="22.0" class="lbl-b" text-anchor="middle">(a) Austenite stabiliser (Ni, Mn, Co, Cu, C, N)</text>
+<text x="185.0" y="269.0" class="lbl-acc" text-anchor="middle">γ field widens: A₃ falls, A₄ rises</text>
+<line x1="390.0" y1="215.0" x2="650.0" y2="215.0" class="ln" marker-end="url(#mse-u5-arw-alloy)"/>
+<line x1="390.0" y1="215.0" x2="390.0" y2="37.0" class="ln" marker-end="url(#mse-u5-arw-alloy)"/>
+<text x="515.0" y="251.0" class="lbl-sm" text-anchor="middle">% alloying element →</text>
+<line x1="386.0" y1="162.0" x2="390.0" y2="162.0" class="ln thin"/>
+<text x="383.0" y="166.0" class="lbl-sm" text-anchor="end">912</text>
+<line x1="386.0" y1="80.0" x2="390.0" y2="80.0" class="ln thin"/>
+<text x="383.0" y="84.0" class="lbl-sm" text-anchor="end">1394</text>
+<path d="M390.0,162.0 C400.4,159.5 433.8,152.3 452.5,147.0 C471.2,141.7 487.9,135.1 502.5,130.0 C517.1,124.9 531.7,120.7 540.0,116.4 C548.3,112.2 550.4,106.5 552.5,104.5" class="ln thick" fill="none"/>
+<path d="M390.0,80.0 C400.4,82.7 433.8,91.6 452.5,96.0 C471.2,100.4 487.9,103.9 502.5,106.2 C517.1,108.5 531.7,109.9 540.0,109.6 C548.3,109.3 550.4,105.3 552.5,104.5" class="ln thick" fill="none"/>
+<text x="445.0" y="121.5" class="lbl-b" text-anchor="middle">γ</text>
+<text x="595.0" y="130.0" class="lbl-b" text-anchor="middle">α (= δ)</text>
+<text x="515.0" y="22.0" class="lbl-b" text-anchor="middle">(b) Ferrite stabiliser (Cr, Mo, W, V, Si, Al)</text>
+<text x="515.0" y="269.0" class="lbl-acc" text-anchor="middle">γ field closes (γ loop): A₃ rises, A₄ falls</text>
+</svg>
+<figcaption>Fig. 5.10 — Effect of alloying elements on the iron phase diagram (schematic). The γ field is the austenite field.</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Group</th><th>Elements</th><th>Effect on Fe–C diagram</th></tr></thead><tbody><tr><td>Austenite stabilisers</td><td>Ni, Mn, Co, Cu (and C, N)</td><td>Widen the γ field. Lower A₃ and A₁. Enough Ni gives austenite at room temperature (18-8 stainless).</td></tr><tr><td>Ferrite stabilisers</td><td>Cr, Mo, W, V, Si, Al, Ti</td><td>Close the γ loop. Raise A₁ and A₃. High Cr gives fully ferritic steel.</td></tr></tbody></table></div>
+
+
+<h3 id="mse-u5-c-ttt">12. TTT diagram and CCT diagram</h3>
+<p>The TTT (time–temperature–transformation) diagram shows how fast austenite transforms at constant (isothermal) temperature. The left C-curve is the start and the right curve the finish. Above the nose (about 550 °C) the product is pearlite; below it, bainite; below M<sub>s</sub>, martensite.</p>
+<figure class="fig" id="mse-u5-f-tttE">
+<svg viewBox="0 0 700 400" role="img" aria-label="TTT diagram of eutectoid steel with pearlite, bainite and martensite regions">
+<defs><marker id="mse-u5-arw-tttE" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="85.0" y1="345.0" x2="619.0" y2="345.0" class="ln" marker-end="url(#mse-u5-arw-tttE)"/>
+<line x1="85.0" y1="345.0" x2="85.0" y2="15.0" class="ln" marker-end="url(#mse-u5-arw-tttE)"/>
+<line x1="81.0" y1="345.0" x2="85.0" y2="345.0" class="ln thin"/>
+<text x="78.0" y="349.0" class="lbl-sm" text-anchor="end">0</text>
+<line x1="81.0" y1="265.0" x2="85.0" y2="265.0" class="ln thin"/>
+<text x="78.0" y="269.0" class="lbl-sm" text-anchor="end">200</text>
+<line x1="81.0" y1="185.0" x2="85.0" y2="185.0" class="ln thin"/>
+<text x="78.0" y="189.0" class="lbl-sm" text-anchor="end">400</text>
+<line x1="81.0" y1="105.0" x2="85.0" y2="105.0" class="ln thin"/>
+<text x="78.0" y="109.0" class="lbl-sm" text-anchor="end">600</text>
+<line x1="81.0" y1="25.0" x2="85.0" y2="25.0" class="ln thin"/>
+<text x="78.0" y="29.0" class="lbl-sm" text-anchor="end">800</text>
+<line x1="128.3" y1="345.0" x2="128.3" y2="349.0" class="ln thin"/>
+<text x="128.3" y="362.0" class="lbl-sm" text-anchor="middle">1</text>
+<line x1="215.0" y1="345.0" x2="215.0" y2="349.0" class="ln thin"/>
+<text x="215.0" y="362.0" class="lbl-sm" text-anchor="middle">10</text>
+<line x1="301.7" y1="345.0" x2="301.7" y2="349.0" class="ln thin"/>
+<text x="301.7" y="362.0" class="lbl-sm" text-anchor="middle">10²</text>
+<line x1="388.3" y1="345.0" x2="388.3" y2="349.0" class="ln thin"/>
+<text x="388.3" y="362.0" class="lbl-sm" text-anchor="middle">10³</text>
+<line x1="475.0" y1="345.0" x2="475.0" y2="349.0" class="ln thin"/>
+<text x="475.0" y="362.0" class="lbl-sm" text-anchor="middle">10⁴</text>
+<line x1="561.7" y1="345.0" x2="561.7" y2="349.0" class="ln thin"/>
+<text x="561.7" y="362.0" class="lbl-sm" text-anchor="middle">10⁵</text>
+<text x="345.0" y="381.0" class="lbl-sm" text-anchor="middle">Time (s), log scale →</text>
+<text x="43.0" y="185.0" class="lbl-sm" text-anchor="middle" transform="rotate(-90 43.0 185.0)">Temperature (°C)</text>
+<line x1="85.0" y1="54.2" x2="605.0" y2="54.2" class="ln acc thick"/>
+<text x="611.0" y="58.2" class="lbl-acc" text-anchor="start">A₁</text>
+<path d="M509.7,57.0 C492.3,60.7 440.3,71.7 405.7,79.0 C371.0,86.3 334.9,94.3 301.7,101.0 C268.4,107.7 232.3,114.3 206.3,119.0 C180.3,123.7 152.2,124.0 145.7,129.0 C139.2,134.0 152.9,141.7 167.3,149.0 C181.8,156.3 207.1,164.3 232.3,173.0 C257.6,181.7 291.6,192.3 319.0,201.0 C346.4,209.7 375.3,217.0 397.0,225.0 C418.7,233.0 440.3,245.0 449.0,249.0" class="ln thick" fill="none"/>
+<path d="M596.3,60.2 C581.9,63.3 540.0,72.2 509.7,79.0 C479.3,85.8 444.7,94.7 414.3,101.0 C384.0,107.3 353.7,112.7 327.7,117.0 C301.7,121.3 265.6,121.7 258.3,127.0 C251.1,132.3 268.4,141.3 284.3,149.0 C300.2,156.7 329.1,164.3 353.7,173.0 C378.2,181.7 407.1,192.3 431.7,201.0 C456.2,209.7 480.8,217.0 501.0,225.0 C521.2,233.0 544.3,245.0 553.0,249.0" class="ln thick" fill="none"/>
+<line x1="85.0" y1="257.0" x2="605.0" y2="257.0" class="ln dash"/>
+<text x="611.0" y="261.0" class="lbl-sm" text-anchor="start">Mₛ</text>
+<line x1="85.0" y1="281.0" x2="605.0" y2="281.0" class="ln thin dash"/>
+<text x="611.0" y="285.0" class="lbl-sm" text-anchor="start">M₅₀</text>
+<line x1="85.0" y1="305.0" x2="605.0" y2="305.0" class="ln thin dash"/>
+<text x="611.0" y="309.0" class="lbl-sm" text-anchor="start">M₉₀</text>
+<text x="180.3" y="69.0" class="lbl-b" text-anchor="middle">Austenite</text>
+<text x="93.7" y="213.0" class="lbl-sm" text-anchor="start">unstable</text>
+<text x="93.7" y="227.0" class="lbl-sm" text-anchor="start">austenite</text>
+<text x="414.3" y="87.0" class="lbl-sm" text-anchor="middle">γ + P</text>
+<text x="527.0" y="115.0" class="lbl-b" text-anchor="middle">Pearlite</text>
+<text x="327.7" y="183.0" class="lbl-sm" text-anchor="middle">γ + B</text>
+<text x="518.3" y="205.0" class="lbl-b" text-anchor="middle">Bainite</text>
+<text x="319.0" y="329.0" class="lbl-b" text-anchor="middle">Martensite (+ retained γ)</text>
+<text x="119.7" y="107.0" class="lbl-acc" text-anchor="end">nose</text>
+<line x1="122.7" y1="110.0" x2="145.7" y2="126.0" class="ln thin acc" marker-end="url(#mse-u5-arw-tttE)"/>
+</svg>
+<figcaption>Fig. 5.11 — TTT (isothermal transformation) diagram of eutectoid steel (0.8 % C). The left C-curve is the start of transformation and the right curve is the finish. Below Mₛ (about 220 °C) martensite forms.</figcaption>
+</figure>
+<p><b>Hypo- and hyper-eutectoid steels (Fig. 5.12).</b> The diagram is similar, with three differences:</p>
+<ul>
+<li>An extra curve shows where <b>proeutectoid ferrite</b> (hypo) or <b>cementite</b> (hyper) starts. It begins at A₃ or A<sub>cm</sub> and joins the pearlite curve at the nose.</li>
+<li>The noses move left: the austenite is less stable than in eutectoid steel.</li>
+<li>M<sub>s</sub> falls as carbon rises (higher for 0.4 % C, lower for 1.2 % C).</li>
+</ul>
+<figure class="fig" id="mse-u5-f-tttH">
+<svg viewBox="0 0 720 420" role="img" aria-label="TTT diagrams of hypo-eutectoid and hyper-eutectoid steels showing the extra proeutectoid ferrite or cementite curve">
+<defs><marker id="mse-u5-arw-tttH" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="330.0" x2="324.0" y2="330.0" class="ln" marker-end="url(#mse-u5-arw-tttH)"/>
+<line x1="60.0" y1="330.0" x2="60.0" y2="30.0" class="ln" marker-end="url(#mse-u5-arw-tttH)"/>
+<line x1="56.0" y1="330.0" x2="60.0" y2="330.0" class="ln thin"/>
+<text x="53.0" y="334.0" class="lbl-sm" text-anchor="end">0</text>
+<line x1="56.0" y1="257.5" x2="60.0" y2="257.5" class="ln thin"/>
+<text x="53.0" y="261.5" class="lbl-sm" text-anchor="end">250</text>
+<line x1="56.0" y1="185.0" x2="60.0" y2="185.0" class="ln thin"/>
+<text x="53.0" y="189.0" class="lbl-sm" text-anchor="end">500</text>
+<line x1="56.0" y1="112.5" x2="60.0" y2="112.5" class="ln thin"/>
+<text x="53.0" y="116.5" class="lbl-sm" text-anchor="end">750</text>
+<line x1="56.0" y1="40.0" x2="60.0" y2="40.0" class="ln thin"/>
+<text x="53.0" y="44.0" class="lbl-sm" text-anchor="end">1000</text>
+<line x1="80.8" y1="330.0" x2="80.8" y2="334.0" class="ln thin"/>
+<text x="80.8" y="347.0" class="lbl-sm" text-anchor="middle">1</text>
+<line x1="164.2" y1="330.0" x2="164.2" y2="334.0" class="ln thin"/>
+<text x="164.2" y="347.0" class="lbl-sm" text-anchor="middle">10²</text>
+<line x1="247.5" y1="330.0" x2="247.5" y2="334.0" class="ln thin"/>
+<text x="247.5" y="347.0" class="lbl-sm" text-anchor="middle">10⁴</text>
+<text x="185.0" y="366.0" class="lbl-sm" text-anchor="middle">Time (s), log scale →</text>
+<line x1="60.0" y1="119.2" x2="310.0" y2="119.2" class="ln acc thick"/>
+<text x="66.0" y="134.2" class="lbl-acc" text-anchor="start">A₁</text>
+<path d="M264.2,121.2 C255.8,123.9 230.8,131.8 214.2,137.1 C197.5,142.5 180.1,148.3 164.2,153.1 C148.2,157.9 130.8,162.8 118.3,166.2 C105.8,169.5 92.3,169.8 89.2,173.4 C86.0,177.0 92.6,182.6 99.6,187.9 C106.5,193.2 118.7,199.0 130.8,205.3 C143.0,211.6 162.4,220.8 172.5,225.6 C182.6,230.4 188.1,232.9 191.2,234.3" class="ln thick" fill="none"/>
+<path d="M305.8,123.5 C298.9,125.8 278.8,132.2 264.2,137.1 C249.6,142.1 232.9,148.5 218.3,153.1 C203.7,157.7 189.2,161.6 176.7,164.7 C164.2,167.8 146.8,168.1 143.3,171.9 C139.9,175.8 148.2,182.3 155.8,187.9 C163.5,193.5 177.4,199.0 189.2,205.3 C201.0,211.6 217.6,220.8 226.7,225.6 C235.7,230.4 240.6,232.9 243.3,234.3" class="ln thick" fill="none"/>
+<text x="308.0" y="80.2" class="lbl-acc" text-anchor="end">A<tspan dy="4" class="lbl-sm">3</tspan></text>
+<text x="185.0" y="18.0" class="lbl-b" text-anchor="middle">(a) Hypo-eutectoid (0.4 % C)</text>
+<text x="139.2" y="105.2" class="lbl-sm" text-anchor="middle">γ + α</text>
+<text x="282.9" y="158.9" class="lbl-sm" text-anchor="middle">α + P</text>
+<text x="135.0" y="57.4" class="lbl-b" text-anchor="middle">Austenite</text>
+<line x1="60.0" y1="92.2" x2="310.0" y2="92.2" class="ln acc2 thick"/>
+<path d="M301.7,94.5 C294.0,96.1 270.4,100.6 255.8,103.8 C241.3,107.0 228.1,109.6 214.2,113.9 C200.3,118.3 185.7,124.1 172.5,129.9 C159.3,135.7 146.1,143.2 135.0,148.8 C123.9,154.3 112.4,159.5 105.8,163.2 C99.2,167.0 97.2,169.8 95.4,171.1" class="ln thick acc2" fill="none"/>
+<line x1="60.0" y1="234.3" x2="310.0" y2="234.3" class="ln dash"/>
+<text x="316.0" y="238.3" class="lbl-sm" text-anchor="start">Mₛ</text>
+<text x="272.5" y="205.3" class="lbl-sm" text-anchor="middle">Bainite</text>
+<text x="130.8" y="258.3" class="lbl-sm" text-anchor="middle">Martensite</text>
+<line x1="400.0" y1="330.0" x2="664.0" y2="330.0" class="ln" marker-end="url(#mse-u5-arw-tttH)"/>
+<line x1="400.0" y1="330.0" x2="400.0" y2="30.0" class="ln" marker-end="url(#mse-u5-arw-tttH)"/>
+<line x1="396.0" y1="330.0" x2="400.0" y2="330.0" class="ln thin"/>
+<text x="393.0" y="334.0" class="lbl-sm" text-anchor="end">0</text>
+<line x1="396.0" y1="257.5" x2="400.0" y2="257.5" class="ln thin"/>
+<text x="393.0" y="261.5" class="lbl-sm" text-anchor="end">250</text>
+<line x1="396.0" y1="185.0" x2="400.0" y2="185.0" class="ln thin"/>
+<text x="393.0" y="189.0" class="lbl-sm" text-anchor="end">500</text>
+<line x1="396.0" y1="112.5" x2="400.0" y2="112.5" class="ln thin"/>
+<text x="393.0" y="116.5" class="lbl-sm" text-anchor="end">750</text>
+<line x1="396.0" y1="40.0" x2="400.0" y2="40.0" class="ln thin"/>
+<text x="393.0" y="44.0" class="lbl-sm" text-anchor="end">1000</text>
+<line x1="420.8" y1="330.0" x2="420.8" y2="334.0" class="ln thin"/>
+<text x="420.8" y="347.0" class="lbl-sm" text-anchor="middle">1</text>
+<line x1="504.2" y1="330.0" x2="504.2" y2="334.0" class="ln thin"/>
+<text x="504.2" y="347.0" class="lbl-sm" text-anchor="middle">10²</text>
+<line x1="587.5" y1="330.0" x2="587.5" y2="334.0" class="ln thin"/>
+<text x="587.5" y="347.0" class="lbl-sm" text-anchor="middle">10⁴</text>
+<text x="525.0" y="366.0" class="lbl-sm" text-anchor="middle">Time (s), log scale →</text>
+<line x1="400.0" y1="119.2" x2="650.0" y2="119.2" class="ln acc thick"/>
+<text x="406.0" y="134.2" class="lbl-acc" text-anchor="start">A₁</text>
+<path d="M604.2,121.2 C595.8,123.9 570.8,131.8 554.2,137.1 C537.5,142.5 520.1,148.3 504.2,153.1 C488.2,157.9 470.8,162.8 458.3,166.2 C445.8,169.5 432.3,169.8 429.2,173.4 C426.0,177.0 432.6,182.6 439.6,187.9 C446.5,193.2 458.7,199.0 470.8,205.3 C483.0,211.6 499.3,219.3 512.5,225.6 C525.7,231.9 539.6,237.2 550.0,243.0 C560.4,248.8 566.7,254.6 575.0,260.4 C583.3,266.2 595.8,274.9 600.0,277.8" class="ln thick" fill="none"/>
+<path d="M645.8,123.5 C638.9,125.8 618.8,132.2 604.2,137.1 C589.6,142.1 572.9,148.5 558.3,153.1 C543.7,157.7 529.2,161.6 516.7,164.7 C504.2,167.8 486.8,168.1 483.3,171.9 C479.9,175.8 488.2,182.3 495.8,187.9 C503.5,193.5 517.4,199.0 529.2,205.3 C541.0,211.6 554.9,219.3 566.7,225.6 C578.5,231.9 590.3,237.2 600.0,243.0 C609.7,248.8 616.7,254.6 625.0,260.4 C633.3,266.2 645.8,274.9 650.0,277.8" class="ln thick" fill="none"/>
+<text x="648.0" y="69.8" class="lbl-acc" text-anchor="end">A<tspan dy="4" class="lbl-sm">cm</tspan></text>
+<text x="525.0" y="18.0" class="lbl-b" text-anchor="middle">(b) Hyper-eutectoid (1.2 % C)</text>
+<text x="491.7" y="98.0" class="lbl-sm" text-anchor="middle">γ + Fe₃C</text>
+<text x="616.7" y="158.9" class="lbl-sm" text-anchor="middle">Fe₃C + P</text>
+<text x="475.0" y="51.6" class="lbl-b" text-anchor="middle">Austenite</text>
+<line x1="400.0" y1="81.8" x2="650.0" y2="81.8" class="ln acc2 thick"/>
+<path d="M641.7,84.1 C634.0,85.9 610.4,91.3 595.8,95.1 C581.2,98.9 568.1,101.6 554.2,106.7 C540.3,111.8 525.7,119.3 512.5,125.6 C499.3,131.8 486.1,138.4 475.0,144.4 C463.9,150.4 452.4,157.4 445.8,161.8 C439.2,166.2 437.2,169.5 435.4,171.1" class="ln thick acc2" fill="none"/>
+<line x1="400.0" y1="277.8" x2="650.0" y2="277.8" class="ln dash"/>
+<text x="656.0" y="281.8" class="lbl-sm" text-anchor="start">Mₛ</text>
+<text x="612.5" y="205.3" class="lbl-sm" text-anchor="middle">Bainite</text>
+<text x="470.8" y="301.8" class="lbl-sm" text-anchor="middle">Martensite</text>
+<text x="35.0" y="205.0" class="lbl-sm" text-anchor="middle"></text>
+</svg>
+<figcaption>Fig. 5.12 — TTT diagrams of (a) a hypo-eutectoid and (b) a hyper-eutectoid steel. An extra curve (coloured) shows where proeutectoid ferrite or cementite starts to form; it joins the pearlite curve at the nose. Mₛ is higher for low carbon and lower for high carbon.</figcaption>
+</figure>
+<p><b>Alloying elements</b> (except Co) move the TTT curves to the right, which raises hardenability, and lower M<sub>s</sub>.</p>
+<p><b>CCT diagram.</b> Real parts cool continuously. The CCT curve lies at longer times and lower temperatures than the TTT curve. Slow cooling gives pearlite; cooling faster than the critical rate gives martensite (see Unit 4).</p>
+<figure class="fig" id="mse-u5-f-cct">
+<svg viewBox="0 0 700 430" role="img" aria-label="CCT diagram of eutectoid steel compared with the TTT curve, with four cooling paths">
+<defs><marker id="mse-u5-arw-cct" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="85.0" y1="345.0" x2="619.0" y2="345.0" class="ln" marker-end="url(#mse-u5-arw-cct)"/>
+<line x1="85.0" y1="345.0" x2="85.0" y2="15.0" class="ln" marker-end="url(#mse-u5-arw-cct)"/>
+<line x1="81.0" y1="345.0" x2="85.0" y2="345.0" class="ln thin"/>
+<text x="78.0" y="349.0" class="lbl-sm" text-anchor="end">0</text>
+<line x1="81.0" y1="265.0" x2="85.0" y2="265.0" class="ln thin"/>
+<text x="78.0" y="269.0" class="lbl-sm" text-anchor="end">200</text>
+<line x1="81.0" y1="185.0" x2="85.0" y2="185.0" class="ln thin"/>
+<text x="78.0" y="189.0" class="lbl-sm" text-anchor="end">400</text>
+<line x1="81.0" y1="105.0" x2="85.0" y2="105.0" class="ln thin"/>
+<text x="78.0" y="109.0" class="lbl-sm" text-anchor="end">600</text>
+<line x1="81.0" y1="25.0" x2="85.0" y2="25.0" class="ln thin"/>
+<text x="78.0" y="29.0" class="lbl-sm" text-anchor="end">800</text>
+<line x1="128.3" y1="345.0" x2="128.3" y2="349.0" class="ln thin"/>
+<text x="128.3" y="362.0" class="lbl-sm" text-anchor="middle">1</text>
+<line x1="215.0" y1="345.0" x2="215.0" y2="349.0" class="ln thin"/>
+<text x="215.0" y="362.0" class="lbl-sm" text-anchor="middle">10</text>
+<line x1="301.7" y1="345.0" x2="301.7" y2="349.0" class="ln thin"/>
+<text x="301.7" y="362.0" class="lbl-sm" text-anchor="middle">10²</text>
+<line x1="388.3" y1="345.0" x2="388.3" y2="349.0" class="ln thin"/>
+<text x="388.3" y="362.0" class="lbl-sm" text-anchor="middle">10³</text>
+<line x1="475.0" y1="345.0" x2="475.0" y2="349.0" class="ln thin"/>
+<text x="475.0" y="362.0" class="lbl-sm" text-anchor="middle">10⁴</text>
+<line x1="561.7" y1="345.0" x2="561.7" y2="349.0" class="ln thin"/>
+<text x="561.7" y="362.0" class="lbl-sm" text-anchor="middle">10⁵</text>
+<text x="345.0" y="381.0" class="lbl-sm" text-anchor="middle">Time (s), log scale →</text>
+<text x="43.0" y="185.0" class="lbl-sm" text-anchor="middle" transform="rotate(-90 43.0 185.0)">Temperature (°C)</text>
+<line x1="85.0" y1="54.2" x2="605.0" y2="54.2" class="ln acc thick"/>
+<text x="611.0" y="58.2" class="lbl-acc" text-anchor="start">A₁</text>
+<path d="M509.7,57.0 C492.3,60.7 440.3,71.7 405.7,79.0 C371.0,86.3 334.9,94.3 301.7,101.0 C268.4,107.7 232.3,114.3 206.3,119.0 C180.3,123.7 152.2,124.0 145.7,129.0 C139.2,134.0 152.9,141.7 167.3,149.0 C181.8,156.3 207.1,164.3 232.3,173.0 C257.6,181.7 291.6,192.3 319.0,201.0 C346.4,209.7 375.3,217.0 397.0,225.0 C418.7,233.0 440.3,245.0 449.0,249.0" class="ln thin dash" fill="none"/>
+<path d="M579.0,65.0 C563.1,68.7 515.4,80.0 483.7,87.0 C451.9,94.0 418.7,100.7 388.3,107.0 C358.0,113.3 326.2,120.0 301.7,125.0 C277.1,130.0 251.1,135.0 241.0,137.0" class="ln thick" fill="none"/>
+<line x1="85.0" y1="257.0" x2="605.0" y2="257.0" class="ln dash"/>
+<text x="611.0" y="261.0" class="lbl-sm" text-anchor="start">Mₛ</text>
+<path d="M215.0,41.0 C243.9,45.7 339.2,58.3 388.3,69.0 C437.4,79.7 480.8,92.3 509.7,105.0 C538.6,117.7 553.0,138.3 561.7,145.0" class="ln acc" marker-end="url(#mse-u5-arw-cct)" fill="none"/>
+<path d="M145.7,41.0 C163.0,49.0 213.6,73.0 249.7,89.0 C285.8,105.0 334.9,122.3 362.3,137.0 C389.8,151.7 405.7,170.3 414.3,177.0" class="ln acc" marker-end="url(#mse-u5-arw-cct)" fill="none"/>
+<path d="M154.3,41.0 C167.3,52.3 212.1,89.7 232.3,109.0 C252.6,128.3 259.8,139.7 275.7,157.0 C291.6,174.3 314.7,196.3 327.7,213.0 C340.7,229.7 349.3,249.7 353.7,257.0" class="ln acc" marker-end="url(#mse-u5-arw-cct)" fill="none"/>
+<path d="M93.7,41.0 C98.7,65.0 115.3,141.0 124.0,185.0 C132.7,229.0 142.1,285.0 145.7,305.0" class="ln acc" marker-end="url(#mse-u5-arw-cct)" fill="none"/>
+<text x="561.7" y="169.0" class="lbl-sm" text-anchor="middle">Furnace</text>
+<text x="422.7" y="185.0" class="lbl-sm" text-anchor="start">Air</text>
+<text x="362.3" y="245.0" class="lbl-sm" text-anchor="start">Oil</text>
+<text x="167.3" y="301.0" class="lbl-sm" text-anchor="start">Water</text>
+<text x="241.0" y="25.0" class="lbl-sm" text-anchor="middle"></text>
+<text x="102.3" y="37.0" class="lbl-sm" text-anchor="middle"></text>
+<line x1="205.0" y1="405.0" x2="235.0" y2="405.0" class="ln thin dash"/>
+<text x="241.0" y="409.0" class="lbl-sm" text-anchor="start">TTT start</text>
+<line x1="345.0" y1="405.0" x2="375.0" y2="405.0" class="ln thick"/>
+<text x="381.0" y="409.0" class="lbl-sm" text-anchor="start">CCT start</text>
+<line x1="485.0" y1="405.0" x2="515.0" y2="405.0" class="ln acc" marker-end="url(#mse-u5-arw-cct)"/>
+<text x="521.0" y="409.0" class="lbl-sm" text-anchor="start">cooling path</text>
+</svg>
+<figcaption>Fig. 5.13 — CCT diagram of eutectoid steel (schematic). The CCT start curve (solid) lies to the right of and below the TTT curve (dashed). Slow cooling gives pearlite; fast cooling that misses the curve gives martensite.</figcaption>
+</figure>
+
+<dl class="cards">
+<dt>Solid solution</dt><dd>One phase in which solute atoms dissolve in the solvent lattice (substitutional or interstitial).</dd>
+<dt>Gibbs phase rule</dt><dd>F = C − P + 1 at constant pressure.</dd>
+<dt>Lever rule</dt><dd>Phase fraction = opposite arm of the tie line divided by the whole tie line.</dd>
+<dt>Ferrite (α)</dt><dd>BCC solid solution of C in iron; max 0.022 % C; soft and ductile.</dd>
+<dt>Austenite (γ)</dt><dd>FCC solid solution of C in iron; max 2.11 % C; stable above 727 °C.</dd>
+<dt>Cementite</dt><dd>Fe₃C, 6.67 % C; very hard and brittle.</dd>
+</dl>
+
+<div class="quiz" id="mse-u5-quiz">
+<div class="mcq" data-answer="a"><p class="stem">The phase rule at constant pressure is</p><ol class="opts"><li>F = C − P + 1</li><li>F = C + P − 1</li><li>F = P − C + 2</li><li>F = C − P − 1</li></ol><p class="why">F = C − P + 1; with variable pressure it is C − P + 2.</p></div>
+<div class="mcq" data-answer="b"><p class="stem">Ledeburite is a mixture of</p><ol class="opts"><li>ferrite and cementite</li><li>austenite and cementite</li><li>ferrite and austenite</li><li>pearlite and ferrite</li></ol><p class="why">The eutectic at 4.3 % C and 1148 °C is austenite + cementite.</p></div>
+<div class="mcq" data-answer="c"><p class="stem">In a hypo-eutectoid steel, ferrite starts to form on cooling at the</p><ol class="opts"><li>A₁ line</li><li>A<sub>cm</sub> line</li><li>A₃ line</li><li>Mₛ line</li></ol><p class="why">A₃ (G–S) is the upper critical line of hypo-eutectoid steels.</p></div>
+<div class="mcq" data-answer="a"><p class="stem">Which element is a ferrite stabiliser?</p><ol class="opts"><li>Chromium</li><li>Nickel</li><li>Manganese</li><li>Cobalt</li></ol><p class="why">Cr closes the γ loop. Ni and Mn are austenite stabilisers.</p></div>
+<div class="mcq" data-answer="d"><p class="stem">Compared with the TTT curve, the CCT curve of the same steel lies</p><ol class="opts"><li>to the left and higher</li><li>to the left and lower</li><li>at the same place</li><li>to the right and lower</li></ol><p class="why">Continuous cooling needs a longer time, so the curve moves right and down.</p></div>
+<div class="mcq" data-answer="b"><p class="stem">Proeutectoid cementite in a 1.2 % C steel just below 727 °C is about</p><ol class="opts"><li>2 %</li><li>7 %</li><li>25 %</li><li>50 %</li></ol><p class="why">W = (1.2 − 0.8)/(6.67 − 0.8) = 0.068.</p></div>
+</div>
+  </section>
+
+  <section class="part" id="mse-u5-theory" data-part="theory">
+    <h2>Theory questions</h2>
+<article class="q" id="mse-u5-q1" data-marks="10">
+<h3>Q1. Define solid solution. Describe the classification of solid solutions with neat sketches.</h3>
+<p class="q-src">MSE QB Q40 · Aug-Sep 2023 · Jan 2023 (CBCS) · Apr 2022 (CBCS) · Mar-Apr 2021 (CBCS)</p>
+<p class="q-hint">Definition; substitutional, interstitial (sketch); ordered, disordered (sketch); examples; effect on strength.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Solid solution.</b> A solid solution is a solid phase in which the atoms of the solute are dissolved in the crystal lattice of the solvent. The crystal structure of the solvent is kept and the alloy is one phase (homogeneous).</p>
+<figure class="fig" id="mse-u5-f-ss-b">
+<svg viewBox="0 0 700 262" role="img" aria-label="Three lattice sketches: pure solvent, substitutional solid solution, interstitial solid solution">
+<defs><marker id="mse-u5-arw-ss-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="13.0" y="23.0" width="180.0" height="180.0" class="ln thin"/>
+<circle cx="35.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="69.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="103.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="137.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="171.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="35.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="69.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="103.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="137.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="171.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="35.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="69.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="103.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="137.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="171.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="35.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="69.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="103.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="137.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="171.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="35.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="69.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="103.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="137.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="171.0" cy="181.0" r="13" class="ln fill-soft"/>
+<text x="103.0" y="224.0" class="lbl-b" text-anchor="middle">(a) Pure solvent</text>
+<rect x="233.0" y="23.0" width="180.0" height="180.0" class="ln thin"/>
+<circle cx="255.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="289.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="323.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="357.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="391.0" cy="45.0" r="11" class="ln fill-acc"/>
+<circle cx="255.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="289.0" cy="79.0" r="11" class="ln fill-acc"/>
+<circle cx="323.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="357.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="391.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="255.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="289.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="323.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="357.0" cy="113.0" r="11" class="ln fill-acc"/>
+<circle cx="391.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="255.0" cy="147.0" r="11" class="ln fill-acc"/>
+<circle cx="289.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="323.0" cy="147.0" r="11" class="ln fill-acc"/>
+<circle cx="357.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="391.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="255.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="289.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="323.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="357.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="391.0" cy="181.0" r="13" class="ln fill-soft"/>
+<text x="323.0" y="224.0" class="lbl-b" text-anchor="middle">(b) Substitutional</text>
+<rect x="453.0" y="23.0" width="180.0" height="180.0" class="ln thin"/>
+<circle cx="475.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="509.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="543.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="577.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="611.0" cy="45.0" r="13" class="ln fill-soft"/>
+<circle cx="475.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="509.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="543.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="577.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="611.0" cy="79.0" r="13" class="ln fill-soft"/>
+<circle cx="475.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="509.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="543.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="577.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="611.0" cy="113.0" r="13" class="ln fill-soft"/>
+<circle cx="475.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="509.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="543.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="577.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="611.0" cy="147.0" r="13" class="ln fill-soft"/>
+<circle cx="475.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="509.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="543.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="577.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="611.0" cy="181.0" r="13" class="ln fill-soft"/>
+<circle cx="492.0" cy="62.0" r="5.5" class="ln fill-acc2"/>
+<circle cx="560.0" cy="96.0" r="5.5" class="ln fill-acc2"/>
+<circle cx="526.0" cy="130.0" r="5.5" class="ln fill-acc2"/>
+<circle cx="594.0" cy="164.0" r="5.5" class="ln fill-acc2"/>
+<circle cx="560.0" cy="164.0" r="5.5" class="ln fill-acc2"/>
+<text x="543.0" y="224.0" class="lbl-b" text-anchor="middle">(c) Interstitial</text>
+<circle cx="60.0" cy="250.0" r="6" class="ln fill-soft"/>
+<text x="72.0" y="254.0" class="lbl-sm" text-anchor="start">solvent atom</text>
+<circle cx="200.0" cy="250.0" r="6" class="ln fill-acc"/>
+<text x="212.0" y="254.0" class="lbl-sm" text-anchor="start">solute (substitutional)</text>
+<circle cx="420.0" cy="250.0" r="5" class="ln fill-acc2"/>
+<text x="431.0" y="254.0" class="lbl-sm" text-anchor="start">solute (interstitial, small)</text>
+</svg>
+<figcaption>Fig. 5.1 — (a) Pure solvent lattice. (b) Substitutional: solute atoms take the places of solvent atoms. (c) Interstitial: small solute atoms sit in the gaps.</figcaption>
+</figure>
+<p><b>Classification.</b></p>
+<ol>
+<li><b>Substitutional solid solution.</b> Solute atoms replace solvent atoms at lattice sites. It needs similar atomic sizes (Hume-Rothery rules). Examples: Cu–Ni (complete), Cu–Zn up to about 39 % Zn, Ag–Au.</li>
+<li><b>Interstitial solid solution.</b> Small solute atoms (H, C, N, B, O) sit in the gaps. Solvent atoms are much larger. Example: carbon in γ-iron (austenite, max 2.11 % C) and in α-iron (ferrite, max 0.022 % C). Solubility is always limited.</li>
+</ol>
+<figure class="fig" id="mse-u5-f-ord-b">
+<svg viewBox="0 0 600 245" role="img" aria-label="Disordered random substitutional solid solution and ordered solid solution with solute on regular sites">
+<defs><marker id="mse-u5-arw-ord-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="48.0" y="13.0" width="180.0" height="180.0" class="ln thin"/>
+<circle cx="70.0" cy="35.0" r="13" class="ln fill-soft"/>
+<circle cx="104.0" cy="35.0" r="13" class="ln fill-acc"/>
+<circle cx="138.0" cy="35.0" r="13" class="ln fill-acc"/>
+<circle cx="172.0" cy="35.0" r="13" class="ln fill-acc"/>
+<circle cx="206.0" cy="35.0" r="13" class="ln fill-soft"/>
+<circle cx="70.0" cy="69.0" r="13" class="ln fill-acc"/>
+<circle cx="104.0" cy="69.0" r="13" class="ln fill-soft"/>
+<circle cx="138.0" cy="69.0" r="13" class="ln fill-soft"/>
+<circle cx="172.0" cy="69.0" r="13" class="ln fill-soft"/>
+<circle cx="206.0" cy="69.0" r="13" class="ln fill-acc"/>
+<circle cx="70.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="104.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="138.0" cy="103.0" r="13" class="ln fill-acc"/>
+<circle cx="172.0" cy="103.0" r="13" class="ln fill-acc"/>
+<circle cx="206.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="70.0" cy="137.0" r="13" class="ln fill-soft"/>
+<circle cx="104.0" cy="137.0" r="13" class="ln fill-acc"/>
+<circle cx="138.0" cy="137.0" r="13" class="ln fill-soft"/>
+<circle cx="172.0" cy="137.0" r="13" class="ln fill-soft"/>
+<circle cx="206.0" cy="137.0" r="13" class="ln fill-acc"/>
+<circle cx="70.0" cy="171.0" r="13" class="ln fill-acc"/>
+<circle cx="104.0" cy="171.0" r="13" class="ln fill-soft"/>
+<circle cx="138.0" cy="171.0" r="13" class="ln fill-acc"/>
+<circle cx="172.0" cy="171.0" r="13" class="ln fill-acc"/>
+<circle cx="206.0" cy="171.0" r="13" class="ln fill-soft"/>
+<text x="138.0" y="218.0" class="lbl-b" text-anchor="middle">(a) Disordered (random)</text>
+<rect x="348.0" y="13.0" width="180.0" height="180.0" class="ln thin"/>
+<circle cx="370.0" cy="35.0" r="13" class="ln fill-soft"/>
+<circle cx="404.0" cy="35.0" r="13" class="ln fill-acc"/>
+<circle cx="438.0" cy="35.0" r="13" class="ln fill-soft"/>
+<circle cx="472.0" cy="35.0" r="13" class="ln fill-acc"/>
+<circle cx="506.0" cy="35.0" r="13" class="ln fill-soft"/>
+<circle cx="370.0" cy="69.0" r="13" class="ln fill-acc"/>
+<circle cx="404.0" cy="69.0" r="13" class="ln fill-soft"/>
+<circle cx="438.0" cy="69.0" r="13" class="ln fill-acc"/>
+<circle cx="472.0" cy="69.0" r="13" class="ln fill-soft"/>
+<circle cx="506.0" cy="69.0" r="13" class="ln fill-acc"/>
+<circle cx="370.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="404.0" cy="103.0" r="13" class="ln fill-acc"/>
+<circle cx="438.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="472.0" cy="103.0" r="13" class="ln fill-acc"/>
+<circle cx="506.0" cy="103.0" r="13" class="ln fill-soft"/>
+<circle cx="370.0" cy="137.0" r="13" class="ln fill-acc"/>
+<circle cx="404.0" cy="137.0" r="13" class="ln fill-soft"/>
+<circle cx="438.0" cy="137.0" r="13" class="ln fill-acc"/>
+<circle cx="472.0" cy="137.0" r="13" class="ln fill-soft"/>
+<circle cx="506.0" cy="137.0" r="13" class="ln fill-acc"/>
+<circle cx="370.0" cy="171.0" r="13" class="ln fill-soft"/>
+<circle cx="404.0" cy="171.0" r="13" class="ln fill-acc"/>
+<circle cx="438.0" cy="171.0" r="13" class="ln fill-soft"/>
+<circle cx="472.0" cy="171.0" r="13" class="ln fill-acc"/>
+<circle cx="506.0" cy="171.0" r="13" class="ln fill-soft"/>
+<text x="438.0" y="218.0" class="lbl-b" text-anchor="middle">(b) Ordered (superlattice)</text>
+</svg>
+<figcaption>Fig. 5.2 — A disordered solution has solute atoms at random sites. In an ordered solution (for example Cu₃Au below about 390 °C) they sit on regular sites.</figcaption>
+</figure>
+<p><b>Ordered and disordered.</b> In a <b>disordered</b> (random) solution the solute atoms occupy sites at random. In an <b>ordered</b> solution (superlattice) the solute atoms occupy fixed sites; it forms on slow cooling below a critical temperature. Examples: Cu₃Au, CuZn (β′ brass).</p>
+<p><b>By solubility.</b> <i>Complete</i> (unlimited) solid solutions exist when all rules are met (Cu–Ni). <i>Limited</i> (partial) solid solutions exist otherwise (Cu–Zn, Fe–C).</p>
+<p><b>Properties.</b> The solute atoms distort the lattice and obstruct dislocation motion. So a solid solution has higher strength and hardness, but lower ductility and electrical conductivity, than the pure solvent (solid-solution strengthening).</p>
+</details>
+</article>
+<article class="q" id="mse-u5-q2" data-marks="10">
+<h3>Q2. Explain the rules governing the formation of solid solutions (Hume-Rothery rules).</h3>
+<p class="q-src">MSE QB Q35 · Mar-Apr 2021 (CBCS)</p>
+<p class="q-hint">Four rules, each with a reason and a Cu–Ni example. Say what happens when a rule fails.</p>
+<details class="answer"><summary>Model answer</summary>
+<p>Hume-Rothery gave the conditions for extensive <b>substitutional</b> solid solubility between two metals.</p>
+<div class="tbl"><table><thead><tr><th>Rule</th><th>Condition</th><th>If it fails</th></tr></thead><tbody><tr><td>1. Atomic size</td><td>Radii differ by less than about 15 %</td><td>Large lattice strain; solubility is small</td></tr><tr><td>2. Crystal structure</td><td>Same crystal structure for both metals</td><td>Solubility is limited; a new phase appears</td></tr><tr><td>3. Electronegativity</td><td>Similar electronegativity (chemical affinity)</td><td>An intermetallic compound forms instead</td></tr><tr><td>4. Relative valency</td><td>Same valency, or solvent of higher valency</td><td>A metal of higher valency dissolves less in one of lower valency</td></tr></tbody></table></div>
+<div class="formula">\[ \text{size difference} = \frac{\lvert r_{solute} - r_{solvent}\rvert}{r_{solvent}} \times 100 \;&lt;\; 15\,\% \]</div>
+<p><b>Examples.</b></p>
+<div class="tbl"><table><thead><tr><th>System</th><th>Radii (nm)</th><th>Structures</th><th>Result</th></tr></thead><tbody><tr><td>Cu–Ni</td><td>0.128 and 0.125 (2 % difference)</td><td>FCC and FCC</td><td>Complete solubility (all rules met)</td></tr><tr><td>Cu–Zn</td><td>0.128 and 0.133</td><td>FCC and HCP</td><td>Limited: about 39 % Zn in Cu (structures differ)</td></tr><tr><td>Fe–C</td><td>0.124 and 0.077 (C is much smaller)</td><td>BCC / FCC iron</td><td>Interstitial; limited</td></tr></tbody></table></div>
+<p><b>Interstitial solutions</b> follow a different rule: the solute atom must be much smaller than the solvent atom (radius ratio about 0.6 or less), so that it fits in the gap. Solubility is always limited.</p>
+</details>
+</article>
+<article class="q" id="mse-u5-q3" data-marks="10">
+<h3>Q3. Explain the terms system, phase, equilibrium, melting point and freezing point.</h3>
+<p class="q-src">MSE QB Q33 · Nov 2024 (components and phase)</p>
+<p class="q-hint">One clear definition and one example for each of the five terms; add component.</p>
+<details class="answer"><summary>Model answer</summary>
+<div class="tbl"><table><thead><tr><th>Term</th><th>Definition</th><th>Example</th></tr></thead><tbody><tr><td>System</td><td>A body of matter, or a group of materials, chosen for study and separated from its surroundings. It may have one or more components.</td><td>An Fe–C alloy; the Cu–Ni alloy system</td></tr><tr><td>Component</td><td>An element or stable compound from which the system is made. Its amount is varied independently.</td><td>Cu and Ni; Fe and Fe₃C</td></tr><tr><td>Phase</td><td>A physically distinct, homogeneous part of a system with its own structure and composition, with a boundary to other parts. It can be separated mechanically.</td><td>Ferrite, cementite and liquid; pearlite is a mixture of two phases</td></tr><tr><td>Equilibrium</td><td>The state of minimum free energy, in which properties do not change with time. A system reaches it with very slow cooling and long holding.</td><td>A Cu–Ni alloy cooled very slowly</td></tr><tr><td>Melting point</td><td>The temperature at which a solid changes to liquid on heating. It is a fixed value for a pure metal.</td><td>Fe 1538 °C, Cu 1085 °C, Al 660 °C</td></tr><tr><td>Freezing point</td><td>The temperature at which a liquid changes to solid on cooling. For a pure metal it equals the melting point (a flat arrest on the cooling curve).</td><td>Pure Cu freezes at 1085 °C</td></tr></tbody></table></div>
+<p>An alloy has no single melting or freezing point. It melts and freezes over a temperature range, between the <b>solidus</b> and the <b>liquidus</b>.</p>
+</details>
+</article>
+<article class="q" id="mse-u5-q4" data-marks="10">
+<h3>Q4. Explain with a cooling curve the process of solidification of a pure metal. Distinguish homogeneous and heterogeneous nucleation.</h3>
+<p class="q-src">MSE QB Q17 · Nov 2024 · Jun-Jul 2024 · Feb-Mar 2022 (CBCS)</p>
+<p class="q-hint">Neat cooling curve with Tm, the four stages with the reason for the flat arrest, then the nucleation table.</p>
+<details class="answer"><summary>Model answer</summary>
+<p>A pure metal freezes at one fixed temperature, the freezing point T<sub>m</sub>. A cooling curve records temperature against time during slow cooling.</p>
+<figure class="fig" id="mse-u5-f-cool-b">
+<svg viewBox="0 0 700 270" role="img" aria-label="Three cooling curves: pure metal with one flat arrest, alloy with two changes of slope, eutectic alloy with a flat arrest">
+<defs><marker id="mse-u5-arw-cool-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="50.0" y1="225.0" x2="220.0" y2="225.0" class="ln" marker-end="url(#mse-u5-arw-cool-b)"/>
+<line x1="50.0" y1="225.0" x2="50.0" y2="50.0" class="ln" marker-end="url(#mse-u5-arw-cool-b)"/>
+<text x="135.0" y="250.0" class="lbl-sm" text-anchor="middle">Time →</text>
+<text x="22.0" y="137.5" class="lbl-sm" text-anchor="middle" transform="rotate(-90 22.0 137.5)">Temperature →</text>
+<line x1="270.0" y1="225.0" x2="440.0" y2="225.0" class="ln" marker-end="url(#mse-u5-arw-cool-b)"/>
+<line x1="270.0" y1="225.0" x2="270.0" y2="50.0" class="ln" marker-end="url(#mse-u5-arw-cool-b)"/>
+<text x="355.0" y="250.0" class="lbl-sm" text-anchor="middle">Time →</text>
+<text x="242.0" y="137.5" class="lbl-sm" text-anchor="middle" transform="rotate(-90 242.0 137.5)">Temperature →</text>
+<line x1="490.0" y1="225.0" x2="660.0" y2="225.0" class="ln" marker-end="url(#mse-u5-arw-cool-b)"/>
+<line x1="490.0" y1="225.0" x2="490.0" y2="50.0" class="ln" marker-end="url(#mse-u5-arw-cool-b)"/>
+<text x="575.0" y="250.0" class="lbl-sm" text-anchor="middle">Time →</text>
+<text x="462.0" y="137.5" class="lbl-sm" text-anchor="middle" transform="rotate(-90 462.0 137.5)">Temperature →</text>
+<path d="M50.0,70.0 C54.7,73.3 68.8,83.0 78.0,90.0 C87.2,97.0 100.5,108.3 105.0,112.0" class="ln thick" fill="none"/>
+<line x1="105.0" y1="112.0" x2="155.0" y2="112.0" class="ln thick"/>
+<path d="M155.0,112.0 C158.3,118.3 165.8,137.0 175.0,150.0 C184.2,163.0 204.2,183.3 210.0,190.0" class="ln thick" fill="none"/>
+<line x1="50.0" y1="112.0" x2="105.0" y2="112.0" class="ln thin dash"/>
+<text x="46.0" y="109.0" class="lbl-sm" text-anchor="end">Tₘ</text>
+<text x="128.0" y="84.0" class="lbl-sm" text-anchor="middle">Liquid cools</text>
+<text x="130.0" y="130.0" class="lbl-sm" text-anchor="middle">L + S</text>
+<text x="188.0" y="210.0" class="lbl-sm" text-anchor="middle">Solid</text>
+<text x="132.0" y="28.0" class="lbl-b" text-anchor="middle">(a) Pure metal</text>
+<text x="132.0" y="44.0" class="lbl-sm" text-anchor="middle">F = 0 on the arrest</text>
+<path d="M270.0,70.0 C273.7,73.0 284.5,82.3 292.0,88.0 C299.5,93.7 311.2,101.3 315.0,104.0" class="ln thick" fill="none"/>
+<path d="M315.0,104.0 C320.0,107.5 335.8,117.7 345.0,125.0 C354.2,132.3 365.8,144.2 370.0,148.0" class="ln thick" fill="none"/>
+<path d="M370.0,148.0 C374.2,152.5 385.0,165.5 395.0,175.0 C405.0,184.5 424.2,200.0 430.0,205.0" class="ln thick" fill="none"/>
+<line x1="270.0" y1="104.0" x2="315.0" y2="104.0" class="ln thin dash"/>
+<text x="266.0" y="107.0" class="lbl-sm" text-anchor="end">Tₗ</text>
+<line x1="270.0" y1="148.0" x2="370.0" y2="148.0" class="ln thin dash"/>
+<text x="266.0" y="151.0" class="lbl-sm" text-anchor="end">Tₛ</text>
+<circle cx="315.0" cy="104.0" r="3" class="solid"/>
+<circle cx="370.0" cy="148.0" r="3" class="solid"/>
+<text x="370.0" y="93.0" class="lbl-sm" text-anchor="middle">start of freezing</text>
+<text x="407.0" y="160.0" class="lbl-sm" text-anchor="middle">end</text>
+<text x="352.0" y="28.0" class="lbl-b" text-anchor="middle">(b) Solid-solution alloy</text>
+<text x="352.0" y="44.0" class="lbl-sm" text-anchor="middle">F = 1 between Tₗ and Tₛ</text>
+<path d="M490.0,70.0 C494.7,73.7 508.8,82.3 518.0,92.0 C527.2,101.7 540.5,122.0 545.0,128.0" class="ln thick" fill="none"/>
+<line x1="545.0" y1="128.0" x2="595.0" y2="128.0" class="ln thick"/>
+<path d="M595.0,128.0 C598.3,133.3 605.8,148.8 615.0,160.0 C624.2,171.2 644.2,189.2 650.0,195.0" class="ln thick" fill="none"/>
+<line x1="490.0" y1="128.0" x2="545.0" y2="128.0" class="ln thin dash"/>
+<text x="486.0" y="125.0" class="lbl-sm" text-anchor="end">Tₑ</text>
+<text x="570.0" y="117.0" class="lbl-sm" text-anchor="middle">L → α + β</text>
+<text x="572.0" y="28.0" class="lbl-b" text-anchor="middle">(c) Eutectic alloy</text>
+<text x="572.0" y="44.0" class="lbl-sm" text-anchor="middle">F = 0 on the arrest</text>
+</svg>
+<figcaption>Fig. 5.3 — Cooling curves. (a) A pure metal freezes at one fixed temperature (flat arrest). (b) An alloy freezes over a range: the slope changes at the liquidus Tₗ and at the solidus Tₛ. (c) A eutectic alloy freezes at one fixed temperature.</figcaption>
+</figure>
+<ol>
+<li><b>Liquid cools.</b> Heat is lost to the mould; the temperature falls steadily. Only liquid is present (F = 1).</li>
+<li><b>Nucleation.</b> At or a little below T<sub>m</sub> (undercooling), the first tiny solid nuclei form.</li>
+<li><b>Growth (arrest).</b> Nuclei grow into crystals, usually as dendrites. Latent heat of fusion is released and equals the heat lost, so the temperature stays constant. L and S are both present, so F = 1 − 2 + 1 = 0. The length of the arrest depends on the mass and the cooling rate.</li>
+<li><b>Solid cools.</b> When the last liquid has frozen, the solid cools down to room temperature.</li>
+</ol>
+<p>The crystals meet and form <b>grains</b>; their boundaries are the grain boundaries. Fast cooling gives fine grains; slow cooling gives coarse grains.</p>
+<div class="tbl"><table><thead><tr><th>Point</th><th>Homogeneous nucleation</th><th>Heterogeneous nucleation</th></tr></thead><tbody><tr><td>Where</td><td>Inside the pure liquid, by chance clusters of atoms</td><td>On surfaces: mould wall, impurities, added inoculants</td></tr><tr><td>Undercooling</td><td>Large (about 0.2 T<sub>m</sub>)</td><td>Small (a few degrees)</td></tr><tr><td>Energy barrier</td><td>High</td><td>Low, because the surface helps</td></tr><tr><td>Occurrence</td><td>Rare; only in very clean liquid</td><td>Common in practice</td></tr><tr><td>Use</td><td>Laboratory only</td><td>Grain refinement by inoculants (Ti, B in Al)</td></tr></tbody></table></div>
+</details>
+</article>
+<article class="q" id="mse-u5-q5" data-marks="10">
+<h3>Q5. State the Gibbs phase rule and explain it with an example. Explain the lever rule with an example.</h3>
+<p class="q-src">Aug-Sep 2023 · Feb-Mar 2022 (CBCS) · Mar-Apr 2021 (CBCS) · Nov 2024</p>
+<p class="q-hint">Statement and formula; table of examples; tie line and lever formula; one worked Cu–Ni example and one Fe–C example.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Phase rule.</b> For a system in equilibrium, the number of degrees of freedom is the number of independent variables (temperature, pressure, composition) that can change without changing the number of phases.</p>
+<div class="formula">\[ F = C - P + 2 \quad\Rightarrow\quad F = C - P + 1 \ \text{(pressure constant)} \]<p class="where">C = components, P = phases, F = degrees of freedom.</p></div>
+<p><b>Example: Cu–Ni alloy (C = 2) cooling at constant pressure.</b></p>
+<div class="tbl"><table><thead><tr><th>Region of Cu–Ni diagram</th><th>P</th><th>F = 2 − P + 1</th><th>Meaning</th></tr></thead><tbody><tr><td>Liquid only</td><td>1</td><td>2</td><td>Temperature and composition can both change</td></tr><tr><td>L + α (freezing)</td><td>2</td><td>1</td><td>If T is fixed, the compositions of L and α are fixed</td></tr><tr><td>Solid α only</td><td>1</td><td>2</td><td>Temperature and composition can both change</td></tr></tbody></table></div>
+<p>For a pure metal (C = 1) at its freezing point, P = 2 and F = 0: the temperature is fixed (flat arrest). At an invariant reaction of a binary alloy, P = 3 and F = 0.</p>
+<p><b>Lever rule.</b> In a two-phase field, the tie line is drawn at the alloy temperature. The phase compositions are read at its ends. The fraction of each phase is the opposite arm divided by the whole tie line.</p>
+<figure class="fig" id="mse-u5-f-tie-b">
+<svg viewBox="0 0 700 340" role="img" aria-label="Cu-Ni phase diagram with tie line at 1250 degrees C: liquid 32 percent Ni, alloy 35 percent Ni, alpha 42 percent Ni">
+<defs><marker id="mse-u5-arw-tie-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="90.0" y1="275.0" x2="605.0" y2="275.0" class="ln" marker-end="url(#mse-u5-arw-tie-b)"/>
+<line x1="90.0" y1="275.0" x2="90.0" y2="15.0" class="ln" marker-end="url(#mse-u5-arw-tie-b)"/>
+<line x1="86.0" y1="247.2" x2="90.0" y2="247.2" class="ln thin"/>
+<text x="83.0" y="251.2" class="lbl-sm" text-anchor="end">1100</text>
+<line x1="86.0" y1="191.7" x2="90.0" y2="191.7" class="ln thin"/>
+<text x="83.0" y="195.7" class="lbl-sm" text-anchor="end">1200</text>
+<line x1="86.0" y1="136.1" x2="90.0" y2="136.1" class="ln thin"/>
+<text x="83.0" y="140.1" class="lbl-sm" text-anchor="end">1300</text>
+<line x1="86.0" y1="80.6" x2="90.0" y2="80.6" class="ln thin"/>
+<text x="83.0" y="84.6" class="lbl-sm" text-anchor="end">1400</text>
+<line x1="86.0" y1="25.0" x2="90.0" y2="25.0" class="ln thin"/>
+<text x="83.0" y="29.0" class="lbl-sm" text-anchor="end">1500</text>
+<text x="28.0" y="150.0" class="lbl-sm" text-anchor="middle" transform="rotate(-90 28.0 150.0)">Temperature (°C)</text>
+<path d="M90.0,255.6 C106.7,245.4 163.3,209.7 190.0,194.4 C216.7,179.2 225.0,175.0 250.0,163.9 C275.0,152.8 308.3,140.3 340.0,127.8 C371.7,115.3 398.3,101.9 440.0,88.9 C481.7,75.9 565.0,56.5 590.0,50.0" class="ln thick" fill="none"/>
+<path d="M90.0,255.6 C106.7,248.6 155.0,229.2 190.0,213.9 C225.0,198.6 266.7,178.7 300.0,163.9 C333.3,149.1 358.3,138.0 390.0,125.0 C421.7,112.0 456.7,98.6 490.0,86.1 C523.3,73.6 573.3,56.0 590.0,50.0" class="ln thick" fill="none"/>
+<text x="160.0" y="80.6" class="lbl-b" text-anchor="middle">Liquid (L)</text>
+<text x="470.0" y="194.4" class="lbl-b" text-anchor="middle">Solid solution α</text>
+<text x="410.0" y="141.7" class="lbl-sm" text-anchor="middle">L + α</text>
+<line x1="250.0" y1="163.9" x2="300.0" y2="163.9" class="ln acc thick"/>
+<line x1="265.0" y1="193.9" x2="265.0" y2="275.0" class="ln thin dash"/>
+<circle cx="250.0" cy="163.9" r="3" class="solid"/>
+<circle cx="265.0" cy="163.9" r="3" class="solid"/>
+<circle cx="300.0" cy="163.9" r="3" class="solid"/>
+<line x1="90.0" y1="163.9" x2="250.0" y2="163.9" class="ln thin dash"/>
+<text x="83.0" y="167.9" class="lbl-sm" text-anchor="middle"></text>
+<text x="242.0" y="154.9" class="lbl-acc" text-anchor="end">C<tspan dy="4" class="lbl-sm">L</tspan></text>
+<text x="264.0" y="185.9" class="lbl-acc" text-anchor="middle">C<tspan dy="4" class="lbl-sm">0</tspan></text>
+<text x="310.0" y="185.9" class="lbl-acc" text-anchor="start">C<tspan dy="4" class="lbl-sm">α</tspan></text>
+<text x="265.0" y="293.0" class="lbl-sm" text-anchor="middle">35</text>
+<text x="236.0" y="309.0" class="lbl-sm" text-anchor="end">32</text>
+<text x="314.0" y="309.0" class="lbl-sm" text-anchor="start">42</text>
+<line x1="250.0" y1="197.9" x2="250.0" y2="275.0" class="ln thin dash"/>
+<line x1="300.0" y1="197.9" x2="300.0" y2="275.0" class="ln thin dash"/>
+<text x="340.0" y="333.0" class="lbl-sm" text-anchor="middle">Weight % Ni →</text>
+<text x="96.0" y="293.0" class="lbl-b" text-anchor="middle">Cu</text>
+<text x="586.0" y="293.0" class="lbl-b" text-anchor="middle">Ni</text>
+<text x="315.0" y="167.9" class="lbl-acc" text-anchor="start">← tie line at 1250 °C</text>
+</svg>
+<figcaption>Fig. 5.5 — Tie line (isotherm) at 1250 °C across the L + α field. C<sub>L</sub> = 32 % Ni, C<sub>α</sub> = 42 % Ni are read where the tie line meets the liquidus and solidus. The alloy C<sub>0</sub> = 35 % Ni lies between them.</figcaption>
+</figure>
+<div class="formula">\[ W_L = \frac{C_\alpha - C_0}{C_\alpha - C_L}, \qquad W_\alpha = \frac{C_0 - C_L}{C_\alpha - C_L} \]</div>
+<p><b>Example 1: Cu–Ni, 35 % Ni at 1250 °C.</b> C<sub>L</sub> = 32 %, C<sub>α</sub> = 42 %. W<sub>L</sub> = (42 − 35)/(42 − 32) = 0.70. W<sub>α</sub> = (35 − 32)/(42 − 32) = 0.30.</p>
+<p><b>Example 2: Fe–C, 3 % C just below 1148 °C.</b> The tie line goes from 2.11 % (austenite) to 4.3 % (liquid, which becomes ledeburite). Primary austenite = (4.3 − 3)/(4.3 − 2.11) = 0.594. Liquid (to ledeburite) = (3 − 2.11)/(4.3 − 2.11) = 0.406.</p>
+<p><b>Example 3: pearlite itself.</b> Ferrite = (6.67 − 0.8)/(6.67 − 0.022) = 88.3 %; cementite = (0.8 − 0.022)/(6.67 − 0.022) = 11.7 %.</p>
+</details>
+</article>
+<article class="q" id="mse-u5-q6" data-marks="10">
+<h3>Q6. Draw the iron–carbon equilibrium diagram. Explain the various phases and locate the invariant points.</h3>
+<p class="q-src">MSE QB Q31 · MSE QB Q37 · Nov 2024 · Jun-Jul 2024 · Feb-Mar 2022 (CBCS)</p>
+<p class="q-hint">Large labelled diagram with temperatures and compositions; phases table; three invariant reactions; A₁, A₃, A<sub>cm</sub>; microstructures of steels.</p>
+<details class="answer"><summary>Model answer</summary>
+<p>The Fe–C (Fe–Fe₃C) equilibrium diagram shows the phases of Fe–C alloys at slow cooling, with 0 to 6.67 % C by weight.</p>
+<figure class="fig" id="mse-u5-f-fec-b">
+<svg viewBox="0 0 760 620" role="img" aria-label="Iron-carbon equilibrium diagram with all phase fields, invariant points and critical lines labelled">
+<defs><marker id="mse-u5-arw-fec-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="95.0" y1="460.0" x2="695.0" y2="460.0" class="ln" marker-end="url(#mse-u5-arw-fec-b)"/>
+<line x1="95.0" y1="460.0" x2="95.0" y2="18.0" class="ln" marker-end="url(#mse-u5-arw-fec-b)"/>
+<line x1="91.0" y1="460.0" x2="95.0" y2="460.0" class="ln thin"/>
+<text x="87.0" y="464.0" class="lbl-sm" text-anchor="end">0</text>
+<line x1="91.0" y1="352.5" x2="95.0" y2="352.5" class="ln thin"/>
+<text x="87.0" y="356.5" class="lbl-sm" text-anchor="end">400</text>
+<line x1="91.0" y1="245.0" x2="95.0" y2="245.0" class="ln thin"/>
+<text x="87.0" y="249.0" class="lbl-sm" text-anchor="end">800</text>
+<line x1="91.0" y1="137.5" x2="95.0" y2="137.5" class="ln thin"/>
+<text x="87.0" y="141.5" class="lbl-sm" text-anchor="end">1200</text>
+<line x1="91.0" y1="30.0" x2="95.0" y2="30.0" class="ln thin"/>
+<text x="87.0" y="34.0" class="lbl-sm" text-anchor="end">1600</text>
+<text x="20.0" y="245.0" class="lbl-b" text-anchor="middle" transform="rotate(-90 20.0 245.0)">Temperature (°C)</text>
+<line x1="95.0" y1="214.9" x2="675.0" y2="214.9" class="ln thin dash"/>
+<line x1="95.0" y1="85.4" x2="675.0" y2="85.4" class="ln thin dash"/>
+<line x1="675.0" y1="46.7" x2="681.0" y2="46.7" class="ln thin"/>
+<text x="684.0" y="42.7" class="lbl-sm" text-anchor="start">1538</text>
+<line x1="675.0" y1="58.2" x2="681.0" y2="58.2" class="ln thin"/>
+<text x="684.0" y="67.2" class="lbl-sm" text-anchor="start">1495</text>
+<line x1="675.0" y1="85.4" x2="681.0" y2="85.4" class="ln thin"/>
+<text x="684.0" y="89.4" class="lbl-sm" text-anchor="start">1394</text>
+<line x1="675.0" y1="151.5" x2="681.0" y2="151.5" class="ln thin"/>
+<text x="684.0" y="155.5" class="lbl-sm" text-anchor="start">1148</text>
+<line x1="675.0" y1="214.9" x2="681.0" y2="214.9" class="ln thin"/>
+<text x="684.0" y="218.9" class="lbl-sm" text-anchor="start">912</text>
+<line x1="675.0" y1="264.6" x2="681.0" y2="264.6" class="ln thin"/>
+<text x="684.0" y="268.6" class="lbl-sm" text-anchor="start">727</text>
+<polyline points="95.0,46.7 141.1,58.2 468.9,151.5 675.0,130.2" class="ln thick" fill="none"/>
+<polyline points="95.0,46.7 102.8,58.2" class="ln thick" fill="none"/>
+<polyline points="102.8,58.2 141.1,58.2" class="ln thick" fill="none"/>
+<polyline points="102.8,58.2 95.0,85.4" class="ln thick" fill="none"/>
+<polyline points="95.0,85.4 109.8,58.2" class="ln thick" fill="none"/>
+<polyline points="109.8,58.2 278.5,151.5" class="ln thick" fill="none"/>
+<polyline points="278.5,151.5 468.9,151.5" class="ln thick" fill="none"/>
+<polyline points="468.9,151.5 675.0,151.5" class="ln thick" fill="none"/>
+<polyline points="95.0,214.9 164.6,264.6" class="ln thick" fill="none"/>
+<polyline points="95.0,214.9 96.9,264.6" class="ln thick" fill="none"/>
+<polyline points="96.9,264.6 675.0,264.6" class="ln thick" fill="none"/>
+<polyline points="164.6,264.6 278.5,151.5" class="ln thick" fill="none"/>
+<line x1="675.0" y1="460.0" x2="675.0" y2="130.2" class="ln thick"/>
+<line x1="96.9" y1="264.6" x2="95.4" y2="460.0" class="ln thick"/>
+<circle cx="141.1" cy="58.2" r="3" class="solid"/>
+<circle cx="109.8" cy="58.2" r="3" class="solid"/>
+<circle cx="102.8" cy="58.2" r="3" class="solid"/>
+<circle cx="278.5" cy="151.5" r="3" class="solid"/>
+<circle cx="468.9" cy="151.5" r="3" class="solid"/>
+<circle cx="164.6" cy="264.6" r="3" class="solid"/>
+<circle cx="96.9" cy="264.6" r="3" class="solid"/>
+<line x1="95.0" y1="460.0" x2="95.0" y2="465.0" class="ln thin"/>
+<text x="95.0" y="478.0" class="lbl-sm" text-anchor="middle">0</text>
+<line x1="164.6" y1="460.0" x2="164.6" y2="465.0" class="ln thin"/>
+<text x="164.6" y="478.0" class="lbl-sm" text-anchor="middle">0.8</text>
+<line x1="278.5" y1="460.0" x2="278.5" y2="465.0" class="ln thin"/>
+<text x="278.5" y="478.0" class="lbl-sm" text-anchor="middle">2.11</text>
+<line x1="468.9" y1="460.0" x2="468.9" y2="465.0" class="ln thin"/>
+<text x="468.9" y="478.0" class="lbl-sm" text-anchor="middle">4.3</text>
+<line x1="675.0" y1="460.0" x2="675.0" y2="465.0" class="ln thin"/>
+<text x="675.0" y="478.0" class="lbl-sm" text-anchor="middle">6.67</text>
+<line x1="164.6" y1="460.0" x2="164.6" y2="264.6" class="ln thin dash"/>
+<line x1="278.5" y1="460.0" x2="278.5" y2="151.5" class="ln thin dash"/>
+<line x1="468.9" y1="460.0" x2="468.9" y2="151.5" class="ln thin dash"/>
+<text x="382.0" y="79.7" class="lbl-b" text-anchor="middle">L (liquid)</text>
+<text x="216.7" y="100.7" class="lbl-sm" text-anchor="middle">L + γ</text>
+<text x="182.0" y="181.8" class="lbl-b" text-anchor="middle">γ (austenite)</text>
+<text x="408.0" y="211.4" class="lbl-b" text-anchor="middle">γ + Fe₃C</text>
+<text x="408.0" y="227.5" class="lbl-sm" text-anchor="middle">(ledeburite)</text>
+<text x="573.3" y="106.6" class="lbl-sm" text-anchor="middle">L + Fe₃C</text>
+<line x1="573.3" y1="107.9" x2="608.0" y2="138.8" class="ln thin"/>
+<text x="123.7" y="257.1" class="lbl-sm" text-anchor="middle">α+γ</text>
+<text x="129.8" y="329.6" class="lbl-sm" text-anchor="middle">α + P</text>
+<text x="225.4" y="324.2" class="lbl-sm" text-anchor="middle">P + Fe₃C</text>
+<text x="408.0" y="324.2" class="lbl-b" text-anchor="middle">Ledeburite</text>
+<text x="408.0" y="339.0" class="lbl-sm" text-anchor="middle">(P + Fe₃C)</text>
+<text x="73.0" y="52.8" class="lbl-sm" text-anchor="end">L+δ</text>
+<line x1="77.0" y1="48.8" x2="108.0" y2="52.8" class="ln thin"/>
+<text x="73.0" y="70.3" class="lbl-sm" text-anchor="end">δ</text>
+<line x1="77.0" y1="66.3" x2="97.6" y2="64.9" class="ln thin"/>
+<text x="73.0" y="93.1" class="lbl-sm" text-anchor="end">δ+γ</text>
+<line x1="77.0" y1="89.1" x2="99.3" y2="75.7" class="ln thin"/>
+<text x="73.0" y="302.8" class="lbl-b" text-anchor="end">α</text>
+<line x1="77.0" y1="298.8" x2="96.0" y2="298.8" class="ln thin"/>
+<text x="153.1" y="46.2" class="lbl-acc" text-anchor="start">Peritectic 1495 °C</text>
+<text x="476.9" y="167.5" class="lbl-acc" text-anchor="start">C: eutectic</text>
+<text x="476.9" y="182.5" class="lbl-acc" text-anchor="start">4.3 % C, 1148 °C</text>
+<text x="286.5" y="167.5" class="lbl-sm" text-anchor="start">E</text>
+<text x="174.6" y="280.6" class="lbl-acc" text-anchor="start">S: eutectoid</text>
+<text x="174.6" y="295.6" class="lbl-acc" text-anchor="start">0.8 % C</text>
+<text x="174.6" y="310.6" class="lbl-acc" text-anchor="start">727 °C</text>
+<text x="669.0" y="452.0" class="lbl-sm" text-anchor="end">Fe₃C</text>
+<text x="669.0" y="122.2" class="lbl-sm" text-anchor="end">D</text>
+<line x1="95.0" y1="486.0" x2="95.0" y2="522.0" class="ln thin dash"/>
+<line x1="164.6" y1="486.0" x2="164.6" y2="522.0" class="ln thin dash"/>
+<text x="129.8" y="500.0" class="lbl-sm" text-anchor="middle">Hypo-</text>
+<text x="129.8" y="515.0" class="lbl-sm" text-anchor="middle">eutectoid</text>
+<line x1="164.6" y1="486.0" x2="164.6" y2="522.0" class="ln thin dash"/>
+<line x1="278.5" y1="486.0" x2="278.5" y2="522.0" class="ln thin dash"/>
+<text x="221.5" y="500.0" class="lbl-sm" text-anchor="middle">Hyper-</text>
+<text x="221.5" y="515.0" class="lbl-sm" text-anchor="middle">eutectoid</text>
+<line x1="278.5" y1="486.0" x2="278.5" y2="522.0" class="ln thin dash"/>
+<line x1="468.9" y1="486.0" x2="468.9" y2="522.0" class="ln thin dash"/>
+<text x="373.7" y="500.0" class="lbl-sm" text-anchor="middle">Hypo-eutectic</text>
+<text x="373.7" y="515.0" class="lbl-sm" text-anchor="middle">cast iron</text>
+<line x1="468.9" y1="486.0" x2="468.9" y2="522.0" class="ln thin dash"/>
+<line x1="675.0" y1="486.0" x2="675.0" y2="522.0" class="ln thin dash"/>
+<text x="572.0" y="500.0" class="lbl-sm" text-anchor="middle">Hyper-eutectic</text>
+<text x="572.0" y="515.0" class="lbl-sm" text-anchor="middle">cast iron</text>
+<line x1="95.0" y1="536.0" x2="278.5" y2="536.0" class="ln acc" marker-end="url(#mse-u5-arw-fec-b)" marker-start="url(#mse-u5-arw-fec-b)"/>
+<text x="186.3" y="554.0" class="lbl-acc" text-anchor="middle">STEELS</text>
+<line x1="278.5" y1="536.0" x2="675.0" y2="536.0" class="ln acc2" marker-end="url(#mse-u5-arw-fec-b)" marker-start="url(#mse-u5-arw-fec-b)"/>
+<text x="477.6" y="554.0" class="lbl-acc" text-anchor="middle">WHITE CAST IRONS</text>
+<text x="385.0" y="612.0" class="lbl-b" text-anchor="middle">Carbon content (weight %) →</text>
+</svg>
+<figcaption>Fig. 5.7 — Iron–carbon (Fe–Fe₃C) equilibrium diagram. P = pearlite (α + Fe₃C). The dashed lines at 912 °C and 1394 °C are guides. Points: peritectic 1495 °C (0.09, 0.17, 0.53 % C), eutectic C (4.3 % C, 1148 °C), eutectoid S (0.8 % C, 727 °C).</figcaption>
+</figure>
+<p><b>Phases.</b></p>
+<div class="tbl"><table><thead><tr><th>Phase</th><th>Description</th></tr></thead><tbody><tr><td>Liquid (L)</td><td>Above the liquidus line A–B–C–D</td></tr><tr><td>δ ferrite</td><td>BCC solid solution of C in δ-iron; max 0.09 % C at 1495 °C; stable between 1394 and 1538 °C</td></tr><tr><td>γ austenite</td><td>FCC solid solution of C in γ-iron; max 2.11 % C at 1148 °C; non-magnetic and ductile; stable above 727 °C</td></tr><tr><td>α ferrite</td><td>BCC solid solution; max 0.022 % C at 727 °C; soft and ductile; magnetic below 768 °C</td></tr><tr><td>Cementite (Fe₃C)</td><td>Hard, brittle intermetallic compound with 6.67 % C</td></tr><tr><td>Pearlite</td><td>Eutectoid mixture of α and Fe₃C lamellae, 0.8 % C; formed at 727 °C</td></tr><tr><td>Ledeburite</td><td>Eutectic mixture of γ and Fe₃C, 4.3 % C; formed at 1148 °C; below 727 °C it is pearlite + Fe₃C</td></tr></tbody></table></div>
+<p><b>Invariant points and reactions.</b></p>
+<div class="tbl"><table><thead><tr><th>Reaction</th><th>Temperature</th><th>Point and composition</th><th>Equation</th></tr></thead><tbody><tr><td>Peritectic</td><td>1495 °C</td><td>H 0.09, J 0.17, B 0.53 % C</td><td>\(L_{0.53} + \delta_{0.09} \rightarrow \gamma_{0.17}\)</td></tr><tr><td>Eutectic</td><td>1148 °C</td><td>C: 4.3 % C (E 2.11, F 6.67)</td><td>\(L_{4.3} \rightarrow \gamma_{2.11} + \mathrm{Fe_3C}\)</td></tr><tr><td>Eutectoid</td><td>727 °C</td><td>S: 0.8 % C (P 0.022, K 6.67)</td><td>\(\gamma_{0.8} \rightarrow \alpha_{0.022} + \mathrm{Fe_3C}\)</td></tr></tbody></table></div>
+<p>Other points: A (0, 1538 °C) melting point of iron; N (0, 1394 °C) δ ⇌ γ change; G (0, 912 °C) γ ⇌ α change; D (6.67, about 1227 °C) melting of Fe₃C.</p>
+<p><b>Critical temperatures.</b> A₁ = 727 °C (line P–S–K). A₃ = line G–S. A<sub>cm</sub> = line S–E.</p>
+<figure class="fig" id="mse-u5-f-corner-b">
+<svg viewBox="0 0 700 420" role="img" aria-label="Enlarged steel corner of the Fe-C diagram showing A1, A3 and Acm lines">
+<defs><marker id="mse-u5-arw-corner-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="90.0" y1="355.0" x2="655.0" y2="355.0" class="ln" marker-end="url(#mse-u5-arw-corner-b)"/>
+<line x1="90.0" y1="355.0" x2="90.0" y2="15.0" class="ln" marker-end="url(#mse-u5-arw-corner-b)"/>
+<line x1="86.0" y1="355.0" x2="90.0" y2="355.0" class="ln thin"/>
+<text x="82.0" y="359.0" class="lbl-sm" text-anchor="end">600</text>
+<line x1="86.0" y1="300.0" x2="90.0" y2="300.0" class="ln thin"/>
+<text x="82.0" y="304.0" class="lbl-sm" text-anchor="end">700</text>
+<line x1="86.0" y1="245.0" x2="90.0" y2="245.0" class="ln thin"/>
+<text x="82.0" y="249.0" class="lbl-sm" text-anchor="end">800</text>
+<line x1="86.0" y1="190.0" x2="90.0" y2="190.0" class="ln thin"/>
+<text x="82.0" y="194.0" class="lbl-sm" text-anchor="end">900</text>
+<line x1="86.0" y1="135.0" x2="90.0" y2="135.0" class="ln thin"/>
+<text x="82.0" y="139.0" class="lbl-sm" text-anchor="end">1000</text>
+<line x1="86.0" y1="80.0" x2="90.0" y2="80.0" class="ln thin"/>
+<text x="82.0" y="84.0" class="lbl-sm" text-anchor="end">1100</text>
+<line x1="86.0" y1="25.0" x2="90.0" y2="25.0" class="ln thin"/>
+<text x="82.0" y="29.0" class="lbl-sm" text-anchor="end">1200</text>
+<text x="20.0" y="190.0" class="lbl-b" text-anchor="middle" transform="rotate(-90 20.0 190.0)">Temperature (°C)</text>
+<line x1="90.0" y1="183.4" x2="277.8" y2="285.1" class="ln thick"/>
+<line x1="90.0" y1="183.4" x2="95.2" y2="285.1" class="ln thick"/>
+<line x1="277.8" y1="285.1" x2="585.4" y2="53.6" class="ln thick"/>
+<line x1="95.2" y1="285.1" x2="630.0" y2="285.1" class="ln thick"/>
+<line x1="585.4" y1="53.6" x2="630.0" y2="53.6" class="ln thick"/>
+<line x1="95.2" y1="285.1" x2="92.8" y2="355.0" class="ln thick"/>
+<circle cx="277.8" cy="285.1" r="3" class="solid"/>
+<circle cx="95.2" cy="285.1" r="3" class="solid"/>
+<line x1="277.8" y1="355.0" x2="277.8" y2="360.0" class="ln thin"/>
+<text x="277.8" y="373.0" class="lbl-sm" text-anchor="middle">0.8</text>
+<line x1="585.4" y1="355.0" x2="585.4" y2="360.0" class="ln thin"/>
+<text x="585.4" y="373.0" class="lbl-sm" text-anchor="middle">2.11</text>
+<text x="90.0" y="373.0" class="lbl-sm" text-anchor="middle">0</text>
+<line x1="277.8" y1="355.0" x2="277.8" y2="285.1" class="ln thin dash"/>
+<text x="430.4" y="139.0" class="lbl-b" text-anchor="middle">γ  (austenite)</text>
+<text x="153.4" y="258.4" class="lbl" text-anchor="middle">α + γ</text>
+<text x="465.7" y="249.0" class="lbl" text-anchor="middle">γ + Fe₃C</text>
+<text x="183.9" y="323.2" class="lbl" text-anchor="middle">α + pearlite</text>
+<text x="442.2" y="323.2" class="lbl" text-anchor="middle">pearlite + Fe₃C</text>
+<text x="106.4" y="322.0" class="lbl" text-anchor="middle"></text>
+<text x="207.4" y="181.8" class="lbl-acc" text-anchor="start">A<tspan dy="4" class="lbl-sm">3</tspan>  (γ → α starts)</text>
+<line x1="203.4" y1="177.8" x2="160.4" y2="219.6" class="ln thin acc"/>
+<text x="634.0" y="289.1" class="lbl-acc" text-anchor="start">A₁</text>
+<text x="484.3" y="163.5" class="lbl-acc" text-anchor="start">A<tspan dy="4" class="lbl-sm">cm</tspan>  (γ → Fe₃C starts)</text>
+<line x1="480.3" y1="167.5" x2="430.4" y2="196.6" class="ln thin acc"/>
+<text x="97.2" y="275.1" class="lbl-sm" text-anchor="start">P</text>
+<text x="285.8" y="299.1" class="lbl-sm" text-anchor="start">S</text>
+<text x="577.4" y="45.6" class="lbl-sm" text-anchor="end">E</text>
+<text x="68.0" y="331.5" class="lbl-b" text-anchor="end">α</text>
+<line x1="72.0" y1="327.5" x2="93.8" y2="327.5" class="ln thin"/>
+<text x="360.0" y="403.0" class="lbl-b" text-anchor="middle">Carbon content (weight %) →</text>
+</svg>
+<figcaption>Fig. 5.8 — Steel corner of the Fe–C diagram (enlarged). A₁ = 727 °C (eutectoid line), A₃ = G–S line (912 °C at 0 % C to 727 °C at 0.8 % C), A<sub>cm</sub> = S–E line (727 °C at 0.8 % C to 1148 °C at 2.11 % C).</figcaption>
+</figure>
+<p><b>Slow cooling of steels.</b> Hypo-eutectoid steel: austenite → ferrite + austenite (below A₃) → ferrite + pearlite (below 727 °C). Eutectoid steel: austenite → 100 % pearlite. Hyper-eutectoid steel: austenite → austenite + cementite (below A<sub>cm</sub>) → pearlite + cementite network.</p>
+<figure class="fig" id="mse-u5-f-micro-b">
+<svg viewBox="0 0 700 280" role="img" aria-label="Three microstructure sketches: hypo-eutectoid steel (ferrite and pearlite), eutectoid steel (all pearlite), hyper-eutectoid steel (pearlite with cementite network)">
+<defs><marker id="mse-u5-arw-micro-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker><clipPath id="mse-u5-clip-hypo-b"><circle cx="115" cy="110" r="80"/></clipPath><clipPath id="mse-u5-clip-eut-b"><circle cx="350" cy="110" r="80"/></clipPath><clipPath id="mse-u5-clip-hyp-b"><circle cx="585" cy="110" r="80"/></clipPath></defs>
+<g clip-path="url(#mse-u5-clip-hypo-b)"><polygon points="81.8,49.0 65.4,58.5 48.9,49.0 48.9,30.0 65.4,20.5 81.8,30.0" class="ln thin"/><polygon points="114.7,49.0 98.3,58.5 81.8,49.0 81.8,30.0 98.3,20.5 114.7,30.0" class="ln thin"/><polygon points="147.6,49.0 131.2,58.5 114.7,49.0 114.7,30.0 131.2,20.5 147.6,30.0" class="ln thin fill-hatch"/><polygon points="180.5,49.0 164.1,58.5 147.6,49.0 147.6,30.0 164.1,20.5 180.5,30.0" class="ln thin"/><polygon points="65.4,77.5 48.9,87.0 32.5,77.5 32.5,58.5 48.9,49.0 65.4,58.5" class="ln thin fill-hatch"/><polygon points="98.3,77.5 81.8,87.0 65.4,77.5 65.4,58.5 81.8,49.0 98.3,58.5" class="ln thin"/><polygon points="131.2,77.5 114.7,87.0 98.3,77.5 98.3,58.5 114.7,49.0 131.2,58.5" class="ln thin"/><polygon points="164.1,77.5 147.6,87.0 131.2,77.5 131.2,58.5 147.6,49.0 164.1,58.5" class="ln thin fill-hatch"/><polygon points="197.0,77.5 180.5,87.0 164.1,77.5 164.1,58.5 180.5,49.0 197.0,58.5" class="ln thin"/><polygon points="48.9,106.0 32.5,115.5 16.0,106.0 16.0,87.0 32.5,77.5 48.9,87.0" class="ln thin"/><polygon points="81.8,106.0 65.4,115.5 48.9,106.0 48.9,87.0 65.4,77.5 81.8,87.0" class="ln thin"/><polygon points="114.7,106.0 98.3,115.5 81.8,106.0 81.8,87.0 98.3,77.5 114.7,87.0" class="ln thin"/><polygon points="147.6,106.0 131.2,115.5 114.7,106.0 114.7,87.0 131.2,77.5 147.6,87.0" class="ln thin"/><polygon points="180.5,106.0 164.1,115.5 147.6,106.0 147.6,87.0 164.1,77.5 180.5,87.0" class="ln thin fill-hatch"/><polygon points="213.5,106.0 197.0,115.5 180.5,106.0 180.5,87.0 197.0,77.5 213.5,87.0" class="ln thin"/><polygon points="65.4,134.5 48.9,144.0 32.5,134.5 32.5,115.5 48.9,106.0 65.4,115.5" class="ln thin"/><polygon points="98.3,134.5 81.8,144.0 65.4,134.5 65.4,115.5 81.8,106.0 98.3,115.5" class="ln thin fill-hatch"/><polygon points="131.2,134.5 114.7,144.0 98.3,134.5 98.3,115.5 114.7,106.0 131.2,115.5" class="ln thin fill-hatch"/><polygon points="164.1,134.5 147.6,144.0 131.2,134.5 131.2,115.5 147.6,106.0 164.1,115.5" class="ln thin fill-hatch"/><polygon points="197.0,134.5 180.5,144.0 164.1,134.5 164.1,115.5 180.5,106.0 197.0,115.5" class="ln thin"/><polygon points="81.8,163.0 65.4,172.5 48.9,163.0 48.9,144.0 65.4,134.5 81.8,144.0" class="ln thin fill-hatch"/><polygon points="114.7,163.0 98.3,172.5 81.8,163.0 81.8,144.0 98.3,134.5 114.7,144.0" class="ln thin"/><polygon points="147.6,163.0 131.2,172.5 114.7,163.0 114.7,144.0 131.2,134.5 147.6,144.0" class="ln thin fill-hatch"/><polygon points="180.5,163.0 164.1,172.5 147.6,163.0 147.6,144.0 164.1,134.5 180.5,144.0" class="ln thin"/><polygon points="213.5,163.0 197.0,172.5 180.5,163.0 180.5,144.0 197.0,134.5 213.5,144.0" class="ln thin"/><polygon points="98.3,191.5 81.8,201.0 65.4,191.5 65.4,172.5 81.8,163.0 98.3,172.5" class="ln thin"/><polygon points="131.2,191.5 114.7,201.0 98.3,191.5 98.3,172.5 114.7,163.0 131.2,172.5" class="ln thin"/><polygon points="164.1,191.5 147.6,201.0 131.2,191.5 131.2,172.5 147.6,163.0 164.1,172.5" class="ln thin fill-hatch"/></g>
+<circle cx="115.0" cy="110.0" r="80" class="ln"/>
+<text x="115.0" y="218.0" class="lbl-b" text-anchor="middle">Hypo-eutectoid (0.4 % C)</text>
+<text x="115.0" y="236.0" class="lbl-sm" text-anchor="middle">plain = ferrite, hatched = pearlite</text>
+<text x="115.0" y="256.0" class="lbl-sm" text-anchor="middle">grain boundaries: α + pearlite</text>
+<g clip-path="url(#mse-u5-clip-eut-b)"><polygon points="316.8,49.0 300.4,58.5 283.9,49.0 283.9,30.0 300.4,20.5 316.8,30.0" class="ln thin fill-hatch"/><polygon points="349.7,49.0 333.3,58.5 316.8,49.0 316.8,30.0 333.3,20.5 349.7,30.0" class="ln thin fill-hatch"/><polygon points="382.6,49.0 366.2,58.5 349.7,49.0 349.7,30.0 366.2,20.5 382.6,30.0" class="ln thin fill-hatch"/><polygon points="415.5,49.0 399.1,58.5 382.6,49.0 382.6,30.0 399.1,20.5 415.5,30.0" class="ln thin fill-hatch"/><polygon points="300.4,77.5 283.9,87.0 267.5,77.5 267.5,58.5 283.9,49.0 300.4,58.5" class="ln thin fill-hatch"/><polygon points="333.3,77.5 316.8,87.0 300.4,77.5 300.4,58.5 316.8,49.0 333.3,58.5" class="ln thin fill-hatch"/><polygon points="366.2,77.5 349.7,87.0 333.3,77.5 333.3,58.5 349.7,49.0 366.2,58.5" class="ln thin fill-hatch"/><polygon points="399.1,77.5 382.6,87.0 366.2,77.5 366.2,58.5 382.6,49.0 399.1,58.5" class="ln thin fill-hatch"/><polygon points="432.0,77.5 415.5,87.0 399.1,77.5 399.1,58.5 415.5,49.0 432.0,58.5" class="ln thin fill-hatch"/><polygon points="283.9,106.0 267.5,115.5 251.0,106.0 251.0,87.0 267.5,77.5 283.9,87.0" class="ln thin fill-hatch"/><polygon points="316.8,106.0 300.4,115.5 283.9,106.0 283.9,87.0 300.4,77.5 316.8,87.0" class="ln thin fill-hatch"/><polygon points="349.7,106.0 333.3,115.5 316.8,106.0 316.8,87.0 333.3,77.5 349.7,87.0" class="ln thin fill-hatch"/><polygon points="382.6,106.0 366.2,115.5 349.7,106.0 349.7,87.0 366.2,77.5 382.6,87.0" class="ln thin fill-hatch"/><polygon points="415.5,106.0 399.1,115.5 382.6,106.0 382.6,87.0 399.1,77.5 415.5,87.0" class="ln thin fill-hatch"/><polygon points="448.5,106.0 432.0,115.5 415.5,106.0 415.5,87.0 432.0,77.5 448.5,87.0" class="ln thin fill-hatch"/><polygon points="300.4,134.5 283.9,144.0 267.5,134.5 267.5,115.5 283.9,106.0 300.4,115.5" class="ln thin fill-hatch"/><polygon points="333.3,134.5 316.8,144.0 300.4,134.5 300.4,115.5 316.8,106.0 333.3,115.5" class="ln thin fill-hatch"/><polygon points="366.2,134.5 349.7,144.0 333.3,134.5 333.3,115.5 349.7,106.0 366.2,115.5" class="ln thin fill-hatch"/><polygon points="399.1,134.5 382.6,144.0 366.2,134.5 366.2,115.5 382.6,106.0 399.1,115.5" class="ln thin fill-hatch"/><polygon points="432.0,134.5 415.5,144.0 399.1,134.5 399.1,115.5 415.5,106.0 432.0,115.5" class="ln thin fill-hatch"/><polygon points="316.8,163.0 300.4,172.5 283.9,163.0 283.9,144.0 300.4,134.5 316.8,144.0" class="ln thin fill-hatch"/><polygon points="349.7,163.0 333.3,172.5 316.8,163.0 316.8,144.0 333.3,134.5 349.7,144.0" class="ln thin fill-hatch"/><polygon points="382.6,163.0 366.2,172.5 349.7,163.0 349.7,144.0 366.2,134.5 382.6,144.0" class="ln thin fill-hatch"/><polygon points="415.5,163.0 399.1,172.5 382.6,163.0 382.6,144.0 399.1,134.5 415.5,144.0" class="ln thin fill-hatch"/><polygon points="448.5,163.0 432.0,172.5 415.5,163.0 415.5,144.0 432.0,134.5 448.5,144.0" class="ln thin fill-hatch"/><polygon points="333.3,191.5 316.8,201.0 300.4,191.5 300.4,172.5 316.8,163.0 333.3,172.5" class="ln thin fill-hatch"/><polygon points="366.2,191.5 349.7,201.0 333.3,191.5 333.3,172.5 349.7,163.0 366.2,172.5" class="ln thin fill-hatch"/><polygon points="399.1,191.5 382.6,201.0 366.2,191.5 366.2,172.5 382.6,163.0 399.1,172.5" class="ln thin fill-hatch"/></g>
+<circle cx="350.0" cy="110.0" r="80" class="ln"/>
+<text x="350.0" y="218.0" class="lbl-b" text-anchor="middle">Eutectoid (0.8 % C)</text>
+<text x="350.0" y="236.0" class="lbl-sm" text-anchor="middle">100 % pearlite</text>
+<text x="350.0" y="256.0" class="lbl-sm" text-anchor="middle">lamellae of α and Fe₃C</text>
+<g clip-path="url(#mse-u5-clip-hyp-b)"><polygon points="551.8,49.0 535.4,58.5 518.9,49.0 518.9,30.0 535.4,20.5 551.8,30.0" class="ln thick fill-hatch"/><polygon points="584.7,49.0 568.3,58.5 551.8,49.0 551.8,30.0 568.3,20.5 584.7,30.0" class="ln thick fill-hatch"/><polygon points="617.6,49.0 601.2,58.5 584.7,49.0 584.7,30.0 601.2,20.5 617.6,30.0" class="ln thick fill-hatch"/><polygon points="650.5,49.0 634.1,58.5 617.6,49.0 617.6,30.0 634.1,20.5 650.5,30.0" class="ln thick fill-hatch"/><polygon points="535.4,77.5 518.9,87.0 502.5,77.5 502.5,58.5 518.9,49.0 535.4,58.5" class="ln thick fill-hatch"/><polygon points="568.3,77.5 551.8,87.0 535.4,77.5 535.4,58.5 551.8,49.0 568.3,58.5" class="ln thick fill-hatch"/><polygon points="601.2,77.5 584.7,87.0 568.3,77.5 568.3,58.5 584.7,49.0 601.2,58.5" class="ln thick fill-hatch"/><polygon points="634.1,77.5 617.6,87.0 601.2,77.5 601.2,58.5 617.6,49.0 634.1,58.5" class="ln thick fill-hatch"/><polygon points="667.0,77.5 650.5,87.0 634.1,77.5 634.1,58.5 650.5,49.0 667.0,58.5" class="ln thick fill-hatch"/><polygon points="518.9,106.0 502.5,115.5 486.0,106.0 486.0,87.0 502.5,77.5 518.9,87.0" class="ln thick fill-hatch"/><polygon points="551.8,106.0 535.4,115.5 518.9,106.0 518.9,87.0 535.4,77.5 551.8,87.0" class="ln thick fill-hatch"/><polygon points="584.7,106.0 568.3,115.5 551.8,106.0 551.8,87.0 568.3,77.5 584.7,87.0" class="ln thick fill-hatch"/><polygon points="617.6,106.0 601.2,115.5 584.7,106.0 584.7,87.0 601.2,77.5 617.6,87.0" class="ln thick fill-hatch"/><polygon points="650.5,106.0 634.1,115.5 617.6,106.0 617.6,87.0 634.1,77.5 650.5,87.0" class="ln thick fill-hatch"/><polygon points="683.5,106.0 667.0,115.5 650.5,106.0 650.5,87.0 667.0,77.5 683.5,87.0" class="ln thick fill-hatch"/><polygon points="535.4,134.5 518.9,144.0 502.5,134.5 502.5,115.5 518.9,106.0 535.4,115.5" class="ln thick fill-hatch"/><polygon points="568.3,134.5 551.8,144.0 535.4,134.5 535.4,115.5 551.8,106.0 568.3,115.5" class="ln thick fill-hatch"/><polygon points="601.2,134.5 584.7,144.0 568.3,134.5 568.3,115.5 584.7,106.0 601.2,115.5" class="ln thick fill-hatch"/><polygon points="634.1,134.5 617.6,144.0 601.2,134.5 601.2,115.5 617.6,106.0 634.1,115.5" class="ln thick fill-hatch"/><polygon points="667.0,134.5 650.5,144.0 634.1,134.5 634.1,115.5 650.5,106.0 667.0,115.5" class="ln thick fill-hatch"/><polygon points="551.8,163.0 535.4,172.5 518.9,163.0 518.9,144.0 535.4,134.5 551.8,144.0" class="ln thick fill-hatch"/><polygon points="584.7,163.0 568.3,172.5 551.8,163.0 551.8,144.0 568.3,134.5 584.7,144.0" class="ln thick fill-hatch"/><polygon points="617.6,163.0 601.2,172.5 584.7,163.0 584.7,144.0 601.2,134.5 617.6,144.0" class="ln thick fill-hatch"/><polygon points="650.5,163.0 634.1,172.5 617.6,163.0 617.6,144.0 634.1,134.5 650.5,144.0" class="ln thick fill-hatch"/><polygon points="683.5,163.0 667.0,172.5 650.5,163.0 650.5,144.0 667.0,134.5 683.5,144.0" class="ln thick fill-hatch"/><polygon points="568.3,191.5 551.8,201.0 535.4,191.5 535.4,172.5 551.8,163.0 568.3,172.5" class="ln thick fill-hatch"/><polygon points="601.2,191.5 584.7,201.0 568.3,191.5 568.3,172.5 584.7,163.0 601.2,172.5" class="ln thick fill-hatch"/><polygon points="634.1,191.5 617.6,201.0 601.2,191.5 601.2,172.5 617.6,163.0 634.1,172.5" class="ln thick fill-hatch"/></g>
+<circle cx="585.0" cy="110.0" r="80" class="ln"/>
+<text x="585.0" y="218.0" class="lbl-b" text-anchor="middle">Hyper-eutectoid (1.2 % C)</text>
+<text x="585.0" y="236.0" class="lbl-sm" text-anchor="middle">pearlite + cementite network</text>
+<text x="585.0" y="256.0" class="lbl-sm" text-anchor="middle">Fe₃C (thick lines) on boundaries</text>
+<text x="350.0" y="18.0" class="lbl-sm" text-anchor="middle">Hatched grains = pearlite; plain grains = ferrite; thick lines = cementite</text>
+</svg>
+<figcaption>Fig. 5.9 — Microstructure of slowly cooled steels at room temperature (schematic, × 100–500). Pearlite is shown hatched.</figcaption>
+</figure>
+<p><b>Fractions (lever rule).</b> 0.4 % C steel: ferrite 51.4 %, pearlite 48.6 %. 1.2 % C steel: proeutectoid cementite 6.8 %, pearlite 93.2 %.</p>
+<aside class="note"><b>Steels and cast irons.</b> Steels have less than 2.11 % C. White cast irons have 2.11–6.67 % C and contain ledeburite.</aside>
+</details>
+</article>
+<article class="q" id="mse-u5-q7" data-marks="10">
+<h3>Q7. Draw the TTT diagram for hypo- and hyper-eutectoid steels and compare it with a eutectoid steel. Explain the effect of alloying elements on the Fe–C diagram and on the TTT diagram. Write briefly on the CCT diagram.</h3>
+<p class="q-src">Nov 2024 · Jun-Jul 2024 · Jan 2025 · Aug-Sep 2023 · Jan 2023 (CBCS) · Feb-Mar 2022 (CBCS) · Syllabus topic</p>
+<p class="q-hint">Steps to construct; eutectoid TTT; extra proeutectoid curve for hypo/hyper; austenite and ferrite stabilisers; CCT shifted right.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>TTT diagram.</b> It plots the time (log scale) for the isothermal transformation of austenite at different temperatures. It is also called the C-curve or S-curve.</p>
+<p><b>Steps to construct.</b></p>
+<ol>
+<li>Cut many thin specimens of the steel and heat them above A₃ (or A₁) to make austenite.</li>
+<li>Quench the specimens quickly into a salt bath at one fixed temperature below A₁.</li>
+<li>Hold each specimen for a different time. Then quench in water.</li>
+<li>Examine each specimen (microscope, hardness) to find the percentage of austenite transformed.</li>
+<li>Mark the times of 1 % (start) and 99 % (finish) transformation on a temperature–log time graph.</li>
+<li>Repeat at other temperatures and join the start points and the finish points.</li>
+</ol>
+<figure class="fig" id="mse-u5-f-tttE-b">
+<svg viewBox="0 0 700 400" role="img" aria-label="TTT diagram of eutectoid steel with pearlite, bainite and martensite regions">
+<defs><marker id="mse-u5-arw-tttE-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="85.0" y1="345.0" x2="619.0" y2="345.0" class="ln" marker-end="url(#mse-u5-arw-tttE-b)"/>
+<line x1="85.0" y1="345.0" x2="85.0" y2="15.0" class="ln" marker-end="url(#mse-u5-arw-tttE-b)"/>
+<line x1="81.0" y1="345.0" x2="85.0" y2="345.0" class="ln thin"/>
+<text x="78.0" y="349.0" class="lbl-sm" text-anchor="end">0</text>
+<line x1="81.0" y1="265.0" x2="85.0" y2="265.0" class="ln thin"/>
+<text x="78.0" y="269.0" class="lbl-sm" text-anchor="end">200</text>
+<line x1="81.0" y1="185.0" x2="85.0" y2="185.0" class="ln thin"/>
+<text x="78.0" y="189.0" class="lbl-sm" text-anchor="end">400</text>
+<line x1="81.0" y1="105.0" x2="85.0" y2="105.0" class="ln thin"/>
+<text x="78.0" y="109.0" class="lbl-sm" text-anchor="end">600</text>
+<line x1="81.0" y1="25.0" x2="85.0" y2="25.0" class="ln thin"/>
+<text x="78.0" y="29.0" class="lbl-sm" text-anchor="end">800</text>
+<line x1="128.3" y1="345.0" x2="128.3" y2="349.0" class="ln thin"/>
+<text x="128.3" y="362.0" class="lbl-sm" text-anchor="middle">1</text>
+<line x1="215.0" y1="345.0" x2="215.0" y2="349.0" class="ln thin"/>
+<text x="215.0" y="362.0" class="lbl-sm" text-anchor="middle">10</text>
+<line x1="301.7" y1="345.0" x2="301.7" y2="349.0" class="ln thin"/>
+<text x="301.7" y="362.0" class="lbl-sm" text-anchor="middle">10²</text>
+<line x1="388.3" y1="345.0" x2="388.3" y2="349.0" class="ln thin"/>
+<text x="388.3" y="362.0" class="lbl-sm" text-anchor="middle">10³</text>
+<line x1="475.0" y1="345.0" x2="475.0" y2="349.0" class="ln thin"/>
+<text x="475.0" y="362.0" class="lbl-sm" text-anchor="middle">10⁴</text>
+<line x1="561.7" y1="345.0" x2="561.7" y2="349.0" class="ln thin"/>
+<text x="561.7" y="362.0" class="lbl-sm" text-anchor="middle">10⁵</text>
+<text x="345.0" y="381.0" class="lbl-sm" text-anchor="middle">Time (s), log scale →</text>
+<text x="43.0" y="185.0" class="lbl-sm" text-anchor="middle" transform="rotate(-90 43.0 185.0)">Temperature (°C)</text>
+<line x1="85.0" y1="54.2" x2="605.0" y2="54.2" class="ln acc thick"/>
+<text x="611.0" y="58.2" class="lbl-acc" text-anchor="start">A₁</text>
+<path d="M509.7,57.0 C492.3,60.7 440.3,71.7 405.7,79.0 C371.0,86.3 334.9,94.3 301.7,101.0 C268.4,107.7 232.3,114.3 206.3,119.0 C180.3,123.7 152.2,124.0 145.7,129.0 C139.2,134.0 152.9,141.7 167.3,149.0 C181.8,156.3 207.1,164.3 232.3,173.0 C257.6,181.7 291.6,192.3 319.0,201.0 C346.4,209.7 375.3,217.0 397.0,225.0 C418.7,233.0 440.3,245.0 449.0,249.0" class="ln thick" fill="none"/>
+<path d="M596.3,60.2 C581.9,63.3 540.0,72.2 509.7,79.0 C479.3,85.8 444.7,94.7 414.3,101.0 C384.0,107.3 353.7,112.7 327.7,117.0 C301.7,121.3 265.6,121.7 258.3,127.0 C251.1,132.3 268.4,141.3 284.3,149.0 C300.2,156.7 329.1,164.3 353.7,173.0 C378.2,181.7 407.1,192.3 431.7,201.0 C456.2,209.7 480.8,217.0 501.0,225.0 C521.2,233.0 544.3,245.0 553.0,249.0" class="ln thick" fill="none"/>
+<line x1="85.0" y1="257.0" x2="605.0" y2="257.0" class="ln dash"/>
+<text x="611.0" y="261.0" class="lbl-sm" text-anchor="start">Mₛ</text>
+<line x1="85.0" y1="281.0" x2="605.0" y2="281.0" class="ln thin dash"/>
+<text x="611.0" y="285.0" class="lbl-sm" text-anchor="start">M₅₀</text>
+<line x1="85.0" y1="305.0" x2="605.0" y2="305.0" class="ln thin dash"/>
+<text x="611.0" y="309.0" class="lbl-sm" text-anchor="start">M₉₀</text>
+<text x="180.3" y="69.0" class="lbl-b" text-anchor="middle">Austenite</text>
+<text x="93.7" y="213.0" class="lbl-sm" text-anchor="start">unstable</text>
+<text x="93.7" y="227.0" class="lbl-sm" text-anchor="start">austenite</text>
+<text x="414.3" y="87.0" class="lbl-sm" text-anchor="middle">γ + P</text>
+<text x="527.0" y="115.0" class="lbl-b" text-anchor="middle">Pearlite</text>
+<text x="327.7" y="183.0" class="lbl-sm" text-anchor="middle">γ + B</text>
+<text x="518.3" y="205.0" class="lbl-b" text-anchor="middle">Bainite</text>
+<text x="319.0" y="329.0" class="lbl-b" text-anchor="middle">Martensite (+ retained γ)</text>
+<text x="119.7" y="107.0" class="lbl-acc" text-anchor="end">nose</text>
+<line x1="122.7" y1="110.0" x2="145.7" y2="126.0" class="ln thin acc" marker-end="url(#mse-u5-arw-tttE-b)"/>
+</svg>
+<figcaption>Fig. 5.11 — TTT (isothermal transformation) diagram of eutectoid steel (0.8 % C). The left C-curve is the start of transformation and the right curve is the finish. Below Mₛ (about 220 °C) martensite forms.</figcaption>
+</figure>
+<p><b>Eutectoid steel (0.8 % C).</b> Above A₁ the steel is austenite. Between 727 and about 550 °C austenite changes to pearlite (coarse at the top, fine near the nose). Between the nose and M<sub>s</sub> the product is bainite (upper and lower). Below M<sub>s</sub> (about 220 °C) austenite changes to martensite at once, without diffusion.</p>
+<p><b>Hypo- and hyper-eutectoid steels.</b></p>
+<figure class="fig" id="mse-u5-f-tttH-b">
+<svg viewBox="0 0 720 420" role="img" aria-label="TTT diagrams of hypo-eutectoid and hyper-eutectoid steels showing the extra proeutectoid ferrite or cementite curve">
+<defs><marker id="mse-u5-arw-tttH-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="330.0" x2="324.0" y2="330.0" class="ln" marker-end="url(#mse-u5-arw-tttH-b)"/>
+<line x1="60.0" y1="330.0" x2="60.0" y2="30.0" class="ln" marker-end="url(#mse-u5-arw-tttH-b)"/>
+<line x1="56.0" y1="330.0" x2="60.0" y2="330.0" class="ln thin"/>
+<text x="53.0" y="334.0" class="lbl-sm" text-anchor="end">0</text>
+<line x1="56.0" y1="257.5" x2="60.0" y2="257.5" class="ln thin"/>
+<text x="53.0" y="261.5" class="lbl-sm" text-anchor="end">250</text>
+<line x1="56.0" y1="185.0" x2="60.0" y2="185.0" class="ln thin"/>
+<text x="53.0" y="189.0" class="lbl-sm" text-anchor="end">500</text>
+<line x1="56.0" y1="112.5" x2="60.0" y2="112.5" class="ln thin"/>
+<text x="53.0" y="116.5" class="lbl-sm" text-anchor="end">750</text>
+<line x1="56.0" y1="40.0" x2="60.0" y2="40.0" class="ln thin"/>
+<text x="53.0" y="44.0" class="lbl-sm" text-anchor="end">1000</text>
+<line x1="80.8" y1="330.0" x2="80.8" y2="334.0" class="ln thin"/>
+<text x="80.8" y="347.0" class="lbl-sm" text-anchor="middle">1</text>
+<line x1="164.2" y1="330.0" x2="164.2" y2="334.0" class="ln thin"/>
+<text x="164.2" y="347.0" class="lbl-sm" text-anchor="middle">10²</text>
+<line x1="247.5" y1="330.0" x2="247.5" y2="334.0" class="ln thin"/>
+<text x="247.5" y="347.0" class="lbl-sm" text-anchor="middle">10⁴</text>
+<text x="185.0" y="366.0" class="lbl-sm" text-anchor="middle">Time (s), log scale →</text>
+<line x1="60.0" y1="119.2" x2="310.0" y2="119.2" class="ln acc thick"/>
+<text x="66.0" y="134.2" class="lbl-acc" text-anchor="start">A₁</text>
+<path d="M264.2,121.2 C255.8,123.9 230.8,131.8 214.2,137.1 C197.5,142.5 180.1,148.3 164.2,153.1 C148.2,157.9 130.8,162.8 118.3,166.2 C105.8,169.5 92.3,169.8 89.2,173.4 C86.0,177.0 92.6,182.6 99.6,187.9 C106.5,193.2 118.7,199.0 130.8,205.3 C143.0,211.6 162.4,220.8 172.5,225.6 C182.6,230.4 188.1,232.9 191.2,234.3" class="ln thick" fill="none"/>
+<path d="M305.8,123.5 C298.9,125.8 278.8,132.2 264.2,137.1 C249.6,142.1 232.9,148.5 218.3,153.1 C203.7,157.7 189.2,161.6 176.7,164.7 C164.2,167.8 146.8,168.1 143.3,171.9 C139.9,175.8 148.2,182.3 155.8,187.9 C163.5,193.5 177.4,199.0 189.2,205.3 C201.0,211.6 217.6,220.8 226.7,225.6 C235.7,230.4 240.6,232.9 243.3,234.3" class="ln thick" fill="none"/>
+<text x="308.0" y="80.2" class="lbl-acc" text-anchor="end">A<tspan dy="4" class="lbl-sm">3</tspan></text>
+<text x="185.0" y="18.0" class="lbl-b" text-anchor="middle">(a) Hypo-eutectoid (0.4 % C)</text>
+<text x="139.2" y="105.2" class="lbl-sm" text-anchor="middle">γ + α</text>
+<text x="282.9" y="158.9" class="lbl-sm" text-anchor="middle">α + P</text>
+<text x="135.0" y="57.4" class="lbl-b" text-anchor="middle">Austenite</text>
+<line x1="60.0" y1="92.2" x2="310.0" y2="92.2" class="ln acc2 thick"/>
+<path d="M301.7,94.5 C294.0,96.1 270.4,100.6 255.8,103.8 C241.3,107.0 228.1,109.6 214.2,113.9 C200.3,118.3 185.7,124.1 172.5,129.9 C159.3,135.7 146.1,143.2 135.0,148.8 C123.9,154.3 112.4,159.5 105.8,163.2 C99.2,167.0 97.2,169.8 95.4,171.1" class="ln thick acc2" fill="none"/>
+<line x1="60.0" y1="234.3" x2="310.0" y2="234.3" class="ln dash"/>
+<text x="316.0" y="238.3" class="lbl-sm" text-anchor="start">Mₛ</text>
+<text x="272.5" y="205.3" class="lbl-sm" text-anchor="middle">Bainite</text>
+<text x="130.8" y="258.3" class="lbl-sm" text-anchor="middle">Martensite</text>
+<line x1="400.0" y1="330.0" x2="664.0" y2="330.0" class="ln" marker-end="url(#mse-u5-arw-tttH-b)"/>
+<line x1="400.0" y1="330.0" x2="400.0" y2="30.0" class="ln" marker-end="url(#mse-u5-arw-tttH-b)"/>
+<line x1="396.0" y1="330.0" x2="400.0" y2="330.0" class="ln thin"/>
+<text x="393.0" y="334.0" class="lbl-sm" text-anchor="end">0</text>
+<line x1="396.0" y1="257.5" x2="400.0" y2="257.5" class="ln thin"/>
+<text x="393.0" y="261.5" class="lbl-sm" text-anchor="end">250</text>
+<line x1="396.0" y1="185.0" x2="400.0" y2="185.0" class="ln thin"/>
+<text x="393.0" y="189.0" class="lbl-sm" text-anchor="end">500</text>
+<line x1="396.0" y1="112.5" x2="400.0" y2="112.5" class="ln thin"/>
+<text x="393.0" y="116.5" class="lbl-sm" text-anchor="end">750</text>
+<line x1="396.0" y1="40.0" x2="400.0" y2="40.0" class="ln thin"/>
+<text x="393.0" y="44.0" class="lbl-sm" text-anchor="end">1000</text>
+<line x1="420.8" y1="330.0" x2="420.8" y2="334.0" class="ln thin"/>
+<text x="420.8" y="347.0" class="lbl-sm" text-anchor="middle">1</text>
+<line x1="504.2" y1="330.0" x2="504.2" y2="334.0" class="ln thin"/>
+<text x="504.2" y="347.0" class="lbl-sm" text-anchor="middle">10²</text>
+<line x1="587.5" y1="330.0" x2="587.5" y2="334.0" class="ln thin"/>
+<text x="587.5" y="347.0" class="lbl-sm" text-anchor="middle">10⁴</text>
+<text x="525.0" y="366.0" class="lbl-sm" text-anchor="middle">Time (s), log scale →</text>
+<line x1="400.0" y1="119.2" x2="650.0" y2="119.2" class="ln acc thick"/>
+<text x="406.0" y="134.2" class="lbl-acc" text-anchor="start">A₁</text>
+<path d="M604.2,121.2 C595.8,123.9 570.8,131.8 554.2,137.1 C537.5,142.5 520.1,148.3 504.2,153.1 C488.2,157.9 470.8,162.8 458.3,166.2 C445.8,169.5 432.3,169.8 429.2,173.4 C426.0,177.0 432.6,182.6 439.6,187.9 C446.5,193.2 458.7,199.0 470.8,205.3 C483.0,211.6 499.3,219.3 512.5,225.6 C525.7,231.9 539.6,237.2 550.0,243.0 C560.4,248.8 566.7,254.6 575.0,260.4 C583.3,266.2 595.8,274.9 600.0,277.8" class="ln thick" fill="none"/>
+<path d="M645.8,123.5 C638.9,125.8 618.8,132.2 604.2,137.1 C589.6,142.1 572.9,148.5 558.3,153.1 C543.7,157.7 529.2,161.6 516.7,164.7 C504.2,167.8 486.8,168.1 483.3,171.9 C479.9,175.8 488.2,182.3 495.8,187.9 C503.5,193.5 517.4,199.0 529.2,205.3 C541.0,211.6 554.9,219.3 566.7,225.6 C578.5,231.9 590.3,237.2 600.0,243.0 C609.7,248.8 616.7,254.6 625.0,260.4 C633.3,266.2 645.8,274.9 650.0,277.8" class="ln thick" fill="none"/>
+<text x="648.0" y="69.8" class="lbl-acc" text-anchor="end">A<tspan dy="4" class="lbl-sm">cm</tspan></text>
+<text x="525.0" y="18.0" class="lbl-b" text-anchor="middle">(b) Hyper-eutectoid (1.2 % C)</text>
+<text x="491.7" y="98.0" class="lbl-sm" text-anchor="middle">γ + Fe₃C</text>
+<text x="616.7" y="158.9" class="lbl-sm" text-anchor="middle">Fe₃C + P</text>
+<text x="475.0" y="51.6" class="lbl-b" text-anchor="middle">Austenite</text>
+<line x1="400.0" y1="81.8" x2="650.0" y2="81.8" class="ln acc2 thick"/>
+<path d="M641.7,84.1 C634.0,85.9 610.4,91.3 595.8,95.1 C581.2,98.9 568.1,101.6 554.2,106.7 C540.3,111.8 525.7,119.3 512.5,125.6 C499.3,131.8 486.1,138.4 475.0,144.4 C463.9,150.4 452.4,157.4 445.8,161.8 C439.2,166.2 437.2,169.5 435.4,171.1" class="ln thick acc2" fill="none"/>
+<line x1="400.0" y1="277.8" x2="650.0" y2="277.8" class="ln dash"/>
+<text x="656.0" y="281.8" class="lbl-sm" text-anchor="start">Mₛ</text>
+<text x="612.5" y="205.3" class="lbl-sm" text-anchor="middle">Bainite</text>
+<text x="470.8" y="301.8" class="lbl-sm" text-anchor="middle">Martensite</text>
+<text x="35.0" y="205.0" class="lbl-sm" text-anchor="middle"></text>
+</svg>
+<figcaption>Fig. 5.12 — TTT diagrams of (a) a hypo-eutectoid and (b) a hyper-eutectoid steel. An extra curve (coloured) shows where proeutectoid ferrite or cementite starts to form; it joins the pearlite curve at the nose. Mₛ is higher for low carbon and lower for high carbon.</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Point</th><th>Eutectoid (0.8 % C)</th><th>Hypo-eutectoid (below 0.8 %)</th><th>Hyper-eutectoid (above 0.8 %)</th></tr></thead><tbody><tr><td>Upper line</td><td>A₁ only</td><td>A₃ above A₁</td><td>A<sub>cm</sub> above A₁</td></tr><tr><td>Extra curve</td><td>None</td><td>Proeutectoid ferrite starts first</td><td>Proeutectoid cementite starts first</td></tr><tr><td>Product above nose</td><td>Pearlite only</td><td>Ferrite + pearlite</td><td>Cementite + pearlite</td></tr><tr><td>Nose position</td><td>Farthest to the right</td><td>Moves to the left</td><td>Moves to the left</td></tr><tr><td>M<sub>s</sub></td><td>About 220 °C</td><td>Higher</td><td>Lower</td></tr></tbody></table></div>
+<p><b>Effect of alloying elements on the Fe–C diagram.</b></p>
+<figure class="fig" id="mse-u5-f-alloy-b">
+<svg viewBox="0 0 700 290" role="img" aria-label="Effect of alloying element on gamma field: open gamma field for austenite stabiliser and closed gamma loop for ferrite stabiliser">
+<defs><marker id="mse-u5-arw-alloy-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="215.0" x2="320.0" y2="215.0" class="ln" marker-end="url(#mse-u5-arw-alloy-b)"/>
+<line x1="60.0" y1="215.0" x2="60.0" y2="37.0" class="ln" marker-end="url(#mse-u5-arw-alloy-b)"/>
+<text x="185.0" y="251.0" class="lbl-sm" text-anchor="middle">% alloying element →</text>
+<line x1="56.0" y1="162.0" x2="60.0" y2="162.0" class="ln thin"/>
+<text x="53.0" y="166.0" class="lbl-sm" text-anchor="end">912</text>
+<line x1="56.0" y1="80.0" x2="60.0" y2="80.0" class="ln thin"/>
+<text x="53.0" y="84.0" class="lbl-sm" text-anchor="end">1394</text>
+<path d="M60.0,162.0 C76.7,165.1 126.7,174.7 160.0,181.0 C193.3,187.3 243.3,196.6 260.0,199.7" class="ln thick" fill="none"/>
+<path d="M60.0,80.0 C76.7,79.0 126.7,76.1 160.0,73.9 C193.3,71.7 243.3,68.2 260.0,67.1" class="ln thick" fill="none"/>
+<text x="172.5" y="130.0" class="lbl-b" text-anchor="middle">γ</text>
+<text x="90.0" y="198.0" class="lbl-b" text-anchor="middle">α</text>
+<text x="90.0" y="58.6" class="lbl-b" text-anchor="middle">δ</text>
+<text x="185.0" y="22.0" class="lbl-b" text-anchor="middle">(a) Austenite stabiliser (Ni, Mn, Co, Cu, C, N)</text>
+<text x="185.0" y="269.0" class="lbl-acc" text-anchor="middle">γ field widens: A₃ falls, A₄ rises</text>
+<line x1="390.0" y1="215.0" x2="650.0" y2="215.0" class="ln" marker-end="url(#mse-u5-arw-alloy-b)"/>
+<line x1="390.0" y1="215.0" x2="390.0" y2="37.0" class="ln" marker-end="url(#mse-u5-arw-alloy-b)"/>
+<text x="515.0" y="251.0" class="lbl-sm" text-anchor="middle">% alloying element →</text>
+<line x1="386.0" y1="162.0" x2="390.0" y2="162.0" class="ln thin"/>
+<text x="383.0" y="166.0" class="lbl-sm" text-anchor="end">912</text>
+<line x1="386.0" y1="80.0" x2="390.0" y2="80.0" class="ln thin"/>
+<text x="383.0" y="84.0" class="lbl-sm" text-anchor="end">1394</text>
+<path d="M390.0,162.0 C400.4,159.5 433.8,152.3 452.5,147.0 C471.2,141.7 487.9,135.1 502.5,130.0 C517.1,124.9 531.7,120.7 540.0,116.4 C548.3,112.2 550.4,106.5 552.5,104.5" class="ln thick" fill="none"/>
+<path d="M390.0,80.0 C400.4,82.7 433.8,91.6 452.5,96.0 C471.2,100.4 487.9,103.9 502.5,106.2 C517.1,108.5 531.7,109.9 540.0,109.6 C548.3,109.3 550.4,105.3 552.5,104.5" class="ln thick" fill="none"/>
+<text x="445.0" y="121.5" class="lbl-b" text-anchor="middle">γ</text>
+<text x="595.0" y="130.0" class="lbl-b" text-anchor="middle">α (= δ)</text>
+<text x="515.0" y="22.0" class="lbl-b" text-anchor="middle">(b) Ferrite stabiliser (Cr, Mo, W, V, Si, Al)</text>
+<text x="515.0" y="269.0" class="lbl-acc" text-anchor="middle">γ field closes (γ loop): A₃ rises, A₄ falls</text>
+</svg>
+<figcaption>Fig. 5.10 — Effect of alloying elements on the iron phase diagram (schematic). The γ field is the austenite field.</figcaption>
+</figure>
+<ul>
+<li><b>Austenite stabilisers</b> (Ni, Mn, Co, Cu; also C and N) open the γ field. A₃ falls and A₄ rises. With about 8 % Ni and 18 % Cr the steel stays austenitic at room temperature.</li>
+<li><b>Ferrite stabilisers</b> (Cr, Mo, W, V, Si, Al, Ti) close the γ field into a loop. A₃ rises and A₄ falls. High Cr steel (above about 13 %) is ferritic at all temperatures.</li>
+<li>All elements move the eutectoid point to lower carbon content. Ni and Mn lower the eutectoid temperature; Cr, Mo, W, V, Si raise it.</li>
+</ul>
+<p><b>Effect on the TTT diagram.</b> Almost all alloying elements (except Co) shift the C-curves to the right. The critical cooling rate falls, so hardenability rises and martensite forms in thick sections. They also lower M<sub>s</sub>. Carbide formers (Cr, Mo, W, V) separate the pearlite nose from the bainite nose and give a "bay" between them.</p>
+<p><b>CCT diagram.</b> A continuous-cooling transformation diagram shows the transformation during continuous cooling, which is the real condition in heat treatment. Compared with TTT, the curves are displaced to longer times and slightly lower temperatures. Furnace cooling gives coarse pearlite, air cooling gives fine pearlite, and a cooling rate above the critical rate gives martensite. Plain carbon steel shows no bainite on continuous cooling (see Unit 4).</p>
+<figure class="fig" id="mse-u5-f-cct-b">
+<svg viewBox="0 0 700 430" role="img" aria-label="CCT diagram of eutectoid steel compared with the TTT curve, with four cooling paths">
+<defs><marker id="mse-u5-arw-cct-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="85.0" y1="345.0" x2="619.0" y2="345.0" class="ln" marker-end="url(#mse-u5-arw-cct-b)"/>
+<line x1="85.0" y1="345.0" x2="85.0" y2="15.0" class="ln" marker-end="url(#mse-u5-arw-cct-b)"/>
+<line x1="81.0" y1="345.0" x2="85.0" y2="345.0" class="ln thin"/>
+<text x="78.0" y="349.0" class="lbl-sm" text-anchor="end">0</text>
+<line x1="81.0" y1="265.0" x2="85.0" y2="265.0" class="ln thin"/>
+<text x="78.0" y="269.0" class="lbl-sm" text-anchor="end">200</text>
+<line x1="81.0" y1="185.0" x2="85.0" y2="185.0" class="ln thin"/>
+<text x="78.0" y="189.0" class="lbl-sm" text-anchor="end">400</text>
+<line x1="81.0" y1="105.0" x2="85.0" y2="105.0" class="ln thin"/>
+<text x="78.0" y="109.0" class="lbl-sm" text-anchor="end">600</text>
+<line x1="81.0" y1="25.0" x2="85.0" y2="25.0" class="ln thin"/>
+<text x="78.0" y="29.0" class="lbl-sm" text-anchor="end">800</text>
+<line x1="128.3" y1="345.0" x2="128.3" y2="349.0" class="ln thin"/>
+<text x="128.3" y="362.0" class="lbl-sm" text-anchor="middle">1</text>
+<line x1="215.0" y1="345.0" x2="215.0" y2="349.0" class="ln thin"/>
+<text x="215.0" y="362.0" class="lbl-sm" text-anchor="middle">10</text>
+<line x1="301.7" y1="345.0" x2="301.7" y2="349.0" class="ln thin"/>
+<text x="301.7" y="362.0" class="lbl-sm" text-anchor="middle">10²</text>
+<line x1="388.3" y1="345.0" x2="388.3" y2="349.0" class="ln thin"/>
+<text x="388.3" y="362.0" class="lbl-sm" text-anchor="middle">10³</text>
+<line x1="475.0" y1="345.0" x2="475.0" y2="349.0" class="ln thin"/>
+<text x="475.0" y="362.0" class="lbl-sm" text-anchor="middle">10⁴</text>
+<line x1="561.7" y1="345.0" x2="561.7" y2="349.0" class="ln thin"/>
+<text x="561.7" y="362.0" class="lbl-sm" text-anchor="middle">10⁵</text>
+<text x="345.0" y="381.0" class="lbl-sm" text-anchor="middle">Time (s), log scale →</text>
+<text x="43.0" y="185.0" class="lbl-sm" text-anchor="middle" transform="rotate(-90 43.0 185.0)">Temperature (°C)</text>
+<line x1="85.0" y1="54.2" x2="605.0" y2="54.2" class="ln acc thick"/>
+<text x="611.0" y="58.2" class="lbl-acc" text-anchor="start">A₁</text>
+<path d="M509.7,57.0 C492.3,60.7 440.3,71.7 405.7,79.0 C371.0,86.3 334.9,94.3 301.7,101.0 C268.4,107.7 232.3,114.3 206.3,119.0 C180.3,123.7 152.2,124.0 145.7,129.0 C139.2,134.0 152.9,141.7 167.3,149.0 C181.8,156.3 207.1,164.3 232.3,173.0 C257.6,181.7 291.6,192.3 319.0,201.0 C346.4,209.7 375.3,217.0 397.0,225.0 C418.7,233.0 440.3,245.0 449.0,249.0" class="ln thin dash" fill="none"/>
+<path d="M579.0,65.0 C563.1,68.7 515.4,80.0 483.7,87.0 C451.9,94.0 418.7,100.7 388.3,107.0 C358.0,113.3 326.2,120.0 301.7,125.0 C277.1,130.0 251.1,135.0 241.0,137.0" class="ln thick" fill="none"/>
+<line x1="85.0" y1="257.0" x2="605.0" y2="257.0" class="ln dash"/>
+<text x="611.0" y="261.0" class="lbl-sm" text-anchor="start">Mₛ</text>
+<path d="M215.0,41.0 C243.9,45.7 339.2,58.3 388.3,69.0 C437.4,79.7 480.8,92.3 509.7,105.0 C538.6,117.7 553.0,138.3 561.7,145.0" class="ln acc" marker-end="url(#mse-u5-arw-cct-b)" fill="none"/>
+<path d="M145.7,41.0 C163.0,49.0 213.6,73.0 249.7,89.0 C285.8,105.0 334.9,122.3 362.3,137.0 C389.8,151.7 405.7,170.3 414.3,177.0" class="ln acc" marker-end="url(#mse-u5-arw-cct-b)" fill="none"/>
+<path d="M154.3,41.0 C167.3,52.3 212.1,89.7 232.3,109.0 C252.6,128.3 259.8,139.7 275.7,157.0 C291.6,174.3 314.7,196.3 327.7,213.0 C340.7,229.7 349.3,249.7 353.7,257.0" class="ln acc" marker-end="url(#mse-u5-arw-cct-b)" fill="none"/>
+<path d="M93.7,41.0 C98.7,65.0 115.3,141.0 124.0,185.0 C132.7,229.0 142.1,285.0 145.7,305.0" class="ln acc" marker-end="url(#mse-u5-arw-cct-b)" fill="none"/>
+<text x="561.7" y="169.0" class="lbl-sm" text-anchor="middle">Furnace</text>
+<text x="422.7" y="185.0" class="lbl-sm" text-anchor="start">Air</text>
+<text x="362.3" y="245.0" class="lbl-sm" text-anchor="start">Oil</text>
+<text x="167.3" y="301.0" class="lbl-sm" text-anchor="start">Water</text>
+<text x="241.0" y="25.0" class="lbl-sm" text-anchor="middle"></text>
+<text x="102.3" y="37.0" class="lbl-sm" text-anchor="middle"></text>
+<line x1="205.0" y1="405.0" x2="235.0" y2="405.0" class="ln thin dash"/>
+<text x="241.0" y="409.0" class="lbl-sm" text-anchor="start">TTT start</text>
+<line x1="345.0" y1="405.0" x2="375.0" y2="405.0" class="ln thick"/>
+<text x="381.0" y="409.0" class="lbl-sm" text-anchor="start">CCT start</text>
+<line x1="485.0" y1="405.0" x2="515.0" y2="405.0" class="ln acc" marker-end="url(#mse-u5-arw-cct-b)"/>
+<text x="521.0" y="409.0" class="lbl-sm" text-anchor="start">cooling path</text>
+</svg>
+<figcaption>Fig. 5.13 — CCT diagram of eutectoid steel (schematic). The CCT start curve (solid) lies to the right of and below the TTT curve (dashed). Slow cooling gives pearlite; fast cooling that misses the curve gives martensite.</figcaption>
+</figure>
+</details>
+</article>
+  </section>
+</section>
