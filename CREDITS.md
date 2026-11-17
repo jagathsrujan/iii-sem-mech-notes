@@ -37,3 +37,6 @@ All photos come from Wikimedia Commons under the licences below. They keep their
 | `img/mse-u1-grains.jpg` | Grains of Armco iron under polarised light. | LBoron | CC0 | [source](https://commons.wikimedia.org/wiki/File:Armco-iron.jpg) |
 | `img/mse-u1-dislocations-tem.jpg` | Weak-beam dark-field TEM image of dislocations. | Liao Yifeng | CC0 | [source](https://commons.wikimedia.org/wiki/File:Weak-beam_dark-field_TEM_image_of_dislocations.jpg) |
 | `img/mse-u1-fcc-cannonballs.jpg` | Stack of spheres in close-packed layers (FCC). | Greg L | CC BY-SA 3.0 | [source](https://commons.wikimedia.org/wiki/File:Cannonball_stack_with_FCC_unit_cell.jpg) |
+| `img/mse-u3-grey-iron-flakes.jpg` | Micrograph of grey cast iron showing graphite flakes | Hb tuw | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Gusseisen_mit_Lamellengraphit.jpg) |
+| `img/mse-u3-filament-winding.jpg` | Filament winding of a large composite case on a rotating mandrel | Gdipasquale1 | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Filament_winding_of_the_P80_solid_rocket_motor.jpg) |
+| `img/mse-u3-brass-fittings.jpg` | Brass plumbing fittings | Plumberapple | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Brass_Crimp_Fittings.JPG) |
