@@ -1,0 +1,26 @@
+[
+ {
+  "file": "img/mse-u4-furnace.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Castings_fresh_from_the_heat_treatment_furnace.jpg",
+  "author": "Goodwin Steel Castings",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "caption": "Steel castings leaving a heat treatment furnace."
+ },
+ {
+  "file": "img/mse-u4-pearlite.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Pearlite1.jpg",
+  "author": "Edward Pleshakov",
+  "license": "Public domain",
+  "license_url": "",
+  "caption": "Pearlite micrograph."
+ },
+ {
+  "file": "img/mse-u4-martensite.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Microstructure_of_martensitic_stainless_steel_AISI_420.jpg",
+  "author": "Cristiano José Scheuer, Rodrigo Perito Cardoso, Silvio Francisco Brunatto",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "caption": "Martensite micrograph."
+ }
+]

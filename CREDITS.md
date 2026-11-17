@@ -43,3 +43,6 @@ All photos come from Wikimedia Commons under the licences below. They keep their
 | `img/mse-u3-grey-iron-flakes.jpg` | Micrograph of grey cast iron showing graphite flakes | Hb tuw | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Gusseisen_mit_Lamellengraphit.jpg) |
 | `img/mse-u3-filament-winding.jpg` | Filament winding of a large composite case on a rotating mandrel | Gdipasquale1 | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Filament_winding_of_the_P80_solid_rocket_motor.jpg) |
 | `img/mse-u3-brass-fittings.jpg` | Brass plumbing fittings | Plumberapple | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Brass_Crimp_Fittings.JPG) |
+| `img/mse-u4-furnace.jpg` | Steel castings leaving a heat treatment furnace. | Goodwin Steel Castings | CC BY-SA 2.0 | [source](https://commons.wikimedia.org/wiki/File:Castings_fresh_from_the_heat_treatment_furnace.jpg) |
+| `img/mse-u4-pearlite.jpg` | Pearlite micrograph. | Edward Pleshakov | Public domain | [source](https://commons.wikimedia.org/wiki/File:Pearlite1.jpg) |
+| `img/mse-u4-martensite.jpg` | Martensite micrograph. | Cristiano José Scheuer, Rodrigo Perito Cardoso, Silvio Francisco Brunatto | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Microstructure_of_martensitic_stainless_steel_AISI_420.jpg) |
