@@ -49,3 +49,5 @@ All photos come from Wikimedia Commons under the licences below. They keep their
 | `img/mse-u5-pearlite.jpg` | Pearlite (SEM) | Michelshock | Public domain | [source](https://commons.wikimedia.org/wiki/File:Pearlite.jpg) |
 | `img/mse-u5-ferrite-pearlite.jpg` | Ferrite and pearlite in hypo-eutectoid steel | A. J. Duncan, K. H. Subramanian, R. L. Sindelar, K. Miller, A. P. Reynolds, and Y. J. Chao | Public domain | [source](https://commons.wikimedia.org/wiki/File:Ferrite-perlite-steel-A285.jpeg) |
 | `img/mse-u5-ledeburite.jpg` | White cast iron: ledeburite | Eisenbeisser | CC BY-SA 3.0 | [source](https://commons.wikimedia.org/wiki/File:Ledeburit2.jpg) |
+| `img/mt-u1-cupola-furnace.jpg` | A cupola furnace in a foundry: molten iron runs from the spout into a ladle. | Rss-huh | CC BY-SA 3.0 | [source](https://commons.wikimedia.org/wiki/File:Huh-Kupolofen-HDR.jpg) |
+| `img/mt-u1-electric-arc-furnace.jpg` | An electric arc furnace being charged with scrap steel. | Er-wei Bai | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Electric-arc-furnace.jpg) |
