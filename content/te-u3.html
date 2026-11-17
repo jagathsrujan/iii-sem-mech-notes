@@ -1,0 +1,1375 @@
+<section class="unit" data-unit="te-u3">
+  <header class="unit-head">
+    <p class="eyebrow">Thermal Engineering · Unit 3</p>
+    <h1>Second Law of Thermodynamics and Entropy</h1>
+    <p class="lede">The first law says energy is conserved. The second law says which processes can happen, in which direction, and how much heat can become work. This unit gives the limits of every engine, refrigerator and heat pump, and defines entropy, the property that measures irreversibility. Each paper has one full question (20 marks) from it.</p>
+    <ul class="syl">
+      <li>Heat engines</li>
+      <li>Refrigerators and heat pumps</li>
+      <li>Thermal efficiency</li>
+      <li>Coefficient of Performance (COP)</li>
+      <li>Kelvin-Planck and Clausius statements</li>
+      <li>Equivalence of the Second Law statements</li>
+      <li>Reversible and irreversible processes</li>
+      <li>Carnot cycle and Carnot theorem</li>
+      <li>Clausius inequality</li>
+      <li>Entropy as a property</li>
+      <li>Entropy change for reversible and irreversible processes</li>
+      <li>Principle of increase of entropy</li>
+      <li>Entropy generation</li>
+      <li>Combined First and Second Law relations</li>
+      <li>Introduction to exergy</li>
+    </ul>
+  </header>
+
+  <section class="part" id="te-u3-concepts" data-part="concepts">
+    <h2>Concepts</h2>
+    <aside class="exam"><b>Exam pattern.</b> Unit III has two full questions (choose one), 20 marks each. Each question gives one 10-mark proof or derivation and one 10-mark numerical. The proofs that repeat are: equivalence of Kelvin-Planck and Clausius, Carnot theorem (reversible engine is the most efficient), Clausius inequality, and entropy change of an ideal gas. The numericals are: reversible engine with Carnot ratios, refrigerator or inventor claims, heat pump COP, entropy change of a mixing process, and a cycle check with \( \oint \delta Q/T \). Learn the four proofs and these five numerical types.</aside>
+
+    <h3 id="te-u3-c-limits">1. Why the first law is not enough</h3>
+    <p>The first law says that heat and work are forms of energy and that the total is conserved. For a cycle, \( \oint \delta Q = \oint \delta W \). It does not say whether a process can really happen. The second law gives the missing rules.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>The first law cannot tell</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><b>Direction</b> of a process</td><td>A hot block cooling in a room and a room cooling a block both conserve energy. Only the first happens.</td></tr>
+        <tr><td><b>Quality</b> of energy</td><td>Work becomes heat completely (friction). Heat from one source cannot become work completely in a cycle.</td></tr>
+        <tr><td>Need for a <b>sink</b></td><td>The first law allows an engine with \( Q_L = 0 \) and \( \eta = 100\% \). Such an engine does not exist.</td></tr>
+        <tr><td><b>Reversibility</b></td><td>It does not separate an ideal process from one with friction or a finite temperature difference.</td></tr>
+      </tbody></table></div>
+    <aside class="tip"><b>One-line memory.</b> First law: you cannot get something for nothing. Second law: you cannot even break even in a cycle.</aside>
+
+    <h3 id="te-u3-c-engine">2. Thermal reservoir and heat engine</h3>
+    <p>A <b>thermal reservoir</b> is a body so large that it gives or takes heat without a change in its temperature. The <b>source</b> (high-temperature reservoir, HTR) supplies heat. The <b>sink</b> (low-temperature reservoir, LTR) receives heat. The sea, a river, the atmosphere and a large furnace are reservoirs.</p>
+    <p>A <b>heat engine</b> is a device that works in a cycle, takes heat \( Q_H \) from a source, gives net work \( W_{net} \), and rejects heat \( Q_L \) to a sink. Steam power plants, petrol engines and diesel engines are heat engines. Fig. 3.1 shows the model.</p>
+    <figure class="fig" id="te-u3-f-engine">
+<svg viewBox="0 0 640 300" role="img" aria-label="Heat engine: heat Q_H from the source, work W out, heat Q_L to the sink">
+<defs><marker id="te-u3-arw-engine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="190.0" y="20.0" width="260.0" height="44.0" class="ln fill-soft"/>
+<text x="320.0" y="47.0" class="lbl" text-anchor="middle">Source (HTR) at T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<circle cx="320.0" cy="150.0" r="42.0" class="ln fill-soft"/>
+<text x="320.0" y="146.0" class="lbl-b" text-anchor="middle">Heat</text>
+<text x="320.0" y="164.0" class="lbl-b" text-anchor="middle">engine</text>
+<line x1="320.0" y1="64.0" x2="320.0" y2="108.0" class="ln" marker-end="url(#te-u3-arw-engine)"/>
+<text x="336.0" y="90.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<line x1="320.0" y1="192.0" x2="320.0" y2="236.0" class="ln" marker-end="url(#te-u3-arw-engine)"/>
+<text x="336.0" y="218.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<rect x="190.0" y="236.0" width="260.0" height="44.0" class="ln fill-soft"/>
+<text x="320.0" y="263.0" class="lbl" text-anchor="middle">Sink (LTR) at T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<line x1="362.0" y1="150.0" x2="480.0" y2="150.0" class="acc thick" marker-end="url(#te-u3-arw-engine)"/>
+<text x="500.0" y="155.0" class="lbl-acc" text-anchor="start">W<tspan dy="4" font-size="70%">net</tspan><tspan dy="-4"></tspan></text>
+<text x="20.0" y="120.0" class="lbl-b" text-anchor="start">First law:</text>
+<text x="20.0" y="142.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> = W</tspan><tspan dy="4" font-size="70%">net</tspan><tspan dy="-4"> + Q</tspan><tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<text x="20.0" y="176.0" class="lbl" text-anchor="start">η = W<tspan dy="4" font-size="70%">net</tspan><tspan dy="-4"> / Q</tspan><tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+</svg>
+<figcaption>Fig. 3.1 — Heat engine: heat Q<sub>H</sub> in from the source, net work out, heat Q<sub>L</sub> rejected to the sink.</figcaption>
+</figure>
+    <p>The working fluid returns to its first state in each cycle, so \( \Delta U = 0 \). The first law gives \( Q_H - Q_L = W_{net} \). The <b>thermal efficiency</b> is the fraction of the heat supplied that becomes net work.</p>
+    <div class="formula">\[ \eta_{th} = \frac{W_{net}}{Q_H} = \frac{Q_H - Q_L}{Q_H} = 1 - \frac{Q_L}{Q_H} \]<p class="where">\( Q_H \) = heat supplied (kJ), \( Q_L \) = heat rejected (kJ). Always \( \eta_{th} &lt; 1 \) because \( Q_L &gt; 0 \).</p></div>
+    <figure class="photo"><img src="img/te-u3-coolingtower.jpg" alt="Aerial view of a power-plant cooling tower with a plume of vapour" width="560" height="828" loading="lazy"><figcaption>A power-plant cooling tower. The white plume is warm moist air that carries away the heat Q<sub>L</sub> rejected by the steam cycle. Every cycle needs a sink. <span class="credit">Photo: Harry Schaefer (US National Archives) · Public domain · Wikimedia Commons</span></figcaption></figure>
+    <figure class="photo"><img src="img/te-u3-engine.jpg" alt="Cut-away petrol car engine painted blue in a museum" width="1000" height="562" loading="lazy"><figcaption>Cut-away of a petrol car engine (Moskvitch-408). It burns fuel at about 2000 K (the source) and rejects heat to the cooling water and the exhaust (the sink). <span class="credit">Photo: DL24 · CC BY-SA 4.0 · Wikimedia Commons</span></figcaption></figure>
+
+    <h3 id="te-u3-c-ref-hp">3. Refrigerator and heat pump; COP</h3>
+    <p>A <b>refrigerator</b> and a <b>heat pump</b> work in a reverse cycle. Each takes heat \( Q_L \) from a low-temperature body, receives work \( W \), and rejects heat \( Q_H \) to a high-temperature body. The first law gives \( Q_H = Q_L + W \). The two machines differ only in the useful effect.</p>
+    <ul>
+      <li><b>Refrigerator</b>: the useful effect is the heat \( Q_L \) removed from the cold space.</li>
+      <li><b>Heat pump</b>: the useful effect is the heat \( Q_H \) given to the warm space (a room).</li>
+    </ul>
+    <figure class="fig" id="te-u3-f-fridge-hp">
+<svg viewBox="0 0 700 330" role="img" aria-label="Refrigerator and heat pump: heat Q_L from the cold body, work W in, heat Q_H to the hot body">
+<defs><marker id="te-u3-arw-fridge-hp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="65.0" y="20.0" width="220.0" height="40.0" class="ln fill-soft"/>
+<text x="175.0" y="46.0" class="lbl" text-anchor="middle">Surroundings at T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<rect x="65.0" y="240.0" width="220.0" height="40.0" class="ln fill-soft"/>
+<text x="175.0" y="266.0" class="lbl" text-anchor="middle">Cold space at T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<circle cx="175.0" cy="150.0" r="40.0" class="ln fill-soft"/>
+<text x="175.0" y="155.0" class="lbl-b" text-anchor="middle">R</text>
+<line x1="175.0" y1="240.0" x2="175.0" y2="192.0" class="ln" marker-end="url(#te-u3-arw-fridge-hp)"/>
+<text x="189.0" y="222.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<line x1="175.0" y1="110.0" x2="175.0" y2="60.0" class="ln" marker-end="url(#te-u3-arw-fridge-hp)"/>
+<text x="189.0" y="92.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<line x1="55.0" y1="150.0" x2="133.0" y2="150.0" class="acc thick" marker-end="url(#te-u3-arw-fridge-hp)"/>
+<text x="70.0" y="138.0" class="lbl-acc" text-anchor="start">W</text>
+<text x="175.0" y="308.0" class="lbl-b" text-anchor="middle">(a) Refrigerator: COP = Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> / W</tspan></text>
+<rect x="415.0" y="20.0" width="220.0" height="40.0" class="ln fill-soft"/>
+<text x="525.0" y="46.0" class="lbl" text-anchor="middle">Room at T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<rect x="415.0" y="240.0" width="220.0" height="40.0" class="ln fill-soft"/>
+<text x="525.0" y="266.0" class="lbl" text-anchor="middle">Outside air at T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<circle cx="525.0" cy="150.0" r="40.0" class="ln fill-soft"/>
+<text x="525.0" y="155.0" class="lbl-b" text-anchor="middle">R</text>
+<line x1="525.0" y1="240.0" x2="525.0" y2="192.0" class="ln" marker-end="url(#te-u3-arw-fridge-hp)"/>
+<text x="539.0" y="222.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<line x1="525.0" y1="110.0" x2="525.0" y2="60.0" class="ln" marker-end="url(#te-u3-arw-fridge-hp)"/>
+<text x="539.0" y="92.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<line x1="405.0" y1="150.0" x2="483.0" y2="150.0" class="acc thick" marker-end="url(#te-u3-arw-fridge-hp)"/>
+<text x="420.0" y="138.0" class="lbl-acc" text-anchor="start">W</text>
+<text x="525.0" y="308.0" class="lbl-b" text-anchor="middle">(b) Heat pump: COP = Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> / W</tspan></text>
+</svg>
+<figcaption>Fig. 3.2 — (a) A refrigerator and (b) a heat pump. The cycle is the same. The useful effect is different.</figcaption>
+</figure>
+    <p>The performance is the <b>coefficient of performance</b> (COP). It is the useful effect divided by the work input. It is not an efficiency, and it can be more than 1.</p>
+    <div class="formula">\[ \text{COP}_R = \frac{Q_L}{W} = \frac{Q_L}{Q_H - Q_L} \qquad \text{COP}_{HP} = \frac{Q_H}{W} = \frac{Q_H}{Q_H - Q_L} \]\[ \text{COP}_{HP} = 1 + \text{COP}_R \]<p class="where">Proof: \( \text{COP}_{HP} = (Q_L + W)/W = 1 + Q_L/W \). So a heat pump always has the larger COP.</p></div>
+    <figure class="photo"><img src="img/te-u3-heatpump.jpg" alt="White outdoor unit of a split heat pump with a round fan grille beside a hedge" width="1000" height="696" loading="lazy"><figcaption>The outdoor unit of a heat pump or air conditioner. In heating mode it takes heat Q<sub>L</sub> from the outside air and pumps heat Q<sub>H</sub> into the building. <span class="credit">Photo: Tony Webster · CC BY 4.0 · Wikimedia Commons</span></figcaption></figure>
+    <p><b>Quick example.</b> A refrigerator takes 6 kJ from the cold space and uses 2 kJ of work. \( \text{COP}_R = 6/2 = 3 \). It rejects 8 kJ to the kitchen. As a heat pump the same cycle has \( \text{COP}_{HP} = 8/2 = 4 = 1 + 3 \).</p>
+    <aside class="warn"><b>Common mistake.</b> COP is not a percentage. Do not write "COP = 300 %". Do not call a COP above 1 a violation of the first law: the machine moves heat, it does not make it.</aside>
+
+    <h3 id="te-u3-c-statements">4. Kelvin-Planck and Clausius statements</h3>
+    <p>The second law has two classic statements. Both say what is <i>impossible</i>.</p>
+    <div class="formula"><b>Kelvin-Planck statement.</b> It is impossible to construct a device that operates in a cycle and produces no effect other than the extraction of heat from a single reservoir and the performance of an equal amount of work.<p class="where">So every heat engine needs a sink. \( \eta = 100\% \) is impossible.</p></div>
+    <div class="formula"><b>Clausius statement.</b> It is impossible to construct a device that operates in a cycle and produces no effect other than the transfer of heat from a colder body to a hotter body.<p class="where">So a refrigerator needs a work input. Heat does not flow from cold to hot on its own.</p></div>
+    <figure class="fig" id="te-u3-f-statements">
+<svg viewBox="0 0 700 340" role="img" aria-label="The two impossible devices: an engine with no sink and a heat flow from cold to hot without work">
+<defs><marker id="te-u3-arw-statements" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="65.0" y="20.0" width="220.0" height="40.0" class="ln fill-soft"/>
+<text x="175.0" y="46.0" class="lbl" text-anchor="middle">One reservoir at T</text>
+<circle cx="175.0" cy="150.0" r="40.0" class="ln fill-soft"/>
+<text x="175.0" y="155.0" class="lbl-b" text-anchor="middle">Engine</text>
+<line x1="175.0" y1="60.0" x2="175.0" y2="108.0" class="ln" marker-end="url(#te-u3-arw-statements)"/>
+<text x="189.0" y="90.0" class="lbl" text-anchor="start">Q</text>
+<line x1="217.0" y1="150.0" x2="325.0" y2="150.0" class="acc thick" marker-end="url(#te-u3-arw-statements)"/>
+<text x="235.0" y="138.0" class="lbl-acc" text-anchor="start">W = Q</text>
+<text x="175.0" y="230.0" class="lbl" text-anchor="middle">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> = 0, η = 100 %</tspan></text>
+<text x="175.0" y="290.0" class="lbl-b" text-anchor="middle">(a) Kelvin-Planck forbids this</text>
+<text x="175.0" y="312.0" class="lbl-sm" text-anchor="middle">(no sink, all heat to work)</text>
+<rect x="415.0" y="20.0" width="220.0" height="40.0" class="ln fill-soft"/>
+<text x="525.0" y="46.0" class="lbl" text-anchor="middle">Hot body at T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<rect x="415.0" y="240.0" width="220.0" height="40.0" class="ln fill-soft"/>
+<text x="525.0" y="266.0" class="lbl" text-anchor="middle">Cold body at T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<circle cx="525.0" cy="150.0" r="40.0" class="ln fill-soft"/>
+<text x="525.0" y="155.0" class="lbl-b" text-anchor="middle">Device</text>
+<line x1="525.0" y1="240.0" x2="525.0" y2="192.0" class="ln" marker-end="url(#te-u3-arw-statements)"/>
+<text x="539.0" y="222.0" class="lbl" text-anchor="start">Q</text>
+<line x1="525.0" y1="110.0" x2="525.0" y2="60.0" class="ln" marker-end="url(#te-u3-arw-statements)"/>
+<text x="539.0" y="92.0" class="lbl" text-anchor="start">Q</text>
+<text x="465.0" y="155.0" class="lbl-acc" text-anchor="end">W = 0</text>
+<text x="525.0" y="308.0" class="lbl-b" text-anchor="middle">(b) Clausius forbids this</text>
+<text x="525.0" y="328.0" class="lbl-sm" text-anchor="middle">(cold to hot, no work)</text>
+</svg>
+<figcaption>Fig. 3.3 — The two forbidden devices: (a) an engine with no sink, (b) cold-to-hot heat transfer without work.</figcaption>
+</figure>
+    <p>A device that breaks the Kelvin-Planck statement is a <b>perpetual motion machine of the second kind (PMM2)</b>. It obeys the first law but breaks the second. A <b>PMM1</b> would create energy and break the first law.</p>
+
+    <h3 id="te-u3-c-equiv">5. Equivalence of the two statements</h3>
+    <p>The two statements are equivalent. If a device breaks one statement, you can build a device that breaks the other. This proves that both say the same thing. The full proof is Theory Q1. The idea is below.</p>
+    <ul>
+      <li><b>K-P violation gives Clausius violation.</b> A "100 % engine" E drives a reversible refrigerator R. The combined device moves heat from cold to hot with no net work.</li>
+      <li><b>Clausius violation gives K-P violation.</b> A device C moves \( Q_L \) from cold to hot with no work. An ordinary engine E takes \( Q_H \) from the hot reservoir and rejects \( Q_L \) to the cold one. The combined device takes \( Q_H - Q_L \) from one reservoir and gives the same amount of work.</li>
+    </ul>
+    <aside class="tip"><b>Exam method.</b> (1) Assume a device that breaks statement A. (2) Couple it to a normal device. (3) Make the heat at one reservoir cancel. (4) Show that the combination breaks statement B. Write all Q and W values on the sketch.</aside>
+
+    <h3 id="te-u3-c-reversible">6. Reversible and irreversible processes</h3>
+    <p>A <b>reversible process</b> can be reversed so that both the system and the surroundings return exactly to their first states, with no net change anywhere. All other processes are <b>irreversible</b>. A reversible process is an ideal limit. It is slow (quasi-static), and it has no friction and no finite driving difference.</p>
+    <p>The <b>causes of irreversibility</b> are the factors that stop a process from being reversible. Fig. 3.4 shows three of them.</p>
+    <ul>
+      <li><b>Friction</b> (solid friction, viscosity of fluids): work becomes internal energy that cannot be changed back to the same work.</li>
+      <li><b>Heat transfer through a finite temperature difference</b>: heat flows only from hot to cold. To reverse it you need a refrigerator and work.</li>
+      <li><b>Unrestrained (free) expansion</b>: a gas expands into a vacuum with no work. Compression back needs work.</li>
+      <li><b>Mixing</b> of two different gases or fluids, and <b>chemical reactions</b> such as combustion.</li>
+      <li><b>Electrical resistance</b> (Joule heating), <b>magnetic hysteresis</b> and <b>inelastic deformation</b>.</li>
+      <li><b>Throttling</b> through a valve or porous plug (a sudden pressure drop).</li>
+    </ul>
+    <figure class="fig" id="te-u3-f-irrev">
+<svg viewBox="0 0 700 250" role="img" aria-label="Causes of irreversibility: free expansion, heat transfer across a finite temperature difference, friction">
+<defs><marker id="te-u3-arw-irrev" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="20.0" y="50.0" width="190.0" height="90.0" class="ln"/>
+<line x1="115.0" y1="50.0" x2="115.0" y2="140.0" class="ln dash"/>
+<circle cx="35.0" cy="70.0" r="3.2" class="solid"/>
+<circle cx="60.0" cy="95.0" r="3.2" class="solid"/>
+<circle cx="45.0" cy="120.0" r="3.2" class="solid"/>
+<circle cx="85.0" cy="80.0" r="3.2" class="solid"/>
+<circle cx="90.0" cy="118.0" r="3.2" class="solid"/>
+<circle cx="70.0" cy="62.0" r="3.2" class="solid"/>
+<circle cx="100.0" cy="100.0" r="3.2" class="solid"/>
+<circle cx="30.0" cy="100.0" r="3.2" class="solid"/>
+<text x="65.0" y="160.0" class="lbl-sm" text-anchor="middle">Gas</text>
+<text x="165.0" y="100.0" class="lbl-sm" text-anchor="middle">Vacuum</text>
+<text x="115.0" y="40.0" class="lbl-sm" text-anchor="middle">membrane</text>
+<text x="115.0" y="205.0" class="lbl-b" text-anchor="middle">(a) Free expansion</text>
+<text x="115.0" y="225.0" class="lbl-sm" text-anchor="middle">(unrestrained)</text>
+<rect x="250.0" y="70.0" width="80.0" height="70.0" class="ln fill-acc"/>
+<text x="290.0" y="110.0" class="lbl-b" text-anchor="middle">T<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"></tspan></text>
+<rect x="330.0" y="70.0" width="80.0" height="70.0" class="ln fill-soft"/>
+<text x="370.0" y="110.0" class="lbl-b" text-anchor="middle">T<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"></tspan></text>
+<line x1="290.0" y1="55.0" x2="370.0" y2="55.0" class="ln thick" marker-end="url(#te-u3-arw-irrev)"/>
+<text x="330.0" y="38.0" class="lbl-sm" text-anchor="middle">Q, T<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"> &gt; T</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"></tspan></text>
+<text x="330.0" y="205.0" class="lbl-b" text-anchor="middle">(b) Heat transfer</text>
+<text x="330.0" y="225.0" class="lbl-sm" text-anchor="middle">across a finite ΔT</text>
+<polygon points="480.0,150.0 639.7,150.0 639.7,91.9" class="ln fill-soft"/>
+<polygon points="550.0,124.5 587.6,110.8 578.7,86.4 541.1,100.1" class="ln fill-acc"/>
+<line x1="538.0" y1="115.0" x2="491.1" y2="132.1" class="ln thick" marker-end="url(#te-u3-arw-irrev)"/>
+<text x="487.1" y="120.1" class="lbl-sm" text-anchor="end">motion</text>
+<text x="490.0" y="168.0" class="lbl-sm" text-anchor="start">rough surface</text>
+<text x="580.0" y="205.0" class="lbl-b" text-anchor="middle">(c) Friction</text>
+<text x="580.0" y="225.0" class="lbl-sm" text-anchor="middle">work becomes heat</text>
+</svg>
+<figcaption>Fig. 3.4 — Three causes of irreversibility: (a) free expansion, (b) heat flow through a finite temperature difference, (c) friction.</figcaption>
+</figure>
+    <aside class="note"><b>Internal and external.</b> An <i>internally reversible</i> process has no irreversibility inside the system. A <i>totally reversible</i> process also has none in the surroundings. A Carnot engine is totally reversible.</aside>
+    <p>Reversible processes are the benchmark. A reversible engine gives the maximum work. A reversible refrigerator needs the minimum work. The gap between a real machine and the reversible machine is the irreversibility.</p>
+
+    <h3 id="te-u3-c-carnot">7. The Carnot cycle</h3>
+    <p>The <b>Carnot cycle</b> is the reversible cycle between two reservoirs. Heat moves only when the fluid is at the reservoir temperature (no finite \( \Delta T \)). So heat is added and rejected in <b>isothermal</b> processes. The temperature changes in <b>adiabatic</b> (isentropic) processes. This gives four processes (Fig. 3.5 to Fig. 3.7).</p>
+    <ol>
+      <li><b>1-2 Reversible isothermal expansion</b> at \( T_H \). Heat \( Q_H \) is received from the source.</li>
+      <li><b>2-3 Reversible adiabatic expansion.</b> The temperature falls from \( T_H \) to \( T_L \). No heat transfer.</li>
+      <li><b>3-4 Reversible isothermal compression</b> at \( T_L \). Heat \( Q_L \) is rejected to the sink.</li>
+      <li><b>4-1 Reversible adiabatic compression.</b> The temperature rises from \( T_L \) to \( T_H \). No heat transfer.</li>
+    </ol>
+    <figure class="fig" id="te-u3-f-cyl">
+<svg viewBox="0 0 700 265" role="img" aria-label="Carnot engine as a piston-cylinder: isothermal expansion, adiabatic expansion, isothermal compression, adiabatic compression">
+<defs><marker id="te-u3-arw-cyl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="50.0" y="86.0" width="76.0" height="64.0" class="ln fill-soft"/>
+<path d="M48,40 L48,150 L128,150 L128,40" class="ln"/>
+<rect x="50.0" y="78.0" width="76.0" height="8.0" class="ln fill-acc"/>
+<line x1="88.0" y1="78.0" x2="88.0" y2="30.0" class="ln thick"/>
+<line x1="150.0" y1="112.0" x2="150.0" y2="84.0" class="ln" marker-end="url(#te-u3-arw-cyl)"/>
+<rect x="36.0" y="150.0" width="104.0" height="30.0" class="ln fill-acc"/>
+<line x1="116.0" y1="177.0" x2="116.0" y2="154.0" class="ln" marker-end="url(#te-u3-arw-cyl)"/>
+<text x="74.0" y="171.0" class="lbl-b" text-anchor="middle">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<text x="88.0" y="200.0" class="lbl-sm" text-anchor="middle">Source T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<text x="88.0" y="222.0" class="lbl-b" text-anchor="middle">(a) 1-2</text>
+<text x="88.0" y="242.0" class="lbl-sm" text-anchor="middle">isothermal expansion</text>
+<rect x="225.0" y="70.0" width="76.0" height="80.0" class="ln fill-soft"/>
+<path d="M223,40 L223,150 L303,150 L303,40" class="ln"/>
+<rect x="225.0" y="62.0" width="76.0" height="8.0" class="ln fill-acc"/>
+<line x1="263.0" y1="62.0" x2="263.0" y2="30.0" class="ln thick"/>
+<line x1="325.0" y1="112.0" x2="325.0" y2="84.0" class="ln" marker-end="url(#te-u3-arw-cyl)"/>
+<rect x="211.0" y="150.0" width="104.0" height="30.0" class="ln fill-hatch"/>
+<text x="263.0" y="200.0" class="lbl-sm" text-anchor="middle">Insulator</text>
+<text x="263.0" y="222.0" class="lbl-b" text-anchor="middle">(b) 2-3</text>
+<text x="263.0" y="242.0" class="lbl-sm" text-anchor="middle">adiabatic expansion</text>
+<rect x="400.0" y="90.0" width="76.0" height="60.0" class="ln fill-soft"/>
+<path d="M398,40 L398,150 L478,150 L478,40" class="ln"/>
+<rect x="400.0" y="82.0" width="76.0" height="8.0" class="ln fill-acc"/>
+<line x1="438.0" y1="82.0" x2="438.0" y2="30.0" class="ln thick"/>
+<line x1="500.0" y1="84.0" x2="500.0" y2="112.0" class="ln" marker-end="url(#te-u3-arw-cyl)"/>
+<rect x="386.0" y="150.0" width="104.0" height="30.0" class="ln fill-acc2"/>
+<line x1="466.0" y1="154.0" x2="466.0" y2="177.0" class="ln" marker-end="url(#te-u3-arw-cyl)"/>
+<text x="424.0" y="171.0" class="lbl-b" text-anchor="middle">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<text x="438.0" y="200.0" class="lbl-sm" text-anchor="middle">Sink T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<text x="438.0" y="222.0" class="lbl-b" text-anchor="middle">(c) 3-4</text>
+<text x="438.0" y="242.0" class="lbl-sm" text-anchor="middle">isothermal compression</text>
+<rect x="575.0" y="108.0" width="76.0" height="42.0" class="ln fill-soft"/>
+<path d="M573,40 L573,150 L653,150 L653,40" class="ln"/>
+<rect x="575.0" y="100.0" width="76.0" height="8.0" class="ln fill-acc"/>
+<line x1="613.0" y1="100.0" x2="613.0" y2="30.0" class="ln thick"/>
+<line x1="675.0" y1="84.0" x2="675.0" y2="112.0" class="ln" marker-end="url(#te-u3-arw-cyl)"/>
+<rect x="561.0" y="150.0" width="104.0" height="30.0" class="ln fill-hatch"/>
+<text x="613.0" y="200.0" class="lbl-sm" text-anchor="middle">Insulator</text>
+<text x="613.0" y="222.0" class="lbl-b" text-anchor="middle">(d) 4-1</text>
+<text x="613.0" y="242.0" class="lbl-sm" text-anchor="middle">adiabatic compression</text>
+</svg>
+<figcaption>Fig. 3.5 — The four processes of a Carnot engine in a piston-cylinder.</figcaption>
+</figure>
+    <figure class="fig" id="te-u3-f-pv">
+<svg viewBox="0 0 660 390" role="img" aria-label="Carnot cycle on a p-V diagram: two isotherms and two adiabats">
+<defs><marker id="te-u3-arw-pv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80.0" y1="335.0" x2="640.0" y2="335.0" class="ln" marker-end="url(#te-u3-arw-pv)"/>
+<line x1="80.0" y1="335.0" x2="80.0" y2="28.0" class="ln" marker-end="url(#te-u3-arw-pv)"/>
+<text x="635.0" y="359.0" class="lbl" text-anchor="end">Volume, V</text>
+<text x="46.0" y="181.5" class="lbl" text-anchor="middle" transform="rotate(-90 46.0 181.5)">Pressure, p</text>
+<path d="M165.0,41.0 L169.2,53.6 L173.5,65.0 L177.8,75.4 L182.0,85.0 L186.2,93.8 L190.5,101.9 L194.8,109.4 L199.0,116.4 L203.2,122.9 L207.5,129.0 L211.8,134.7 L216.0,140.0 L220.2,145.0 L224.5,149.7 L228.8,154.1 L233.0,158.3 L237.2,162.3 L241.5,166.1 L245.8,169.6 L250.0,173.0 L254.2,176.2 L258.5,179.3 L262.8,182.2 L267.0,185.0 L267.0,185.0 L281.2,198.8 L295.5,210.3 L309.7,219.8 L324.0,228.0 L338.2,234.9 L352.5,240.9 L366.7,246.1 L381.0,250.7 L395.2,254.7 L409.5,258.3 L423.7,261.5 L438.0,264.3 L452.2,266.9 L466.5,269.2 L480.7,271.3 L494.9,273.2 L509.2,275.0 L523.4,276.5 L537.7,278.0 L551.9,279.3 L566.2,280.6 L580.4,281.7 L594.7,282.8 L608.9,283.8 L608.9,283.8 L596.9,283.3 L584.9,282.8 L572.9,282.2 L560.8,281.7 L548.8,281.1 L536.8,280.4 L524.8,279.8 L512.7,279.1 L500.7,278.3 L488.7,277.5 L476.7,276.7 L464.7,275.8 L452.6,274.9 L440.6,273.9 L428.6,272.8 L416.6,271.7 L404.6,270.4 L392.5,269.1 L380.5,267.7 L368.5,266.1 L356.5,264.4 L344.5,262.6 L332.4,260.6 L320.4,258.3 L320.4,258.3 L313.9,256.2 L307.5,253.8 L301.0,251.3 L294.5,248.6 L288.0,245.6 L281.6,242.4 L275.1,238.9 L268.6,235.1 L262.1,230.9 L255.7,226.3 L249.2,221.2 L242.7,215.5 L236.2,209.3 L229.8,202.3 L223.3,194.4 L216.8,185.6 L210.3,175.5 L203.9,164.0 L197.4,150.8 L190.9,135.5 L184.4,117.7 L178.0,96.6 L171.5,71.4 L165.0,41.0 Z" class="ln fill-soft"/>
+<path d="M165.0,41.0 L169.2,53.6 L173.5,65.0 L177.8,75.4 L182.0,85.0 L186.2,93.8 L190.5,101.9 L194.8,109.4 L199.0,116.4 L203.2,122.9 L207.5,129.0 L211.8,134.7 L216.0,140.0 L220.2,145.0 L224.5,149.7 L228.8,154.1 L233.0,158.3 L237.2,162.3 L241.5,166.1 L245.8,169.6 L250.0,173.0 L254.2,176.2 L258.5,179.3 L262.8,182.2 L267.0,185.0" class="ln thick"/>
+<path d="M267.0,185.0 L281.2,198.8 L295.5,210.3 L309.7,219.8 L324.0,228.0 L338.2,234.9 L352.5,240.9 L366.7,246.1 L381.0,250.7 L395.2,254.7 L409.5,258.3 L423.7,261.5 L438.0,264.3 L452.2,266.9 L466.5,269.2 L480.7,271.3 L494.9,273.2 L509.2,275.0 L523.4,276.5 L537.7,278.0 L551.9,279.3 L566.2,280.6 L580.4,281.7 L594.7,282.8 L608.9,283.8" class="ln thick"/>
+<path d="M608.9,283.8 L596.9,283.3 L584.9,282.8 L572.9,282.2 L560.8,281.7 L548.8,281.1 L536.8,280.4 L524.8,279.8 L512.7,279.1 L500.7,278.3 L488.7,277.5 L476.7,276.7 L464.7,275.8 L452.6,274.9 L440.6,273.9 L428.6,272.8 L416.6,271.7 L404.6,270.4 L392.5,269.1 L380.5,267.7 L368.5,266.1 L356.5,264.4 L344.5,262.6 L332.4,260.6 L320.4,258.3" class="ln thick"/>
+<path d="M320.4,258.3 L313.9,256.2 L307.5,253.8 L301.0,251.3 L294.5,248.6 L288.0,245.6 L281.6,242.4 L275.1,238.9 L268.6,235.1 L262.1,230.9 L255.7,226.3 L249.2,221.2 L242.7,215.5 L236.2,209.3 L229.8,202.3 L223.3,194.4 L216.8,185.6 L210.3,175.5 L203.9,164.0 L197.4,150.8 L190.9,135.5 L184.4,117.7 L178.0,96.6 L171.5,71.4 L165.0,41.0" class="ln thick"/>
+<line x1="214.1" y1="137.7" x2="219.9" y2="144.6" class="ln" marker-end="url(#te-u3-arw-pv)"/>
+<line x1="435.0" y1="263.8" x2="443.9" y2="265.4" class="ln" marker-end="url(#te-u3-arw-pv)"/>
+<line x1="467.7" y1="276.1" x2="458.7" y2="275.4" class="ln" marker-end="url(#te-u3-arw-pv)"/>
+<line x1="244.9" y1="217.6" x2="238.4" y2="211.4" class="ln" marker-end="url(#te-u3-arw-pv)"/>
+<circle cx="165.0" cy="41.0" r="3.5" class="solid"/>
+<circle cx="267.0" cy="185.0" r="3.5" class="solid"/>
+<circle cx="608.9" cy="283.8" r="3.5" class="solid"/>
+<circle cx="320.4" cy="258.3" r="3.5" class="solid"/>
+<text x="151.0" y="33.0" class="lbl-b" text-anchor="end">1</text>
+<text x="277.0" y="177.0" class="lbl-b" text-anchor="start">2</text>
+<text x="620.9" y="287.8" class="lbl-b" text-anchor="start">3</text>
+<text x="308.4" y="274.3" class="lbl-b" text-anchor="end">4</text>
+<text x="250.0" y="118.0" class="lbl" text-anchor="start">Isotherm at T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4">: Q</tspan><tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> in</tspan></text>
+<text x="454.0" y="312.0" class="lbl" text-anchor="middle">Isotherm at T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4">: Q</tspan><tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> out</tspan></text>
+<text x="386.0" y="238.2" class="lbl-sm" text-anchor="middle">Adiabat</text>
+<text x="182.0" y="166.4" class="lbl-sm" text-anchor="end">Adiabat</text>
+<text x="246.0" y="195.5" class="lbl-acc" text-anchor="middle">W<tspan dy="4" font-size="70%">net</tspan><tspan dy="-4"></tspan></text>
+</svg>
+<figcaption>Fig. 3.6 — Carnot cycle on a p-V diagram. The enclosed area is the net work. The adiabats are steeper than the isotherms.</figcaption>
+</figure>
+    <figure class="fig" id="te-u3-f-ts">
+<svg viewBox="0 0 640 340" role="img" aria-label="Carnot cycle on a T-s diagram: a rectangle between T_H and T_L">
+<defs><marker id="te-u3-arw-ts" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80.0" y1="300.0" x2="615.0" y2="300.0" class="ln" marker-end="url(#te-u3-arw-ts)"/>
+<line x1="80.0" y1="300.0" x2="80.0" y2="28.0" class="ln" marker-end="url(#te-u3-arw-ts)"/>
+<text x="610.0" y="324.0" class="lbl" text-anchor="end">Entropy, s</text>
+<text x="46.0" y="164.0" class="lbl" text-anchor="middle" transform="rotate(-90 46.0 164.0)">Temperature, T (K)</text>
+<rect x="200.0" y="200.0" width="240.0" height="100.0" class="ln fill-soft"/>
+<rect x="200.0" y="90.0" width="240.0" height="110.0" class="ln fill-acc"/>
+<line x1="200.0" y1="90.0" x2="440.0" y2="90.0" class="ln thick"/>
+<line x1="440.0" y1="90.0" x2="440.0" y2="200.0" class="ln thick"/>
+<line x1="440.0" y1="200.0" x2="200.0" y2="200.0" class="ln thick"/>
+<line x1="200.0" y1="200.0" x2="200.0" y2="90.0" class="ln thick"/>
+<line x1="300.0" y1="90.0" x2="330.0" y2="90.0" class="ln" marker-end="url(#te-u3-arw-ts)"/>
+<line x1="440.0" y1="130.0" x2="440.0" y2="160.0" class="ln" marker-end="url(#te-u3-arw-ts)"/>
+<line x1="330.0" y1="200.0" x2="300.0" y2="200.0" class="ln" marker-end="url(#te-u3-arw-ts)"/>
+<line x1="200.0" y1="160.0" x2="200.0" y2="130.0" class="ln" marker-end="url(#te-u3-arw-ts)"/>
+<circle cx="200.0" cy="90.0" r="3.5" class="solid"/>
+<text x="188.0" y="82.0" class="lbl-b" text-anchor="end">1</text>
+<circle cx="440.0" cy="90.0" r="3.5" class="solid"/>
+<text x="452.0" y="82.0" class="lbl-b" text-anchor="start">2</text>
+<circle cx="440.0" cy="200.0" r="3.5" class="solid"/>
+<text x="452.0" y="216.0" class="lbl-b" text-anchor="start">3</text>
+<circle cx="200.0" cy="200.0" r="3.5" class="solid"/>
+<text x="188.0" y="216.0" class="lbl-b" text-anchor="end">4</text>
+<text x="320.0" y="152.0" class="lbl-acc" text-anchor="middle">W<tspan dy="4" font-size="70%">net</tspan><tspan dy="-4"> = (T</tspan><tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> - T</tspan><tspan dy="4" font-size="70%">L</tspan><tspan dy="-4">)(s</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> - s</tspan><tspan dy="4" font-size="70%">1</tspan><tspan dy="-4">)</tspan></text>
+<text x="320.0" y="255.0" class="lbl" text-anchor="middle">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> = T</tspan><tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> (s</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> - s</tspan><tspan dy="4" font-size="70%">1</tspan><tspan dy="-4">)</tspan></text>
+<text x="320.0" y="72.0" class="lbl" text-anchor="middle">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> = T</tspan><tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> (s</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> - s</tspan><tspan dy="4" font-size="70%">1</tspan><tspan dy="-4">) : heat in</tspan></text>
+<text x="450.0" y="165.0" class="lbl-sm" text-anchor="start">s = const</text>
+<text x="190.0" y="165.0" class="lbl-sm" text-anchor="end">s = const</text>
+<text x="74.0" y="95.0" class="lbl" text-anchor="end">T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<text x="74.0" y="205.0" class="lbl" text-anchor="end">T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<text x="200.0" y="324.0" class="lbl" text-anchor="middle">s<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"></tspan></text>
+<text x="440.0" y="324.0" class="lbl" text-anchor="middle">s<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"></tspan></text>
+<line x1="200.0" y1="200.0" x2="200.0" y2="300.0" class="ln dash"/>
+<line x1="440.0" y1="200.0" x2="440.0" y2="300.0" class="ln dash"/>
+</svg>
+<figcaption>Fig. 3.7 — Carnot cycle on a T-s diagram: a rectangle. The area of the rectangle is the net work.</figcaption>
+</figure>
+    <p>On the T-s diagram the heat is the area under the process line. \( Q_H = T_H(s_2 - s_1) \) and \( Q_L = T_L(s_2 - s_1) \). So:</p>
+    <div class="formula">\[ \frac{Q_L}{Q_H} = \frac{T_L}{T_H} \qquad \eta_{Carnot} = 1 - \frac{T_L}{T_H} \]\[ \text{COP}_{R,rev} = \frac{T_L}{T_H - T_L} \qquad \text{COP}_{HP,rev} = \frac{T_H}{T_H - T_L} \]<p class="where">Use absolute temperatures: T (K) = t (°C) + 273. The Carnot values are the upper limits for real machines between the same two temperatures.</p></div>
+    <ul>
+      <li>Efficiency depends only on \( T_H \) and \( T_L \). It does not depend on the working fluid.</li>
+      <li>To raise \( \eta \): raise \( T_H \) or lower \( T_L \). Lowering \( T_L \) is limited by the atmosphere (about 300 K). Raising \( T_H \) is limited by material strength.</li>
+      <li>\( \eta = 100\% \) needs \( T_L = 0 \) K, which cannot be reached.</li>
+    </ul>
+    <p>Try the calculator. Change \( T_H \) and \( T_L \) and watch the Carnot efficiency, \( \text{COP}_R \) and \( \text{COP}_{HP} \) change.</p>
+    <div class="widget" data-widget="carnot"></div>
+    <aside class="warn"><b>Not practical.</b> A real plant never uses the Carnot cycle. It needs isothermal heat transfer during expansion, and it needs infinitely slow processes. These give zero power. Carnot is a standard of comparison only.</aside>
+
+    <h3 id="te-u3-c-theorem">8. Carnot theorem and the thermodynamic temperature scale</h3>
+    <div class="formula"><b>Carnot theorem.</b> No heat engine working between two given reservoirs can be more efficient than a reversible engine working between the same two reservoirs.<p class="where"><b>Corollary.</b> All reversible engines working between the same two reservoirs have the same efficiency, whatever the working fluid.</p></div>
+    <p>Proof idea (full proof in Theory Q4): suppose an irreversible engine I is more efficient than a reversible engine R. Run R backwards as a heat pump, driven by I. The combined device takes heat from only one reservoir and gives net work. This breaks the Kelvin-Planck statement. So I cannot be more efficient. For two reversible engines, each one tests the other, so their efficiencies are equal.</p>
+    <p>Because all reversible engines give the same \( \eta \), the ratio \( Q_H/Q_L \) depends only on the two reservoir temperatures. Lord Kelvin used this to define a temperature scale that does not depend on any substance: the <b>thermodynamic (Kelvin) temperature scale</b>.</p>
+    <div class="formula">\[ \left(\frac{Q_H}{Q_L}\right)_{rev} = \frac{T_H}{T_L} \]<p class="where">The triple point of water is fixed at 273.16 K. If \( T_L = 0 \), then \( \eta = 100\% \), which breaks Kelvin-Planck. So absolute zero cannot be reached.</p></div>
+    <p>Use the theorem as a test for an engine claim. The efficiency of any engine is less than or equal to the Carnot efficiency. If a claim is higher, the claim is impossible. If it equals it, the engine is reversible. If it is lower, the engine is irreversible.</p>
+
+    <h3 id="te-u3-c-clausius">9. Clausius inequality and entropy as a property</h3>
+    <p>For any cycle, the heat \( \delta Q \) crosses the boundary at temperature \( T \). The <b>Clausius inequality</b> says:</p>
+    <div class="formula">\[ \oint \frac{\delta Q}{T} \le 0 \]<p class="where">= 0 for a reversible cycle. &lt; 0 for an irreversible cycle. &gt; 0 is impossible. T is the temperature of the boundary where the heat crosses (absolute, K).</p></div>
+    <p>The proof is in Theory Q5. The use is a test for a cycle. Compute \( \oint \delta Q/T = \sum Q_H/T_H - \sum Q_L/T_L \) and look at the sign.</p>
+    <p>Take two reversible paths A and B between states 1 and 2 (Fig. 3.8). The cycle 1-A-2-B-1 is reversible, so \( \oint \delta Q_{rev}/T = 0 \). Then \( \int_{1A2} \delta Q_{rev}/T = \int_{1B2} \delta Q_{rev}/T \). The value does not depend on the path. So it is the change in a property. That property is <b>entropy</b>.</p>
+    <figure class="fig" id="te-u3-f-paths">
+<svg viewBox="0 0 560 290" role="img" aria-label="Two reversible paths A and B between states 1 and 2 form a reversible cycle">
+<defs><marker id="te-u3-arw-paths" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="250.0" x2="530.0" y2="250.0" class="ln" marker-end="url(#te-u3-arw-paths)"/>
+<line x1="60.0" y1="250.0" x2="60.0" y2="20.0" class="ln" marker-end="url(#te-u3-arw-paths)"/>
+<text x="525.0" y="274.0" class="lbl" text-anchor="end">Volume, V</text>
+<text x="26.0" y="135.0" class="lbl" text-anchor="middle" transform="rotate(-90 26.0 135.0)">Pressure, p</text>
+<path d="M150,215 C150,110 260,90 420,90" class="ln thick"/>
+<path d="M150,215 C270,230 420,225 420,90" class="ln thick"/>
+<circle cx="150.0" cy="215.0" r="3.5" class="solid"/>
+<circle cx="420.0" cy="90.0" r="3.5" class="solid"/>
+<text x="136.0" y="232.0" class="lbl-b" text-anchor="end">1</text>
+<text x="434.0" y="84.0" class="lbl-b" text-anchor="start">2</text>
+<line x1="290.0" y1="91.0" x2="300.0" y2="91.0" class="ln" marker-end="url(#te-u3-arw-paths)"/>
+<line x1="318.0" y1="225.5" x2="330.0" y2="224.5" class="ln" marker-end="url(#te-u3-arw-paths)"/>
+<text x="280.0" y="76.0" class="lbl" text-anchor="middle">Path A</text>
+<text x="330.0" y="268.0" class="lbl" text-anchor="middle">Path B</text>
+<text x="290.0" y="160.0" class="lbl-acc" text-anchor="middle">∮ δQ<tspan dy="4" font-size="70%">rev</tspan><tspan dy="-4">/T = 0</tspan></text>
+</svg>
+<figcaption>Fig. 3.8 — Two reversible paths between states 1 and 2. The integral of δQ_rev/T is the same on both, so entropy is a property.</figcaption>
+</figure>
+    <div class="formula">\[ dS = \left(\frac{\delta Q}{T}\right)_{rev} \qquad S_2 - S_1 = \int_1^2 \left(\frac{\delta Q}{T}\right)_{rev} \qquad \Delta S \ge \int_1^2 \frac{\delta Q}{T} \]<p class="where">S in kJ/K (extensive property). Specific entropy s = S/m in kJ/kg·K. Equality for a reversible process, greater than for an irreversible process.</p></div>
+    <ul>
+      <li>Heat \( Q \) is a path function. Entropy \( S \) is a point (state) function: \( \oint dS = 0 \).</li>
+      <li>For an irreversible process, find \( \Delta S \) by choosing <b>any reversible path</b> between the same end states.</li>
+      <li>A reversible adiabatic process has \( \delta Q = 0 \), so \( \Delta S = 0 \). It is <b>isentropic</b>.</li>
+    </ul>
+
+    <h3 id="te-u3-c-entropy-change">10. Entropy change of solids, liquids and ideal gases</h3>
+    <p>Use these results. All temperatures are in K.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>System or process</th><th>Entropy change</th></tr></thead>
+      <tbody>
+        <tr><td>Solid or liquid, constant \( c \)</td><td>\( \Delta S = m c \ln(T_2/T_1) \)</td></tr>
+        <tr><td>Thermal reservoir (constant T), heat Q into it</td><td>\( \Delta S = Q/T \)</td></tr>
+        <tr><td>Phase change at constant T</td><td>\( \Delta S = m h_{fg}/T_{sat} \)</td></tr>
+        <tr><td>Ideal gas, general (T and v)</td><td>\( \Delta S = m\left[c_v \ln\frac{T_2}{T_1} + R \ln\frac{v_2}{v_1}\right] \)</td></tr>
+        <tr><td>Ideal gas, general (T and p)</td><td>\( \Delta S = m\left[c_p \ln\frac{T_2}{T_1} - R \ln\frac{p_2}{p_1}\right] \)</td></tr>
+        <tr><td>Ideal gas, constant volume</td><td>\( \Delta S = m c_v \ln(T_2/T_1) = m c_v \ln(p_2/p_1) \)</td></tr>
+        <tr><td>Ideal gas, constant pressure</td><td>\( \Delta S = m c_p \ln(T_2/T_1) = m c_p \ln(v_2/v_1) \)</td></tr>
+        <tr><td>Ideal gas, isothermal</td><td>\( \Delta S = m R \ln(v_2/v_1) = -mR\ln(p_2/p_1) = Q/T \)</td></tr>
+        <tr><td>Reversible adiabatic (isentropic)</td><td>\( \Delta S = 0 \)</td></tr>
+        <tr><td>Ideal gas, polytropic \( pv^n = C \)</td><td>\( \Delta S = m\,\frac{(n-\gamma)}{(n-1)}\,c_v \ln(T_2/T_1) \) (see Theory Q6)</td></tr>
+      </tbody></table></div>
+    <aside class="warn"><b>Common mistake.</b> \( \Delta S = Q/T \) is valid only if T is constant (isothermal process, or a reservoir). When the temperature changes, integrate: \( \Delta S = \int mc\,dT/T \).</aside>
+    <p>On a <b>T-s diagram</b>, the area under a reversible process line is the heat transfer: \( Q = \int T\,ds \). Lines of constant volume and constant pressure rise to the right. The \( v = const \) line is steeper than the \( p = const \) line, because \( dT/ds = T/c_v \) is larger than \( T/c_p \). A constant-temperature process is horizontal. An isentropic process is vertical.</p>
+    <figure class="fig" id="te-u3-f-tsgas">
+<svg viewBox="0 0 700 345" role="img" aria-label="T-s diagram: area under a process is the heat, and lines of constant volume, pressure, temperature and entropy">
+<defs><marker id="te-u3-arw-tsgas" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="290.0" x2="320.0" y2="290.0" class="ln" marker-end="url(#te-u3-arw-tsgas)"/>
+<line x1="60.0" y1="290.0" x2="60.0" y2="28.0" class="ln" marker-end="url(#te-u3-arw-tsgas)"/>
+<text x="315.0" y="314.0" class="lbl" text-anchor="end">s</text>
+<text x="26.0" y="159.0" class="lbl" text-anchor="middle" transform="rotate(-90 26.0 159.0)">T</text>
+<path d="M110,205 C150,215 210,155 260,115 L260,290 L110,290 Z" class="ln fill-soft"/>
+<path d="M110,205 C150,215 210,155 260,115" class="ln thick" marker-end="url(#te-u3-arw-tsgas)"/>
+<circle cx="110.0" cy="205.0" r="3.5" class="solid"/>
+<circle cx="260.0" cy="115.0" r="3.5" class="solid"/>
+<text x="96.0" y="200.0" class="lbl-b" text-anchor="end">1</text>
+<text x="272.0" y="112.0" class="lbl-b" text-anchor="start">2</text>
+<text x="185.0" y="262.0" class="lbl" text-anchor="middle">Q = ∫ T ds</text>
+<text x="185.0" y="318.0" class="lbl-b" text-anchor="middle">(a) Area under the curve = heat</text>
+<line x1="380.0" y1="290.0" x2="660.0" y2="290.0" class="ln" marker-end="url(#te-u3-arw-tsgas)"/>
+<line x1="380.0" y1="290.0" x2="380.0" y2="28.0" class="ln" marker-end="url(#te-u3-arw-tsgas)"/>
+<text x="655.0" y="314.0" class="lbl" text-anchor="end">s</text>
+<text x="346.0" y="159.0" class="lbl" text-anchor="middle" transform="rotate(-90 346.0 159.0)">T</text>
+<path d="M440.0,216.3 L450.0,208.5 L460.0,199.9 L470.0,190.5 L480.0,180.0 L490.0,168.4 L500.0,155.6 L510.0,141.5 L520.0,125.9 L530.0,108.6 L540.0,89.6 L550.0,68.5 L560.0,45.2" class="ln thick" marker-end="url(#te-u3-arw-tsgas)"/>
+<path d="M440.0,207.3 L450.0,201.2 L460.0,194.6 L470.0,187.6 L480.0,180.0 L490.0,171.9 L500.0,163.1 L510.0,153.7 L520.0,143.6 L530.0,132.8 L540.0,121.2 L550.0,108.7 L560.0,95.3" class="ln thick" marker-end="url(#te-u3-arw-tsgas)"/>
+<line x1="440.0" y1="180.0" x2="560.0" y2="180.0" class="ln thick" marker-end="url(#te-u3-arw-tsgas)"/>
+<line x1="480.0" y1="180.0" x2="480.0" y2="50.0" class="ln thick" marker-end="url(#te-u3-arw-tsgas)"/>
+<circle cx="480.0" cy="180.0" r="3.5" class="solid"/>
+<text x="566.0" y="49.2" class="lbl-sm" text-anchor="start">v = const</text>
+<text x="566.0" y="99.3" class="lbl-sm" text-anchor="start">p = const</text>
+<text x="566.0" y="185.0" class="lbl-sm" text-anchor="start">T = const</text>
+<text x="472.0" y="46.0" class="lbl-sm" text-anchor="end">s = const</text>
+<text x="520.0" y="318.0" class="lbl-b" text-anchor="middle">(b) Lines through one state</text>
+</svg>
+<figcaption>Fig. 3.9 — (a) The area under a T-s curve is the heat. (b) Lines of constant v, p, T and s through one state.</figcaption>
+</figure>
+    <p><b>Quick example 1.</b> 1 kg of water is heated from 300 K to 350 K, \( c = 4.18 \) kJ/kg·K. \( \Delta S = 4.18 \ln(350/300) = 0.644 \) kJ/K.</p>
+    <p><b>Quick example 2.</b> 2 kg of water at 20 °C is heated to 80 °C by a heater at 100 °C. \( \Delta S_{water} = 2 \times 4.18 \ln(353/293) = 1.557 \) kJ/K. The heater loses \( Q = 2 \times 4.18 \times 60 = 501.6 \) kJ at 373 K, so \( \Delta S_{heater} = -501.6/373 = -1.345 \) kJ/K. The total is \( +0.213 \) kJ/K &gt; 0. The process is irreversible.</p>
+    <p><b>Quick example 3.</b> A rigid insulated tank with a diaphragm: 1 kg of air expands freely to twice the volume. \( Q = 0, W = 0 \), so T is constant. \( \Delta S = R\ln 2 = 0.287 \times 0.693 = 0.199 \) kJ/K &gt; 0. The process is adiabatic but not isentropic.</p>
+
+    <h3 id="te-u3-c-increase">11. Principle of increase of entropy and entropy generation</h3>
+    <p>For an isolated system, or for the system and its surroundings together (the universe):</p>
+    <div class="formula">\[ \Delta S_{universe} = \Delta S_{system} + \Delta S_{surroundings} = S_{gen} \ge 0 \]<p class="where">= 0 for a reversible process. &gt; 0 for an irreversible process. &lt; 0 is impossible. This is the <b>principle of increase of entropy</b>.</p></div>
+    <p>It gives the direction of natural change. Entropy of an isolated system rises until equilibrium, where it is a maximum (Fig. 3.10). A process whose \( \Delta S_{universe} \) is negative does not happen.</p>
+    <figure class="fig" id="te-u3-f-increase">
+<svg viewBox="0 0 700 330" role="img" aria-label="Principle of increase of entropy: heat flows from a hot body to a cold body inside an isolated boundary, and total entropy rises to a maximum">
+<defs><marker id="te-u3-arw-increase" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="20.0" y="40.0" width="320.0" height="190.0" class="ln dash"/>
+<text x="180.0" y="30.0" class="lbl-sm" text-anchor="middle">Isolated system (universe)</text>
+<rect x="40.0" y="80.0" width="110.0" height="80.0" class="ln fill-acc"/>
+<text x="95.0" y="115.0" class="lbl" text-anchor="middle">Hot body</text>
+<text x="95.0" y="138.0" class="lbl-sm" text-anchor="middle">T<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"> = 600 K</tspan></text>
+<rect x="210.0" y="80.0" width="110.0" height="80.0" class="ln fill-soft"/>
+<text x="265.0" y="115.0" class="lbl" text-anchor="middle">Cold body</text>
+<text x="265.0" y="138.0" class="lbl-sm" text-anchor="middle">T<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> = 300 K</tspan></text>
+<line x1="150.0" y1="120.0" x2="210.0" y2="120.0" class="ln thick" marker-end="url(#te-u3-arw-increase)"/>
+<text x="180.0" y="108.0" class="lbl" text-anchor="middle">Q</text>
+<text x="95.0" y="190.0" class="lbl-sm" text-anchor="middle">ΔS<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"> = -Q/T</tspan><tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"></tspan></text>
+<text x="265.0" y="190.0" class="lbl-sm" text-anchor="middle">ΔS<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> = +Q/T</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"></tspan></text>
+<text x="180.0" y="218.0" class="lbl-b" text-anchor="middle">ΔS<tspan dy="4" font-size="70%">total</tspan><tspan dy="-4"> = Q(1/T</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> - 1/T</tspan><tspan dy="4" font-size="70%">1</tspan><tspan dy="-4">) &gt; 0</tspan></text>
+<text x="180.0" y="275.0" class="lbl-b" text-anchor="middle">(a) Irreversible heat flow</text>
+<line x1="400.0" y1="250.0" x2="670.0" y2="250.0" class="ln" marker-end="url(#te-u3-arw-increase)"/>
+<line x1="400.0" y1="250.0" x2="400.0" y2="40.0" class="ln" marker-end="url(#te-u3-arw-increase)"/>
+<text x="665.0" y="274.0" class="lbl" text-anchor="end">Time (process)</text>
+<text x="366.0" y="145.0" class="lbl" text-anchor="middle" transform="rotate(-90 366.0 145.0)">Total entropy, S</text>
+<path d="M410.0,230.0 L422.0,203.1 L434.0,180.4 L446.0,161.1 L458.0,144.8 L470.0,131.1 L482.0,119.4 L494.0,109.5 L506.0,101.1 L518.0,94.0 L530.0,88.1 L542.0,83.0 L554.0,78.7 L566.0,75.0 L578.0,72.0 L590.0,69.4 L602.0,67.2 L614.0,65.3 L626.0,63.7 L638.0,62.4 L650.0,61.2" class="ln thick"/>
+<line x1="444.2" y1="163.6" x2="449.6" y2="156.3" class="ln" marker-end="url(#te-u3-arw-increase)"/>
+<line x1="410.0" y1="61.2" x2="660.0" y2="61.2" class="ln dash"/>
+<text x="560.0" y="51.2" class="lbl-sm" text-anchor="middle">Equilibrium: S is maximum</text>
+<text x="530.0" y="310.0" class="lbl-b" text-anchor="middle">(b) S never decreases</text>
+</svg>
+<figcaption>Fig. 3.10 — Heat flow from a hot body to a cold body inside an isolated boundary. Total entropy rises to a maximum at equilibrium.</figcaption>
+</figure>
+    <p><b>Entropy generation</b> \( S_{gen} \) is the entropy created by irreversibility. It is not a property: it depends on the process. It is the measure of how irreversible a process is.</p>
+    <div class="formula">\[ S_{gen} = \Delta S_{system} - \sum \frac{Q_k}{T_k} \ge 0 \]<p class="where">\( Q_k \) = heat entering the system at the boundary temperature \( T_k \). For an adiabatic system, \( S_{gen} = \Delta S \).</p></div>
+    <p><b>Quick example.</b> A hot body at 600 K gives 900 kJ to air at 300 K. \( \Delta S_{body} = -900/600 = -1.5 \) kJ/K and \( \Delta S_{air} = +900/300 = +3 \) kJ/K. The total is \( +1.5 \) kJ/K, so the process is irreversible. The reverse flow would give \( -1.5 \) kJ/K, so it never happens by itself.</p>
+
+    <h3 id="te-u3-c-tds">12. Combined first and second law: the T ds relations</h3>
+    <p>For a simple compressible system in a reversible process, the first law is \( \delta Q = dU + p\,dV \) and the second law is \( \delta Q = T\,dS \). Put them together:</p>
+    <div class="formula">\[ T\,ds = du + p\,dv \qquad T\,ds = dh - v\,dp \]<p class="where">Per unit mass. These use only properties, so they are true for <b>every</b> process (reversible or not) between two equilibrium states.</p></div>
+    <p>For an ideal gas \( du = c_v dT \), \( dh = c_p dT \) and \( pv = RT \). So \( ds = c_v\,dT/T + R\,dv/v \) and \( ds = c_p\,dT/T - R\,dp/p \). Integrate these to get the formulas in Section 10. For a steady-flow device the reversible work is \( w = -\int v\,dp \). This is why a pump needs little work: \( v \) of a liquid is small.</p>
+
+    <h3 id="te-u3-c-exergy">13. Introduction to exergy</h3>
+    <p>Energy is conserved, but its ability to do work is not. <b>Exergy</b> (availability) is the maximum useful work that a system can give when it comes to equilibrium with the surroundings by reversible processes. The surroundings are at \( T_0 \) and \( p_0 \). The state of the system in equilibrium with them is the <b>dead state</b>. At the dead state the exergy is zero.</p>
+    <p>Heat \( Q \) supplied at a constant temperature \( T \) (Fig. 3.11) has two parts:</p>
+    <ul>
+      <li><b>Available energy (exergy)</b> \( = Q - T_0\Delta s = Q(1 - T_0/T) \). This is the part a reversible engine can convert to work.</li>
+      <li><b>Unavailable energy</b> \( = T_0 \Delta s \). Even a reversible engine must reject this to the surroundings at \( T_0 \).</li>
+    </ul>
+    <figure class="fig" id="te-u3-f-exergy">
+<svg viewBox="0 0 640 340" role="img" aria-label="Available and unavailable energy on a T-s diagram with the dead-state temperature T0">
+<defs><marker id="te-u3-arw-exergy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80.0" y1="300.0" x2="615.0" y2="300.0" class="ln" marker-end="url(#te-u3-arw-exergy)"/>
+<line x1="80.0" y1="300.0" x2="80.0" y2="28.0" class="ln" marker-end="url(#te-u3-arw-exergy)"/>
+<text x="610.0" y="324.0" class="lbl" text-anchor="end">Entropy, s</text>
+<text x="46.0" y="164.0" class="lbl" text-anchor="middle" transform="rotate(-90 46.0 164.0)">Temperature, T (K)</text>
+<rect x="190.0" y="105.0" width="240.0" height="115.0" class="ln fill-acc"/>
+<rect x="190.0" y="220.0" width="240.0" height="80.0" class="ln fill-soft"/>
+<line x1="80.0" y1="220.0" x2="615.0" y2="220.0" class="ln dash"/>
+<text x="74.0" y="225.0" class="lbl" text-anchor="end">T<tspan dy="4" font-size="70%">0</tspan><tspan dy="-4"></tspan></text>
+<text x="74.0" y="110.0" class="lbl" text-anchor="end">T</text>
+<line x1="190.0" y1="105.0" x2="430.0" y2="105.0" class="ln thick" marker-end="url(#te-u3-arw-exergy)"/>
+<circle cx="190.0" cy="105.0" r="3.5" class="solid"/>
+<circle cx="430.0" cy="105.0" r="3.5" class="solid"/>
+<text x="182.0" y="97.0" class="lbl-b" text-anchor="end">1</text>
+<text x="438.0" y="97.0" class="lbl-b" text-anchor="start">2</text>
+<text x="310.0" y="168.0" class="lbl-acc" text-anchor="middle">Available energy = (T - T<tspan dy="4" font-size="70%">0</tspan><tspan dy="-4">)Δs</tspan></text>
+<text x="310.0" y="266.0" class="lbl" text-anchor="middle">Unavailable energy = T<tspan dy="4" font-size="70%">0</tspan><tspan dy="-4"> Δs</tspan></text>
+<text x="310.0" y="86.0" class="lbl" text-anchor="middle">Heat supplied Q = T Δs (total area)</text>
+<text x="560.0" y="212.0" class="lbl-sm" text-anchor="end">dead state T<tspan dy="4" font-size="70%">0</tspan><tspan dy="-4"></tspan></text>
+<text x="190.0" y="324.0" class="lbl" text-anchor="middle">s<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"></tspan></text>
+<text x="430.0" y="324.0" class="lbl" text-anchor="middle">s<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"></tspan></text>
+</svg>
+<figcaption>Fig. 3.11 — Heat Q at temperature T on a T-s diagram. The part above the dead-state line T<sub>0</sub> is available. The part below it is unavailable.</figcaption>
+</figure>
+    <div class="formula">\[ X_{heat} = Q\left(1 - \frac{T_0}{T}\right) \qquad X_{destroyed} = T_0\,S_{gen} \qquad \eta_{II} = \frac{\text{exergy recovered}}{\text{exergy supplied}} \]<p class="where">Gouy-Stodola theorem: lost work = \( T_0 S_{gen} \). Every irreversibility destroys exergy. The second-law efficiency \( \eta_{II} \le 1 \).</p></div>
+    <p>For a closed system, the exergy is \( \Phi = (U - U_0) + p_0(V - V_0) - T_0(S - S_0) \). For a flowing fluid, the flow exergy per kg is \( \psi = (h - h_0) - T_0(s - s_0) \) (kinetic and potential terms ignored).</p>
+    <p><b>Quick example.</b> 1000 kJ of heat is available at 600 K and the surroundings are at 300 K. Available energy \( = 1000(1 - 300/600) = 500 \) kJ. Unavailable energy \( = 500 \) kJ. A heat pump with COP 4 between 2 °C and 22 °C has a Carnot COP of 14.76, so its second-law efficiency is \( 4/14.76 = 27\% \).</p>
+
+    <h3 id="te-u3-c-summary">14. Formula sheet</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Quantity</th><th>Formula</th></tr></thead>
+      <tbody>
+        <tr><td>Engine efficiency</td><td>\( \eta = W/Q_H = 1 - Q_L/Q_H \)</td></tr>
+        <tr><td>Refrigerator / heat pump COP</td><td>\( \text{COP}_R = Q_L/W \); \( \text{COP}_{HP} = Q_H/W = 1 + \text{COP}_R \)</td></tr>
+        <tr><td>Carnot (reversible)</td><td>\( \eta = 1 - T_L/T_H \); \( \text{COP}_R = T_L/(T_H - T_L) \); \( \text{COP}_{HP} = T_H/(T_H - T_L) \)</td></tr>
+        <tr><td>Reversible heat ratio</td><td>\( Q_H/Q_L = T_H/T_L \)</td></tr>
+        <tr><td>Test for a heat engine claim</td><td>\( \eta_{claimed} \le 1 - T_L/T_H \) (possible); \( &gt; \) (impossible)</td></tr>
+        <tr><td>Clausius inequality</td><td>\( \oint \delta Q/T \le 0 \)</td></tr>
+        <tr><td>Entropy</td><td>\( dS = \delta Q_{rev}/T \); \( \Delta S_{univ} = S_{gen} \ge 0 \)</td></tr>
+        <tr><td>Solid / liquid</td><td>\( \Delta S = mc\ln(T_2/T_1) \)</td></tr>
+        <tr><td>Ideal gas</td><td>\( \Delta S = m[c_v\ln(T_2/T_1) + R\ln(v_2/v_1)] = m[c_p\ln(T_2/T_1) - R\ln(p_2/p_1)] \)</td></tr>
+        <tr><td>T ds relations</td><td>\( T\,ds = du + p\,dv = dh - v\,dp \)</td></tr>
+        <tr><td>Exergy</td><td>\( X = Q(1 - T_0/T) \); \( X_{dest} = T_0 S_{gen} \)</td></tr>
+      </tbody></table></div>
+
+    <dl class="cards">
+      <dt>Heat engine</dt><dd>Cyclic device that takes heat from a source, gives net work and rejects heat to a sink. \( \eta = W/Q_H \).</dd>
+      <dt>COP</dt><dd>Useful heat effect divided by work input. \( \text{COP}_R = Q_L/W \), \( \text{COP}_{HP} = Q_H/W \). Can be more than 1.</dd>
+      <dt>Kelvin-Planck statement</dt><dd>No cyclic device can take heat from a single reservoir and give an equal amount of work. Every engine needs a sink.</dd>
+      <dt>Clausius statement</dt><dd>No cyclic device can transfer heat from a cold body to a hot body with no other effect (no work).</dd>
+      <dt>PMM2</dt><dd>Perpetual motion machine of the second kind: an engine with a single reservoir and 100 % efficiency. It breaks the second law.</dd>
+      <dt>Reversible process</dt><dd>A process that can be reversed so that system and surroundings both return to their first states with no net change.</dd>
+      <dt>Carnot cycle</dt><dd>Reversible cycle of two isothermal and two adiabatic processes. \( \eta = 1 - T_L/T_H \).</dd>
+      <dt>Carnot theorem</dt><dd>No engine is more efficient than a reversible engine between the same reservoirs. All reversible engines have equal efficiency.</dd>
+      <dt>Clausius inequality</dt><dd>\( \oint \delta Q/T \le 0 \) for any cycle. Zero for reversible, negative for irreversible.</dd>
+      <dt>Entropy</dt><dd>A property defined by \( dS = \delta Q_{rev}/T \). Unit kJ/K. It measures irreversibility.</dd>
+      <dt>Entropy generation</dt><dd>\( S_{gen} = \Delta S_{universe} \ge 0 \). Zero only for a reversible process.</dd>
+      <dt>Exergy and dead state</dt><dd>Exergy is the maximum useful work from a system in the surroundings. The dead state (T0, p0) is equilibrium with the surroundings, where exergy is zero.</dd>
+    </dl>
+
+    <div class="quiz" id="te-u3-quiz">
+      <div class="mcq" data-answer="c"><p class="stem">A refrigerator has \( \text{COP}_R = 4 \). The same cycle used as a heat pump has COP of</p><ol class="opts"><li>3</li><li>4</li><li>5</li><li>0.25</li></ol><p class="why">\( \text{COP}_{HP} = 1 + \text{COP}_R = 5 \).</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">A Carnot engine works between 600 K and 300 K. Its efficiency is</p><ol class="opts"><li>25 %</li><li>50 %</li><li>75 %</li><li>100 %</li></ol><p class="why">\( \eta = 1 - 300/600 = 0.5 \).</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">A heat engine that takes heat from one reservoir and gives an equal amount of work breaks the</p><ol class="opts"><li>Zeroth law</li><li>First law</li><li>Clausius statement only</li><li>Kelvin-Planck statement</li></ol><p class="why">This is a PMM2. It obeys the first law (energy is conserved) but breaks Kelvin-Planck.</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">For an irreversible cycle, \( \oint \delta Q/T \) is</p><ol class="opts"><li>negative</li><li>zero</li><li>positive</li><li>infinite</li></ol><p class="why">Clausius inequality: \( \oint \delta Q/T \le 0 \), with strict inequality for irreversible cycles.</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">The entropy change of an isolated system in any real process is</p><ol class="opts"><li>negative</li><li>zero</li><li>positive</li><li>equal to \( Q/T \)</li></ol><p class="why">Principle of increase of entropy: \( \Delta S_{isolated} &gt; 0 \) for real (irreversible) processes.</p></div>
+      <div class="mcq" data-answer="b"><p class="stem">The entropy change of an ideal gas in a reversible adiabatic process is</p><ol class="opts"><li>positive</li><li>zero</li><li>negative</li><li>\( mR\ln(v_2/v_1) \)</li></ol><p class="why">\( \delta Q = 0 \) and the process is reversible, so \( dS = \delta Q/T = 0 \).</p></div>
+      <div class="mcq" data-answer="c"><p class="stem">Which equation is correct?</p><ol class="opts"><li>\( T\,ds = du - p\,dv \)</li><li>\( T\,ds = dh + v\,dp \)</li><li>\( T\,ds = dh - v\,dp \)</li><li>\( T\,ds = dh - p\,dv \)</li></ol><p class="why">\( T\,ds = du + p\,dv = dh - v\,dp \).</p></div>
+      <div class="mcq" data-answer="a"><p class="stem">The efficiency of two reversible engines between the same two reservoirs is</p><ol class="opts"><li>equal, whatever the working fluid</li><li>higher for the engine with the better fluid</li><li>higher for the larger engine</li><li>higher for steam than for air</li></ol><p class="why">Corollary of the Carnot theorem.</p></div>
+      <div class="mcq" data-answer="d"><p class="stem">1000 kJ of heat is supplied at 600 K. The surroundings are at 300 K. The unavailable energy is</p><ol class="opts"><li>0 kJ</li><li>200 kJ</li><li>300 kJ</li><li>500 kJ</li></ol><p class="why">Unavailable energy \( = T_0 \Delta s = 300 \times (1000/600) = 500 \) kJ.</p></div>
+    </div>
+  </section>
+
+  <section class="part" id="te-u3-theory" data-part="theory">
+    <h2>Theory questions</h2>
+
+    <article class="q" id="te-u3-q1" data-marks="10">
+      <h3>Q1. State the Kelvin-Planck and Clausius statements of the second law. Prove that they are equivalent. Give the limitations of the first law.</h3>
+      <p class="q-src">Nov-Dec 2025 Q5(a) · Jun-Jul 2024 · Jan 2025 · Aug-Sep 2023 Q5(a) · Apr 2022 (CBCS)</p>
+      <p class="q-hint">Two exact statements with sketches, then two proofs by contradiction. Each proof needs a labelled sketch and an energy audit of both reservoirs.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Limitations of the first law.</b> The first law (\( \oint \delta Q = \oint \delta W \)) does not tell: (1) the direction of a process, (2) that heat cannot be converted fully into work in a cycle (quality of energy), (3) why an engine needs a sink (\( Q_L = 0 \) is allowed by the first law), (4) the difference between reversible and irreversible processes. The second law gives these.</p>
+        <p><b>Kelvin-Planck statement (heat engine).</b> It is impossible to construct a device that operates in a cycle and produces no effect other than the extraction of heat from a single reservoir and the performance of an equal amount of work. (So a heat engine needs a sink; \( \eta &lt; 100\% \).)</p>
+        <p><b>Clausius statement (refrigerator and heat pump).</b> It is impossible to construct a device that operates in a cycle and produces no effect other than the transfer of heat from a colder body to a hotter body. (So a refrigerator needs work; heat does not flow from cold to hot by itself.)</p>
+        <figure class="fig" id="te-u3-f-q1-statements">
+<svg viewBox="0 0 700 340" role="img" aria-label="The two impossible devices: an engine with no sink and a heat flow from cold to hot without work">
+<defs><marker id="te-u3-arw-q1-statements" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="65.0" y="20.0" width="220.0" height="40.0" class="ln fill-soft"/>
+<text x="175.0" y="46.0" class="lbl" text-anchor="middle">One reservoir at T</text>
+<circle cx="175.0" cy="150.0" r="40.0" class="ln fill-soft"/>
+<text x="175.0" y="155.0" class="lbl-b" text-anchor="middle">Engine</text>
+<line x1="175.0" y1="60.0" x2="175.0" y2="108.0" class="ln" marker-end="url(#te-u3-arw-q1-statements)"/>
+<text x="189.0" y="90.0" class="lbl" text-anchor="start">Q</text>
+<line x1="217.0" y1="150.0" x2="325.0" y2="150.0" class="acc thick" marker-end="url(#te-u3-arw-q1-statements)"/>
+<text x="235.0" y="138.0" class="lbl-acc" text-anchor="start">W = Q</text>
+<text x="175.0" y="230.0" class="lbl" text-anchor="middle">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> = 0, η = 100 %</tspan></text>
+<text x="175.0" y="290.0" class="lbl-b" text-anchor="middle">(a) Kelvin-Planck forbids this</text>
+<text x="175.0" y="312.0" class="lbl-sm" text-anchor="middle">(no sink, all heat to work)</text>
+<rect x="415.0" y="20.0" width="220.0" height="40.0" class="ln fill-soft"/>
+<text x="525.0" y="46.0" class="lbl" text-anchor="middle">Hot body at T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<rect x="415.0" y="240.0" width="220.0" height="40.0" class="ln fill-soft"/>
+<text x="525.0" y="266.0" class="lbl" text-anchor="middle">Cold body at T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<circle cx="525.0" cy="150.0" r="40.0" class="ln fill-soft"/>
+<text x="525.0" y="155.0" class="lbl-b" text-anchor="middle">Device</text>
+<line x1="525.0" y1="240.0" x2="525.0" y2="192.0" class="ln" marker-end="url(#te-u3-arw-q1-statements)"/>
+<text x="539.0" y="222.0" class="lbl" text-anchor="start">Q</text>
+<line x1="525.0" y1="110.0" x2="525.0" y2="60.0" class="ln" marker-end="url(#te-u3-arw-q1-statements)"/>
+<text x="539.0" y="92.0" class="lbl" text-anchor="start">Q</text>
+<text x="465.0" y="155.0" class="lbl-acc" text-anchor="end">W = 0</text>
+<text x="525.0" y="308.0" class="lbl-b" text-anchor="middle">(b) Clausius forbids this</text>
+<text x="525.0" y="328.0" class="lbl-sm" text-anchor="middle">(cold to hot, no work)</text>
+</svg>
+<figcaption>Fig. 3.12 — The two forbidden devices.</figcaption>
+</figure>
+        <p><b>Equivalence.</b> We show that a violation of one statement means a violation of the other. A hot reservoir (HTR) is at \( T_H \) and a cold reservoir (LTR) is at \( T_L \).</p>
+        <p><b>Part A: violation of Kelvin-Planck gives violation of Clausius.</b></p>
+        <figure class="fig" id="te-u3-f-q1-equivA">
+<svg viewBox="0 0 700 400" role="img" aria-label="Equivalence proof, violating Kelvin-Planck gives a Clausius violation">
+<defs><marker id="te-u3-arw-q1-equivA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="120.0" y="20.0" width="460.0" height="36.0" class="ln fill-soft"/>
+<text x="350.0" y="44.0" class="lbl" text-anchor="middle">Hot reservoir (HTR) at T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<rect x="120.0" y="312.0" width="460.0" height="36.0" class="ln fill-soft"/>
+<text x="350.0" y="336.0" class="lbl" text-anchor="middle">Cold reservoir (LTR) at T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<circle cx="210.0" cy="172.0" r="38.0" class="ln fill-soft"/>
+<circle cx="490.0" cy="172.0" r="38.0" class="ln fill-soft"/>
+<line x1="210.0" y1="56.0" x2="210.0" y2="134.0" class="ln" marker-end="url(#te-u3-arw-q1-equivA)"/>
+<text x="224.0" y="100.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<text x="210.0" y="177.0" class="lbl-b" text-anchor="middle">E</text>
+<text x="490.0" y="177.0" class="lbl-b" text-anchor="middle">R</text>
+<text x="222.0" y="232.0" class="lbl-sm" text-anchor="start">E: breaks K-P</text>
+<text x="478.0" y="232.0" class="lbl-sm" text-anchor="end">R: reversible</text>
+<text x="478.0" y="248.0" class="lbl-sm" text-anchor="end">refrigerator</text>
+<line x1="248.0" y1="172.0" x2="452.0" y2="172.0" class="acc thick" marker-end="url(#te-u3-arw-q1-equivA)"/>
+<text x="350.0" y="160.0" class="lbl-acc" text-anchor="middle">W = Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<line x1="490.0" y1="134.0" x2="490.0" y2="56.0" class="ln" marker-end="url(#te-u3-arw-q1-equivA)"/>
+<text x="504.0" y="100.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> + Q</tspan><tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<line x1="490.0" y1="312.0" x2="490.0" y2="210.0" class="ln" marker-end="url(#te-u3-arw-q1-equivA)"/>
+<text x="504.0" y="294.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<rect x="150.0" y="112.0" width="410.0" height="150.0" class="ln dash"/>
+<text x="350.0" y="130.0" class="lbl-sm" text-anchor="middle">Combined device</text>
+<text x="350.0" y="385.0" class="lbl-sm" text-anchor="middle">Net effect: Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> goes from the cold to the hot reservoir, no work. Clausius is violated.</tspan></text>
+</svg>
+<figcaption>Fig. 3.13 — Engine E breaks Kelvin-Planck. Its work drives a reversible refrigerator R.</figcaption>
+</figure>
+        <ol>
+          <li>Let E be a device that breaks Kelvin-Planck. It takes \( Q_H \) from the HTR and gives \( W = Q_H \). It rejects no heat.</li>
+          <li>Use the work \( W = Q_H \) to drive a reversible refrigerator R. R takes \( Q_L \) from the LTR and rejects \( Q_H + Q_L \) to the HTR.</li>
+          <li><b>HTR:</b> loses \( Q_H \) to E, gains \( Q_H + Q_L \) from R. Net heat to the HTR is \( + Q_L \).</li>
+          <li><b>LTR:</b> loses \( Q_L \).</li>
+          <li><b>Work:</b> all the work of E goes into R. The combined device exchanges no work with the surroundings.</li>
+          <li>The only net effect is the transfer of \( Q_L \) from the LTR to the HTR with no work. This breaks the Clausius statement.</li>
+        </ol>
+        <p><b>Part B: violation of Clausius gives violation of Kelvin-Planck.</b></p>
+        <figure class="fig" id="te-u3-f-q1-equivB">
+<svg viewBox="0 0 700 400" role="img" aria-label="Equivalence proof, violating Clausius gives a Kelvin-Planck violation">
+<defs><marker id="te-u3-arw-q1-equivB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="120.0" y="20.0" width="460.0" height="36.0" class="ln fill-soft"/>
+<text x="350.0" y="44.0" class="lbl" text-anchor="middle">Hot reservoir (HTR) at T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<rect x="120.0" y="312.0" width="460.0" height="36.0" class="ln fill-soft"/>
+<text x="350.0" y="336.0" class="lbl" text-anchor="middle">Cold reservoir (LTR) at T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<circle cx="210.0" cy="172.0" r="38.0" class="ln fill-soft"/>
+<circle cx="490.0" cy="172.0" r="38.0" class="ln fill-soft"/>
+<line x1="210.0" y1="56.0" x2="210.0" y2="134.0" class="ln" marker-end="url(#te-u3-arw-q1-equivB)"/>
+<text x="224.0" y="100.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<text x="210.0" y="177.0" class="lbl-b" text-anchor="middle">E</text>
+<text x="490.0" y="177.0" class="lbl-b" text-anchor="middle">C</text>
+<text x="222.0" y="232.0" class="lbl-sm" text-anchor="start">E: ordinary</text>
+<text x="222.0" y="248.0" class="lbl-sm" text-anchor="start">engine</text>
+<text x="478.0" y="232.0" class="lbl-sm" text-anchor="end">C: breaks</text>
+<text x="478.0" y="248.0" class="lbl-sm" text-anchor="end">Clausius</text>
+<line x1="248.0" y1="172.0" x2="320.0" y2="172.0" class="acc thick" marker-end="url(#te-u3-arw-q1-equivB)"/>
+<text x="268.0" y="160.0" class="lbl-acc" text-anchor="middle">W</text>
+<line x1="210.0" y1="210.0" x2="210.0" y2="312.0" class="ln" marker-end="url(#te-u3-arw-q1-equivB)"/>
+<text x="224.0" y="294.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<line x1="490.0" y1="312.0" x2="490.0" y2="210.0" class="ln" marker-end="url(#te-u3-arw-q1-equivB)"/>
+<text x="504.0" y="294.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<line x1="490.0" y1="134.0" x2="490.0" y2="56.0" class="ln" marker-end="url(#te-u3-arw-q1-equivB)"/>
+<text x="504.0" y="100.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<rect x="150.0" y="112.0" width="410.0" height="150.0" class="ln dash"/>
+<text x="350.0" y="130.0" class="lbl-sm" text-anchor="middle">Combined device</text>
+<text x="350.0" y="385.0" class="lbl-sm" text-anchor="middle">Net effect: Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> - Q</tspan><tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> taken from the HTR, all converted to W. Kelvin-Planck is violated.</tspan></text>
+</svg>
+<figcaption>Fig. 3.14 — Device C breaks Clausius. Engine E rejects Q<sub>L</sub>, which C returns to the HTR.</figcaption>
+</figure>
+        <ol>
+          <li>Let C be a device that breaks Clausius. It moves \( Q_L \) from the LTR to the HTR with no work.</li>
+          <li>Let E be an ordinary engine. It takes \( Q_H \) from the HTR, gives \( W \), and rejects \( Q_L \) to the LTR. Then \( W = Q_H - Q_L \).</li>
+          <li><b>LTR:</b> receives \( Q_L \) from E and loses \( Q_L \) to C. Net heat is zero.</li>
+          <li><b>HTR:</b> loses \( Q_H \) to E and gains \( Q_L \) from C. Net heat taken from the HTR is \( Q_H - Q_L = W \).</li>
+          <li>The combined device takes heat from one reservoir (the HTR) and gives the same amount of work, with no other effect. This breaks the Kelvin-Planck statement.</li>
+        </ol>
+        <p><b>Conclusion.</b> The two statements are equivalent. A violation of either one leads to a violation of the other. So they are two forms of one law.</p>
+      </details>
+    </article>
+
+    <article class="q" id="te-u3-q2" data-marks="10">
+      <h3>Q2. Define a reversible process. Define irreversibility and discuss at least three factors that make a process irreversible.</h3>
+      <p class="q-src">Nov-Dec 2025 Q6(b) · Feb-Mar 2022 (CBCS)</p>
+      <p class="q-hint">One definition of each, then at least three causes, each with a one-line reason and a small sketch.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Reversible process.</b> A process that can be reversed so that both the system and the surroundings return exactly to their first states, with no net change in the system or in the surroundings. It is quasi-static (a series of equilibrium states) and has no dissipation.</p>
+        <p><b>Irreversible process.</b> A process that is not reversible. If it is reversed, the system can return to its first state, but the surroundings stay changed. <b>Irreversibility</b> is the property of such a process. Its measure is the lost work \( I = T_0 S_{gen} \).</p>
+        <p><b>Test.</b> Run the process backwards. If both system and surroundings return to the first state without outside work or heat, it is reversible.</p>
+        <p><b>Factors that cause irreversibility.</b></p>
+        <figure class="fig" id="te-u3-f-q2-irrev">
+<svg viewBox="0 0 700 250" role="img" aria-label="Causes of irreversibility: free expansion, heat transfer across a finite temperature difference, friction">
+<defs><marker id="te-u3-arw-q2-irrev" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="20.0" y="50.0" width="190.0" height="90.0" class="ln"/>
+<line x1="115.0" y1="50.0" x2="115.0" y2="140.0" class="ln dash"/>
+<circle cx="35.0" cy="70.0" r="3.2" class="solid"/>
+<circle cx="60.0" cy="95.0" r="3.2" class="solid"/>
+<circle cx="45.0" cy="120.0" r="3.2" class="solid"/>
+<circle cx="85.0" cy="80.0" r="3.2" class="solid"/>
+<circle cx="90.0" cy="118.0" r="3.2" class="solid"/>
+<circle cx="70.0" cy="62.0" r="3.2" class="solid"/>
+<circle cx="100.0" cy="100.0" r="3.2" class="solid"/>
+<circle cx="30.0" cy="100.0" r="3.2" class="solid"/>
+<text x="65.0" y="160.0" class="lbl-sm" text-anchor="middle">Gas</text>
+<text x="165.0" y="100.0" class="lbl-sm" text-anchor="middle">Vacuum</text>
+<text x="115.0" y="40.0" class="lbl-sm" text-anchor="middle">membrane</text>
+<text x="115.0" y="205.0" class="lbl-b" text-anchor="middle">(a) Free expansion</text>
+<text x="115.0" y="225.0" class="lbl-sm" text-anchor="middle">(unrestrained)</text>
+<rect x="250.0" y="70.0" width="80.0" height="70.0" class="ln fill-acc"/>
+<text x="290.0" y="110.0" class="lbl-b" text-anchor="middle">T<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"></tspan></text>
+<rect x="330.0" y="70.0" width="80.0" height="70.0" class="ln fill-soft"/>
+<text x="370.0" y="110.0" class="lbl-b" text-anchor="middle">T<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"></tspan></text>
+<line x1="290.0" y1="55.0" x2="370.0" y2="55.0" class="ln thick" marker-end="url(#te-u3-arw-q2-irrev)"/>
+<text x="330.0" y="38.0" class="lbl-sm" text-anchor="middle">Q, T<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"> &gt; T</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"></tspan></text>
+<text x="330.0" y="205.0" class="lbl-b" text-anchor="middle">(b) Heat transfer</text>
+<text x="330.0" y="225.0" class="lbl-sm" text-anchor="middle">across a finite ΔT</text>
+<polygon points="480.0,150.0 639.7,150.0 639.7,91.9" class="ln fill-soft"/>
+<polygon points="550.0,124.5 587.6,110.8 578.7,86.4 541.1,100.1" class="ln fill-acc"/>
+<line x1="538.0" y1="115.0" x2="491.1" y2="132.1" class="ln thick" marker-end="url(#te-u3-arw-q2-irrev)"/>
+<text x="487.1" y="120.1" class="lbl-sm" text-anchor="end">motion</text>
+<text x="490.0" y="168.0" class="lbl-sm" text-anchor="start">rough surface</text>
+<text x="580.0" y="205.0" class="lbl-b" text-anchor="middle">(c) Friction</text>
+<text x="580.0" y="225.0" class="lbl-sm" text-anchor="middle">work becomes heat</text>
+</svg>
+<figcaption>Fig. 3.15 — Three causes of irreversibility.</figcaption>
+</figure>
+        <ol>
+          <li><b>Friction</b> (solid friction, viscosity). Work becomes heat in the body and the surroundings. To get the work back you need extra work. The surroundings change for ever.</li>
+          <li><b>Heat transfer through a finite temperature difference.</b> Heat flows only from hot to cold. To return it you need a refrigerator and work. Reversible heat transfer needs \( \Delta T \to 0 \).</li>
+          <li><b>Unrestrained expansion.</b> A gas expands into a vacuum and does no work. To compress it back you need work, and heat flows out.</li>
+          <li><b>Mixing</b> of different gases or fluids. Work is needed to separate them again.</li>
+          <li><b>Electrical resistance, magnetic hysteresis, inelastic deformation, chemical reaction (combustion)</b> and <b>throttling</b>. Each dissipates useful energy into heat.</li>
+        </ol>
+        <p><b>Summary table.</b></p>
+        <div class="tbl"><table>
+          <thead><tr><th>Reversible</th><th>Irreversible</th></tr></thead>
+          <tbody>
+            <tr><td>Quasi-static, no friction</td><td>Fast, with friction and gradients</td></tr>
+            <tr><td>\( \Delta S_{universe} = 0 \)</td><td>\( \Delta S_{universe} &gt; 0 \)</td></tr>
+            <tr><td>Maximum work (engine), minimum work (refrigerator)</td><td>Less work (engine), more work (refrigerator)</td></tr>
+            <tr><td>Ideal limit, does not exist in practice</td><td>All real processes</td></tr>
+          </tbody></table></div>
+      </details>
+    </article>
+
+    <article class="q" id="te-u3-q3" data-marks="10">
+      <h3>Q3. Explain the Carnot cycle with p-V and T-s diagrams. Derive the expression for its efficiency. Why are there two isothermal and two adiabatic processes?</h3>
+      <p class="q-src">Syllabus topic · Feb-Mar 2022 (CBCS) Q7(c)</p>
+      <p class="q-hint">Four labelled processes, the p-V sketch and the T-s sketch, then the derivation \( \eta = 1 - T_L/T_H \) for an ideal gas.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Carnot cycle.</b> A reversible cycle between a source at \( T_H \) and a sink at \( T_L \) with four processes:</p>
+        <figure class="fig" id="te-u3-f-q3-cyl">
+<svg viewBox="0 0 700 265" role="img" aria-label="Carnot engine as a piston-cylinder: isothermal expansion, adiabatic expansion, isothermal compression, adiabatic compression">
+<defs><marker id="te-u3-arw-q3-cyl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="50.0" y="86.0" width="76.0" height="64.0" class="ln fill-soft"/>
+<path d="M48,40 L48,150 L128,150 L128,40" class="ln"/>
+<rect x="50.0" y="78.0" width="76.0" height="8.0" class="ln fill-acc"/>
+<line x1="88.0" y1="78.0" x2="88.0" y2="30.0" class="ln thick"/>
+<line x1="150.0" y1="112.0" x2="150.0" y2="84.0" class="ln" marker-end="url(#te-u3-arw-q3-cyl)"/>
+<rect x="36.0" y="150.0" width="104.0" height="30.0" class="ln fill-acc"/>
+<line x1="116.0" y1="177.0" x2="116.0" y2="154.0" class="ln" marker-end="url(#te-u3-arw-q3-cyl)"/>
+<text x="74.0" y="171.0" class="lbl-b" text-anchor="middle">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<text x="88.0" y="200.0" class="lbl-sm" text-anchor="middle">Source T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<text x="88.0" y="222.0" class="lbl-b" text-anchor="middle">(a) 1-2</text>
+<text x="88.0" y="242.0" class="lbl-sm" text-anchor="middle">isothermal expansion</text>
+<rect x="225.0" y="70.0" width="76.0" height="80.0" class="ln fill-soft"/>
+<path d="M223,40 L223,150 L303,150 L303,40" class="ln"/>
+<rect x="225.0" y="62.0" width="76.0" height="8.0" class="ln fill-acc"/>
+<line x1="263.0" y1="62.0" x2="263.0" y2="30.0" class="ln thick"/>
+<line x1="325.0" y1="112.0" x2="325.0" y2="84.0" class="ln" marker-end="url(#te-u3-arw-q3-cyl)"/>
+<rect x="211.0" y="150.0" width="104.0" height="30.0" class="ln fill-hatch"/>
+<text x="263.0" y="200.0" class="lbl-sm" text-anchor="middle">Insulator</text>
+<text x="263.0" y="222.0" class="lbl-b" text-anchor="middle">(b) 2-3</text>
+<text x="263.0" y="242.0" class="lbl-sm" text-anchor="middle">adiabatic expansion</text>
+<rect x="400.0" y="90.0" width="76.0" height="60.0" class="ln fill-soft"/>
+<path d="M398,40 L398,150 L478,150 L478,40" class="ln"/>
+<rect x="400.0" y="82.0" width="76.0" height="8.0" class="ln fill-acc"/>
+<line x1="438.0" y1="82.0" x2="438.0" y2="30.0" class="ln thick"/>
+<line x1="500.0" y1="84.0" x2="500.0" y2="112.0" class="ln" marker-end="url(#te-u3-arw-q3-cyl)"/>
+<rect x="386.0" y="150.0" width="104.0" height="30.0" class="ln fill-acc2"/>
+<line x1="466.0" y1="154.0" x2="466.0" y2="177.0" class="ln" marker-end="url(#te-u3-arw-q3-cyl)"/>
+<text x="424.0" y="171.0" class="lbl-b" text-anchor="middle">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<text x="438.0" y="200.0" class="lbl-sm" text-anchor="middle">Sink T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<text x="438.0" y="222.0" class="lbl-b" text-anchor="middle">(c) 3-4</text>
+<text x="438.0" y="242.0" class="lbl-sm" text-anchor="middle">isothermal compression</text>
+<rect x="575.0" y="108.0" width="76.0" height="42.0" class="ln fill-soft"/>
+<path d="M573,40 L573,150 L653,150 L653,40" class="ln"/>
+<rect x="575.0" y="100.0" width="76.0" height="8.0" class="ln fill-acc"/>
+<line x1="613.0" y1="100.0" x2="613.0" y2="30.0" class="ln thick"/>
+<line x1="675.0" y1="84.0" x2="675.0" y2="112.0" class="ln" marker-end="url(#te-u3-arw-q3-cyl)"/>
+<rect x="561.0" y="150.0" width="104.0" height="30.0" class="ln fill-hatch"/>
+<text x="613.0" y="200.0" class="lbl-sm" text-anchor="middle">Insulator</text>
+<text x="613.0" y="222.0" class="lbl-b" text-anchor="middle">(d) 4-1</text>
+<text x="613.0" y="242.0" class="lbl-sm" text-anchor="middle">adiabatic compression</text>
+</svg>
+<figcaption>Fig. 3.16 — Carnot engine: the four processes in a cylinder.</figcaption>
+</figure>
+        <ol>
+          <li><b>1-2</b> reversible isothermal expansion at \( T_H \): heat \( Q_H \) in.</li>
+          <li><b>2-3</b> reversible adiabatic (isentropic) expansion: \( T_H \to T_L \).</li>
+          <li><b>3-4</b> reversible isothermal compression at \( T_L \): heat \( Q_L \) out.</li>
+          <li><b>4-1</b> reversible adiabatic (isentropic) compression: \( T_L \to T_H \).</li>
+        </ol>
+        <figure class="fig" id="te-u3-f-q3-pv">
+<svg viewBox="0 0 660 390" role="img" aria-label="Carnot cycle on a p-V diagram: two isotherms and two adiabats">
+<defs><marker id="te-u3-arw-q3-pv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80.0" y1="335.0" x2="640.0" y2="335.0" class="ln" marker-end="url(#te-u3-arw-q3-pv)"/>
+<line x1="80.0" y1="335.0" x2="80.0" y2="28.0" class="ln" marker-end="url(#te-u3-arw-q3-pv)"/>
+<text x="635.0" y="359.0" class="lbl" text-anchor="end">Volume, V</text>
+<text x="46.0" y="181.5" class="lbl" text-anchor="middle" transform="rotate(-90 46.0 181.5)">Pressure, p</text>
+<path d="M165.0,41.0 L169.2,53.6 L173.5,65.0 L177.8,75.4 L182.0,85.0 L186.2,93.8 L190.5,101.9 L194.8,109.4 L199.0,116.4 L203.2,122.9 L207.5,129.0 L211.8,134.7 L216.0,140.0 L220.2,145.0 L224.5,149.7 L228.8,154.1 L233.0,158.3 L237.2,162.3 L241.5,166.1 L245.8,169.6 L250.0,173.0 L254.2,176.2 L258.5,179.3 L262.8,182.2 L267.0,185.0 L267.0,185.0 L281.2,198.8 L295.5,210.3 L309.7,219.8 L324.0,228.0 L338.2,234.9 L352.5,240.9 L366.7,246.1 L381.0,250.7 L395.2,254.7 L409.5,258.3 L423.7,261.5 L438.0,264.3 L452.2,266.9 L466.5,269.2 L480.7,271.3 L494.9,273.2 L509.2,275.0 L523.4,276.5 L537.7,278.0 L551.9,279.3 L566.2,280.6 L580.4,281.7 L594.7,282.8 L608.9,283.8 L608.9,283.8 L596.9,283.3 L584.9,282.8 L572.9,282.2 L560.8,281.7 L548.8,281.1 L536.8,280.4 L524.8,279.8 L512.7,279.1 L500.7,278.3 L488.7,277.5 L476.7,276.7 L464.7,275.8 L452.6,274.9 L440.6,273.9 L428.6,272.8 L416.6,271.7 L404.6,270.4 L392.5,269.1 L380.5,267.7 L368.5,266.1 L356.5,264.4 L344.5,262.6 L332.4,260.6 L320.4,258.3 L320.4,258.3 L313.9,256.2 L307.5,253.8 L301.0,251.3 L294.5,248.6 L288.0,245.6 L281.6,242.4 L275.1,238.9 L268.6,235.1 L262.1,230.9 L255.7,226.3 L249.2,221.2 L242.7,215.5 L236.2,209.3 L229.8,202.3 L223.3,194.4 L216.8,185.6 L210.3,175.5 L203.9,164.0 L197.4,150.8 L190.9,135.5 L184.4,117.7 L178.0,96.6 L171.5,71.4 L165.0,41.0 Z" class="ln fill-soft"/>
+<path d="M165.0,41.0 L169.2,53.6 L173.5,65.0 L177.8,75.4 L182.0,85.0 L186.2,93.8 L190.5,101.9 L194.8,109.4 L199.0,116.4 L203.2,122.9 L207.5,129.0 L211.8,134.7 L216.0,140.0 L220.2,145.0 L224.5,149.7 L228.8,154.1 L233.0,158.3 L237.2,162.3 L241.5,166.1 L245.8,169.6 L250.0,173.0 L254.2,176.2 L258.5,179.3 L262.8,182.2 L267.0,185.0" class="ln thick"/>
+<path d="M267.0,185.0 L281.2,198.8 L295.5,210.3 L309.7,219.8 L324.0,228.0 L338.2,234.9 L352.5,240.9 L366.7,246.1 L381.0,250.7 L395.2,254.7 L409.5,258.3 L423.7,261.5 L438.0,264.3 L452.2,266.9 L466.5,269.2 L480.7,271.3 L494.9,273.2 L509.2,275.0 L523.4,276.5 L537.7,278.0 L551.9,279.3 L566.2,280.6 L580.4,281.7 L594.7,282.8 L608.9,283.8" class="ln thick"/>
+<path d="M608.9,283.8 L596.9,283.3 L584.9,282.8 L572.9,282.2 L560.8,281.7 L548.8,281.1 L536.8,280.4 L524.8,279.8 L512.7,279.1 L500.7,278.3 L488.7,277.5 L476.7,276.7 L464.7,275.8 L452.6,274.9 L440.6,273.9 L428.6,272.8 L416.6,271.7 L404.6,270.4 L392.5,269.1 L380.5,267.7 L368.5,266.1 L356.5,264.4 L344.5,262.6 L332.4,260.6 L320.4,258.3" class="ln thick"/>
+<path d="M320.4,258.3 L313.9,256.2 L307.5,253.8 L301.0,251.3 L294.5,248.6 L288.0,245.6 L281.6,242.4 L275.1,238.9 L268.6,235.1 L262.1,230.9 L255.7,226.3 L249.2,221.2 L242.7,215.5 L236.2,209.3 L229.8,202.3 L223.3,194.4 L216.8,185.6 L210.3,175.5 L203.9,164.0 L197.4,150.8 L190.9,135.5 L184.4,117.7 L178.0,96.6 L171.5,71.4 L165.0,41.0" class="ln thick"/>
+<line x1="214.1" y1="137.7" x2="219.9" y2="144.6" class="ln" marker-end="url(#te-u3-arw-q3-pv)"/>
+<line x1="435.0" y1="263.8" x2="443.9" y2="265.4" class="ln" marker-end="url(#te-u3-arw-q3-pv)"/>
+<line x1="467.7" y1="276.1" x2="458.7" y2="275.4" class="ln" marker-end="url(#te-u3-arw-q3-pv)"/>
+<line x1="244.9" y1="217.6" x2="238.4" y2="211.4" class="ln" marker-end="url(#te-u3-arw-q3-pv)"/>
+<circle cx="165.0" cy="41.0" r="3.5" class="solid"/>
+<circle cx="267.0" cy="185.0" r="3.5" class="solid"/>
+<circle cx="608.9" cy="283.8" r="3.5" class="solid"/>
+<circle cx="320.4" cy="258.3" r="3.5" class="solid"/>
+<text x="151.0" y="33.0" class="lbl-b" text-anchor="end">1</text>
+<text x="277.0" y="177.0" class="lbl-b" text-anchor="start">2</text>
+<text x="620.9" y="287.8" class="lbl-b" text-anchor="start">3</text>
+<text x="308.4" y="274.3" class="lbl-b" text-anchor="end">4</text>
+<text x="250.0" y="118.0" class="lbl" text-anchor="start">Isotherm at T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4">: Q</tspan><tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> in</tspan></text>
+<text x="454.0" y="312.0" class="lbl" text-anchor="middle">Isotherm at T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4">: Q</tspan><tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> out</tspan></text>
+<text x="386.0" y="238.2" class="lbl-sm" text-anchor="middle">Adiabat</text>
+<text x="182.0" y="166.4" class="lbl-sm" text-anchor="end">Adiabat</text>
+<text x="246.0" y="195.5" class="lbl-acc" text-anchor="middle">W<tspan dy="4" font-size="70%">net</tspan><tspan dy="-4"></tspan></text>
+</svg>
+<figcaption>Fig. 3.17 — Carnot cycle on p-V.</figcaption>
+</figure>
+        <figure class="fig" id="te-u3-f-q3-ts">
+<svg viewBox="0 0 640 340" role="img" aria-label="Carnot cycle on a T-s diagram: a rectangle between T_H and T_L">
+<defs><marker id="te-u3-arw-q3-ts" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80.0" y1="300.0" x2="615.0" y2="300.0" class="ln" marker-end="url(#te-u3-arw-q3-ts)"/>
+<line x1="80.0" y1="300.0" x2="80.0" y2="28.0" class="ln" marker-end="url(#te-u3-arw-q3-ts)"/>
+<text x="610.0" y="324.0" class="lbl" text-anchor="end">Entropy, s</text>
+<text x="46.0" y="164.0" class="lbl" text-anchor="middle" transform="rotate(-90 46.0 164.0)">Temperature, T (K)</text>
+<rect x="200.0" y="200.0" width="240.0" height="100.0" class="ln fill-soft"/>
+<rect x="200.0" y="90.0" width="240.0" height="110.0" class="ln fill-acc"/>
+<line x1="200.0" y1="90.0" x2="440.0" y2="90.0" class="ln thick"/>
+<line x1="440.0" y1="90.0" x2="440.0" y2="200.0" class="ln thick"/>
+<line x1="440.0" y1="200.0" x2="200.0" y2="200.0" class="ln thick"/>
+<line x1="200.0" y1="200.0" x2="200.0" y2="90.0" class="ln thick"/>
+<line x1="300.0" y1="90.0" x2="330.0" y2="90.0" class="ln" marker-end="url(#te-u3-arw-q3-ts)"/>
+<line x1="440.0" y1="130.0" x2="440.0" y2="160.0" class="ln" marker-end="url(#te-u3-arw-q3-ts)"/>
+<line x1="330.0" y1="200.0" x2="300.0" y2="200.0" class="ln" marker-end="url(#te-u3-arw-q3-ts)"/>
+<line x1="200.0" y1="160.0" x2="200.0" y2="130.0" class="ln" marker-end="url(#te-u3-arw-q3-ts)"/>
+<circle cx="200.0" cy="90.0" r="3.5" class="solid"/>
+<text x="188.0" y="82.0" class="lbl-b" text-anchor="end">1</text>
+<circle cx="440.0" cy="90.0" r="3.5" class="solid"/>
+<text x="452.0" y="82.0" class="lbl-b" text-anchor="start">2</text>
+<circle cx="440.0" cy="200.0" r="3.5" class="solid"/>
+<text x="452.0" y="216.0" class="lbl-b" text-anchor="start">3</text>
+<circle cx="200.0" cy="200.0" r="3.5" class="solid"/>
+<text x="188.0" y="216.0" class="lbl-b" text-anchor="end">4</text>
+<text x="320.0" y="152.0" class="lbl-acc" text-anchor="middle">W<tspan dy="4" font-size="70%">net</tspan><tspan dy="-4"> = (T</tspan><tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> - T</tspan><tspan dy="4" font-size="70%">L</tspan><tspan dy="-4">)(s</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> - s</tspan><tspan dy="4" font-size="70%">1</tspan><tspan dy="-4">)</tspan></text>
+<text x="320.0" y="255.0" class="lbl" text-anchor="middle">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> = T</tspan><tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> (s</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> - s</tspan><tspan dy="4" font-size="70%">1</tspan><tspan dy="-4">)</tspan></text>
+<text x="320.0" y="72.0" class="lbl" text-anchor="middle">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> = T</tspan><tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"> (s</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> - s</tspan><tspan dy="4" font-size="70%">1</tspan><tspan dy="-4">) : heat in</tspan></text>
+<text x="450.0" y="165.0" class="lbl-sm" text-anchor="start">s = const</text>
+<text x="190.0" y="165.0" class="lbl-sm" text-anchor="end">s = const</text>
+<text x="74.0" y="95.0" class="lbl" text-anchor="end">T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<text x="74.0" y="205.0" class="lbl" text-anchor="end">T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<text x="200.0" y="324.0" class="lbl" text-anchor="middle">s<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"></tspan></text>
+<text x="440.0" y="324.0" class="lbl" text-anchor="middle">s<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"></tspan></text>
+<line x1="200.0" y1="200.0" x2="200.0" y2="300.0" class="ln dash"/>
+<line x1="440.0" y1="200.0" x2="440.0" y2="300.0" class="ln dash"/>
+</svg>
+<figcaption>Fig. 3.18 — Carnot cycle on T-s.</figcaption>
+</figure>
+        <p><b>Why this shape.</b> A reversible heat transfer needs zero temperature difference between the fluid and the reservoir. So heat is added and rejected only at constant temperature (isothermal). To change from \( T_H \) to \( T_L \) without heat flow across a finite difference, the process must be adiabatic and reversible, that is, isentropic.</p>
+        <p><b>Efficiency (working fluid = ideal gas, mass m).</b></p>
+        <ol>
+          <li>Heat added, 1-2: \( Q_H = mRT_H \ln(V_2/V_1) \).</li>
+          <li>Heat rejected, 3-4: \( Q_L = mRT_L \ln(V_3/V_4) \).</li>
+          <li>Adiabat 2-3: \( T_H V_2^{\gamma-1} = T_L V_3^{\gamma-1} \). Adiabat 4-1: \( T_H V_1^{\gamma-1} = T_L V_4^{\gamma-1} \).</li>
+          <li>Divide: \( V_2/V_1 = V_3/V_4 \). So the two logarithms are equal.</li>
+          <li>Then \( Q_L/Q_H = T_L/T_H \).</li>
+        </ol>
+        <div class="formula">\[ \eta_{Carnot} = 1 - \frac{Q_L}{Q_H} = 1 - \frac{T_L}{T_H} \]</div>
+        <p>On the T-s diagram this is clear: \( W_{net} = (T_H - T_L)(s_2 - s_1) \) and \( Q_H = T_H(s_2 - s_1) \), so \( \eta = (T_H - T_L)/T_H \).</p>
+        <p><b>Remarks.</b> (1) \( \eta \) depends only on \( T_H \) and \( T_L \). (2) It is the maximum for any engine between those temperatures. (3) The reversed Carnot cycle is the Carnot refrigerator: \( \text{COP}_R = T_L/(T_H - T_L) \), \( \text{COP}_{HP} = T_H/(T_H - T_L) \). (4) It is not practical: processes are infinitely slow and the power is zero.</p>
+      </details>
+    </article>
+
+    <article class="q" id="te-u3-q4" data-marks="10">
+      <h3>Q4. State and prove the Carnot theorem. Show that all reversible engines between the same two reservoirs have the same efficiency. How does this define the thermodynamic temperature scale?</h3>
+      <p class="q-src">Nov 2024 Q5(a) · Jan 2025 · Syllabus topic</p>
+      <p class="q-hint">Proof by contradiction. Assume the irreversible engine is better, reverse the reversible engine, and show a Kelvin-Planck violation.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Carnot theorem.</b> No heat engine working between two given reservoirs can be more efficient than a reversible heat engine working between the same two reservoirs.</p>
+        <p><b>Proof.</b> Let R be a reversible engine and I be an irreversible engine (or any other engine) between a source at \( T_H \) and a sink at \( T_L \). Both take the same heat \( Q_H \) from the source. Assume I is more efficient: \( \eta_I &gt; \eta_R \).</p>
+        <figure class="fig" id="te-u3-f-q4-theorem">
+<svg viewBox="0 0 700 410" role="img" aria-label="Carnot theorem proof: irreversible engine I drives a reversed reversible engine R, giving net work from one reservoir">
+<defs><marker id="te-u3-arw-q4-theorem" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="120.0" y="20.0" width="460.0" height="36.0" class="ln fill-soft"/>
+<text x="350.0" y="44.0" class="lbl" text-anchor="middle">Hot reservoir (HTR) at T<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<rect x="120.0" y="320.0" width="460.0" height="36.0" class="ln fill-soft"/>
+<text x="350.0" y="344.0" class="lbl" text-anchor="middle">Cold reservoir (LTR) at T<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"></tspan></text>
+<circle cx="210.0" cy="172.0" r="38.0" class="ln fill-soft"/>
+<circle cx="490.0" cy="172.0" r="38.0" class="ln fill-soft"/>
+<text x="210.0" y="177.0" class="lbl-b" text-anchor="middle">I</text>
+<text x="490.0" y="177.0" class="lbl-b" text-anchor="middle">R</text>
+<text x="222.0" y="232.0" class="lbl-sm" text-anchor="start">I: irreversible</text>
+<text x="222.0" y="248.0" class="lbl-sm" text-anchor="start">η<tspan dy="4" font-size="70%">I</tspan><tspan dy="-4"> &gt; η</tspan><tspan dy="4" font-size="70%">R</tspan><tspan dy="-4"></tspan></text>
+<text x="478.0" y="232.0" class="lbl-sm" text-anchor="end">R: reversed,</text>
+<text x="478.0" y="248.0" class="lbl-sm" text-anchor="end">heat pump</text>
+<line x1="210.0" y1="56.0" x2="210.0" y2="134.0" class="ln" marker-end="url(#te-u3-arw-q4-theorem)"/>
+<text x="224.0" y="100.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<line x1="490.0" y1="134.0" x2="490.0" y2="56.0" class="ln" marker-end="url(#te-u3-arw-q4-theorem)"/>
+<text x="504.0" y="100.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<line x1="248.0" y1="172.0" x2="452.0" y2="172.0" class="acc thick" marker-end="url(#te-u3-arw-q4-theorem)"/>
+<text x="350.0" y="160.0" class="lbl-acc" text-anchor="middle">W<tspan dy="4" font-size="70%">R</tspan><tspan dy="-4"></tspan></text>
+<line x1="350.0" y1="172.0" x2="350.0" y2="292.0" class="acc thick" marker-end="url(#te-u3-arw-q4-theorem)"/>
+<text x="364.0" y="292.0" class="lbl-acc" text-anchor="start">W<tspan dy="4" font-size="70%">I</tspan><tspan dy="-4"> - W</tspan><tspan dy="4" font-size="70%">R</tspan><tspan dy="-4"></tspan></text>
+<line x1="210.0" y1="210.0" x2="210.0" y2="320.0" class="ln" marker-end="url(#te-u3-arw-q4-theorem)"/>
+<text x="224.0" y="292.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">L,I</tspan><tspan dy="-4"></tspan></text>
+<line x1="490.0" y1="320.0" x2="490.0" y2="210.0" class="ln" marker-end="url(#te-u3-arw-q4-theorem)"/>
+<text x="504.0" y="292.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">L,R</tspan><tspan dy="-4"></tspan></text>
+<rect x="150.0" y="112.0" width="410.0" height="150.0" class="ln dash"/>
+<text x="350.0" y="130.0" class="lbl-sm" text-anchor="middle">Combined device</text>
+<text x="350.0" y="392.0" class="lbl-sm" text-anchor="middle">Net: Q<tspan dy="4" font-size="70%">L,R</tspan><tspan dy="-4"> - Q</tspan><tspan dy="4" font-size="70%">L,I</tspan><tspan dy="-4"> = W</tspan><tspan dy="4" font-size="70%">I</tspan><tspan dy="-4"> - W</tspan><tspan dy="4" font-size="70%">R</tspan><tspan dy="-4"> &gt; 0 from the LTR alone. Kelvin-Planck is violated.</tspan></text>
+</svg>
+<figcaption>Fig. 3.19 — Carnot theorem: I drives the reversed engine R.</figcaption>
+</figure>
+        <ol>
+          <li>\( \eta_I &gt; \eta_R \) with equal \( Q_H \) gives \( W_I &gt; W_R \). By the first law \( Q_{L,I} = Q_H - W_I &lt; Q_{L,R} = Q_H - W_R \).</li>
+          <li>Reverse R. It is reversible, so it becomes a heat pump. It takes \( Q_{L,R} \) from the sink, needs work \( W_R \), and gives \( Q_H \) to the source.</li>
+          <li>Use part of \( W_I \) (equal to \( W_R \)) to drive R.</li>
+          <li><b>Source:</b> gives \( Q_H \) to I and receives \( Q_H \) from R. Net heat is zero.</li>
+          <li><b>Sink:</b> receives \( Q_{L,I} \) from I and gives \( Q_{L,R} \) to R. Net heat taken from the sink is \( Q_{L,R} - Q_{L,I} = W_I - W_R &gt; 0 \).</li>
+          <li><b>Work:</b> the net work output is \( W_I - W_R &gt; 0 \).</li>
+          <li>The combined device takes heat from a single reservoir (the sink) and gives net work in a cycle. This breaks the Kelvin-Planck statement.</li>
+        </ol>
+        <p>The assumption is wrong. So \( \eta_I \le \eta_R \). The Carnot theorem is proved.</p>
+        <p><b>Corollary (all reversible engines are equal).</b> Let \( R_1 \) and \( R_2 \) be two reversible engines between the same reservoirs. By the theorem, \( \eta_{R1} \le \eta_{R2} \) (take \( R_2 \) as the reversible engine). Reverse the roles: \( \eta_{R2} \le \eta_{R1} \). Both are true only if \( \eta_{R1} = \eta_{R2} \). So the efficiency of a reversible engine does not depend on the working fluid or the design. It depends only on \( T_H \) and \( T_L \).</p>
+        <p><b>Thermodynamic temperature scale.</b> From the corollary, \( \eta = 1 - Q_L/Q_H = f(T_H, T_L) \). By using three reservoirs and two reversible engines in series, the function must be of the form \( Q_H/Q_L = T_H/T_L \). Kelvin used this ratio to define temperature without any substance. The scale is fixed by one point, the triple point of water, 273.16 K. If \( T_L \) were 0 K, then \( \eta = 100\% \), which breaks Kelvin-Planck. So absolute zero cannot be reached.</p>
+        <p><b>Use.</b> Compare a claimed efficiency with \( 1 - T_L/T_H \). If it is higher, the claim is impossible.</p>
+      </details>
+    </article>
+
+    <article class="q" id="te-u3-q5" data-marks="10">
+      <h3>Q5. State and prove the Clausius inequality. Hence define entropy and show that it is a property.</h3>
+      <p class="q-src">Aug-Sep 2023 Q6(a) · Apr 2022 (CBCS) · Feb-Mar 2022 (CBCS) Q7 · Jan 2023 (CBCS) · Jun-Jul 2024</p>
+      <p class="q-hint">The standard proof uses a reversible cyclic device between a reservoir and the system. The sign comes from Kelvin-Planck. Then use two reversible paths to show that entropy is a point function.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Statement.</b> For any closed cycle, the cyclic integral of \( \delta Q/T \) is less than or equal to zero:</p>
+        <div class="formula">\[ \oint \frac{\delta Q}{T} \le 0 \]<p class="where">= 0 for a reversible cycle, &lt; 0 for an irreversible cycle. T = temperature at the boundary where \( \delta Q \) crosses.</p></div>
+        <p><b>Proof.</b> Let a system undergo a cycle. It receives a small heat \( \delta Q \) at the boundary temperature T and gives work \( \delta W_{sys} \). Take a reservoir at fixed \( T_R \). Between the reservoir and the system, put a reversible cyclic device RC. RC takes \( \delta Q_R \) from the reservoir and gives \( \delta Q \) to the system.</p>
+        <figure class="fig" id="te-u3-f-q5-clausius">
+<svg viewBox="0 0 700 370" role="img" aria-label="Clausius inequality proof: reversible cyclic device RC between a reservoir at T_R and a system that undergoes a cycle">
+<defs><marker id="te-u3-arw-q5-clausius" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="200.0" y="18.0" width="300.0" height="36.0" class="ln fill-soft"/>
+<text x="350.0" y="42.0" class="lbl" text-anchor="middle">Reservoir at constant T<tspan dy="4" font-size="70%">R</tspan><tspan dy="-4"></tspan></text>
+<circle cx="350.0" cy="125.0" r="32.0" class="ln fill-soft"/>
+<text x="350.0" y="130.0" class="lbl-b" text-anchor="middle">RC</text>
+<line x1="350.0" y1="54.0" x2="350.0" y2="93.0" class="ln" marker-end="url(#te-u3-arw-q5-clausius)"/>
+<text x="364.0" y="72.0" class="lbl" text-anchor="start">δQ<tspan dy="4" font-size="70%">R</tspan><tspan dy="-4"></tspan></text>
+<line x1="350.0" y1="157.0" x2="350.0" y2="205.0" class="ln" marker-end="url(#te-u3-arw-q5-clausius)"/>
+<text x="364.0" y="186.0" class="lbl" text-anchor="start">δQ at T</text>
+<circle cx="350.0" cy="255.0" r="50.0" class="ln fill-soft"/>
+<text x="350.0" y="252.0" class="lbl-b" text-anchor="middle">System</text>
+<text x="350.0" y="270.0" class="lbl-sm" text-anchor="middle">(any cycle)</text>
+<line x1="384.0" y1="125.0" x2="480.0" y2="125.0" class="acc thick" marker-end="url(#te-u3-arw-q5-clausius)"/>
+<text x="494.0" y="130.0" class="lbl-acc" text-anchor="start">δW<tspan dy="4" font-size="70%">RC</tspan><tspan dy="-4"></tspan></text>
+<line x1="400.0" y1="255.0" x2="480.0" y2="255.0" class="acc thick" marker-end="url(#te-u3-arw-q5-clausius)"/>
+<text x="494.0" y="260.0" class="lbl-acc" text-anchor="start">δW<tspan dy="4" font-size="70%">sys</tspan><tspan dy="-4"></tspan></text>
+<rect x="240.0" y="88.0" width="240.0" height="232.0" class="ln dash"/>
+<text x="20.0" y="120.0" class="lbl-sm" text-anchor="start">RC is reversible:</text>
+<text x="20.0" y="140.0" class="lbl" text-anchor="start">δQ<tspan dy="4" font-size="70%">R</tspan><tspan dy="-4"> / T</tspan><tspan dy="4" font-size="70%">R</tspan><tspan dy="-4"> = δQ / T</tspan></text>
+<text x="20.0" y="250.0" class="lbl-sm" text-anchor="start">Combined device</text>
+<text x="20.0" y="268.0" class="lbl-sm" text-anchor="start">exchanges heat only</text>
+<text x="20.0" y="286.0" class="lbl-sm" text-anchor="start">with the reservoir</text>
+</svg>
+<figcaption>Fig. 3.20 — A reversible cyclic device RC supplies heat to the system.</figcaption>
+</figure>
+        <ol>
+          <li>RC is reversible, so \( \dfrac{\delta Q_R}{T_R} = \dfrac{\delta Q}{T} \). Then \( \delta Q_R = T_R \dfrac{\delta Q}{T} \).</li>
+          <li>Take the system and RC as one combined device. It exchanges heat only with the reservoir. For a full cycle of the system, \( Q_R = T_R \oint \dfrac{\delta Q}{T} \).</li>
+          <li>First law for the combined cycle: \( W_C = W_{RC} + W_{sys} = Q_R \) (no change in internal energy).</li>
+          <li>The combined device is a cycle with one reservoir. By Kelvin-Planck, it cannot give net work: \( W_C \le 0 \).</li>
+          <li>So \( Q_R = T_R \oint \dfrac{\delta Q}{T} \le 0 \). Since \( T_R &gt; 0 \): \( \oint \dfrac{\delta Q}{T} \le 0 \).</li>
+          <li><b>Reversible system:</b> reverse all of the combined device. Each sign changes. The result is \( \oint \delta Q/T \ge 0 \). Both signs are true only if \( \oint \delta Q/T = 0 \).</li>
+          <li><b>Irreversible system:</b> if \( W_C = 0 \) the combined cycle would be reversible. So for irreversible cycles \( W_C &lt; 0 \) and \( \oint \delta Q/T &lt; 0 \). The inequality is proved.</li>
+        </ol>
+        <p><b>Entropy is a property.</b> Take two reversible paths A and B between states 1 and 2. The cycle 1-A-2-B-1 is reversible, so \( \oint \delta Q_{rev}/T = 0 \).</p>
+        <figure class="fig" id="te-u3-f-q5-paths">
+<svg viewBox="0 0 560 290" role="img" aria-label="Two reversible paths A and B between states 1 and 2 form a reversible cycle">
+<defs><marker id="te-u3-arw-q5-paths" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="250.0" x2="530.0" y2="250.0" class="ln" marker-end="url(#te-u3-arw-q5-paths)"/>
+<line x1="60.0" y1="250.0" x2="60.0" y2="20.0" class="ln" marker-end="url(#te-u3-arw-q5-paths)"/>
+<text x="525.0" y="274.0" class="lbl" text-anchor="end">Volume, V</text>
+<text x="26.0" y="135.0" class="lbl" text-anchor="middle" transform="rotate(-90 26.0 135.0)">Pressure, p</text>
+<path d="M150,215 C150,110 260,90 420,90" class="ln thick"/>
+<path d="M150,215 C270,230 420,225 420,90" class="ln thick"/>
+<circle cx="150.0" cy="215.0" r="3.5" class="solid"/>
+<circle cx="420.0" cy="90.0" r="3.5" class="solid"/>
+<text x="136.0" y="232.0" class="lbl-b" text-anchor="end">1</text>
+<text x="434.0" y="84.0" class="lbl-b" text-anchor="start">2</text>
+<line x1="290.0" y1="91.0" x2="300.0" y2="91.0" class="ln" marker-end="url(#te-u3-arw-q5-paths)"/>
+<line x1="318.0" y1="225.5" x2="330.0" y2="224.5" class="ln" marker-end="url(#te-u3-arw-q5-paths)"/>
+<text x="280.0" y="76.0" class="lbl" text-anchor="middle">Path A</text>
+<text x="330.0" y="268.0" class="lbl" text-anchor="middle">Path B</text>
+<text x="290.0" y="160.0" class="lbl-acc" text-anchor="middle">∮ δQ<tspan dy="4" font-size="70%">rev</tspan><tspan dy="-4">/T = 0</tspan></text>
+</svg>
+<figcaption>Fig. 3.21 — Two reversible paths between states 1 and 2.</figcaption>
+</figure>
+        <div class="formula">\[ \int_{1A}^{2}\frac{\delta Q_{rev}}{T} + \int_{2B}^{1}\frac{\delta Q_{rev}}{T} = 0 \;\Rightarrow\; \int_{1A}^{2}\frac{\delta Q_{rev}}{T} = \int_{1B}^{2}\frac{\delta Q_{rev}}{T} \]</div>
+        <p>The integral is the same for every reversible path. It depends only on the end states. So it is the change in a property. We define this property as entropy:</p>
+        <div class="formula">\[ dS = \frac{\delta Q_{rev}}{T} \qquad S_2 - S_1 = \int_1^2 \frac{\delta Q_{rev}}{T} \]</div>
+        <p><b>Irreversible process.</b> Take an irreversible process A from 1 to 2 and a reversible process B from 2 back to 1. The cycle is irreversible: \( \int_{1A}^{2}\delta Q/T + (S_1 - S_2) &lt; 0 \). So \( S_2 - S_1 &gt; \int_1^2 \delta Q/T \). In general \( \Delta S \ge \int \delta Q/T \).</p>
+        <p><b>Use.</b> To test a cycle, find \( \oint \delta Q/T \). Zero means reversible. Negative means irreversible. Positive means impossible.</p>
+      </details>
+    </article>
+
+    <article class="q" id="te-u3-q6" data-marks="10">
+      <h3>Q6. Derive expressions for the entropy change of an ideal gas (a) in the general case and (b) for heating at constant volume. Write the T ds relations and the results for other processes.</h3>
+      <p class="q-src">Nov 2024 Q6(a) · Jan 2025 · Syllabus topic</p>
+      <p class="q-hint">Start from \( T\,ds = du + p\,dv \), use \( du = c_v dT \) and \( pv = RT \), then integrate. Give the T-s lines.</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>T ds relations.</b> For a reversible process in a closed system, \( \delta q = T\,ds \) and the first law is \( \delta q = du + p\,dv \). So:</p>
+        <div class="formula">\[ T\,ds = du + p\,dv \qquad T\,ds = dh - v\,dp \]<p class="where">The second form comes from \( h = u + pv \), \( dh = du + p\,dv + v\,dp \). These relate properties only, so they hold for every process.</p></div>
+        <p><b>(a) General case for an ideal gas.</b> For an ideal gas \( du = c_v\,dT \) and \( p/T = R/v \).</p>
+        <div class="formula">\[ ds = \frac{du + p\,dv}{T} = c_v\frac{dT}{T} + R\frac{dv}{v} \;\Rightarrow\; s_2 - s_1 = c_v\ln\frac{T_2}{T_1} + R\ln\frac{v_2}{v_1} \]</div>
+        <p>Use \( dh = c_p\,dT \) and \( v/T = R/p \) in the second relation:</p>
+        <div class="formula">\[ ds = c_p\frac{dT}{T} - R\frac{dp}{p} \;\Rightarrow\; s_2 - s_1 = c_p\ln\frac{T_2}{T_1} - R\ln\frac{p_2}{p_1} \]</div>
+        <p>For mass m, \( \Delta S = m(s_2 - s_1) \). These are valid for any process (reversible or not), because s is a property.</p>
+        <p><b>(b) Heating at constant volume.</b> Put \( v_2 = v_1 \). Then \( \ln(v_2/v_1) = 0 \):</p>
+        <div class="formula">\[ \Delta S = m\,c_v\ln\frac{T_2}{T_1} = m\,c_v\ln\frac{p_2}{p_1} \]</div>
+        <p>(Because \( p/T \) is constant at constant volume.) \( \Delta S &gt; 0 \) when the gas is heated.</p>
+        <p><b>Other processes.</b></p>
+        <ul>
+          <li>Constant pressure: \( \Delta S = m c_p\ln(T_2/T_1) = m c_p\ln(v_2/v_1) \).</li>
+          <li>Isothermal: \( \Delta S = mR\ln(v_2/v_1) = -mR\ln(p_2/p_1) \).</li>
+          <li>Reversible adiabatic: \( \Delta S = 0 \) (isentropic).</li>
+          <li>Polytropic \( pv^n = C \): \( \Delta S = m c_v\dfrac{n-\gamma}{n-1}\ln\dfrac{T_2}{T_1} \).</li>
+          <li>Solid or liquid (incompressible): \( \Delta S = m c\ln(T_2/T_1) \).</li>
+        </ul>
+        <figure class="fig" id="te-u3-f-q6-tsgas">
+<svg viewBox="0 0 700 345" role="img" aria-label="T-s diagram: area under a process is the heat, and lines of constant volume, pressure, temperature and entropy">
+<defs><marker id="te-u3-arw-q6-tsgas" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="290.0" x2="320.0" y2="290.0" class="ln" marker-end="url(#te-u3-arw-q6-tsgas)"/>
+<line x1="60.0" y1="290.0" x2="60.0" y2="28.0" class="ln" marker-end="url(#te-u3-arw-q6-tsgas)"/>
+<text x="315.0" y="314.0" class="lbl" text-anchor="end">s</text>
+<text x="26.0" y="159.0" class="lbl" text-anchor="middle" transform="rotate(-90 26.0 159.0)">T</text>
+<path d="M110,205 C150,215 210,155 260,115 L260,290 L110,290 Z" class="ln fill-soft"/>
+<path d="M110,205 C150,215 210,155 260,115" class="ln thick" marker-end="url(#te-u3-arw-q6-tsgas)"/>
+<circle cx="110.0" cy="205.0" r="3.5" class="solid"/>
+<circle cx="260.0" cy="115.0" r="3.5" class="solid"/>
+<text x="96.0" y="200.0" class="lbl-b" text-anchor="end">1</text>
+<text x="272.0" y="112.0" class="lbl-b" text-anchor="start">2</text>
+<text x="185.0" y="262.0" class="lbl" text-anchor="middle">Q = ∫ T ds</text>
+<text x="185.0" y="318.0" class="lbl-b" text-anchor="middle">(a) Area under the curve = heat</text>
+<line x1="380.0" y1="290.0" x2="660.0" y2="290.0" class="ln" marker-end="url(#te-u3-arw-q6-tsgas)"/>
+<line x1="380.0" y1="290.0" x2="380.0" y2="28.0" class="ln" marker-end="url(#te-u3-arw-q6-tsgas)"/>
+<text x="655.0" y="314.0" class="lbl" text-anchor="end">s</text>
+<text x="346.0" y="159.0" class="lbl" text-anchor="middle" transform="rotate(-90 346.0 159.0)">T</text>
+<path d="M440.0,216.3 L450.0,208.5 L460.0,199.9 L470.0,190.5 L480.0,180.0 L490.0,168.4 L500.0,155.6 L510.0,141.5 L520.0,125.9 L530.0,108.6 L540.0,89.6 L550.0,68.5 L560.0,45.2" class="ln thick" marker-end="url(#te-u3-arw-q6-tsgas)"/>
+<path d="M440.0,207.3 L450.0,201.2 L460.0,194.6 L470.0,187.6 L480.0,180.0 L490.0,171.9 L500.0,163.1 L510.0,153.7 L520.0,143.6 L530.0,132.8 L540.0,121.2 L550.0,108.7 L560.0,95.3" class="ln thick" marker-end="url(#te-u3-arw-q6-tsgas)"/>
+<line x1="440.0" y1="180.0" x2="560.0" y2="180.0" class="ln thick" marker-end="url(#te-u3-arw-q6-tsgas)"/>
+<line x1="480.0" y1="180.0" x2="480.0" y2="50.0" class="ln thick" marker-end="url(#te-u3-arw-q6-tsgas)"/>
+<circle cx="480.0" cy="180.0" r="3.5" class="solid"/>
+<text x="566.0" y="49.2" class="lbl-sm" text-anchor="start">v = const</text>
+<text x="566.0" y="99.3" class="lbl-sm" text-anchor="start">p = const</text>
+<text x="566.0" y="185.0" class="lbl-sm" text-anchor="start">T = const</text>
+<text x="472.0" y="46.0" class="lbl-sm" text-anchor="end">s = const</text>
+<text x="520.0" y="318.0" class="lbl-b" text-anchor="middle">(b) Lines through one state</text>
+</svg>
+<figcaption>Fig. 3.22 — T-s lines through a state. The v = const line is steeper than the p = const line.</figcaption>
+</figure>
+        <p>On the T-s plane, \( (\partial T/\partial s)_v = T/c_v \) and \( (\partial T/\partial s)_p = T/c_p \). Since \( c_p &gt; c_v \), the constant-volume line is steeper.</p>
+      </details>
+    </article>
+
+    <article class="q" id="te-u3-q7" data-marks="10">
+      <h3>Q7. Explain the principle of increase of entropy with a sketch. Define entropy generation. Introduce exergy: available energy, unavailable energy and dead state.</h3>
+      <p class="q-src">Apr 2022 (CBCS) · Syllabus topic</p>
+      <p class="q-hint">Show \( \Delta S_{universe} \ge 0 \) with a hot-cold example, define \( S_{gen} \), then split heat into available and unavailable parts using \( T_0 \).</p>
+      <details class="answer"><summary>Model answer</summary>
+        <p><b>Principle of increase of entropy.</b> The entropy of an isolated system never decreases. It increases in an irreversible process and stays constant in a reversible process.</p>
+        <p><b>Proof.</b> Take an irreversible process from 1 to 2 and a reversible process from 2 back to 1. The cycle is irreversible, so \( \oint \delta Q/T &lt; 0 \):</p>
+        <div class="formula">\[ \int_1^2 \frac{\delta Q}{T} + (S_1 - S_2) &lt; 0 \;\Rightarrow\; \Delta S \ge \int_1^2\frac{\delta Q}{T} \]</div>
+        <p>For an isolated system \( \delta Q = 0 \). So \( \Delta S_{isolated} \ge 0 \). A system and its surroundings together form an isolated system: \( \Delta S_{universe} = \Delta S_{sys} + \Delta S_{surr} \ge 0 \).</p>
+        <figure class="fig" id="te-u3-f-q7-increase">
+<svg viewBox="0 0 700 330" role="img" aria-label="Principle of increase of entropy: heat flows from a hot body to a cold body inside an isolated boundary, and total entropy rises to a maximum">
+<defs><marker id="te-u3-arw-q7-increase" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="20.0" y="40.0" width="320.0" height="190.0" class="ln dash"/>
+<text x="180.0" y="30.0" class="lbl-sm" text-anchor="middle">Isolated system (universe)</text>
+<rect x="40.0" y="80.0" width="110.0" height="80.0" class="ln fill-acc"/>
+<text x="95.0" y="115.0" class="lbl" text-anchor="middle">Hot body</text>
+<text x="95.0" y="138.0" class="lbl-sm" text-anchor="middle">T<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"> = 600 K</tspan></text>
+<rect x="210.0" y="80.0" width="110.0" height="80.0" class="ln fill-soft"/>
+<text x="265.0" y="115.0" class="lbl" text-anchor="middle">Cold body</text>
+<text x="265.0" y="138.0" class="lbl-sm" text-anchor="middle">T<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> = 300 K</tspan></text>
+<line x1="150.0" y1="120.0" x2="210.0" y2="120.0" class="ln thick" marker-end="url(#te-u3-arw-q7-increase)"/>
+<text x="180.0" y="108.0" class="lbl" text-anchor="middle">Q</text>
+<text x="95.0" y="190.0" class="lbl-sm" text-anchor="middle">ΔS<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"> = -Q/T</tspan><tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"></tspan></text>
+<text x="265.0" y="190.0" class="lbl-sm" text-anchor="middle">ΔS<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> = +Q/T</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"></tspan></text>
+<text x="180.0" y="218.0" class="lbl-b" text-anchor="middle">ΔS<tspan dy="4" font-size="70%">total</tspan><tspan dy="-4"> = Q(1/T</tspan><tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> - 1/T</tspan><tspan dy="4" font-size="70%">1</tspan><tspan dy="-4">) &gt; 0</tspan></text>
+<text x="180.0" y="275.0" class="lbl-b" text-anchor="middle">(a) Irreversible heat flow</text>
+<line x1="400.0" y1="250.0" x2="670.0" y2="250.0" class="ln" marker-end="url(#te-u3-arw-q7-increase)"/>
+<line x1="400.0" y1="250.0" x2="400.0" y2="40.0" class="ln" marker-end="url(#te-u3-arw-q7-increase)"/>
+<text x="665.0" y="274.0" class="lbl" text-anchor="end">Time (process)</text>
+<text x="366.0" y="145.0" class="lbl" text-anchor="middle" transform="rotate(-90 366.0 145.0)">Total entropy, S</text>
+<path d="M410.0,230.0 L422.0,203.1 L434.0,180.4 L446.0,161.1 L458.0,144.8 L470.0,131.1 L482.0,119.4 L494.0,109.5 L506.0,101.1 L518.0,94.0 L530.0,88.1 L542.0,83.0 L554.0,78.7 L566.0,75.0 L578.0,72.0 L590.0,69.4 L602.0,67.2 L614.0,65.3 L626.0,63.7 L638.0,62.4 L650.0,61.2" class="ln thick"/>
+<line x1="444.2" y1="163.6" x2="449.6" y2="156.3" class="ln" marker-end="url(#te-u3-arw-q7-increase)"/>
+<line x1="410.0" y1="61.2" x2="660.0" y2="61.2" class="ln dash"/>
+<text x="560.0" y="51.2" class="lbl-sm" text-anchor="middle">Equilibrium: S is maximum</text>
+<text x="530.0" y="310.0" class="lbl-b" text-anchor="middle">(b) S never decreases</text>
+</svg>
+<figcaption>Fig. 3.23 — Hot body to cold body inside an isolated boundary. Entropy rises to a maximum.</figcaption>
+</figure>
+        <p><b>Example.</b> A body at \( T_1 = 600 \) K gives \( Q \) to air at \( T_2 = 300 \) K. \( \Delta S_{total} = -Q/T_1 + Q/T_2 = Q/600 &gt; 0 \). Heat does not flow back, because it would give \( \Delta S &lt; 0 \). At equilibrium (equal temperatures) the entropy is a maximum.</p>
+        <p><b>Entropy generation.</b> \( S_{gen} \) is the entropy created inside a system by irreversibility. For a closed system:</p>
+        <div class="formula">\[ S_{gen} = \Delta S_{system} - \sum\frac{Q_k}{T_k} = \Delta S_{universe} \ge 0 \]</div>
+        <p>\( S_{gen} = 0 \) for a reversible process, \( &gt; 0 \) for an irreversible one, and \( &lt; 0 \) is impossible. It is not a property. Causes: friction, finite-\( \Delta T \) heat transfer, mixing, free expansion, throttling, electrical resistance.</p>
+        <p><b>Exergy.</b></p>
+        <ul>
+          <li><b>Dead state:</b> the state of the system in equilibrium with the surroundings (\( T_0, p_0 \)). The exergy there is zero.</li>
+          <li><b>Exergy (availability):</b> maximum useful work from a system when it comes to the dead state by reversible processes.</li>
+          <li><b>Available energy</b> of heat \( Q \) at \( T \): \( Q - T_0\Delta s = Q(1 - T_0/T) \). <b>Unavailable energy:</b> \( T_0\Delta s \), which a reversible engine must reject to the surroundings.</li>
+          <li><b>Exergy destroyed</b> (lost work) \( = T_0 S_{gen} \) (Gouy-Stodola). Second-law efficiency \( \eta_{II} = \) exergy recovered / exergy supplied.</li>
+        </ul>
+        <figure class="fig" id="te-u3-f-q7-exergy">
+<svg viewBox="0 0 640 340" role="img" aria-label="Available and unavailable energy on a T-s diagram with the dead-state temperature T0">
+<defs><marker id="te-u3-arw-q7-exergy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80.0" y1="300.0" x2="615.0" y2="300.0" class="ln" marker-end="url(#te-u3-arw-q7-exergy)"/>
+<line x1="80.0" y1="300.0" x2="80.0" y2="28.0" class="ln" marker-end="url(#te-u3-arw-q7-exergy)"/>
+<text x="610.0" y="324.0" class="lbl" text-anchor="end">Entropy, s</text>
+<text x="46.0" y="164.0" class="lbl" text-anchor="middle" transform="rotate(-90 46.0 164.0)">Temperature, T (K)</text>
+<rect x="190.0" y="105.0" width="240.0" height="115.0" class="ln fill-acc"/>
+<rect x="190.0" y="220.0" width="240.0" height="80.0" class="ln fill-soft"/>
+<line x1="80.0" y1="220.0" x2="615.0" y2="220.0" class="ln dash"/>
+<text x="74.0" y="225.0" class="lbl" text-anchor="end">T<tspan dy="4" font-size="70%">0</tspan><tspan dy="-4"></tspan></text>
+<text x="74.0" y="110.0" class="lbl" text-anchor="end">T</text>
+<line x1="190.0" y1="105.0" x2="430.0" y2="105.0" class="ln thick" marker-end="url(#te-u3-arw-q7-exergy)"/>
+<circle cx="190.0" cy="105.0" r="3.5" class="solid"/>
+<circle cx="430.0" cy="105.0" r="3.5" class="solid"/>
+<text x="182.0" y="97.0" class="lbl-b" text-anchor="end">1</text>
+<text x="438.0" y="97.0" class="lbl-b" text-anchor="start">2</text>
+<text x="310.0" y="168.0" class="lbl-acc" text-anchor="middle">Available energy = (T - T<tspan dy="4" font-size="70%">0</tspan><tspan dy="-4">)Δs</tspan></text>
+<text x="310.0" y="266.0" class="lbl" text-anchor="middle">Unavailable energy = T<tspan dy="4" font-size="70%">0</tspan><tspan dy="-4"> Δs</tspan></text>
+<text x="310.0" y="86.0" class="lbl" text-anchor="middle">Heat supplied Q = T Δs (total area)</text>
+<text x="560.0" y="212.0" class="lbl-sm" text-anchor="end">dead state T<tspan dy="4" font-size="70%">0</tspan><tspan dy="-4"></tspan></text>
+<text x="190.0" y="324.0" class="lbl" text-anchor="middle">s<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"></tspan></text>
+<text x="430.0" y="324.0" class="lbl" text-anchor="middle">s<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"></tspan></text>
+</svg>
+<figcaption>Fig. 3.24 — Available and unavailable parts of heat Q on a T-s diagram.</figcaption>
+</figure>
+        <p>Energy is conserved in every process, but exergy is destroyed in every irreversible process. This is why the second law, not the first, sets the limit for useful work.</p>
+      </details>
+    </article>
+  </section>
+
+  <section class="part" id="te-u3-numericals" data-part="numericals">
+    <h2>Numericals</h2>
+    <p class="method"><b>Method.</b> (1) Convert every temperature to kelvin: T = t + 273. (2) Sketch the reservoirs and arrows, and write all Q and W values. (3) For a reversible machine use \( Q_H/Q_L = T_H/T_L \). For a claim, compare with the Carnot value. (4) Energy balance for any cyclic machine: \( Q_H = Q_L + W \). In an engine W is output. In a refrigerator or heat pump W is input. (5) Entropy: \( mc\ln(T_2/T_1) \) for liquids and solids, \( Q/T \) for reservoirs, the ideal-gas formula for gases. (6) Add the entropy changes of everything in the process. The total must be zero or positive. (7) Box the answer with units.</p>
+
+    <article class="num" id="te-u3-n1">
+      <h3>N1. A Carnot engine receives 900 kJ of heat per cycle from a source at 527 °C and rejects heat to a sink at 27 °C. Find (a) the thermal efficiency, (b) the work per cycle, (c) the heat rejected. (d) To what temperature must the source be raised, with the same sink, for an efficiency of 70 %?</h3>
+      <p class="q-src">Syllabus topic · based on Feb-Mar 2022 (CBCS) Q7(c)</p>
+      <ol class="steps">
+        <li>Temperatures: \( T_H = 527 + 273 = 800 \) K, \( T_L = 27 + 273 = 300 \) K.</li>
+        <li>(a) \( \eta = 1 - T_L/T_H = 1 - 300/800 = 0.625 = 62.5\% \).</li>
+        <li>(b) \( W = \eta Q_H = 0.625 \times 900 = 562.5 \) kJ.</li>
+        <li>(c) \( Q_L = Q_H - W = 900 - 562.5 = 337.5 \) kJ. Check: \( Q_H T_L/T_H = 900 \times 300/800 = 337.5 \) kJ.</li>
+        <li>(d) \( 0.70 = 1 - 300/T_H \Rightarrow T_H = 300/0.30 = 1000 \) K \( = 727 \) °C.</li>
+      </ol>
+      <p class="final">Answer: η = 62.5 %, W = 562.5 kJ, Q_L = 337.5 kJ; T_H = 1000 K (727 °C) for η = 70 %</p>
+    </article>
+
+    <article class="num" id="te-u3-n2">
+      <h3>N2. A reversible engine operates between a source at 927 °C and two sinks at 127 °C and 27 °C. The energy rejected to each of the two sinks is the same. Find the efficiency of the engine. For 700 kJ of heat from the source, find the work.</h3>
+      <p class="q-src">Nov-Dec 2025 Q6(a)</p>
+      <figure class="fig" id="te-u3-f-n2-twosinks">
+<svg viewBox="0 0 700 310" role="img" aria-label="Reversible engine with one source at 1200 K and two sinks at 400 K and 300 K">
+<defs><marker id="te-u3-arw-n2-twosinks" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="180.0" y="18.0" width="340.0" height="38.0" class="ln fill-soft"/>
+<text x="350.0" y="43.0" class="lbl" text-anchor="middle">Source at 1200 K (927 °C)</text>
+<circle cx="350.0" cy="150.0" r="40.0" class="ln fill-soft"/>
+<text x="350.0" y="155.0" class="lbl-b" text-anchor="middle">Engine</text>
+<line x1="350.0" y1="56.0" x2="350.0" y2="110.0" class="ln" marker-end="url(#te-u3-arw-n2-twosinks)"/>
+<text x="366.0" y="88.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"></tspan></text>
+<line x1="330.0" y1="186.0" x2="240.0" y2="250.0" class="ln" marker-end="url(#te-u3-arw-n2-twosinks)"/>
+<text x="262.0" y="205.0" class="lbl" text-anchor="end">Q<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"> = Q</tspan></text>
+<line x1="370.0" y1="186.0" x2="460.0" y2="250.0" class="ln" marker-end="url(#te-u3-arw-n2-twosinks)"/>
+<text x="440.0" y="205.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">3</tspan><tspan dy="-4"> = Q</tspan></text>
+<rect x="120.0" y="252.0" width="220.0" height="38.0" class="ln fill-soft"/>
+<text x="230.0" y="276.0" class="lbl" text-anchor="middle">Sink 1 at 400 K (127 °C)</text>
+<rect x="380.0" y="252.0" width="220.0" height="38.0" class="ln fill-soft"/>
+<text x="490.0" y="276.0" class="lbl" text-anchor="middle">Sink 2 at 300 K (27 °C)</text>
+<line x1="392.0" y1="150.0" x2="540.0" y2="150.0" class="acc thick" marker-end="url(#te-u3-arw-n2-twosinks)"/>
+<text x="556.0" y="155.0" class="lbl-acc" text-anchor="start">W</text>
+</svg>
+<figcaption>Fig. 3.25 — Reversible engine with one source and two sinks. Equal heat Q goes to each sink.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Temperatures: \( T_1 = 1200 \) K, \( T_2 = 400 \) K, \( T_3 = 300 \) K. Let \( Q_1 \) be the heat from the source, and \( Q_2 = Q_3 = Q \).</li>
+        <li>The engine is reversible, so \( \oint \delta Q/T = 0 \): \( \dfrac{Q_1}{1200} = \dfrac{Q}{400} + \dfrac{Q}{300} = \dfrac{7Q}{1200} \).</li>
+        <li>So \( Q_1 = 7Q \).</li>
+        <li>First law: \( W = Q_1 - Q_2 - Q_3 = 7Q - 2Q = 5Q \).</li>
+        <li>\( \eta = W/Q_1 = 5Q/7Q = 5/7 = 0.714 = 71.4\% \).</li>
+        <li>For \( Q_1 = 700 \) kJ: \( Q = 700/7 = 100 \) kJ and \( W = 5 \times 100 = 500 \) kJ.</li>
+        <li>Check: a Carnot engine between 1200 K and 300 K gives 75 %. This engine is lower because some heat leaves at 400 K.</li>
+      </ol>
+      <p class="final">Answer: η = 71.4 % (5/7); W = 500 kJ for Q_1 = 700 kJ; heat to each sink = 100 kJ</p>
+    </article>
+
+    <article class="num" id="te-u3-n3">
+      <h3>N3. An inventor claims to have developed a refrigerator that removes heat from a closed region at 268 K and transfers it to the surrounding air at 295 K with a COP of 8.2. Is the claim reasonable?</h3>
+      <p class="q-src">Nov-Dec 2025 Q5(b)</p>
+      <aside class="note"><b>Data note.</b> The scan of the question is cut after "surrounding air at". The values 295 K (22 °C) and COP 8.2 come from the class notes. The method is the same for other values.</aside>
+      <ol class="steps">
+        <li>The best refrigerator is reversible. Its COP depends only on the two temperatures: \( \text{COP}_{max} = T_L/(T_H - T_L) \).</li>
+        <li>\( T_L = 268 \) K, \( T_H = 295 \) K. \( \text{COP}_{max} = 268/(295 - 268) = 268/27 = 9.93 \).</li>
+        <li>Claimed COP = 8.2 is less than 9.93. So the claim does not break the second law (Clausius statement). It is possible in principle.</li>
+        <li>Ratio: \( 8.2/9.93 = 0.826 \). The claim is 82.6 % of the Carnot limit. A real refrigerator has friction and finite \( \Delta T \) and is much lower. So the claim is possible, but very optimistic.</li>
+      </ol>
+      <aside class="warn"><b>Common mistake.</b> Do not use \( T_H/(T_H - T_L) = 10.93 \). That is the heat pump COP. If the claim were more than 9.93, it would be impossible.</aside>
+      <p class="final">Answer: COP_max = 9.93 &gt; 8.2, so the claim does not violate the second law (possible, but only if the machine is 82.6 % as good as a reversible one)</p>
+    </article>
+
+    <article class="num" id="te-u3-n4">
+      <h3>N4. A reversible heat pump keeps a refrigerator space at 0 °C and rejects heat to the surroundings at 25 °C. The heat removal rate is 1440 kJ/min. Find (a) the COP and the work input. (b) If the work comes from a reversible engine that receives heat at 380 °C and rejects heat to the atmosphere at 25 °C, find the overall COP of the system.</h3>
+      <p class="q-src">Jan 2025</p>
+      <figure class="fig" id="te-u3-f-n4-n4">
+<svg viewBox="0 0 700 330" role="img" aria-label="Reversible engine driving a reversible refrigerator, both rejecting heat to the atmosphere">
+<defs><marker id="te-u3-arw-n4-n4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70.0" y="18.0" width="200.0" height="38.0" class="ln fill-soft"/>
+<text x="170.0" y="43.0" class="lbl" text-anchor="middle">Source at 380 °C</text>
+<rect x="400.0" y="18.0" width="200.0" height="38.0" class="ln fill-soft"/>
+<text x="500.0" y="43.0" class="lbl" text-anchor="middle">Cold space at 0 °C</text>
+<rect x="70.0" y="276.0" width="530.0" height="38.0" class="ln fill-soft"/>
+<text x="335.0" y="300.0" class="lbl" text-anchor="middle">Atmosphere at 25 °C (298 K)</text>
+<circle cx="170.0" cy="160.0" r="40.0" class="ln fill-soft"/>
+<text x="170.0" y="165.0" class="lbl-b" text-anchor="middle">Engine</text>
+<circle cx="500.0" cy="160.0" r="40.0" class="ln fill-soft"/>
+<text x="500.0" y="165.0" class="lbl-b" text-anchor="middle">Refrig.</text>
+<line x1="170.0" y1="56.0" x2="170.0" y2="118.0" class="ln" marker-end="url(#te-u3-arw-n4-n4)"/>
+<text x="186.0" y="92.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"></tspan></text>
+<line x1="170.0" y1="202.0" x2="170.0" y2="276.0" class="ln" marker-end="url(#te-u3-arw-n4-n4)"/>
+<text x="186.0" y="244.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">2</tspan><tspan dy="-4"></tspan></text>
+<line x1="500.0" y1="56.0" x2="500.0" y2="118.0" class="ln" marker-end="url(#te-u3-arw-n4-n4)"/>
+<text x="516.0" y="92.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">L</tspan><tspan dy="-4"> = 24 kW</tspan></text>
+<line x1="500.0" y1="202.0" x2="500.0" y2="276.0" class="ln" marker-end="url(#te-u3-arw-n4-n4)"/>
+<text x="516.0" y="244.0" class="lbl" text-anchor="start">Q<tspan dy="4" font-size="70%">H</tspan><tspan dy="-4"></tspan></text>
+<line x1="212.0" y1="160.0" x2="458.0" y2="160.0" class="acc thick" marker-end="url(#te-u3-arw-n4-n4)"/>
+<text x="335.0" y="148.0" class="lbl-acc" text-anchor="middle">W</text>
+</svg>
+<figcaption>Fig. 3.26 — Reversible engine driving the reversible refrigerator.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>Heat removal \( Q_L = 1440/60 = 24 \) kW. Temperatures: \( T_L = 273 \) K, \( T_H = 298 \) K.</li>
+        <li>(a) The machine removes heat from the cold space, so it is a refrigerator. \( \text{COP}_R = T_L/(T_H - T_L) = 273/25 = 10.92 \).</li>
+        <li>\( W = Q_L/\text{COP}_R = 24/10.92 = 2.198 \) kW.</li>
+        <li>(b) Engine: \( T_1 = 380 + 273 = 653 \) K, \( T_2 = 298 \) K. \( \eta = 1 - 298/653 = 0.5436 \).</li>
+        <li>The engine must give \( W = 2.198 \) kW. Heat supplied: \( Q_1 = W/\eta = 2.198/0.5436 = 4.043 \) kW.</li>
+        <li>Overall COP \( = Q_L/Q_1 = 24/4.043 = 5.94 \).</li>
+        <li>Check: \( \text{COP}_R \times \eta = 10.92 \times 0.5436 = 5.94 \).</li>
+      </ol>
+      <p class="final">Answer: COP = 10.92, W = 2.20 kW; overall COP = 5.94 (heat to engine 4.04 kW)</p>
+    </article>
+
+    <article class="num" id="te-u3-n5">
+      <h3>N5. A copper block of 5 kg at 200 °C is dropped into an insulated tank that holds 100 kg of oil at 30 °C. Find the increase in the entropy of the universe. Take \( c_{copper} = 0.4 \) kJ/kg·K and \( c_{oil} = 2.1 \) kJ/kg·K.</h3>
+      <p class="q-src">Apr 2022 (CBCS)</p>
+      <ol class="steps">
+        <li>Heat capacities: copper \( m c = 5 \times 0.4 = 2.0 \) kJ/K. Oil \( m c = 100 \times 2.1 = 210 \) kJ/K. \( T_{Cu} = 473 \) K, \( T_{oil} = 303 \) K.</li>
+        <li>Energy balance (tank is insulated, so Q = 0 for the tank): \( 2.0(473 - T_f) = 210(T_f - 303) \).</li>
+        <li>\( T_f = (2.0 \times 473 + 210 \times 303)/212 = 304.6 \) K \( (31.6 \) °C).</li>
+        <li>\( \Delta S_{Cu} = mc\ln(T_f/T_1) = 2.0\ln(304.6/473) = -0.880 \) kJ/K.</li>
+        <li>\( \Delta S_{oil} = 210\ln(304.6/303) = +1.109 \) kJ/K.</li>
+        <li>\( \Delta S_{universe} = -0.880 + 1.109 = +0.228 \) kJ/K. The tank is insulated, so the surroundings do not change.</li>
+        <li>Since \( \Delta S_{universe} &gt; 0 \), the process is irreversible, as expected.</li>
+      </ol>
+      <p class="final">Answer: T_f = 304.6 K; ΔS_universe = +0.228 kJ/K</p>
+    </article>
+
+    <article class="num" id="te-u3-n6">
+      <h3>N6. Air at 20 °C and 1.05 bar occupies 0.025 m³. It is heated at constant volume until the pressure is 4.5 bar. Then it is cooled at constant pressure back to the original temperature. Find (a) the net heat flow from the air and (b) the net entropy change. Sketch the process on a T-s diagram. Take R = 0.287, \( c_v = 0.718 \), \( c_p = 1.005 \) kJ/kg·K.</h3>
+      <p class="q-src">Jun-Jul 2024</p>
+      <figure class="fig" id="te-u3-f-n6-n6">
+<svg viewBox="0 0 600 320" role="img" aria-label="T-s sketch of the air process: constant-volume heating 1 to 2, then constant-pressure cooling 2 to 3">
+<defs><marker id="te-u3-arw-n6-n6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60.0" y1="285.0" x2="570.0" y2="285.0" class="ln" marker-end="url(#te-u3-arw-n6-n6)"/>
+<line x1="60.0" y1="285.0" x2="60.0" y2="25.0" class="ln" marker-end="url(#te-u3-arw-n6-n6)"/>
+<text x="565.0" y="309.0" class="lbl" text-anchor="end">Entropy, s</text>
+<text x="26.0" y="155.0" class="lbl" text-anchor="middle" transform="rotate(-90 26.0 155.0)">Temperature, T</text>
+<path d="M270.0,233.7 L273.3,231.1 L276.5,228.4 L279.8,225.6 L283.0,222.7 L286.3,219.6 L289.6,216.3 L292.8,212.9 L296.1,209.3 L299.4,205.6 L302.6,201.6 L305.9,197.5 L309.1,193.1 L312.4,188.6 L315.7,183.8 L318.9,178.7 L322.2,173.4 L325.5,167.9 L328.7,162.1 L332.0,156.0 L335.2,149.6 L338.5,142.8 L341.8,135.8 L345.0,128.3 L348.3,120.6 L351.6,112.4 L354.8,103.8 L358.1,94.8 L361.3,85.3 L364.6,75.4 L367.9,65.0" class="ln thick"/>
+<path d="M367.9,65.0 L363.3,75.4 L358.7,85.3 L354.2,94.8 L349.6,103.8 L345.0,112.4 L340.5,120.6 L335.9,128.3 L331.3,135.8 L326.8,142.8 L322.2,149.6 L317.6,156.0 L313.1,162.1 L308.5,167.9 L303.9,173.4 L299.4,178.7 L294.8,183.8 L290.2,188.6 L285.7,193.1 L281.1,197.5 L276.5,201.6 L272.0,205.6 L267.4,209.3 L262.8,212.9 L258.3,216.3 L253.7,219.6 L249.1,222.7 L244.6,225.6 L240.0,228.4 L235.4,231.1 L230.9,233.7" class="ln thick"/>
+<line x1="317.4" y1="181.3" x2="322.1" y2="173.6" class="ln" marker-end="url(#te-u3-arw-n6-n6)"/>
+<line x1="301.4" y1="176.5" x2="295.3" y2="183.2" class="ln" marker-end="url(#te-u3-arw-n6-n6)"/>
+<line x1="230.9" y1="233.7" x2="560.0" y2="233.7" class="ln dash"/>
+<circle cx="270.0" cy="233.7" r="3.5" class="solid"/>
+<text x="274.0" y="251.7" class="lbl-b" text-anchor="start">1</text>
+<circle cx="367.9" cy="65.0" r="3.5" class="solid"/>
+<text x="377.9" y="63.0" class="lbl-b" text-anchor="start">2</text>
+<circle cx="230.9" cy="233.7" r="3.5" class="solid"/>
+<text x="222.9" y="251.7" class="lbl-b" text-anchor="end">3</text>
+<text x="354.7" y="188.1" class="lbl-sm" text-anchor="start">v = const</text>
+<text x="297.1" y="156.1" class="lbl-sm" text-anchor="end">p = const</text>
+<text x="555.0" y="225.7" class="lbl-sm" text-anchor="end">T<tspan dy="4" font-size="70%">1</tspan><tspan dy="-4"> = 293 K</tspan></text>
+</svg>
+<figcaption>Fig. 3.27 — Process 1-2 at constant volume, process 2-3 at constant pressure.</figcaption>
+</figure>
+      <ol class="steps">
+        <li>\( T_1 = 293 \) K. Mass: \( m = p_1V_1/(RT_1) = 105 \times 0.025/(0.287 \times 293) = 0.03122 \) kg.</li>
+        <li>State 2 (constant volume): \( T_2 = T_1 p_2/p_1 = 293 \times 4.5/1.05 = 1255.7 \) K.</li>
+        <li>\( Q_{12} = m c_v(T_2 - T_1) = 0.03122 \times 0.718 \times 962.7 = +21.58 \) kJ (heat in).</li>
+        <li>State 3 (constant pressure, back to 293 K): \( Q_{23} = m c_p(T_3 - T_2) = 0.03122 \times 1.005 \times (293 - 1255.7) = -30.20 \) kJ.</li>
+        <li>(a) Net heat \( = 21.58 - 30.20 = -8.62 \) kJ. The air loses 8.62 kJ.</li>
+        <li>\( \Delta S_{12} = m c_v\ln(T_2/T_1) = 0.03122 \times 0.718 \times \ln(4.286) = +0.03262 \) kJ/K.</li>
+        <li>\( \Delta S_{23} = m c_p\ln(T_3/T_2) = 0.03122 \times 1.005 \times \ln(0.2333) = -0.04566 \) kJ/K.</li>
+        <li>(b) Net \( \Delta S = 0.03262 - 0.04566 = -0.01304 \) kJ/K. Check: \( -mR\ln(p_3/p_1) = -0.03122 \times 0.287 \times \ln(4.5/1.05) = -0.01304 \) kJ/K.</li>
+        <li>The T-s sketch is above: 1-2 is the steeper curve (v = const) going up, 2-3 is the flatter curve (p = const) coming down to \( T_1 \) at smaller entropy.</li>
+      </ol>
+      <p class="final">Answer: net heat flow from the air = 8.62 kJ; net ΔS = −0.0130 kJ/K</p>
+    </article>
+
+    <article class="num" id="te-u3-n7">
+      <h3>N7. A heat engine receives 300 kJ/s of heat at a constant temperature of 290 °C. The heat rejection is at 8.5 °C. The following results are given: (i) 215 kJ/s rejected, (ii) 150 kJ/s rejected, (iii) 75 kJ/s rejected. Classify each result as reversible, irreversible or impossible.</h3>
+      <p class="q-src">Jan 2025 · Nov 2024 Q6(b)</p>
+      <ol class="steps">
+        <li>\( T_H = 290 + 273 = 563 \) K, \( T_L = 8.5 + 273 = 281.5 \) K, \( Q_H = 300 \) kJ/s.</li>
+        <li>Use the Clausius test: \( \oint \delta Q/T = Q_H/T_H - Q_L/T_L \). Zero = reversible, negative = irreversible, positive = impossible.</li>
+        <li>\( Q_H/T_H = 300/563 = 0.5329 \) kW/K.</li>
+        <li>(i) \( Q_L = 215 \): \( 0.5329 - 215/281.5 = 0.5329 - 0.7638 = -0.231 \) kW/K &lt; 0. <b>Irreversible.</b></li>
+        <li>(ii) \( Q_L = 150 \): \( 0.5329 - 150/281.5 = 0.5329 - 0.5329 = 0 \). <b>Reversible.</b></li>
+        <li>(iii) \( Q_L = 75 \): \( 0.5329 - 75/281.5 = 0.5329 - 0.2664 = +0.266 \) kW/K &gt; 0. <b>Impossible.</b></li>
+        <li>Check by the Carnot theorem: the smallest possible rejection is \( Q_H T_L/T_H = 300 \times 281.5/563 = 150 \) kJ/s. Efficiencies: (i) 28.3 %, (ii) 50 % (= Carnot), (iii) 75 % (more than Carnot).</li>
+      </ol>
+      <p class="final">Answer: (i) irreversible; (ii) reversible (η = 50 %, the Carnot value); (iii) impossible</p>
+    </article>
+
+    <h3 id="te-u3-practice">Practice problems</h3>
+
+    <article class="num practice" id="te-u3-p1">
+      <h3>P1. A refrigerator works between 27 °C and −13 °C. It is driven by an electric motor of 1.5 kW. Assume it is reversible. How much ice at 0 °C can it make in 10 hours from water at 20 °C? Take \( c_{water} = 4.2 \) kJ/kg·K and latent heat of ice = 335 kJ/kg.</h3>
+      <p class="q-src">Nov 2024 Q5(b)</p>
+      <aside class="note"><b>Data note.</b> The scan shows "−130 C". It is read as −13 °C. The question is solved for a reversible machine.</aside>
+      <p class="final">Answer: COP = 6.5; heat removed per kg of ice = 419 kJ; mass of ice ≈ 838 kg</p>
+    </article>
+
+    <article class="num practice" id="te-u3-p2">
+      <h3>P2. Two Carnot engines A and B are in series between reservoirs at 1000 K and 100 K. A receives 1680 kJ from the hot reservoir and rejects heat to B. B rejects heat to the cold reservoir. (a) If A and B have equal efficiencies, find the heat rejected by B, the temperature at which A rejects heat, and the work of A and of B. (b) If A and B give equal work, find the heat taken in by B and the efficiency of each engine.</h3>
+      <p class="q-src">Jan 2023 (CBCS)</p>
+      <p class="final">Answer: (a) T = 316.2 K, Q_B,rej = 168 kJ, W_A = 1148.7 kJ, W_B = 363.3 kJ; (b) T = 550 K, Q_B,in = 924 kJ, η_A = 45 %, η_B = 81.8 %</p>
+    </article>
+
+    <article class="num practice" id="te-u3-p3">
+      <h3>P3. A heat pump is used for cooling in summer and heating in winter. The house is kept at 27 °C all year. The heat loss or gain of the house is 0.5 kW per degree difference between outside and inside. The average outside temperature is 37 °C in summer and −3 °C in winter. Find the power needed in summer and in winter. Assume a reversible machine.</h3>
+      <p class="q-src">Jun-Jul 2024</p>
+      <p class="final">Answer: summer Q = 5 kW, COP_R = 30, P = 0.167 kW; winter Q = 15 kW, COP_HP = 10, P = 1.5 kW</p>
+    </article>
+
+    <article class="num practice" id="te-u3-p4">
+      <h3>P4. In a Carnot cycle, heat is supplied at 350 °C and rejected at 27 °C. The working fluid is water. During heat supply it changes from liquid to steam at 350 °C, and the entropy change is 1.44 kJ/kg·K. For 1 kg of water in the cycle, find the heat supplied, the heat rejected and the work done per cycle.</h3>
+      <p class="q-src">Feb-Mar 2022 (CBCS) Q7(c)</p>
+      <p class="final">Answer: Q_H = 897.1 kJ, Q_L = 432 kJ, W = 465.1 kJ (η = 51.9 %)</p>
+    </article>
+
+    <article class="num practice" id="te-u3-p5">
+      <h3>P5. A reversible heat engine works between 700 °C and 50 °C. It drives a reversible refrigerator that works between 50 °C and −25 °C. The heat to the engine is 2500 kJ. The net work output of the combined plant is 400 kJ. Find the heat taken by the refrigerator from the cold space and the net heat given to the reservoir at 50 °C.</h3>
+      <p class="q-src">Aug-Sep 2023 Q5(b)</p>
+      <p class="final">Answer: W_engine = 1670 kJ; W to refrigerator = 1270 kJ; COP_R = 3.307; Q_L ≈ 4200 kJ; net heat to the 50 °C reservoir ≈ 6300 kJ</p>
+    </article>
+  </section>
+</section>
