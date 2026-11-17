@@ -1,0 +1,586 @@
+<section class="unit" data-unit="mse-u2">
+<header class="unit-head">
+<p class="eyebrow">Material Science and Engineering · Unit 2</p>
+<h1>Concepts of Stress and Strain, Fracture, Fatigue and Creep</h1>
+<p class="lede">This unit shows how metals behave when they are loaded: how they stretch, harden, deform and finally fail. You learn the tensile test, hardness tests, slip, fracture, fatigue and creep. These topics explain why parts break and how engineers choose materials and safe stresses.</p>
+<ul class="syl">
+<li>Tensile properties, true stress &amp; strain</li>
+<li>Hardness, Rockwell, Vickers &amp; Brinell hardness testing</li>
+<li>Plastic deformation: slip &amp; twinning</li>
+<li>Fracture: types, stages in cup &amp; cone fracture, Griffith's criterion</li>
+<li>Failure of materials: mechanism of fatigue, fatigue properties, S-N diagram, fatigue testing</li>
+<li>Creep: description of the phenomenon with examples, three stages of creep, creep properties, stress relaxation</li>
+<li>Concept of fracture toughness</li>
+<li>Numericals on diffusion, strain and stress relaxation</li>
+<li>Alloys, steels, solidification</li>
+</ul>
+</header>
+<section class="part" id="mse-u2-concepts" data-part="concepts">
+<h2>Concepts</h2>
+<aside class="exam"><b>Exam pattern.</b> Two full questions (20 marks each, two 10-mark parts). Papers repeat: stress–strain curve, true stress–strain, a hardness test, ductile fracture stages, S–N curve, creep stages, slip and twinning.</aside>
+
+<h3 id="mse-u2-c-tensile">1. Tensile test and the engineering stress–strain curve</h3>
+<p>The <b>tensile test</b> pulls a standard specimen in a universal testing machine until it breaks. The machine records load P and extension ΔL. Fig. 2.1 shows the specimen.</p>
+<figure class="fig" id="mse-u2-f-specimen">
+<svg viewBox="0 0 640 215" role="img" aria-label="Standard round tensile test specimen with gauge length and diameter">
+<defs><marker id="mse-u2-arw-specimen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M60,65 H150 Q175,65 190,82 H450 Q465,65 490,65 H580 V135 H490 Q465,135 450,118 H190 Q175,135 150,135 H60 Z" class="ln fill-soft"/><line x1="40" y1="100" x2="600" y2="100" class="ln hid"/><line x1="60" y1="100" x2="20" y2="100" class="ln" marker-end="url(#mse-u2-arw-specimen)"/><line x1="580" y1="100" x2="620" y2="100" class="ln" marker-end="url(#mse-u2-arw-specimen)"/><text x="30" y="86" class="lbl" text-anchor="middle">P</text><text x="610" y="86" class="lbl" text-anchor="middle">P</text><line x1="205" y1="112" x2="205" y2="178" class="ln thin dash"/><line x1="435" y1="112" x2="435" y2="178" class="ln thin dash"/><line x1="205" y1="166" x2="435" y2="166" class="ln thin" marker-end="url(#mse-u2-arw-specimen)" marker-start="url(#mse-u2-arw-specimen)"/><text x="320" y="196" class="lbl" text-anchor="middle">Gauge length L₀</text><line x1="320" y1="82" x2="320" y2="118" class="ln thin" marker-end="url(#mse-u2-arw-specimen)" marker-start="url(#mse-u2-arw-specimen)"/><text x="334" y="95" class="lbl" text-anchor="start">d₀</text><text x="105" y="50" class="lbl" text-anchor="middle">Grip end</text><text x="320" y="50" class="lbl" text-anchor="middle">Reduced section</text><text x="535" y="50" class="lbl" text-anchor="middle">Grip end</text>
+</svg>
+<figcaption>Fig. 2.1 — Round tensile test specimen with gauge length L₀.</figcaption>
+</figure>
+<div class="formula">\[ \sigma = \frac{P}{A_0}, \qquad e = \frac{\Delta L}{L_0} = \frac{L - L_0}{L_0} \]<p class="where">σ = engineering stress (N/mm² = MPa), A₀ = original area, e = engineering strain (no unit), L₀ = original gauge length. Both use the <i>original</i> dimensions.</p></div>
+<p>Fig. 2.2 is the curve of a ductile material (mild steel). Its key points:</p>
+<ul>
+<li><b>A, proportional limit:</b> up to A stress ∝ strain (Hooke's law). The slope OA is Young's modulus E.</li>
+<li><b>Elastic limit:</b> the largest stress after which the material returns fully to its shape on unloading. It lies very near A.</li>
+<li><b>B, upper yield point, and C, lower yield point:</b> the material begins to deform plastically with no rise in stress. Mild steel shows this drop and plateau; the lower yield stress is quoted as σy.</li>
+<li><b>C to E, strain hardening:</b> dislocations multiply and block each other, so more stress is needed to keep straining.</li>
+<li><b>E, ultimate tensile strength (UTS, σu):</b> the highest engineering stress. Beyond E the neck forms.</li>
+<li><b>E to F, necking and fracture:</b> the area at the neck shrinks fast, so the load, and the engineering stress, fall until the bar breaks at F.</li>
+</ul>
+<figure class="fig" id="mse-u2-f-ss">
+<svg viewBox="0 0 680 385" role="img" aria-label="Engineering stress-strain curve of mild steel with points A to F">
+<defs><marker id="mse-u2-arw-ss" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="320" x2="650" y2="320" class="ln" marker-end="url(#mse-u2-arw-ss)"/><line x1="80" y1="320" x2="80" y2="30" class="ln" marker-end="url(#mse-u2-arw-ss)"/><text x="365.0" y="372" class="lbl" text-anchor="middle">Engineering strain, e = ΔL / L₀</text><text x="22" y="175.0" class="lbl" text-anchor="middle" transform="rotate(-90 22 175.0)">Engineering stress, σ = P / A₀ (MPa)</text><path d="M80,320 L170,168 L188,188 L250,184 C320,180 380,62 450,62 C480,62 520,95 540,132" class="ln thick"/><line x1="188" y1="188" x2="188" y2="320" class="ln thin dash"/><line x1="450" y1="62" x2="450" y2="320" class="ln thin dash"/><line x1="80" y1="188" x2="188" y2="188" class="ln thin dash"/><line x1="80" y1="62" x2="450" y2="62" class="ln thin dash"/><text x="70" y="192" class="lbl" text-anchor="end">σy</text><text x="70" y="66" class="lbl" text-anchor="end">σu</text><circle cx="140" cy="219" r="3.5" class="solid"/><circle cx="170" cy="168" r="3.5" class="solid"/><circle cx="188" cy="188" r="3.5" class="solid"/><circle cx="450" cy="62" r="3.5" class="solid"/><circle cx="540" cy="132" r="3.5" class="solid"/><text x="128" y="214" class="lbl-b" text-anchor="end">A</text><text x="160" y="160" class="lbl-b" text-anchor="end">B</text><text x="200" y="204" class="lbl-b" text-anchor="start">C</text><text x="450" y="46" class="lbl-b" text-anchor="middle">E</text><text x="556" y="138" class="lbl-b" text-anchor="start">F</text><text x="134" y="342" class="lbl" text-anchor="middle">Elastic</text><text x="320" y="342" class="lbl" text-anchor="middle">Uniform plastic</text><text x="495" y="342" class="lbl" text-anchor="middle">Necking</text><text x="205" y="222" class="lbl-sm" text-anchor="start">A  Proportional / elastic limit</text><text x="205" y="240" class="lbl-sm" text-anchor="start">B  Upper yield point</text><text x="205" y="258" class="lbl-sm" text-anchor="start">C  Lower yield point (σy)</text><text x="205" y="276" class="lbl-sm" text-anchor="start">E  Ultimate tensile strength (σu)</text><text x="205" y="294" class="lbl-sm" text-anchor="start">F  Fracture (breaking) point</text>
+</svg>
+<figcaption>Fig. 2.2 — Engineering stress–strain curve of mild steel; slope OA = E.</figcaption>
+</figure>
+<p>Many materials (aluminium, high-strength steel) show no sharp yield point. For these, draw a line parallel to the elastic slope, starting at 0.2 % strain (e = 0.002). The stress where this line cuts the curve is the <b>0.2 % proof stress</b> (offset yield strength), Fig. 2.3(b).</p>
+<figure class="fig" id="mse-u2-f-dvb">
+<svg viewBox="0 0 680 330" role="img" aria-label="Ductile and brittle stress strain curves and the 0.2 percent offset method">
+<defs><marker id="mse-u2-arw-dvb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60" y1="250" x2="330" y2="250" class="ln" marker-end="url(#mse-u2-arw-dvb)"/><line x1="60" y1="250" x2="60" y2="30" class="ln" marker-end="url(#mse-u2-arw-dvb)"/><text x="195" y="284" class="lbl" text-anchor="middle">Strain, e</text><text x="28" y="140" class="lbl" text-anchor="middle" transform="rotate(-90 28 140)">Stress, σ</text><path d="M60,250 L105,110 C120,70 160,50 215,45 C245,44 268,70 280,112" class="ln thick"/><text x="150" y="36" class="lbl" text-anchor="middle">Ductile (mild steel)</text><line x1="273" y1="105" x2="287" y2="119" class="ln thick"/><line x1="273" y1="119" x2="287" y2="105" class="ln thick"/><path d="M60,250 L125,160 L135,152" class="ln thick"/><line x1="128" y1="145" x2="142" y2="159" class="ln thick"/><line x1="128" y1="159" x2="142" y2="145" class="ln thick"/><text x="150" y="148" class="lbl" text-anchor="start">Brittle</text><text x="150" y="166" class="lbl-sm" text-anchor="start">(cast iron, glass)</text><text x="190" y="310" class="lbl-b" text-anchor="middle">(a) Ductile and brittle curves</text><line x1="400" y1="250" x2="660" y2="250" class="ln" marker-end="url(#mse-u2-arw-dvb)"/><line x1="400" y1="250" x2="400" y2="30" class="ln" marker-end="url(#mse-u2-arw-dvb)"/><text x="530" y="284" class="lbl" text-anchor="middle">Strain, e</text><text x="368" y="140" class="lbl" text-anchor="middle" transform="rotate(-90 368 140)">Stress, σ</text><path d="M400,250 L450,130 C465,95 510,70 590,60 C620,58 635,70 645,100" class="ln thick"/><line x1="430" y1="250" x2="505.154765625" y2="69.62856250000004" class="ln dash"/><circle cx="499.154765625" cy="83.86726562499999" r="3.5" class="solid"/><line x1="400" y1="83.86726562499999" x2="499.154765625" y2="83.86726562499999" class="ln thin dash"/><text x="392" y="87.86726562499999" class="lbl" text-anchor="end">σy</text><line x1="400" y1="262" x2="430" y2="262" class="ln thin" marker-end="url(#mse-u2-arw-dvb)" marker-start="url(#mse-u2-arw-dvb)"/><text x="415" y="278" class="lbl-sm" text-anchor="middle">0.2 %</text><text x="530" y="310" class="lbl-b" text-anchor="middle">(b) 0.2 % offset yield strength</text><text x="656" y="196" class="lbl-sm" text-anchor="end">σy = 0.2 % proof stress</text>
+</svg>
+<figcaption>Fig. 2.3 — (a) Ductile and brittle curves. (b) 0.2 % offset method for σy.</figcaption>
+</figure>
+<p><b>Brittle materials</b> (cast iron, glass, ceramics) show no yield point and no necking. They break suddenly at less than 1 % strain and absorb little energy. Ductile materials stretch visibly first, so they give warning (Fig. 2.3a).</p>
+
+<h3 id="mse-u2-c-true">2. True stress and true strain</h3>
+<p>The engineering curve falls after UTS only because it divides by the original area A₀. The real area keeps shrinking. <b>True stress</b> uses the instantaneous area A. <b>True strain</b> adds up each small increment dL/L.</p>
+<div class="formula">\[ \sigma_T = \frac{P}{A}, \qquad \varepsilon_T = \int_{L_0}^{L}\frac{dL}{L} = \ln\frac{L}{L_0} \]<p class="where">σT = true stress, εT = true strain, A = instantaneous area.</p></div>
+<p>Volume is constant during plastic flow (A·L = A₀·L₀). From this, up to the start of necking:</p>
+<div class="formula">\[ \sigma_T = \sigma\,(1+e), \qquad \varepsilon_T = \ln(1+e), \qquad \varepsilon_T = \ln\frac{A_0}{A} \]</div>
+<p>Fig. 2.4 compares the two curves. The true curve keeps rising up to fracture, because the metal keeps strain hardening. In the plastic range the true curve follows \( \sigma_T = K\varepsilon_T^{\,n} \) (K = strength coefficient, n = strain-hardening exponent).</p>
+<figure class="fig" id="mse-u2-f-truess">
+<svg viewBox="0 0 680 370" role="img" aria-label="True and engineering stress strain curves compared">
+<defs><marker id="mse-u2-arw-truess" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="300" x2="640" y2="300" class="ln" marker-end="url(#mse-u2-arw-truess)"/><line x1="80" y1="300" x2="80" y2="30" class="ln" marker-end="url(#mse-u2-arw-truess)"/><text x="360.0" y="350" class="lbl" text-anchor="middle">Strain (e or ε)</text><text x="22" y="165.0" class="lbl" text-anchor="middle" transform="rotate(-90 22 165.0)">Stress (σ or σT)</text><path d="M80,300 L150,160 C190,110 270,84 340,82 C380,82 420,105 450,150" class="ln thick"/><path d="M150,160 C190,105 270,70 340,56 C390,46 430,38 450,34" class="ln acc thick"/><line x1="340" y1="56" x2="340" y2="300" class="ln thin dash"/><text x="340" y="320" class="lbl-sm" text-anchor="middle">Necking begins at UTS</text><circle cx="450" cy="150" r="3.5" class="solid"/><circle cx="450" cy="34" r="3.5" class="solid"/><text x="466" y="34" class="lbl" text-anchor="start">Fracture, true curve</text><text x="466" y="154" class="lbl" text-anchor="start">Fracture, engineering</text><text x="96" y="70" class="lbl-acc" text-anchor="start">True stress–strain curve</text><text x="356" y="200" class="lbl" text-anchor="start">Engineering curve</text>
+</svg>
+<figcaption>Fig. 2.4 — True stress–strain curve compared with the engineering curve.</figcaption>
+</figure>
+<aside class="warn"><b>Common mistake.</b> The relations σT = σ(1+e) and εT = ln(1+e) are valid only up to the start of necking. After necking the strain is not uniform; use the measured neck area instead: σT = P/A and εT = ln(A₀/A).</aside>
+
+<h3 id="mse-u2-c-props">3. Mechanical properties</h3>
+<p>These properties come from the stress–strain curve (Fig. 2.5). The 8 properties of QB Q44 are defined in the flashcards at the end of this part.</p>
+<ul>
+<li><b>Stiffness</b> is the resistance to elastic deformation. Measure: Young's modulus E = slope of the elastic line. Steel (E ≈ 200 GPa) is about 3 times stiffer than aluminium (E ≈ 70 GPa).</li>
+<li><b>Resilience</b> is the energy a material stores per unit volume up to the elastic limit: \( U_r = \sigma_y^2/2E \) (area under the elastic part).</li>
+<li><b>Toughness</b> is the energy per unit volume absorbed up to fracture: the whole area under the curve. It combines strength and ductility.</li>
+<li><b>Ductility</b> is the plastic strain at fracture. It is measured as % elongation = (Lf − L₀)/L₀ × 100 and % reduction in area = (A₀ − Af)/A₀ × 100.</li>
+</ul>
+<figure class="fig" id="mse-u2-f-props">
+<svg viewBox="0 0 680 445" role="img" aria-label="Four panels showing stiffness, resilience, toughness and ductility on stress strain curves">
+<defs><marker id="mse-u2-arw-props" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="60" y1="170" x2="310" y2="170" class="ln" marker-end="url(#mse-u2-arw-props)"/><line x1="60" y1="170" x2="60" y2="30" class="ln" marker-end="url(#mse-u2-arw-props)"/><text x="300" y="188" class="lbl-sm" text-anchor="end">strain</text><text x="70" y="36" class="lbl-sm" text-anchor="start">stress</text><line x1="60" y1="170" x2="150" y2="50" class="ln thick"/><line x1="60" y1="170" x2="240" y2="100" class="ln acc thick"/><text x="158" y="50" class="lbl-sm" text-anchor="start">Steel (steep)</text><text x="246" y="98" class="lbl-sm" text-anchor="start">Aluminium (flatter)</text><text x="180" y="210" class="lbl-b" text-anchor="middle">(a) Stiffness: slope E = σ / e</text><line x1="390" y1="170" x2="640" y2="170" class="ln" marker-end="url(#mse-u2-arw-props)"/><line x1="390" y1="170" x2="390" y2="30" class="ln" marker-end="url(#mse-u2-arw-props)"/><text x="630" y="188" class="lbl-sm" text-anchor="end">strain</text><text x="400" y="36" class="lbl-sm" text-anchor="start">stress</text><polygon points="390,170 460,170 460,70" class="ln fill-hatch"/><path d="M390,170 L460,70 C485,45 540,40 590,60" class="ln thick"/><line x1="460" y1="70" x2="460" y2="170" class="ln thin dash"/><text x="468" y="130" class="lbl-sm" text-anchor="start">Resilience</text><text x="468" y="146" class="lbl-sm" text-anchor="start">(area to yield)</text><text x="480" y="210" class="lbl-b" text-anchor="middle">(b) Resilience: elastic energy</text><line x1="60" y1="395" x2="310" y2="395" class="ln" marker-end="url(#mse-u2-arw-props)"/><line x1="60" y1="395" x2="60" y2="255" class="ln" marker-end="url(#mse-u2-arw-props)"/><text x="300" y="413" class="lbl-sm" text-anchor="end">strain</text><text x="70" y="261" class="lbl-sm" text-anchor="start">stress</text><path d="M60,395 L120,295 C140,270 200,265 250,283 L250,395 Z" class="ln fill-hatch"/><path d="M60,395 L120,295 C140,270 200,265 250,283" class="ln thick"/><line x1="244" y1="277" x2="256" y2="289" class="ln thick"/><line x1="244" y1="289" x2="256" y2="277" class="ln thick"/><text x="180" y="355" class="lbl-sm" text-anchor="middle">Toughness</text><text x="180" y="371" class="lbl-sm" text-anchor="middle">(total area)</text><text x="180" y="435" class="lbl-b" text-anchor="middle">(c) Toughness: energy to fracture</text><line x1="390" y1="395" x2="640" y2="395" class="ln" marker-end="url(#mse-u2-arw-props)"/><line x1="390" y1="395" x2="390" y2="255" class="ln" marker-end="url(#mse-u2-arw-props)"/><text x="630" y="413" class="lbl-sm" text-anchor="end">strain</text><text x="400" y="261" class="lbl-sm" text-anchor="start">stress</text><path d="M390,395 L450,295 C470,270 530,265 580,283" class="ln thick"/><line x1="574" y1="277" x2="586" y2="289" class="ln thick"/><line x1="574" y1="289" x2="586" y2="277" class="ln thick"/><line x1="580" y1="283" x2="512.8" y2="395" class="ln dash"/><line x1="580" y1="283" x2="580" y2="395" class="ln thin dash"/><line x1="512.8" y1="387" x2="580" y2="387" class="ln thin" marker-end="url(#mse-u2-arw-props)" marker-start="url(#mse-u2-arw-props)"/><text x="546.4" y="381" class="lbl-sm" text-anchor="middle">plastic</text><text x="510" y="435" class="lbl-b" text-anchor="middle">(d) Ductility: strain at fracture</text>
+</svg>
+<figcaption>Fig. 2.5 — (a) Stiffness, (b) resilience, (c) toughness, (d) ductility.</figcaption>
+</figure>
+
+<h3 id="mse-u2-c-hardness">4. Hardness testing</h3>
+<p><b>Hardness</b> is the resistance of a material to localised plastic deformation, such as indentation or scratching. In a hardness test a hard indenter is pressed into the surface under a set load, and the size or depth of the impression is converted to a number. For steels, UTS (MPa) ≈ 3.45 × BHN.</p>
+<h4>Brinell test (BHN)</h4>
+<p>A hardened steel (or tungsten carbide) ball of diameter D (10 mm) is pressed with load P (3000 kgf for steel, 500 kgf for soft metals) for 10–30 s. The diameter d of the impression is measured with a microscope.</p>
+<figure class="fig" id="mse-u2-f-brinell">
+<svg viewBox="0 0 680 285" role="img" aria-label="Brinell test: ball indenter, load P, ball diameter D and impression diameter d">
+<defs><marker id="mse-u2-arw-brinell" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="40" y="170" width="300" height="80" class="ln fill-soft"/><circle cx="190" cy="120" r="70" class="ln"/><rect x="170" y="30" width="40" height="22" class="ln"/><line x1="190" y1="8" x2="190" y2="30" class="ln" marker-start="url(#mse-u2-arw-brinell)"/><text x="204" y="20" class="lbl" text-anchor="start">P</text><line x1="120" y1="120" x2="260" y2="120" class="ln thin" marker-end="url(#mse-u2-arw-brinell)" marker-start="url(#mse-u2-arw-brinell)"/><text x="190" y="114" class="lbl" text-anchor="middle">D</text><line x1="141" y1="172" x2="141" y2="214" class="ln thin dash"/><line x1="239" y1="172" x2="239" y2="214" class="ln thin dash"/><line x1="141" y1="206" x2="239" y2="206" class="ln thin" marker-end="url(#mse-u2-arw-brinell)" marker-start="url(#mse-u2-arw-brinell)"/><text x="190" y="230" class="lbl" text-anchor="middle">d (chordal diameter)</text><text x="90" y="155" class="lbl-sm" text-anchor="middle">Steel ball</text><text x="300" y="160" class="lbl-sm" text-anchor="middle">Specimen</text><text x="190" y="270" class="lbl-b" text-anchor="middle">(a) Section through the indentation</text><ellipse cx="520" cy="140" rx="52" ry="52" class="ln fill-soft"/><line x1="468" y1="140" x2="572" y2="140" class="ln thin" marker-end="url(#mse-u2-arw-brinell)" marker-start="url(#mse-u2-arw-brinell)"/><text x="520" y="132" class="lbl" text-anchor="middle">d</text><text x="520" y="222" class="lbl-b" text-anchor="middle">(b) Top view of the impression</text>
+</svg>
+<figcaption>Fig. 2.6 — Brinell test: ball of diameter D, load P, impression diameter d.</figcaption>
+</figure>
+<div class="formula">\[ \mathrm{BHN} = \frac{2P}{\pi D\left(D-\sqrt{D^{2}-d^{2}}\right)} \]<p class="where">P in kgf, D and d in mm; BHN is in kgf/mm². The denominator is the curved area of the spherical impression.</p></div>
+<p><b>Merits:</b> averages over coarse grains; simple. <b>Limits:</b> not for very hard (&gt; 450 BHN) or thin parts.</p>
+<h4>Vickers test (VHN or HV)</h4>
+<p>A square-based diamond pyramid with 136° between opposite faces is pressed with a load of 1–100 kgf. The two diagonals d₁, d₂ of the square impression are measured and averaged.</p>
+<figure class="fig" id="mse-u2-f-vickers">
+<svg viewBox="0 0 680 285" role="img" aria-label="Vickers test: pyramid indenter with 136 degree angle and square impression with diagonals">
+<defs><marker id="mse-u2-arw-vickers" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="40" y="170" width="260" height="80" class="ln fill-soft"/><rect x="40" y="100" width="260" height="47.5" class="ln"/><line x1="40" y1="147.5" x2="170" y2="200" class="ln"/><line x1="300" y1="147.5" x2="170" y2="200" class="ln"/><line x1="170" y1="20" x2="170" y2="98" class="ln" marker-start="url(#mse-u2-arw-vickers)"/><text x="184" y="40" class="lbl" text-anchor="start">P</text><path d="M150,172 A24,24 0 0 0 190,172" class="ln thin"/><text x="170" y="162" class="lbl-sm" text-anchor="middle">136°</text><text x="170" y="268" class="lbl-b" text-anchor="middle">(a) Square-based diamond pyramid</text><polygon points="410,125 480,55 550,125 480,195" class="ln fill-soft"/><line x1="410" y1="125" x2="550" y2="125" class="ln hid"/><line x1="480" y1="55" x2="480" y2="195" class="ln hid"/><line x1="410" y1="133" x2="410" y2="211" class="ln thin dash"/><line x1="550" y1="133" x2="550" y2="211" class="ln thin dash"/><line x1="410" y1="203" x2="550" y2="203" class="ln thin" marker-end="url(#mse-u2-arw-vickers)" marker-start="url(#mse-u2-arw-vickers)"/><text x="480" y="223" class="lbl" text-anchor="middle">d₁</text><line x1="558" y1="55" x2="590" y2="55" class="ln thin dash"/><line x1="558" y1="195" x2="590" y2="195" class="ln thin dash"/><line x1="582" y1="55" x2="582" y2="195" class="ln thin" marker-end="url(#mse-u2-arw-vickers)" marker-start="url(#mse-u2-arw-vickers)"/><text x="600" y="129" class="lbl" text-anchor="start">d₂</text><text x="480" y="268" class="lbl-b" text-anchor="middle">(b) Impression: d = (d₁ + d₂) / 2</text>
+</svg>
+<figcaption>Fig. 2.7 — Vickers test: 136° diamond pyramid and square impression.</figcaption>
+</figure>
+<div class="formula">\[ \mathrm{VHN} = \frac{1.854\,P}{d^{2}}, \qquad d=\frac{d_1+d_2}{2} \]<p class="where">P in kgf, d in mm. Result = load ÷ slant surface area of the pyramid impression.</p></div>
+<p><b>Merits:</b> one scale for all materials; accurate; works on thin sheet. <b>Limits:</b> slow; needs a polished surface.</p>
+<h4>Rockwell test (HR)</h4>
+<p>The Rockwell tester measures the <b>depth</b> of the impression and shows the number on a dial, so it needs no microscope. First a minor load P₀ (10 kgf) seats the indenter and sets the zero. Then a major load P₁ is added, then removed, with P₀ still on. The permanent increase in depth h gives the hardness: HR = N − h/s (N = 100 for a diamond cone and 130 for a ball; s = 0.002 mm).</p>
+<figure class="fig" id="mse-u2-f-rockwell">
+<svg viewBox="0 0 680 265" role="img" aria-label="Rockwell test sequence: minor load, major load, depth measurement">
+<defs><marker id="mse-u2-arw-rockwell" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="15" y="170" width="170" height="55" class="ln fill-soft"/><rect x="31" y="98" width="138" height="32" class="ln"/><polygon points="31,130 169,130 100,170" class="ln"/><text x="100" y="26" class="lbl-sm" text-anchor="middle">Step 1: minor load P₀</text><text x="100" y="44" class="lbl-sm" text-anchor="middle">Indenter seated; zero set</text><line x1="100" y1="62" x2="100" y2="96" class="ln" marker-end="url(#mse-u2-arw-rockwell)"/><rect x="235" y="170" width="170" height="55" class="ln fill-soft"/><rect x="251" y="122" width="138" height="32" class="ln"/><polygon points="251,154 389,154 320,194" class="ln"/><text x="320" y="26" class="lbl-sm" text-anchor="middle">Step 2: major load P₁ added</text><text x="320" y="44" class="lbl-sm" text-anchor="middle">Total load P₀ + P₁</text><line x1="320" y1="62" x2="320" y2="120" class="ln thick" marker-end="url(#mse-u2-arw-rockwell)"/><rect x="455" y="170" width="170" height="55" class="ln fill-soft"/><rect x="471" y="110" width="138" height="32" class="ln"/><polygon points="471,142 609,142 540,182" class="ln"/><text x="540" y="26" class="lbl-sm" text-anchor="middle">Step 3: P₁ removed</text><text x="540" y="44" class="lbl-sm" text-anchor="middle">P₀ stays; read depth h</text><line x1="540" y1="62" x2="540" y2="108" class="ln" marker-end="url(#mse-u2-arw-rockwell)"/><line x1="620" y1="170" x2="650" y2="170" class="ln thin dash"/><line x1="620" y1="182" x2="650" y2="182" class="ln thin dash"/><line x1="642" y1="170" x2="642" y2="182" class="ln thin" marker-end="url(#mse-u2-arw-rockwell)" marker-start="url(#mse-u2-arw-rockwell)"/><text x="656" y="181" class="lbl" text-anchor="start">h</text><text x="100" y="248" class="lbl-b" text-anchor="middle">(a)</text><text x="320" y="248" class="lbl-b" text-anchor="middle">(b)</text><text x="540" y="248" class="lbl-b" text-anchor="middle">(c)</text>
+</svg>
+<figcaption>Fig. 2.8 — Rockwell test: the depth h gives the hardness number.</figcaption>
+</figure>
+<figure class="photo"><img src="img/mse-u2-rockwell-tester.jpg" alt="A Rockwell hardness tester with dial gauge, specimen anvil and lever" width="560" height="746" loading="lazy"><figcaption>A Rockwell hardness tester: the dial shows the hardness number directly. <span class="credit">Photo: Three-quarter-ten · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+<aside class="exam"><b>Exam pattern.</b> A hardness question asks for the principle, the indenter, the diagram, the formula and 3–4 merits. State units: BHN and VHN are in kgf/mm².</aside>
+
+<h3 id="mse-u2-c-slip">5. Plastic deformation: slip and twinning</h3>
+<p>Plastic deformation is permanent. In crystals it happens in two ways: slip (the main one) and twinning (Fig. 2.9).</p>
+<p><b>Slip</b> is the sliding of one part of a crystal over another along a <b>slip plane</b> in a <b>slip direction</b>. The slip plane is the plane of densest atom packing; the slip direction is the closest-packed direction. A plane with a direction in it is a <i>slip system</i>. FCC has 12 slip systems (ductile), HCP only 3. Slip happens by <b>dislocation</b> motion, one row of atoms at a time, at a stress far below the theoretical shear strength. Slip starts when the resolved shear stress reaches the critical value: \( \tau = \sigma\cos\phi\cos\lambda \) (Schmid's law).</p>
+<p><b>Twinning</b> is a shear that makes the deformed region a mirror image of the parent across a <b>twin plane</b>. Each atomic plane moves a fraction of a spacing, in proportion to its distance from the twin plane.</p>
+<figure class="fig" id="mse-u2-f-slip">
+<svg viewBox="0 0 680 235" role="img" aria-label="Atom arrangement before deformation, after slip and after twinning">
+<defs><marker id="mse-u2-arw-slip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<circle cx="40" cy="50" r="4" class="solid"/><circle cx="64" cy="50" r="4" class="solid"/><circle cx="88" cy="50" r="4" class="solid"/><circle cx="112" cy="50" r="4" class="solid"/><circle cx="136" cy="50" r="4" class="solid"/><circle cx="160" cy="50" r="4" class="solid"/><circle cx="40" cy="74" r="4" class="solid"/><circle cx="64" cy="74" r="4" class="solid"/><circle cx="88" cy="74" r="4" class="solid"/><circle cx="112" cy="74" r="4" class="solid"/><circle cx="136" cy="74" r="4" class="solid"/><circle cx="160" cy="74" r="4" class="solid"/><circle cx="40" cy="98" r="4" class="solid"/><circle cx="64" cy="98" r="4" class="solid"/><circle cx="88" cy="98" r="4" class="solid"/><circle cx="112" cy="98" r="4" class="solid"/><circle cx="136" cy="98" r="4" class="solid"/><circle cx="160" cy="98" r="4" class="solid"/><circle cx="40" cy="122" r="4" class="solid"/><circle cx="64" cy="122" r="4" class="solid"/><circle cx="88" cy="122" r="4" class="solid"/><circle cx="112" cy="122" r="4" class="solid"/><circle cx="136" cy="122" r="4" class="solid"/><circle cx="160" cy="122" r="4" class="solid"/><circle cx="40" cy="146" r="4" class="solid"/><circle cx="64" cy="146" r="4" class="solid"/><circle cx="88" cy="146" r="4" class="solid"/><circle cx="112" cy="146" r="4" class="solid"/><circle cx="136" cy="146" r="4" class="solid"/><circle cx="160" cy="146" r="4" class="solid"/><circle cx="40" cy="170" r="4" class="solid"/><circle cx="64" cy="170" r="4" class="solid"/><circle cx="88" cy="170" r="4" class="solid"/><circle cx="112" cy="170" r="4" class="solid"/><circle cx="136" cy="170" r="4" class="solid"/><circle cx="160" cy="170" r="4" class="solid"/><rect x="14" y="38" width="142" height="134" class="ln dash thin"/><text x="90" y="30" class="lbl-b" text-anchor="middle">(a) Before deformation</text><circle cx="294" cy="50" r="4" class="solid"/><circle cx="318" cy="50" r="4" class="solid"/><circle cx="342" cy="50" r="4" class="solid"/><circle cx="366" cy="50" r="4" class="solid"/><circle cx="390" cy="50" r="4" class="solid"/><circle cx="414" cy="50" r="4" class="solid"/><circle cx="294" cy="74" r="4" class="solid"/><circle cx="318" cy="74" r="4" class="solid"/><circle cx="342" cy="74" r="4" class="solid"/><circle cx="366" cy="74" r="4" class="solid"/><circle cx="390" cy="74" r="4" class="solid"/><circle cx="414" cy="74" r="4" class="solid"/><circle cx="294" cy="98" r="4" class="solid"/><circle cx="318" cy="98" r="4" class="solid"/><circle cx="342" cy="98" r="4" class="solid"/><circle cx="366" cy="98" r="4" class="solid"/><circle cx="390" cy="98" r="4" class="solid"/><circle cx="414" cy="98" r="4" class="solid"/><circle cx="270" cy="122" r="4" class="solid"/><circle cx="294" cy="122" r="4" class="solid"/><circle cx="318" cy="122" r="4" class="solid"/><circle cx="342" cy="122" r="4" class="solid"/><circle cx="366" cy="122" r="4" class="solid"/><circle cx="390" cy="122" r="4" class="solid"/><circle cx="270" cy="146" r="4" class="solid"/><circle cx="294" cy="146" r="4" class="solid"/><circle cx="318" cy="146" r="4" class="solid"/><circle cx="342" cy="146" r="4" class="solid"/><circle cx="366" cy="146" r="4" class="solid"/><circle cx="390" cy="146" r="4" class="solid"/><circle cx="270" cy="170" r="4" class="solid"/><circle cx="294" cy="170" r="4" class="solid"/><circle cx="318" cy="170" r="4" class="solid"/><circle cx="342" cy="170" r="4" class="solid"/><circle cx="366" cy="170" r="4" class="solid"/><circle cx="390" cy="170" r="4" class="solid"/><rect x="244" y="38" width="142" height="134" class="ln dash thin"/><line x1="238" y1="110" x2="420" y2="110" class="ln acc dash"/><text x="334" y="196" class="lbl-acc" text-anchor="middle">slip plane</text><line x1="424" y1="66" x2="454" y2="66" class="ln" marker-end="url(#mse-u2-arw-slip)"/><line x1="258" y1="162" x2="228" y2="162" class="ln" marker-end="url(#mse-u2-arw-slip)"/><text x="334" y="30" class="lbl-b" text-anchor="middle">(b) Slip</text><text x="334" y="222" class="lbl-sm" text-anchor="middle">by one atomic spacing</text><circle cx="514" cy="50" r="4" class="solid"/><circle cx="538" cy="50" r="4" class="solid"/><circle cx="562" cy="50" r="4" class="solid"/><circle cx="586" cy="50" r="4" class="solid"/><circle cx="610" cy="50" r="4" class="solid"/><circle cx="634" cy="50" r="4" class="solid"/><circle cx="506" cy="74" r="4" class="solid"/><circle cx="530" cy="74" r="4" class="solid"/><circle cx="554" cy="74" r="4" class="solid"/><circle cx="578" cy="74" r="4" class="solid"/><circle cx="602" cy="74" r="4" class="solid"/><circle cx="626" cy="74" r="4" class="solid"/><circle cx="498" cy="98" r="4" class="solid"/><circle cx="522" cy="98" r="4" class="solid"/><circle cx="546" cy="98" r="4" class="solid"/><circle cx="570" cy="98" r="4" class="solid"/><circle cx="594" cy="98" r="4" class="solid"/><circle cx="618" cy="98" r="4" class="solid"/><circle cx="490" cy="122" r="4" class="solid"/><circle cx="514" cy="122" r="4" class="solid"/><circle cx="538" cy="122" r="4" class="solid"/><circle cx="562" cy="122" r="4" class="solid"/><circle cx="586" cy="122" r="4" class="solid"/><circle cx="610" cy="122" r="4" class="solid"/><circle cx="490" cy="146" r="4" class="solid"/><circle cx="514" cy="146" r="4" class="solid"/><circle cx="538" cy="146" r="4" class="solid"/><circle cx="562" cy="146" r="4" class="solid"/><circle cx="586" cy="146" r="4" class="solid"/><circle cx="610" cy="146" r="4" class="solid"/><circle cx="490" cy="170" r="4" class="solid"/><circle cx="514" cy="170" r="4" class="solid"/><circle cx="538" cy="170" r="4" class="solid"/><circle cx="562" cy="170" r="4" class="solid"/><circle cx="586" cy="170" r="4" class="solid"/><circle cx="610" cy="170" r="4" class="solid"/><line x1="458" y1="110" x2="630" y2="110" class="ln acc dash"/><text x="530" y="196" class="lbl-acc" text-anchor="middle">twin plane</text><text x="538" y="30" class="lbl-b" text-anchor="middle">(c) Twinning</text><text x="530" y="222" class="lbl-sm" text-anchor="middle">shift grows with distance</text>
+</svg>
+<figcaption>Fig. 2.9 — Slip (whole spacings) compared with twinning (fractions of a spacing).</figcaption>
+</figure>
+<p>Slip moves atoms by whole spacings and gives large strain. Twinning moves them by fractions of a spacing, gives a mirror-image lattice and small strain, and helps mainly in BCC and HCP metals at low temperature or under impact.</p>
+
+<h3 id="mse-u2-c-fracture">6. Fracture</h3>
+<p><b>Fracture</b> is the separation of a body into two or more pieces under stress. It has two steps: crack formation and crack propagation. Fractures are <b>ductile</b> or <b>brittle</b> (Fig. 2.10).</p>
+<figure class="fig" id="mse-u2-f-ftypes">
+<svg viewBox="0 0 680 205" role="img" aria-label="Three fracture appearances: highly ductile, cup and cone, brittle">
+<defs><marker id="mse-u2-arw-ftypes" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<g transform="translate(5,0)"><path d="M8,62 H58 Q88,62 100,100 Q88,138 58,138 H8 Z" class="ln fill-soft"/><path d="M202,62 H152 Q122,62 110,100 Q122,138 152,138 H202 Z" class="ln fill-soft"/><text x="105" y="170" class="lbl-b" text-anchor="middle">(a) Highly ductile</text><text x="105" y="190" class="lbl-sm" text-anchor="middle">neck to a point</text></g><g transform="translate(230,0)"><path d="M8,62 H66 Q84,63 92,74 L76,100 L92,126 Q84,137 66,138 H8 Z" class="ln fill-soft"/><path d="M202,62 H146 Q118,63 106,74 L90,100 L106,126 Q118,137 146,138 H202 Z" class="ln fill-soft"/><text x="105" y="170" class="lbl-b" text-anchor="middle">(b) Moderately ductile</text><text x="105" y="190" class="lbl-sm" text-anchor="middle">cup and cone</text></g><g transform="translate(455,0)"><path d="M8,62 H98 V138 H8 Z" class="ln fill-soft"/><path d="M112,62 H202 V138 H112 Z" class="ln fill-soft"/><text x="105" y="170" class="lbl-b" text-anchor="middle">(c) Brittle</text><text x="105" y="190" class="lbl-sm" text-anchor="middle">flat, no neck</text></g>
+</svg>
+<figcaption>Fig. 2.10 — Ductile fractures neck first; a brittle fracture is flat.</figcaption>
+</figure>
+<p>A ductile fracture is slow, dull and fibrous and gives warning. A brittle fracture is sudden, bright and flat, at low temperature, high strain rate or a notch (full comparison in Q1).</p>
+<h4>Cup-and-cone fracture</h4>
+<p>This is the usual ductile fracture of a round bar in tension. It has five stages (Fig. 2.11): (a) necking, (b) microvoids form at the centre of the neck, (c) the voids join into a flat central crack, (d) the crack spreads outward until the remaining ring shears at 45° (shear lips), (e) the bar separates as a <b>cup</b> and a <b>cone</b>.</p>
+<figure class="fig" id="mse-u2-f-cupcone">
+<svg viewBox="0 0 700 292" role="img" aria-label="Five stages of cup and cone fracture">
+<defs><marker id="mse-u2-arw-cupcone" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<g transform="translate(15,12)"><path d="M20,20 C20,75 35,90 35,115 C35,140 20,155 20,210" class="ln"/><path d="M110,20 C110,75 95,90 95,115 C95,140 110,155 110,210" class="ln"/><line x1="65" y1="20" x2="65" y2="2" class="ln" marker-end="url(#mse-u2-arw-cupcone)"/><line x1="65" y1="210" x2="65" y2="228" class="ln" marker-end="url(#mse-u2-arw-cupcone)"/><text x="65" y="248" class="lbl-sm" text-anchor="middle">(a) Necking</text><text x="65" y="266" class="lbl-sm" text-anchor="middle">begins</text></g><g transform="translate(150,12)"><path d="M20,20 C20,75 35,90 35,115 C35,140 20,155 20,210" class="ln"/><path d="M110,20 C110,75 95,90 95,115 C95,140 110,155 110,210" class="ln"/><circle cx="55" cy="108" r="3" class="ln"/><circle cx="68" cy="118" r="3" class="ln"/><circle cx="75" cy="104" r="3" class="ln"/><circle cx="60" cy="126" r="3" class="ln"/><circle cx="82" cy="120" r="3" class="ln"/><circle cx="50" cy="118" r="3" class="ln"/><text x="65" y="248" class="lbl-sm" text-anchor="middle">(b) Microvoids</text><text x="65" y="266" class="lbl-sm" text-anchor="middle">form in neck</text></g><g transform="translate(285,12)"><path d="M20,20 C20,75 35,90 35,115 C35,140 20,155 20,210" class="ln"/><path d="M110,20 C110,75 95,90 95,115 C95,140 110,155 110,210" class="ln"/><ellipse cx="65" cy="115" rx="20" ry="4" class="ln fill-acc"/><text x="65" y="248" class="lbl-sm" text-anchor="middle">(c) Voids join</text><text x="65" y="266" class="lbl-sm" text-anchor="middle">into a crack</text></g><g transform="translate(420,12)"><path d="M20,20 C20,75 35,90 35,115 C35,140 20,155 20,210" class="ln"/><path d="M110,20 C110,75 95,90 95,115 C95,140 110,155 110,210" class="ln"/><ellipse cx="65" cy="115" rx="18" ry="4" class="ln fill-acc"/><line x1="47" y1="115" x2="35" y2="103" class="ln acc thick"/><line x1="83" y1="115" x2="95" y2="103" class="ln acc thick"/><text x="65" y="248" class="lbl-sm" text-anchor="middle">(d) Shear lips</text><text x="65" y="266" class="lbl-sm" text-anchor="middle">at 45° form</text></g><g transform="translate(555,12)"><path d="M20,20 H110 V70 L92,88 H38 L20,70 Z" class="ln fill-soft"/><path d="M20,210 H110 V132 L92,114 H38 L20,132 Z" class="ln fill-soft"/><text x="65" y="248" class="lbl-sm" text-anchor="middle">(e) Cup and</text><text x="65" y="266" class="lbl-sm" text-anchor="middle">cone halves</text></g>
+</svg>
+<figcaption>Fig. 2.11 — Stages of cup-and-cone fracture.</figcaption>
+</figure>
+<figure class="photo"><img src="img/mse-u2-tensile-fracture.jpg" alt="Necked aluminium tensile specimen with a cup-shaped fracture surface" width="600" height="783" loading="lazy"><figcaption>Real cup-and-cone fracture of a tensile specimen: the neck and the cup with its rough centre and shear-lip rim. <span class="credit">Photo: HB TUW · CC BY-SA 4.0 · Wikimedia Commons</span></figcaption></figure>
+<h4>Crack modes (Type I, II and III)</h4>
+<p>A crack can be loaded in three ways (Fig. 2.12). <b>Type (Mode) I</b> opening: the tensile stress is normal to the crack plane; it is the most common and the most dangerous. <b>Type (Mode) II</b> sliding: in-plane shear, perpendicular to the crack front. <b>Type (Mode) III</b> tearing: shear parallel to the crack front.</p>
+<figure class="fig" id="mse-u2-f-modes">
+<svg viewBox="0 0 680 310" role="img" aria-label="Three crack loading modes: opening, sliding and tearing">
+<defs><marker id="mse-u2-arw-modes" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="40" y="100" width="110" height="100" class="ln fill-soft"/><polygon points="40,100 76,74 186,74 150,100" class="ln fill-soft"/><polygon points="150,100 186,74 186,174 150,200" class="ln fill-soft"/><polygon points="40,150.0 95,150.0 131,124.0 76,124.0" class="ln dash thin"/><polygon points="40,147.0 95,150.0 40,153.0" class="ln fill-acc"/><line x1="110" y1="92" x2="110" y2="50" class="ln thick" marker-end="url(#mse-u2-arw-modes)"/><line x1="95" y1="210" x2="95" y2="250" class="ln thick" marker-end="url(#mse-u2-arw-modes)"/><rect x="270" y="100" width="110" height="100" class="ln fill-soft"/><polygon points="270,100 306,74 416,74 380,100" class="ln fill-soft"/><polygon points="380,100 416,74 416,174 380,200" class="ln fill-soft"/><polygon points="270,150.0 325,150.0 361,124.0 306,124.0" class="ln dash thin"/><polygon points="270,147.0 325,150.0 270,153.0" class="ln fill-acc"/><line x1="300" y1="92" x2="355" y2="92" class="ln thick" marker-end="url(#mse-u2-arw-modes)"/><line x1="380" y1="212" x2="325" y2="212" class="ln thick" marker-end="url(#mse-u2-arw-modes)"/><rect x="500" y="100" width="110" height="100" class="ln fill-soft"/><polygon points="500,100 536,74 646,74 610,100" class="ln fill-soft"/><polygon points="610,100 646,74 646,174 610,200" class="ln fill-soft"/><polygon points="500,150.0 555,150.0 591,124.0 536,124.0" class="ln dash thin"/><polygon points="500,147.0 555,150.0 500,153.0" class="ln fill-acc"/><line x1="525" y1="97" x2="563" y2="71" class="ln thick" marker-end="url(#mse-u2-arw-modes)"/><line x1="580" y1="210" x2="542" y2="236" class="ln thick" marker-end="url(#mse-u2-arw-modes)"/><text x="130" y="270" class="lbl-b" text-anchor="middle">Mode I</text><text x="130" y="290" class="lbl-sm" text-anchor="middle">Opening (tensile)</text><text x="360" y="270" class="lbl-b" text-anchor="middle">Mode II</text><text x="360" y="290" class="lbl-sm" text-anchor="middle">Sliding (in-plane shear)</text><text x="590" y="270" class="lbl-b" text-anchor="middle">Mode III</text><text x="590" y="290" class="lbl-sm" text-anchor="middle">Tearing (out-of-plane shear)</text><text x="340" y="22" class="lbl-sm" text-anchor="middle">Crack = slit entering from the left; dashed plane = crack plane</text>
+</svg>
+<figcaption>Fig. 2.12 — Crack loading modes I, II and III.</figcaption>
+</figure>
+<h4>Griffith's criterion and fracture toughness</h4>
+<p>Real solids fail far below their theoretical strength because of tiny cracks. Griffith said a crack grows when the elastic strain energy released is at least equal to the surface energy of the two new faces.</p>
+<figure class="fig" id="mse-u2-f-griffith">
+<svg viewBox="0 0 680 330" role="img" aria-label="Griffith crack in a plate and energy against crack length graph">
+<defs><marker id="mse-u2-arw-griffith" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="40" y="60" width="180" height="190" class="ln fill-soft"/><ellipse cx="130" cy="155" rx="34" ry="5" class="ln fill-acc"/><line x1="80" y1="60" x2="80" y2="22" class="ln thick" marker-end="url(#mse-u2-arw-griffith)"/><line x1="80" y1="250" x2="80" y2="288" class="ln thick" marker-end="url(#mse-u2-arw-griffith)"/><line x1="130" y1="60" x2="130" y2="22" class="ln thick" marker-end="url(#mse-u2-arw-griffith)"/><line x1="130" y1="250" x2="130" y2="288" class="ln thick" marker-end="url(#mse-u2-arw-griffith)"/><line x1="180" y1="60" x2="180" y2="22" class="ln thick" marker-end="url(#mse-u2-arw-griffith)"/><line x1="180" y1="250" x2="180" y2="288" class="ln thick" marker-end="url(#mse-u2-arw-griffith)"/><text x="205" y="38" class="lbl" text-anchor="start">σ</text><text x="205" y="278" class="lbl" text-anchor="start">σ</text><line x1="96" y1="172" x2="96" y2="196" class="ln thin dash"/><line x1="164" y1="172" x2="164" y2="196" class="ln thin dash"/><line x1="96" y1="190" x2="164" y2="190" class="ln thin" marker-end="url(#mse-u2-arw-griffith)" marker-start="url(#mse-u2-arw-griffith)"/><text x="130" y="212" class="lbl" text-anchor="middle">2a</text><text x="130" y="238" class="lbl-sm" text-anchor="middle">thin plate</text><text x="130" y="312" class="lbl-b" text-anchor="middle">(a) Plate with a central crack</text><line x1="350" y1="160" x2="630" y2="160" class="ln" marker-end="url(#mse-u2-arw-griffith)"/><line x1="350" y1="290" x2="350" y2="18" class="ln" marker-end="url(#mse-u2-arw-griffith)"/><text x="628" y="182" class="lbl-sm" text-anchor="end">crack half-length a</text><text x="358" y="26" class="lbl-sm" text-anchor="start">Energy U</text><polyline points="350.0,160.0 355.0,158.0 360.0,155.9 365.0,153.9 370.0,151.8 375.0,149.8 380.0,147.7 385.0,145.7 390.0,143.6 395.0,141.6 400.0,139.5 405.0,137.5 410.0,135.5 415.0,133.4 420.0,131.4 425.0,129.3 430.0,127.3 435.0,125.2 440.0,123.2 445.0,121.1 450.0,119.1 455.0,117.0 460.0,115.0 465.0,113.0 470.0,110.9 475.0,108.9 480.0,106.8 485.0,104.8 490.0,102.7 495.0,100.7 500.0,98.6 505.0,96.6 510.0,94.5 515.0,92.5 520.0,90.5 525.0,88.4 530.0,86.4 535.0,84.3 540.0,82.3 545.0,80.2 550.0,78.2 555.0,76.1 560.0,74.1 565.0,72.0 570.0,70.0 575.0,68.0 580.0,65.9 585.0,63.9" class="ln acc2"/><polyline points="350.0,160.0 355.0,160.0 360.0,160.2 365.0,160.4 370.0,160.7 375.0,161.2 380.0,161.7 385.0,162.3 390.0,163.0 395.0,163.8 400.0,164.6 405.0,165.6 410.0,166.7 415.0,167.9 420.0,169.1 425.0,170.5 430.0,171.9 435.0,173.4 440.0,175.1 445.0,176.8 450.0,178.6 455.0,180.5 460.0,182.5 465.0,184.6 470.0,186.8 475.0,189.1 480.0,191.4 485.0,193.9 490.0,196.4 495.0,199.1 500.0,201.8 505.0,204.7 510.0,207.6 515.0,210.6 520.0,213.7 525.0,216.9 530.0,220.2 535.0,223.6 540.0,227.1 545.0,230.7 550.0,234.4 555.0,238.1 560.0,242.0 565.0,246.0 570.0,250.0 575.0,254.1 580.0,258.4 585.0,262.7 590.0,267.1 595.0,271.6 600.0,276.2 605.0,280.9 610.0,285.7" class="ln acc"/><polyline points="350.0,160.0 355.0,158.0 360.0,156.1 365.0,154.3 370.0,152.6 375.0,150.9 380.0,149.4 385.0,148.0 390.0,146.6 395.0,145.4 400.0,144.2 405.0,143.1 410.0,142.1 415.0,141.3 420.0,140.5 425.0,139.8 430.0,139.2 435.0,138.7 440.0,138.2 445.0,137.9 450.0,137.7 455.0,137.5 460.0,137.5 465.0,137.5 470.0,137.7 475.0,137.9 480.0,138.2 485.0,138.7 490.0,139.2 495.0,139.8 500.0,140.5 505.0,141.3 510.0,142.1 515.0,143.1 520.0,144.2 525.0,145.4 530.0,146.6 535.0,148.0 540.0,149.4 545.0,150.9 550.0,152.6 555.0,154.3 560.0,156.1 565.0,158.0 570.0,160.0 575.0,162.1 580.0,164.3 585.0,166.6" class="ln thick"/><line x1="460" y1="138" x2="460" y2="160" class="ln thin dash"/><text x="460" y="176" class="lbl" text-anchor="middle">a<tspan dy="4" font-size="11">c</tspan></text><text x="460" y="88" class="lbl-b" text-anchor="middle">Total U</text><text x="565" y="60" class="lbl-sm" text-anchor="end">Surface energy 4aγt</text><text x="540" y="260" class="lbl-sm" text-anchor="end">Strain energy released</text><text x="470" y="312" class="lbl-b" text-anchor="middle">(b) Energy balance</text>
+</svg>
+<figcaption>Fig. 2.13 — Griffith crack and energy balance; total energy peaks at the critical length.</figcaption>
+</figure>
+<p>For a through-thickness central crack of length 2a in a thin plate (plane stress): strain energy released = πσ²a²t/E, surface energy needed = 4aγt (two surfaces of area 2a·t, γ per unit area each). Setting d/da of (4aγt − πσ²a²t/E) to zero gives:</p>
+<div class="formula">\[ \sigma_f = \sqrt{\frac{2E\gamma}{\pi a}} \qquad \Longleftrightarrow \qquad a_c = \frac{2E\gamma}{\pi\sigma^{2}} \]<p class="where">E = Young's modulus, γ = surface energy (J/m²), a = half-length of the crack. It fits perfectly brittle materials (glass); for metals use 2(γ + γp), where γp is plastic work at the tip.</p></div>
+<p>A longer crack means a lower fracture stress. In engineering this is written with the <b>stress intensity factor</b> K = Yσ√(πa) (Y = geometry factor, about 1 to 1.1). The crack runs when K reaches the material's <b>fracture toughness K<sub>IC</sub></b> (Mode I, plane strain, unit MPa√m):</p>
+<div class="formula">\[ K_{IC} = Y\sigma_c\sqrt{\pi a} \]<p class="where">Typical K<sub>IC</sub>: Al alloy 25–40, steel 50–150, glass 0.7 MPa√m. High K<sub>IC</sub> = crack-tolerant.</p></div>
+
+<h3 id="mse-u2-c-fatigue">7. Fatigue</h3>
+<p><b>Fatigue</b> is the failure of a material under repeated (cyclic) stress that is well below its static yield strength. It causes most failures of shafts, springs and aircraft parts. There is no warning.</p>
+<p><b>Mechanism</b> (three stages): (1) <i>crack initiation</i> at a surface flaw, notch, scratch, keyway or inclusion, where slip bands pile up; (2) <i>crack propagation</i>: the crack grows a little with each cycle and leaves smooth <b>beach marks</b> (and microscopic striations); (3) <i>final fracture</i>: the remaining area is too small to carry the load and breaks suddenly (rough zone), Fig. 2.14(b).</p>
+<figure class="fig" id="mse-u2-f-cycle">
+<svg viewBox="0 0 680 285" role="img" aria-label="Fluctuating stress cycle and the look of a fatigue fracture surface">
+<defs><marker id="mse-u2-arw-cycle" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="40" y1="210" x2="380" y2="210" class="ln" marker-end="url(#mse-u2-arw-cycle)"/><line x1="40" y1="210" x2="40" y2="30" class="ln" marker-end="url(#mse-u2-arw-cycle)"/><text x="210" y="246" class="lbl" text-anchor="middle">Time, t</text><text x="14" y="120" class="lbl" text-anchor="middle" transform="rotate(-90 14 120)">Stress, σ</text><polyline points="60.0,120.0 63.0,114.0 66.0,108.0 69.0,102.3 72.0,96.9 75.0,91.9 78.0,87.5 81.0,83.6 84.0,80.4 87.0,77.9 90.0,76.1 93.0,75.2 96.0,75.0 99.0,75.7 102.0,77.2 105.0,79.5 108.0,82.4 111.0,86.1 114.0,90.4 117.0,95.2 120.0,100.5 123.0,106.1 126.0,112.0 129.0,118.0 132.0,124.0 135.0,130.0 138.0,135.8 141.0,141.3 144.0,146.5 147.0,151.1 150.0,155.2 153.0,158.6 156.0,161.4 159.0,163.4 162.0,164.6 165.0,165.0 168.0,164.6 171.0,163.4 174.0,161.4 177.0,158.6 180.0,155.2 183.0,151.1 186.0,146.5 189.0,141.3 192.0,135.8 195.0,130.0 198.0,124.0 201.0,118.0 204.0,112.0 207.0,106.1 210.0,100.5 213.0,95.2 216.0,90.4 219.0,86.1 222.0,82.4 225.0,79.5 228.0,77.2 231.0,75.7 234.0,75.0 237.0,75.2 240.0,76.1 243.0,77.9 246.0,80.4 249.0,83.6 252.0,87.5 255.0,91.9 258.0,96.9 261.0,102.3 264.0,108.0 267.0,114.0 270.0,120.0 273.0,126.0 276.0,132.0 279.0,137.7 282.0,143.1 285.0,148.1 288.0,152.5 291.0,156.4 294.0,159.6 297.0,162.1 300.0,163.9 303.0,164.8 306.0,165.0 309.0,164.3 312.0,162.8 315.0,160.5 318.0,157.6 321.0,153.9 324.0,149.6 327.0,144.8 330.0,139.5" class="ln thick"/><line x1="40" y1="75" x2="340" y2="75" class="ln thin dash"/><line x1="40" y1="120" x2="340" y2="120" class="ln hid"/><line x1="40" y1="165" x2="340" y2="165" class="ln thin dash"/><text x="348" y="79" class="lbl-sm" text-anchor="start">σmax</text><text x="348" y="124" class="lbl-sm" text-anchor="start">σm</text><text x="348" y="169" class="lbl-sm" text-anchor="start">σmin</text><line x1="318" y1="75" x2="318" y2="120" class="ln thin" marker-end="url(#mse-u2-arw-cycle)" marker-start="url(#mse-u2-arw-cycle)"/><text x="310" y="102" class="lbl-sm" text-anchor="end">σa</text><text x="210" y="270" class="lbl-b" text-anchor="middle">(a) Stress cycle: R = σmin / σmax</text><circle cx="560" cy="120" r="72" class="ln fill-soft"/><polyline points="584.1,54.5 583.8,55.7 583.3,57.0 582.8,58.2 582.3,59.3 581.7,60.5 581.0,61.6 580.2,62.7 579.4,63.7 578.6,64.7 577.7,65.7 576.7,66.6 575.7,67.4 574.7,68.2 573.6,69.0 572.5,69.7 571.3,70.3 570.2,70.8 569.0,71.3 567.7,71.8 566.5,72.1 565.2,72.5 563.9,72.7 562.6,72.9 561.3,73.0 560.0,73.0 558.7,73.0 557.4,72.9 556.1,72.7 554.8,72.5 553.5,72.1 552.3,71.8 551.0,71.3 549.8,70.8 548.7,70.3 547.5,69.7 546.4,69.0 545.3,68.2 544.3,67.4 543.3,66.6 542.3,65.7 541.4,64.7 540.6,63.7 539.8,62.7 539.0,61.6 538.3,60.5 537.7,59.3 537.2,58.2 536.7,57.0 536.2,55.7 535.9,54.5" class="ln thin"/><polyline points="602.0,64.1 601.1,66.3 600.1,68.4 599.0,70.5 597.7,72.5 596.4,74.5 595.0,76.3 593.4,78.1 591.8,79.8 590.1,81.4 588.3,83.0 586.5,84.4 584.5,85.7 582.5,87.0 580.4,88.1 578.3,89.1 576.1,90.0 573.9,90.8 571.6,91.5 569.4,92.0 567.0,92.4 564.7,92.8 562.4,92.9 560.0,93.0 557.6,92.9 555.3,92.8 553.0,92.4 550.6,92.0 548.4,91.5 546.1,90.8 543.9,90.0 541.7,89.1 539.6,88.1 537.5,87.0 535.5,85.7 533.5,84.4 531.7,83.0 529.9,81.4 528.2,79.8 526.6,78.1 525.0,76.3 523.6,74.5 522.3,72.5 521.0,70.5 519.9,68.4 518.9,66.3 518.0,64.1" class="ln thin"/><polyline points="616.3,80.5 614.5,83.4 612.6,86.2 610.5,88.9 608.3,91.5 606.0,94.0 603.5,96.3 600.9,98.5 598.2,100.6 595.4,102.5 592.5,104.3 589.5,105.9 586.4,107.4 583.3,108.7 580.1,109.8 576.8,110.8 573.5,111.6 570.2,112.2 566.8,112.6 563.4,112.9 560.0,113.0 556.6,112.9 553.2,112.6 549.8,112.2 546.5,111.6 543.2,110.8 539.9,109.8 536.7,108.7 533.6,107.4 530.5,105.9 527.5,104.3 524.6,102.5 521.8,100.6 519.1,98.5 516.5,96.3 514.0,94.0 511.7,91.5 509.5,88.9 507.4,86.2 505.5,83.4 503.7,80.5" class="ln thin"/><circle cx="560" cy="48" r="3.5" class="solid"/><text x="560" y="26" class="lbl-sm" text-anchor="middle">Origin (surface flaw)</text><text x="560" y="126" class="lbl-sm" text-anchor="middle">Beach marks</text><text x="560" y="158" class="lbl-sm" text-anchor="middle">Final fast</text><text x="560" y="174" class="lbl-sm" text-anchor="middle">fracture</text><text x="560" y="246" class="lbl-b" text-anchor="middle">(b) Fatigue fracture surface</text>
+</svg>
+<figcaption>Fig. 2.14 — (a) Fluctuating stress cycle. (b) Fatigue fracture surface.</figcaption>
+</figure>
+<figure class="photo"><img src="img/mse-u2-fatigue-crank.jpg" alt="Broken bicycle crank showing smooth beach marks and a rough final fracture zone" width="900" height="650" loading="lazy"><figcaption>Fatigue failure of a bicycle crank: the dark smooth zone with beach marks is the slow crack growth; the bright rough zone is the sudden final fracture. <span class="credit">Photo: Oxensepp · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+<p>Stress cycle terms: σmax, σmin, mean stress σm = (σmax + σmin)/2, stress range Δσ = σmax − σmin, amplitude σa = Δσ/2 and ratio R = σmin/σmax. Fully reversed bending has σm = 0 and R = −1.</p>
+<p>The <b>S–N curve</b> (Fig. 2.15) plots stress amplitude S against the number of cycles to failure N (log scale). Steels and titanium show a horizontal part: below the <b>endurance limit (fatigue limit) S<sub>e</sub></b> the life is infinite (about 10⁷ cycles is taken). Aluminium, copper and magnesium alloys show no such limit; their <b>fatigue strength</b> is the stress for a set life such as 10⁸ cycles. For steels S<sub>e</sub> ≈ 0.5 × UTS.</p>
+<figure class="fig" id="mse-u2-f-sn">
+<svg viewBox="0 0 680 340" role="img" aria-label="S N curves for steel with endurance limit and aluminium without one">
+<defs><marker id="mse-u2-arw-sn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="290" x2="640" y2="290" class="ln" marker-end="url(#mse-u2-arw-sn)"/><line x1="80" y1="290" x2="80" y2="30" class="ln" marker-end="url(#mse-u2-arw-sn)"/><text x="360.0" y="334" class="lbl" text-anchor="middle">Number of cycles to failure, N (log scale)</text><text x="26" y="160.0" class="lbl" text-anchor="middle" transform="rotate(-90 26 160.0)">Stress amplitude, S (MPa)</text><line x1="130" y1="290" x2="130" y2="296" class="ln"/><text x="130" y="312" class="lbl-sm" text-anchor="middle">10³</text><line x1="210" y1="290" x2="210" y2="296" class="ln"/><text x="210" y="312" class="lbl-sm" text-anchor="middle">10⁴</text><line x1="290" y1="290" x2="290" y2="296" class="ln"/><text x="290" y="312" class="lbl-sm" text-anchor="middle">10⁵</text><line x1="370" y1="290" x2="370" y2="296" class="ln"/><text x="370" y="312" class="lbl-sm" text-anchor="middle">10⁶</text><line x1="450" y1="290" x2="450" y2="296" class="ln"/><text x="450" y="312" class="lbl-sm" text-anchor="middle">10⁷</text><line x1="530" y1="290" x2="530" y2="296" class="ln"/><text x="530" y="312" class="lbl-sm" text-anchor="middle">10⁸</text><path d="M130,70 C220,90 330,150 410,166 L620,166" class="ln thick"/><path d="M130,108 C260,150 420,215 620,262" class="ln acc thick"/><line x1="80" y1="166" x2="410" y2="166" class="ln thin dash"/><text x="72" y="170" class="lbl" text-anchor="end">Se</text><text x="540" y="150" class="lbl-sm" text-anchor="middle">Steel: endurance limit Se</text><text x="300" y="100" class="lbl-sm" text-anchor="start">Steel (ferrous)</text><line x1="530" y1="292" x2="530" y2="239.000328875" class="ln thin dash"/><line x1="80" y1="239.000328875" x2="530" y2="239.000328875" class="ln thin dash"/><circle cx="530" cy="239.000328875" r="3.5" class="solid"/><text x="72" y="243.000328875" class="lbl" text-anchor="end">Sf</text><text x="250" y="262" class="lbl-sm" text-anchor="start">Non-ferrous (Al, Cu): no limit;</text><text x="250" y="278" class="lbl-sm" text-anchor="start">use Sf at 10⁸ cycles</text><text x="200" y="40" class="lbl-sm" text-anchor="middle">Low-cycle</text><text x="470" y="40" class="lbl-sm" text-anchor="middle">High-cycle</text><line x1="330" y1="34" x2="330" y2="60" class="ln thin dash"/>
+</svg>
+<figcaption>Fig. 2.15 — S–N curves: steel has an endurance limit Se; aluminium has none.</figcaption>
+</figure>
+<p><b>Fatigue testing</b> uses the R. R. Moore rotating-beam machine (Fig. 2.16). Many identical polished specimens are tested at different stresses; each stress and its life N give one point on the S–N curve.</p>
+<figure class="fig" id="mse-u2-f-moore">
+<svg viewBox="0 0 680 365" role="img" aria-label="R. R. Moore rotating beam fatigue testing machine">
+<defs><marker id="mse-u2-arw-moore" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="14" y="100" width="56" height="62" class="ln fill-soft"/><text x="42" y="92" class="lbl-sm" text-anchor="middle">Motor</text><rect x="70" y="121" width="40" height="20" class="ln"/><path d="M110,122 H190 L250,134 H420 L480,122 H560 V140 H480 L420,128 H250 L190,140 H110 Z" class="ln fill-soft"/><text x="335" y="160" class="lbl-sm" text-anchor="middle">Specimen (waisted)</text><polygon points="150,141 136,168 164,168" class="ln fill-soft"/><line x1="128" y1="168" x2="172" y2="168" class="ln thick"/><polygon points="520,141 506,168 534,168" class="ln fill-soft"/><line x1="498" y1="168" x2="542" y2="168" class="ln thick"/><text x="150" y="188" class="lbl-sm" text-anchor="middle">Bearing</text><text x="520" y="188" class="lbl-sm" text-anchor="middle">Bearing</text><rect x="222" y="142" width="16" height="22" class="ln"/><line x1="230" y1="164" x2="230" y2="204" class="ln"/><rect x="212" y="204" width="36" height="28" class="ln fill-soft"/><text x="230" y="250" class="lbl" text-anchor="middle">W/2</text><rect x="432" y="142" width="16" height="22" class="ln"/><line x1="440" y1="164" x2="440" y2="204" class="ln"/><rect x="422" y="204" width="36" height="28" class="ln fill-soft"/><text x="440" y="250" class="lbl" text-anchor="middle">W/2</text><text x="335" y="200" class="lbl-sm" text-anchor="middle">Loaded bearings</text><rect x="560" y="115" width="50" height="34" class="ln fill-soft"/><text x="585" y="108" class="lbl-sm" text-anchor="middle">Counter</text><polygon points="150,330 230,296 440,296 520,330" class="ln fill-hatch"/><text x="335" y="288" class="lbl-sm" text-anchor="middle">Constant bending moment</text><text x="335" y="352" class="lbl-sm" text-anchor="middle">Bending moment diagram (pure bending in the middle)</text>
+</svg>
+<figcaption>Fig. 2.16 — R. R. Moore rotating-beam fatigue machine (pure bending).</figcaption>
+</figure>
+<p><b>Factors that lower fatigue life:</b> stress concentration (notches, sharp corners, holes), rough surface finish, large size, tensile mean stress, corrosive environment (corrosion fatigue), high temperature, and surface decarburisation. Shot peening and polishing help.</p>
+
+<h3 id="mse-u2-c-creep">8. Creep</h3>
+<p><b>Creep</b> is the slow, permanent deformation of a material under a constant load (stress) over a long time at high temperature, usually above 0.4 Tm (Tm = melting temperature in kelvin). The stress may be below the yield strength. <b>Examples:</b> turbine blades, boiler and steam pipes, furnace parts, lamp filaments, and lead pipes sagging at room temperature.</p>
+<p>A <b>creep curve</b> (Fig. 2.17) plots strain against time at constant stress and temperature. After the instantaneous elastic strain ε₀ there are three stages:</p>
+<ul>
+<li><b>I Primary (transient) creep:</b> the creep rate falls with time because strain hardening makes further flow harder.</li>
+<li><b>II Secondary (steady-state) creep:</b> the rate is constant and at its minimum. Strain hardening and recovery (softening) balance. This is the longest stage.</li>
+<li><b>III Tertiary creep:</b> the rate rises quickly as the area falls (necking), voids form at grain boundaries and the part ruptures.</li>
+</ul>
+<figure class="fig" id="mse-u2-f-creep">
+<svg viewBox="0 0 680 370" role="img" aria-label="Creep curve with primary, secondary and tertiary stages">
+<defs><marker id="mse-u2-arw-creep" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="300" x2="620" y2="300" class="ln" marker-end="url(#mse-u2-arw-creep)"/><line x1="80" y1="300" x2="80" y2="30" class="ln" marker-end="url(#mse-u2-arw-creep)"/><text x="350.0" y="346" class="lbl" text-anchor="middle">Time, t</text><text x="24" y="165.0" class="lbl" text-anchor="middle" transform="rotate(-90 24 165.0)">Creep strain, ε</text><line x1="80" y1="300" x2="80" y2="252" class="ln acc thick"/><polyline points="80.0,252.0 82.3,249.3 84.6,246.6 86.9,244.1 89.3,241.7 91.7,239.3 94.2,237.1 96.7,234.9 99.2,232.8 101.8,230.8 104.4,228.9 107.0,227.1 109.7,225.3 112.4,223.6 115.2,222.0 118.0,220.4 120.8,218.9 123.7,217.5 126.6,216.1 129.5,214.8 132.5,213.5 135.5,212.3 138.6,211.1 141.7,210.0 144.8,208.9 148.0,207.9 151.2,206.9 154.4,206.0 157.7,205.1 161.0,204.2 164.4,203.3 167.8,202.5 171.2,201.7 174.7,201.0 178.2,200.2 181.7,199.5 185.3,198.8 188.9,198.1 192.6,197.4 196.3,196.7 200.0,196.0" class="ln thick"/><line x1="200" y1="196" x2="410" y2="130" class="ln thick"/><polyline points="410.0,130.0 413.0,128.9 416.0,127.7 419.0,126.5 422.0,125.3 425.0,124.1 428.0,122.8 430.9,121.5 433.9,120.2 436.9,118.9 439.8,117.5 442.8,116.0 445.7,114.6 448.7,113.0 451.6,111.5 454.5,109.9 457.4,108.2 460.2,106.5 463.1,104.7 465.9,102.9 468.8,101.0 471.6,99.1 474.3,97.1 477.1,95.0 479.8,92.8 482.6,90.6 485.3,88.4 487.9,86.0 490.6,83.6 493.2,81.1 495.8,78.5 498.3,75.9 500.9,73.1 503.4,70.3 505.9,67.4 508.3,64.4 510.7,61.3 513.1,58.1 515.4,54.9 517.7,51.5 520.0,48.0" class="ln thick"/><line x1="514" y1="42" x2="526" y2="54" class="ln thick"/><line x1="514" y1="54" x2="526" y2="42" class="ln thick"/><line x1="200" y1="300" x2="200" y2="196" class="ln thin dash"/><line x1="410" y1="300" x2="410" y2="130" class="ln thin dash"/><line x1="520" y1="300" x2="520" y2="48" class="ln thin dash"/><text x="66" y="278" class="lbl" text-anchor="end">ε₀</text><line x1="80" y1="252" x2="70" y2="252" class="ln"/><text x="140" y="320" class="lbl-sm" text-anchor="middle">I  Primary</text><text x="305" y="320" class="lbl-sm" text-anchor="middle">II  Secondary</text><text x="465" y="320" class="lbl-sm" text-anchor="middle">III  Tertiary</text><text x="305" y="236" class="lbl-sm" text-anchor="middle">Steady state: constant slope</text><text x="305" y="252" class="lbl-sm" text-anchor="middle">= minimum creep rate dε/dt</text><text x="140" y="246" class="lbl-sm" text-anchor="middle">rate falls</text><text x="468" y="92" class="lbl-sm" text-anchor="end">rate rises</text><text x="528" y="40" class="lbl-sm" text-anchor="start">Rupture</text><path d="M80,252 C100,205 130,170 160,152 L225,118 C250,100 270,75 285,38" class="ln acc2 dash"/><text x="262" y="30" class="lbl-sm" text-anchor="end">higher T or σ</text>
+</svg>
+<figcaption>Fig. 2.17 — Creep curve; dashed line is higher T or σ.</figcaption>
+</figure>
+<aside class="tip"><b>Why stage II matters.</b> It lasts most of the life, so it fixes the service life: time to rupture ≈ allowable strain ÷ steady-state creep rate. Designers pick stress and temperature to keep the minimum creep rate low.</aside>
+<p><b>Creep properties:</b> minimum (steady-state) creep rate, creep strength (stress for a given creep strain in a given time), rupture life and stress-rupture strength. A higher temperature or stress makes creep faster. <b>Creep-resistant:</b> nickel superalloys, stainless and Cr–Mo steels, ceramics.</p>
+<p><b>Stress relaxation</b> (Fig. 2.18) is the fall of stress with time in a part held at constant total strain, for example a tightened bolt or a press-fit at high temperature. Elastic strain converts slowly into creep strain. For a simple (Maxwell) model σ = σ₀e<sup>−t/τ</sup>, where τ is the relaxation time (the time for σ to fall to 37 % of σ₀).</p>
+<figure class="fig" id="mse-u2-f-relax">
+<svg viewBox="0 0 600 260" role="img" aria-label="Stress relaxation curve at constant strain">
+<defs><marker id="mse-u2-arw-relax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="70" y1="210" x2="540" y2="210" class="ln" marker-end="url(#mse-u2-arw-relax)"/><line x1="70" y1="210" x2="70" y2="20" class="ln" marker-end="url(#mse-u2-arw-relax)"/><text x="305.0" y="250" class="lbl" text-anchor="middle">Time, t</text><text x="22" y="115.0" class="lbl" text-anchor="middle" transform="rotate(-90 22 115.0)">Stress, σ</text><polyline points="70.0,40.0 75.0,45.6 80.0,51.0 85.0,56.2 90.0,61.2 95.0,66.1 100.0,70.8 105.0,75.4 110.0,79.8 115.0,84.1 120.0,88.2 125.0,92.2 130.0,96.0 135.0,99.8 140.0,103.4 145.0,106.9 150.0,110.3 155.0,113.5 160.0,116.7 165.0,119.8 170.0,122.7 175.0,125.6 180.0,128.3 185.0,131.0 190.0,133.6 195.0,136.1 200.0,138.5 205.0,140.9 210.0,143.1 215.0,145.3 220.0,147.5 225.0,149.5 230.0,151.5 235.0,153.4 240.0,155.3 245.0,157.1 250.0,158.8 255.0,160.5 260.0,162.1 265.0,163.7 270.0,165.2 275.0,166.7 280.0,168.1 285.0,169.5 290.0,170.8 295.0,172.1 300.0,173.3 305.0,174.5 310.0,175.7 315.0,176.8 320.0,177.9 325.0,178.9 330.0,180.0 335.0,180.9 340.0,181.9 345.0,182.8 350.0,183.7 355.0,184.6 360.0,185.4 365.0,186.2 370.0,187.0 375.0,187.7 380.0,188.5 385.0,189.2 390.0,189.9 395.0,190.5 400.0,191.2 405.0,191.8 410.0,192.4 415.0,193.0 420.0,193.5 425.0,194.1 430.0,194.6 435.0,195.1 440.0,195.6 445.0,196.0 450.0,196.5 455.0,196.9 460.0,197.4 465.0,197.8 470.0,198.2 475.0,198.6 480.0,198.9 485.0,199.3 490.0,199.7 495.0,200.0 500.0,200.3 505.0,200.6 510.0,201.0 515.0,201.2 520.0,201.5" class="ln thick"/><line x1="70" y1="40" x2="220" y2="210" class="ln acc2 dash"/><line x1="220" y1="210" x2="220" y2="148" class="ln thin dash"/><line x1="70" y1="148" x2="220" y2="148" class="ln thin dash"/><text x="62" y="44" class="lbl" text-anchor="end">σ₀</text><text x="62" y="152" class="lbl-sm" text-anchor="end">0.37σ₀</text><text x="220" y="228" class="lbl" text-anchor="middle">τ</text><text x="300" y="90" class="lbl" text-anchor="start">σ = σ₀ e<tspan dy="-7" font-size="11">−t/τ</tspan></text><text x="300" y="112" class="lbl-sm" text-anchor="start">constant total strain</text>
+</svg>
+<figcaption>Fig. 2.18 — Stress relaxation at constant strain; τ = relaxation time.</figcaption>
+</figure>
+
+<h3 id="mse-u2-c-alloys">9. Alloys, steels and solidification (brief)</h3>
+<p>An <b>alloy</b> has two or more elements, at least one a metal. Alloying raises strength and hardness (solute atoms block dislocations) and improves corrosion resistance. A solute is <i>substitutional</i> (Cu in Ni) or <i>interstitial</i> (C in Fe).</p>
+<p><b>Steel</b> is iron with up to about 2 % carbon (cast iron 2–4.5 %; eutectoid steel 0.8 % C). Low-carbon steel (up to 0.25 % C) is soft and ductile, medium (0.25–0.6 %) is balanced, high (0.6–1.4 %) is hard. Alloy steels add Cr, Ni, Mo, V, Mn, W or Si; stainless steel has over 11.5 % Cr.</p>
+<p><b>Solidification</b> has two steps: <b>nucleation</b> (stable nuclei form after slight undercooling; <i>homogeneous</i> in the pure melt, <i>heterogeneous</i> on walls or impurities) and <b>growth</b> (grains grow until they meet at grain boundaries). A pure metal freezes at one temperature, so the cooling curve (Fig. 2.19) has a flat plateau at Tm while latent heat leaves. Fast cooling gives fine grains.</p>
+<figure class="fig" id="mse-u2-f-cooling">
+<svg viewBox="0 0 680 345" role="img" aria-label="Cooling curve of a pure metal showing undercooling and a constant temperature plateau">
+<defs><marker id="mse-u2-arw-cooling" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="290" x2="640" y2="290" class="ln" marker-end="url(#mse-u2-arw-cooling)"/><line x1="80" y1="290" x2="80" y2="30" class="ln" marker-end="url(#mse-u2-arw-cooling)"/><text x="360.0" y="328" class="lbl" text-anchor="middle">Time, t</text><text x="24" y="160.0" class="lbl" text-anchor="middle" transform="rotate(-90 24 160.0)">Temperature, T</text><path d="M110,40 C165,70 215,105 258,136 L268,142" class="ln thick"/><path d="M268,142 L292,121 L430,121 C470,121 500,160 610,235" class="ln thick"/><line x1="80" y1="121" x2="292" y2="121" class="ln thin dash"/><text x="72" y="125" class="lbl" text-anchor="end">Tm</text><line x1="268" y1="121" x2="268" y2="142" class="ln thin" marker-end="url(#mse-u2-arw-cooling)" marker-start="url(#mse-u2-arw-cooling)"/><text x="302" y="160" class="lbl-sm" text-anchor="start">ΔT undercooling</text><line x1="292" y1="121" x2="292" y2="290" class="ln thin dash"/><line x1="430" y1="121" x2="430" y2="290" class="ln thin dash"/><text x="361" y="92" class="lbl-sm" text-anchor="middle">Solidification at constant Tm</text><text x="361" y="108" class="lbl-sm" text-anchor="middle">(latent heat released)</text><text x="190" y="272" class="lbl" text-anchor="middle">Liquid</text><text x="361" y="272" class="lbl" text-anchor="middle">Liquid + solid</text><text x="535" y="272" class="lbl" text-anchor="middle">Solid</text><text x="190" y="60" class="lbl-sm" text-anchor="start">Liquid cools</text><text x="560" y="182" class="lbl-sm" text-anchor="start">Solid cools</text>
+</svg>
+<figcaption>Fig. 2.19 — Cooling curve of a pure metal; ΔT = undercooling.</figcaption>
+</figure>
+
+<h3 id="mse-u2-c-cards">Key terms</h3>
+<dl class="cards">
+<dt>Elasticity</dt><dd>The property of regaining the original size and shape when the load is removed.</dd>
+<dt>Plasticity</dt><dd>The property of undergoing permanent deformation without breaking.</dd>
+<dt>Yield strength</dt><dd>The stress at which plastic deformation begins (0.2 % proof stress if there is no sharp yield point).</dd>
+<dt>UTS</dt><dd>The maximum engineering stress a material withstands before necking: σu = Pmax/A₀.</dd>
+<dt>Endurance limit</dt><dd>The stress amplitude below which a material never fails by fatigue.</dd>
+<dt>Creep</dt><dd>Slow, time-dependent plastic strain under constant stress at high temperature.</dd>
+<dt>Fracture toughness K<sub>IC</sub></dt><dd>The critical stress intensity at which a crack runs (Mode I, plane strain), in MPa√m.</dd>
+</dl>
+
+<div class="quiz" id="mse-u2-quiz">
+<div class="mcq" data-answer="b"><p class="stem">The slope of the elastic part of the stress–strain curve is</p><ol class="opts"><li>yield strength</li><li>Young's modulus</li><li>toughness</li><li>ductility</li></ol><p class="why">Slope = σ/e = E, the measure of stiffness.</p></div>
+<div class="mcq" data-answer="c"><p class="stem">An engineering strain of 0.10 equals a true strain of</p><ol class="opts"><li>0.10</li><li>0.11</li><li>0.095</li><li>0.20</li></ol><p class="why">εT = ln(1.10) = 0.0953.</p></div>
+<div class="mcq" data-answer="d"><p class="stem">Which test measures the depth of the impression and reads a dial?</p><ol class="opts"><li>Brinell</li><li>Vickers</li><li>Izod</li><li>Rockwell</li></ol><p class="why">Rockwell uses the depth h under minor and major load.</p></div>
+<div class="mcq" data-answer="c"><p class="stem">Griffith's criterion shows that fracture stress</p><ol class="opts"><li>rises with crack length</li><li>is independent of crack length</li><li>falls as the square root of crack length rises</li><li>depends only on yield stress</li></ol><p class="why">σf = √(2Eγ/πa): σf ∝ 1/√a.</p></div>
+<div class="mcq" data-answer="b"><p class="stem">The longest stage of creep, which fixes the design life, is</p><ol class="opts"><li>primary</li><li>secondary</li><li>tertiary</li><li>instantaneous</li></ol><p class="why">Secondary creep has the constant minimum rate and lasts the longest.</p></div>
+<div class="mcq" data-answer="d"><p class="stem">Twinning differs from slip because in twinning</p><ol class="opts"><li>atoms move whole spacings</li><li>there is no change of lattice orientation</li><li>it produces the largest strains</li><li>the deformed region is a mirror image of the parent</li></ol><p class="why">Atoms shift fractions of a spacing across a twin plane.</p></div>
+</div>
+</section>
+
+<section class="part" id="mse-u2-theory" data-part="theory">
+<h2>Theory questions</h2>
+<p class="note-line">Each model answer is laid out for 10 marks: definition, neat labelled sketch, points, then the closing items the question asks for. Redraw the sketch named in each answer.</p>
+
+<article class="q" id="mse-u2-q1" data-marks="10">
+<h3>Q1. Define fracture. List the various types of fracture in materials and explain.</h3>
+<p class="q-src">MSE QB Q10 · Mar-Apr 2021 (CBCS) Q4(b) · Apr 2022 (CBCS) Q7(a)</p>
+<p class="q-hint">Definition, ductile and brittle types with sketches (Fig. 2.10), points of difference.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Definition.</b> Fracture is the separation of a solid body into two or more pieces under an applied stress. It happens in two steps: crack formation, then crack propagation.</p>
+<p><b>Types.</b> By the amount of plastic deformation before failure, fracture is of two main types (a third, fatigue fracture, comes from cyclic loading).</p>
+<ol>
+<li><b>Ductile fracture.</b> Large plastic strain; a neck forms first. A round bar breaks in a cup-and-cone shape (highly ductile metals such as gold or lead neck down to a point). Crack growth is slow and stable, the surface is dull and fibrous, and 45° shear lips form at the edge. It gives warning and absorbs much energy.</li>
+<li><b>Brittle fracture.</b> Almost no plastic strain, no neck. The crack runs very fast across the section, along cleavage planes (transgranular) or grain boundaries (intergranular). The surface is flat, bright and granular, often with chevron marks. It is sudden, with no warning, and the energy is low. It is favoured by low temperature, high strain rate, notches and BCC or HCP metals.</li>
+<li><b>Fatigue fracture.</b> Cyclic stress below yield starts a surface crack that grows with each cycle (beach marks) until sudden final fracture. See Q10.</li>
+</ol>
+<p>Sketch Fig. 2.10: (a) point-neck, (b) cup-and-cone, (c) flat brittle fracture.</p>
+<p><b>Difference table.</b></p><div class="tbl"><table><thead><tr><th>Point</th><th>Ductile fracture</th><th>Brittle fracture</th></tr></thead><tbody>
+<tr><td>Plastic deformation</td><td>Large; necking visible</td><td>Very little; no neck</td></tr>
+<tr><td>Crack growth</td><td>Slow, needs rising stress (stable)</td><td>Fast, nearly at the speed of sound (unstable)</td></tr>
+<tr><td>Energy absorbed</td><td>High</td><td>Low</td></tr>
+<tr><td>Fracture surface</td><td>Fibrous, dull, 45° shear lips</td><td>Flat, shiny, granular; chevron or river marks</td></tr>
+<tr><td>Path</td><td>Transgranular</td><td>Cleavage (transgranular) or intergranular</td></tr>
+<tr><td>Warning</td><td>Yes</td><td>None</td></tr>
+<tr><td>Favoured by</td><td>Soft FCC metals, high temperature</td><td>Low temperature, high strain rate, notches, BCC and HCP metals, ceramics</td></tr>
+</tbody></table></div>
+
+</details></article>
+
+<article class="q" id="mse-u2-q2" data-marks="10">
+<h3>Q2. With a neat diagram, explain the stress–strain curve for a tensile specimen. Compare ductile and brittle materials.</h3>
+<p class="q-src">MSE QB Q11 · Nov-Dec 2025 Q3(a)</p>
+<p class="q-hint">Draw the labelled curve (O, A, B, C, E, F), explain each point, then ductile versus brittle curve.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Test.</b> A standard specimen (gauge length L₀, area A₀) is pulled in a universal testing machine. For each load P the engineering stress σ = P/A₀ and strain e = ΔL/L₀ are plotted.</p>
+<p><b>Sketch:</b> Fig. 2.2 (axes: strain on x, stress on y; label O, A, B, C, E, F, σy, σu).</p>
+<ol>
+<li><b>O to A:</b> straight line, Hooke's law; slope = E. A is the proportional limit; the elastic limit is very near A. Unloading returns to O.</li>
+<li><b>B and C:</b> upper and lower yield points. Plastic flow starts at constant stress; σy = stress at C.</li>
+<li><b>C to E:</b> strain hardening; stress rises with strain. E = UTS, σu = Pmax/A₀.</li>
+<li><b>E to F:</b> necking; the area falls so the engineering stress falls; fracture at F.</li>
+</ol>
+<p><b>Ductile versus brittle.</b> A ductile metal (mild steel) shows yield, UTS and a large strain at fracture (Fig. 2.3a). A brittle material (cast iron, glass) gives a nearly straight curve that ends at fracture with strain below 1 %: no yield point, no necking. Where there is no clear yield point, use the 0.2 % offset stress (Fig. 2.3b).</p>
+<p><b>Values read from the curve:</b> E (slope), σy, σu, % elongation, % reduction in area, toughness (area).</p>
+</details></article>
+
+<article class="q" id="mse-u2-q3" data-marks="10">
+<h3>Q3. Define stiffness, yield strength, ductility and toughness with the help of the stress–strain diagram. Define the mechanical properties: elasticity, plasticity, malleability, resilience, hardness, brittleness.</h3>
+<p class="q-src">MSE QB Q23 · MSE QB Q44</p>
+<p class="q-hint">Eight short definitions; for the first four mark them on the diagram (Fig. 2.5).</p>
+<details class="answer"><summary>Model answer</summary>
+<div class="tbl"><table><thead><tr><th>Property</th><th>Definition</th><th>Measure / shown on diagram</th></tr></thead><tbody>
+<tr><td>Elasticity</td><td>Ability to regain original shape and size after the load is removed</td><td>Elastic limit; region OA</td></tr>
+<tr><td>Plasticity</td><td>Ability to take permanent deformation without breaking</td><td>Region beyond yield</td></tr>
+<tr><td>Stiffness</td><td>Resistance to elastic deformation</td><td>Slope E of OA (steel 200 GPa)</td></tr>
+<tr><td>Yield strength</td><td>Stress at which plastic deformation begins</td><td>σy (lower yield, or 0.2 % offset)</td></tr>
+<tr><td>Ductility</td><td>Ability to be drawn into wire; plastic strain at fracture</td><td>% elongation, % reduction in area</td></tr>
+<tr><td>Malleability</td><td>Ability to be hammered or rolled into thin sheet</td><td>Gold, Al, Cu, Pb</td></tr>
+<tr><td>Resilience</td><td>Energy stored per unit volume up to the elastic limit</td><td>Area under OA = σy²/2E</td></tr>
+<tr><td>Toughness</td><td>Energy absorbed per unit volume up to fracture</td><td>Total area under the curve</td></tr>
+<tr><td>Hardness</td><td>Resistance to indentation, scratching or wear</td><td>BHN, VHN, HRC</td></tr>
+<tr><td>Brittleness</td><td>Fracture with little or no plastic deformation</td><td>Curve ends near OA; cast iron, glass</td></tr>
+</tbody></table></div>
+<p>Sketch Fig. 2.5: (a) stiffness slope, (b) resilience area, (c) toughness area, (d) ductility strain.</p>
+</details></article>
+
+<article class="q" id="mse-u2-q4" data-marks="10">
+<h3>Q4. Differentiate between the engineering stress–strain curve and the true stress–strain curve. Obtain the relations between true and engineering stress and strain.</h3>
+<p class="q-src">Nov 2024 Q3(a) · Mar-Apr 2021 (CBCS) Q4(a) · Jan 2023 (CBCS)</p>
+<p class="q-hint">Definitions, derivation using constant volume, sketch (Fig. 2.4), difference table.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Definitions.</b> Engineering stress σ = P/A₀, strain e = ΔL/L₀ (original dimensions). True stress σT = P/A, true strain εT = ∫dL/L = ln(L/L₀) (instantaneous dimensions).</p>
+<p><b>Derivation.</b> Up to necking the volume is constant: A₀L₀ = AL, so A = A₀L₀/L = A₀/(1 + e) since L/L₀ = 1 + e.</p>
+<ol>
+<li>σT = P/A = P(1 + e)/A₀ = σ(1 + e).</li>
+<li>εT = ln(L/L₀) = ln(1 + e).</li>
+<li>Also εT = ln(A₀/A), the form used after necking.</li>
+</ol>
+<p><b>Sketch:</b> Fig. 2.4 (true curve above and rising; engineering curve falling after UTS).</p>
+<div class="tbl"><table><thead><tr><th>Point</th><th>Engineering curve</th><th>True curve</th></tr></thead><tbody>
+<tr><td>Area used</td><td>Original A₀</td><td>Instantaneous A</td></tr>
+<tr><td>After UTS</td><td>Falls (necking)</td><td>Keeps rising to fracture</td></tr>
+<tr><td>Fracture stress</td><td>Lower</td><td>Higher: real stress in the neck</td></tr>
+<tr><td>Strain</td><td>ΔL/L₀</td><td>ln(L/L₀); additive</td></tr>
+<tr><td>Use</td><td>Design with elastic range, quick test data</td><td>Forming analysis, σT = Kε<sup>n</sup></td></tr>
+</tbody></table></div>
+<p>The two are nearly equal below e = 0.02, where (1 + e) ≈ 1. The relations hold only until necking.</p>
+</details></article>
+
+<article class="q" id="mse-u2-q5" data-marks="10">
+<h3>Q5. Explain the Brinell, Vickers and Rockwell hardness tests with neat diagrams. Give the formulae and the merits.</h3>
+<p class="q-src">Nov-Dec 2025 Q3(b) · Jan 2025 Q3(a) · Aug-Sep 2023 · Nov 2024 Q3(b) · Feb-Mar 2022 (CBCS)</p>
+<p class="q-hint">Definition of hardness, then for each test: indenter, load, diagram, formula, merits and limits.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Hardness</b> is the resistance of a material to localised plastic deformation (indentation). Tests are Brinell, Vickers, Rockwell (indentation), Shore (rebound) and Mohs (scratch).</p>
+<p><b>1. Brinell.</b> Ball: hardened steel or carbide, D = 10 mm. Load: 3000 kgf (steel), 500 kgf (soft metals), held 10–30 s. Measure the impression diameter d. Sketch Fig. 2.6.</p>
+<p>\[ \mathrm{BHN}=\frac{2P}{\pi D\left(D-\sqrt{D^2-d^2}\right)}\ \text{kgf/mm}^2 \]</p>
+<p>Merits: averages coarse grains, simple, UTS ≈ 3.45 BHN. Limits: not for hard (&gt; 450) or thin parts; big mark.</p>
+<p><b>2. Vickers.</b> Square diamond pyramid, 136° face angle, load 1–100 kgf. Measure both diagonals. Sketch Fig. 2.7.</p>
+<p>\[ \mathrm{VHN}=\frac{1.854\,P}{d^2},\qquad d=\frac{d_1+d_2}{2} \]</p>
+<p>Merits: one scale for all hardnesses; very accurate; works on thin sheet and small areas; the shape of the impression does not change with the load. Limits: slow; polished surface and microscope needed.</p>
+<p><b>3. Rockwell.</b> Diamond cone (HRA, HRC) or 1/16 in steel ball (HRB). Minor load 10 kgf sets the zero; major load 60, 100 or 150 kgf is added, then removed; the depth increase h is read on the dial: HR = N − h/s. Sketch Fig. 2.8. Merits: fast, direct reading, no microscope, small mark. Limits: less accurate on rough surfaces; many scales.</p><div class="tbl"><table><thead><tr><th>Scale</th><th>Indenter</th><th>Major load</th><th>Used for</th></tr></thead><tbody>
+<tr><td>HRA</td><td>Diamond cone 120°</td><td>60 kgf</td><td>Carbides, thin hard sheet</td></tr>
+<tr><td>HRB</td><td>Steel ball 1/16 in (1.588 mm)</td><td>100 kgf</td><td>Soft steel, brass, aluminium</td></tr>
+<tr><td>HRC</td><td>Diamond cone 120°</td><td>150 kgf</td><td>Hardened steel, tools</td></tr>
+</tbody></table></div>
+
+</details></article>
+
+<article class="q" id="mse-u2-q6" data-marks="10">
+<h3>Q6. Explain briefly, with suitable sketches, plastic deformation by slip and twinning. Compare them.</h3>
+<p class="q-src">MSE QB Q27 · Jun-Jul 2024 Q3(b) · Jan 2025 Q4(b) · Apr 2022 (CBCS) · Jan 2023 (CBCS)</p>
+<p class="q-hint">Sketch Fig. 2.9; define slip plane, direction, system; twin plane; comparison table.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Slip.</b> One part of a crystal slides over the next along a slip plane (densest packing) in a slip direction (closest-packed). Atoms move through whole lattice spacings, so the lattice above and below stays the same and steps (slip lines) appear on the surface. It happens by dislocation motion at stress τ = σ cos φ cos λ equal to the critical resolved shear stress. FCC has 12 slip systems (very ductile), BCC 48, HCP 3.</p>
+<p><b>Twinning.</b> A shear along a twin plane turns the lattice into a mirror image across it. Each plane moves by a fraction of a spacing, proportional to its distance from the twin plane. It needs higher stress than slip; it occurs in BCC and HCP metals at low temperature or under impact, and as annealing twins in FCC.</p>
+<p><b>Sketch:</b> Fig. 2.9 (original, slip, twinned lattice with planes marked).</p>
+<p><b>Comparison.</b></p><div class="tbl"><table><thead><tr><th>Point</th><th>Slip</th><th>Twinning</th></tr></thead><tbody>
+<tr><td>Atom movement</td><td>Whole number of atomic spacings</td><td>Fraction of a spacing, ∝ distance from twin plane</td></tr>
+<tr><td>Lattice after deformation</td><td>Same orientation above and below slip plane</td><td>Mirror image across twin plane</td></tr>
+<tr><td>Surface</td><td>Steps (slip lines)</td><td>Re-oriented region (twin bands)</td></tr>
+<tr><td>Amount of strain</td><td>Large</td><td>Small</td></tr>
+<tr><td>Happens in</td><td>Most metals, at low stress</td><td>BCC, HCP at low temperature or high strain rate; also annealing twins in FCC</td></tr>
+<tr><td>Effect</td><td>Main cause of plastic flow</td><td>Re-orients the lattice so that slip can continue</td></tr>
+</tbody></table></div>
+
+</details></article>
+
+<article class="q" id="mse-u2-q7" data-marks="10">
+<h3>Q7. With a neat diagram, explain briefly the stages in cup-and-cone fracture. Explain ductile fracture with its stages.</h3>
+<p class="q-src">MSE QB Q14 · Nov-Dec 2025 Q4(a) · Nov 2024 Q4(a) · Jan 2025 Q3(b) · Jun-Jul 2024 Q4(a) · Aug-Sep 2023</p>
+<p class="q-hint">Five-stage figure (Fig. 2.11) and the final cup and cone.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Ductile fracture</b> is fracture after large plastic deformation; the usual form in a round tensile bar is cup-and-cone. Stages (sketch Fig. 2.11):</p>
+<ol>
+<li><b>Necking.</b> At UTS, the deformation localises; the neck reduces the area and a triaxial tensile stress develops at its centre.</li>
+<li><b>Microvoid formation.</b> Voids (cavities) nucleate at the neck centre at inclusions and second-phase particles.</li>
+<li><b>Void coalescence.</b> The voids grow and join into a flat, disc-shaped central crack, perpendicular to the load.</li>
+<li><b>Crack spreading and shear lips.</b> The crack spreads outward until the remaining ring of metal is thin; near the surface it turns and runs at about 45° (maximum shear stress), forming shear lips.</li>
+<li><b>Final separation.</b> The bar parts into a <b>cup</b> (concave) and a <b>cone</b> (convex). The central surface is fibrous and dull; the rim is smooth.</li>
+</ol>
+<p><b>Stress–strain features</b> of ductile fracture: yield, strain hardening, UTS, then a falling curve (Fig. 2.2). Energy absorbed is large and there is visible warning.</p>
+</details></article>
+
+<article class="q" id="mse-u2-q8" data-marks="10">
+<h3>Q8. With a neat diagram, discuss Type I, Type II and Type III fracture.</h3>
+<p class="q-src">MSE QB Q12</p>
+<p class="q-hint">Three crack-opening modes (Fig. 2.12); define by displacement direction and give the use.</p>
+<details class="answer"><summary>Model answer</summary>
+<p>A crack in a loaded body can move in three independent ways. Any real load is a mix of these modes. Sketch Fig. 2.12 (block with a slit and force arrows).</p>
+<ol>
+<li><b>Type (Mode) I, opening.</b> Tensile stress acts normal to the crack plane; the two faces move apart. This is the commonest and most dangerous mode; K<sub>IC</sub> is defined for it.</li>
+<li><b>Type (Mode) II, sliding (in-plane shear).</b> Shear stress acts in the crack plane, perpendicular to the crack front; the faces slide over each other in the direction the crack grows.</li>
+<li><b>Type (Mode) III, tearing (out-of-plane shear).</b> Shear stress acts in the crack plane, parallel to the crack front; the faces slide in the "scissors" direction.</li>
+</ol>
+<p>The stress intensity factor of each mode is K<sub>I</sub>, K<sub>II</sub>, K<sub>III</sub>; for Mode I, K<sub>I</sub> = Yσ√(πa), and fracture occurs when K<sub>I</sub> = K<sub>IC</sub>.</p>
+</details></article>
+
+<article class="q" id="mse-u2-q9" data-marks="10">
+<h3>Q9. State Griffith's criterion for brittle fracture and derive σf. What is fracture toughness?</h3>
+<p class="q-src">Syllabus topic · Jan 2023 (CBCS)</p>
+<p class="q-hint">Energy balance for a plate with crack 2a (Fig. 2.13), result σf = √(2Eγ/πa), K<sub>IC</sub>.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Statement.</b> A crack in a brittle solid propagates when the decrease in elastic strain energy from crack growth is at least equal to the increase in surface energy of the new crack faces.</p>
+<p><b>Derivation</b> for a thin plate (thickness t), central crack of length 2a, stress σ:</p>
+<ol>
+<li>Strain energy released: U<sub>e</sub> = −πσ²a²t/E.</li>
+<li>Surface energy: U<sub>s</sub> = 2 × (2a·t) × γ = 4aγt.</li>
+<li>Total U = 4aγt − πσ²a²t/E (sketch Fig. 2.13b: it peaks at the critical length).</li>
+<li>Put dU/da = 0: 4γt = 2πσ²at/E, so σ² = 2Eγ/πa.</li>
+</ol>
+<p>\[ \sigma_f=\sqrt{\frac{2E\gamma}{\pi a}} \]</p>
+<p>A crack longer than a<sub>c</sub> = 2Eγ/πσ² grows without limit. In metals, 2γ is replaced by 2(γ + γp) because plastic work γp at the tip is large.</p>
+<p><b>Fracture toughness</b> K<sub>IC</sub> is the critical value of the Mode I stress intensity factor K = Yσ√(πa) at which a crack propagates in plane strain; unit MPa√m. It is the material property that replaces yield strength in damage-tolerant design: σc = K<sub>IC</sub>/(Y√(πa)).</p>
+</details></article>
+
+<article class="q" id="mse-u2-q10" data-marks="10">
+<h3>Q10. Define fatigue. Explain the R. R. Moore fatigue testing method with the S–N diagram. Define endurance limit. Explain the mechanism of fatigue failure and the factors affecting fatigue life.</h3>
+<p class="q-src">MSE QB Q15 · Nov-Dec 2025 Q4(b) · Nov 2024 Q4(b) · Aug-Sep 2023 · Mar-Apr 2021 (CBCS) Q5(a) · Apr 2022 (CBCS) Q7(b)</p>
+<p class="q-hint">Definition, machine sketch (Fig. 2.16), S–N curve (Fig. 2.15), endurance limit, factors.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Fatigue</b> is the failure of a material under repeated or fluctuating stress, at a stress much lower than the static tensile or yield strength. Stages: crack initiation at a surface flaw, crack growth (beach marks), sudden final fracture.</p>
+<p><b>R. R. Moore test.</b> Sketch Fig. 2.16. A polished, waisted round specimen is held at both ends in a spindle driven by a motor. Weights hang from two bearings near the centre, so the specimen is in <i>pure bending</i> (constant moment) between them. As it rotates, each surface fibre goes from tension to compression and back once per revolution: a fully reversed cycle (σm = 0, R = −1). The bending stress is σ = 32M/πd³ at the waist. A counter records the revolutions N until the specimen breaks.</p>
+<p><b>Procedure and S–N curve.</b> Test about 8–10 identical specimens, each at a lower stress, starting near 2/3 of UTS. Plot the stress amplitude S against log N (Fig. 2.15). Steel gives a curve that becomes horizontal near 10⁶–10⁷ cycles: the stress there is the <b>endurance limit S<sub>e</sub></b>, the highest amplitude that can be applied for an infinite number of cycles without failure. For steels S<sub>e</sub> ≈ 0.5 × UTS. Non-ferrous metals have no limit; the fatigue strength at 10⁸ cycles is quoted.</p>
+<p><b>Mechanism.</b> (1) Crack initiation: repeated slip makes slip bands, extrusions and intrusions at the surface; notches and inclusions start cracks earlier. (2) Crack propagation: each cycle adds a striation; the smooth, beach-marked area grows from the origin (Fig. 2.14b). (3) Final fracture: the remaining section breaks suddenly (rough zone).</p>
+<div class="tbl"><table><thead><tr><th>Factor</th><th>Effect</th><th>Remedy</th></tr></thead><tbody>
+<tr><td>Stress concentration</td><td>Notches, holes, keyways start cracks</td><td>Large fillets</td></tr>
+<tr><td>Surface finish</td><td>Rough surface lowers S<sub>e</sub></td><td>Polish, grind</td></tr>
+<tr><td>Mean stress</td><td>Tensile mean stress lowers life</td><td>Reduce σm</td></tr>
+<tr><td>Corrosion, temperature, size</td><td>Corrosion fatigue; high T and large size lower S<sub>e</sub></td><td>Coatings, design allowance</td></tr>
+<tr><td>Residual stress</td><td>Compressive helps, tensile hurts</td><td>Shot peening, case hardening</td></tr>
+</tbody></table></div>
+<p>Fatigue properties: S<sub>e</sub>, fatigue strength, fatigue life, notch sensitivity. Stress cycle: Fig. 2.14a (σmax, σmin, σm, σa).</p>
+</details></article>
+
+
+<article class="q" id="mse-u2-q11" data-marks="10">
+<h3>Q11. Define creep. Explain the three stages of creep with a neat graph. Why is the second stage very important?</h3>
+<p class="q-src">MSE QB Q13 · MSE QB Q18 · Jan 2025 Q4(a) · Jun-Jul 2024 Q4(b) · Mar-Apr 2021 (CBCS) Q5(b) · Jan 2023 (CBCS)</p>
+<p class="q-hint">Definition with examples, curve (Fig. 2.17), the three stages, importance of stage II, factors, stress relaxation.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Creep</b> is the slow, time-dependent permanent deformation of a material under a constant stress, usually at a temperature above about 0.4 Tm. Examples: turbine blades, boiler and steam pipes, furnace parts, lamp filaments.</p>
+<p><b>Curve</b> (Fig. 2.17): strain on the y-axis, time on the x-axis, at constant stress and temperature. After the instantaneous strain ε₀:</p>
+<ol>
+<li><b>Primary creep:</b> decreasing rate (strain hardening is faster than recovery).</li>
+<li><b>Secondary creep:</b> constant, minimum rate (hardening balances recovery); a straight line.</li>
+<li><b>Tertiary creep:</b> accelerating rate; necking, grain-boundary voids and cracks; ends in rupture.</li>
+</ol>
+<p><b>Why the second stage is important.</b></p>
+<ul>
+<li>It covers most of the life of a component.</li>
+<li>Its slope, the minimum creep rate, is a constant material property at given σ and T; strain at any time = ε₀ + (dε/dt)·t.</li>
+<li>So designers use it to predict the life and set the allowable stress and temperature (for example, 1 % strain in 10⁵ h).</li>
+<li>Tertiary creep is too rapid and risky to be allowed in service.</li>
+</ul>
+<p><b>Factors:</b> higher stress, higher temperature, finer grains, and low melting point increase the creep rate. Resistant materials: nickel superalloys, Cr–Mo steels, ceramics. Stress relaxation is the related fall of stress at constant strain (Fig. 2.18).</p>
+</details></article>
+
+<article class="q" id="mse-u2-q12" data-marks="10">
+<h3>Q12. Discuss the effect of alloying elements in steel. Discuss brittle and ductile fracture with clear difference.</h3>
+<p class="q-src">MSE QB Q16 · Apr 2022 (CBCS) Q7(a)</p>
+<p class="q-hint">Table of elements and effects; then the difference table of the two fractures.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Alloying elements in steel.</b> Alloy steels carry Cr, Ni, Mn, Mo, V, W and Si to improve properties that carbon steel cannot give.</p>
+<div class="tbl"><table><thead><tr><th>Element</th><th>Effect</th><th>Use</th></tr></thead><tbody>
+<tr><td>Chromium</td><td>Hardenability, wear and corrosion resistance (&gt; 11.5 % gives stainless steel)</td><td>Stainless, tool, bearing steels</td></tr>
+<tr><td>Nickel</td><td>Toughness and strength; stabilises austenite</td><td>Gears, shafts, 18-8 stainless</td></tr>
+<tr><td>Manganese</td><td>Strength, hardenability; cancels sulphur brittleness</td><td>All steels, wear-resistant Mn steel</td></tr>
+<tr><td>Molybdenum</td><td>Hardenability, creep strength; stops temper brittleness</td><td>Boiler, high-temperature steels</td></tr>
+<tr><td>Vanadium</td><td>Fine grain, strength, toughness</td><td>Springs, tool steel</td></tr>
+<tr><td>Tungsten</td><td>Hard carbides, hot hardness</td><td>High-speed steel</td></tr>
+<tr><td>Silicon</td><td>Strengthens ferrite, deoxidiser</td><td>Spring and transformer steel</td></tr>
+</tbody></table></div>
+<p><b>Brittle versus ductile fracture.</b> Write the difference table of Q1 (plastic strain, crack growth, energy, surface, warning, favoured by). Sketch Fig. 2.10.</p>
+</details></article>
+
+<article class="q" id="mse-u2-q13" data-marks="10">
+<h3>Q13. Explain with a cooling curve the solidification of a pure metal. Distinguish homogeneous and heterogeneous nucleation.</h3>
+<p class="q-src">Syllabus topic · MSE QB Q17 · Jun-Jul 2024 Q9(b)</p>
+<p class="q-hint">Cooling curve (Fig. 2.19), nucleation then growth, grain size.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Solidification</b> is the change of a metal from liquid to crystalline solid. Sketch Fig. 2.19: temperature against time.</p>
+<ol>
+<li><b>Liquid cooling:</b> the melt loses superheat and its temperature falls steadily.</li>
+<li><b>Nucleation:</b> the melt must be undercooled slightly (ΔT) below Tm before stable nuclei form. Latent heat then makes the temperature rise back to Tm.</li>
+<li><b>Growth at constant temperature:</b> the plateau at Tm; solid and liquid exist together while latent heat leaves. One temperature, because a pure metal has a single melting point (zero freezing range).</li>
+<li><b>End of solidification:</b> all liquid is gone; the solid grains meet at grain boundaries and then cool down.</li>
+</ol>
+<div class="tbl"><table><thead><tr><th>Point</th><th>Homogeneous nucleation</th><th>Heterogeneous nucleation</th></tr></thead><tbody>
+<tr><td>Where</td><td>Inside the pure melt</td><td>On mould walls, impurities, inoculants</td></tr>
+<tr><td>Undercooling needed</td><td>Large (0.2 Tm)</td><td>Small (0.01–0.1 Tm)</td></tr>
+<tr><td>Occurrence</td><td>Rare, only in laboratory</td><td>Normal in castings</td></tr>
+</tbody></table></div>
+<p>Fast cooling gives many nuclei and fine grains with better strength; slow cooling gives few, coarse grains.</p>
+</details></article>
+</section>
+
+<section class="part" id="mse-u2-numericals" data-part="numericals">
+<h2>Numericals</h2>
+<p class="method"><b>Method.</b> (1) Write the formula for the quantity asked. (2) Convert all data to N, mm, N/mm² (or kgf, mm for hardness; J/m², Pa, m for Griffith). (3) Substitute, compute, and state the unit. For true values: σT = σ(1+e) and εT = ln(1+e) only until necking; use areas after necking. For hardness, units are kgf/mm².</p>
+
+<article class="num" id="mse-u2-n1">
+<h3>N1. A mild steel bar of 16 mm diameter is tested in tension. It yields at a load of 92 kN, reaches a maximum load of 182 kN and breaks at a load of 69 kN. The diameter at the fracture neck is 10 mm. Find (i) yield stress, (ii) ultimate stress, (iii) engineering stress at fracture, (iv) true stress and true strain at fracture. Also find the true stress and true strain at UTS if the engineering strain there is 0.20.</h3>
+<p class="q-src">Based on Mar-Apr 2021 (CBCS)</p>
+<ol class="steps">
+<li>Original area A₀ = π/4 × 16² = 201.06 mm².</li>
+<li>Yield stress σy = 92 000 / 201.06 = 457.6 N/mm².</li>
+<li>Ultimate stress σu = 182 000 / 201.06 = 905.2 N/mm².</li>
+<li>Engineering stress at fracture = 69 000 / 201.06 = 343.2 N/mm².</li>
+<li>Neck area Af = π/4 × 10² = 78.54 mm². True stress at fracture σT = 69 000 / 78.54 = 878.5 N/mm².</li>
+<li>True strain at fracture εT = ln(A₀/Af) = ln(201.06/78.54) = ln 2.56 = 0.940. (After necking use the area form.)</li>
+<li>At UTS (before necking): σT = σu(1 + e) = 905.2 × 1.20 = 1086 N/mm²; εT = ln(1.20) = 0.182.</li>
+</ol>
+<p class="final">Answer: σy = 457.6, σu = 905.2, fracture (engineering) = 343.2 N/mm²; true fracture stress = 878.5 N/mm², true fracture strain = 0.940; at UTS σT = 1086 N/mm², εT = 0.182</p>
+</article>
+
+<article class="num" id="mse-u2-n2">
+<h3>N2. (a) A Brinell test with a 10 mm ball and a load of 3000 kgf leaves an impression of diameter 4.2 mm. Find BHN, the depth of the impression, and the approximate UTS of the steel. (b) A Vickers test with a load of 30 kgf gives a mean diagonal of 0.45 mm. Find VHN.</h3>
+<p class="q-src">Syllabus topic · Based on Aug-Sep 2023</p>
+<ol class="steps">
+<li>BHN = 2P / [πD(D − √(D² − d²))].</li>
+<li>√(D² − d²) = √(100 − 17.64) = √82.36 = 9.075 mm.</li>
+<li>D − 9.075 = 0.925 mm. Denominator = π × 10 × 0.925 = 29.05 mm².</li>
+<li>BHN = 2 × 3000 / 29.05 = 206.5 kgf/mm² (≈ 207).</li>
+<li>Depth h = (D − 9.075)/2 = 0.462 mm. UTS ≈ 3.45 × BHN = 3.45 × 206.5 = 712 MPa.</li>
+<li>(b) VHN = 1.854 P / d² = 1.854 × 30 / 0.45² = 55.62 / 0.2025 = 274.7 kgf/mm².</li>
+</ol>
+<p class="final">Answer: BHN = 206.5 kgf/mm², h = 0.462 mm, UTS ≈ 712 MPa; VHN = 274.7 kgf/mm²</p>
+</article>
+
+<article class="num" id="mse-u2-n3">
+<h3>N3. A glass plate has E = 70 GPa and surface energy γ = 0.3 J/m². It contains an internal crack of length 2a = 2 µm. (a) Find the fracture stress by Griffith's criterion. (b) Find the critical half-length of a crack that would make the plate fail at 50 MPa.</h3>
+<p class="q-src">Syllabus topic · Based on Jan 2023 (CBCS)</p>
+<ol class="steps">
+<li>a = 1 µm = 1 × 10⁻⁶ m. σf = √(2Eγ/πa).</li>
+<li>2Eγ = 2 × 70 × 10⁹ × 0.3 = 4.2 × 10¹⁰ Pa·J/m².</li>
+<li>σf = √(4.2 × 10¹⁰ / (π × 10⁻⁶)) = √(1.337 × 10¹⁶) = 1.156 × 10⁸ Pa = 115.6 MPa.</li>
+<li>(b) a<sub>c</sub> = 2Eγ / (πσ²) = 4.2 × 10¹⁰ / (π × (50 × 10⁶)²) = 4.2 × 10¹⁰ / 7.854 × 10¹⁵ = 5.35 × 10⁻⁶ m = 5.35 µm.</li>
+<li>So a crack of total length 2a<sub>c</sub> = 10.7 µm fails the plate at 50 MPa; longer cracks fail it at lower stress.</li>
+</ol>
+<p class="final">Answer: σf = 115.6 MPa; a<sub>c</sub> = 5.35 µm (crack length 10.7 µm)</p>
+</article>
+
+<h3 id="mse-u2-practice">Practice problems</h3>
+<article class="num practice" id="mse-u2-p1"><h3>P1. A gear of 1020 steel (0.2 % C) is carburised at 927 °C. The surface carbon is held at 1.1 % C. Find the time to raise the carbon content to 0.3 % C at 0.3 mm below the surface. D = 1.28 × 10⁻¹¹ m²/s. Use C<sub>x</sub> = C<sub>s</sub> − (C<sub>s</sub> − C₀) erf(x / 2√(Dt)).</h3>
+<p class="q-src">Based on Jan 2023 (CBCS)</p>
+<aside class="note"><b>Data note.</b> The scanned paper lost its erf table. Use erf(z) = 0.889, so z = 1.13 (from your tables).</aside>
+<p class="final">Answer: (C<sub>s</sub> − C<sub>x</sub>)/(C<sub>s</sub> − C₀) = 0.889; z = 1.13; t = (x/2z)²/D ≈ 1.38 × 10³ s ≈ 23 min (0.385 h)</p></article>
+<article class="num practice" id="mse-u2-p2"><h3>P2. A bolt at high temperature is tightened to an initial stress of 200 MPa. After 1000 h the stress falls to 150 MPa. Assuming σ = σ₀e<sup>−t/τ</sup>, find the relaxation time τ and the time at which the stress falls to 100 MPa.</h3>
+<p class="q-src">Syllabus topic</p>
+<p class="final">Answer: τ = 3476 h; t = 2409 h (about 100 days)</p></article>
+<article class="num practice" id="mse-u2-p3"><h3>P3. A steel plate has a fracture toughness K<sub>IC</sub> = 50 MPa√m. It has an edge crack 2 mm deep (a = 2 mm). Taking Y = 1.1, find the stress at which it fractures.</h3>
+<p class="q-src">Syllabus topic</p>
+<p class="final">Answer: σc = K<sub>IC</sub>/(Y√(πa)) = 573 MPa</p></article>
+</section>
+
+</section>

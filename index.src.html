@@ -680,6 +680,17 @@ function enhance(root,u){
     else if(fin){const b=el("button",{class:"btn sm",type:"button",text:"Show answer"});let shown=false;const draw=()=>{const pr=practice();fin.classList.toggle("hide",pr&&!shown);b.hidden=!pr||shown;};b.addEventListener("click",()=>{shown=true;draw();});fin.before(b);a._draw=draw;draw();}
   });
   $$(".widget",root).forEach(w=>{const f=WIDGETS[w.dataset.widget];if(f){try{f(w);}catch(e){w.textContent="This interactive part could not load.";}}});
+  // model answers: show the sketches they refer to ("Fig. 2.11") inside the answer
+  const FIGRE=/Fig\.?\s*([0-9A-Z]+\.[0-9]+[a-z]?)/g, figNo=t=>{const m=(t||"").match(/Fig\.?\s*([0-9A-Z]+\.[0-9]+[a-z]?)/);return m?m[1]:null;};
+  const figMap={};$$("figure.fig",root).forEach(f=>{if(f.closest("details.answer"))return;const n=figNo($("figcaption",f)?.textContent);if(n&&!figMap[n])figMap[n]=f;});
+  $$("details.answer",root).forEach(d=>d.addEventListener("toggle",()=>{
+    if(!d.open||d.dataset.figs)return;d.dataset.figs="1";
+    const own=new Set($$("figure.fig figcaption",d).map(c=>figNo(c.textContent)));
+    const refs=[...new Set([...d.textContent.matchAll(FIGRE)].map(m=>m[1]))].filter(r=>figMap[r]&&!own.has(r));
+    if(!refs.length)return;
+    const box=el("div",{class:"ans-figs"},el("p",{class:"q-src",text:"Sketches for this answer"}));
+    refs.forEach(r=>{const c=figMap[r].cloneNode(true);c.removeAttribute("id");box.append(c);});d.append(box);
+  }));
 }
 function typeset(){ /* formulas are rendered to SVG at build time */ }
 

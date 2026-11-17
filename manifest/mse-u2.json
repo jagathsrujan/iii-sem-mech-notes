@@ -1,0 +1,26 @@
+[
+ {
+  "file": "img/mse-u2-rockwell-tester.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Rockwell_hardness_tester_001.jpg",
+  "author": "Three-quarter-ten",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "caption": "A Rockwell hardness tester: the dial shows the hardness number directly."
+ },
+ {
+  "file": "img/mse-u2-tensile-fracture.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Aluminiumzugprobe_01.jpg",
+  "author": "HB TUW",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "Real cup-and-cone fracture of a tensile specimen: the neck and the cup with its rough centre and shear-lip rim."
+ },
+ {
+  "file": "img/mse-u2-fatigue-crank.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:0x-kurbel-def.jpg",
+  "author": "Oxensepp",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "caption": "Fatigue failure of a bicycle crank: the dark smooth zone with beach marks is the slow crack growth; the bright rough zone is the sudden final fracture."
+ }
+]
