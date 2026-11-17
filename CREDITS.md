@@ -34,3 +34,6 @@ All photos come from Wikimedia Commons under the licences below. They keep their
 | `img/te-u5-cold-room-units.jpg` | Condensing units, cold-room evaporators and insulated panels. | Mesadbal | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Cold_Room_Products_-_Mix_-_Door_-_Refrigeration_-_Evaporator_-_Panel.jpg) |
 | `img/te-u5-condensing-unit.jpg` | A small refrigeration condensing unit with hermetic compressor. | AnyNameWillExpire | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Condensing_Unit.jpg) |
 | `img/te-u5-coldstore-plant.jpg` | Plant room of an old cold store with a large compressor. | Chris Allen | CC BY-SA 2.0 | [source](https://commons.wikimedia.org/wiki/File:Refrigerating_plant,_Canada_Coldstore,_Brunswick_Place_-_geograph.org.uk_-_684943.jpg) |
+| `img/mse-u1-grains.jpg` | Grains of Armco iron under polarised light. | LBoron | CC0 | [source](https://commons.wikimedia.org/wiki/File:Armco-iron.jpg) |
+| `img/mse-u1-dislocations-tem.jpg` | Weak-beam dark-field TEM image of dislocations. | Liao Yifeng | CC0 | [source](https://commons.wikimedia.org/wiki/File:Weak-beam_dark-field_TEM_image_of_dislocations.jpg) |
+| `img/mse-u1-fcc-cannonballs.jpg` | Stack of spheres in close-packed layers (FCC). | Greg L | CC BY-SA 3.0 | [source](https://commons.wikimedia.org/wiki/File:Cannonball_stack_with_FCC_unit_cell.jpg) |

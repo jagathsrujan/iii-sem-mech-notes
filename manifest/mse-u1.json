@@ -1,0 +1,26 @@
+[
+ {
+  "file": "img/mse-u1-grains.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Armco-iron.jpg",
+  "author": "LBoron",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "caption": "Grains of Armco iron under polarised light."
+ },
+ {
+  "file": "img/mse-u1-dislocations-tem.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Weak-beam_dark-field_TEM_image_of_dislocations.jpg",
+  "author": "Liao Yifeng",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "caption": "Weak-beam dark-field TEM image of dislocations."
+ },
+ {
+  "file": "img/mse-u1-fcc-cannonballs.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Cannonball_stack_with_FCC_unit_cell.jpg",
+  "author": "Greg L",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "caption": "Stack of spheres in close-packed layers (FCC)."
+ }
+]
