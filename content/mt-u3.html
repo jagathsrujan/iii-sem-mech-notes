@@ -1,0 +1,902 @@
+<section class="unit" data-unit="mt-u3">
+  <header class="unit-head">
+    <p class="eyebrow">Manufacturing Technology · Unit 3</p>
+    <h1>Welding, Metal Cutting and Cutting Tools</h1>
+    <p class="lede">This unit covers how metal parts are joined by gas and resistance welding, and how metal is removed with a cutting tool. You learn chip formation, the Merchant force circle, tool geometry, tool materials and tool life. It gives a full 20-mark question in the exam.</p>
+    <ul class="syl">
+      <li>Welding classification, types of welded joints, resistance welding and gas welding</li>
+      <li>Metal cutting: introduction, chip formation, shear zone, shear angle and its significance</li>
+      <li>Orthogonal and oblique cutting, mechanics of orthogonal cutting, Merchant circle diagram, numerical problems</li>
+      <li>Classification of cutting tools: single and multi-point</li>
+      <li>Tool signature for single point cutting tool</li>
+      <li>Cutting tool materials and applications, tool wear</li>
+    </ul>
+  </header>
+
+  <section class="part" id="mt-u3-concepts" data-part="concepts">
+    <h2>Concepts</h2>
+<aside class="exam"><b>Exam pattern.</b> Unit 3 usually gives one 20-mark question with two parts: a 10-mark theory answer (flames, resistance welding, joints, chip types, Merchant circle, tool signature, tool life) and a 10-mark numerical (shear angle, chip thickness ratio, Merchant forces, Taylor equation). The sketches carry half the marks.</aside>
+<h3 id="mt-u3-c-weld">1. Welding and its classification</h3>
+<p><b>Welding</b> is a permanent joining process. It joins two or more parts by heat, or by pressure, or by both, with or without filler metal. The joint is as strong as the parent metal if it is made well.</p>
+<p>We classify welding by the way the joint forms. Fig. 3.1 shows the tree.</p>
+<figure class="fig" id="mt-u3-f-weldtree">
+<svg viewBox="0 0 700 330" role="img" aria-label="Tree: classification of welding and joining processes">
+<defs><marker id="mt-u3-arw-weldtree" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="230.0" y="7.0" width="240" height="34" class="ln fill-acc"/>
+<text x="350" y="28.5" class="lbl-b" text-anchor="middle">Welding and joining processes</text>
+<path d="M350,41 L350,56.5 L115,56.5 L115,72" class="ln thin" fill="none"/>
+<rect x="8.0" y="72.0" width="214" height="44" class="ln fill-acc2"/>
+<text x="115" y="91.0" class="lbl-sm" text-anchor="middle">Fusion welding</text>
+<text x="115" y="106.0" class="lbl-sm" text-anchor="middle">(metal melts, no pressure)</text>
+<line x1="115" y1="116" x2="115" y2="134" class="ln thin"/>
+<rect x="8.0" y="134.0" width="214" height="124" class="ln fill-soft"/>
+<text x="115" y="178.0" class="lbl-sm" text-anchor="middle">Gas welding (oxy-acetylene)</text>
+<text x="115" y="193.0" class="lbl-sm" text-anchor="middle">Arc: SMAW, TIG, MIG, SAW</text>
+<text x="115" y="208.0" class="lbl-sm" text-anchor="middle">Thermit welding</text>
+<text x="115" y="223.0" class="lbl-sm" text-anchor="middle">Electron beam, laser</text>
+<path d="M350,41 L350,56.5 L350,56.5 L350,72" class="ln thin" fill="none"/>
+<rect x="243.0" y="72.0" width="214" height="44" class="ln fill-acc2"/>
+<text x="350" y="91.0" class="lbl-sm" text-anchor="middle">Pressure welding</text>
+<text x="350" y="106.0" class="lbl-sm" text-anchor="middle">(heat + pressure, solid state)</text>
+<line x1="350" y1="116" x2="350" y2="134" class="ln thin"/>
+<rect x="243.0" y="134.0" width="214" height="124" class="ln fill-soft"/>
+<text x="350" y="178.0" class="lbl-sm" text-anchor="middle">Resistance: spot, seam,</text>
+<text x="350" y="193.0" class="lbl-sm" text-anchor="middle">projection, butt (flash)</text>
+<text x="350" y="208.0" class="lbl-sm" text-anchor="middle">Forge welding</text>
+<text x="350" y="223.0" class="lbl-sm" text-anchor="middle">Friction, ultrasonic</text>
+<path d="M350,41 L350,56.5 L585,56.5 L585,72" class="ln thin" fill="none"/>
+<rect x="478.0" y="72.0" width="214" height="44" class="ln fill-acc2"/>
+<text x="585" y="91.0" class="lbl-sm" text-anchor="middle">Joining without</text>
+<text x="585" y="106.0" class="lbl-sm" text-anchor="middle">melting parent metal</text>
+<line x1="585" y1="116" x2="585" y2="134" class="ln thin"/>
+<rect x="478.0" y="134.0" width="214" height="124" class="ln fill-soft"/>
+<text x="585" y="185.5" class="lbl-sm" text-anchor="middle">Brazing (filler above 450 °C)</text>
+<text x="585" y="200.5" class="lbl-sm" text-anchor="middle">Soldering (filler below 450 °C)</text>
+<text x="585" y="215.5" class="lbl-sm" text-anchor="middle">Adhesive bonding</text>
+</svg>
+<figcaption>Fig. 3.1 — Classification of welding processes. This unit covers gas welding and resistance welding.</figcaption>
+</figure>
+<ul><li><b>Fusion welding:</b> the edges of the parent metal melt and fuse, usually with filler metal. No pressure is applied. Examples: gas, arc.</li><li><b>Pressure (solid-state) welding:</b> the metal is heated until plastic and then pressed together. Examples: resistance, forge.</li><li><b>Brazing and soldering</b> join with a filler that melts while the parent metal stays solid. They are not true welding.</li></ul>
+<h3 id="mt-u3-c-joints">2. Types of welded joints</h3>
+<p>The joint type depends on how the two parts lie to each other. Fig. 3.2 shows the five basic types.</p>
+<figure class="fig" id="mt-u3-f-joints">
+<svg viewBox="0 0 700 215" role="img" aria-label="Five types of welded joint: butt, lap, edge, tee and corner">
+<defs><marker id="mt-u3-arw-joints" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<text x="76" y="150" class="lbl-b" text-anchor="middle">Butt joint</text>
+<text x="76" y="172" class="lbl-sm" text-anchor="middle">plates in one plane</text>
+<text x="212" y="150" class="lbl-b" text-anchor="middle">Lap joint</text>
+<text x="212" y="172" class="lbl-sm" text-anchor="middle">plates overlap</text>
+<text x="348" y="150" class="lbl-b" text-anchor="middle">Edge joint</text>
+<text x="348" y="172" class="lbl-sm" text-anchor="middle">edges flush</text>
+<text x="484" y="150" class="lbl-b" text-anchor="middle">Tee joint</text>
+<text x="484" y="172" class="lbl-sm" text-anchor="middle">plates at 90°</text>
+<text x="620" y="150" class="lbl-b" text-anchor="middle">Corner joint</text>
+<text x="620" y="172" class="lbl-sm" text-anchor="middle">edges meet at 90°</text>
+<g transform="translate(10,30) scale(1.1)">
+<polygon points="0,40 52,40 58,64 0,64" class="ln fill-soft"/>
+<polygon points="120,40 68,40 62,64 120,64" class="ln fill-soft"/>
+<polygon points="52,40 68,40 62,64 58,64" class="ln fill-hatch"/>
+<path d="M52,40 Q60,31 68,40" class="ln" fill="none"/>
+</g>
+<g transform="translate(146,20) scale(1.1)">
+<rect x="0" y="36" width="80" height="16" class="ln fill-soft"/>
+<rect x="40" y="52" width="80" height="16" class="ln fill-soft"/>
+<polygon points="80,52 80,40 92,52" class="ln fill-hatch"/>
+<polygon points="40,52 28,52 40,64" class="ln fill-hatch"/>
+</g>
+<g transform="translate(282,25) scale(1.1)">
+<rect x="10" y="30" width="80" height="14" class="ln fill-soft"/>
+<rect x="10" y="44" width="80" height="14" class="ln fill-soft"/>
+<polygon points="90,30 100,36 100,52 90,58" class="ln fill-hatch"/>
+</g>
+<g transform="translate(418,10) scale(1.1)">
+<rect x="52" y="20" width="16" height="48" class="ln fill-soft"/>
+<rect x="10" y="68" width="100" height="16" class="ln fill-soft"/>
+<polygon points="52,68 38,68 52,54" class="ln fill-hatch"/>
+<polygon points="68,68 82,68 68,54" class="ln fill-hatch"/>
+</g>
+<g transform="translate(554,10) scale(1.1)">
+<rect x="20" y="68" width="80" height="14" class="ln fill-soft"/>
+<rect x="20" y="24" width="14" height="44" class="ln fill-soft"/>
+<polygon points="34,68 46,68 34,56" class="ln fill-hatch"/>
+<polygon points="20,82 12,82 20,74" class="ln fill-hatch"/>
+</g>
+<rect x="25" y="188" width="14" height="14" class="ln fill-hatch"/>
+<text x="46" y="200" class="lbl-sm" text-anchor="start">weld metal (hatched)</text>
+</svg>
+<figcaption>Fig. 3.2 — Types of welded joint (end views, weld metal hatched).</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Joint</th><th>Position of parts</th><th>Typical weld</th><th>Use</th></tr></thead><tbody><tr><td>Butt</td><td>Edge to edge in one plane</td><td>V, U or square groove</td><td>Plates, pipes, pressure vessels</td></tr><tr><td>Lap</td><td>One plate overlaps the other</td><td>Fillet on one or both edges</td><td>Sheet metal, tanks</td></tr><tr><td>Edge</td><td>Edges flush, plates side by side</td><td>Weld along the edges</td><td>Thin sheet, light boxes</td></tr><tr><td>Tee</td><td>One plate at 90° on the other</td><td>Fillet on one or both sides</td><td>Frames, stiffeners, brackets</td></tr><tr><td>Corner</td><td>Edges meet at 90°</td><td>Fillet or groove</td><td>Boxes, frames</td></tr></tbody></table></div>
+<h3 id="mt-u3-c-gas">3. Gas welding (oxy-acetylene)</h3>
+<p>In <b>gas welding</b> a flame of fuel gas burnt in oxygen melts the edges of the joint. A filler rod adds metal. Oxy-acetylene gives the hottest flame (about 3200 °C), so it is the most common.</p>
+<figure class="photo"><img src="img/mt-u3-oxy-acetylene-set.jpg" alt="Oxy-acetylene welding set on a trolley with two gas cylinders, regulators, hoses and a torch" width="760" height="1024" loading="lazy"><figcaption>A portable oxy-acetylene set: oxygen and acetylene cylinders with regulators, two hoses and a torch. <span class="credit">Photo: Paul Anderson · CC BY 2.0 · Wikimedia Commons</span></figcaption></figure>
+<p>Fig. 3.3 shows the equipment: two cylinders with regulators and gauges, hoses, and a torch with mixing chamber and nozzle.</p>
+<figure class="fig" id="mt-u3-f-gasset">
+<svg viewBox="0 0 700 390" role="img" aria-label="Oxy-acetylene gas welding set with cylinders, regulators, hoses and torch">
+<defs><marker id="mt-u3-arw-gasset" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70" y="160" width="60" height="190" rx="16" class="ln fill-soft"/>
+<rect x="92" y="136" width="16" height="24" class="ln fill-soft"/>
+<rect x="80" y="114" width="40" height="22" class="ln fill-acc2"/>
+<circle cx="74" cy="98" r="12" class="ln fill-soft"/>
+<circle cx="126" cy="98" r="12" class="ln fill-soft"/>
+<line x1="74" y1="98" x2="78" y2="92" class="ln thin"/>
+<line x1="126" y1="98" x2="130" y2="92" class="ln thin"/>
+<text x="100" y="260" class="lbl-b" text-anchor="middle">O₂</text>
+<rect x="190" y="160" width="60" height="190" rx="16" class="ln fill-soft"/>
+<rect x="212" y="136" width="16" height="24" class="ln fill-soft"/>
+<rect x="200" y="114" width="40" height="22" class="ln fill-acc2"/>
+<circle cx="194" cy="98" r="12" class="ln fill-soft"/>
+<circle cx="246" cy="98" r="12" class="ln fill-soft"/>
+<line x1="194" y1="98" x2="198" y2="92" class="ln thin"/>
+<line x1="246" y1="98" x2="250" y2="92" class="ln thin"/>
+<text x="220" y="260" class="lbl-b" text-anchor="middle">C₂H₂</text>
+<text x="96" y="376" class="lbl" text-anchor="middle">Oxygen cylinder</text>
+<text x="236" y="376" class="lbl" text-anchor="middle">Acetylene cylinder</text>
+<path d="M130,125 C 160,30 350,30 372,186" class="ln thick" fill="none"/>
+<path d="M250,125 C 262,80 340,110 372,204" class="ln thick" fill="none"/>
+<text x="250" y="30" class="lbl-sm" text-anchor="middle">Oxygen hose</text>
+<text x="350" y="236" class="lbl-sm" text-anchor="end">Acetylene hose</text>
+<line x1="354" y1="226" x2="370" y2="208" class="ln thin"/>
+<rect x="372" y="176" width="92" height="34" class="ln fill-soft"/>
+<circle cx="392" cy="164" r="8" class="ln fill-acc2"/>
+<circle cx="424" cy="164" r="8" class="ln fill-acc2"/>
+<text x="470" y="146" class="lbl-sm" text-anchor="middle">control valves</text>
+<line x1="424" y1="150" x2="420" y2="155" class="ln thin"/>
+<line x1="430" y1="150" x2="404" y2="150" class="ln thin"/>
+<line x1="404" y1="150" x2="394" y2="156" class="ln thin"/>
+<rect x="464" y="180" width="44" height="26" class="ln fill-acc2"/>
+<rect x="508" y="189" width="70" height="8" class="ln fill-soft"/>
+<polygon points="578,187 606,192 606,196 578,201" class="ln fill-soft"/>
+<polygon points="606,191 650,206 606,197" class="ln fill-acc"/>
+<rect x="570" y="216" width="120" height="16" class="ln fill-soft"/>
+<line x1="640" y1="150" x2="646" y2="206" class="ln thick"/>
+<text x="486" y="172" class="lbl-sm" text-anchor="middle">mixing chamber</text>
+<line x1="486" y1="176" x2="486" y2="182" class="ln thin"/>
+<text x="540" y="224" class="lbl-sm" text-anchor="middle">lance</text>
+<text x="620" y="138" class="lbl-sm" text-anchor="middle">filler rod</text>
+<text x="630" y="256" class="lbl-sm" text-anchor="middle">workpiece</text>
+<text x="418" y="250" class="lbl-sm" text-anchor="middle">torch handle</text>
+<line x1="418" y1="212" x2="418" y2="238" class="ln thin"/>
+<text x="600" y="176" class="lbl-sm" text-anchor="middle">nozzle</text>
+<line x1="594" y1="181" x2="590" y2="188" class="ln thin"/>
+<text x="100" y="77" class="lbl-sm" text-anchor="middle">gauges</text>
+<text x="220" y="77" class="lbl-sm" text-anchor="middle">gauges</text>
+<text x="60" y="128" class="lbl-sm" text-anchor="end">regulator</text>
+<line x1="64" y1="124" x2="78" y2="124" class="ln thin"/>
+</svg>
+<figcaption>Fig. 3.3 — Oxy-acetylene gas welding set: two cylinders with regulators and gauges, hoses, torch with mixing chamber, nozzle and filler rod.</figcaption>
+</figure>
+<p>The <b>flame type</b> depends on the ratio of oxygen to acetylene. Fig. 3.4 shows the three flames.</p>
+<figure class="fig" id="mt-u3-f-flames">
+<svg viewBox="0 0 700 330" role="img" aria-label="Neutral, carburising and oxidising oxy-acetylene flames">
+<defs><marker id="mt-u3-arw-flames" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<g transform="translate(12,12)">
+<text x="110" y="16" class="lbl-b" text-anchor="middle">Neutral flame</text>
+<rect x="0" y="86" width="34" height="28" class="ln fill-acc2"/>
+<text x="17" y="138" class="lbl-sm" text-anchor="middle">nozzle</text>
+<path d="M34,76 Q110,66 170,100 Q110,134 34,124 Z" class="ln fill-soft"/>
+<path d="M34,90 L78,90 Q92,100 78,110 L34,110 Z" class="ln fill-acc"/>
+<line x1="60" y1="100" x2="60" y2="66" class="ln thin"/>
+<circle cx="60" cy="100" r="2" class="solid"/>
+<text x="38" y="62" class="lbl-sm" text-anchor="start">inner cone</text>
+<line x1="130" y1="112" x2="130" y2="154" class="ln thin"/>
+<circle cx="130" cy="112" r="2" class="solid"/>
+<text x="114" y="168" class="lbl-sm" text-anchor="start">outer envelope</text>
+<text x="110" y="216" class="lbl-sm" text-anchor="middle">O₂ : C₂H₂ = 1 : 1</text>
+<text x="110" y="238" class="lbl-sm" text-anchor="middle">Inner cone about 3200 °C</text>
+<text x="110" y="260" class="lbl-sm" text-anchor="middle">Used for steel, cast iron, copper</text>
+</g>
+<g transform="translate(242,12)">
+<text x="110" y="16" class="lbl-b" text-anchor="middle">Carburising flame</text>
+<rect x="0" y="86" width="34" height="28" class="ln fill-acc2"/>
+<text x="17" y="138" class="lbl-sm" text-anchor="middle">nozzle</text>
+<path d="M34,72 Q120,62 196,100 Q120,138 34,128 Z" class="ln fill-soft"/>
+<path d="M34,82 Q100,76 128,100 Q100,124 34,118 Z" class="ln dash" fill="none"/>
+<path d="M34,92 L82,92 Q94,100 82,108 L34,108 Z" class="ln fill-acc"/>
+<line x1="62" y1="100" x2="62" y2="60" class="ln thin"/>
+<circle cx="62" cy="100" r="2" class="solid"/>
+<text x="18" y="56" class="lbl-sm" text-anchor="start">inner cone</text>
+<line x1="112" y1="84" x2="112" y2="48" class="ln thin"/>
+<circle cx="112" cy="84" r="2" class="solid"/>
+<text x="104" y="44" class="lbl-sm" text-anchor="start">acetylene feather</text>
+<line x1="165" y1="116" x2="165" y2="154" class="ln thin"/>
+<circle cx="165" cy="116" r="2" class="solid"/>
+<text x="134" y="168" class="lbl-sm" text-anchor="start">outer envelope</text>
+<text x="110" y="216" class="lbl-sm" text-anchor="middle">Excess acetylene (O₂ : C₂H₂ below 1)</text>
+<text x="110" y="238" class="lbl-sm" text-anchor="middle">Cooler, sooty, about 3000 °C</text>
+<text x="110" y="260" class="lbl-sm" text-anchor="middle">Used for hard-facing, aluminium</text>
+</g>
+<g transform="translate(472,12)">
+<text x="110" y="16" class="lbl-b" text-anchor="middle">Oxidising flame</text>
+<rect x="0" y="86" width="34" height="28" class="ln fill-acc2"/>
+<text x="17" y="138" class="lbl-sm" text-anchor="middle">nozzle</text>
+<path d="M34,82 Q80,78 112,100 Q80,122 34,118 Z" class="ln fill-soft"/>
+<path d="M34,94 L58,100 L34,106 Z" class="ln fill-acc"/>
+<line x1="46" y1="100" x2="46" y2="64" class="ln thin"/>
+<circle cx="46" cy="100" r="2" class="solid"/>
+<text x="24" y="60" class="lbl-sm" text-anchor="start">short pointed cone</text>
+<line x1="86" y1="112" x2="86" y2="146" class="ln thin"/>
+<circle cx="86" cy="112" r="2" class="solid"/>
+<text x="74" y="160" class="lbl-sm" text-anchor="start">outer envelope</text>
+<text x="110" y="216" class="lbl-sm" text-anchor="middle">Excess oxygen (O₂ : C₂H₂ about 1.5)</text>
+<text x="110" y="238" class="lbl-sm" text-anchor="middle">Hottest, about 3400 °C, hissing</text>
+<text x="110" y="260" class="lbl-sm" text-anchor="middle">Used for brass and bronze</text>
+</g>
+</svg>
+<figcaption>Fig. 3.4 — The three oxy-acetylene flames: neutral, carburising (reducing) and oxidising.</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Flame</th><th>O₂ : C₂H₂</th><th>Appearance</th><th>Effect on metal</th><th>Use</th></tr></thead><tbody><tr><td>Neutral</td><td>1 : 1</td><td>Bright inner cone, clear outline</td><td>Does not change the metal</td><td>Mild steel, cast iron, copper</td></tr><tr><td>Carburising</td><td>Below 1 (excess acetylene)</td><td>Feather around the inner cone</td><td>Adds carbon, cooler flame</td><td>Hard-facing, aluminium, Monel</td></tr><tr><td>Oxidising</td><td>About 1.5 (excess oxygen)</td><td>Short, pointed cone, hisses</td><td>Oxidises metal, hottest flame</td><td>Brass, bronze (stops zinc loss)</td></tr></tbody></table></div>
+<h3 id="mt-u3-c-resistance">4. Resistance welding</h3>
+<p>In <b>resistance welding</b> a large current passes through the joint. The contact resistance makes heat. The parts are then pressed together. No flux, no filler and no gas are needed.</p>
+<div class="formula">\[ H = I^{2} R\, t \]<p class="where">H = heat generated (J), I = current (A), R = resistance of the joint (Ω), t = time of current flow (s).</p></div>
+<p>Current is large (thousands of amperes) and voltage is low (2 to 10 V). A step-down transformer gives this. The electrodes are copper alloy and water cooled. Fig. 3.5 shows spot welding.</p>
+<figure class="fig" id="mt-u3-f-spot">
+<svg viewBox="0 0 700 330" role="img" aria-label="Resistance spot welding: two electrodes squeeze two overlapped sheets while a transformer drives a large current">
+<defs><marker id="mt-u3-arw-spot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="120" y="150" width="220" height="14" class="ln fill-soft"/>
+<rect x="120" y="164" width="220" height="14" class="ln fill-soft"/>
+<rect x="210" y="66" width="40" height="54" class="ln fill-acc2"/>
+<polygon points="215,120 245,120 238,150 222,150" class="ln fill-acc2"/>
+<polygon points="222,178 238,178 245,208 215,208" class="ln fill-acc2"/>
+<rect x="210" y="208" width="40" height="54" class="ln fill-acc2"/>
+<ellipse cx="230" cy="164" rx="17" ry="7" class="ln fill-acc"/>
+<line x1="230" y1="24" x2="230" y2="64" class="ln" marker-end="url(#mt-u3-arw-spot)"/>
+<line x1="230" y1="308" x2="230" y2="266" class="ln" marker-end="url(#mt-u3-arw-spot)"/>
+<text x="246" y="44" class="lbl" text-anchor="start">F</text>
+<text x="246" y="298" class="lbl" text-anchor="start">F</text>
+<text x="14" y="66" class="lbl" text-anchor="start">Electrodes</text>
+<text x="14" y="86" class="lbl-sm" text-anchor="start">(Cu alloy, water cooled)</text>
+<line x1="150" y1="90" x2="208" y2="96" class="ln thin"/>
+<text x="60" y="152" class="lbl-sm" text-anchor="middle">sheets</text>
+<text x="60" y="170" class="lbl-sm" text-anchor="middle">overlapped</text>
+<line x1="244" y1="168" x2="319" y2="204" class="ln thin"/>
+<circle cx="244" cy="168" r="2" class="solid"/>
+<text x="324" y="208" class="lbl-sm" text-anchor="start">weld nugget</text>
+<rect x="490" y="110" width="60" height="140" class="ln" fill="none"/>
+<circle cx="490" cy="126" r="8" class="ln fill-soft"/>
+<circle cx="490" cy="144" r="8" class="ln fill-soft"/>
+<circle cx="490" cy="162" r="8" class="ln fill-soft"/>
+<circle cx="490" cy="180" r="8" class="ln fill-soft"/>
+<circle cx="490" cy="198" r="8" class="ln fill-soft"/>
+<circle cx="490" cy="216" r="8" class="ln fill-soft"/>
+<circle cx="550" cy="160" r="8" class="ln fill-acc"/>
+<circle cx="550" cy="190" r="8" class="ln fill-acc"/>
+<path d="M550,152 L580,152 L580,98 L252,98" class="ln thick" fill="none"/>
+<path d="M550,198 L580,198 L580,236 L252,236" class="ln thick" fill="none"/>
+<path d="M490,118 L440,118 L440,262" class="ln thin" fill="none"/>
+<path d="M490,226 L440,226" class="ln thin" fill="none"/>
+<text x="440" y="282" class="lbl-sm" text-anchor="middle">AC supply</text>
+<text x="440" y="300" class="lbl-sm" text-anchor="middle">(primary, many turns)</text>
+<text x="630" y="160" class="lbl-sm" text-anchor="middle">secondary:</text>
+<text x="630" y="178" class="lbl-sm" text-anchor="middle">few turns,</text>
+<text x="630" y="196" class="lbl-sm" text-anchor="middle">large current I</text>
+<text x="520" y="96" class="lbl-sm" text-anchor="middle">transformer</text>
+</svg>
+<figcaption>Fig. 3.5 — Resistance spot welding: heat H = I²Rt melts a nugget at the sheet interface under electrode force F.</figcaption>
+</figure>
+<figure class="photo"><img src="img/mt-u3-spot-welding-robots.jpg" alt="Orange robots at a car body shop line holding welding guns around a car body shell" width="1000" height="667" loading="lazy"><figcaption>Robots in a car body shop. Most joints in a car body are resistance spot welds. <span class="credit">Photo: BMW Werk Leipzig · CC BY-SA 2.0 de · Wikimedia Commons</span></figcaption></figure>
+<p>Fig. 3.6 shows the other types.</p>
+<figure class="fig" id="mt-u3-f-seamproj">
+<svg viewBox="0 0 700 330" role="img" aria-label="Seam, projection and resistance butt welding">
+<defs><marker id="mt-u3-arw-seamproj" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<text x="110" y="24" class="lbl-b" text-anchor="middle">(a) Seam welding</text>
+<text x="350" y="24" class="lbl-b" text-anchor="middle">(b) Projection welding</text>
+<text x="580" y="24" class="lbl-b" text-anchor="middle">(c) Butt welding</text>
+<g transform="translate(0,34)">
+<rect x="10" y="95" width="200" height="8" class="ln fill-soft"/>
+<rect x="10" y="103" width="200" height="8" class="ln fill-soft"/>
+<circle cx="110" cy="62" r="33" class="ln fill-acc2"/>
+<circle cx="110" cy="144" r="33" class="ln fill-acc2"/>
+<circle cx="110" cy="62" r="3" class="solid"/>
+<circle cx="110" cy="144" r="3" class="solid"/>
+<ellipse cx="20" cy="103" rx="7" ry="3.5" class="ln fill-acc"/>
+<ellipse cx="29" cy="103" rx="7" ry="3.5" class="ln fill-acc"/>
+<ellipse cx="38" cy="103" rx="7" ry="3.5" class="ln fill-acc"/>
+<ellipse cx="47" cy="103" rx="7" ry="3.5" class="ln fill-acc"/>
+<ellipse cx="56" cy="103" rx="7" ry="3.5" class="ln fill-acc"/>
+<ellipse cx="65" cy="103" rx="7" ry="3.5" class="ln fill-acc"/>
+<ellipse cx="74" cy="103" rx="7" ry="3.5" class="ln fill-acc"/>
+<ellipse cx="83" cy="103" rx="7" ry="3.5" class="ln fill-acc"/>
+<ellipse cx="92" cy="103" rx="7" ry="3.5" class="ln fill-acc"/>
+<text x="110" y="204" class="lbl-sm" text-anchor="middle">roller electrodes</text>
+<text x="110" y="222" class="lbl-sm" text-anchor="middle">overlapping nuggets:</text>
+<text x="110" y="240" class="lbl-sm" text-anchor="middle">leak-tight seam</text>
+<rect x="250" y="60" width="200" height="30" class="ln fill-acc2"/>
+<rect x="250" y="176" width="200" height="30" class="ln fill-acc2"/>
+<rect x="260" y="104" width="180" height="14" class="ln fill-soft"/>
+<rect x="260" y="118" width="180" height="14" class="ln fill-soft"/>
+<polygon points="298,150 310,132 322,150" class="ln fill-soft"/>
+<polygon points="378,150 390,132 402,150" class="ln fill-soft"/>
+<rect x="260" y="150" width="180" height="14" class="ln fill-soft"/>
+<line x1="350" y1="22" x2="350" y2="58" class="ln" marker-end="url(#mt-u3-arw-seamproj)"/>
+<line x1="350" y1="248" x2="350" y2="210" class="ln" marker-end="url(#mt-u3-arw-seamproj)"/>
+<text x="364" y="44" class="lbl" text-anchor="start">F</text>
+<text x="364" y="240" class="lbl" text-anchor="start">F</text>
+<text x="350" y="268" class="lbl-sm" text-anchor="middle">flat platens; current flows</text>
+<text x="350" y="286" class="lbl-sm" text-anchor="middle">through the projections</text>
+<rect x="490" y="120" width="90" height="30" class="ln fill-soft"/>
+<rect x="580" y="120" width="90" height="30" class="ln fill-soft"/>
+<rect x="510" y="100" width="36" height="20" class="ln fill-acc2"/>
+<rect x="510" y="150" width="36" height="20" class="ln fill-acc2"/>
+<rect x="604" y="100" width="36" height="20" class="ln fill-acc2"/>
+<rect x="604" y="150" width="36" height="20" class="ln fill-acc2"/>
+<line x1="466" y1="135" x2="488" y2="135" class="ln" marker-end="url(#mt-u3-arw-seamproj)"/>
+<line x1="694" y1="135" x2="672" y2="135" class="ln" marker-end="url(#mt-u3-arw-seamproj)"/>
+<text x="470" y="122" class="lbl" text-anchor="start">F</text>
+<text x="690" y="122" class="lbl" text-anchor="end">F</text>
+<rect x="535" y="40" width="90" height="32" class="ln fill-soft"/>
+<text x="580" y="61" class="lbl-sm" text-anchor="middle">transformer</text>
+<path d="M528,100 L528,56 L535,56" class="ln thin" fill="none"/>
+<path d="M622,100 L622,56 L625,56" class="ln thin" fill="none"/>
+<text x="580" y="204" class="lbl-sm" text-anchor="middle">clamped bars pushed</text>
+<text x="580" y="222" class="lbl-sm" text-anchor="middle">together; I²Rt heats</text>
+<text x="580" y="240" class="lbl-sm" text-anchor="middle">the joint</text>
+</g>
+</svg>
+<figcaption>Fig. 3.6 — Other resistance welding processes: (a) seam, (b) projection, (c) butt.</figcaption>
+</figure>
+<ul><li><b>Spot:</b> a single spot joins overlapped sheets. Used for car bodies and appliances.</li><li><b>Seam:</b> roller electrodes make a row of overlapping spots. Gives a leak-tight joint for tanks and cans.</li><li><b>Projection:</b> embossed projections on one sheet concentrate the current. Many spots at once; used for nuts and brackets.</li><li><b>Butt (upset or flash):</b> two bars in line are clamped, heated and pressed end to end. Used for rods, chains and rails.</li></ul>
+<h3 id="mt-u3-c-cutting">5. Metal cutting: basic terms</h3>
+<p><b>Metal cutting</b> removes unwanted metal from a workpiece as chips with a wedge-shaped tool. Three settings control it. Fig. 3.7 shows them on a lathe.</p>
+<figure class="fig" id="mt-u3-f-vfd">
+<svg viewBox="0 0 700 290" role="img" aria-label="Cutting speed, feed and depth of cut in turning">
+<defs><marker id="mt-u3-arw-vfd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<text x="130" y="14" class="lbl-b" text-anchor="middle">(a) End view</text>
+<text x="440" y="14" class="lbl-b" text-anchor="middle">(b) Side view</text>
+<circle cx="130" cy="150" r="90" class="ln fill-acc2"/>
+<circle cx="130" cy="150" r="70" class="ln fill-soft"/>
+<circle cx="130" cy="150" r="3" class="solid"/>
+<polygon points="130,80 160,40 104,40" class="ln fill-acc"/>
+<line x1="112" y1="34" x2="62" y2="34" class="ln" marker-end="url(#mt-u3-arw-vfd)"/>
+<text x="56" y="40" class="lbl" text-anchor="end">V</text>
+<line x1="130" y1="150" x2="205" y2="150" class="ln thin dash"/>
+<line x1="60" y1="150" x2="200" y2="150" class="ln thin" marker-end="url(#mt-u3-arw-vfd)" marker-start="url(#mt-u3-arw-vfd)"/>
+<text x="130" y="172" class="lbl-sm" text-anchor="middle">D₂</text>
+<line x1="200" y1="150" x2="220" y2="150" class="ln thin" marker-end="url(#mt-u3-arw-vfd)"/>
+<text x="242" y="150" class="lbl" text-anchor="start">d</text>
+<line x1="240" y1="150" x2="222" y2="150" class="ln thin" marker-end="url(#mt-u3-arw-vfd)"/>
+<text x="130" y="262" class="lbl-sm" text-anchor="middle">shaded ring = layer removed</text>
+<text x="130" y="280" class="lbl-sm" text-anchor="middle">d = (D₁ − D₂) / 2</text>
+<rect x="290" y="100" width="50" height="100" class="ln fill-acc2"/>
+<rect x="340" y="80" width="170" height="140" class="ln fill-soft"/>
+<rect x="510" y="95" width="130" height="110" class="ln fill-soft"/>
+<line x1="300" y1="150" x2="640" y2="150" class="ln hid"/>
+<polygon points="510,80 540,40 600,40 570,80" class="ln fill-acc"/>
+<line x1="505" y1="34" x2="455" y2="34" class="ln" marker-end="url(#mt-u3-arw-vfd)"/>
+<text x="480" y="54" class="lbl-sm" text-anchor="middle">feed f</text>
+<text x="425" y="252" class="lbl-sm" text-anchor="middle">f = movement of tool per revolution (mm/rev)</text>
+<text x="425" y="270" class="lbl-sm" text-anchor="middle">N = spindle speed (rpm), V = πD₁N / 1000</text>
+<text x="315" y="92" class="lbl-sm" text-anchor="middle">chuck</text>
+<line x1="660" y1="80" x2="660" y2="95" class="ln thin" marker-end="url(#mt-u3-arw-vfd)" marker-start="url(#mt-u3-arw-vfd)"/>
+<text x="670" y="92" class="lbl" text-anchor="start">d</text>
+<text x="425" y="196" class="lbl-sm" text-anchor="middle">work (D₁)</text>
+<text x="575" y="226" class="lbl-sm" text-anchor="middle">machined (D₂)</text>
+</svg>
+<figcaption>Fig. 3.7 — Cutting speed V (surface speed of the work), feed f (axial advance per revolution) and depth of cut d (radial layer removed).</figcaption>
+</figure>
+<ul><li><b>Cutting speed V</b>: surface speed of the work past the tool, in m/min. \( V = \pi D N / 1000 \).</li><li><b>Feed f</b>: tool advance per revolution, in mm/rev.</li><li><b>Depth of cut d</b>: thickness of metal removed per pass, in mm. \( d = (D_1 - D_2)/2 \).</li></ul>
+<p>Material removal rate: \( \text{MRR} = 1000\, V f d \) mm³/min.</p>
+<h3 id="mt-u3-c-orth">6. Orthogonal and oblique cutting</h3>
+<p>The two cases differ in the angle of the cutting edge to the cutting velocity. Fig. 3.8 shows both.</p>
+<figure class="fig" id="mt-u3-f-orthobl">
+<svg viewBox="0 0 700 300" role="img" aria-label="Plan view of orthogonal and oblique cutting">
+<defs><marker id="mt-u3-arw-orthobl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<text x="135" y="26" class="lbl-b" text-anchor="middle">(a) Orthogonal cutting</text>
+<text x="520" y="26" class="lbl-b" text-anchor="middle">(b) Oblique cutting</text>
+<rect x="10" y="70" width="110" height="150" class="ln fill-soft"/>
+<text x="65" y="150" class="lbl-sm" text-anchor="middle">work</text>
+<text x="65" y="168" class="lbl-sm" text-anchor="middle">(uncut)</text>
+<rect x="120" y="70" width="80" height="150" class="ln fill-acc2"/>
+<text x="160" y="130" class="lbl-sm" text-anchor="middle">tool</text>
+<line x1="120" y1="70" x2="120" y2="220" class="ln acc thick"/>
+<line x1="10" y1="245" x2="100" y2="245" class="ln" marker-end="url(#mt-u3-arw-orthobl)"/>
+<text x="55" y="266" class="lbl-sm" text-anchor="middle">V</text>
+<line x1="136" y1="100" x2="250" y2="100" class="ln acc" marker-end="url(#mt-u3-arw-orthobl)"/>
+<text x="262" y="84" class="lbl-sm" text-anchor="start">chip flow</text>
+<text x="135" y="52" class="lbl-sm" text-anchor="middle">edge ⟂ V</text>
+<text x="160" y="196" class="lbl-sm" text-anchor="middle">i = 0</text>
+<polygon points="350,70 470,70 556.6,220 350,220" class="ln fill-soft"/>
+<text x="410" y="150" class="lbl-sm" text-anchor="middle">work</text>
+<text x="410" y="168" class="lbl-sm" text-anchor="middle">(uncut)</text>
+<polygon points="470,70 550,70 636.6,220 556.6,220" class="ln fill-acc2"/>
+<text x="582" y="196" class="lbl-sm" text-anchor="middle">tool</text>
+<line x1="470" y1="70" x2="556.6" y2="220" class="ln acc thick"/>
+<line x1="470" y1="70" x2="470" y2="220" class="ln dash"/>
+<path d="M470.0,130.0 A60,60 0 0 0 500.0,122.0" class="ln thin" fill="none"/>
+<text x="492" y="140" class="lbl" text-anchor="start">i</text>
+<line x1="350" y1="245" x2="440" y2="245" class="ln" marker-end="url(#mt-u3-arw-orthobl)"/>
+<text x="395" y="266" class="lbl-sm" text-anchor="middle">V</text>
+<line x1="513.3" y1="145.0" x2="617.2" y2="85.0" class="ln acc" marker-end="url(#mt-u3-arw-orthobl)"/>
+<text x="625" y="69" class="lbl-sm" text-anchor="start">chip flow</text>
+<text x="500" y="46" class="lbl-sm" text-anchor="middle">edge inclined at i to the normal of V</text>
+</svg>
+<figcaption>Fig. 3.8 — Plan view: (a) orthogonal cutting, edge perpendicular to V; (b) oblique cutting, edge inclined by angle i.</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Feature</th><th>Orthogonal</th><th>Oblique</th></tr></thead><tbody><tr><td>Cutting edge</td><td>Perpendicular to V</td><td>Inclined at angle i</td></tr><tr><td>Chip flow</td><td>Normal to the edge</td><td>Sideways, at chip-flow angle η</td></tr><tr><td>Force components</td><td>Two (Fc, Ft)</td><td>Three (Fc, Ft, Fr)</td></tr><tr><td>Edge length vs width of cut</td><td>Equal or longer</td><td>Longer (spreads heat)</td></tr><tr><td>Use</td><td>Theory, parting, tube turning</td><td>Most real turning, milling, drilling</td></tr></tbody></table></div>
+<h3 id="mt-u3-c-chip">7. Chip formation, shear zone and shear angle</h3>
+<p>The tool pushes into the work. The metal ahead of the edge is compressed. It shears along a plane and slides up the rake face as a chip. Fig. 3.9 shows this.</p>
+<figure class="fig" id="mt-u3-f-chipform">
+<svg viewBox="0 0 700 380" role="img" aria-label="Chip formation in orthogonal cutting showing shear plane, shear zone, shear angle and rake angle">
+<defs><marker id="mt-u3-arw-chipform" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="140.0,225.0 234.7,225.0 330.0,280.0 520.0,280.0 520.0,350.0 140.0,350.0" class="ln fill-soft"/>
+<polygon points="234.7,225.0 228.2,262.1 228.9,258.1 229.6,254.2 230.3,250.2 231.0,246.3 231.7,242.4 232.4,238.4 233.1,234.5 233.8,230.5 234.5,226.6 235.2,222.7 235.8,218.7 236.5,214.8 237.2,210.8 237.9,206.9 238.6,203.0 239.3,199.0 240.0,195.1 240.7,191.1 241.4,187.2 242.1,183.3 242.8,179.3 243.5,175.4 244.0,172.4 244.3,170.3 244.5,168.2 244.7,166.0 244.7,163.9 244.7,161.8 244.6,159.7 244.5,157.6 244.2,155.5 243.9,153.4 243.5,151.3 243.0,149.2 242.5,147.2 241.8,145.1 241.1,143.1 240.4,141.2 239.5,139.2 238.6,137.3 237.6,135.4 236.6,133.6 235.5,131.8 234.3,130.0 233.1,128.3 231.8,126.6 230.4,125.0 229.0,123.4 227.5,121.9 226.0,120.4 224.4,119.0 222.7,117.7 221.1,116.4 219.3,115.2 217.6,114.0 215.8,112.9 213.9,111.9 212.0,110.9 210.1,110.0 208.1,109.2 206.2,108.4 241.1,11.2 246.6,13.2 252.0,15.5 257.4,18.0 262.6,20.7 267.7,23.6 272.8,26.6 277.7,29.8 282.5,33.2 287.1,36.8 291.7,40.6 296.1,44.5 300.3,48.5 304.4,52.8 308.4,57.1 312.1,61.6 315.7,66.3 319.2,71.0 322.5,75.9 325.5,80.9 328.4,86.0 331.2,91.2 333.7,96.6 336.0,102.0 338.1,107.4 340.1,113.0 341.8,118.6 343.3,124.3 344.6,130.0 345.7,135.8 346.6,141.6 347.3,147.4 347.8,153.3 348.1,159.2 348.1,165.1 347.9,170.9 347.5,176.8 346.9,182.6 346.1,188.5 345.3,193.3 344.6,197.3 343.9,201.2 343.2,205.2 342.5,209.1 341.8,213.0 341.1,217.0 340.4,220.9 339.7,224.9 339.0,228.8 338.3,232.7 337.6,236.7 336.9,240.6 336.3,244.5 335.6,248.5 334.9,252.4 334.2,256.4 333.5,260.3 332.8,264.2 332.1,268.2 331.4,272.1 330.7,276.1 330.0,280.0 330.0,280.0" class="ln fill-acc"/>
+<polygon points="330.0,280.0 359.5,112.6 469.5,112.6 528.9,259.1" class="ln fill-soft"/>
+<line x1="330" y1="280" x2="130" y2="280" class="ln dash"/>
+<line x1="330" y1="280" x2="330" y2="130" class="ln dash"/>
+<line x1="330.0" y1="280.0" x2="234.7" y2="225.0" class="ln acc thick"/>
+<line x1="314.1" y1="281.2" x2="232.1" y2="233.9" class="ln thin dash"/>
+<line x1="323.1" y1="265.6" x2="241.1" y2="218.3" class="ln thin dash"/>
+<path d="M285.0,254.0 A52,52 0 0 0 278.0,280.0" class="ln thin" fill="none"/>
+<text x="250" y="268" class="lbl" text-anchor="middle">φ</text>
+<path d="M347.4,181.5 A100,100 0 0 0 330.0,180.0" class="ln thin" fill="none"/>
+<text x="354" y="176" class="lbl" text-anchor="start">α</text>
+<line x1="184.73720558371173" y1="225.0" x2="184.73720558371173" y2="280" class="ln thin" marker-end="url(#mt-u3-arw-chipform)" marker-start="url(#mt-u3-arw-chipform)"/>
+<text x="176.73720558371173" y="256.5" class="lbl" text-anchor="end">t₁</text>
+<line x1="340.4" y1="220.9" x2="238.6" y2="203.0" class="ln thin" marker-end="url(#mt-u3-arw-chipform)" marker-start="url(#mt-u3-arw-chipform)"/>
+<text x="289.5" y="203.95" class="lbl" text-anchor="middle">t₂</text>
+<line x1="40" y1="366" x2="130" y2="366" class="ln" marker-end="url(#mt-u3-arw-chipform)"/>
+<text x="140" y="370" class="lbl-sm" text-anchor="start">V (work moves)</text>
+<line x1="282.4" y1="252.5" x2="139.4" y2="180" class="ln thin"/>
+<circle cx="282.4" cy="252.5" r="2" class="solid"/>
+<text x="64" y="184" class="lbl-sm" text-anchor="start">shear plane</text>
+<text x="60" y="158" class="lbl-sm" text-anchor="start">shear zone = dashed band</text>
+<text x="270" y="330" class="lbl-sm" text-anchor="middle">work material</text>
+<line x1="298.2" y1="162.7" x2="184.6" y2="61" class="ln thin"/>
+<circle cx="298.2" cy="162.7" r="2" class="solid"/>
+<text x="154" y="65" class="lbl-sm" text-anchor="start">chip</text>
+<line x1="382.6" y1="152.0" x2="499" y2="106" class="ln thin"/>
+<circle cx="382.6" cy="152.0" r="2" class="solid"/>
+<text x="504" y="110" class="lbl-sm" text-anchor="start">tool</text>
+<line x1="424.5" y1="270.1" x2="439" y2="310" class="ln thin"/>
+<circle cx="424.5" cy="270.1" r="2" class="solid"/>
+<text x="494" y="333" class="lbl-sm" text-anchor="end">flank (clearance face)</text>
+<text x="235" y="298" class="lbl-sm" text-anchor="middle">machined surface</text>
+<text x="60" y="217.0" class="lbl-sm" text-anchor="start">uncut surface</text>
+</svg>
+<figcaption>Fig. 3.9 — Chip formation: the metal shears along the shear plane (angle φ) and slides up the rake face (angle α). t₁ = uncut chip thickness, t₂ = chip thickness.</figcaption>
+</figure>
+<ul><li>The <b>shear plane</b> is the plane of maximum shear. The <b>shear angle φ</b> is its angle to the cutting direction.</li><li>The <b>shear zone</b> is the thin band where the plastic deformation really happens. It is thicker near the tool tip.</li><li>The chip is thicker and shorter than the layer removed: \( t_2 > t_1 \).</li><li>A <b>large shear angle</b> means a thin chip, less deformation, low force, low heat and good finish. Raise it with a larger rake angle and low friction.</li></ul>
+<div class="formula">\[ r = \frac{t_1}{t_2} = \frac{\sin\phi}{\cos(\phi-\alpha)}, \qquad \tan\phi = \frac{r\cos\alpha}{1 - r\sin\alpha} \]<p class="where">r = chip thickness ratio (always less than 1), t₁ = uncut chip thickness (= feed in turning), t₂ = chip thickness, α = rake angle.</p></div>
+<figure class="fig" id="mt-u3-f-chiptypes">
+<svg viewBox="0 0 700 300" role="img" aria-label="Three types of chip: continuous, discontinuous and continuous with built-up edge">
+<defs><marker id="mt-u3-arw-chiptypes" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<text x="130" y="24" class="lbl-b" text-anchor="middle">(a) Continuous chip</text>
+<polygon points="15.5,180.8 86.7,180.8 120.0,200.0 224.5,200.0 224.5,238.5 15.5,238.5" class="ln fill-soft"/>
+<polygon points="86.7,180.8 84.2,192.4 84.6,190.2 85.1,188.1 85.6,185.9 86.0,183.8 86.5,181.6 86.9,179.5 87.4,177.3 87.8,175.2 88.3,173.0 88.8,170.9 89.2,168.7 89.7,166.6 90.1,164.4 90.6,162.3 91.0,160.1 91.5,158.0 92.0,155.8 92.4,153.7 92.9,151.5 93.3,149.3 93.8,147.2 94.2,145.0 94.6,143.2 94.9,141.7 95.1,140.2 95.3,138.7 95.4,137.1 95.4,135.6 95.4,134.1 95.3,132.5 95.2,131.0 95.0,129.5 94.8,128.0 94.5,126.5 94.1,125.0 93.7,123.5 93.3,122.0 92.8,120.6 92.2,119.1 91.6,117.7 91.0,116.3 90.2,115.0 89.5,113.6 88.7,112.3 87.8,111.1 86.9,109.8 86.0,108.6 85.0,107.4 84.0,106.3 82.9,105.2 81.8,104.2 80.6,103.1 79.5,102.2 78.2,101.2 77.0,100.3 75.7,99.5 74.4,98.7 73.0,98.0 71.7,97.3 70.3,96.6 68.9,96.0 82.5,62.0 85.1,63.1 87.7,64.3 90.3,65.6 92.8,67.0 95.2,68.5 97.6,70.1 99.9,71.7 102.2,73.5 104.4,75.3 106.6,77.2 108.6,79.2 110.6,81.2 112.6,83.4 114.4,85.6 116.2,87.8 117.9,90.1 119.5,92.5 121.0,94.9 122.4,97.4 123.7,100.0 124.9,102.6 126.1,105.2 127.1,107.9 128.1,110.6 128.9,113.3 129.7,116.1 130.3,118.9 130.9,121.7 131.3,124.5 131.6,127.4 131.9,130.2 132.0,133.1 132.0,135.9 131.9,138.8 131.8,141.7 131.5,144.5 131.1,147.4 130.6,150.2 130.1,152.7 129.6,154.8 129.1,157.0 128.7,159.1 128.2,161.3 127.8,163.4 127.3,165.6 126.9,167.7 126.4,169.9 125.9,172.0 125.5,174.2 125.0,176.3 124.6,178.5 124.1,180.6 123.7,182.8 123.2,184.9 122.7,187.1 122.3,189.2 121.8,191.4 121.4,193.5 120.9,195.7 120.5,197.8 120.0,200.0 120.0,200.0" class="ln fill-acc"/>
+<polygon points="120.0,200.0 139.4,108.5 199.9,108.5 229.4,188.5" class="ln fill-soft"/>
+<text x="350" y="24" class="lbl-b" text-anchor="middle">(b) Discontinuous chip</text>
+<polygon points="235.5,180.8 306.7,180.8 340.0,200.0 444.5,200.0 444.5,238.5 235.5,238.5" class="ln fill-soft"/>
+<polygon points="306.7,180.8 313.5,148.5 346.9,167.7 340.0,200.0" class="ln fill-acc"/>
+<polygon points="315.3,139.9 320.2,117.3 353.5,136.5 348.7,159.1" class="ln fill-acc"/>
+<polygon points="322.0,108.7 326.8,86.1 360.1,105.3 355.3,127.9" class="ln fill-acc"/>
+<polygon points="340.0,200.0 359.4,108.5 419.9,108.5 449.4,188.5" class="ln fill-soft"/>
+<text x="570" y="24" class="lbl-b" text-anchor="middle">(c) Continuous chip with BUE</text>
+<polygon points="455.5,180.8 526.7,180.8 560.0,200.0 664.5,200.0 664.5,238.5 455.5,238.5" class="ln fill-soft"/>
+<polygon points="526.7,180.8 524.2,192.4 524.6,190.2 525.1,188.1 525.6,185.9 526.0,183.8 526.5,181.6 526.9,179.5 527.4,177.3 527.8,175.2 528.3,173.0 528.8,170.9 529.2,168.7 529.7,166.6 530.1,164.4 530.6,162.3 531.0,160.1 531.5,158.0 532.0,155.8 532.4,153.7 532.9,151.5 533.3,149.3 533.8,147.2 534.2,145.0 534.6,143.2 534.9,141.7 535.1,140.2 535.3,138.7 535.4,137.1 535.4,135.6 535.4,134.1 535.3,132.5 535.2,131.0 535.0,129.5 534.8,128.0 534.5,126.5 534.1,125.0 533.7,123.5 533.3,122.0 532.8,120.6 532.2,119.1 531.6,117.7 531.0,116.3 530.2,115.0 529.5,113.6 528.7,112.3 527.8,111.1 526.9,109.8 526.0,108.6 525.0,107.4 524.0,106.3 522.9,105.2 521.8,104.2 520.6,103.1 519.5,102.2 518.2,101.2 517.0,100.3 515.7,99.5 514.4,98.7 513.0,98.0 511.7,97.3 510.3,96.6 508.9,96.0 522.5,62.0 525.1,63.1 527.7,64.3 530.3,65.6 532.8,67.0 535.2,68.5 537.6,70.1 539.9,71.7 542.2,73.5 544.4,75.3 546.6,77.2 548.6,79.2 550.6,81.2 552.6,83.4 554.4,85.6 556.2,87.8 557.9,90.1 559.5,92.5 561.0,94.9 562.4,97.4 563.7,100.0 564.9,102.6 566.1,105.2 567.1,107.9 568.1,110.6 568.9,113.3 569.7,116.1 570.3,118.9 570.9,121.7 571.3,124.5 571.6,127.4 571.9,130.2 572.0,133.1 572.0,135.9 571.9,138.8 571.8,141.7 571.5,144.5 571.1,147.4 570.6,150.2 570.1,152.7 569.6,154.8 569.1,157.0 568.7,159.1 568.2,161.3 567.8,163.4 567.3,165.6 566.9,167.7 566.4,169.9 565.9,172.0 565.5,174.2 565.0,176.3 564.6,178.5 564.1,180.6 563.7,182.8 563.2,184.9 562.7,187.1 562.3,189.2 561.8,191.4 561.4,193.5 560.9,195.7 560.5,197.8 560.0,200.0 560.0,200.0" class="ln fill-acc"/>
+<polygon points="560.0,200.0 579.4,108.5 639.9,108.5 669.4,188.5" class="ln fill-soft"/>
+<polygon points="560.0,200.0 562.5,185.7 552.3,191.2 554.5,202.2" class="ln fill-acc2"/>
+<text x="130" y="262" class="lbl-sm" text-anchor="middle">ductile metal, high speed, small feed,</text>
+<text x="130" y="280" class="lbl-sm" text-anchor="middle">large rake: ideal chip</text>
+<text x="350" y="262" class="lbl-sm" text-anchor="middle">brittle metal (cast iron), low speed,</text>
+<text x="350" y="280" class="lbl-sm" text-anchor="middle">large feed: broken pieces</text>
+<text x="570" y="262" class="lbl-sm" text-anchor="middle">ductile metal, low speed, high friction:</text>
+<text x="570" y="280" class="lbl-sm" text-anchor="middle">work welds to the tool tip</text>
+</svg>
+<figcaption>Fig. 3.10 — Types of chip: (a) continuous, (b) discontinuous, (c) continuous with built-up edge (BUE, darker wedge at the tool tip).</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Chip</th><th>Made when</th><th>Effect</th></tr></thead><tbody><tr><td>Continuous</td><td>Ductile metal, high speed, small feed, large rake, good coolant</td><td>Ideal: good finish, steady force. Long ribbon needs a chip breaker.</td></tr><tr><td>Discontinuous</td><td>Brittle metal, or low speed, large feed, small rake</td><td>Broken pieces, varying force, poor tool life.</td></tr><tr><td>Continuous with BUE</td><td>Ductile metal, low speed, high friction</td><td>Rough surface, vibration, crater wear.</td></tr></tbody></table></div>
+<aside class="warn"><b>Common mistake.</b> r = t₁/t₂ is less than 1. If you get r above 1 you have swapped t₁ and t₂.</aside>
+<h3 id="mt-u3-c-merchant">8. Mechanics of orthogonal cutting: Merchant circle</h3>
+<p>Merchant treated the chip as a body in equilibrium under two equal and opposite resultants. Six forces act (Fig. 3.11). The resultant R is the diameter of a circle, so every pair of components meets the circle at 90°.</p>
+<figure class="fig" id="mt-u3-f-merchant">
+<svg viewBox="0 0 700 430" role="img" aria-label="Merchant circle diagram with cutting, thrust, friction, normal, shear and normal shear forces">
+<defs><marker id="mt-u3-arw-merchant" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="190" y1="330" x2="216.0" y2="182.3" class="ln thick"/>
+<line x1="190" y1="330" x2="101.3" y2="283.8" class="ln acc dash"/>
+<line x1="101.3" y1="283.8" x2="51.3" y2="283.8" class="ln"/>
+<line x1="40" y1="330" x2="190" y2="330" class="ln dash"/>
+<circle cx="296.5" cy="255.4" r="130.0" class="ln acc" fill="none"/>
+<line x1="190" y1="330" x2="403.0" y2="330.0" class="ln" marker-end="url(#mt-u3-arw-merchant)"/>
+<line x1="190" y1="330" x2="190.0" y2="180.9" class="ln" marker-end="url(#mt-u3-arw-merchant)"/>
+<line x1="190" y1="330" x2="403.0" y2="180.9" class="ln acc thick" marker-end="url(#mt-u3-arw-merchant)"/>
+<line x1="190" y1="330" x2="221.9" y2="148.9" class="ln acc2" marker-end="url(#mt-u3-arw-merchant)"/>
+<line x1="190" y1="330" x2="371.1" y2="361.9" class="ln acc2" marker-end="url(#mt-u3-arw-merchant)"/>
+<line x1="190" y1="330" x2="296.5" y2="385.4" class="ln" marker-end="url(#mt-u3-arw-merchant)"/>
+<line x1="190" y1="330" x2="296.5" y2="125.4" class="ln" marker-end="url(#mt-u3-arw-merchant)"/>
+<line x1="403.0" y1="330.0" x2="403.0" y2="180.9" class="ln thin dash"/>
+<line x1="190.0" y1="180.9" x2="403.0" y2="180.9" class="ln thin dash"/>
+<line x1="221.9" y1="148.9" x2="403.0" y2="180.9" class="ln thin dash"/>
+<line x1="371.1" y1="361.9" x2="403.0" y2="180.9" class="ln thin dash"/>
+<line x1="296.5" y1="385.4" x2="403.0" y2="180.9" class="ln thin dash"/>
+<line x1="296.5" y1="125.4" x2="403.0" y2="180.9" class="ln thin dash"/>
+<text x="413.0" y="348.0" class="lbl" text-anchor="start">Fc</text>
+<text x="180.0" y="186.9" class="lbl" text-anchor="end">Ft</text>
+<text x="413.0" y="176.9" class="lbl-b" text-anchor="start">R</text>
+<text x="213.9" y="142.9" class="lbl" text-anchor="end">F</text>
+<text x="379.1" y="379.9" class="lbl" text-anchor="start">N</text>
+<text x="296.5" y="405.4" class="lbl" text-anchor="middle">Fs</text>
+<text x="296.5" y="117.4" class="lbl" text-anchor="middle">Fn</text>
+<path d="M249.1,340.4 A60,60 0 0 0 239.1,295.6" class="ln thin" fill="none"/>
+<text x="265.9" y="304.6" class="lbl" text-anchor="middle">β</text>
+<path d="M271.6,372.5 A92,92 0 0 0 282.0,330.0" class="ln thin" fill="none"/>
+<text x="294.9" y="355.7" class="lbl" text-anchor="middle">φ</text>
+<path d="M196.9,290.6 A40,40 0 0 0 190.0,290.0" class="ln thin" fill="none"/>
+<text x="178" y="278" class="lbl" text-anchor="end">α</text>
+<text x="41.3" y="271.8" class="lbl-sm" text-anchor="start">shear plane</text>
+<text x="50" y="360" class="lbl-sm" text-anchor="start">work</text>
+<text x="448" y="150" class="lbl-sm" text-anchor="start">Fc  cutting force (along V)</text>
+<text x="448" y="172" class="lbl-sm" text-anchor="start">Ft  thrust force (⟂ V)</text>
+<text x="448" y="194" class="lbl-sm" text-anchor="start">F  friction force (along rake face)</text>
+<text x="448" y="216" class="lbl-sm" text-anchor="start">N  normal force on rake face</text>
+<text x="448" y="238" class="lbl-sm" text-anchor="start">Fs  shear force on shear plane</text>
+<text x="448" y="260" class="lbl-sm" text-anchor="start">Fn  normal force on shear plane</text>
+<text x="448" y="282" class="lbl-sm" text-anchor="start">R  resultant (diameter of the circle)</text>
+<text x="448" y="310" class="lbl-sm" text-anchor="start">α rake angle · β friction angle</text>
+<text x="448" y="332" class="lbl-sm" text-anchor="start">φ shear angle · R at (β − α) from Fc</text>
+</svg>
+<figcaption>Fig. 3.11 — Merchant circle diagram. R is the diameter; every pair of force components meets the circle at 90°.</figcaption>
+</figure>
+<div class="formula">\[ F = F_c\sin\alpha + F_t\cos\alpha,\quad N = F_c\cos\alpha - F_t\sin\alpha,\quad \mu = \frac{F}{N} = \tan\beta \]\[ F_s = F_c\cos\phi - F_t\sin\phi,\quad F_n = F_c\sin\phi + F_t\cos\phi \]\[ 2\phi + \beta - \alpha = 90^\circ \;\Rightarrow\; \phi = 45^\circ + \frac{\alpha}{2} - \frac{\beta}{2} \]<p class="where">Fc, Ft are measured with a dynamometer. β = friction angle. The last line is Merchant's shear-angle relation (minimum-energy assumption).</p></div>
+<p>Try the widget: change the forces, the rake angle and the chip thicknesses. See φ, μ, F, N and Fs change.</p>
+<div class="widget" data-widget="merchant"></div>
+<h3 id="mt-u3-c-class">9. Classification of cutting tools</h3>
+<p>A <b>single point tool</b> has one cutting edge (lathe, shaper, planer). A <b>multi point tool</b> has many cutting edges (drill, milling cutter, broach, grinding wheel). Fig. 3.12 shows the tree.</p>
+<figure class="fig" id="mt-u3-f-tooltree">
+<svg viewBox="0 0 700 360" role="img" aria-label="Tree: classification of cutting tools into single point and multi point">
+<defs><marker id="mt-u3-arw-tooltree" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="260.0" y="7.0" width="180" height="34" class="ln fill-acc"/>
+<text x="350" y="28.5" class="lbl-b" text-anchor="middle">Cutting tools</text>
+<path d="M350,41 L350,58.5 L170,58.5 L170,76" class="ln thin" fill="none"/>
+<path d="M350,41 L350,58.5 L525,58.5 L525,76" class="ln thin" fill="none"/>
+<rect x="70.0" y="77.0" width="200" height="34" class="ln fill-acc2"/>
+<text x="170" y="98.5" class="lbl-b" text-anchor="middle">Single point tools</text>
+<rect x="410.0" y="77.0" width="230" height="34" class="ln fill-acc2"/>
+<text x="525" y="98.5" class="lbl-b" text-anchor="middle">Multi point tools</text>
+<path d="M170,111 L170,130.5 L95,130.5 L95,150" class="ln thin" fill="none"/>
+<path d="M170,111 L170,130.5 L250,130.5 L250,150" class="ln thin" fill="none"/>
+<rect x="25.0" y="151.0" width="140" height="34" class="ln fill-soft"/>
+<text x="95" y="172.5" class="lbl-b" text-anchor="middle">By construction</text>
+<rect x="180.0" y="151.0" width="140" height="34" class="ln fill-soft"/>
+<text x="250" y="172.5" class="lbl-b" text-anchor="middle">By operation</text>
+<line x1="95" y1="185" x2="95" y2="205" class="ln thin"/>
+<rect x="20.0" y="207.0" width="150" height="110" class="ln fill-soft"/>
+<text x="95" y="236.5" class="lbl-sm" text-anchor="middle">Solid (forged)</text>
+<text x="95" y="251.5" class="lbl-sm" text-anchor="middle">Brazed tip</text>
+<text x="95" y="266.5" class="lbl-sm" text-anchor="middle">Clamped insert</text>
+<text x="95" y="281.5" class="lbl-sm" text-anchor="middle">(throw-away)</text>
+<text x="95" y="296.5" class="lbl-sm" text-anchor="middle">Tool-bit holder</text>
+<line x1="250" y1="185" x2="250" y2="205" class="ln thin"/>
+<rect x="175.0" y="207.0" width="150" height="110" class="ln fill-soft"/>
+<text x="250" y="244.0" class="lbl-sm" text-anchor="middle">Turning, facing</text>
+<text x="250" y="259.0" class="lbl-sm" text-anchor="middle">Boring, parting</text>
+<text x="250" y="274.0" class="lbl-sm" text-anchor="middle">Threading</text>
+<text x="250" y="289.0" class="lbl-sm" text-anchor="middle">Shaping, planing</text>
+<path d="M525,111 L525,130.5 L450,130.5 L450,150" class="ln thin" fill="none"/>
+<path d="M525,111 L525,130.5 L610,130.5 L610,150" class="ln thin" fill="none"/>
+<rect x="380.0" y="151.0" width="140" height="34" class="ln fill-soft"/>
+<text x="450" y="172.5" class="lbl-b" text-anchor="middle">Toothed</text>
+<rect x="540.0" y="151.0" width="140" height="34" class="ln fill-soft"/>
+<text x="610" y="172.5" class="lbl-b" text-anchor="middle">Abrasive</text>
+<line x1="450" y1="185" x2="450" y2="205" class="ln thin"/>
+<rect x="375.0" y="207.0" width="150" height="110" class="ln fill-soft"/>
+<text x="450" y="244.0" class="lbl-sm" text-anchor="middle">Drill, reamer</text>
+<text x="450" y="259.0" class="lbl-sm" text-anchor="middle">Milling cutter</text>
+<text x="450" y="274.0" class="lbl-sm" text-anchor="middle">Broach, hob</text>
+<text x="450" y="289.0" class="lbl-sm" text-anchor="middle">Tap, saw, file</text>
+<line x1="610" y1="185" x2="610" y2="205" class="ln thin"/>
+<rect x="535.0" y="207.0" width="150" height="110" class="ln fill-soft"/>
+<text x="610" y="251.5" class="lbl-sm" text-anchor="middle">Grinding wheel</text>
+<text x="610" y="266.5" class="lbl-sm" text-anchor="middle">Honing stick</text>
+<text x="610" y="281.5" class="lbl-sm" text-anchor="middle">Abrasive belt</text>
+</svg>
+<figcaption>Fig. 3.12 — Classification of cutting tools: single point (one cutting edge) and multi point (many cutting edges).</figcaption>
+</figure>
+<h3 id="mt-u3-c-geom">10. Single point tool geometry and signature</h3>
+<p>The tool is a wedge. Its seven elements are: back rake, side rake, end relief, side relief, end cutting edge angle (ECEA), side cutting edge angle (SCEA) and nose radius. Fig. 3.13 shows them.</p>
+<figure class="fig" id="mt-u3-f-toolgeom">
+<svg viewBox="0 0 700 450" role="img" aria-label="Single point cutting tool geometry in plan, side and end views with the tool signature">
+<defs><marker id="mt-u3-arw-toolgeom" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<text x="165" y="22" class="lbl-b" text-anchor="middle">(a) Plan view</text>
+<text x="520" y="22" class="lbl-b" text-anchor="middle">(b) Side view</text>
+<text x="165" y="258" class="lbl-b" text-anchor="middle">(c) End view</text>
+<polygon points="20,100 250,100 283,190 231,160 20,160" class="ln fill-soft"/>
+<line x1="231" y1="160" x2="335" y2="160" class="ln dash"/>
+<line x1="250" y1="100" x2="250" y2="210" class="ln dash"/>
+<path d="M301.0,160.0 A70,70 0 0 1 291.6,195.0" class="ln thin" fill="none"/>
+<path d="M250.0,170.0 A70,70 0 0 0 273.9,165.8" class="ln thin" fill="none"/>
+<text x="322" y="186" class="lbl" text-anchor="start">Cs</text>
+<text x="278" y="136" class="lbl" text-anchor="start">Ce</text>
+<text x="110" y="134" class="lbl-sm" text-anchor="middle">shank</text>
+<line x1="257" y1="176" x2="247.8" y2="212" class="ln thin"/>
+<circle cx="257" cy="176" r="2" class="solid"/>
+<text x="134" y="216" class="lbl-sm" text-anchor="start">side cutting edge</text>
+<line x1="266" y1="146" x2="266" y2="96" class="ln thin"/>
+<circle cx="266" cy="146" r="2" class="solid"/>
+<text x="266" y="92" class="lbl-sm" text-anchor="start">end cutting edge</text>
+<line x1="283" y1="190" x2="299" y2="224" class="ln thin"/>
+<circle cx="283" cy="190" r="2" class="solid"/>
+<text x="304" y="228" class="lbl-sm" text-anchor="start">nose radius R</text>
+<text x="20" y="52" class="lbl-sm" text-anchor="start">Ce = end cutting edge angle (ECEA)</text>
+<text x="20" y="72" class="lbl-sm" text-anchor="start">Cs = side cutting edge angle (SCEA)</text>
+<g transform="translate(370,40)">
+<polygon points="20,124 20,40 110,40 230,84 216,124" class="ln fill-soft"/>
+<line x1="230" y1="84" x2="110" y2="84" class="ln dash"/>
+<line x1="230" y1="84" x2="230" y2="150" class="ln dash"/>
+<path d="M164.2,60.1 A70,70 0 0 0 160.0,84.0" class="ln thin" fill="none"/>
+<path d="M230.0,134.0 A50,50 0 0 1 213.7,131.3" class="ln thin" fill="none"/>
+<text x="136" y="76" class="lbl" text-anchor="middle">αb</text>
+<text x="238" y="150" class="lbl" text-anchor="start">θe</text>
+</g>
+<text x="520" y="214" class="lbl-sm" text-anchor="middle">αb = back rake angle</text>
+<text x="520" y="234" class="lbl-sm" text-anchor="middle">θe = end relief angle</text>
+<polygon points="40,380 40,300 110,300 200,326 186,380" class="ln fill-soft"/>
+<line x1="200" y1="326" x2="100" y2="326" class="ln dash"/>
+<line x1="200" y1="326" x2="200" y2="404" class="ln dash"/>
+<path d="M136.6,307.8 A66,66 0 0 0 134.0,326.0" class="ln thin" fill="none"/>
+<path d="M200.0,376.0 A50,50 0 0 1 187.5,374.4" class="ln thin" fill="none"/>
+<text x="124" y="320" class="lbl" text-anchor="middle">αs</text>
+<text x="208" y="396" class="lbl" text-anchor="start">θs</text>
+<text x="30" y="430" class="lbl-sm" text-anchor="start">αs = side rake angle · θs = side relief angle</text>
+<rect x="380" y="270" width="300" height="150" class="ln fill-soft"/>
+<text x="530" y="294" class="lbl-b" text-anchor="middle">Tool signature (ASA)</text>
+<text x="530" y="318" class="lbl" text-anchor="middle">αb – αs – θe – θs – Ce – Cs – R</text>
+<text x="530" y="346" class="lbl-sm" text-anchor="middle">example: 8 – 12 – 6 – 6 – 15 – 20 – 1</text>
+<text x="530" y="368" class="lbl-sm" text-anchor="middle">back rake 8°, side rake 12°, end relief 6°,</text>
+<text x="530" y="386" class="lbl-sm" text-anchor="middle">side relief 6°, ECEA 15°, SCEA 20°,</text>
+<text x="530" y="404" class="lbl-sm" text-anchor="middle">nose radius 1 mm</text>
+</svg>
+<figcaption>Fig. 3.13 — Single point tool: (a) plan view with cutting edge angles and nose radius, (b) side view with back rake and end relief, (c) end view with side rake and side relief; tool signature in ASA order.</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Angle</th><th>Function</th></tr></thead><tbody><tr><td>Back rake αb, side rake αs</td><td>Guide the chip, reduce force and heat. Positive rake for soft metals; zero or negative for hard, brittle tools.</td></tr><tr><td>End relief θe, side relief θs</td><td>Stop the flank rubbing on the work. Too large weakens the edge.</td></tr><tr><td>ECEA (Ce)</td><td>Stops the end edge rubbing on the finished surface.</td></tr><tr><td>SCEA (Cs)</td><td>Longer edge in contact: thinner chip, better heat flow and tool life. Large Cs raises the thrust force.</td></tr><tr><td>Nose radius R</td><td>Strengthens the tip and gives better finish. Too large causes chatter.</td></tr></tbody></table></div>
+<p>The <b>tool signature</b> (ASA) lists the angles in fixed order: \( \alpha_b - \alpha_s - \theta_e - \theta_s - C_e - C_s - R \). Example: 8–12–6–6–15–20–1 mm.</p>
+<h3 id="mt-u3-c-mat">11. Cutting tool materials</h3>
+<p>A tool material needs: hot hardness, wear resistance, toughness, low friction with the chip, thermal shock resistance and fair cost. Hot hardness is the most important.</p>
+<figure class="photo"><img src="img/mt-u3-carbide-inserts.jpg" alt="Three grey cemented carbide tool inserts of triangular and square shape" width="1000" height="855" loading="lazy"><figcaption>Cemented carbide inserts. The user clamps or brazes them on a tool holder and replaces them when worn. <span class="credit">Photo: Mauro Cateb · CC BY-SA 4.0 · Wikimedia Commons</span></figcaption></figure>
+<div class="tbl"><table><thead><tr><th>Material</th><th>Hot hardness limit</th><th>Typical speed (steel)</th><th>Use</th></tr></thead><tbody><tr><td>Carbon tool steel</td><td>About 250 °C</td><td>5–10 m/min</td><td>Hand tools, files</td></tr><tr><td>HSS (18-4-1, M2)</td><td>About 600 °C</td><td>30–50 m/min</td><td>Drills, taps, reamers, cutters</td></tr><tr><td>Cemented carbide (WC + Co)</td><td>About 1000 °C</td><td>60–200 m/min</td><td>Turning and milling inserts</td></tr><tr><td>Ceramic (Al₂O₃)</td><td>Above 1200 °C</td><td>200–400 m/min</td><td>High-speed finishing of cast iron, steel</td></tr><tr><td>CBN</td><td>About 1400 °C</td><td>Very high</td><td>Hardened steel, hard cast iron</td></tr><tr><td>Diamond</td><td>About 700 °C in air</td><td>Very high</td><td>Aluminium, copper, plastics (not steel)</td></tr></tbody></table></div>
+<h3 id="mt-u3-c-wear">12. Tool wear and tool life</h3>
+<p>Tool wear is the gradual loss of tool material (Fig. 3.14).</p>
+<figure class="fig" id="mt-u3-f-wear">
+<svg viewBox="0 0 700 300" role="img" aria-label="Tool wear: crater wear, flank wear land, notch wear and the wear curve">
+<defs><marker id="mt-u3-arw-wear" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<text x="110" y="24" class="lbl-b" text-anchor="middle">(a) Side view of tool</text>
+<text x="345" y="24" class="lbl-b" text-anchor="middle">(b) Flank face</text>
+<text x="580" y="24" class="lbl-b" text-anchor="middle">(c) Wear curve</text>
+<polygon points="100,200 120,60 215,60 215,190" class="ln fill-soft"/>
+<path d="M107,172 Q130,150 118,112 Q105,140 107,172 Z" class="ln fill-acc2"/>
+<polygon points="100,200 150,195.5 150,201 94,208" class="ln fill-acc"/>
+<line x1="110" y1="215" x2="150" y2="215" class="ln thin" marker-end="url(#mt-u3-arw-wear)" marker-start="url(#mt-u3-arw-wear)"/>
+<text x="130" y="234" class="lbl-sm" text-anchor="middle">VB</text>
+<text x="30" y="140" class="lbl-sm" text-anchor="start">crater</text>
+<line x1="62" y1="142" x2="108" y2="150" class="ln thin"/>
+<text x="30" y="160" class="lbl-sm" text-anchor="start">(depth KT)</text>
+<text x="125" y="252" class="lbl-sm" text-anchor="middle">VB = flank wear land width</text>
+<rect x="265" y="70" width="160" height="120" class="ln fill-soft"/>
+<polygon points="265,70 425,70 425,86 330,84 265,80" class="ln fill-acc"/>
+<polygon points="425,70 425,112 408,76" class="ln fill-acc2"/>
+<text x="345" y="215" class="lbl-sm" text-anchor="middle">flank wear land (VB)</text>
+<line x1="320" y1="200" x2="320" y2="86" class="ln thin"/>
+<text x="345" y="238" class="lbl-sm" text-anchor="middle">notch wear at depth-of-cut line</text>
+<line x1="395" y1="228" x2="420" y2="112" class="ln thin"/>
+<line x1="500" y1="230" x2="690" y2="230" class="ln" marker-end="url(#mt-u3-arw-wear)"/>
+<line x1="500" y1="230" x2="500" y2="50" class="ln" marker-end="url(#mt-u3-arw-wear)"/>
+<text x="690" y="252" class="lbl-sm" text-anchor="end">Cutting time T (min)</text>
+<text x="492" y="46" class="lbl-sm" text-anchor="start">Flank wear VB (mm)</text>
+<path d="M500,205 C512,165 522,152 540,148 L620,118 C640,106 656,92 668,52" class="ln acc thick" fill="none"/>
+<line x1="500" y1="118" x2="690" y2="118" class="ln dash"/>
+<text x="506" y="110" class="lbl-sm" text-anchor="start">VB limit</text>
+<line x1="626" y1="118" x2="626" y2="230" class="ln dash"/>
+<line x1="540" y1="148" x2="540" y2="230" class="ln thin dash"/>
+<line x1="626" y1="118" x2="626" y2="230" class="ln thin dash"/>
+<text x="524" y="206" class="lbl-b" text-anchor="middle">I</text>
+<text x="585" y="186" class="lbl-b" text-anchor="middle">II</text>
+<text x="660" y="176" class="lbl-b" text-anchor="middle">III</text>
+<text x="590" y="270" class="lbl-sm" text-anchor="middle">I initial · II steady · III rapid failure</text>
+<text x="618" y="222" class="lbl-sm" text-anchor="end">tool life T</text>
+</svg>
+<figcaption>Fig. 3.14 — Tool wear: (a) crater wear on the rake face and flank wear land VB, (b) flank view with notch wear, (c) wear curve; tool life T ends at the VB limit.</figcaption>
+</figure>
+<ul><li><b>Flank wear</b>: a flat land VB on the flank face from rubbing on the work. Standard failure measure: VB = 0.3 mm.</li><li><b>Crater wear</b>: a scoop on the rake face from the hot chip sliding. Depth KT.</li><li><b>Notch wear</b>: a groove at the depth-of-cut line, caused by work-hardened skin and the hard scale of the work.</li></ul>
+<p><b>Tool life T</b> is the cutting time until the tool reaches the wear limit. <b>Taylor's equation</b> links it with cutting speed (Fig. 3.15):</p>
+<div class="formula">\[ V\, T^{n} = C \]<p class="where">V = cutting speed (m/min), T = tool life (min), n = exponent (HSS 0.08–0.2, carbide 0.2–0.4, ceramic 0.4–0.6), C = constant (speed for T = 1 min).</p></div>
+<figure class="fig" id="mt-u3-f-taylor">
+<svg viewBox="0 0 600 310" role="img" aria-label="Taylor tool life plot: log V against log T is a straight line">
+<defs><marker id="mt-u3-arw-taylor" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<line x1="80" y1="260" x2="560" y2="260" class="ln" marker-end="url(#mt-u3-arw-taylor)"/>
+<line x1="80" y1="260" x2="80" y2="30" class="ln" marker-end="url(#mt-u3-arw-taylor)"/>
+<text x="560" y="284" class="lbl" text-anchor="end">log T</text>
+<text x="68" y="30" class="lbl" text-anchor="end">log V</text>
+<line x1="80" y1="70" x2="520" y2="230" class="ln acc thick"/>
+<circle cx="200" cy="113.2" r="4" class="solid"/>
+<circle cx="400" cy="185.2" r="4" class="solid"/>
+<line x1="80" y1="113.2" x2="200" y2="113.2" class="ln thin dash"/>
+<line x1="200" y1="113.2" x2="200" y2="260" class="ln thin dash"/>
+<line x1="80" y1="185.2" x2="400" y2="185.2" class="ln thin dash"/>
+<line x1="400" y1="185.2" x2="400" y2="260" class="ln thin dash"/>
+<text x="72" y="117" class="lbl" text-anchor="end">V₁</text>
+<text x="72" y="189" class="lbl" text-anchor="end">V₂</text>
+<text x="200" y="280" class="lbl" text-anchor="middle">T₁</text>
+<text x="400" y="280" class="lbl" text-anchor="middle">T₂</text>
+<text x="72" y="74" class="lbl" text-anchor="end">log C</text>
+<text x="80" y="280" class="lbl" text-anchor="middle">0</text>
+<path d="M200,113.2 L400,113.2 L400,185.2" class="ln thin" fill="none"/>
+<text x="300" y="104" class="lbl-sm" text-anchor="middle">Δ log T</text>
+<text x="412" y="150" class="lbl-sm" text-anchor="start">Δ log V</text>
+<text x="440" y="70" class="lbl-b" text-anchor="start">slope = −n</text>
+<text x="440" y="92" class="lbl" text-anchor="start">V·Tⁿ = C</text>
+</svg>
+<figcaption>Fig. 3.15 — Taylor's tool life relation on log–log axes: a straight line of slope −n with intercept log C at T = 1 min.</figcaption>
+</figure>
+<p>Speed has the strongest effect on tool life, then feed, then depth of cut.</p>
+<h3 id="mt-u3-c-cards">Key terms</h3>
+<dl class="cards">
+<dt>Welding</dt><dd>Permanent joining of parts by heat and/or pressure, with or without filler.</dd>
+<dt>Neutral flame</dt><dd>Oxy-acetylene flame with O₂ : C₂H₂ = 1 : 1.</dd>
+<dt>H = I²Rt</dt><dd>Heat made at the joint in resistance welding.</dd>
+<dt>Shear angle φ</dt><dd>Angle of the shear plane to the cutting direction.</dd>
+<dt>Chip thickness ratio r</dt><dd>t₁/t₂, always below 1. tan φ = r cos α / (1 − r sin α).</dd>
+<dt>Built-up edge</dt><dd>Work metal welded to the tool tip at low speed.</dd>
+<dt>μ = tan β</dt><dd>Coefficient of friction on the rake face; β = friction angle.</dd>
+<dt>Tool signature</dt><dd>Seven tool angles in ASA order: αb–αs–θe–θs–Ce–Cs–R.</dd>
+<dt>Taylor equation</dt><dd>V Tⁿ = C.</dd>
+<dt>Flank wear VB</dt><dd>Width of the wear land on the flank face; limit 0.3 mm.</dd>
+</dl>
+<div class="quiz" id="mt-u3-quiz">
+<div class="mcq" data-answer="b"><p class="stem">Which flame has equal volumes of oxygen and acetylene?</p><ol class="opts"><li>Carburising</li><li>Neutral</li><li>Oxidising</li><li>Reducing only</li></ol><p class="why">Neutral flame: O₂ : C₂H₂ = 1 : 1.</p></div>
+<div class="mcq" data-answer="c"><p class="stem">In resistance welding the heat is proportional to</p><ol class="opts"><li>I</li><li>I/R</li><li>I²Rt</li><li>V/t</li></ol><p class="why">H = I²Rt, so current has the strongest effect.</p></div>
+<div class="mcq" data-answer="a"><p class="stem">The chip thickness ratio r = t₁/t₂ is</p><ol class="opts"><li>less than 1</li><li>equal to 1 always</li><li>more than 1</li><li>zero</li></ol><p class="why">The chip is thicker than the uncut layer, so t₂ &gt; t₁ and r &lt; 1.</p></div>
+<div class="mcq" data-answer="d"><p class="stem">In the Merchant circle the diameter of the circle is</p><ol class="opts"><li>Fc</li><li>Ft</li><li>F</li><li>R</li></ol><p class="why">R is common to all force pairs, so it is the diameter.</p></div>
+<div class="mcq" data-answer="b"><p class="stem">The friction coefficient on the rake face is</p><ol class="opts"><li>tan α</li><li>tan β</li><li>sin β</li><li>cos φ</li></ol><p class="why">μ = F/N = tan β where β is the friction angle.</p></div>
+<div class="mcq" data-answer="c"><p class="stem">Which chip is made when cutting cast iron at low speed?</p><ol class="opts"><li>Continuous</li><li>Continuous with BUE</li><li>Discontinuous</li><li>Ribbon</li></ol><p class="why">Brittle metals break into short pieces.</p></div>
+<div class="mcq" data-answer="a"><p class="stem">In V Tⁿ = C, a small n means</p><ol class="opts"><li>life falls fast when speed rises</li><li>life does not depend on speed</li><li>the tool is a ceramic</li><li>C is zero</li></ol><p class="why">HSS has small n, so it is very sensitive to speed.</p></div>
+<div class="mcq" data-answer="d"><p class="stem">In the ASA signature the last element is</p><ol class="opts"><li>SCEA</li><li>ECEA</li><li>side relief</li><li>nose radius</li></ol><p class="why">Order: αb, αs, θe, θs, Ce, Cs, R.</p></div>
+<div class="mcq" data-answer="b"><p class="stem">Which tool material keeps hardness at the highest temperature among these?</p><ol class="opts"><li>HSS</li><li>CBN</li><li>Carbon steel</li><li>Carbide</li></ol><p class="why">CBN stays hard to about 1400 °C.</p></div>
+</div>
+  </section>
+
+  <section class="part" id="mt-u3-theory" data-part="theory">
+    <h2>Theory questions</h2>
+<article class="q" id="mt-u3-q1" data-marks="10">
+<h3>Q1. Classify welding processes and state the principle of fusion and pressure welding.</h3>
+<p class="q-src">Syllabus topic</p>
+<p class="q-hint">Tree of processes (Fig. 3.1) with one line on each group.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Definition.</b> Welding is a permanent joining process in which two or more parts are joined by heat, pressure or both, with or without filler metal.</p><p>Classification (Fig. 3.1):</p><ul><li><b>Fusion welding</b>: parent metal melts and fuses. Gas (oxy-acetylene), arc (SMAW, TIG, MIG, SAW), thermit, electron beam and laser.</li><li><b>Pressure (solid-state) welding</b>: metal is heated to the plastic state and pressed. Resistance (spot, seam, projection, butt), forge, friction, ultrasonic.</li><li><b>Brazing and soldering</b>: filler melts above or below 450 °C; parent metal does not melt.</li></ul><p><b>Comparison.</b></p><div class="tbl"><table><thead><tr><th>Fusion</th><th>Pressure</th></tr></thead><tbody><tr><td>Metal melts; filler used</td><td>Metal only plastic; usually no filler</td></tr><tr><td>Heat from flame or arc</td><td>Heat from resistance, friction or furnace</td></tr><tr><td>Larger heat-affected zone</td><td>Narrow heat-affected zone</td></tr><tr><td>Slow; skilled welder</td><td>Fast; suits mass production</td></tr></tbody></table></div>
+</details>
+</article>
+<article class="q" id="mt-u3-q2" data-marks="10">
+<h3>Q2. With a neat sketch explain the following welding joints: (a) butt joint (b) lap joint (c) edge joint (d) tee joint.</h3>
+<p class="q-src">MT QB Q19</p>
+<p class="q-hint">Four sketches in a row (Fig. 3.2), weld shaded, one use each. Add the corner joint for completeness.</p>
+<details class="answer"><summary>Model answer</summary>
+<p>A welded joint is the way two parts meet at the weld. The five basic types are shown in Fig. 3.2.</p><ul><li><b>(a) Butt joint:</b> two plates lie edge to edge in the same plane. The edges are square for thin plates (up to 5 mm) or bevelled (single V, double V, U) for thick plates so the weld penetrates the full depth. Strong in tension and fatigue. Used for pressure vessels, pipes, ship plates.</li><li><b>(b) Lap joint:</b> one plate overlaps the other. Fillet welds are made along the edges, on one or both sides. No edge preparation. Good in shear, poor in fatigue because of the offset load path. Used for sheet metal and tanks.</li><li><b>(c) Edge joint:</b> two parallel plates are put edge to edge so their edges are flush. The weld is made along the edges. Low strength; for thin sheet and light covers that carry no heavy load.</li><li><b>(d) Tee joint:</b> one plate stands at 90° on the face of the other. Fillet welds on one or both sides. Used for frames, stiffeners and brackets.</li><li><b>Corner joint:</b> two plates meet at their edges at 90° to make a corner. Used for boxes and frames.</li></ul><p>Preparation (bevel angle, root gap) depends on plate thickness. Always sketch the weld metal as a shaded triangle or V.</p>
+</details>
+</article>
+<article class="q" id="mt-u3-q3" data-marks="10">
+<h3>Q3. With a neat sketch explain the types of flames produced in oxy-acetylene welding.</h3>
+<p class="q-src">MT QB Q16</p>
+<p class="q-hint">Equipment sketch, then the three flames (Fig. 3.4) with the O₂:C₂H₂ ratio, appearance and use.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Principle.</b> Oxy-acetylene welding melts the joint edges with a flame of acetylene burnt in oxygen. The flame reaches about 3200 °C. The set is shown in Fig. 3.3: cylinders, regulators, hoses and torch.</p><p><b>Combustion.</b> Primary: \( C_2H_2 + O_2 \rightarrow 2CO + H_2 \) in the inner cone (supplied oxygen). Secondary: the CO and H₂ burn with oxygen from the air in the outer envelope.</p><p>The flame depends on the gas ratio (Fig. 3.4):</p><div class="tbl"><table><thead><tr><th>Flame</th><th>Gas ratio</th><th>Description</th><th>Use</th></tr></thead><tbody><tr><td>Neutral</td><td>O₂ : C₂H₂ = 1 : 1</td><td>Bright inner cone with a sharp outline, clean outer envelope. Inner cone about 3200 °C. Does not change the weld metal.</td><td>Mild steel, cast iron, stainless steel, copper</td></tr><tr><td>Carburising (reducing)</td><td>Excess acetylene (below 1)</td><td>Feather of acetylene around the inner cone, sooty, cooler (about 3000 °C). Adds carbon to the weld.</td><td>Hard-facing, aluminium, Monel, nickel</td></tr><tr><td>Oxidising</td><td>Excess oxygen (about 1.5)</td><td>Short, pointed inner cone, hissing noise, hottest (about 3400 °C). Oxidises the metal and makes it brittle.</td><td>Brass and bronze (a thin oxide film stops zinc loss)</td></tr></tbody></table></div><p><b>Adjusting.</b> First open acetylene and light it (smoky yellow flame). Then add oxygen until the feather goes: this is the neutral flame.</p>
+</details>
+</article>
+<article class="q" id="mt-u3-q4" data-marks="10">
+<h3>Q4. With a neat sketch explain the resistance welding process.</h3>
+<p class="q-src">MT QB Q17 · Jun-Jul 2025 Q8(a) (4th sem MP-I, spot welding)</p>
+<p class="q-hint">Principle H = I²Rt, spot welding sketch (Fig. 3.5), the cycle, types (Fig. 3.6), advantages and limits.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Principle.</b> Two parts are held between electrodes. A large current passes through the joint. The resistance of the contact heats the metal, and the force of the electrodes presses the plastic metal into a weld. \( H = I^2 R t \).</p><p>Fig. 3.5 shows spot welding: a step-down transformer gives low voltage and very high current (thousands of amperes) to two water-cooled copper electrodes.</p><ol><li>Clean overlapped sheets are placed between the electrodes.</li><li>The electrodes squeeze the sheets (force F).</li><li>The current flows for a short time (0.02–1 s). A molten nugget forms at the interface.</li><li>The current stops. The force holds the nugget until it freezes (forging).</li><li>The electrodes lift off.</li></ol><p><b>Types</b> (Fig. 3.6): spot, seam (roller electrodes, leak-tight), projection (embossed projections) and butt (upset or flash).</p><p><b>Advantages:</b> fast, easy to automate, no filler or flux, little distortion, clean. <b>Limitations:</b> costly equipment, lap joints for sheets only (spot, seam), thickness limit, high power demand.</p><p><b>Uses:</b> car bodies, appliance panels, fuel tanks, wire mesh, rail ends.</p>
+</details>
+</article>
+<article class="q" id="mt-u3-q5" data-marks="10">
+<h3>Q5. Explain briefly orthogonal and oblique cutting with a neat sketch.</h3>
+<p class="q-src">MT QB Q24</p>
+<p class="q-hint">Plan-view sketch (Fig. 3.8) and a table of differences.</p>
+<details class="answer"><summary>Model answer</summary>
+<p>Cutting is classified by the angle of the cutting edge to the direction of the cutting velocity V (Fig. 3.8).</p><p><b>Orthogonal cutting.</b> The edge is perpendicular to V. The chip flows normal to the edge. Only two forces act (Fc and Ft), so cutting is a two-dimensional problem. The edge is longer than the width of cut. All basic theory (Merchant circle) uses it. Example: parting off, tube turning.</p><p><b>Oblique cutting.</b> The edge is inclined at the angle i to the normal of V. The chip flows sideways at the chip-flow angle η (Stabler: η ≈ i). Three forces act (Fc, Ft, Fr): a three-dimensional problem. The longer edge spreads heat and gives longer tool life and a better finish because the chip flows away from the work. Example: turning with a side cutting edge angle, milling, drilling.</p><div class="tbl"><table><thead><tr><th>Feature</th><th>Orthogonal</th><th>Oblique</th></tr></thead><tbody><tr><td>Edge to V</td><td>90°</td><td>Inclined at i</td></tr><tr><td>Chip flow</td><td>Normal to edge</td><td>At angle η</td></tr><tr><td>Forces</td><td>2</td><td>3</td></tr><tr><td>Analysis</td><td>Simple</td><td>Complex</td></tr><tr><td>Tool life, finish</td><td>Lower</td><td>Higher</td></tr></tbody></table></div>
+</details>
+</article>
+<article class="q" id="mt-u3-q6" data-marks="10">
+<h3>Q6. Illustrate the formation of chip. Discuss the types of chips with neat sketches.</h3>
+<p class="q-src">MT QB Q25</p>
+<p class="q-hint">Fig. 3.9 (shear plane, shear zone, t₁, t₂) then three chip types (Fig. 3.10). Add the meaning of shear angle.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Formation.</b> The wedge-shaped tool enters the work (Fig. 3.9). The metal ahead of the edge is compressed until its shear stress equals the shear strength. It then shears plastically along the shear plane at the shear angle φ and slides up the rake face as a chip.</p><ul><li>The deformation is in a thin <b>shear zone</b>, not on a line. Nearly all machining heat is made here, with some from friction on the rake face.</li><li>The chip is thicker and shorter than the layer cut: \( t_2 &gt; t_1 \), \( r = t_1/t_2 &lt; 1 \).</li><li><b>Significance of φ:</b> a large φ gives a thin chip, small shear area, low force, low power and less heat. A small φ gives a thick chip and high force. φ increases with larger rake and lower friction (\( 2\phi + \beta - \alpha = 90^\circ \)).</li></ul><p><b>Types of chip</b> (Fig. 3.10):</p><ul><li><b>Continuous:</b> ductile metal, high speed, small feed, large rake angle, low friction. Smooth ribbon, good finish, low wear. Disposal is difficult, so a chip breaker is used.</li><li><b>Discontinuous:</b> brittle metals (cast iron, bronze), or ductile metal at low speed, large feed, small rake. Short broken pieces, force varies, poorer finish.</li><li><b>Continuous with built-up edge (BUE):</b> ductile metal at low speed with high friction. Layers of work metal weld to the tool tip, grow and break off. Gives a rough surface and crater wear. Cure: raise speed, increase rake, reduce feed, use cutting fluid.</li></ul>
+</details>
+</article>
+<article class="q" id="mt-u3-q7" data-marks="12">
+<h3>Q7. Draw a Merchant's circle diagram and derive the expression showing the relationship among the forces acting on the cutting tool and the coefficient of friction.</h3>
+<p class="q-src">MT QB Q26</p>
+<p class="q-hint">Circle with R as diameter (Fig. 3.11), assumptions, F and N, μ = tan β, Fs and Fn, Merchant's relation.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Forces.</b> Fc cutting force, Ft thrust force, F friction force on the rake face, N normal force on the rake face, Fs shear force, Fn normal force on the shear plane. The resultant R is common to all pairs, so it is the diameter of the circle (Fig. 3.11).</p><p><b>Assumptions:</b> orthogonal cutting, sharp tool, continuous chip without BUE, single shear plane, constant cutting speed, chip in equilibrium.</p><p><b>Friction and normal force.</b> Resolve R along and normal to the rake face (rake angle α):</p><div class="formula">\[ F = F_c\sin\alpha + F_t\cos\alpha,\qquad N = F_c\cos\alpha - F_t\sin\alpha \]</div><p><b>Coefficient of friction.</b></p><div class="formula">\[ \mu = \frac{F}{N} = \tan\beta = \frac{F_t + F_c\tan\alpha}{F_c - F_t\tan\alpha} \]</div><p>where β is the friction angle between R and N.</p><p><b>Shear forces.</b> Resolve R along and normal to the shear plane (shear angle φ):</p><div class="formula">\[ F_s = F_c\cos\phi - F_t\sin\phi,\qquad F_n = F_c\sin\phi + F_t\cos\phi \]</div><p><b>In terms of R:</b> \( F_c = R\cos(\beta-\alpha) \), \( F_t = R\sin(\beta-\alpha) \), \( F_s = R\cos(\phi+\beta-\alpha) \), \( F = R\sin\beta \), \( N = R\cos\beta \).</p><p><b>Merchant's shear-angle relation.</b> The shear stress on the plane is \( \tau_s = F_s/A_s \) with \( A_s = b\,t_1/\sin\phi \). Then</p><div class="formula">\[ F_c = \frac{\tau_s\, b\, t_1\cos(\beta-\alpha)}{\sin\phi\,\cos(\phi+\beta-\alpha)} \]</div><p>Nature chooses φ for least cutting force. Maximise \( \sin\phi\cos(\phi+\beta-\alpha) = \tfrac12[\sin(2\phi+\beta-\alpha) - \sin(\beta-\alpha)] \). The maximum occurs when \( 2\phi+\beta-\alpha = 90^\circ \), so \( \phi = 45^\circ + \alpha/2 - \beta/2 \).</p><p><b>Limits:</b> real tools have an edge radius and flank wear; the shear zone is a band; τs and μ are not constant; BUE breaks the assumptions.</p>
+</details>
+</article>
+<article class="q" id="mt-u3-q8" data-marks="10">
+<h3>Q8. Derive the relation between the shear angle φ, the rake angle α and the chip thickness ratio r.</h3>
+<p class="q-src">Syllabus topic (shear angle)</p>
+<p class="q-hint">Fig. 3.9 geometry: t₁ = AB sin φ, t₂ = AB cos(φ − α).</p>
+<details class="answer"><summary>Model answer</summary>
+<p>Let AB be the length of the shear plane (Fig. 3.9). From the geometry:</p><div class="formula">\[ t_1 = AB\sin\phi,\qquad t_2 = AB\cos(\phi-\alpha) \]</div><p>So the chip thickness ratio is</p><div class="formula">\[ r = \frac{t_1}{t_2} = \frac{\sin\phi}{\cos(\phi-\alpha)} = \frac{\sin\phi}{\cos\phi\cos\alpha + \sin\phi\sin\alpha} \]</div><p>Divide the numerator and denominator by \( \cos\phi \):</p><div class="formula">\[ r = \frac{\tan\phi}{\cos\alpha + \tan\phi\sin\alpha}\;\Rightarrow\; \tan\phi = \frac{r\cos\alpha}{1 - r\sin\alpha} \]</div><p>For α = 0: \( \tan\phi = r \). Because volume is constant, \( t_1 l_1 = t_2 l_2 \), so \( r = l_2/l_1 \) also: the chip is shorter than the cut length. Measuring chip thickness or chip length gives φ without a dynamometer.</p>
+</details>
+</article>
+<article class="q" id="mt-u3-q9" data-marks="6">
+<h3>Q9. Define cutting speed, feed and depth of cut.</h3>
+<p class="q-src">MT QB Q28</p>
+<p class="q-hint">Definition, symbol, unit, formula and a turning sketch (Fig. 3.7).</p>
+<details class="answer"><summary>Model answer</summary>
+<p>These are the three cutting parameters (Fig. 3.7).</p><ul><li><b>Cutting speed V:</b> the relative surface speed between tool and work in the main cutting direction. \( V = \dfrac{\pi D N}{1000} \) m/min (D in mm, N in rpm). It is the main motion. It has the largest effect on tool temperature and tool life.</li><li><b>Feed f:</b> the advance of the tool per revolution of the work (mm/rev) in turning and drilling, or per stroke in shaping. It is the secondary motion. It sets chip thickness and surface finish.</li><li><b>Depth of cut d:</b> the thickness of the layer removed in one pass, measured perpendicular to the feed direction (mm). In turning \( d = (D_1 - D_2)/2 \).</li></ul><p><b>Material removal rate</b> \( = 1000\,V f d \) mm³/min. For long tool life: use large depth of cut first, then feed, and speed last. Roughing uses high d and f at low V. Finishing uses low d and f at high V.</p>
+</details>
+</article>
+<article class="q" id="mt-u3-q10" data-marks="10">
+<h3>Q10. Describe the factors affecting tool life and give Taylor's tool life equation.</h3>
+<p class="q-src">MT QB Q29</p>
+<p class="q-hint">Define tool life, wear types (Fig. 3.14), Taylor equation (Fig. 3.15), then the factors.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Tool life</b> is the total cutting time until the tool reaches a set failure limit, for example flank wear VB = 0.3 mm, complete failure, poor finish or sharp rise in force. Tool wear types (Fig. 3.14): <b>flank wear</b> (rubbing on the work), <b>crater wear</b> (hot chip on the rake face) and <b>notch wear</b> at the depth-of-cut line. The wear curve has three stages: initial, steady and rapid failure.</p><p><b>Taylor's equation</b> (Fig. 3.15):</p><div class="formula">\[ V\,T^{n} = C \]</div><p>n and C depend on tool and work material. On log-log axes it is a straight line of slope −n. The extended form is \( V T^n f^a d^b = C \).</p><p><b>Factors:</b></p><ul><li><b>Cutting speed</b>: main factor, because temperature rises with speed and wear rate rises sharply.</li><li><b>Feed and depth of cut</b>: raise force and heat; feed has more effect than depth.</li><li><b>Tool material</b>: hot hardness and toughness (carbide outlasts HSS).</li><li><b>Tool geometry</b>: rake, relief, SCEA and nose radius.</li><li><b>Work material</b>: hardness, abrasive inclusions, work hardening.</li><li><b>Cutting fluid</b>: cools and lubricates.</li><li><b>Rigidity</b> of machine, tool and work; vibration chips the edge.</li><li><b>Type of cut</b>: interrupted cuts shorten life.</li></ul>
+</details>
+</article>
+<article class="q" id="mt-u3-q11" data-marks="12">
+<h3>Q11. Explain the importance and function of the different tool angles of a single point cutting tool with a neat sketch. Write the tool signature.</h3>
+<p class="q-src">MT QB Q30</p>
+<p class="q-hint">Fig. 3.13 with all seven elements, a function table, the ASA signature with an example.</p>
+<details class="answer"><summary>Model answer</summary>
+<p>A single point tool is a wedge. Its geometry has seven elements (Fig. 3.13).</p><div class="tbl"><table><thead><tr><th>Element</th><th>Definition</th><th>Function</th></tr></thead><tbody><tr><td>Back rake αb</td><td>Slope of the face along the shank</td><td>Controls chip flow and direction of force</td></tr><tr><td>Side rake αs</td><td>Slope of the face across the shank</td><td>Main rake; reduces force; guides the chip away from the work</td></tr><tr><td>End relief θe</td><td>Angle of the end flank below the base line</td><td>Clears the end flank from the work</td></tr><tr><td>Side relief θs</td><td>Angle of the side flank</td><td>Lets the tool feed without rubbing</td></tr><tr><td>ECEA Ce</td><td>End cutting edge to the line normal to the shank</td><td>Stops rubbing of the end edge on the finished surface</td></tr><tr><td>SCEA Cs</td><td>Side cutting edge to the shank side</td><td>Longer edge, thinner chip, more heat conduction</td></tr><tr><td>Nose radius R</td><td>Radius at the tool tip</td><td>Strong tip, better finish</td></tr></tbody></table></div><p><b>Effects.</b> More rake: less force and power, but weaker edge. More relief: less flank wear, but weaker edge. Positive rake suits soft metals; negative rake suits carbide and interrupted cuts. A large nose radius gives a better finish but may chatter.</p><p><b>Tool signature (ASA):</b> \( \alpha_b - \alpha_s - \theta_e - \theta_s - C_e - C_s - R \). Example: 8–12–6–6–15–20–1 means back rake 8°, side rake 12°, end relief 6°, side relief 6°, ECEA 15°, SCEA 20°, nose radius 1 mm.</p>
+</details>
+</article>
+<article class="q" id="mt-u3-q12" data-marks="10">
+<h3>Q12. Explain the various cutting tool materials and list the properties required of a cutting tool material.</h3>
+<p class="q-src">MT QB Q31</p>
+<p class="q-hint">Properties list, then materials in order of hot hardness.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Properties required:</b></p><ul><li><b>Hot hardness</b> at the cutting temperature (most important).</li><li><b>Wear resistance</b> against abrasion and adhesion.</li><li><b>Toughness</b> to resist shock and interrupted cuts.</li><li><b>Thermal conductivity</b> and thermal shock resistance.</li><li><b>Chemical inertness</b> (low affinity to the work).</li><li>Easy to make and grind; low cost.</li></ul><p><b>Materials</b> (in order of increasing hot hardness):</p><div class="tbl"><table><thead><tr><th>Material</th><th>Notes</th><th>Use</th></tr></thead><tbody><tr><td>High carbon steel</td><td>0.8–1.3 % C; softens at about 250 °C</td><td>Hand tools, files</td></tr><tr><td>HSS (T1 18-4-1, M2)</td><td>W, Mo, Cr, V; hard to about 600 °C; tough; can be reground</td><td>Drills, taps, reamers, cutters</td></tr><tr><td>Cast alloys (stellite)</td><td>Co, Cr, W; about 800 °C</td><td>Form tools, hard-facing</td></tr><tr><td>Cemented carbide</td><td>WC grains in Co binder; about 1000 °C; coated types (TiC, TiN, Al₂O₃) last longer</td><td>Inserts for turning and milling</td></tr><tr><td>Ceramics</td><td>Al₂O₃; above 1200 °C; brittle</td><td>High-speed finishing</td></tr><tr><td>CBN</td><td>Cubic boron nitride; about 1400 °C</td><td>Hardened steel</td></tr><tr><td>Diamond</td><td>Hardest; reacts with iron</td><td>Non-ferrous metals, plastics</td></tr></tbody></table></div>
+</details>
+</article>
+<article class="q" id="mt-u3-q13" data-marks="10">
+<h3>Q13. How do you classify cutting tools? Explain with a neat sketch.</h3>
+<p class="q-src">MT QB Q32</p>
+<p class="q-hint">Fig. 3.12 tree, then one line for each group.</p>
+<details class="answer"><summary>Model answer</summary>
+<p>Cutting tools are classified by the number of cutting edges (Fig. 3.12).</p><ul><li><b>Single point tools</b> have one cutting edge. By construction: solid (forged) tools, brazed-tip tools, and tools with clamped throw-away inserts. By operation: turning, facing, boring, parting, threading, shaping and planing tools. Used on lathe, shaper and planer.</li><li><b>Multi point tools</b> have many cutting edges. Toothed: drill, reamer, milling cutter, broach, hob, tap, saw, file. Abrasive: grinding wheel, honing stick, abrasive belt.</li></ul><p>Multi point tools cut faster and share the load, but cost more and are harder to sharpen. Single point tools are simple, cheap and easy to regrind.</p>
+</details>
+</article>
+<article class="q" id="mt-u3-q14" data-marks="10">
+<h3>Q14. Describe tool wear and the three zones of the wear curve.</h3>
+<p class="q-src">Syllabus topic (tool wear)</p>
+<p class="q-hint">Fig. 3.14: flank, crater and notch wear and the three-stage curve.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Tool wear</b> is the gradual loss of tool material at the cutting edge by abrasion, adhesion, diffusion and heat (Fig. 3.14).</p><ul><li><b>Flank wear:</b> wear land VB on the flank from rubbing on the machined surface. Gives poor finish and size error. Measured by VB; limit 0.3 mm.</li><li><b>Crater wear:</b> a scoop on the rake face where the hot chip slides. Depth KT. Weakens the edge.</li><li><b>Notch wear:</b> a groove at the depth-of-cut line from work-hardened skin and scale.</li></ul><p><b>Wear curve:</b> stage I is initial fast wear of the sharp edge; stage II is steady slow wear (the useful life); stage III is rapid wear and failure. Regrind or index the tool at the end of stage II. Tool life is the time to reach the VB limit.</p>
+</details>
+</article>
+  </section>
+
+  <section class="part" id="mt-u3-numericals" data-part="numericals">
+    <h2>Numericals</h2>
+<p class="method"><b>Method.</b> (1) Write all data in N, mm, m/min. Convert kgf to N (× 9.81). (2) t₁ = feed in turning. (3) r = t₁/t₂. (4) \( \tan\phi = r\cos\alpha/(1-r\sin\alpha) \). (5) F = Fc sin α + Ft cos α, N = Fc cos α − Ft sin α, μ = F/N. (6) Fs = Fc cos φ − Ft sin φ, Fn = Fc sin φ + Ft cos φ. (7) Taylor: n = log(V₁/V₂)/log(T₂/T₁), C = V₁T₁ⁿ.</p>
+<article class="num" id="mt-u3-n1">
+<h3>N1. In an orthogonal turning operation the cutting speed is 8 m/min, the cutting force is 25 kgf, the feed force is 9 kgf, the rake angle is 10°, the feed is 0.3 mm/rev and the chip thickness is 0.3 mm. Determine the shear angle and the chip thickness ratio.</h3>
+<p class="q-src">MT QB Q27</p>
+<aside class="note"><b>Data note.</b> The uncut chip thickness t₁ equals the feed, 0.3 mm. The given chip thickness 0.3 mm is t₂. So t₁ = t₂ and r = 1. Use g = 9.81 m/s².</aside>
+<ol class="steps"><li>Forces: \( F_c = 25 \times 9.81 = 245.25 \) N, \( F_t = 9 \times 9.81 = 88.29 \) N.</li><li>Uncut chip thickness \( t_1 = f = 0.3 \) mm; chip thickness \( t_2 = 0.3 \) mm.</li><li>Chip thickness ratio \( r = t_1/t_2 = 0.3/0.3 = 1.0 \).</li><li>\( \tan\phi = \dfrac{r\cos\alpha}{1 - r\sin\alpha} = \dfrac{\cos 10^\circ}{1-\sin 10^\circ} = \dfrac{0.9848}{0.8264} = 1.1917 \Rightarrow \phi = 50.0^\circ \).</li><li>Extra check: \( F = F_c\sin\alpha + F_t\cos\alpha = 129.5 \) N, \( N = F_c\cos\alpha - F_t\sin\alpha = 226.2 \) N, \( \mu = F/N = 0.573 \). Power \( F_c V = 32.7 \) W.</li></ol>
+<p class="final">Answer: r = 1.0, shear angle φ = 50.0°</p></article>
+<article class="num" id="mt-u3-n2">
+<h3>N2. A mild steel workpiece of 60 mm diameter is turned with an orthogonal tool at a feed of 0.92 mm/rev and 75 rpm. The chip thickness is 2 mm. Determine the chip thickness ratio and the length of chip removed in one minute. Assume a continuous chip.</h3>
+<p class="q-src">MT QB Q44</p>
+<aside class="note"><b>Data note.</b> In orthogonal turning t₁ = feed = 0.92 mm. The chip thickness 2 mm is t₂. Chip length = r × length of work cut.</aside>
+<ol class="steps"><li>Uncut thickness \( t_1 = f = 0.92 \) mm; \( t_2 = 2 \) mm.</li><li>\( r = t_1/t_2 = 0.92/2 = 0.46 \).</li><li>Length of work surface cut in 1 min: \( l_1 = \pi D N = \pi \times 60 \times 75 = 14137 \) mm (V = 14.14 m/min).</li><li>Volume constant: \( l_2 = r\, l_1 = 0.46 \times 14137 = 6503 \) mm.</li></ol>
+<p class="final">Answer: r = 0.46, chip length = 6503 mm ≈ 6.5 m per minute</p></article>
+<article class="num" id="mt-u3-n3">
+<h3>N3. In orthogonal cutting the cutting force is 1200 N and the thrust force is 500 N. Rake angle 15°, uncut chip thickness 0.2 mm, chip thickness 0.5 mm, width of cut 3 mm. Find the shear angle, the friction force, the normal force, the coefficient of friction, the shear force, the normal shear force and the shear stress on the shear plane.</h3>
+<p class="q-src">Syllabus topic (Merchant circle)</p>
+<ol class="steps"><li>\( r = 0.2/0.5 = 0.40 \); \( \tan\phi = \dfrac{0.4\cos 15^\circ}{1 - 0.4\sin 15^\circ} = 0.4310 \Rightarrow \phi = 23.3^\circ \).</li><li>\( F = 1200\sin 15^\circ + 500\cos 15^\circ = 793.5 \) N.</li><li>\( N = 1200\cos 15^\circ - 500\sin 15^\circ = 1029.7 \) N.</li><li>\( \mu = F/N = 0.771 \) (β = 37.6°).</li><li>\( F_s = 1200\cos\phi - 500\sin\phi = 904.1 \) N; \( F_n = 1200\sin\phi + 500\cos\phi = 934.1 \) N.</li><li>Shear area \( A_s = b t_1/\sin\phi = 3\times 0.2/\sin\phi = 1.516 \) mm². \( \tau_s = F_s/A_s = 596 \) N/mm².</li><li>Check: \( R = \sqrt{1200^2+500^2} = 1300 \) N and \( \sqrt{F^2+N^2} = 1300 \) N.</li></ol>
+<p class="final">Answer: φ = 23.3°, F = 794 N, N = 1030 N, μ = 0.77, Fs = 904 N, Fn = 934 N, τs = 596 N/mm²</p></article>
+<article class="num" id="mt-u3-n4">
+<h3>N4. Two tool-life tests give: V = 60 m/min, T = 90 min and V = 90 m/min, T = 20 min. Find n and C in Taylor's equation, and the cutting speed for a tool life of 60 min.</h3>
+<p class="q-src">MT QB Q29 (Taylor equation)</p>
+<ol class="steps"><li>\( V_1 T_1^n = V_2 T_2^n \Rightarrow 60\times 90^n = 90\times 20^n \).</li><li>\( (90/20)^n = 90/60 \Rightarrow n = \dfrac{\ln 1.5}{\ln 4.5} = 0.270 \).</li><li>\( C = V_1 T_1^n = 60\times 90^{0.270} = 201.8 \).</li><li>For T = 60 min: \( V = C/T^n = 201.8/60^{0.270} = 66.9 \) m/min.</li></ol>
+<p class="final">Answer: n = 0.270, C = 202, V (60 min life) = 66.9 m/min</p></article>
+<h3 id="mt-u3-practice">Practice problems</h3>
+<article class="num practice" id="mt-u3-p1"><h3>P1. In orthogonal cutting Fc = 800 N, Ft = 300 N, rake angle 15°, t₁ = 0.2 mm, t₂ = 0.6 mm. Find r, the shear angle φ, F, N, μ, Fs and Fn.</h3><p class="q-src">Syllabus topic (Merchant circle)</p><p class="final">Answer: r = 0.333, φ = 19.4°, F = 497 N, N = 695 N, μ = 0.71, Fs = 655 N, Fn = 549 N</p></article>
+<article class="num practice" id="mt-u3-p2"><h3>P2. A bar of 80 mm diameter is turned at 400 rpm with feed 0.25 mm/rev and depth of cut 2 mm. Find the cutting speed, the material removal rate and the time to cut 300 mm length.</h3><p class="q-src">MT QB Q28</p><p class="final">Answer: V = 100.5 m/min, MRR = 50265 mm³/min, time = 3.0 min</p></article>
+<article class="num practice" id="mt-u3-p3"><h3>P3. A tool has a life of 60 min at 30 m/min. Taking n = 0.25 in Taylor's equation, find the new tool life if the cutting speed is raised by 20 %.</h3><p class="q-src">MT QB Q29</p><p class="final">Answer: T = 28.9 min</p></article>
+  </section>
+</section>
