@@ -1,0 +1,489 @@
+<section class="unit" data-unit="mt-u5">
+  <header class="unit-head">
+    <p class="eyebrow">Manufacturing Technology · Unit 5</p>
+    <h1>Artificial Intelligence in Welding</h1>
+    <p class="lede">Welding is hard to control because many variables act together. This unit shows how sensors, machine-learning models and robots work as one closed loop. The loop finds the joint, spots defects, predicts failures and adapts the process.</p>
+    <ul class="syl"><li>Introduction to AI in welding</li><li>Sensors and data acquisition in welding processes</li><li>AI-based defect detection</li><li>Predictive maintenance of welding equipment using AI</li><li>Digital twin technology for welding process optimisation</li><li>Intelligent robotic welding systems</li><li>Industrial case studies on AI-enabled welding automation</li></ul>
+  </header>
+
+  <section class="part" id="mt-u5-concepts" data-part="concepts">
+    <h2>Concepts</h2>
+<aside class="exam"><b>Exam pattern.</b> Unit 5 is descriptive. Expect a 10-mark question with a block diagram or flow sketch. Learn Fig. 5.2, 5.4, 5.6 and 5.8 and the table of limitations against AI remedies.</aside>
+
+<h3 id="mt-u5-c-intro">1. Introduction to AI in welding</h3>
+<p><b>AI in welding</b> is the use of sensors, data acquisition, machine-learning models and feedback control, so that a welding system can sense, interpret, predict and adapt like an expert welder.</p>
+<p>Welding quality depends on many variables that act together: current, voltage, travel speed, wire-feed rate, gas flow, torch angle, joint fit-up, plate thickness and surface condition. We can name three reasons to add AI:</p>
+<ul>
+<li><b>Skill shortage.</b> Expert welders are few. AI keeps their judgement inside the machine.</li>
+<li><b>Quality.</b> Defects found late cause rework and scrap. AI finds them during welding.</li>
+<li><b>Variation.</b> Parts, fixtures and material differ from piece to piece. AI adapts to them.</li>
+</ul>
+<aside class="warn"><b>Common mistake.</b> A robot that repeats a taught path is automated, not AI-enabled. AI needs sensor feedback and a learned model that changes the decision.</aside>
+<figure class="photo"><img src="img/mt-u5-robotic-welding-cell.jpg" alt="A robotic welding cell: the workpiece fixture on a positioner inside protective weld screens." width="1000" height="652" loading="lazy"><figcaption>A robotic welding cell: the workpiece fixture on a positioner inside protective weld screens. <span class="credit">Photo: WireCrafters · CC BY-SA 4.0 · Wikimedia Commons</span></figcaption></figure>
+
+<h3 id="mt-u5-c-sensors">2. Sensors and data acquisition</h3>
+<p>Sensors are the eyes and ears of the system. Fig. 5.1 shows where they sit. Each sensor measures a different effect, and <b>sensor fusion</b> combines them for better accuracy.</p>
+<figure class="fig" id="mt-u5-f-sensors">
+<svg viewBox="0 0 680 315" role="img" aria-label="Sensors placed around the welding torch and weld pool">
+<defs><marker id="mt-u5-a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="100" y="245" width="480" height="24" class="ln fill-soft"/>
+<path d="M290,245 Q330,222 370,245 Z" class="ln fill-acc"/>
+<polygon points="385,45 415,55 352,200 330,192" class="ln fill-soft"/>
+<path d="M340,196 L332,238" class="ln thin" fill="none"/>
+<path d="M322,214 l-8,-6 l14,-2 l-8,-8" class="ln acc" fill="none"/>
+<rect x="20" y="50" width="175" height="46" class="ln fill-acc2"/>
+<text x="107.5" y="70.0" class="lbl-b" text-anchor="middle">Laser stripe + camera</text>
+<text x="107.5" y="86.0" class="lbl-sm" text-anchor="middle">seam tracking</text>
+<rect x="20" y="150" width="175" height="46" class="ln fill-acc2"/>
+<text x="107.5" y="170.0" class="lbl-b" text-anchor="middle">Microphone</text>
+<text x="107.5" y="186.0" class="lbl-sm" text-anchor="middle">acoustic sensor</text>
+<rect x="490" y="35" width="175" height="62" class="ln fill-acc2"/>
+<text x="577.5" y="55.0" class="lbl-b" text-anchor="middle">Power-source sensors</text>
+<text x="577.5" y="71.0" class="lbl-sm" text-anchor="middle">arc current, voltage,</text>
+<text x="577.5" y="87.0" class="lbl-sm" text-anchor="middle">wire-feed speed</text>
+<rect x="490" y="150" width="175" height="46" class="ln fill-acc2"/>
+<text x="577.5" y="170.0" class="lbl-b" text-anchor="middle">IR thermal camera</text>
+<text x="577.5" y="186.0" class="lbl-sm" text-anchor="middle">melt pool, cooling</text>
+<line x1="195" y1="85" x2="296" y2="238" class="ln dash acc2" marker-end="url(#mt-u5-a1)"/>
+<line x1="195" y1="180" x2="310" y2="236" class="ln dash acc2" marker-end="url(#mt-u5-a1)"/>
+<line x1="490" y1="80" x2="400" y2="90" class="ln dash acc2" marker-end="url(#mt-u5-a1)"/>
+<line x1="490" y1="180" x2="352" y2="238" class="ln dash acc2" marker-end="url(#mt-u5-a1)"/>
+<text x="330" y="296" class="lbl-sm" text-anchor="middle">Weld pool and joint</text>
+<line x1="560" y1="296" x2="460" y2="296" class="ln thin" marker-end="url(#mt-u5-a1)"/>
+<text x="572" y="300" class="lbl-sm" text-anchor="start">Travel</text>
+<text x="420" y="115" class="lbl-sm" text-anchor="start">Torch</text>
+</svg>
+<figcaption>Fig. 5.1 — Sensors around the torch and weld pool.</figcaption>
+</figure>
+
+<div class="tbl"><table><thead><tr><th>Sensor</th><th>Measures</th><th>Used for</th></tr></thead><tbody>
+<tr><td>Laser stripe + vision camera</td><td>Joint position, gap, bead shape</td><td>Seam tracking, bead inspection</td></tr>
+<tr><td>Thermal (IR) camera</td><td>Temperature field, melt-pool size, cooling rate</td><td>Penetration and heat-flow monitoring</td></tr>
+<tr><td>Acoustic sensor</td><td>Sound of the arc</td><td>Porosity, spatter, arc stability</td></tr>
+<tr><td>Current and voltage sensors</td><td>Arc current and voltage</td><td>Parameter monitoring, disturbance detection</td></tr>
+<tr><td>Wire-feed and gas-flow sensors</td><td>Feed speed, gas flow</td><td>Process consistency</td></tr>
+</tbody></table></div>
+<p>The <b>data acquisition system (DAQ)</b> amplifies, filters, synchronises, digitises and time-stamps the signals. Fig. 5.2 gives the full data pipeline.</p>
+<figure class="fig" id="mt-u5-f-pipeline">
+<svg viewBox="0 0 680 260" role="img" aria-label="Block diagram of the sensor to robot data pipeline">
+<defs><marker id="mt-u5-a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="10" y="70" width="116" height="86" class="ln fill-soft"/>
+<text x="68.0" y="92.5" class="lbl-b" text-anchor="middle">Sensors</text>
+<text x="68.0" y="109.5" class="lbl-sm" text-anchor="middle">camera, laser</text>
+<text x="68.0" y="126.5" class="lbl-sm" text-anchor="middle">IR, sound</text>
+<text x="68.0" y="143.5" class="lbl-sm" text-anchor="middle">arc I and V</text>
+<line x1="126" y1="113" x2="146" y2="113" class="ln" marker-end="url(#mt-u5-a2)"/>
+<rect x="146" y="70" width="116" height="86" class="ln fill-soft"/>
+<text x="204.0" y="92.5" class="lbl-b" text-anchor="middle">DAQ</text>
+<text x="204.0" y="109.5" class="lbl-sm" text-anchor="middle">filter, amplify</text>
+<text x="204.0" y="126.5" class="lbl-sm" text-anchor="middle">digitise</text>
+<text x="204.0" y="143.5" class="lbl-sm" text-anchor="middle">time-stamp</text>
+<line x1="262" y1="113" x2="282" y2="113" class="ln" marker-end="url(#mt-u5-a2)"/>
+<rect x="282" y="70" width="116" height="86" class="ln fill-acc"/>
+<text x="340.0" y="92.5" class="lbl-b" text-anchor="middle">AI model</text>
+<text x="340.0" y="109.5" class="lbl-sm" text-anchor="middle">defect class</text>
+<text x="340.0" y="126.5" class="lbl-sm" text-anchor="middle">life (RUL)</text>
+<text x="340.0" y="143.5" class="lbl-sm" text-anchor="middle">best settings</text>
+<line x1="398" y1="113" x2="418" y2="113" class="ln" marker-end="url(#mt-u5-a2)"/>
+<rect x="418" y="70" width="116" height="86" class="ln fill-soft"/>
+<text x="476.0" y="92.5" class="lbl-b" text-anchor="middle">Controller</text>
+<text x="476.0" y="109.5" class="lbl-sm" text-anchor="middle">adjust I, V,</text>
+<text x="476.0" y="126.5" class="lbl-sm" text-anchor="middle">speed, path</text>
+<text x="476.0" y="143.5" class="lbl-sm" text-anchor="middle">safe limits</text>
+<line x1="534" y1="113" x2="554" y2="113" class="ln" marker-end="url(#mt-u5-a2)"/>
+<rect x="554" y="70" width="116" height="86" class="ln fill-soft"/>
+<text x="612.0" y="92.5" class="lbl-b" text-anchor="middle">Robot</text>
+<text x="612.0" y="109.5" class="lbl-sm" text-anchor="middle">torch, wire</text>
+<text x="612.0" y="126.5" class="lbl-sm" text-anchor="middle">feeder,</text>
+<text x="612.0" y="143.5" class="lbl-sm" text-anchor="middle">positioner</text>
+<path d="M68,156 L68,215 L68,215" class="ln dash" fill="none"/>
+<path d="M624,156 L624,215 L68,215 L68,160" class="ln dash acc2" fill="none" marker-end="url(#mt-u5-a2)"/>
+<text x="346" y="238" class="lbl-sm" text-anchor="middle">Feedback: the weld is sensed again after each correction</text>
+<text x="346" y="40" class="lbl-sm" text-anchor="middle">Data flows left to right; the dashed loop makes it closed loop</text>
+</svg>
+<figcaption>Fig. 5.2 — Data pipeline: sensors → DAQ → AI model → controller → robot, with feedback.</figcaption>
+</figure>
+
+<figure class="photo"><img src="img/mt-u5-weld-camera-setup.jpg" alt="A welding robot arm with torch and a weld camera for monitoring." width="1000" height="750" loading="lazy"><figcaption>A welding robot arm with torch and a weld camera for monitoring. <span class="credit">Photo: WeldingWIP · CC BY 4.0 · Wikimedia Commons</span></figcaption></figure>
+
+<h3 id="mt-u5-c-defects">3. AI-based defect detection</h3>
+<p>Visual, X-ray and ultrasonic checks are slow and often come after welding. AI inspects images in real time, at the point of welding, and covers every weld. Fig. 5.3 shows the main defects.</p>
+<figure class="fig" id="mt-u5-f-defects">
+<svg viewBox="0 0 680 230" role="img" aria-label="Four weld defects in cross-section">
+<defs><marker id="mt-u5-a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="15" y="120" width="130" height="45" class="ln fill-soft"/>
+<path d="M45,120 Q80,80 115,120 Z" class="ln fill-acc"/>
+<circle cx="70" cy="110" r="4" class="ln"/>
+<circle cx="87" cy="106" r="4" class="ln"/>
+<circle cx="79" cy="118" r="4" class="ln"/>
+<text x="80" y="60" class="lbl-sm" text-anchor="middle">gas bubbles</text>
+<line x1="80" y1="66" x2="81" y2="100" class="ln thin" marker-end="url(#mt-u5-a3)"/>
+<text x="80" y="192" class="lbl-b" text-anchor="middle">Porosity</text>
+<text x="80" y="210" class="lbl-sm" text-anchor="middle">gas pockets</text>
+<rect x="180" y="120" width="130" height="45" class="ln fill-soft"/>
+<path d="M210,120 Q245,80 280,120 Z" class="ln fill-acc"/>
+<path d="M245,90 l5,10 l-6,8 l6,9 l-3,12" class="ln thick acc" fill="none"/>
+<text x="245" y="60" class="lbl-sm" text-anchor="middle">crack</text>
+<line x1="245" y1="66" x2="246" y2="86" class="ln thin" marker-end="url(#mt-u5-a3)"/>
+<text x="245" y="192" class="lbl-b" text-anchor="middle">Crack</text>
+<text x="245" y="210" class="lbl-sm" text-anchor="middle">hot or cold</text>
+<rect x="345" y="120" width="130" height="45" class="ln fill-soft"/>
+<path d="M375,120 Q410,80 445,120 Z" class="ln fill-acc"/>
+<path d="M367,120 L375,130 L379,120" class="ln thick acc" fill="none"/>
+<path d="M441,120 L447,130 L455,120" class="ln thick acc" fill="none"/>
+<text x="365" y="60" class="lbl-sm" text-anchor="start">notch at toe</text>
+<line x1="381" y1="66" x2="375" y2="112" class="ln thin" marker-end="url(#mt-u5-a3)"/>
+<text x="410" y="192" class="lbl-b" text-anchor="middle">Undercut</text>
+<text x="410" y="210" class="lbl-sm" text-anchor="middle">groove at toe</text>
+<rect x="510" y="120" width="130" height="45" class="ln fill-soft"/>
+<path d="M540,120 Q575,80 610,120 Z" class="ln fill-acc"/>
+<path d="M544,122 L560,152" class="ln thick acc" fill="none"/>
+<path d="M606,122 L590,152" class="ln thick acc" fill="none"/>
+<text x="575" y="60" class="lbl-sm" text-anchor="middle">unfused face</text>
+<line x1="575" y1="66" x2="560" y2="140" class="ln thin" marker-end="url(#mt-u5-a3)"/>
+<text x="575" y="192" class="lbl-b" text-anchor="middle">Lack of fusion</text>
+<text x="575" y="210" class="lbl-sm" text-anchor="middle">no bond to plate</text>
+</svg>
+<figcaption>Fig. 5.3 — Common weld defects in cross-section.</figcaption>
+</figure>
+
+<ul>
+<li><b>Porosity:</b> gas trapped in the pool, from dirt, moisture or poor shielding.</li>
+<li><b>Cracks:</b> hot cracks from thermal stress; cold cracks from hydrogen.</li>
+<li><b>Undercut:</b> a groove at the toe, from high speed or high current.</li>
+<li><b>Lack of fusion:</b> weld metal does not bond with the plate, from low heat input.</li>
+</ul>
+<p>A <b>convolutional neural network (CNN)</b> learns defect features from labelled images. Fig. 5.4 shows the steps: convolution layers find edges and textures, pooling reduces size, and fully connected layers give a class score.</p>
+<figure class="fig" id="mt-u5-f-cnn">
+<svg viewBox="0 0 680 300" role="img" aria-label="CNN classifies a weld image into defect classes">
+<defs><marker id="mt-u5-a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="15" y="105" width="70" height="70" class="ln fill-soft"/>
+<path d="M25,160 l15,-30 l10,15 l12,-35 l12,45" class="ln acc" fill="none"/>
+<line x1="90" y1="140" x2="115" y2="140" class="ln" marker-end="url(#mt-u5-a4)"/>
+<rect x="120" y="100" width="50" height="70" class="ln fill-acc"/>
+<rect x="130" y="110" width="50" height="70" class="ln fill-acc"/>
+<rect x="140" y="120" width="50" height="70" class="ln fill-acc"/>
+<line x1="195" y1="140" x2="220" y2="140" class="ln" marker-end="url(#mt-u5-a4)"/>
+<rect x="225" y="115" width="34" height="50" class="ln fill-acc2"/>
+<rect x="234" y="123" width="34" height="50" class="ln fill-acc2"/>
+<rect x="243" y="131" width="34" height="50" class="ln fill-acc2"/>
+<line x1="290" y1="140" x2="325" y2="140" class="ln" marker-end="url(#mt-u5-a4)"/>
+<circle cx="350" cy="70" r="12" class="ln fill-soft"/>
+<circle cx="350" cy="110" r="12" class="ln fill-soft"/>
+<circle cx="350" cy="150" r="12" class="ln fill-soft"/>
+<circle cx="350" cy="190" r="12" class="ln fill-soft"/>
+<circle cx="350" cy="230" r="12" class="ln fill-soft"/>
+<line x1="372" y1="150" x2="515" y2="150" class="ln" marker-end="url(#mt-u5-a4)"/>
+<rect x="520" y="48" width="150" height="30" class="ln fill-soft"/>
+<text x="595.0" y="68.0" class="lbl-sm" text-anchor="middle">Porosity</text>
+<rect x="520" y="86" width="150" height="30" class="ln fill-soft"/>
+<text x="595.0" y="106.0" class="lbl-sm" text-anchor="middle">Crack</text>
+<rect x="520" y="124" width="150" height="30" class="ln fill-soft"/>
+<text x="595.0" y="144.0" class="lbl-sm" text-anchor="middle">Undercut</text>
+<rect x="520" y="162" width="150" height="30" class="ln fill-soft"/>
+<text x="595.0" y="182.0" class="lbl-sm" text-anchor="middle">Lack of fusion</text>
+<rect x="520" y="200" width="150" height="30" class="ln fill-acc"/>
+<text x="595.0" y="220.0" class="lbl-sm" text-anchor="middle">Good weld</text>
+<text x="50" y="285" class="lbl-sm" text-anchor="middle">Weld image</text>
+<text x="155" y="285" class="lbl-sm" text-anchor="middle">Conv + ReLU</text>
+<text x="253" y="285" class="lbl-sm" text-anchor="middle">Pooling</text>
+<text x="350" y="285" class="lbl-sm" text-anchor="middle">Fully connected</text>
+<text x="595" y="285" class="lbl-sm" text-anchor="middle">Class scores</text>
+<text x="190" y="40" class="lbl-b" text-anchor="middle">Feature extraction</text>
+</svg>
+<figcaption>Fig. 5.4 — CNN classifies a vision or X-ray image into defect classes.</figcaption>
+</figure>
+
+<aside class="note"><b>Training data.</b> The model needs many labelled images of good and bad welds. It can fail on a defect it has not seen.</aside>
+
+<h3 id="mt-u5-c-pdm">4. Predictive maintenance of welding equipment</h3>
+<p><b>Predictive maintenance (PdM)</b> uses sensor data and machine learning to predict a failure before it happens. We repair just before the failure: not too early, not too late.</p>
+<ul>
+<li>Monitor wire-feeder motor current, cable and transformer temperature, cooling flow and arc-on time.</li>
+<li>Watch contact-tip wear and torch condition through arc-voltage and current signatures.</li>
+<li>The model learns the normal signature, flags drift, and estimates the <b>remaining useful life (RUL)</b>.</li>
+</ul>
+<figure class="fig" id="mt-u5-f-pdm">
+<svg viewBox="0 0 680 250" role="img" aria-label="Condition monitoring flow for predictive maintenance">
+<defs><marker id="mt-u5-a5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="16" y="40" width="120" height="76" class="ln fill-soft"/>
+<text x="76.0" y="60.5" class="lbl-b" text-anchor="middle">Condition data</text>
+<text x="76.0" y="75.5" class="lbl-sm" text-anchor="middle">motor current,</text>
+<text x="76.0" y="90.5" class="lbl-sm" text-anchor="middle">temperature,</text>
+<text x="76.0" y="105.5" class="lbl-sm" text-anchor="middle">vibration</text>
+<line x1="136" y1="78" x2="192" y2="78" class="ln" marker-end="url(#mt-u5-a5)"/>
+<rect x="192" y="40" width="120" height="76" class="ln fill-soft"/>
+<text x="252.0" y="60.5" class="lbl-b" text-anchor="middle">Health model</text>
+<text x="252.0" y="75.5" class="lbl-sm" text-anchor="middle">learns the</text>
+<text x="252.0" y="90.5" class="lbl-sm" text-anchor="middle">normal</text>
+<text x="252.0" y="105.5" class="lbl-sm" text-anchor="middle">signature</text>
+<line x1="312" y1="78" x2="368" y2="78" class="ln" marker-end="url(#mt-u5-a5)"/>
+<rect x="368" y="40" width="120" height="76" class="ln fill-acc"/>
+<text x="428.0" y="60.5" class="lbl-b" text-anchor="middle">Anomaly check</text>
+<text x="428.0" y="75.5" class="lbl-sm" text-anchor="middle">live signature</text>
+<text x="428.0" y="90.5" class="lbl-sm" text-anchor="middle">drifts from</text>
+<text x="428.0" y="105.5" class="lbl-sm" text-anchor="middle">normal?</text>
+<line x1="488" y1="78" x2="544" y2="78" class="ln" marker-end="url(#mt-u5-a5)"/>
+<rect x="544" y="40" width="120" height="76" class="ln fill-soft"/>
+<text x="604.0" y="60.5" class="lbl-b" text-anchor="middle">Fault and RUL</text>
+<text x="604.0" y="75.5" class="lbl-sm" text-anchor="middle">fault type,</text>
+<text x="604.0" y="90.5" class="lbl-sm" text-anchor="middle">remaining</text>
+<text x="604.0" y="105.5" class="lbl-sm" text-anchor="middle">useful life</text>
+<text x="516" y="70" class="lbl-sm" text-anchor="middle">drift</text>
+<line x1="428" y1="116" x2="428" y2="172" class="ln" marker-end="url(#mt-u5-a5)"/>
+<text x="436" y="148" class="lbl-sm" text-anchor="start">normal</text>
+<rect x="368" y="174" width="120" height="56" class="ln fill-soft"/>
+<text x="428.0" y="199.0" class="lbl-sm" text-anchor="middle">Keep running</text>
+<text x="428.0" y="215.0" class="lbl-sm" text-anchor="middle">and monitoring</text>
+<path d="M368,202 L76,202 L76,120" class="ln dash" fill="none" marker-end="url(#mt-u5-a5)"/>
+<line x1="604" y1="116" x2="604" y2="172" class="ln" marker-end="url(#mt-u5-a5)"/>
+<text x="612" y="148" class="lbl-sm" text-anchor="start">fault</text>
+<rect x="544" y="174" width="120" height="56" class="ln fill-acc2"/>
+<text x="604.0" y="199.0" class="lbl-sm" text-anchor="middle">Alert and repair</text>
+<text x="604.0" y="215.0" class="lbl-sm" text-anchor="middle">in planned stop</text>
+</svg>
+<figcaption>Fig. 5.5 — Condition monitoring flow for predictive maintenance.</figcaption>
+</figure>
+
+<p>Benefits are less unplanned downtime, steady weld quality and repair in a planned stop.</p>
+
+<h3 id="mt-u5-c-twin">5. Digital twin for welding process optimisation</h3>
+<p>A <b>digital twin</b> is a virtual model of the real welding cell, kept up to date with live sensor data. It uses physics models and AI to simulate, predict and optimise the real process (Fig. 5.6).</p>
+<figure class="fig" id="mt-u5-f-twin">
+<svg viewBox="0 0 680 260" role="img" aria-label="Physical welding cell and digital twin loop">
+<defs><marker id="mt-u5-a6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="20" y="60" width="230" height="140" class="ln fill-soft"/>
+<text x="135.0" y="113.0" class="lbl-b" text-anchor="middle">Physical welding cell</text>
+<text x="135.0" y="135.0" class="lbl-sm" text-anchor="middle">robot, torch, sensors</text>
+<text x="135.0" y="157.0" class="lbl-sm" text-anchor="middle">real part, real weld</text>
+<rect x="430" y="60" width="230" height="140" class="ln fill-acc"/>
+<text x="545.0" y="113.0" class="lbl-b" text-anchor="middle">Digital twin</text>
+<text x="545.0" y="135.0" class="lbl-sm" text-anchor="middle">physics model + AI</text>
+<text x="545.0" y="157.0" class="lbl-sm" text-anchor="middle">what-if tests</text>
+<line x1="250" y1="110" x2="430" y2="110" class="ln" marker-end="url(#mt-u5-a6)"/>
+<text x="340" y="98" class="lbl-sm" text-anchor="middle">live sensor data</text>
+<line x1="430" y1="155" x2="250" y2="155" class="ln acc2" marker-end="url(#mt-u5-a6)"/>
+<text x="340" y="180" class="lbl-sm" text-anchor="middle">better settings</text>
+<text x="340" y="40" class="lbl-sm" text-anchor="middle">The twin is updated all the time by the real cell</text>
+<text x="340" y="240" class="lbl-sm" text-anchor="middle">Test new settings on the twin first, then send them to the real cell</text>
+</svg>
+<figcaption>Fig. 5.6 — Physical cell and digital twin exchange data and settings.</figcaption>
+</figure>
+
+<ul>
+<li>Simulate heat, distortion and residual stress for a new part.</li>
+<li>Test welding parameters on the twin, not on scrap parts.</li>
+<li>Find settings that meet quality and speed limits.</li>
+<li>Send the validated settings to the real cell.</li>
+</ul>
+<p>Result: shorter set-up time, fewer defects and less trial and error.</p>
+
+<h3 id="mt-u5-c-robot">6. Intelligent robotic welding systems</h3>
+<p>An intelligent system has a robot arm and positioner, vision and laser sensors, a learned model, an adaptive controller with safe limits, and an offline programming or twin environment. Its main functions are:</p>
+<ul>
+<li><b>Seam tracking:</b> a laser sensor measures the joint and shifts the path by Δ (Fig. 5.7).</li>
+<li><b>Adaptive parameters:</b> current, voltage and speed change with gap and thickness.</li>
+<li><b>In-process inspection:</b> defects are flagged while the weld is made.</li>
+</ul>
+<figure class="fig" id="mt-u5-f-seam">
+<svg viewBox="0 0 680 320" role="img" aria-label="Laser seam tracking corrects the torch path">
+<defs><marker id="mt-u5-a7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<polygon points="60,170 330,170 362,225 362,260 60,260" class="ln fill-soft"/>
+<polygon points="410,170 620,170 620,260 378,260 378,225" class="ln fill-soft"/>
+<polygon points="338,35 362,40 342,135 322,130" class="ln fill-soft"/>
+<rect x="460" y="50" width="130" height="34" class="ln fill-acc2"/>
+<text x="525.0" y="72.0" class="lbl-sm" text-anchor="middle">Laser + camera</text>
+<line x1="510" y1="84" x2="330" y2="168" class="ln dash acc2" marker-end="url(#mt-u5-a7)"/>
+<line x1="540" y1="84" x2="410" y2="168" class="ln dash acc2" marker-end="url(#mt-u5-a7)"/>
+<path d="M330,168 L362,222 L378,222 L410,168" class="ln acc2" fill="none"/>
+<path d="M320,140 L320,262" class="ln dash" fill="none"/>
+<path d="M370,140 L370,262" class="ln dash acc" fill="none"/>
+<line x1="322" y1="280" x2="368" y2="280" class="ln thin" marker-end="url(#mt-u5-a7)"/>
+<line x1="368" y1="280" x2="322" y2="280" class="ln thin" marker-end="url(#mt-u5-a7)"/>
+<text x="345" y="272" class="lbl-b" text-anchor="middle">Δ</text>
+<text x="312" y="305" class="lbl-sm" text-anchor="end">Taught path</text>
+<text x="378" y="305" class="lbl-sm" text-anchor="start">Actual joint centre</text>
+<text x="60" y="60" class="lbl-sm" text-anchor="start">The tracker measures the</text>
+<text x="60" y="78" class="lbl-sm" text-anchor="start">joint position and shifts</text>
+<text x="60" y="96" class="lbl-sm" text-anchor="start">the torch path by Δ</text>
+</svg>
+<figcaption>Fig. 5.7 — Laser seam tracking corrects the torch path.</figcaption>
+</figure>
+
+<figure class="fig" id="mt-u5-f-loops">
+<svg viewBox="0 0 680 292" role="img" aria-label="Open loop pre-programmed welding compared with closed loop AI welding">
+<defs><marker id="mt-u5-a8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<path d="M330,20 L330,285" class="ln dash" fill="none"/>
+<text x="165" y="26" class="lbl-b" text-anchor="middle">Pre-programmed robot</text>
+<text x="500" y="26" class="lbl-b" text-anchor="middle">AI-enabled robot</text>
+<rect x="80" y="60" width="170" height="44" class="ln fill-soft"/>
+<text x="165.0" y="87.0" class="lbl-sm" text-anchor="middle">Fixed program</text>
+<line x1="165" y1="104" x2="165" y2="130" class="ln" marker-end="url(#mt-u5-a8)"/>
+<rect x="80" y="130" width="170" height="44" class="ln fill-soft"/>
+<text x="165.0" y="157.0" class="lbl-sm" text-anchor="middle">Robot + power source</text>
+<line x1="165" y1="174" x2="165" y2="200" class="ln" marker-end="url(#mt-u5-a8)"/>
+<rect x="80" y="200" width="170" height="44" class="ln fill-soft"/>
+<text x="165.0" y="227.0" class="lbl-sm" text-anchor="middle">Weld (may vary)</text>
+<text x="165" y="275" class="lbl-sm" text-anchor="middle">Open loop: no feedback</text>
+<rect x="395" y="45" width="170" height="38" class="ln fill-soft"/>
+<text x="480.0" y="69.0" class="lbl-sm" text-anchor="middle">Sensors (joint, pool)</text>
+<line x1="480" y1="83" x2="480" y2="100" class="ln" marker-end="url(#mt-u5-a8)"/>
+<rect x="395" y="100" width="170" height="38" class="ln fill-acc"/>
+<text x="480.0" y="124.0" class="lbl-sm" text-anchor="middle">AI model</text>
+<line x1="480" y1="138" x2="480" y2="155" class="ln" marker-end="url(#mt-u5-a8)"/>
+<rect x="395" y="155" width="170" height="38" class="ln fill-soft"/>
+<text x="480.0" y="179.0" class="lbl-sm" text-anchor="middle">Controller</text>
+<line x1="480" y1="193" x2="480" y2="210" class="ln" marker-end="url(#mt-u5-a8)"/>
+<rect x="395" y="210" width="170" height="38" class="ln fill-soft"/>
+<text x="480.0" y="234.0" class="lbl-sm" text-anchor="middle">Robot + power source</text>
+<path d="M565,219 L645,219 L645,64 L570,64" class="ln dash acc2" fill="none" marker-end="url(#mt-u5-a8)"/>
+<text x="575" y="150" class="lbl-sm" text-anchor="start">feedback</text>
+<text x="500" y="275" class="lbl-sm" text-anchor="middle">Closed loop: sensed and corrected</text>
+</svg>
+<figcaption>Fig. 5.8 — Pre-programmed (open loop) and AI-enabled (closed loop) robot welding.</figcaption>
+</figure>
+
+<p>Teaching the robot can be done at the robot or on a computer. Compare the two ways below.</p>
+<div class="tbl"><table><thead><tr><th>Point</th><th>Teach pendant</th><th>Offline programming (OLP)</th></tr></thead><tbody>
+<tr><td>Where programmed</td><td>At the real robot, point by point</td><td>On a 3-D virtual model of the cell</td></tr>
+<tr><td>Robot downtime</td><td>Robot stops during teaching</td><td>Robot keeps welding</td></tr>
+<tr><td>Collision and reach check</td><td>Only by trial on the real cell</td><td>Simulated before the run</td></tr>
+<tr><td>Best for</td><td>Simple jobs, small batches</td><td>Complex, high-mix work</td></tr>
+<tr><td>Link with AI</td><td>Little</td><td>Works with the digital twin</td></tr>
+</tbody></table></div>
+<aside class="note"><b>Calibration.</b> OLP programs need calibration, and seam tracking removes the small error between the model and the real part.</aside>
+
+<h3 id="mt-u5-c-cases">7. Industrial case studies (generic)</h3>
+<ul>
+<li><b>Automotive body shop:</b> many welds on each body, at high rate. Signal monitoring and vision flag a weak weld early. Typical result: less rework and fewer manual checks.</li>
+<li><b>Shipbuilding:</b> thick steel, large panels and fit-up error. Laser tracking and multi-pass adaptation cope with the gap. OLP from CAD suits one-off and small-batch parts.</li>
+<li><b>Pipelines:</b> orbital welding at remote sites. Cameras track the root pass, and AI reads X-ray or ultrasonic images to flag defects, which helps where welders are few.</li>
+</ul>
+<aside class="note"><b>Figures.</b> Any saving quoted for such cases is indicative only. It changes with plant, part and data.</aside>
+
+<dl class="cards">
+<dt>AI in welding</dt><dd>Sensors, data, learned models and feedback that let a welding system sense, predict and adapt.</dd>
+<dt>DAQ</dt><dd>Data acquisition system: filters, digitises and time-stamps sensor signals.</dd>
+<dt>Sensor fusion</dt><dd>Combining several sensor types for more accurate decisions.</dd>
+<dt>CNN</dt><dd>Convolutional neural network that classifies weld images into defect types.</dd>
+<dt>Seam tracking</dt><dd>Real-time measurement of the joint position to correct the torch path.</dd>
+<dt>Predictive maintenance</dt><dd>Repair planned from data just before failure.</dd>
+<dt>RUL</dt><dd>Remaining useful life of a part or machine.</dd>
+<dt>Digital twin</dt><dd>Live virtual model of the physical cell used to simulate and optimise.</dd>
+<dt>OLP</dt><dd>Offline programming of a robot on a computer model.</dd>
+<dt>Closed loop</dt><dd>Control that senses the result and corrects the input.</dd>
+</dl>
+
+<div class="quiz" id="mt-u5-quiz">
+<div class="mcq" data-answer="b"><p class="stem">Which sensor type is used mainly for seam tracking?</p><ol class="opts"><li>Microphone</li><li>Laser stripe with camera</li><li>Thermocouple on the transformer</li><li>Gas flow meter</li></ol><p class="why">A laser stripe and camera measure the joint position.</p></div>
+
+<div class="mcq" data-answer="c"><p class="stem">A fixed-path robot is NOT AI-enabled because it:</p><ol class="opts"><li>Is too slow</li><li>Uses a teach pendant</li><li>Has no sensor feedback or learned model</li><li>Cannot weld steel</li></ol><p class="why">AI needs feedback and a learned model.</p></div>
+
+<div class="mcq" data-answer="a"><p class="stem">In a CNN, the pooling layer:</p><ol class="opts"><li>Reduces the size of the feature maps</li><li>Stores the images</li><li>Controls the arc</li><li>Finds the joint</li></ol><p class="why">Pooling down-samples the features.</p></div>
+
+<div class="mcq" data-answer="d"><p class="stem">Predictive maintenance estimates:</p><ol class="opts"><li>Weld speed</li><li>Joint gap</li><li>Gas flow</li><li>Remaining useful life</li></ol><p class="why">RUL tells when to repair.</p></div>
+
+<div class="mcq" data-answer="b"><p class="stem">A digital twin is:</p><ol class="opts"><li>A copy of the robot made in steel</li><li>A live virtual model of the physical process</li><li>A second welding machine</li><li>A spare sensor</li></ol><p class="why">It is updated by live sensor data.</p></div>
+
+<div class="mcq" data-answer="a"><p class="stem">Which way of programming keeps the robot in production?</p><ol class="opts"><li>Offline programming</li><li>Teach pendant</li><li>Manual guiding only</li><li>Hard-wired relays</li></ol><p class="why">OLP is done on a computer model.</p></div>
+
+<div class="mcq" data-answer="c"><p class="stem">Which defect is a groove at the weld toe?</p><ol class="opts"><li>Porosity</li><li>Crack</li><li>Undercut</li><li>Lack of fusion</li></ol><p class="why">Undercut is a notch in the plate at the toe.</p></div>
+
+</div>
+  </section>
+
+  <section class="part" id="mt-u5-theory" data-part="theory">
+    <h2>Theory questions</h2>
+<article class="q" id="mt-u5-q1" data-marks="10">
+<h3>Q1. What are the primary limitations of traditional, pre-programmed robotic welding, and how does Artificial Intelligence (AI) overcome them?</h3>
+<p class="q-src">MT QB Q42</p>
+<p class="q-hint">Name the limits of fixed-path, no-feedback welding and pair each with an AI remedy. Draw the open and closed loop.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Pre-programmed robotic welding</b> uses teach-and-playback: the robot repeats a taught path with fixed parameters and no feedback (open loop, Fig. 5.8).</p>
+<p><b>Primary limitations and how AI overcomes them</b></p>
+<div class="tbl"><table><thead><tr><th>Limitation</th><th>Effect</th><th>How AI overcomes it</th></tr></thead><tbody>
+<tr><td>Fixed path</td><td>Cannot follow part, fixture or heat-distortion variation</td><td>Vision and laser seam tracking find the joint and correct the path (Fig. 5.7)</td></tr>
+<tr><td>Fixed parameters</td><td>Gap or thickness change gives defects</td><td>Adaptive control changes current, voltage and speed</td></tr>
+<tr><td>Blind to the weld pool</td><td>No quality check while welding</td><td>Camera, thermal and acoustic sensors with a CNN judge quality live (Fig. 5.4)</td></tr>
+<tr><td>Late inspection</td><td>Defects found after the part moves on; rework is costly</td><td>Defects are found at the point of welding</td></tr>
+<tr><td>Costly programming and tight fixtures</td><td>Only worth it for high volume</td><td>OLP, digital twin and vision lower the set-up effort</td></tr>
+<tr><td>Unplanned breakdown</td><td>Line stops without warning</td><td>Predictive maintenance estimates RUL (Fig. 5.5)</td></tr>
+<tr><td>Depends on expert tuning</td><td>Quality varies with the programmer</td><td>A trained model keeps expert knowledge in the system</td></tr>
+</tbody></table></div>
+<p><b>Working of the AI system:</b> sensors feed a DAQ, an AI model decides, and the controller corrects the robot, then the weld is sensed again (Fig. 5.2). The loop is closed.</p>
+<p><b>Conclusion.</b> AI turns a blind, repeating robot into a sensing, adapting one. It needs data, training, safe limits and investment.</p>
+</details>
+</article>
+<article class="q" id="mt-u5-q2" data-marks="10">
+<h3>Q2. Why is AI-enabled robotic welding a game-changer for low-volume, high-mix manufacturing facilities that traditionally relied on manual labour?</h3>
+<p class="q-src">MT QB Q43</p>
+<p class="q-hint">Link small batches and many part types to quick programming, adaptation and codified skill.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Low-volume, high-mix</b> means many different part types made in small batches. Such work has been done by manual welders, because a conventional robot is not worth the set-up effort.</p>
+<p><b>Why AI-enabled robotic welding changes this:</b></p>
+<ul>
+<li><b>Quick programming.</b> OLP and a digital twin create the program from CAD without stopping the cell (Fig. 5.6).</li>
+<li><b>Less fixturing.</b> Vision and seam tracking find the joint, so exact fixtures are not needed (Fig. 5.7).</li>
+<li><b>Auto parameters.</b> The model selects and adapts current, voltage and speed for each joint.</li>
+<li><b>First-time-right.</b> In-process inspection reduces trial welds, rework and scrap in small batches.</li>
+<li><b>Skill shortage.</b> Expert knowledge is held in the model, so a less-skilled operator can run the cell.</li>
+<li><b>Consistent quality and traceability.</b> Every weld is recorded.</li>
+<li><b>Flexibility.</b> The same cell changes from one part to the next with small downtime.</li>
+</ul>
+<p>Example: a job shop that welds brackets in batches of a few pieces. A fixed robot needs a new teach for each batch; the AI cell needs only the CAD model and a joint scan (Fig. 5.8).</p>
+<p><b>Limits.</b> The cell needs initial investment, good data and safety checks. Very unusual jobs may still need a skilled welder.</p>
+</details>
+</article>
+<article class="q" id="mt-u5-q3" data-marks="10">
+<h3>Q3. Explain the sensors and data acquisition used in AI-based welding with a block diagram.</h3>
+<p class="q-src">Syllabus topic</p>
+<p class="q-hint">List sensors and what each measures, then draw the data pipeline.</p>
+<details class="answer"><summary>Model answer</summary>
+<p>Sensors turn the physical effects of welding into signals. Draw Fig. 5.1 (placement) and Fig. 5.2 (pipeline).</p>
+<ul>
+<li><b>Vision and laser:</b> joint position, gap and bead shape; used for seam tracking.</li>
+<li><b>Thermal camera:</b> melt-pool size, cooling rate and penetration.</li>
+<li><b>Acoustic sensor:</b> arc sound that shows porosity, spatter and arc instability.</li>
+<li><b>Electrical sensors:</b> arc current and voltage; <b>wire-feed and gas-flow sensors</b> for process consistency.</li>
+</ul>
+<p><b>Data acquisition:</b> the DAQ amplifies and filters the signals, converts them to digital form (A/D), time-stamps them to one clock and sends features to the AI model, often through an edge computer for real-time control.</p>
+<p><b>Sensor fusion</b> joins data from several sensors. A defect missed by one sensor is found by another.</p>
+</details>
+</article>
+<article class="q" id="mt-u5-q4" data-marks="10">
+<h3>Q4. Explain AI-based defect detection in welding.</h3>
+<p class="q-src">Syllabus topic</p>
+<p class="q-hint">Show defects, the CNN steps, and the advantages.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>AI-based defect detection</b> classifies weld defects automatically from vision, thermal or X-ray images. Draw Fig. 5.3 and Fig. 5.4.</p>
+<ul>
+<li><b>Defects:</b> porosity, cracks, undercut and lack of fusion (Fig. 5.3).</li>
+<li><b>Step 1:</b> collect and label images of good and bad welds.</li>
+<li><b>Step 2:</b> train a CNN. Convolution layers learn edges and textures; pooling reduces size; fully connected layers output class scores (Fig. 5.4).</li>
+<li><b>Step 3:</b> run the model on live images; a warning or a parameter change follows.</li>
+</ul>
+<p><b>Advantages:</b> 100 % inspection, detection at the point of welding, less rework and scrap, and a digital record. <b>Limits:</b> needs many labelled images; unseen defect types may be missed.</p>
+</details>
+</article>
+<article class="q" id="mt-u5-q5" data-marks="10">
+<h3>Q5. Explain predictive maintenance and the digital twin for welding process optimisation.</h3>
+<p class="q-src">Syllabus topic</p>
+<p class="q-hint">Give one flow sketch for each and the benefits.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Predictive maintenance.</b> It uses sensor data and machine learning to predict failure before it occurs (Fig. 5.5).</p>
+<ul>
+<li>Monitor wire-feeder motor current, temperature, cooling flow, arc-on time and contact-tip wear.</li>
+<li>The model learns the normal signature; a drift raises an alert and an RUL estimate.</li>
+<li>Repair is planned in a stop: less downtime, steady quality.</li>
+</ul>
+<p><b>Digital twin.</b> It is a live virtual model of the welding cell (Fig. 5.6).</p>
+<ul>
+<li>Real sensor data update the twin.</li>
+<li>The twin simulates heat, distortion and weld quality, and tests settings.</li>
+<li>Validated settings go back to the real cell.</li>
+</ul>
+<p><b>Benefits:</b> fewer trial welds, less distortion, better first-pass yield and shorter set-up.</p>
+</details>
+</article>
+  </section>
+</section>

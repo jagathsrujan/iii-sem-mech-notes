@@ -1,0 +1,18 @@
+[
+ {
+  "file": "img/mt-u5-robotic-welding-cell.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Robotic_Welding_Cell.jpg",
+  "author": "WireCrafters",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "A robotic welding cell: the workpiece fixture on a positioner inside protective weld screens."
+ },
+ {
+  "file": "img/mt-u5-weld-camera-setup.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Robotic_Welding_and_Weld_Monitoring_Setup_using_a_weld_camera.jpg",
+  "author": "WeldingWIP",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "caption": "A welding robot arm with torch and a weld camera for monitoring."
+ }
+]
