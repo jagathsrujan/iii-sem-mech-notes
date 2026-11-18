@@ -1,0 +1,944 @@
+<section class="unit" data-unit="mt-u4">
+  <header class="unit-head">
+    <p class="eyebrow">Manufacturing Technology · Unit 4</p>
+    <h1>Machine Tools</h1>
+    <p class="lede">Machine tools hold the workpiece and the tool and give the motions for metal cutting. This unit covers the basic elements, the classification, and the lathe, milling, drilling, shaping and grinding machines with their operations.</p>
+    <ul class="syl"><li>Introduction to basic metal cutting</li><li>Basic elements of machine tools</li><li>Classification of machine tools</li><li>Lathe</li><li>Milling</li><li>Drilling</li><li>Shaping machine</li><li>Grinding</li></ul>
+  </header>
+  <section class="part" id="mt-u4-concepts" data-part="concepts">
+    <h2>Concepts</h2>
+<aside class="exam"><b>Exam pattern.</b> Unit 4 asks for labelled sketches of machines (lathe, milling, radial drilling, cylindrical grinder) and short notes on operations. Each answer needs a neat sketch and parts in points. Learn the sketches first.</aside>
+<h3 id="mt-u4-c-cutting">1. Introduction to basic metal cutting</h3>
+<p><b>Metal cutting</b> removes extra metal from a workpiece, as chips, with a hard cutting tool. The result is the required shape, size and surface finish. A <b>machine tool</b> is a power-driven machine that holds the tool and the workpiece and gives the relative motions for cutting.</p>
+<p>Fig. 4.1 shows the three basic motions:</p>
+<ul><li><b>Cutting (primary) motion:</b> gives the cutting speed V. The workpiece turns on a lathe; the cutter turns on a milling machine; the tool moves on a shaper.</li><li><b>Feed motion:</b> moves the cutting point to new metal. Unit: mm/rev or mm/stroke.</li><li><b>Depth of cut d:</b> thickness of metal removed in one pass, in mm.</li></ul>
+<figure class="fig" id="mt-u4-f-cutting">
+<svg viewBox="0 0 700 260" role="img" aria-label="Turning: cutting speed, feed and depth of cut on a rotating workpiece">
+<defs><marker id="mt-u4-arw-cutting" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70" y="90" width="50" height="120" class="ln fill-soft"/>
+<text x="95" y="232" class="lbl-sm" text-anchor="middle">Chuck</text>
+<polygon points="120,90 300,90 300,120 480,120 480,180 300,180 300,210 120,210" class="ln fill-soft"/>
+<line x1="60" y1="150" x2="520" y2="150" class="hid"/>
+<polygon points="300,120 300,62 392,62 392,110 335,115" class="ln fill-acc"/>
+<line x1="420" y1="38" x2="330" y2="38" class="ln acc" marker-end="url(#mt-u4-arw-cutting)"/>
+<text x="375" y="28" class="lbl" text-anchor="middle">Feed f (mm/rev)</text>
+<line x1="240" y1="90" x2="240" y2="120" class="ln acc2" marker-end="url(#mt-u4-arw-cutting)" marker-start="url(#mt-u4-arw-cutting)"/>
+<text x="224" y="109" class="lbl" text-anchor="end">Depth of cut d</text>
+<path d="M505,108 A45,45 0 0 1 505,192" class="ln acc" marker-end="url(#mt-u4-arw-cutting)" fill="none"/>
+<text x="628" y="142" class="lbl" text-anchor="middle">Rotation N (rpm)</text>
+<text x="628" y="160" class="lbl-sm" text-anchor="middle">gives cutting speed V</text>
+<line x1="340" y1="70" x2="469" y2="66" class="ln thin"/>
+<circle cx="340" cy="70" r="2" class="solid"/>
+<text x="474" y="70" class="lbl-sm" text-anchor="start">Single-point tool</text>
+<line x1="220" y1="200" x2="220" y2="226" class="ln thin"/>
+<circle cx="220" cy="200" r="2" class="solid"/>
+<text x="280" y="240" class="lbl-sm" text-anchor="middle">Workpiece (original dia. D)</text>
+<line x1="420" y1="170" x2="469" y2="211" class="ln thin"/>
+<circle cx="420" cy="170" r="2" class="solid"/>
+<text x="474" y="215" class="lbl-sm" text-anchor="start">Machined surface (dia. d₁)</text>
+</svg>
+<figcaption>Fig. 4.1 — Cutting motion (workpiece rotation), feed motion and depth of cut in turning.</figcaption>
+</figure>
+<div class="formula">\[ V=\frac{\pi D N}{1000}\ \text{m/min},\qquad T=\frac{L}{f\,N}\ \text{min} \]<p class="where">D = workpiece diameter (mm), N = speed (rpm), L = length of cut (mm), f = feed (mm/rev), T = machining time</p></div>
+<h3 id="mt-u4-c-elements">2. Basic elements of machine tools</h3>
+<p>Every machine tool has the same basic elements. Fig. 4.2 shows how they work together.</p>
+<figure class="fig" id="mt-u4-f-elements">
+<svg viewBox="0 0 700 330" role="img" aria-label="Block diagram of the basic elements of a machine tool">
+<defs><marker id="mt-u4-arw-elements" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="20" y="20" width="660" height="290" class="ln dash" fill="none"/>
+<text x="350" y="44" class="lbl-b" text-anchor="middle">Bed / frame / column  (rigid structure with guideways)</text>
+<rect x="35.0" y="90.0" width="190" height="100" class="ln fill-acc"/>
+<text x="130" y="129.5" class="lbl-sm" text-anchor="middle">DRIVE</text>
+<text x="130" y="144.5" class="lbl-sm" text-anchor="middle">electric motor, belt,</text>
+<text x="130" y="159.5" class="lbl-sm" text-anchor="middle">gearbox (spindle speeds)</text>
+<rect x="35.0" y="230.0" width="190" height="60" class="ln fill-acc2"/>
+<text x="130" y="257.0" class="lbl-sm" text-anchor="middle">FEED MECHANISM</text>
+<text x="130" y="272.0" class="lbl-sm" text-anchor="middle">lead screw, feed rod, rack</text>
+<rect x="440.0" y="65.0" width="200" height="70" class="ln fill-soft"/>
+<text x="540" y="97.0" class="lbl-sm" text-anchor="middle">WORK-HOLDING DEVICE</text>
+<text x="540" y="112.0" class="lbl-sm" text-anchor="middle">chuck, centres, vice, table</text>
+<rect x="440.0" y="195.0" width="200" height="70" class="ln fill-soft"/>
+<text x="540" y="227.0" class="lbl-sm" text-anchor="middle">TOOL-HOLDING DEVICE</text>
+<text x="540" y="242.0" class="lbl-sm" text-anchor="middle">tool post, arbor, drill chuck</text>
+<line x1="225" y1="120" x2="440" y2="100" class="ln acc" marker-end="url(#mt-u4-arw-elements)"/>
+<text x="335" y="92" class="lbl-sm" text-anchor="middle">cutting motion</text>
+<line x1="225" y1="260" x2="440" y2="235" class="ln acc2" marker-end="url(#mt-u4-arw-elements)"/>
+<text x="335" y="268" class="lbl-sm" text-anchor="middle">feed motion</text>
+<line x1="540" y1="135" x2="540" y2="195" class="ln thin dash" marker-end="url(#mt-u4-arw-elements)" marker-start="url(#mt-u4-arw-elements)"/>
+<text x="620" y="170" class="lbl-sm" text-anchor="middle">cutting action</text>
+</svg>
+<figcaption>Fig. 4.2 — Basic elements of a machine tool: structure, drive, feed, work holding and tool holding.</figcaption>
+</figure>
+<ul><li><b>Bed, frame or column:</b> a rigid cast-iron structure. It carries all parts and has accurate guideways. Cast iron damps vibration.</li><li><b>Work-holding device:</b> holds the workpiece. Examples: chuck, centres, face plate (lathe); vice, T-slot table (milling, drilling); magnetic chuck (grinding).</li><li><b>Tool-holding device:</b> holds the tool. Examples: tool post (lathe), arbor (milling), drill chuck or Morse taper (drilling), clapper box (shaper).</li><li><b>Drive:</b> motor, belts and gearbox. It gives a range of spindle speeds.</li><li><b>Feed mechanism:</b> lead screw, feed rod, rack and pinion. It gives the feed in mm/rev.</li><li><b>Controls:</b> levers, handwheels and dials to set speed, feed and depth.</li></ul>
+<h3 id="mt-u4-c-class">3. Classification of machine tools</h3>
+<p>We classify machine tools by the number of cutting edges, by the use (general, single or special purpose) and by automation (manual, semi-automatic, automatic, CNC). Fig. 4.3 groups them by the cutting tool.</p>
+<figure class="fig" id="mt-u4-f-classify">
+<svg viewBox="0 0 700 340" role="img" aria-label="Tree: classification of machine tools by the cutting tool used">
+<defs><marker id="mt-u4-arw-classify" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="250.0" y="7.0" width="200" height="34" class="ln fill-acc"/>
+<text x="350" y="28.5" class="lbl-b" text-anchor="middle">Machine tools</text>
+<path d="M350,41 L350,59.5 L120,59.5 L120,78" class="ln thin" fill="none"/>
+<rect x="25.0" y="79.0" width="190" height="34" class="ln fill-acc2"/>
+<text x="120" y="100.5" class="lbl-b" text-anchor="middle">Single-point tool</text>
+<line x1="120" y1="113" x2="120" y2="138" class="ln thin"/>
+<rect x="25.0" y="138.0" width="190" height="134" class="ln fill-soft"/>
+<text x="120" y="187.0" class="lbl-sm" text-anchor="middle">Lathe</text>
+<text x="120" y="202.0" class="lbl-sm" text-anchor="middle">Shaper and planer</text>
+<text x="120" y="217.0" class="lbl-sm" text-anchor="middle">Slotter</text>
+<text x="120" y="232.0" class="lbl-sm" text-anchor="middle">Boring machine</text>
+<path d="M350,41 L350,59.5 L350,59.5 L350,78" class="ln thin" fill="none"/>
+<rect x="255.0" y="79.0" width="190" height="34" class="ln fill-acc2"/>
+<text x="350" y="100.5" class="lbl-b" text-anchor="middle">Multi-point tool</text>
+<line x1="350" y1="113" x2="350" y2="138" class="ln thin"/>
+<rect x="255.0" y="138.0" width="190" height="134" class="ln fill-soft"/>
+<text x="350" y="187.0" class="lbl-sm" text-anchor="middle">Milling machine</text>
+<text x="350" y="202.0" class="lbl-sm" text-anchor="middle">Drilling machine</text>
+<text x="350" y="217.0" class="lbl-sm" text-anchor="middle">Broaching machine</text>
+<text x="350" y="232.0" class="lbl-sm" text-anchor="middle">Sawing machine</text>
+<path d="M350,41 L350,59.5 L580,59.5 L580,78" class="ln thin" fill="none"/>
+<rect x="485.0" y="79.0" width="190" height="34" class="ln fill-acc2"/>
+<text x="580" y="100.5" class="lbl-b" text-anchor="middle">Abrasive wheel</text>
+<line x1="580" y1="113" x2="580" y2="138" class="ln thin"/>
+<rect x="485.0" y="138.0" width="190" height="134" class="ln fill-soft"/>
+<text x="580" y="187.0" class="lbl-sm" text-anchor="middle">Cylindrical grinder</text>
+<text x="580" y="202.0" class="lbl-sm" text-anchor="middle">Surface grinder</text>
+<text x="580" y="217.0" class="lbl-sm" text-anchor="middle">Centreless grinder</text>
+<text x="580" y="232.0" class="lbl-sm" text-anchor="middle">Honing, lapping</text>
+<text x="120" y="300" class="lbl-sm" text-anchor="middle">Cutting edge: one</text>
+<text x="350" y="300" class="lbl-sm" text-anchor="middle">Cutting edges: many</text>
+<text x="580" y="300" class="lbl-sm" text-anchor="middle">Grains: very many</text>
+<text x="350" y="326" class="lbl-sm" text-anchor="middle">Other bases: use (general, single, special purpose), automation (manual to CNC), size, precision</text>
+</svg>
+<figcaption>Fig. 4.3 — Classification of machine tools by the type of cutting tool.</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Machine</th><th>Cutting motion</th><th>Feed motion</th><th>Tool</th><th>Typical work</th></tr></thead><tbody><tr><td>Lathe</td><td>Workpiece rotates</td><td>Tool moves in a line</td><td>Single-point</td><td>Cylinders, cones, threads</td></tr><tr><td>Milling</td><td>Cutter rotates</td><td>Table moves the work</td><td>Multi-point cutter</td><td>Flat faces, slots, gears</td></tr><tr><td>Drilling</td><td>Drill rotates</td><td>Drill moves down</td><td>Twist drill</td><td>Round holes</td></tr><tr><td>Shaping</td><td>Tool reciprocates (ram)</td><td>Table moves across</td><td>Single-point</td><td>Flat faces, slots, keyways</td></tr><tr><td>Grinding</td><td>Wheel rotates</td><td>Work traverses</td><td>Abrasive wheel</td><td>Fine finish, hard parts</td></tr></tbody></table></div>
+<h3 id="mt-u4-c-lathe">4. Centre lathe</h3>
+<p>The <b>centre lathe</b> holds the workpiece between centres or in a chuck and turns it. A single-point tool, on the carriage, moves along or across the work. The size is given by the swing over the bed and the distance between centres.</p>
+<figure class="fig" id="mt-u4-f-lathe">
+<svg viewBox="0 0 700 400" role="img" aria-label="Labelled front view of a centre lathe">
+<defs><marker id="mt-u4-arw-lathe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70" y="285" width="560" height="34" class="ln fill-soft"/>
+<rect x="95" y="319" width="60" height="50" class="ln fill-soft"/>
+<rect x="535" y="319" width="60" height="50" class="ln fill-soft"/>
+<rect x="70" y="150" width="125" height="135" class="ln fill-acc2"/>
+<rect x="195" y="160" width="28" height="56" class="ln fill-soft"/>
+<rect x="223" y="184" width="220" height="26" class="ln fill-hatch"/>
+<line x1="60" y1="197" x2="660" y2="197" class="hid"/>
+<rect x="500" y="175" width="70" height="110" class="ln fill-acc2"/>
+<rect x="470" y="189" width="30" height="16" class="ln fill-soft"/>
+<polygon points="443,197 470,189 470,205" class="ln fill-soft"/>
+<circle cx="592" cy="225" r="15" class="ln" fill="none"/>
+<line x1="570" y1="225" x2="577" y2="225" class="ln"/>
+<line x1="195" y1="297" x2="590" y2="297" class="ln thick"/>
+<line x1="195" y1="308" x2="590" y2="308" class="ln thick"/>
+<rect x="250" y="246" width="140" height="39" class="ln fill-acc"/>
+<rect x="262" y="232" width="116" height="14" class="ln fill-soft"/>
+<rect x="285" y="220" width="70" height="12" class="ln fill-acc2"/>
+<rect x="318" y="196" width="26" height="24" class="ln fill-soft"/>
+<polygon points="318,203 300,206 300,212 318,214" class="ln fill-acc"/>
+<rect x="262" y="285" width="116" height="45" class="ln fill-acc"/>
+<circle cx="290" cy="308" r="10" class="ln" fill="none"/>
+<line x1="130" y1="150" x2="130" y2="64" class="ln thin"/>
+<circle cx="130" cy="150" r="2" class="solid"/>
+<text x="130" y="60" class="lbl-sm" text-anchor="middle">Headstock</text>
+<line x1="209" y1="160" x2="209.0" y2="91" class="ln thin"/>
+<circle cx="209" cy="160" r="2" class="solid"/>
+<text x="230" y="95" class="lbl-sm" text-anchor="middle">Chuck</text>
+<line x1="330" y1="184" x2="330" y2="46" class="ln thin"/>
+<circle cx="330" cy="184" r="2" class="solid"/>
+<text x="330" y="42" class="lbl-sm" text-anchor="middle">Workpiece</text>
+<line x1="332" y1="198" x2="409" y2="91" class="ln thin"/>
+<circle cx="332" cy="198" r="2" class="solid"/>
+<text x="414" y="95" class="lbl-sm" text-anchor="start">Tool post</text>
+<line x1="535" y1="175" x2="535" y2="64" class="ln thin"/>
+<circle cx="535" cy="175" r="2" class="solid"/>
+<text x="555" y="60" class="lbl-sm" text-anchor="middle">Tailstock</text>
+<line x1="485" y1="189" x2="485" y2="119" class="ln thin"/>
+<circle cx="485" cy="189" r="2" class="solid"/>
+<text x="490" y="115" class="lbl-sm" text-anchor="middle">Quill and dead centre</text>
+<line x1="355" y1="226" x2="397" y2="228" class="ln thin"/>
+<circle cx="355" cy="226" r="2" class="solid"/>
+<text x="402" y="232" class="lbl-sm" text-anchor="start">Compound rest</text>
+<line x1="378" y1="239" x2="397" y2="248" class="ln thin"/>
+<circle cx="378" cy="239" r="2" class="solid"/>
+<text x="402" y="252" class="lbl-sm" text-anchor="start">Cross slide</text>
+<line x1="390" y1="262" x2="397" y2="268" class="ln thin"/>
+<circle cx="390" cy="262" r="2" class="solid"/>
+<text x="402" y="272" class="lbl-sm" text-anchor="start">Saddle</text>
+<line x1="300" y1="325" x2="300" y2="341" class="ln thin"/>
+<circle cx="300" cy="325" r="2" class="solid"/>
+<text x="300" y="355" class="lbl-sm" text-anchor="middle">Apron</text>
+<line x1="595" y1="297" x2="614" y2="256" class="ln thin"/>
+<circle cx="595" cy="297" r="2" class="solid"/>
+<text x="619" y="260" class="lbl-sm" text-anchor="start">Feed rod</text>
+<line x1="595" y1="308" x2="619" y2="326" class="ln thin"/>
+<circle cx="595" cy="308" r="2" class="solid"/>
+<text x="624" y="330" class="lbl-sm" text-anchor="start">Lead screw</text>
+<line x1="420" y1="290" x2="420" y2="341" class="ln thin"/>
+<circle cx="420" cy="290" r="2" class="solid"/>
+<text x="450" y="355" class="lbl-sm" text-anchor="middle">Bed (with guideways)</text>
+<text x="125" y="350" class="lbl-sm" text-anchor="middle">Leg</text>
+<text x="350" y="392" class="lbl-sm" text-anchor="middle">Carriage = saddle + cross slide + compound rest + tool post + apron</text>
+</svg>
+<figcaption>Fig. 4.4 — Centre lathe: main parts (headstock, tailstock, carriage, bed, lead screw and feed rod).</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Part</th><th>Function</th></tr></thead><tbody><tr><td>Bed</td><td>Rigid base with guideways for the carriage and tailstock</td></tr><tr><td>Headstock</td><td>Holds the spindle, chuck and speed gears</td></tr><tr><td>Tailstock</td><td>Supports the work with a dead centre; holds drills; can be set over for taper</td></tr><tr><td>Carriage</td><td>Saddle, cross slide, compound rest, tool post and apron; carries the tool</td></tr><tr><td>Apron</td><td>Houses the feed gears and the half-nut; hangs from the saddle</td></tr><tr><td>Lead screw</td><td>Moves the carriage for threading (half-nut engaged)</td></tr><tr><td>Feed rod</td><td>Gives the power feed for turning and facing</td></tr></tbody></table></div>
+<figure class="photo"><img src="img/mt-u4-centre-lathe.jpg" alt="A green centre lathe with headstock, carriage and tailstock" width="1000" height="771" loading="lazy"><figcaption>A centre lathe: headstock on the left, tailstock on the right, carriage and lead screw in front. <span class="credit">Photo: Glenn McKechnie · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+<p>Fig. 4.5 shows the nine lathe operations. In every one, the workpiece rotates.</p>
+<figure class="fig" id="mt-u4-f-ops">
+<svg viewBox="0 0 700 475" role="img" aria-label="Nine lathe operations: turning, facing, taper turning, threading, knurling, drilling, boring, parting, chamfering">
+<defs><marker id="mt-u4-arw-ops" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<g transform="translate(0,0)">
+<text x="112" y="148" class="lbl-b" text-anchor="middle">1. Turning</text>
+<line x1="0" y1="80" x2="215" y2="80" class="hid"/>
+<rect x="6" y="50" width="24" height="60" class="ln fill-soft"/>
+<polygon points="30,58 105,58 105,68 180,68 180,92 105,92 105,102 30,102" class="ln fill-soft"/>
+<polygon points="105,68 105,34 145,34 145,58 125,64" class="ln fill-acc"/>
+<line x1="185" y1="28" x2="135" y2="28" class="ln acc" marker-end="url(#mt-u4-arw-ops)"/>
+<text x="160" y="22" class="lbl-sm" text-anchor="middle">feed</text>
+</g>
+<g transform="translate(232,0)">
+<text x="112" y="148" class="lbl-b" text-anchor="middle">2. Facing</text>
+<line x1="0" y1="80" x2="215" y2="80" class="hid"/>
+<rect x="6" y="50" width="24" height="60" class="ln fill-soft"/>
+<rect x="30" y="58" width="130" height="44" class="ln fill-soft"/>
+<polygon points="162,52 162,38 200,38 200,62 176,62" class="ln fill-acc"/>
+<line x1="214" y1="34" x2="214" y2="76" class="ln acc" marker-end="url(#mt-u4-arw-ops)"/>
+<text x="214" y="28" class="lbl-sm" text-anchor="middle">feed</text>
+<text x="110" y="125" class="lbl-sm" text-anchor="middle">end face is cut</text>
+</g>
+<g transform="translate(464,0)">
+<text x="112" y="148" class="lbl-b" text-anchor="middle">3. Taper turning</text>
+<line x1="0" y1="80" x2="215" y2="80" class="hid"/>
+<rect x="6" y="50" width="24" height="60" class="ln fill-soft"/>
+<polygon points="30,58 100,58 180,70 180,90 100,102 30,102" class="ln fill-soft"/>
+<polygon points="142,63 142,38 184,38 184,54 160,66" class="ln fill-acc"/>
+<line x1="100" y1="58" x2="195" y2="58" class="ln dash"/>
+<text x="204" y="63" class="lbl-b" text-anchor="middle">α</text>
+<text x="120" y="125" class="lbl-sm" text-anchor="middle">tool moves along the taper</text>
+</g>
+<g transform="translate(0,158)">
+<text x="112" y="148" class="lbl-b" text-anchor="middle">4. Threading</text>
+<line x1="0" y1="80" x2="215" y2="80" class="hid"/>
+<rect x="6" y="50" width="24" height="60" class="ln fill-soft"/>
+<polygon points="30,58 105,58 105,66 111,60 117,66 123,60 129,66 135,60 141,66 147,60 153,66 159,60 165,66 171,60 177,66 177,94 171,100 165,94 159,100 153,94 147,100 141,94 135,100 129,94 123,100 117,94 111,100 105,94 105,94 105,102 30,102" class="ln fill-soft"/>
+<polygon points="141,62 129,34 153,34" class="ln fill-acc"/>
+<text x="173" y="48" class="lbl-sm" text-anchor="middle">60°</text>
+<line x1="190" y1="26" x2="130" y2="26" class="ln acc" marker-end="url(#mt-u4-arw-ops)"/>
+<text x="160" y="20" class="lbl-sm" text-anchor="middle">feed = pitch</text>
+</g>
+<g transform="translate(232,158)">
+<text x="112" y="148" class="lbl-b" text-anchor="middle">5. Knurling</text>
+<line x1="0" y1="80" x2="215" y2="80" class="hid"/>
+<rect x="6" y="50" width="24" height="60" class="ln fill-soft"/>
+<rect x="30" y="58" width="75" height="44" class="ln fill-soft"/>
+<rect x="105" y="58" width="75" height="44" class="ln fill-hatch"/>
+<circle cx="142" cy="49" r="9" class="ln fill-acc"/>
+<circle cx="142" cy="111" r="9" class="ln fill-acc"/>
+<rect x="134" y="20" width="16" height="20" class="ln fill-soft"/>
+<rect x="134" y="120" width="16" height="20" class="ln fill-soft"/>
+<text x="62" y="128" class="lbl-sm" text-anchor="middle">knurled band</text>
+</g>
+<g transform="translate(464,158)">
+<text x="112" y="148" class="lbl-b" text-anchor="middle">6. Drilling</text>
+<line x1="0" y1="80" x2="215" y2="80" class="hid"/>
+<rect x="6" y="50" width="24" height="60" class="ln fill-soft"/>
+<rect x="30" y="58" width="130" height="44" class="ln fill-soft"/>
+<rect x="105" y="72" width="55" height="16" class="ln dash" fill="none"/>
+<rect x="100" y="74" width="115" height="12" class="ln fill-acc"/>
+<polygon points="90,80 100,74 100,86" class="ln fill-acc"/>
+<line x1="200" y1="112" x2="150" y2="112" class="ln acc" marker-end="url(#mt-u4-arw-ops)"/>
+<text x="175" y="126" class="lbl-sm" text-anchor="middle">feed (tailstock)</text>
+</g>
+<g transform="translate(0,316)">
+<text x="112" y="148" class="lbl-b" text-anchor="middle">7. Boring</text>
+<line x1="0" y1="80" x2="215" y2="80" class="hid"/>
+<rect x="6" y="50" width="24" height="60" class="ln fill-soft"/>
+<rect x="30" y="58" width="130" height="44" class="ln fill-soft"/>
+<rect x="60" y="70" width="100" height="20" class="ln dash" fill="none"/>
+<rect x="100" y="78" width="112" height="9" class="ln fill-soft"/>
+<polygon points="100,78 104,66 114,66 114,78" class="ln fill-acc"/>
+<line x1="200" y1="112" x2="140" y2="112" class="ln acc" marker-end="url(#mt-u4-arw-ops)"/>
+<text x="172" y="126" class="lbl-sm" text-anchor="middle">feed</text>
+</g>
+<g transform="translate(232,316)">
+<text x="112" y="148" class="lbl-b" text-anchor="middle">8. Parting off</text>
+<line x1="0" y1="80" x2="215" y2="80" class="hid"/>
+<rect x="6" y="50" width="24" height="60" class="ln fill-soft"/>
+<polygon points="30,58 110,58 110,80 121,80 121,58 170,58 170,102 30,102" class="ln fill-soft"/>
+<polygon points="111,80 111,28 120,28 120,80" class="ln fill-acc"/>
+<line x1="148" y1="30" x2="148" y2="56" class="ln acc" marker-end="url(#mt-u4-arw-ops)"/>
+<text x="156" y="48" class="lbl-sm" text-anchor="start">cross feed</text>
+</g>
+<g transform="translate(464,316)">
+<text x="112" y="148" class="lbl-b" text-anchor="middle">9. Chamfering</text>
+<line x1="0" y1="80" x2="215" y2="80" class="hid"/>
+<rect x="6" y="50" width="24" height="60" class="ln fill-soft"/>
+<polygon points="30,58 145,58 160,73 160,102 30,102" class="ln fill-soft"/>
+<polygon points="145,58 160,73 196,73 196,40 178,40" class="ln fill-acc"/>
+<text x="185" y="95" class="lbl-sm" text-anchor="middle">45°</text>
+<text x="110" y="125" class="lbl-sm" text-anchor="middle">bevel on the corner</text>
+</g>
+</svg>
+<figcaption>Fig. 4.5 — Lathe operations: the workpiece rotates in every operation; the tool (shown filled) gives the feed.</figcaption>
+</figure>
+<div class="formula">\[ \tan\alpha=\frac{D-d}{2l},\qquad S=\frac{L\,(D-d)}{2\,l} \]<p class="where">α = half taper angle (compound rest setting), D, d = large and small diameters, l = length of taper, L = total length of work, S = tailstock set-over</p></div>
+<h3 id="mt-u4-c-mill">5. Milling machines</h3>
+<p><b>Milling</b> removes metal with a rotating multi-tooth cutter while the workpiece is fed. In <b>up milling</b> the cutter turns against the feed. In <b>down milling</b> it turns with the feed (Fig. 4.6).</p>
+<figure class="fig" id="mt-u4-f-updown">
+<svg viewBox="0 0 700 250" role="img" aria-label="Up milling and down milling: cutter rotation against and with the feed">
+<defs><marker id="mt-u4-arw-updown" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<g transform="translate(0,0)">
+<text x="170" y="16" class="lbl-b" text-anchor="middle">(a) Up (conventional) milling</text>
+<rect x="15" y="112" width="310" height="44" class="ln fill-hatch"/>
+<circle cx="170" cy="80" r="42" class="ln fill-soft"/>
+<line x1="212.0" y1="80.0" x2="219.0" y2="80.0" class="ln thick"/>
+<line x1="206.37306695894642" y1="101.0" x2="212.4352447854375" y2="104.5" class="ln thick"/>
+<line x1="191.0" y1="116.37306695894642" x2="194.5" y2="122.43524478543749" class="ln thick"/>
+<line x1="170.0" y1="122.0" x2="170.0" y2="129.0" class="ln thick"/>
+<line x1="149.0" y1="116.37306695894642" x2="145.5" y2="122.4352447854375" class="ln thick"/>
+<line x1="133.62693304105358" y1="101.0" x2="127.5647552145625" y2="104.5" class="ln thick"/>
+<line x1="128.0" y1="80.0" x2="121.0" y2="80.0" class="ln thick"/>
+<line x1="133.62693304105358" y1="59.0" x2="127.56475521456251" y2="55.49999999999999" class="ln thick"/>
+<line x1="148.99999999999997" y1="43.62693304105359" x2="145.49999999999997" y2="37.56475521456252" class="ln thick"/>
+<line x1="170.0" y1="38.0" x2="170.0" y2="31.0" class="ln thick"/>
+<line x1="191.0" y1="43.626933041053576" x2="194.5" y2="37.56475521456251" class="ln thick"/>
+<line x1="206.37306695894642" y1="58.999999999999986" x2="212.43524478543748" y2="55.49999999999998" class="ln thick"/>
+<circle cx="170" cy="80" r="3" class="solid"/>
+<path d="M170,122 A42,42 0 0 1 142.8,112 L170,112 Z" class="ln fill-acc"/>
+<path d="M150.0,80.0 A20,20 0 0 1 190.0,80.0" class="ln acc" marker-end="url(#mt-u4-arw-updown)" fill="none"/>
+<text x="105" y="106" class="lbl-sm" text-anchor="end">t max</text>
+<text x="182" y="142" class="lbl-sm" text-anchor="start">t = 0</text>
+<text x="60" y="140" class="lbl-b" text-anchor="middle">Workpiece</text>
+<text x="262" y="50" class="lbl-sm" text-anchor="middle">Cutter</text>
+<line x1="256" y1="56" x2="222" y2="70" class="ln thin"/>
+<line x1="30" y1="180" x2="120" y2="180" class="ln acc2" marker-end="url(#mt-u4-arw-updown)"/>
+<text x="75" y="198" class="lbl-sm" text-anchor="middle">Feed (work moves)</text>
+<text x="170" y="225" class="lbl-sm" text-anchor="middle">Tooth chip: 0 at the start, maximum at the end</text>
+<text x="170" y="242" class="lbl-sm" text-anchor="middle">Cutter turns against the feed at the cut</text>
+</g>
+<g transform="translate(350,0)">
+<text x="170" y="16" class="lbl-b" text-anchor="middle">(b) Down (climb) milling</text>
+<rect x="15" y="112" width="310" height="44" class="ln fill-hatch"/>
+<circle cx="170" cy="80" r="42" class="ln fill-soft"/>
+<line x1="212.0" y1="80.0" x2="219.0" y2="80.0" class="ln thick"/>
+<line x1="206.37306695894642" y1="101.0" x2="212.4352447854375" y2="104.5" class="ln thick"/>
+<line x1="191.0" y1="116.37306695894642" x2="194.5" y2="122.43524478543749" class="ln thick"/>
+<line x1="170.0" y1="122.0" x2="170.0" y2="129.0" class="ln thick"/>
+<line x1="149.0" y1="116.37306695894642" x2="145.5" y2="122.4352447854375" class="ln thick"/>
+<line x1="133.62693304105358" y1="101.0" x2="127.5647552145625" y2="104.5" class="ln thick"/>
+<line x1="128.0" y1="80.0" x2="121.0" y2="80.0" class="ln thick"/>
+<line x1="133.62693304105358" y1="59.0" x2="127.56475521456251" y2="55.49999999999999" class="ln thick"/>
+<line x1="148.99999999999997" y1="43.62693304105359" x2="145.49999999999997" y2="37.56475521456252" class="ln thick"/>
+<line x1="170.0" y1="38.0" x2="170.0" y2="31.0" class="ln thick"/>
+<line x1="191.0" y1="43.626933041053576" x2="194.5" y2="37.56475521456251" class="ln thick"/>
+<line x1="206.37306695894642" y1="58.999999999999986" x2="212.43524478543748" y2="55.49999999999998" class="ln thick"/>
+<circle cx="170" cy="80" r="3" class="solid"/>
+<path d="M170,122 A42,42 0 0 1 142.8,112 L170,112 Z" class="ln fill-acc"/>
+<path d="M190.0,80.0 A20,20 0 0 0 150.0,80.0" class="ln acc" marker-end="url(#mt-u4-arw-updown)" fill="none"/>
+<text x="105" y="106" class="lbl-sm" text-anchor="end">t max</text>
+<text x="182" y="142" class="lbl-sm" text-anchor="start">t = 0</text>
+<text x="60" y="140" class="lbl-b" text-anchor="middle">Workpiece</text>
+<text x="262" y="50" class="lbl-sm" text-anchor="middle">Cutter</text>
+<line x1="256" y1="56" x2="222" y2="70" class="ln thin"/>
+<line x1="30" y1="180" x2="120" y2="180" class="ln acc2" marker-end="url(#mt-u4-arw-updown)"/>
+<text x="75" y="198" class="lbl-sm" text-anchor="middle">Feed (work moves)</text>
+<text x="170" y="225" class="lbl-sm" text-anchor="middle">Tooth chip: maximum at the start, 0 at the end</text>
+<text x="170" y="242" class="lbl-sm" text-anchor="middle">Cutter turns with the feed at the cut</text>
+</g>
+</svg>
+<figcaption>Fig. 4.6 — Up milling (cutter turns against the feed) and down milling (cutter turns with the feed); t = chip thickness.</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Point</th><th>Up milling</th><th>Down milling</th></tr></thead><tbody><tr><td>Chip thickness</td><td>0 at start, maximum at end</td><td>Maximum at start, 0 at end</td></tr><tr><td>Cutting force on work</td><td>Upward; tends to lift it</td><td>Downward; holds it on the table</td></tr><tr><td>Backlash</td><td>No problem</td><td>Needs a backlash eliminator</td></tr><tr><td>Surface finish</td><td>Poorer</td><td>Better</td></tr><tr><td>Tool life</td><td>Shorter (rubbing at start)</td><td>Longer</td></tr><tr><td>Use</td><td>Castings with a hard skin; old machines</td><td>Rigid machines, finishing, thin work</td></tr></tbody></table></div>
+<p><b>Face milling</b> uses a large cutter with its axis at right angles to the face. <b>End milling</b> uses a cutter with teeth on the end and sides for slots, pockets and profiles (Fig. 4.7).</p>
+<figure class="fig" id="mt-u4-f-facend">
+<svg viewBox="0 0 700 300" role="img" aria-label="Face milling with a face mill and end milling of a slot with an end mill">
+<defs><marker id="mt-u4-arw-facend" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<g transform="translate(0,0)">
+<text x="170" y="16" class="lbl-b" text-anchor="middle">(a) Face milling</text>
+<rect x="145" y="26" width="50" height="50" class="ln fill-soft"/>
+<line x1="170" y1="20" x2="170" y2="200" class="hid"/>
+<rect x="100" y="76" width="140" height="26" class="ln fill-acc"/>
+<rect x="104" y="102" width="10" height="9" class="ln fill-acc2"/>
+<rect x="128" y="102" width="10" height="9" class="ln fill-acc2"/>
+<rect x="152" y="102" width="10" height="9" class="ln fill-acc2"/>
+<rect x="176" y="102" width="10" height="9" class="ln fill-acc2"/>
+<rect x="200" y="102" width="10" height="9" class="ln fill-acc2"/>
+<rect x="224" y="102" width="10" height="9" class="ln fill-acc2"/>
+<polygon points="20,111 100,111 100,156 20,156" class="ln fill-hatch"/>
+<polygon points="100,125 240,125 240,156 100,156" class="ln fill-hatch"/>
+<polygon points="240,111 330,111 330,156 240,156" class="ln fill-hatch"/>
+<rect x="20" y="156" width="310" height="12" class="ln fill-soft"/>
+<line x1="100" y1="111" x2="240" y2="111" class="ln dash"/>
+<line x1="195" y1="45" x2="249" y2="34" class="ln thin"/>
+<circle cx="195" cy="45" r="2" class="solid"/>
+<text x="254" y="38" class="lbl-sm" text-anchor="start">Spindle</text>
+<line x1="240" y1="90" x2="254" y2="68" class="ln thin"/>
+<circle cx="240" cy="90" r="2" class="solid"/>
+<text x="259" y="72" class="lbl-sm" text-anchor="start">Face mill</text>
+<line x1="235" y1="106" x2="261" y2="100" class="ln thin"/>
+<circle cx="235" cy="106" r="2" class="solid"/>
+<text x="266" y="104" class="lbl-sm" text-anchor="start">Teeth</text>
+<line x1="60" y1="140" x2="60" y2="176" class="ln thin"/>
+<circle cx="60" cy="140" r="2" class="solid"/>
+<text x="58" y="190" class="lbl-sm" text-anchor="middle">Workpiece</text>
+<line x1="40" y1="212" x2="120" y2="212" class="ln acc2" marker-end="url(#mt-u4-arw-facend)"/>
+<text x="80" y="229" class="lbl-sm" text-anchor="middle">Feed</text>
+<text x="170" y="252" class="lbl-sm" text-anchor="middle">Axis at right angle to the machined face</text>
+<text x="170" y="270" class="lbl-sm" text-anchor="middle">Cutting edges on the periphery and the end</text>
+</g>
+<g transform="translate(350,0)">
+<text x="170" y="16" class="lbl-b" text-anchor="middle">(b) End milling</text>
+<rect x="150" y="26" width="40" height="46" class="ln fill-soft"/>
+<rect x="158" y="72" width="24" height="70" class="ln fill-acc"/>
+<line x1="158" y1="88" x2="182" y2="78" class="ln thin"/>
+<line x1="158" y1="102" x2="182" y2="92" class="ln thin"/>
+<line x1="158" y1="116" x2="182" y2="106" class="ln thin"/>
+<line x1="158" y1="130" x2="182" y2="120" class="ln thin"/>
+<line x1="158" y1="144" x2="182" y2="134" class="ln thin"/>
+<line x1="170" y1="20" x2="170" y2="200" class="hid"/>
+<polygon points="20,100 158,100 158,142 182,142 182,100 330,100 330,170 20,170" class="ln fill-hatch"/>
+<line x1="170" y1="34" x2="234" y2="26" class="ln thin"/>
+<circle cx="170" cy="34" r="2" class="solid"/>
+<text x="239" y="30" class="lbl-sm" text-anchor="start">Collet / spindle</text>
+<line x1="182" y1="100" x2="234" y2="74" class="ln thin"/>
+<circle cx="182" cy="100" r="2" class="solid"/>
+<text x="239" y="78" class="lbl-sm" text-anchor="start">End mill (flutes)</text>
+<line x1="60" y1="140" x2="60" y2="176" class="ln thin"/>
+<circle cx="60" cy="140" r="2" class="solid"/>
+<text x="58" y="190" class="lbl-sm" text-anchor="middle">Workpiece</text>
+<line x1="240" y1="184" x2="300" y2="184" class="ln acc2" marker-end="url(#mt-u4-arw-facend)"/>
+<text x="270" y="201" class="lbl-sm" text-anchor="middle">Feed</text>
+<text x="170" y="252" class="lbl-sm" text-anchor="middle">Cutting edges on the end and the sides</text>
+<text x="170" y="270" class="lbl-sm" text-anchor="middle">Makes slots, pockets, keyways, profiles</text>
+</g>
+</svg>
+<figcaption>Fig. 4.7 — Face milling (cutter axis perpendicular to the surface) and end milling (slot and profile cutting).</figcaption>
+</figure>
+<p>The <b>column-and-knee</b> machine is the most common milling machine. The knee moves up and down the column, the saddle moves across, and the table moves along (Fig. 4.8).</p>
+<figure class="fig" id="mt-u4-f-kneemill">
+<svg viewBox="0 0 700 400" role="img" aria-label="Labelled side view of a column and knee type horizontal milling machine">
+<defs><marker id="mt-u4-arw-kneemill" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="40" y="355" width="330" height="28" class="ln fill-soft"/>
+<rect x="60" y="48" width="100" height="307" class="ln fill-acc2"/>
+<rect x="160" y="48" width="300" height="28" class="ln fill-soft"/>
+<rect x="160" y="122" width="255" height="10" class="ln fill-soft"/>
+<rect x="290" y="98" width="36" height="58" class="ln fill-acc"/>
+<line x1="292" y1="98" x2="296" y2="98" class="ln thin"/>
+<line x1="300" y1="98" x2="304" y2="98" class="ln thin"/>
+<line x1="308" y1="98" x2="312" y2="98" class="ln thin"/>
+<line x1="316" y1="98" x2="320" y2="98" class="ln thin"/>
+<rect x="402" y="76" width="26" height="76" class="ln fill-soft"/>
+<rect x="160" y="228" width="170" height="64" class="ln fill-acc2"/>
+<rect x="165" y="205" width="160" height="23" class="ln fill-soft"/>
+<rect x="150" y="184" width="230" height="21" class="ln fill-acc"/>
+<rect x="255" y="158" width="90" height="26" class="ln fill-hatch"/>
+<rect x="232" y="292" width="28" height="63" class="ln fill-soft"/>
+<line x1="110" y1="48" x2="110" y2="355" class="hid"/>
+<line x1="110" y1="60" x2="110" y2="26" class="ln thin"/>
+<circle cx="110" cy="60" r="2" class="solid"/>
+<text x="110" y="22" class="lbl-sm" text-anchor="middle">Column</text>
+<line x1="440" y1="62" x2="529" y2="46" class="ln thin"/>
+<circle cx="440" cy="62" r="2" class="solid"/>
+<text x="534" y="50" class="lbl-sm" text-anchor="start">Overarm</text>
+<line x1="175" y1="127" x2="179.0" y2="96" class="ln thin"/>
+<circle cx="175" cy="127" r="2" class="solid"/>
+<text x="200" y="100" class="lbl-sm" text-anchor="middle">Arbor</text>
+<line x1="308" y1="98" x2="308" y2="34" class="ln thin"/>
+<circle cx="308" cy="98" r="2" class="solid"/>
+<text x="330" y="30" class="lbl-sm" text-anchor="middle">Cutter</text>
+<line x1="415" y1="114" x2="519" y2="96" class="ln thin"/>
+<circle cx="415" cy="114" r="2" class="solid"/>
+<text x="524" y="100" class="lbl-sm" text-anchor="start">Arbor support</text>
+<line x1="345" y1="171" x2="469" y2="146" class="ln thin"/>
+<circle cx="345" cy="171" r="2" class="solid"/>
+<text x="474" y="150" class="lbl-sm" text-anchor="start">Workpiece</text>
+<line x1="375" y1="195" x2="469" y2="186" class="ln thin"/>
+<circle cx="375" cy="195" r="2" class="solid"/>
+<text x="474" y="190" class="lbl-sm" text-anchor="start">Table</text>
+<line x1="320" y1="216" x2="469" y2="221" class="ln thin"/>
+<circle cx="320" cy="216" r="2" class="solid"/>
+<text x="474" y="225" class="lbl-sm" text-anchor="start">Saddle</text>
+<line x1="325" y1="260" x2="469" y2="258" class="ln thin"/>
+<circle cx="325" cy="260" r="2" class="solid"/>
+<text x="474" y="262" class="lbl-sm" text-anchor="start">Knee</text>
+<line x1="246" y1="330" x2="469" y2="321" class="ln thin"/>
+<circle cx="246" cy="330" r="2" class="solid"/>
+<text x="474" y="325" class="lbl-sm" text-anchor="start">Elevating screw</text>
+<line x1="200" y1="369" x2="469" y2="368" class="ln thin"/>
+<circle cx="200" cy="369" r="2" class="solid"/>
+<text x="474" y="372" class="lbl-sm" text-anchor="start">Base</text>
+<text x="570" y="232" class="lbl-b" text-anchor="start">Feeds:</text>
+<text x="570" y="250" class="lbl-sm" text-anchor="start">table: longitudinal</text>
+<text x="570" y="268" class="lbl-sm" text-anchor="start">saddle: cross</text>
+<text x="570" y="286" class="lbl-sm" text-anchor="start">knee: vertical</text>
+</svg>
+<figcaption>Fig. 4.8 — Column-and-knee type milling machine (plain horizontal): column, knee, saddle, table, overarm, arbor and arbor support.</figcaption>
+</figure>
+<figure class="photo"><img src="img/mt-u4-knee-mill.jpg" alt="A vertical column-and-knee milling machine with table and knee" width="1000" height="1778" loading="lazy"><figcaption>A column-and-knee type milling machine (vertical type): knee, saddle and table are at the front. <span class="credit">Photo: Dan Bollinger · CC BY-SA 4.0 · Wikimedia Commons</span></figcaption></figure>
+<h3 id="mt-u4-c-drill">6. Drilling machines</h3>
+<p>A <b>drilling machine</b> makes round holes with a twist drill. It turns the drill and feeds it along its axis. The <b>radial drilling machine</b> has an arm that swings round a column. The drill head slides on the arm. We drill large, heavy parts without moving them (Fig. 4.9).</p>
+<figure class="fig" id="mt-u4-f-radial">
+<svg viewBox="0 0 700 520" role="img" aria-label="Labelled front view of a radial drilling machine">
+<defs><marker id="mt-u4-arw-radial" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="40" y="375" width="420" height="28" class="ln fill-soft"/>
+<rect x="250" y="350" width="190" height="25" class="ln fill-soft"/>
+<rect x="70" y="60" width="50" height="315" class="ln fill-acc2"/>
+<rect x="62" y="50" width="66" height="14" class="ln fill-soft"/>
+<rect x="122" y="70" width="3" height="280" class="ln fill-soft"/>
+<rect x="64" y="128" width="62" height="70" class="ln fill-acc"/>
+<rect x="126" y="138" width="310" height="34" class="ln fill-soft"/>
+<rect x="300" y="120" width="80" height="92" class="ln fill-acc2"/>
+<rect x="322" y="84" width="36" height="36" class="ln fill-soft"/>
+<rect x="336" y="212" width="8" height="70" class="ln fill-soft"/>
+<polygon points="336,282 344,282 340,296" class="ln fill-acc"/>
+<rect x="270" y="322" width="140" height="28" class="ln fill-hatch"/>
+<line x1="340" y1="60" x2="340" y2="320" class="hid"/>
+<text x="250" y="418" class="lbl-sm" text-anchor="middle">Base</text>
+<line x1="72" y1="270" x2="55.400000000000006" y2="246" class="ln thin"/>
+<circle cx="72" cy="270" r="2" class="solid"/>
+<text x="12" y="250" class="lbl-sm" text-anchor="start">Column</text>
+<line x1="123" y1="90" x2="149" y2="38" class="ln thin"/>
+<circle cx="123" cy="90" r="2" class="solid"/>
+<text x="154" y="42" class="lbl-sm" text-anchor="start">Elevating screw</text>
+<text x="58" y="178" class="lbl-sm" text-anchor="end">Sleeve</text>
+<line x1="200" y1="155" x2="200" y2="216" class="ln thin"/>
+<circle cx="200" cy="155" r="2" class="solid"/>
+<text x="200" y="230" class="lbl-sm" text-anchor="middle">Radial arm</text>
+<line x1="358" y1="100" x2="449" y2="66" class="ln thin"/>
+<circle cx="358" cy="100" r="2" class="solid"/>
+<text x="454" y="70" class="lbl-sm" text-anchor="start">Motor</text>
+<line x1="380" y1="165" x2="469" y2="126" class="ln thin"/>
+<circle cx="380" cy="165" r="2" class="solid"/>
+<text x="474" y="130" class="lbl-sm" text-anchor="start">Drill head</text>
+<line x1="340" y1="250" x2="469" y2="246" class="ln thin"/>
+<circle cx="340" cy="250" r="2" class="solid"/>
+<text x="474" y="250" class="lbl-sm" text-anchor="start">Spindle</text>
+<line x1="340" y1="294" x2="469" y2="286" class="ln thin"/>
+<circle cx="340" cy="294" r="2" class="solid"/>
+<text x="474" y="290" class="lbl-sm" text-anchor="start">Drill</text>
+<line x1="410" y1="336" x2="469" y2="332" class="ln thin"/>
+<circle cx="410" cy="336" r="2" class="solid"/>
+<text x="474" y="336" class="lbl-sm" text-anchor="start">Workpiece</text>
+<line x1="440" y1="362" x2="469" y2="368" class="ln thin"/>
+<circle cx="440" cy="362" r="2" class="solid"/>
+<text x="474" y="372" class="lbl-sm" text-anchor="start">Worktable</text>
+<text x="40" y="452" class="lbl-b" text-anchor="start">Motions of the machine:</text>
+<text x="40" y="474" class="lbl-sm" text-anchor="start">1 Arm swings round the column</text>
+<text x="40" y="494" class="lbl-sm" text-anchor="start">2 Arm moves up and down the column</text>
+<text x="370" y="474" class="lbl-sm" text-anchor="start">3 Drill head slides along the arm</text>
+<text x="370" y="494" class="lbl-sm" text-anchor="start">4 Spindle rotates and feeds down</text>
+</svg>
+<figcaption>Fig. 4.9 — Radial drilling machine: base, column, radial arm, drill head, spindle and worktable.</figcaption>
+</figure>
+<figure class="photo"><img src="img/mt-u4-radial-drill.jpg" alt="A radial drilling machine with column, arm and drill head in a workshop" width="1000" height="750" loading="lazy"><figcaption>A radial drilling machine: the arm and the drill head reach over a large workpiece on the base. <span class="credit">Photo: Márton Kiss-Albert · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption></figure>
+<p>Other hole-making operations use other tools on the same machine (Fig. 4.10).</p>
+<figure class="fig" id="mt-u4-f-drillops">
+<svg viewBox="0 0 700 450" role="img" aria-label="Seven hole-making operations: drilling, reaming, boring, counterboring, countersinking, tapping and spot facing">
+<defs><marker id="mt-u4-arw-drillops" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<g transform="translate(0,0)">
+<text x="87" y="14" class="lbl-b" text-anchor="middle">1. Drilling</text>
+<text x="87" y="212" class="lbl-sm" text-anchor="middle">makes a round hole</text>
+<polygon points="15,95 70,95 70,145 85,155 100,145 100,95 155,95 155,185 15,185" class="ln fill-hatch"/>
+<rect x="72" y="30" width="26" height="110" class="ln fill-acc"/>
+<polygon points="72,140 98,140 85,152" class="ln fill-acc"/>
+<line x1="72" y1="60" x2="98" y2="50" class="ln thin"/>
+<line x1="72" y1="80" x2="98" y2="70" class="ln thin"/>
+<line x1="72" y1="100" x2="98" y2="90" class="ln thin"/>
+<line x1="72" y1="120" x2="98" y2="110" class="ln thin"/>
+</g>
+<g transform="translate(175,0)">
+<text x="87" y="14" class="lbl-b" text-anchor="middle">2. Reaming</text>
+<text x="87" y="212" class="lbl-sm" text-anchor="middle">finishes a hole to size</text>
+<polygon points="15,95 70,95 70,185 15,185" class="ln fill-hatch"/>
+<polygon points="100,95 155,95 155,185 100,185" class="ln fill-hatch"/>
+<rect x="72" y="30" width="26" height="140" class="ln fill-acc"/>
+<line x1="78" y1="100" x2="78" y2="170" class="ln thin"/>
+<line x1="85" y1="100" x2="85" y2="170" class="ln thin"/>
+<line x1="92" y1="100" x2="92" y2="170" class="ln thin"/>
+</g>
+<g transform="translate(350,0)">
+<text x="87" y="14" class="lbl-b" text-anchor="middle">3. Boring</text>
+<text x="87" y="212" class="lbl-sm" text-anchor="middle">enlarges a hole</text>
+<polygon points="15,95 66,95 66,185 15,185" class="ln fill-hatch"/>
+<polygon points="106,95 155,95 155,185 106,185" class="ln fill-hatch"/>
+<rect x="78" y="30" width="14" height="130" class="ln fill-acc"/>
+<rect x="92" y="148" width="12" height="10" class="ln fill-acc"/>
+</g>
+<g transform="translate(525,0)">
+<text x="87" y="14" class="lbl-b" text-anchor="middle">4. Counterboring</text>
+<text x="87" y="212" class="lbl-sm" text-anchor="middle">seat for a bolt head</text>
+<polygon points="15,95 55,95 55,125 73,125 73,185 15,185" class="ln fill-hatch"/>
+<polygon points="117,95 155,95 155,185 97,185 97,125 117,125" class="ln fill-hatch"/>
+<polygon points="57,30 115,30 115,125 95,125 95,165 75,165 75,125 57,125" class="ln fill-acc"/>
+</g>
+<g transform="translate(0,225)">
+<text x="87" y="14" class="lbl-b" text-anchor="middle">5. Countersinking</text>
+<text x="87" y="212" class="lbl-sm" text-anchor="middle">conical seat for a screw head</text>
+<polygon points="15,95 55,95 75,115 75,185 15,185" class="ln fill-hatch"/>
+<polygon points="115,95 155,95 155,185 95,185 95,115" class="ln fill-hatch"/>
+<polygon points="72,30 98,30 98,75 116,95 95,115 95,165 75,165 75,115 54,95 72,75" class="ln fill-acc"/>
+<text x="135" y="125" class="lbl-sm" text-anchor="middle">90°</text>
+</g>
+<g transform="translate(175,225)">
+<text x="87" y="14" class="lbl-b" text-anchor="middle">6. Tapping</text>
+<text x="87" y="212" class="lbl-sm" text-anchor="middle">cuts internal threads</text>
+<polygon points="15,95 70,95 66,100 70,106 66,112 70,118 66,124 70,130 66,136 70,142 66,148 70,154 66,160 70,166 70,185 15,185" class="ln fill-hatch"/>
+<polygon points="100,95 155,95 155,185 100,185 104,166 100,160 104,154 100,148 104,142 100,136 104,130 100,124 104,118 100,112 104,106 100,100" class="ln fill-hatch"/>
+<rect x="74" y="30" width="22" height="125" class="ln fill-acc"/>
+<line x1="74" y1="100" x2="96" y2="100" class="ln thin"/>
+<line x1="74" y1="109" x2="96" y2="109" class="ln thin"/>
+<line x1="74" y1="118" x2="96" y2="118" class="ln thin"/>
+<line x1="74" y1="127" x2="96" y2="127" class="ln thin"/>
+<line x1="74" y1="136" x2="96" y2="136" class="ln thin"/>
+<line x1="74" y1="145" x2="96" y2="145" class="ln thin"/>
+<line x1="74" y1="154" x2="96" y2="154" class="ln thin"/>
+</g>
+<g transform="translate(350,225)">
+<text x="87" y="14" class="lbl-b" text-anchor="middle">7. Spot facing</text>
+<text x="87" y="212" class="lbl-sm" text-anchor="middle">flat seat on a rough surface</text>
+<path d="M15,95 L22,91 L30,96 L38,92 L46,96 L55,95" class="ln thin" fill="none"/>
+<path d="M115,95 L124,91 L132,96 L140,92 L148,96 L155,93" class="ln thin" fill="none"/>
+<polygon points="15,95 55,95 55,106 75,106 75,185 15,185" class="ln fill-hatch"/>
+<polygon points="115,95 155,95 155,185 95,185 95,106 115,106" class="ln fill-hatch"/>
+<polygon points="57,30 113,30 113,106 95,106 95,150 75,150 75,106 57,106" class="ln fill-acc"/>
+</g>
+<g transform="translate(525,225)">
+<text x="87" y="14" class="lbl-b" text-anchor="middle">Key</text>
+<rect x="25" y="40" width="20" height="14" class="ln fill-hatch"/>
+<text x="55" y="52" class="lbl-sm" text-anchor="start">workpiece</text>
+<rect x="25" y="70" width="20" height="14" class="ln fill-acc"/>
+<text x="55" y="82" class="lbl-sm" text-anchor="start">tool</text>
+<text x="20" y="125" class="lbl-sm" text-anchor="start">Tool rotates; work is held</text>
+<text x="20" y="142" class="lbl-sm" text-anchor="start">fixed on the table.</text>
+<text x="20" y="168" class="lbl-sm" text-anchor="start">Sections show the hole</text>
+<text x="20" y="185" class="lbl-sm" text-anchor="start">shape after the operation.</text>
+</g>
+</svg>
+<figcaption>Fig. 4.10 — Drilling operations (sectional views): drilling, reaming, boring, counterboring, countersinking, tapping and spot facing.</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Operation</th><th>Purpose</th></tr></thead><tbody><tr><td>Drilling</td><td>Makes a new hole</td></tr><tr><td>Reaming</td><td>Finishes a drilled hole to size and finish</td></tr><tr><td>Boring</td><td>Enlarges a hole and corrects its position</td></tr><tr><td>Counterboring</td><td>Flat-bottom step for a bolt head or nut</td></tr><tr><td>Countersinking</td><td>Conical seat for a flat-head screw</td></tr><tr><td>Tapping</td><td>Cuts internal threads</td></tr><tr><td>Spot facing</td><td>Flat seat for a bolt head on a rough surface</td></tr></tbody></table></div>
+<h3 id="mt-u4-c-shaper">7. Shaping machine</h3>
+<p>The <b>shaper</b> cuts flat surfaces, slots and keyways with a single-point tool on a reciprocating <b>ram</b>. The tool cuts on the forward stroke only. The table feeds the work a small step at the end of each return stroke. The return stroke is faster because of the <b>quick-return mechanism</b>.</p>
+<figure class="fig" id="mt-u4-f-shaper">
+<svg viewBox="0 0 700 390" role="img" aria-label="Labelled side view of a shaping machine">
+<defs><marker id="mt-u4-arw-shaper" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="30" y="345" width="380" height="26" class="ln fill-soft"/>
+<rect x="50" y="98" width="250" height="247" class="ln fill-acc2"/>
+<rect x="20" y="60" width="400" height="38" class="ln fill-soft"/>
+<rect x="370" y="98" width="70" height="70" class="ln fill-acc"/>
+<rect x="390" y="168" width="30" height="28" class="ln fill-soft"/>
+<polygon points="400,196 412,196 412,210 400,204" class="ln fill-acc"/>
+<rect x="300" y="180" width="22" height="165" class="ln fill-soft"/>
+<rect x="322" y="262" width="118" height="30" class="ln fill-soft"/>
+<rect x="322" y="244" width="138" height="18" class="ln fill-acc"/>
+<rect x="375" y="212" width="65" height="32" class="ln fill-hatch"/>
+<line x1="250" y1="40" x2="400" y2="40" class="ln acc" marker-end="url(#mt-u4-arw-shaper)" marker-start="url(#mt-u4-arw-shaper)"/>
+<text x="325" y="30" class="lbl-sm" text-anchor="middle">Ram stroke</text>
+<line x1="120" y1="79" x2="120" y2="44" class="ln thin"/>
+<circle cx="120" cy="79" r="2" class="solid"/>
+<text x="120" y="40" class="lbl-sm" text-anchor="middle">Ram</text>
+<line x1="430" y1="130" x2="499" y2="108" class="ln thin"/>
+<circle cx="430" cy="130" r="2" class="solid"/>
+<text x="504" y="112" class="lbl-sm" text-anchor="start">Tool head</text>
+<line x1="420" y1="182" x2="499" y2="146" class="ln thin"/>
+<circle cx="420" cy="182" r="2" class="solid"/>
+<text x="504" y="150" class="lbl-sm" text-anchor="start">Clapper box</text>
+<line x1="412" y1="203" x2="499" y2="184" class="ln thin"/>
+<circle cx="412" cy="203" r="2" class="solid"/>
+<text x="504" y="188" class="lbl-sm" text-anchor="start">Tool</text>
+<line x1="440" y1="228" x2="499" y2="222" class="ln thin"/>
+<circle cx="440" cy="228" r="2" class="solid"/>
+<text x="504" y="226" class="lbl-sm" text-anchor="start">Workpiece</text>
+<line x1="458" y1="253" x2="499" y2="258" class="ln thin"/>
+<circle cx="458" cy="253" r="2" class="solid"/>
+<text x="504" y="262" class="lbl-sm" text-anchor="start">Table</text>
+<line x1="430" y1="277" x2="499" y2="296" class="ln thin"/>
+<circle cx="430" cy="277" r="2" class="solid"/>
+<text x="504" y="300" class="lbl-sm" text-anchor="start">Saddle</text>
+<line x1="311" y1="300" x2="344" y2="321" class="ln thin"/>
+<circle cx="311" cy="300" r="2" class="solid"/>
+<text x="349" y="325" class="lbl-sm" text-anchor="start">Cross rail</text>
+<text x="175" y="225" class="lbl-b" text-anchor="middle">Column</text>
+<text x="175" y="245" class="lbl-sm" text-anchor="middle">(quick-return gear</text>
+<text x="175" y="261" class="lbl-sm" text-anchor="middle">mechanism inside)</text>
+<text x="220" y="363" class="lbl-sm" text-anchor="middle">Base</text>
+<text x="500" y="340" class="lbl-sm" text-anchor="start">Table feed: into the page,</text>
+<text x="500" y="357" class="lbl-sm" text-anchor="start">at the end of each return stroke</text>
+</svg>
+<figcaption>Fig. 4.11 — Shaping machine: base, column, ram, tool head with clapper box, cross rail, saddle and table.</figcaption>
+</figure>
+<p>Fig. 4.12 shows the crank and slotted link mechanism. The bull gear turns at constant speed. The crank pin moves the rocker arm. The cutting stroke takes 240° of the crank turn; the return takes 120°.</p>
+<figure class="fig" id="mt-u4-f-quick">
+<svg viewBox="0 0 700 380" role="img" aria-label="Crank and slotted link quick-return mechanism of a shaper">
+<defs><marker id="mt-u4-arw-quick" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="70" y="52" width="340" height="16" class="ln fill-soft"/>
+<text x="425" y="64" class="lbl-sm" text-anchor="start">Ram</text>
+<circle cx="220" cy="200" r="78" class="ln fill-soft"/>
+<circle cx="220" cy="200" r="55" class="ln hid" fill="none"/>
+<line x1="220" y1="310" x2="95.0" y2="93.49364905389032" class="ln dash"/>
+<line x1="95.0" y1="93.49364905389032" x2="95.0" y2="68" class="ln dash"/>
+<line x1="220" y1="310" x2="345.0" y2="93.49364905389032" class="ln dash"/>
+<line x1="345.0" y1="93.49364905389032" x2="345.0" y2="68" class="ln dash"/>
+<line x1="95" y1="34" x2="345" y2="34" class="ln acc2" marker-end="url(#mt-u4-arw-quick)" marker-start="url(#mt-u4-arw-quick)"/>
+<text x="220" y="26" class="lbl-sm" text-anchor="middle">Stroke length L</text>
+<line x1="220" y1="310" x2="295.8250222731839" y2="71.77622705264878" class="ln thick"/>
+<line x1="295.8250222731839" y1="71.77622705264878" x2="295.8250222731839" y2="68" class="ln thin"/>
+<circle cx="295.8250222731839" cy="71.77622705264878" r="4" class="solid"/>
+<circle cx="220" cy="310" r="6" class="ln fill-acc"/>
+<circle cx="220" cy="200" r="4" class="solid"/>
+<circle cx="265.05336243589454" cy="168.45329600069246" r="7" class="ln fill-acc"/>
+<path d="M172.4,227.5 A55,55 0 1 1 267.6,227.5" class="acc thick" fill="none"/>
+<path d="M172.4,227.5 A55,55 0 0 0 267.6,227.5" class="acc2 thick" fill="none"/>
+<line x1="165" y1="145" x2="91" y2="106" class="ln thin"/>
+<circle cx="165" cy="145" r="2" class="solid"/>
+<text x="86" y="110" class="lbl-sm" text-anchor="end">Bull gear</text>
+<line x1="272.05336243589454" y1="166.45329600069246" x2="329" y2="166" class="ln thin"/>
+<circle cx="272.05336243589454" cy="166.45329600069246" r="2" class="solid"/>
+<text x="334" y="170" class="lbl-sm" text-anchor="start">Crank pin and slider block</text>
+<line x1="226" y1="314" x2="249" y2="346" class="ln thin"/>
+<circle cx="226" cy="314" r="2" class="solid"/>
+<text x="254" y="350" class="lbl-sm" text-anchor="start">Pivot O of rocker arm</text>
+<text x="520" y="100" class="lbl-b" text-anchor="start">Cutting stroke</text>
+<text x="520" y="118" class="lbl-sm" text-anchor="start">pin turns through 240°</text>
+<text x="520" y="140" class="lbl-sm" text-anchor="start">(slow, upper arc)</text>
+<text x="520" y="200" class="lbl-b" text-anchor="start">Return stroke</text>
+<text x="520" y="218" class="lbl-sm" text-anchor="start">pin turns through 120°</text>
+<text x="520" y="236" class="lbl-sm" text-anchor="start">(fast, lower arc)</text>
+<text x="520" y="285" class="lbl-b" text-anchor="start">Ratio = 240 / 120 = 2 : 1</text>
+<text x="520" y="305" class="lbl-sm" text-anchor="start">sin θ = r / d  (θ = 30°)</text>
+<text x="520" y="328" class="lbl-sm" text-anchor="start">r = crank radius</text>
+<text x="520" y="344" class="lbl-sm" text-anchor="start">d = gear centre to O</text>
+<text x="120" y="370" class="lbl-sm" text-anchor="start">Dashed: extreme positions of the rocker arm (tangent to the crank circle)</text>
+</svg>
+<figcaption>Fig. 4.12 — Crank and slotted link quick-return mechanism of a shaper (cutting stroke 240°, return stroke 120°).</figcaption>
+</figure>
+<div class="formula">\[ \text{Quick-return ratio}=\frac{180^\circ+2\theta}{180^\circ-2\theta},\qquad \sin\theta=\frac{r}{d} \]<p class="where">r = crank radius, d = distance from the gear centre to the rocker pivot. For θ = 30° the ratio is 2 : 1</p></div>
+<h3 id="mt-u4-c-grind">8. Grinding machines</h3>
+<p><b>Grinding</b> removes very small chips with the hard grains of a rotating wheel. It gives fine finish and close tolerance, and it cuts hardened steel. A <b>grinding wheel</b> is a mass of abrasive grains held together by a bond, with pores between them (Fig. 4.13).</p>
+<figure class="fig" id="mt-u4-f-wheel">
+<svg viewBox="0 0 700 410" role="img" aria-label="Grinding wheel structure and the marking system A 60 K 5 V">
+<defs><marker id="mt-u4-arw-wheel" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<circle cx="90" cy="100" r="70" class="ln fill-soft"/>
+<circle cx="90" cy="100" r="16" class="ln" fill="none"/>
+<text x="90" y="196" class="lbl-b" text-anchor="middle">Grinding wheel</text>
+<circle cx="150" cy="62" r="11" class="ln dash" fill="none"/>
+<line x1="161" y1="60" x2="220" y2="40" class="ln thin dash"/>
+<rect x="220" y="20" width="300" height="170" class="ln dash" fill="none"/>
+<polygon points="250,50 272,44 284,62 266,76 246,70" class="ln fill-acc"/>
+<polygon points="330,40 356,48 358,70 334,76 320,58" class="ln fill-acc"/>
+<polygon points="420,52 444,44 458,64 440,80 418,72" class="ln fill-acc"/>
+<polygon points="270,120 294,112 306,132 288,148 264,140" class="ln fill-acc"/>
+<polygon points="366,116 392,122 394,146 370,152 352,136" class="ln fill-acc"/>
+<polygon points="450,120 474,114 488,136 470,152 446,142" class="ln fill-acc"/>
+<line x1="284" y1="62" x2="320" y2="58" class="ln thick"/>
+<line x1="358" y1="66" x2="420" y2="66" class="ln thick"/>
+<line x1="266" y1="76" x2="280" y2="118" class="ln thick"/>
+<line x1="340" y1="76" x2="366" y2="118" class="ln thick"/>
+<line x1="440" y1="80" x2="456" y2="120" class="ln thick"/>
+<line x1="306" y1="132" x2="352" y2="136" class="ln thick"/>
+<line x1="394" y1="140" x2="446" y2="138" class="ln thick"/>
+<line x1="458" y1="64" x2="559" y2="40" class="ln thin"/>
+<circle cx="458" cy="64" r="2" class="solid"/>
+<text x="564" y="44" class="lbl-sm" text-anchor="start">Abrasive grain</text>
+<line x1="448" y1="100" x2="559" y2="100" class="ln thin"/>
+<circle cx="448" cy="100" r="2" class="solid"/>
+<text x="564" y="104" class="lbl-sm" text-anchor="start">Bond</text>
+<line x1="330" y1="98" x2="330" y2="198" class="ln thin"/>
+<circle cx="330" cy="98" r="2" class="solid"/>
+<text x="330" y="212" class="lbl-sm" text-anchor="middle">Pore (chip space)</text>
+<text x="350" y="246" class="lbl-b" text-anchor="middle">Marking system (IS 551): example</text>
+<rect x="70" y="262" width="80" height="46" class="ln fill-acc"/>
+<text x="110" y="292" class="lbl-b" text-anchor="middle">A</text>
+<text x="110" y="330" class="lbl-b" text-anchor="middle">Abrasive</text>
+<text x="110" y="350" class="lbl-sm" text-anchor="middle">A =</text>
+<text x="110" y="366" class="lbl-sm" text-anchor="middle">aluminium oxide</text>
+<rect x="190" y="262" width="80" height="46" class="ln fill-acc"/>
+<text x="230" y="292" class="lbl-b" text-anchor="middle">60</text>
+<text x="230" y="330" class="lbl-b" text-anchor="middle">Grain size</text>
+<text x="230" y="350" class="lbl-sm" text-anchor="middle">60 =</text>
+<text x="230" y="366" class="lbl-sm" text-anchor="middle">medium grain</text>
+<rect x="310" y="262" width="80" height="46" class="ln fill-acc"/>
+<text x="350" y="292" class="lbl-b" text-anchor="middle">K</text>
+<text x="350" y="330" class="lbl-b" text-anchor="middle">Grade</text>
+<text x="350" y="350" class="lbl-sm" text-anchor="middle">K =</text>
+<text x="350" y="366" class="lbl-sm" text-anchor="middle">medium grade</text>
+<rect x="430" y="262" width="80" height="46" class="ln fill-acc"/>
+<text x="470" y="292" class="lbl-b" text-anchor="middle">5</text>
+<text x="470" y="330" class="lbl-b" text-anchor="middle">Structure</text>
+<text x="470" y="350" class="lbl-sm" text-anchor="middle">5 =</text>
+<text x="470" y="366" class="lbl-sm" text-anchor="middle">medium structure</text>
+<rect x="550" y="262" width="80" height="46" class="ln fill-acc"/>
+<text x="590" y="292" class="lbl-b" text-anchor="middle">V</text>
+<text x="590" y="330" class="lbl-b" text-anchor="middle">Bond</text>
+<text x="590" y="350" class="lbl-sm" text-anchor="middle">V =</text>
+<text x="590" y="366" class="lbl-sm" text-anchor="middle">vitrified</text>
+<text x="350" y="398" class="lbl-sm" text-anchor="middle">Order: abrasive, grain size, grade, structure, bond (maker's record may follow)</text>
+</svg>
+<figcaption>Fig. 4.13 — Grinding wheel: grains, bond and pores, and the standard marking system (example A 60 K 5 V).</figcaption>
+</figure>
+<div class="tbl"><table><thead><tr><th>Parameter</th><th>Meaning</th><th>Common choices</th></tr></thead><tbody><tr><td>Abrasive</td><td>Material of the grain</td><td>A = aluminium oxide (steels); C = silicon carbide (cast iron, non-ferrous); also CBN, diamond</td></tr><tr><td>Grain size</td><td>Number of sieve holes per inch</td><td>Coarse 8–24; medium 30–60; fine 70–180; very fine 220–600</td></tr><tr><td>Grade</td><td>Hardness: how firmly the bond holds the grain</td><td>A–H soft; I–P medium; Q–Z hard</td></tr><tr><td>Structure</td><td>Spacing of the grains</td><td>1 dense to 15 open</td></tr><tr><td>Bond</td><td>Material that holds the grains</td><td>V vitrified; S silicate; B resinoid; R rubber; E shellac</td></tr></tbody></table></div>
+<aside class="tip"><b>Memory trick.</b> Read the mark in order: Abrasive – Grain – Grade – Structure – Bond. Example: A 60 K 5 V.</aside>
+<p>The <b>plain cylindrical grinder</b> grinds the outside of a work held between centres. The wheel turns fast. The work turns slowly. The table traverses the work past the wheel, and the wheel is fed in after each pass (Fig. 4.14).</p>
+<figure class="fig" id="mt-u4-f-grinder">
+<svg viewBox="0 0 700 450" role="img" aria-label="Labelled front view of a plain cylindrical grinding machine">
+<defs><marker id="mt-u4-arw-grinder" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="solid"/></marker></defs>
+<rect x="50" y="320" width="600" height="36" class="ln fill-soft"/>
+<rect x="80" y="290" width="540" height="30" class="ln fill-acc2"/>
+<rect x="90" y="200" width="100" height="90" class="ln fill-acc"/>
+<rect x="500" y="215" width="100" height="75" class="ln fill-acc"/>
+<polygon points="190,244 205,238 205,252" class="ln fill-soft"/>
+<polygon points="500,244 485,238 485,252" class="ln fill-soft"/>
+<rect x="205" y="232" width="280" height="24" class="ln fill-hatch"/>
+<line x1="70" y1="244" x2="640" y2="244" class="hid"/>
+<rect x="310" y="120" width="52" height="112" class="ln fill-acc2"/>
+<rect x="290" y="56" width="92" height="64" class="ln fill-soft"/>
+<rect x="280" y="30" width="112" height="26" class="ln fill-acc"/>
+<circle cx="440" cy="90" r="22" class="ln" fill="none"/>
+<line x1="382" y1="90" x2="418" y2="90" class="ln thin"/>
+<rect x="130" y="175" width="40" height="25" class="ln fill-soft"/>
+<line x1="120" y1="340" x2="120" y2="362" class="ln thin"/>
+<circle cx="120" cy="340" r="2" class="solid"/>
+<text x="120" y="376" class="lbl-sm" text-anchor="middle">Bed</text>
+<line x1="260" y1="306" x2="309.0" y2="372" class="ln thin"/>
+<circle cx="260" cy="306" r="2" class="solid"/>
+<text x="330" y="376" class="lbl-sm" text-anchor="middle">Table</text>
+<line x1="140" y1="215" x2="140" y2="144" class="ln thin"/>
+<circle cx="140" cy="215" r="2" class="solid"/>
+<text x="64" y="140" class="lbl-sm" text-anchor="start">Headstock (work head)</text>
+<line x1="550" y1="225" x2="559" y2="146" class="ln thin"/>
+<circle cx="550" cy="225" r="2" class="solid"/>
+<text x="564" y="150" class="lbl-sm" text-anchor="start">Footstock</text>
+<line x1="440" y1="244" x2="469" y2="196" class="ln thin"/>
+<circle cx="440" cy="244" r="2" class="solid"/>
+<text x="474" y="200" class="lbl-sm" text-anchor="start">Workpiece</text>
+<line x1="312" y1="170" x2="248.60000000000002" y2="106" class="ln thin"/>
+<circle cx="312" cy="170" r="2" class="solid"/>
+<text x="154" y="110" class="lbl-sm" text-anchor="start">Grinding wheel</text>
+<line x1="292" y1="90" x2="193.0" y2="66" class="ln thin"/>
+<circle cx="292" cy="90" r="2" class="solid"/>
+<text x="124" y="70" class="lbl-sm" text-anchor="start">Wheel head</text>
+<line x1="392" y1="43" x2="419" y2="20" class="ln thin"/>
+<circle cx="392" cy="43" r="2" class="solid"/>
+<text x="424" y="24" class="lbl-sm" text-anchor="start">Wheel slide</text>
+<line x1="462" y1="90" x2="489" y2="86" class="ln thin"/>
+<circle cx="462" cy="90" r="2" class="solid"/>
+<text x="494" y="90" class="lbl-sm" text-anchor="start">Infeed handwheel</text>
+<text x="300" y="282" class="lbl-sm" text-anchor="middle"></text>
+<line x1="240" y1="280" x2="440" y2="280" class="ln acc2" marker-end="url(#mt-u4-arw-grinder)" marker-start="url(#mt-u4-arw-grinder)"/>
+<text x="340" y="272" class="lbl-sm" text-anchor="middle">table traverses</text>
+<text x="40" y="404" class="lbl-b" text-anchor="start">Motions:</text>
+<text x="40" y="424" class="lbl-sm" text-anchor="start">1 wheel rotates (fast)   2 work rotates (slow, opposite sense at the contact)</text>
+<text x="40" y="442" class="lbl-sm" text-anchor="start">3 table traverses along the work   4 wheel is fed in (infeed) for each pass</text>
+</svg>
+<figcaption>Fig. 4.14 — Plain cylindrical grinding machine: bed, table, headstock, footstock, wheel head and wheel slide.</figcaption>
+</figure>
+<aside class="warn"><b>Common mistake.</b> A hard-grade wheel suits soft material, and a soft-grade wheel suits hard material. Hard material blunts the grains fast, so the wheel must release them.</aside>
+<h3 id="mt-u4-c-cards">Key terms</h3>
+<dl class="cards">
+<dt>Machine tool</dt><dd>Power-driven machine that holds work and tool and gives the motions for cutting.</dd>
+<dt>Feed</dt><dd>Movement of the tool per revolution or stroke to reach new metal, in mm/rev.</dd>
+<dt>Swing</dt><dd>Largest diameter of work that a lathe can turn over its bed.</dd>
+<dt>Lead screw</dt><dd>Accurate screw on a lathe that moves the carriage for threading.</dd>
+<dt>Up milling</dt><dd>Cutter turns against the feed; chip grows from 0 to maximum.</dd>
+<dt>Down milling</dt><dd>Cutter turns with the feed; chip falls from maximum to 0.</dd>
+<dt>Counterbore / countersink</dt><dd>Flat-bottom step / conical seat at the mouth of a hole.</dd>
+<dt>Quick-return ratio</dt><dd>Cutting-stroke time divided by return-stroke time; more than 1 on a shaper.</dd>
+<dt>Grade</dt><dd>Hardness of a grinding wheel: the grip of the bond on the grains.</dd>
+<dt>Dressing and truing</dt><dd>Dressing cleans a clogged wheel; truing restores its shape.</dd>
+</dl>
+<div class="quiz" id="mt-u4-quiz">
+<div class="mcq" data-answer="c"><p class="stem">Which lathe part moves the carriage during threading?</p><ol class="opts"><li>Feed rod</li><li>Tailstock</li><li>Lead screw</li><li>Headstock</li></ol><p class="why">The lead screw, with the half-nut, gives the exact pitch.</p></div>
+<div class="mcq" data-answer="b"><p class="stem">In up milling the chip thickness is</p><ol class="opts"><li>maximum at the start</li><li>zero at the start</li><li>constant</li><li>zero at the end</li></ol><p class="why">The tooth starts at the machined surface with zero thickness.</p></div>
+<div class="mcq" data-answer="a"><p class="stem">The quick-return mechanism of a shaper makes</p><ol class="opts"><li>the return stroke faster than the cutting stroke</li><li>the cutting stroke faster</li><li>both strokes equal</li><li>the table feed faster</li></ol><p class="why">The slotted link gives 240° for cutting and 120° for return.</p></div>
+<div class="mcq" data-answer="d"><p class="stem">Which part of a radial drilling machine swings round the column?</p><ol class="opts"><li>Base</li><li>Spindle</li><li>Worktable</li><li>Radial arm</li></ol><p class="why">The arm is clamped to a sleeve that rotates on the column.</p></div>
+<div class="mcq" data-answer="c"><p class="stem">Countersinking makes</p><ol class="opts"><li>a flat step</li><li>a thread</li><li>a conical seat</li><li>a larger bore</li></ol><p class="why">A countersink cuts a cone, usually 90°, for a screw head.</p></div>
+<div class="mcq" data-answer="b"><p class="stem">In the mark A 60 K 5 V, K shows the</p><ol class="opts"><li>grain size</li><li>grade</li><li>structure</li><li>bond</li></ol><p class="why">The letter after the grain number is the grade.</p></div>
+<div class="mcq" data-answer="a"><p class="stem">Which operation uses two wheels pressed on a rotating work?</p><ol class="opts"><li>Knurling</li><li>Facing</li><li>Boring</li><li>Parting</li></ol><p class="why">The knurling tool presses a pattern into the surface.</p></div>
+<div class="mcq" data-answer="d"><p class="stem">The size of a plain cylindrical grinder is stated by</p><ol class="opts"><li>wheel bore only</li><li>motor power</li><li>table colour</li><li>the largest work diameter and length it grinds</li></ol><p class="why">The work diameter and length between centres give the size.</p></div>
+</div>
+  </section>
+  <section class="part" id="mt-u4-theory" data-part="theory">
+    <h2>Theory questions</h2>
+<article class="q" id="mt-u4-q1" data-marks="10">
+<h3>Q1. Sketch a Centre Lathe and mention its various parts.</h3>
+<p class="q-src">MT QB Q33</p>
+<p class="q-hint">Labelled sketch (Fig. 4.4), then each part with its function.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Definition.</b> The centre lathe is a general-purpose machine tool that holds the work between centres or in a chuck, turns it, and cuts it with a single-point tool that moves along or across the axis.</p><p>Fig. 4.4 shows the labelled sketch.</p><ul><li><b>Bed:</b> cast-iron base with guideways; carries the headstock, carriage and tailstock.</li><li><b>Headstock:</b> holds the hollow spindle, the chuck and the speed gearbox.</li><li><b>Tailstock:</b> slides on the bed; its quill holds a dead centre or a drill; it can be set over for taper turning.</li><li><b>Carriage:</b> carries the tool. It has the <b>saddle</b> (slides on the bed), the <b>cross slide</b> (moves across), the <b>compound rest</b> (swivels for tapers) with the <b>tool post</b>, and the <b>apron</b> (feed gears and half-nut).</li><li><b>Lead screw:</b> moves the carriage for thread cutting.</li><li><b>Feed rod:</b> gives the power feed for turning and facing.</li><li><b>Legs:</b> support the bed on the floor.</li></ul><p><b>Size:</b> swing over the bed and the distance between centres. <b>Use:</b> turning, facing, threading, boring and drilling of shafts, pins and bushes.</p>
+</details>
+</article>
+<article class="q" id="mt-u4-q2" data-marks="10">
+<h3>Q2. What are the various operations that can be performed on a lathe? Explain any four in detail.</h3>
+<p class="q-src">MT QB Q34</p>
+<p class="q-hint">Name the nine operations; explain four with a sketch (Fig. 4.5): tool, motion, use.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Operations.</b> Turning, facing, taper turning, threading, knurling, drilling, boring, parting off and chamfering. Fig. 4.5 shows all of them. Four in detail:</p><ol><li><b>Turning.</b> The work rotates and the tool feeds along the axis. It reduces the diameter and makes a cylinder. Depth of cut d = (D − d₁)/2.</li><li><b>Facing.</b> The tool feeds at right angles to the axis, from the edge to the centre. It makes a flat face square to the axis, and sets the length of the part.</li><li><b>Taper turning.</b> It makes a cone. Methods: compound rest set to α/2 (short steep tapers), tailstock set-over S = L(D − d)/2l (long gentle tapers), taper attachment, and form tool.</li><li><b>Threading.</b> A 60° tool (V thread) moves one pitch per revolution of the work. The lead screw and the half-nut give this exact feed. Many passes are made, each deeper.</li></ol><p>Also: <b>Knurling</b> presses a diamond pattern for grip; <b>drilling</b> uses a drill in the tailstock; <b>boring</b> enlarges a hole with a boring bar; <b>parting</b> cuts off the work with a thin blade; <b>chamfering</b> bevels a corner (usually 45°).</p>
+</details>
+</article>
+<article class="q" id="mt-u4-q3" data-marks="10">
+<h3>Q3. Distinguish between up milling and down milling with a neat sketch.</h3>
+<p class="q-src">MT QB Q35</p>
+<p class="q-hint">Sketch both cutters (Fig. 4.6), then a table of differences.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Definition.</b> In <b>up (conventional) milling</b> the cutter turns against the direction of the feed. In <b>down (climb) milling</b> the cutter turns in the same direction as the feed. Fig. 4.6 shows both.</p><div class="tbl"><table><thead><tr><th>Point</th><th>Up milling</th><th>Down milling</th></tr></thead><tbody><tr><td>Cutter rotation</td><td>Against the feed</td><td>With the feed</td></tr><tr><td>Chip thickness</td><td>0 at start, maximum at end</td><td>Maximum at start, 0 at end</td></tr><tr><td>Force on work</td><td>Upward; lifts the work, needs strong clamping</td><td>Downward; presses the work on the table</td></tr><tr><td>Backlash</td><td>Not a problem</td><td>Must be removed from the table screw</td></tr><tr><td>Surface finish</td><td>Poor (chips fall in front of cutter)</td><td>Good</td></tr><tr><td>Tool life</td><td>Shorter</td><td>Longer</td></tr><tr><td>Power</td><td>More</td><td>Less</td></tr><tr><td>Application</td><td>Rough cuts; castings with hard skin; light machines</td><td>Finishing; rigid machines; thin and flat work</td></tr></tbody></table></div>
+</details>
+</article>
+<article class="q" id="mt-u4-q4" data-marks="10">
+<h3>Q4. Write a short note on (a) face milling (b) end milling.</h3>
+<p class="q-src">MT QB Q36</p>
+<p class="q-hint">Two short notes with the sketch (Fig. 4.7). About 5 marks each.</p>
+<details class="answer"><summary>Model answer</summary>
+<p>Fig. 4.7 shows both operations.</p><p><b>(a) Face milling.</b> A face mill, with teeth or inserts on its periphery and end, has its axis at right angles to the surface. The end teeth finish the surface; the peripheral teeth remove the bulk. Used on vertical or horizontal machines.</p><ul><li>Cutter diameter is larger than the width of the work.</li><li>Gives a flat, smooth face at a high removal rate.</li><li>Used for large flat surfaces, such as the tops of castings.</li></ul><p><b>(b) End milling.</b> An end mill is a shank cutter with flutes. It has cutting edges on the end and the sides, and it is held in a collet on a vertical spindle.</p><ul><li>Cuts slots, keyways, pockets, steps and profiles.</li><li>Can plunge into the work like a drill.</li><li>Used on tool and die work.</li></ul>
+</details>
+</article>
+<article class="q" id="mt-u4-q5" data-marks="10">
+<h3>Q5. Sketch a Column and Knee type milling machine and explain.</h3>
+<p class="q-src">MT QB Q37</p>
+<p class="q-hint">Labelled sketch (Fig. 4.8), parts and the three feeds.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Definition.</b> The column-and-knee machine has a vertical column with a knee that slides on its front guideways. It is the most common milling machine. Fig. 4.8 shows a plain horizontal type.</p><ul><li><b>Base:</b> heavy casting; holds the column and the coolant.</li><li><b>Column:</b> vertical frame; houses the spindle and the drive.</li><li><b>Overarm:</b> at the top; supports the arbor support.</li><li><b>Arbor:</b> shaft that holds the cutter; the arbor support holds its outer end.</li><li><b>Knee:</b> moves up and down the column; carries the saddle.</li><li><b>Saddle:</b> on the knee; gives the cross feed.</li><li><b>Table:</b> on the saddle; has T-slots; gives the longitudinal feed.</li><li><b>Elevating screw:</b> raises the knee.</li></ul><p><b>Types:</b> plain (horizontal), vertical and universal. <b>Use:</b> flat faces, slots, gears and keyways.</p>
+</details>
+</article>
+<article class="q" id="mt-u4-q6" data-marks="10">
+<h3>Q6. With a neat sketch explain the radial drilling machine (QB: “radial milling machine”).</h3>
+<p class="q-src">MT QB Q38</p>
+<p class="q-hint">Labelled sketch (Fig. 4.9), parts, motions and use.</p>
+<details class="answer"><summary>Model answer</summary>
+<aside class="note"><b>Data note.</b> The question bank says “radial milling machine”. No such standard machine exists in this syllabus. The notes treat it as the radial drilling machine.</aside><p><b>Definition.</b> The radial drilling machine has a drill head that moves on a radial arm. The arm swings round a column. It drills large heavy work that cannot be moved. Fig. 4.9 shows the sketch.</p><ul><li><b>Base:</b> heavy casting; carries the column and the worktable.</li><li><b>Column:</b> vertical cylinder; the arm sleeve turns and slides on it.</li><li><b>Radial arm:</b> horizontal arm with guideways; raised or lowered by the elevating screw.</li><li><b>Drill head:</b> slides along the arm; holds the motor, the gearbox and the spindle.</li><li><b>Spindle:</b> carries the drill (Morse taper) and feeds down.</li><li><b>Worktable:</b> holds the work.</li></ul><p><b>Motions:</b> the arm swings round the column, moves up or down, and the head slides along the arm. So the drill reaches any point in a large area. <b>Use:</b> large castings and fabrications.</p>
+</details>
+</article>
+<article class="q" id="mt-u4-q7" data-marks="10">
+<h3>Q7. Discuss any four drilling operations with a neat sketch.</h3>
+<p class="q-src">MT QB Q39</p>
+<p class="q-hint">Four operations from Fig. 4.10: tool, result, use.</p>
+<details class="answer"><summary>Model answer</summary>
+<p>Fig. 4.10 shows seven operations. Four in detail:</p><ol><li><b>Drilling.</b> A twist drill makes a new round hole. The drill rotates and feeds down.</li><li><b>Reaming.</b> A multi-flute reamer removes 0.1 to 0.5 mm from a drilled hole. It gives an accurate size and a good finish.</li><li><b>Counterboring.</b> A tool with a pilot enlarges the top of a hole to a flat-bottom step. The step seats a bolt head or nut.</li><li><b>Countersinking.</b> A cone tool (usually 90°) cuts a conical seat for a flat-head screw.</li></ol><p>Also: <b>boring</b> enlarges a hole with a single-point tool; <b>tapping</b> cuts internal threads with a tap; <b>spot facing</b> makes a flat seat on a rough surface.</p>
+</details>
+</article>
+<article class="q" id="mt-u4-q8" data-marks="10">
+<h3>Q8. What is a grinding wheel? List the grinding wheel parameters that influence the grinding performance.</h3>
+<p class="q-src">MT QB Q40</p>
+<p class="q-hint">Define; sketch (Fig. 4.13); five parameters with the marking system.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Definition.</b> A grinding wheel is a cutting tool made of hard abrasive grains held together by a bond, with pores between them. Each grain acts as a small cutting edge. Fig. 4.13 shows the structure.</p><p><b>Parameters:</b></p><ol><li><b>Abrasive:</b> aluminium oxide (A) for steels; silicon carbide (C) for cast iron and non-ferrous; CBN and diamond for very hard material.</li><li><b>Grain size:</b> coarse (8–24) removes fast; fine (70–600) gives a good finish.</li><li><b>Grade:</b> bond strength, A (soft) to Z (hard). Soft wheels for hard work; hard wheels for soft work.</li><li><b>Structure:</b> grain spacing, 1 (dense) to 15 (open). Open structure gives chip room.</li><li><b>Bond:</b> V vitrified (most common), S silicate, B resinoid, R rubber, E shellac.</li></ol><p><b>Marking</b> (IS 551): A 60 K 5 V means aluminium oxide, grain 60 (medium), grade K (medium), structure 5 (medium), vitrified bond. A wrong choice causes <b>glazing</b> (blunt grains) or <b>loading</b> (clogged pores). <b>Dressing</b> cleans the wheel and <b>truing</b> restores its shape.</p>
+</details>
+</article>
+<article class="q" id="mt-u4-q9" data-marks="10">
+<h3>Q9. Explain the plain cylindrical grinding machine with a neat sketch.</h3>
+<p class="q-src">MT QB Q41</p>
+<p class="q-hint">Labelled sketch (Fig. 4.14), parts and the four motions.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Definition.</b> A plain cylindrical grinder grinds the outer cylindrical surface of a workpiece held between centres. Fig. 4.14 shows the sketch.</p><ul><li><b>Bed:</b> rigid base carrying the table and the wheel slide.</li><li><b>Table:</b> slides on the bed; swivels a few degrees for slight tapers.</li><li><b>Headstock (work head):</b> drives the work at low speed.</li><li><b>Footstock:</b> supports the other end with a centre.</li><li><b>Wheel head and slide:</b> carry the motor and the grinding wheel; fed in by a handwheel.</li></ul><p><b>Working.</b> The wheel turns at high speed. The work turns slowly in the opposite sense at the contact. The table traverses the work past the wheel. After each pass the wheel is fed in (infeed) a few hundredths of a millimetre. Coolant is applied.</p><p><b>Use:</b> shafts, spindles and pins that need a fine finish and close tolerance.</p>
+</details>
+</article>
+<article class="q" id="mt-u4-q10" data-marks="10">
+<h3>Q10. Explain the shaping machine: principle, parts and the quick-return mechanism.</h3>
+<p class="q-src">Syllabus topic</p>
+<p class="q-hint">Sketch the machine (Fig. 4.11) and the mechanism (Fig. 4.12); give the ratio.</p>
+<details class="answer"><summary>Model answer</summary>
+<p><b>Principle.</b> A single-point tool on a reciprocating ram cuts a flat surface. Cutting happens on the forward stroke only. The table feeds the work a small step at the end of each return stroke. Fig. 4.11 shows the machine.</p><ul><li><b>Base and column:</b> support all parts; the column holds the drive gears.</li><li><b>Ram:</b> carries the tool head and moves to and fro.</li><li><b>Tool head:</b> has the clapper box and tool post; it gives the down feed.</li><li><b>Cross rail, saddle and table:</b> hold the vice and give the cross feed.</li></ul><p><b>Quick-return mechanism</b> (crank and slotted link, Fig. 4.12). The bull gear turns at constant speed. The crank pin slides in the rocker arm and swings it about the pivot. The pin turns through 240° during cutting and 120° during return, so the ratio is 2 : 1. In general ratio = (180° + 2θ)/(180° − 2θ), with sin θ = r/d.</p><p><b>Use:</b> flat faces, slots, keyways and dovetails. The size is the maximum stroke length.</p>
+</details>
+</article>
+  </section>
+</section>

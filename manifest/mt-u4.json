@@ -1,0 +1,26 @@
+[
+ {
+  "file": "img/mt-u4-centre-lathe.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:HwacheonCentreLathe_460x1000.jpg",
+  "author": "Glenn McKechnie",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "caption": "A centre lathe in a workshop."
+ },
+ {
+  "file": "img/mt-u4-knee-mill.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Bridgeport_knee_mill_restored.jpg",
+  "author": "Dan Bollinger",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "A column-and-knee type vertical milling machine."
+ },
+ {
+  "file": "img/mt-u4-radial-drill.jpg",
+  "commons_page": "https://commons.wikimedia.org/wiki/File:Radial_arm_drill.jpg",
+  "author": "Márton Kiss-Albert",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "caption": "A radial drilling machine."
+ }
+]
