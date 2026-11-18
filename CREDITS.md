@@ -51,3 +51,6 @@ All photos come from Wikimedia Commons under the licences below. They keep their
 | `img/mse-u5-ledeburite.jpg` | White cast iron: ledeburite | Eisenbeisser | CC BY-SA 3.0 | [source](https://commons.wikimedia.org/wiki/File:Ledeburit2.jpg) |
 | `img/mt-u1-cupola-furnace.jpg` | A cupola furnace in a foundry: molten iron runs from the spout into a ladle. | Rss-huh | CC BY-SA 3.0 | [source](https://commons.wikimedia.org/wiki/File:Huh-Kupolofen-HDR.jpg) |
 | `img/mt-u1-electric-arc-furnace.jpg` | An electric arc furnace being charged with scrap steel. | Er-wei Bai | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Electric-arc-furnace.jpg) |
+| `img/mt-u2-hot-rolling.jpg` | Hot rolling of a steel slab between the rolls of a mill. | Erik Charlton from Menlo Park, USA | CC BY 2.0 | [source](https://commons.wikimedia.org/wiki/File:%22Hot%22_Rolling_Some_Steel_(2267617927).jpg) |
+| `img/mt-u2-drop-hammer.jpg` | A drop forging hammer (Sheffield). | BulldozerD11 | CC BY-SA 3.0 | [source](https://commons.wikimedia.org/wiki/File:Drop_Forging_Hammer_in_Brightside_Sheffield_MG_2185.JPG) |
+| `img/mt-u2-extruded-sections.jpg` | Extruded aluminium sections of different cross-shapes. | User Mike1024 | Public domain | [source](https://commons.wikimedia.org/wiki/File:Extruded_aluminium_section_x3.jpg) |
